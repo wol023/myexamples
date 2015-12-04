@@ -1,0 +1,91 @@
+<<Grid Function Library>>
+----------------------------------
+.cosine
+enforce_positivity 
+constant           (Real)
+amplitude          (Real)
+mode               (RealVect)
+phase              (RealVect)
+----------------------------------
+.localized
+amplitude          (Real)
+location           (RealVect)
+width              (RealVect)
+floor              (Real)
+----------------------------------
+.tanh
+inner_radial_value (Real)
+outer_radial_value (Real)
+radial_midpoint    (Real)
+radial_width       (Real)
+----------------------------------
+.SingleNullDistr
+subtype                (string)
+core_value             (Real)
+sep_value              (Real)
+pf_value               (Real)
+inner_radial_value     (Real)
+outer_radial_value     (Real)
+midpoint_fraction      (Real)
+radial_width           (Real) 
+amplitude              (Real)
+floor                  (Real)
+boltzmann_equilibrium  (bool)
+----------------------------------
+.constant
+value                  (Real)
+----------------------------------
+.zero
+----------------------------------
+.data_array
+??
+----------------------------------
+.RZdata
+data_file              (string)
+subtype                (string)
+----------------------------------
+
+
+<<Kinetic Function Library (phase dim)>>
+----------------------------------
+.localized
+amplitude          (Real)
+location           (RealVect)
+width              (RealVect)
+floor              (Real)
+----------------------------------
+.maxwellian
+temperature           (RefCountedPtr<CFG::GridFunction>)
+density               (RefCountedPtr<CFG::GridFunction>)
+vparallel.function    (RefCountedPtr<CFG::GridFunction>)
+----------------------------------
+.constant
+value              (Real)
+----------------------------------
+.zero
+----------------------------------
+.tensor_product_sine
+amplitude          (Real)
+wavevector         (RealVect)
+----------------------------------
+<<gksystem>>.hdf_density
+----------------------------------
+ .hdf_potential
+ .hdf_efield
+ .hdf_dfn
+ .hdf_dfn, bstar_par
+ .hdf_deltaF
+ .hdf_dfn_at_mu
+ .hdf_vpartheta
+ .hdf_rtheta
+ .hdf_vparmu
+ .hdf_density
+ .hdf_ParallelMomentum
+ .hdf_PoloidalMomentum
+ .hdf_pressure
+ .hdf_temperature
+ .hdf_fourthMoment
+ .hdf_ParticleFlux
+ .hdf_HeatFlux
+ .hdf_vlasov_divergence
+
