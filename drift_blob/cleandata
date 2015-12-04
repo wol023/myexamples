@@ -1,5 +1,6 @@
 rm -v *.hdf5
 rm -v pout.*
+rm -v slurm-*.out
 rm -v *.curve
 rm -v *.txt
 rm -rfv ./plt_*
