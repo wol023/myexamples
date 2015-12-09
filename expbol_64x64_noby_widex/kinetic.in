@@ -228,11 +228,14 @@ grid_function_library.eT0_grid_func.amplitude = 0.
 grid_function_library.eT0_grid_func.mode = 1 0
 grid_function_library.eT0_grid_func.phase = 0 0
 
+
+#computational coordinate X runs 0 to 2pi. physical coordinate runs 0 to L.
+#For exponentially decreasing density, one should use exp(-(x-pi)/(2*pi*delta/L)) 
 grid_function_library.N0_grid_func.type = "arbitrary"
-grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi/1))+0.001*exp(-(x-pi)^2/(0.1*PI))*cos(2*y)"
+grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)"
 grid_function_library.eN0_grid_func.type = "arbitrary"
 #grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x)/(pi))+0.01*exp(-(x-pi)^2/(0.1*PI))*cos(10*y)"
-grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi/1))"
+grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))"
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
 grid_function_library.Ion_vpar_grid_func.value = 1.0
