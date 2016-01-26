@@ -14,7 +14,7 @@ gksystem.hdf_PoloidalMomentum = true
 #####################################################
 # Time Stepping Definitions
 #####################################################
-simulation.max_step            = 30
+simulation.max_step            = 2
 simulation.max_time            = 100000.0
 #simulation.max_dt_grow         = 1.1
 #simulation.initial_dt_fraction = 0.5
@@ -36,12 +36,12 @@ simulation.1.history_indices = 16 16
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 64 64 64 32
+gksystem.num_cells   = 64 64 16 16
 gksystem.is_periodic =  0  1  0  0
 
-gksystem.configuration_decomp = 8 8
-gksystem.velocity_decomp      =     8 4
-gksystem.phase_decomp         = 8 8 1 1
+gksystem.configuration_decomp = 1 1
+gksystem.velocity_decomp      =     1 1
+gksystem.phase_decomp         = 2 1 1 1
 
 
 #####################################################
@@ -56,17 +56,34 @@ units.magnetic_field = 1.0
 #####################################################
 # Magnetic Geometry Definitions
 #####################################################
+##Rectangular Torus
+gksystem.magnetic_geometry_mapping = "RectangularTorus"
+gksystem.magnetic_geometry_mapping.rectangulartorus.verbose  = true
+gksystem.magnetic_geometry_mapping.rectangulartorus.inner_radial_bdry = 1.0
+gksystem.magnetic_geometry_mapping.rectangulartorus.outer_radial_bdry = 1.02
+#gksystem.magnetic_geometry_mapping.rectangulartorus.num_quad_points = 5
+gksystem.magnetic_geometry_mapping.rectangulartorus.origin = 0 0
+gksystem.magnetic_geometry_mapping.rectangulartorus.lower_z_bdry = 0.00
+gksystem.magnetic_geometry_mapping.rectangulartorus.upper_z_bdry = 0.02
+#gksystem.magnetic_geometry_mapping.rectangulartorus.min_phi_bdry = 0.0
+#gksystem.magnetic_geometry_mapping.rectangulartorus.max_phi_bdry = 0.0
+gksystem.magnetic_geometry_mapping.rectangulartorus.Btor_scale  = 3.00
+gksystem.magnetic_geometry_mapping.rectangulartorus.Bz_inner = 0.0
+gksystem.magnetic_geometry_mapping.rectangulartorus.Bz_outer = 0.0
+gksystem.magnetic_geometry_mapping.rectangulartorus.inf_majorrad = 0
+gksystem.magnetic_geometry_mapping.correct_field = true
+
 ##slab
-gksystem.magnetic_geometry_mapping = "Slab"
-gksystem.magnetic_geometry_mapping.slab.verbose  = true
-gksystem.magnetic_geometry_mapping.slab.visit_plotfile  = "SlabViz"
-gksystem.magnetic_geometry_mapping.slab.num_quad_points = 5
-gksystem.magnetic_geometry_mapping.slab.axisymmetric = false
-gksystem.magnetic_geometry_mapping.slab.x_max = 0.02
-gksystem.magnetic_geometry_mapping.slab.y_max = 0.02
-gksystem.magnetic_geometry_mapping.slab.Bz_inner = 3.0
-gksystem.magnetic_geometry_mapping.slab.Bz_outer = 3.0
-gksystem.magnetic_geometry_mapping.slab.By_inner = 0.00
+#gksystem.magnetic_geometry_mapping = "Slab"
+#gksystem.magnetic_geometry_mapping.slab.verbose  = true
+#gksystem.magnetic_geometry_mapping.slab.visit_plotfile  = "SlabViz"
+#gksystem.magnetic_geometry_mapping.slab.num_quad_points = 5
+#gksystem.magnetic_geometry_mapping.slab.axisymmetric = false
+#gksystem.magnetic_geometry_mapping.slab.x_max = 0.02
+#gksystem.magnetic_geometry_mapping.slab.y_max = 0.02
+#gksystem.magnetic_geometry_mapping.slab.Bz_inner = 3.0
+#gksystem.magnetic_geometry_mapping.slab.Bz_outer = 3.0
+#gksystem.magnetic_geometry_mapping.slab.By_inner = 0.00
 
 
 ##miller
@@ -121,12 +138,10 @@ gkvlasov.face_avg_type = bweno
 gksystem.fixed_efield = false
 gkpoisson.verbose = true
 
-gkpoissonboltzmann.verbose = true
-
 #gkpoissonboltzmann.prefactor = global_neutrality
 #gkpoissonboltzmann.prefactor = global_neutrality_initial
 #gkpoissonboltzmann.prefactor = fs_neutrality
-#gkpoissonboltzmann.prefactor = fs_neutrality_initial_global_ni
+#gkpoissonboltzmann.prefactor = fs_neutrality_initial
 #gkpoissonboltzmann.prefactor = fs_neutrality_global_ni
 gkpoissonboltzmann.prefactor = fs_neutrality_initial_fs_ni
 
@@ -180,16 +195,18 @@ BC.hydrogen.mu_upper.function = "maxwellian_phase_func"
 #BC.electron.mu_lower.function = "maxwellian_electron_phase_func"
 #BC.electron.mu_upper.function = "maxwellian_electron_phase_func"
 
-#BC.potential.radial_inner.type = "dirichlet"
-#BC.potential.radial_outer.type = "dirichlet"
-BC.potential.radial_lower.type = "dirichlet"
-BC.potential.radial_upper.type = "dirichlet"
+#BC.potential.radial_lower.type = "dirichlet"
+#BC.potential.radial_upper.type = "dirichlet"
 #BC.potential.radial_inner.type = "neumann"
 #BC.potential.radial_outer.type = "neumann"
 #BC.potential.radial_lower.type = "neumann"
 #BC.potential.radial_upper.type = "neumann"
+
+BC.potential.radial_lower.type = "dirichlet"
+BC.potential.radial_upper.type = "dirichlet"
 BC.potential.poloidal_lower.type = "neumann"
 BC.potential.poloidal_upper.type = "neumann"
+
 
 
 #####################################################
@@ -218,27 +235,34 @@ grid_function_library.list = "zero_grid_func" "T0_grid_func" "eT0_grid_func" "N0
 
 grid_function_library.zero_grid_func.type = "zero" 
 
-grid_function_library.T0_grid_func.type = "cosine"
-grid_function_library.T0_grid_func.constant = 0.2
-grid_function_library.T0_grid_func.amplitude = 0.
-grid_function_library.T0_grid_func.mode = 1 0
-grid_function_library.T0_grid_func.phase = 0 0
+grid_function_library.T0_grid_func.type = "constant"
+grid_function_library.T0_grid_func.value = 0.2
 
-grid_function_library.eT0_grid_func.type = "cosine"
-grid_function_library.eT0_grid_func.constant = 0.2
-grid_function_library.eT0_grid_func.amplitude = 0.
-grid_function_library.eT0_grid_func.mode = 1 0
-grid_function_library.eT0_grid_func.phase = 0 0
+grid_function_library.eT0_grid_func.type = "constant"
+grid_function_library.eT0_grid_func.value = 0.2
+
+
+#grid_function_library.T0_grid_func.type = "cosine"
+#grid_function_library.T0_grid_func.constant = 1.2
+#grid_function_library.T0_grid_func.amplitude = 0.
+#grid_function_library.T0_grid_func.mode = 1 0
+#grid_function_library.T0_grid_func.phase = 0 0
+#
+#grid_function_library.eT0_grid_func.type = "cosine"
+#grid_function_library.eT0_grid_func.constant = 1.2
+#grid_function_library.eT0_grid_func.amplitude = 0.
+#grid_function_library.eT0_grid_func.mode = 1 0
+#grid_function_library.eT0_grid_func.phase = 0 0
 
 
 #computational coordinate X runs 0 to 2pi. physical coordinate runs 0 to L.
 #For exponentially decreasing density, one should use exp(-(x-pi)/(2*pi*delta/L)) 
 grid_function_library.N0_grid_func.type = "arbitrary"
+#grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-0.025)^2/(0.05*0.01/0.05))"
 grid_function_library.N0_grid_func.function = "0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
-#grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
 grid_function_library.eN0_grid_func.type = "arbitrary"
 #grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x)/(pi))+0.01*exp(-(x-pi)^2/(0.1*PI))*cos(10*y)"
-grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))"
+grid_function_library.eN0_grid_func.function = "0.5*exp(-(x-pi)/(2*pi*0.01/0.02))"
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
 grid_function_library.Ion_vpar_grid_func.value = 0.0

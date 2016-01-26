@@ -128,6 +128,10 @@ gkpoisson.verbose = true
 #gkpoissonboltzmann.prefactor = fs_neutrality_global_ni
 gkpoissonboltzmann.prefactor = fs_neutrality_initial_fs_ni
 
+gkpoissonboltzmann.verbose = true
+gkpoissonboltzmann.nonlinear_relative_tolerance = 1.e-5
+gkpoissonboltzmann.nonlinear_maximum_iterations = 20
+
 #####################################################
 # Species Definitions
 #####################################################

@@ -14,13 +14,13 @@ gksystem.hdf_PoloidalMomentum = true
 #####################################################
 # Time Stepping Definitions
 #####################################################
-simulation.max_step            = 30
+simulation.max_step            = 1
 simulation.max_time            = 100000.0
 #simulation.max_dt_grow         = 1.1
 #simulation.initial_dt_fraction = 0.5
 #simulation.cfl_number          = 0.9
 #simulation.fixed_dt           = 0.003
-simulation.fixed_dt           = 0.1
+simulation.fixed_dt           = 0.05
 simulation.fixed_dt_subiteration  = true
 ##simulation.fixed_dt           = 0.001
 simulation.checkpoint_interval = 10
@@ -36,12 +36,12 @@ simulation.1.history_indices = 16 16
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 64 64 64 32
-gksystem.is_periodic =  0  1  0  0
+gksystem.num_cells   = 32 32 32 16
+gksystem.is_periodic =  0  0  0  0
 
-gksystem.configuration_decomp = 8 8
-gksystem.velocity_decomp      =     8 4
-gksystem.phase_decomp         = 8 8 1 1
+gksystem.configuration_decomp = 2 2
+gksystem.velocity_decomp      =     2 2
+gksystem.phase_decomp         = 1 1 1 1
 
 
 #####################################################
@@ -119,16 +119,15 @@ gkvlasov.face_avg_type = bweno
 # Poisson Operator Definitions
 #####################################################
 gksystem.fixed_efield = false
+gksystem.consistent_potential_bcs = true
 gkpoisson.verbose = true
 
-gkpoissonboltzmann.verbose = true
-
 #gkpoissonboltzmann.prefactor = global_neutrality
-#gkpoissonboltzmann.prefactor = global_neutrality_initial
+gkpoissonboltzmann.prefactor = global_neutrality_initial
 #gkpoissonboltzmann.prefactor = fs_neutrality
-#gkpoissonboltzmann.prefactor = fs_neutrality_initial_global_ni
+#gkpoissonboltzmann.prefactor = fs_neutrality_initial
 #gkpoissonboltzmann.prefactor = fs_neutrality_global_ni
-gkpoissonboltzmann.prefactor = fs_neutrality_initial_fs_ni
+#gkpoissonboltzmann.prefactor = fs_neutrality_initial_fs_ni
 
 #####################################################
 # Species Definitions
@@ -182,12 +181,12 @@ BC.hydrogen.mu_upper.function = "maxwellian_phase_func"
 
 #BC.potential.radial_inner.type = "dirichlet"
 #BC.potential.radial_outer.type = "dirichlet"
-BC.potential.radial_lower.type = "dirichlet"
-BC.potential.radial_upper.type = "dirichlet"
+#BC.potential.radial_lower.type = "dirichlet"
+#BC.potential.radial_upper.type = "dirichlet"
 #BC.potential.radial_inner.type = "neumann"
 #BC.potential.radial_outer.type = "neumann"
-#BC.potential.radial_lower.type = "neumann"
-#BC.potential.radial_upper.type = "neumann"
+BC.potential.radial_lower.type = "neumann"
+BC.potential.radial_upper.type = "neumann"
 BC.potential.poloidal_lower.type = "neumann"
 BC.potential.poloidal_upper.type = "neumann"
 
@@ -234,11 +233,13 @@ grid_function_library.eT0_grid_func.phase = 0 0
 #computational coordinate X runs 0 to 2pi. physical coordinate runs 0 to L.
 #For exponentially decreasing density, one should use exp(-(x-pi)/(2*pi*delta/L)) 
 grid_function_library.N0_grid_func.type = "arbitrary"
-grid_function_library.N0_grid_func.function = "0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
+grid_function_library.N0_grid_func.function = "(1+exp(-(x-pi)^2/(2*pi*0.01/0.02)-(y-pi)^2/(2*pi*0.01/0.02) ) )"
+#grid_function_library.N0_grid_func.function = "(1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))"
+#grid_function_library.N0_grid_func.function = "1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))"
 #grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
 grid_function_library.eN0_grid_func.type = "arbitrary"
 #grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x)/(pi))+0.01*exp(-(x-pi)^2/(0.1*PI))*cos(10*y)"
-grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))"
+grid_function_library.eN0_grid_func.function = "1.0*exp(-(x-pi)/(2*pi*0.01/0.02))"
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
 grid_function_library.Ion_vpar_grid_func.value = 0.0
