@@ -43,7 +43,7 @@ print 'ref_time = ',ref_time
 #read history file
 x_list=[]
 y_list=[]
-with open("potential1.curve", 'r') as f:
+with open("potential_hist_1.curve", 'r') as f:
     for line in f:
         if line.lstrip().startswith('#'): #skip comment
             continue
