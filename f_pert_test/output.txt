@@ -1,0 +1,376 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.02, ymax = 0.02
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635
+**** dimensions = 32, 32
+Done constructing slab geometry
+   Configuration space box ((0,0) (15,15) (0,0)) is assigned to process 0
+   Configuration space box ((16,0) (31,15) (0,0)) is assigned to process 0
+   Configuration space box ((0,16) (15,31) (0,0)) is assigned to process 0
+   Configuration space box ((16,16) (31,31) (0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,15) (0,0)) is assigned to process 0
+   Phase space box ((0,0,-8,0) (15,15,7,15) (0,0,0,0)) is assigned to process 0, has 65536 valid cells and 266240 ghost cells
+   Phase space box ((0,16,-8,0) (15,31,7,15) (0,0,0,0)) is assigned to process 0, has 65536 valid cells and 266240 ghost cells
+   Phase space box ((16,0,-8,0) (31,15,7,15) (0,0,0,0)) is assigned to process 0, has 65536 valid cells and 266240 ghost cells
+   Phase space box ((16,16,-8,0) (31,31,7,15) (0,0,0,0)) is assigned to process 0, has 65536 valid cells and 266240 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+Done adding species and constructing coordinates
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_0_grid_func":
+Arbitrary grid function parameters:
+  function: 5.0+sin(2*x)
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+"T0_0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"T0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_0_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+sin(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+m_phase_ics:hydrogen = maxwellian_phase_func
+m_phase_ics:hydrogen_0 = maxwellian_0_phase_func
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 5.0+cos(2*x)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+Time integration method: rk (4)
+phaseSpaceIC: a_name_mod = hydrogen
+phaseSpaceIC: a_name_mod = hydrogen_0
+      AMG solver residual = 0.00175314 after 1 iterations
+      AMG solver residual = 0.00247002 after 1 iterations
+      AMG solver residual = 0.00259976 after 1 iterations
+      AMG solver residual = 0.00236686 after 1 iterations
+      AMG solver residual = 0.0021464 after 1 iterations
+  Distribution Function Extrema:
+    Species 0:	0.000593143 [max]	-1.55339e-17 [min]
+
+
+Step 1
+      AMG solver residual = 0.00220944 after 1 iterations
+      AMG solver residual = 0.00240366 after 1 iterations
+      AMG solver residual = 0.0026553 after 1 iterations
+      AMG solver residual = 0.00199872 after 1 iterations
+      AMG solver residual = 0.00222118 after 1 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.00236664 after 1 iterations
+      AMG solver residual = 0.00262114 after 1 iterations
+      AMG solver residual = 0.00202347 after 1 iterations
+      AMG solver residual = 0.00216244 after 1 iterations
+      AMG solver residual = 0.00230624 after 1 iterations
+      AMG solver residual = 0.00243066 after 1 iterations
+      AMG solver residual = 0.00229866 after 1 iterations
+      AMG solver residual = 0.00248928 after 1 iterations
+      AMG solver residual = 0.00247363 after 1 iterations
+      AMG solver residual = 0.00227272 after 1 iterations
+      AMG solver residual = 0.00239284 after 1 iterations
+      AMG solver residual = 0.00228144 after 1 iterations
+      AMG solver residual = 0.00199039 after 1 iterations
+      AMG solver residual = 0.00198058 after 1 iterations
+      AMG solver residual = 0.00250141 after 1 iterations
+  ----
+  dt: 0.05
+    dt scales:  7.74931e+11 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  6.45219e-14 (Vlasov)  2.78134e-310 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000593143 [max]	-1.55339e-17 [min]
+
+Step 1 completed, simulation time is 0.05
+----
+
+Step 2
+      AMG solver residual = 0.0025549 after 1 iterations
+      AMG solver residual = 0.00239867 after 1 iterations
+      AMG solver residual = 0.00237788 after 1 iterations
+      AMG solver residual = 0.00279944 after 1 iterations
+      AMG solver residual = 0.00237158 after 1 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.00245496 after 1 iterations
+      AMG solver residual = 0.00236232 after 1 iterations
+      AMG solver residual = 0.00248582 after 1 iterations
+      AMG solver residual = 0.00248495 after 1 iterations
+      AMG solver residual = 0.0023547 after 1 iterations
+      AMG solver residual = 0.00241697 after 1 iterations
+      AMG solver residual = 0.00218841 after 1 iterations
+      AMG solver residual = 0.00215669 after 1 iterations
+      AMG solver residual = 0.00249166 after 1 iterations
+      AMG solver residual = 0.00266291 after 1 iterations
+      AMG solver residual = 0.0024007 after 1 iterations
+      AMG solver residual = 0.00210894 after 1 iterations
+      AMG solver residual = 0.00249081 after 1 iterations
+      AMG solver residual = 0.00287827 after 1 iterations
+      AMG solver residual = 0.0027946 after 1 iterations
+  ----
+  dt: 0.05
+    dt scales:  1.06846e+12 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  4.67965e-14 (Vlasov)  2.78134e-310 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000593143 [max]	-1.55339e-17 [min]
+
+Step 2 completed, simulation time is 0.1
+----
+Writing checkpoint file
+Writing history file

@@ -5,27 +5,27 @@ simulation.verbosity = 10
 gksystem.verbosity   = 10
 gksystem.hdf_density = true
 gksystem.hdf_potential = true
-gksystem.hdf_temperature = true
-gksystem.hdf_dfn = true
+#gksystem.hdf_temperature = true
+#gksystem.hdf_dfn = true
 gksystem.hdf_efield = true
-gksystem.hdf_ParallelMomentum = true
-gksystem.hdf_PoloidalMomentum = true
+#gksystem.hdf_ParallelMomentum = true
+#gksystem.hdf_PoloidalMomentum = true
 
 gksystem.ti_class = "rk"
 gksystem.ti_method = "4"
 #####################################################
 # Time Stepping Definitions
 #####################################################
-simulation.max_step            = 60
+simulation.max_step            = 10000
 simulation.max_time            = 100000.0
 #simulation.max_dt_grow         = 1.1
 #simulation.initial_dt_fraction = 0.5
 #simulation.cfl_number          = 0.9
 #simulation.fixed_dt           = 0.003
 simulation.fixed_dt           = 0.05
-simulation.fixed_dt_subiteration  = true
+simulation.fixed_dt_subiteration  = false
 ##simulation.fixed_dt           = 0.001
-simulation.checkpoint_interval = 10
+simulation.checkpoint_interval = 100
 simulation.checkpoint_prefix   = "chk"
 #simulation.restart_file = "chk1500.4d.hdf5"
 simulation.plot_interval       = 1
@@ -38,12 +38,12 @@ simulation.1.history_indices = 16 16
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 32 32 32 32
-gksystem.is_periodic =  0  1  0  0
+gksystem.num_cells   = 32 32 36 24
+gksystem.is_periodic =  1  1  0  0
 
-gksystem.configuration_decomp = 2 2
-gksystem.velocity_decomp      =     2 2
-gksystem.phase_decomp         = 2 2 1 1
+gksystem.configuration_decomp = 4 4
+gksystem.velocity_decomp      =     6 6
+gksystem.phase_decomp         = 2 4 4 4
 
 
 #####################################################
@@ -96,8 +96,8 @@ gksystem.magnetic_geometry_mapping.slab.By_inner = 0.00
 #####################################################
 # Phase Space Geometry Definitions
 #####################################################
-phase_space_mapping.v_parallel_max = 6.0
-phase_space_mapping.mu_max = 1.2
+phase_space_mapping.v_parallel_max = 2.0
+phase_space_mapping.mu_max = 0.8
 phase_space_mapping.velocity_type = "gyrokinetic"
 #phase_space_mapping.velocity_type = "ExB"
 #phase_space_mapping.velocity_type = "annular_poloidal_velocity"
@@ -122,6 +122,17 @@ gkvlasov.face_avg_type = uw3
 #####################################################
 gksystem.fixed_efield = false
 gkpoisson.verbose = true
+
+gksystem.ampere_law =	true
+gksystem.ampere_cold_electrons = true
+
+gkpoissonboltzmann.verbose = true
+#gkpoissonboltzmann.preserve_initial_ni_average = true
+gkpoissonboltzmann.nonlinear_relative_tolerance = 1.e-5
+gkpoissonboltzmann.nonlinear_maximum_iterations = 20
+gkpoissonboltzmann.nonlinear_change_tolerance = 1.e-5
+gkpoissonboltzmann.jacobian_solve_tolerance = 1.e-4
+gkpoissonboltzmann.subspace_iteration_solve = false
 
 #gkpoissonboltzmann.prefactor = global_neutrality
 #gkpoissonboltzmann.prefactor = global_neutrality_initial
@@ -235,9 +246,9 @@ grid_function_library.eT0_grid_func.phase = 0 0
 #For exponentially decreasing density, one should use exp(-(x-pi)/(2*pi*delta/L)) 
 grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))"
-grid_function_library.N0_grid_func.function = "(  1.0-0.1*tanh((x-pi)/(2*pi*5.0*0.02)) )*(1+0.00001*cos(2*y))"
-#grid_function_library.N0_grid_func.function = "(1.5-0.5*cos(x))*(1+0.001*cos(2*y))"
-#grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
+#grid_function_library.N0_grid_func.function = "(1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))"
+grid_function_library.N0_grid_func.function = "(1.5-0.5*cos(x))*(1+0.001*cos(2*y))"
+#grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.02*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
 grid_function_library.eN0_grid_func.type = "arbitrary"
 #grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x)/(pi))+0.01*exp(-(x-pi)^2/(0.1*PI))*cos(10*y)"
 #grid_function_library.eN0_grid_func.function = "1.0*exp(-(x-pi)/(2*pi*0.01/0.02))"
