@@ -235,7 +235,7 @@ grid_function_library.eT0_grid_func.phase = 0 0
 #For exponentially decreasing density, one should use exp(-(x-pi)/(2*pi*delta/L)) 
 grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))"
-grid_function_library.N0_grid_func.function = "(  1.0-0.1*tanh((x-pi)/(2*pi*0.01*0.02)  )*(1+0.00001*cos(2*y))"
+grid_function_library.N0_grid_func.function = "(  1.0-0.1*tanh((x-pi)/(2*pi*5.0*0.02)) )*(1+0.00001*cos(2*y))"
 #grid_function_library.N0_grid_func.function = "(1.5-0.5*cos(x))*(1+0.001*cos(2*y))"
 #grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
 grid_function_library.eN0_grid_func.type = "arbitrary"
