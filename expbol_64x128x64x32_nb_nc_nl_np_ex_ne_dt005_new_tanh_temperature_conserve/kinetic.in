@@ -13,6 +13,10 @@ gksystem.hdf_PoloidalMomentum = true
 
 gksystem.ti_class = "rk"
 gksystem.ti_method = "4"
+
+
+
+
 #####################################################
 # Time Stepping Definitions
 #####################################################
@@ -38,19 +42,19 @@ simulation.1.history_indices = 16 16
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 64 128 64 32
+gksystem.num_cells   = 32 32 32 32
 gksystem.is_periodic =  0  1  0  0
 
-gksystem.configuration_decomp = 2 2
-gksystem.velocity_decomp      =     2 2
-gksystem.phase_decomp         = 2 2 1 1
+gksystem.configuration_decomp = 4 4
+gksystem.velocity_decomp      =     4 2
+gksystem.phase_decomp         = 4 4 4 1
 
 
 #####################################################
 # Units Definitions
 #####################################################
 units.number_density = 1.0e20
-units.temperature    = 1.0e3
+units.temperature    = 2.0e2
 units.length         = 1.0
 units.mass           = 1.0
 units.magnetic_field = 1.0 
@@ -122,6 +126,8 @@ gkvlasov.face_avg_type = uw3
 #####################################################
 gksystem.fixed_efield = false
 gkpoisson.verbose = true
+
+gkpoissonboltzmann.preserve_initial_ni_average = true
 
 #gkpoissonboltzmann.prefactor = global_neutrality
 #gkpoissonboltzmann.prefactor = global_neutrality_initial
@@ -219,13 +225,13 @@ grid_function_library.list = "zero_grid_func" "T0_grid_func" "eT0_grid_func" "N0
 grid_function_library.zero_grid_func.type = "zero" 
 
 grid_function_library.T0_grid_func.type = "cosine"
-grid_function_library.T0_grid_func.constant = 0.2
+grid_function_library.T0_grid_func.constant = 1.0
 grid_function_library.T0_grid_func.amplitude = 0.
 grid_function_library.T0_grid_func.mode = 1 0
 grid_function_library.T0_grid_func.phase = 0 0
 
 grid_function_library.eT0_grid_func.type = "cosine"
-grid_function_library.eT0_grid_func.constant = 0.2
+grid_function_library.eT0_grid_func.constant = 1.0
 grid_function_library.eT0_grid_func.amplitude = 0.
 grid_function_library.eT0_grid_func.mode = 1 0
 grid_function_library.eT0_grid_func.phase = 0 0
