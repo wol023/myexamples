@@ -286,6 +286,10 @@ Constant grid function parameters:
 No collision model specified for hydrogen.
 Collision model for 0	hydrogen:	None
 Time integration method: rk (4)
+GKSystem:: species loop: 0
+(*m_kinetic_species[0]).name(): hydrogen_0
+function_name : maxwellian_0_phase_func
+divdeJ done on ref distributionfunction.
       AMG solver residual = 0.00688075 after 1 iterations
       AMG solver residual = 0.000316499 after 2 iterations
       AMG solver residual = 0.000338886 after 2 iterations
@@ -306,11 +310,31 @@ Step 1
       AMG solver residual = 0.00693226 after 1 iterations
   --
   Subiteration:1 of 1
-GKOps::ExplicitOp: species loop: 0
-gksystem.delta_F = 1
-(*species_comp()[0]).name(): hydrogen_0
-function_name : maxwellian_0_phase_func
-divdeJ done on ref distributionfunction.
-subtracting done.
-scaling done.
-rescaling done.
+      AMG solver residual = 0.00964119 after 1 iterations
+      AMG solver residual = 0.000332492 after 2 iterations
+      AMG solver residual = 0.000326313 after 2 iterations
+      AMG solver residual = 0.000297339 after 2 iterations
+      AMG solver residual = 0.000318674 after 2 iterations
+      AMG solver residual = 0.000321371 after 2 iterations
+      AMG solver residual = 0.00538276 after 1 iterations
+      AMG solver residual = 0.00742489 after 1 iterations
+      AMG solver residual = 0.00622652 after 1 iterations
+      AMG solver residual = 0.00270005 after 1 iterations
+      AMG solver residual = 0.00234204 after 1 iterations
+      AMG solver residual = 0.00790955 after 1 iterations
+      AMG solver residual = 0.00993651 after 1 iterations
+      AMG solver residual = 0.00510068 after 1 iterations
+      AMG solver residual = 0.00365141 after 1 iterations
+      AMG solver residual = 0.00651042 after 1 iterations
+      AMG solver residual = 0.00325 after 1 iterations
+      AMG solver residual = 0.00435576 after 1 iterations
+      AMG solver residual = 0.0067921 after 1 iterations
+      AMG solver residual = 0.000535547 after 2 iterations
+      AMG solver residual = 0.000542854 after 2 iterations
+      AMG solver residual = 0.000552559 after 2 iterations
+      AMG solver residual = 0.000541129 after 2 iterations
+      AMG solver residual = 0.000538341 after 2 iterations
+      AMG solver residual = 0.000386282 after 2 iterations
+      AMG solver residual = 0.00481156 after 1 iterations
+      AMG solver residual = 0.00368644 after 1 iterations
+      AMG solver residual = 0.00315588 after 1 iterations

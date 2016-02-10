@@ -1,0 +1,19 @@
+cd /home/wonjae/ws/example/plottest/gamsmall3dslab/
+file /home/wonjae/ws/branchinESL/devel5D/exec/cogent.Linux.64.mpicxx.gfortran.DEBUG.MPI.ex
+set args GamSmall.in
+break /home/wonjae/ws/branchinESL/devel5D/exec/cogent.cpp:31
+break /home/wonjae/ws/branchinESL/devel5D/src/driver/Simulation.cpp:179
+break /home/wonjae/ws/branchinESL/devel5D/src/core/GKSystem.cpp:150
+break /home/wonjae/ws/branchinESL/devel5D/src/core/GKSystem.cpp:905
+break /home/wonjae/ws/branchinESL/devel5D/src/coord/phase/SlabPhaseCoordSys.cpp:24
+break /home/wonjae/ws/branchinESL/devel5D/src/coord/phase/SlabPhaseCoordSys.cpp:26
+break /home/wonjae/ws/branchinESL/devel5D/src/coord/phase/SlabPhaseCoordSys.cpp:28
+break /home/wonjae/ws/branchinESL/devel5D/src/core/GKSystem.cpp:947
+break /home/wonjae/ws/branchinESL/devel5D/src/coord/phase/PhaseGrid.cpp:259
+break /home/wonjae/ws/branchinESL/devel5D/src/core/GKSystemBC.cpp:45
+break /home/wonjae/ws/branchinESL/devel5D/src/ibc/configuration/SlabPotentialBC.cpp:427
+break /home/wonjae/ws/branchinESL/devel5D/src/core/GKSystemBC.cpp:51
+break /home/wonjae/ws/branchinESL/devel5D/src/core/GKOps.cpp:1474
+break /home/wonjae/ws/branchinESL/devel5D/src/species/KineticSpecies.H:183
+break /home/wonjae/ws/branchinESL/devel5D/src/species/KineticSpecies.H:188
+break /home/wonjae/ws/branchinESL/devel5D/src/ibc/phase/ConstantKineticFunction.cpp:13

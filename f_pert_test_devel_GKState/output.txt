@@ -1,0 +1,655 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.02, ymax = 0.02
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635
+**** dimensions = 32, 32
+Done constructing slab geometry
+   Configuration space box ((0,0) (31,31) (0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,15) (0,0)) is assigned to process 0
+   Phase space box ((0,0,-8,0) (31,31,7,15) (0,0,0,0)) is assigned to process 0, has 262144 valid cells and 659456 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+Done adding species and constructing coordinates
+GKSystem:: species loop: s = 0
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+"T0_0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"T0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_0_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+(*m_kinetic_species[s]).name(): hydrogen_0
+function_name : maxwellian_0_phase_func
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.01/0.02) )*(1.0+ 0.001*cos(2*y) )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+Time integration method: rk (4)
+      AMG solver residual = 0.00688075 after 1 iterations
+      AMG solver residual = 0.000316499 after 2 iterations
+      AMG solver residual = 0.000338886 after 2 iterations
+      AMG solver residual = 0.000317 after 2 iterations
+      AMG solver residual = 0.0082438 after 1 iterations
+      AMG solver residual = 0.00839917 after 1 iterations
+      AMG solver residual = 0.00840979 after 1 iterations
+      AMG solver residual = 0.00849566 after 1 iterations
+  Distribution Function Extrema:
+    Species 0:	0.000310963 [max]	-1.07134e-11 [min]
+
+
+Step 1
+      AMG solver residual = 0.0086689 after 1 iterations
+      AMG solver residual = 0.00857472 after 1 iterations
+      AMG solver residual = 0.00835037 after 1 iterations
+      AMG solver residual = 0.0076248 after 1 iterations
+      AMG solver residual = 0.00693226 after 1 iterations
+  --
+  Subiteration:1 of 1
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+      AMG solver residual = 0.00964119 after 1 iterations
+      AMG solver residual = 0.000332492 after 2 iterations
+      AMG solver residual = 0.000326313 after 2 iterations
+      AMG solver residual = 0.000297339 after 2 iterations
+      AMG solver residual = 0.000318674 after 2 iterations
+      AMG solver residual = 0.000321371 after 2 iterations
+      AMG solver residual = 0.00538276 after 1 iterations
+      AMG solver residual = 0.00742489 after 1 iterations
+      AMG solver residual = 0.00622652 after 1 iterations
+      AMG solver residual = 0.00270005 after 1 iterations
+      AMG solver residual = 0.00234204 after 1 iterations
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+      AMG solver residual = 0.00790955 after 1 iterations
+      AMG solver residual = 0.00993651 after 1 iterations
+      AMG solver residual = 0.00510068 after 1 iterations
+      AMG solver residual = 0.00365141 after 1 iterations
+      AMG solver residual = 0.00651042 after 1 iterations
+      AMG solver residual = 0.00325 after 1 iterations
+      AMG solver residual = 0.00435576 after 1 iterations
+      AMG solver residual = 0.0067921 after 1 iterations
+      AMG solver residual = 0.000535547 after 2 iterations
+      AMG solver residual = 0.000542854 after 2 iterations
+      AMG solver residual = 0.000552559 after 2 iterations
+      AMG solver residual = 0.000541129 after 2 iterations
+      AMG solver residual = 0.000538341 after 2 iterations
+      AMG solver residual = 0.000386282 after 2 iterations
+      AMG solver residual = 0.00481156 after 1 iterations
+      AMG solver residual = 0.00368644 after 1 iterations
+      AMG solver residual = 0.00315588 after 1 iterations
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+      AMG solver residual = 0.00794949 after 1 iterations
+      AMG solver residual = 0.00656182 after 1 iterations
+      AMG solver residual = 0.00336707 after 1 iterations
+      AMG solver residual = 0.00354922 after 1 iterations
+      AMG solver residual = 0.00595802 after 1 iterations
+      AMG solver residual = 0.00328811 after 1 iterations
+      AMG solver residual = 0.00789193 after 1 iterations
+      AMG solver residual = 0.00605032 after 1 iterations
+      AMG solver residual = 0.000647335 after 2 iterations
+      AMG solver residual = 0.000705105 after 2 iterations
+      AMG solver residual = 0.00031774 after 2 iterations
+      AMG solver residual = 0.000626406 after 2 iterations
+      AMG solver residual = 0.000707919 after 2 iterations
+      AMG solver residual = 0.000575247 after 2 iterations
+      AMG solver residual = 0.00354077 after 1 iterations
+      AMG solver residual = 0.00294768 after 1 iterations
+      AMG solver residual = 0.00279767 after 1 iterations
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+  ----
+  dt: 0.05
+    dt scales:  5.52263 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  0.00905366 (Vlasov)  2.78134e-310 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000319079 [max]	-1.10338e-11 [min]
+
+Step 1 completed, simulation time is 0.05
+----
+
+Step 2
+      AMG solver residual = 0.00814909 after 1 iterations
+      AMG solver residual = 0.00785385 after 1 iterations
+      AMG solver residual = 0.000223437 after 2 iterations
+      AMG solver residual = 0.00800868 after 1 iterations
+      AMG solver residual = 0.007233 after 1 iterations
+      AMG solver residual = 0.00719724 after 1 iterations
+      AMG solver residual = 0.000384782 after 2 iterations
+      AMG solver residual = 0.000413131 after 2 iterations
+      AMG solver residual = 0.000315391 after 2 iterations
+      AMG solver residual = 0.000490369 after 2 iterations
+      AMG solver residual = 0.00030676 after 2 iterations
+      AMG solver residual = 0.00594489 after 1 iterations
+      AMG solver residual = 0.000560894 after 2 iterations
+      AMG solver residual = 0.000592098 after 2 iterations
+      AMG solver residual = 0.000526584 after 2 iterations
+      AMG solver residual = 0.000596961 after 2 iterations
+      AMG solver residual = 0.000581723 after 2 iterations
+      AMG solver residual = 0.000487736 after 2 iterations
+      AMG solver residual = 0.0033238 after 1 iterations
+      AMG solver residual = 0.0025451 after 1 iterations
+      AMG solver residual = 0.00241908 after 1 iterations
+  --
+  Specified time step is higher than stable time step. Using subiterations.
+  2 subiterations will be made with sub_dt = 0.025
+  You may disable this by setting simulation.fixed_dt_subiteration = false.
+  --
+  --
+  Subiteration:1 of 2
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+      AMG solver residual = 0.00766474 after 1 iterations
+      AMG solver residual = 0.00032462 after 2 iterations
+      AMG solver residual = 0.000257078 after 2 iterations
+      AMG solver residual = 0.000277846 after 2 iterations
+      AMG solver residual = 0.000373143 after 2 iterations
+      AMG solver residual = 0.000307302 after 2 iterations
+      AMG solver residual = 0.000395109 after 2 iterations
+      AMG solver residual = 0.00474406 after 1 iterations
+      AMG solver residual = 0.000575271 after 2 iterations
+      AMG solver residual = 0.000718082 after 2 iterations
+      AMG solver residual = 0.000634483 after 2 iterations
+      AMG solver residual = 0.000707485 after 2 iterations
+      AMG solver residual = 0.000707808 after 2 iterations
+      AMG solver residual = 0.000411354 after 2 iterations
+      AMG solver residual = 0.00228055 after 1 iterations
+      AMG solver residual = 0.00174764 after 1 iterations
+      AMG solver residual = 0.00172646 after 1 iterations
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+      AMG solver residual = 0.00790173 after 1 iterations
+      AMG solver residual = 0.00900426 after 1 iterations
+      AMG solver residual = 0.000308551 after 2 iterations
+      AMG solver residual = 0.000305713 after 2 iterations
+      AMG solver residual = 0.000290595 after 2 iterations
+      AMG solver residual = 0.000298834 after 2 iterations
+      AMG solver residual = 0.000245597 after 2 iterations
+      AMG solver residual = 0.00538941 after 1 iterations
+      AMG solver residual = 0.000302616 after 2 iterations
+      AMG solver residual = 0.000419607 after 2 iterations
+      AMG solver residual = 0.000386468 after 2 iterations
+      AMG solver residual = 0.000359939 after 2 iterations
+      AMG solver residual = 0.000366447 after 2 iterations
+      AMG solver residual = 0.000922103 after 2 iterations
+      AMG solver residual = 0.00372461 after 1 iterations
+      AMG solver residual = 0.000289856 after 2 iterations
+      AMG solver residual = 0.000358041 after 2 iterations
+      AMG solver residual = 0.000349147 after 2 iterations
+      AMG solver residual = 0.000298426 after 2 iterations
+      AMG solver residual = 0.000335576 after 2 iterations
+      AMG solver residual = 0.000429299 after 2 iterations
+      AMG solver residual = 0.00301483 after 1 iterations
+      AMG solver residual = 0.00304036 after 1 iterations
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+      AMG solver residual = 0.00658342 after 1 iterations
+      AMG solver residual = 0.00463092 after 1 iterations
+      AMG solver residual = 0.000132894 after 2 iterations
+      AMG solver residual = 0.000144204 after 2 iterations
+      AMG solver residual = 0.00822342 after 1 iterations
+      AMG solver residual = 0.000136301 after 2 iterations
+      AMG solver residual = 0.00655819 after 1 iterations
+      AMG solver residual = 0.000156829 after 2 iterations
+      AMG solver residual = 0.00795741 after 1 iterations
+      AMG solver residual = 0.00698977 after 1 iterations
+      AMG solver residual = 0.000152876 after 2 iterations
+      AMG solver residual = 0.000194116 after 2 iterations
+      AMG solver residual = 0.000192778 after 2 iterations
+      AMG solver residual = 0.000200688 after 2 iterations
+      AMG solver residual = 0.000193031 after 2 iterations
+      AMG solver residual = 0.000159157 after 2 iterations
+      AMG solver residual = 0.000209368 after 2 iterations
+      AMG solver residual = 0.000161697 after 2 iterations
+      AMG solver residual = 0.00451532 after 1 iterations
+      AMG solver residual = 0.000148132 after 2 iterations
+      AMG solver residual = 0.000193633 after 2 iterations
+      AMG solver residual = 0.000187581 after 2 iterations
+      AMG solver residual = 0.000199487 after 2 iterations
+      AMG solver residual = 0.000195278 after 2 iterations
+      AMG solver residual = 0.000166047 after 2 iterations
+      AMG solver residual = 0.0027587 after 1 iterations
+      AMG solver residual = 0.000147345 after 2 iterations
+      AMG solver residual = 0.000196245 after 2 iterations
+      AMG solver residual = 0.000170019 after 2 iterations
+      AMG solver residual = 0.000201375 after 2 iterations
+      AMG solver residual = 0.000197236 after 2 iterations
+      AMG solver residual = 0.000166201 after 2 iterations
+      AMG solver residual = 0.00166239 after 1 iterations
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+  --
+  Subiteration:2 of 2
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+      AMG solver residual = 15748.4 after 10 iterations
+      AMG solver residual = 12164.2 after 10 iterations
+      AMG solver residual = 2009.73 after 10 iterations
+      AMG solver residual = 1214.21 after 10 iterations
+      AMG solver residual = 3.09641 after 10 iterations
+      AMG solver residual = 2.30985 after 10 iterations
+      AMG solver residual = 2.09511 after 10 iterations
+      AMG solver residual = 91.9114 after 10 iterations
+      AMG solver residual = 3745.11 after 10 iterations
+      AMG solver residual = 14957.9 after 10 iterations
+      AMG solver residual = 1.78868 after 10 iterations
+      AMG solver residual = 1643.97 after 10 iterations
+      AMG solver residual = 0.59236 after 10 iterations
+      AMG solver residual = 1.8212 after 10 iterations
+      AMG solver residual = 702.554 after 10 iterations
+      AMG solver residual = 18874.8 after 10 iterations
+      AMG solver residual = 254.477 after 10 iterations
+      AMG solver residual = 1102.79 after 10 iterations
+      AMG solver residual = 1.19941 after 10 iterations
+      AMG solver residual = 3.58183 after 10 iterations
+      AMG solver residual = 593.165 after 10 iterations
+      AMG solver residual = 17214.7 after 10 iterations
+      AMG solver residual = 25.1112 after 10 iterations
+      AMG solver residual = 1117.49 after 10 iterations
+      AMG solver residual = 2.05188 after 10 iterations
+      AMG solver residual = 4.74588 after 10 iterations
+      AMG solver residual = 4074.86 after 10 iterations
+      AMG solver residual = 16227.9 after 10 iterations
+      AMG solver residual = 445.31 after 10 iterations
+      AMG solver residual = 1197.35 after 10 iterations
+      AMG solver residual = 3.32562 after 10 iterations
+      AMG solver residual = 3.43145 after 10 iterations
+      AMG solver residual = 0.799042 after 10 iterations
+      AMG solver residual = 5308.06 after 10 iterations
+      AMG solver residual = 0.760397 after 10 iterations
+      AMG solver residual = 0.718096 after 10 iterations
+      AMG solver residual = 1.08583 after 10 iterations
+      AMG solver residual = 1318.27 after 10 iterations
+      AMG solver residual = 0.883514 after 10 iterations
+      AMG solver residual = 308.479 after 10 iterations
+      AMG solver residual = 5.28004e+49 after 10 iterations
+      AMG solver residual = 5.59466e+49 after 10 iterations
+      AMG solver residual = 1.47985e+37 after 10 iterations
+      AMG solver residual = 5.59466e+49 after 10 iterations
+      AMG solver residual = 1.95698e+36 after 10 iterations
+      AMG solver residual = 5.59466e+49 after 10 iterations
+      AMG solver residual = 5.28295e+49 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+      AMG solver residual = 8.58432e+37 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+      AMG solver residual = 5.27928e+49 after 10 iterations
+      AMG solver residual = 5.18465e+49 after 10 iterations
+      AMG solver residual = 4.94329e+39 after 10 iterations
+      AMG solver residual = 5.18465e+49 after 10 iterations
+      AMG solver residual = 1.49165e+36 after 10 iterations
+      AMG solver residual = 5.18465e+49 after 10 iterations
+      AMG solver residual = 5.26356e+49 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+      AMG solver residual = 6.49807e+37 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+      AMG solver residual = 5.83171e+35 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+      AMG solver residual = 6.10258e+49 after 10 iterations
+      AMG solver residual = 5.45122e+49 after 10 iterations
+      AMG solver residual = 3.65476e+37 after 10 iterations
+      AMG solver residual = 5.45122e+49 after 10 iterations
+      AMG solver residual = 7.56567e+35 after 10 iterations
+      AMG solver residual = 5.45122e+49 after 10 iterations
+      AMG solver residual = 6.12492e+49 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+      AMG solver residual = 7.85464e+37 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+      AMG solver residual = 5.89879e+34 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+      AMG solver residual = 9.42353e+35 after 10 iterations
+      AMG solver residual = 2.25787e+49 after 10 iterations
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+subtracting done.
+scaling done.
+fillGhostCells done.
+rescaling done.
+adding done.
+  ----
+  dt: 0.025
+    dt scales:  0.0459849 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  0.543657 (Vlasov)  1.39067e-310 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	1.10974e+06 [max]	-585534 [min]
+
+Step 2 completed, simulation time is 0.1
+----
+Writing checkpoint file
+Writing history file

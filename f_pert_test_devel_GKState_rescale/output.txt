@@ -43,6 +43,7 @@ Done constructing magnetic geometry
 Adding species and constructing gyrocenter coordinates...
    hydrogen: kinetic species with mass = 2, charge = 1
 Done adding species and constructing coordinates
+GKSystem:: species loop: s = 0
 
 Grid Function Library =========================
 
@@ -117,6 +118,8 @@ Constant grid function parameters:
 
 
 ==================================================
+(*m_kinetic_species[s]).name(): hydrogen_0
+function_name : maxwellian_0_phase_func
 
 SlabPotentialBC ================================
 - variable: potential-------------
@@ -286,31 +289,34 @@ Constant grid function parameters:
 No collision model specified for hydrogen.
 Collision model for 0	hydrogen:	None
 Time integration method: rk (4)
-      AMG solver residual = 0.00688075 after 1 iterations
-      AMG solver residual = 0.000316499 after 2 iterations
-      AMG solver residual = 0.000338886 after 2 iterations
-      AMG solver residual = 0.000317 after 2 iterations
-      AMG solver residual = 0.0082438 after 1 iterations
-      AMG solver residual = 0.00839917 after 1 iterations
+      AMG solver residual = 0.00688074 after 1 iterations
+      AMG solver residual = 0.000316496 after 2 iterations
+      AMG solver residual = 0.000338882 after 2 iterations
+      AMG solver residual = 0.000316997 after 2 iterations
+      AMG solver residual = 0.00824381 after 1 iterations
+      AMG solver residual = 0.00839918 after 1 iterations
       AMG solver residual = 0.00840979 after 1 iterations
-      AMG solver residual = 0.00849566 after 1 iterations
+      AMG solver residual = 0.00849565 after 1 iterations
   Distribution Function Extrema:
-    Species 0:	0.000310963 [max]	-1.07134e-11 [min]
+    Species 0:	0.000343287 [max]	-1.17307e-08 [min]
 
 
 Step 1
-      AMG solver residual = 0.0086689 after 1 iterations
+      AMG solver residual = 0.00866891 after 1 iterations
       AMG solver residual = 0.00857472 after 1 iterations
-      AMG solver residual = 0.00835037 after 1 iterations
-      AMG solver residual = 0.0076248 after 1 iterations
-      AMG solver residual = 0.00693226 after 1 iterations
+      AMG solver residual = 0.00835033 after 1 iterations
+      AMG solver residual = 0.00762449 after 1 iterations
+      AMG solver residual = 0.00693221 after 1 iterations
   --
   Subiteration:1 of 1
-GKOps::ExplicitOp: species loop: 0
-gksystem.delta_F = 1
-(*species_comp()[0]).name(): hydrogen_0
-function_name : maxwellian_0_phase_func
-divdeJ done on ref distributionfunction.
+      AMG solver residual = 0.00472823 after 1 iterations
+      AMG solver residual = 0.00673288 after 1 iterations
+test0
+gksystem.using_F0 = 1
+gksystem.imposing_bc_to_perturbation= 1
+gksystem.imposing_bc_to_perturbation_rescale= 1
 subtracting done.
 scaling done.
+fillGhostCells done.
 rescaling done.
+adding done.

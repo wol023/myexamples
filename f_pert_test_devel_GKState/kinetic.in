@@ -11,7 +11,8 @@ gksystem.hdf_efield = true
 gksystem.hdf_ParallelMomentum = true
 gksystem.hdf_PoloidalMomentum = true
 
-gksystem.delta_F = true
+gksystem.using_F0 = true
+gksystem.imposing_bc_to_perturbation = true
 #####################################################
 # Time Stepping Definitions
 #####################################################
