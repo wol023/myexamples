@@ -1,0 +1,2970 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+Constructing slab geometry...
+xmax = 0.08, ymax = 0.02
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+Done constructing slab geometry
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+   Configuration space box ((0,0) (7,7) (0,0)) is assigned to process 0
+   Configuration space box ((8,0) (15,7) (0,0)) is assigned to process 1
+   Configuration space box ((16,0) (23,7) (0,0)) is assigned to process 2
+   Configuration space box ((24,0) (31,7) (0,0)) is assigned to process 3
+   Configuration space box ((32,0) (39,7) (0,0)) is assigned to process 4
+   Configuration space box ((40,0) (47,7) (0,0)) is assigned to process 5
+   Configuration space box ((48,0) (55,7) (0,0)) is assigned to process 6
+   Configuration space box ((56,0) (63,7) (0,0)) is assigned to process 7
+   Configuration space box ((0,8) (7,15) (0,0)) is assigned to process 8
+   Configuration space box ((8,8) (15,15) (0,0)) is assigned to process 9
+   Configuration space box ((16,8) (23,15) (0,0)) is assigned to process 10
+   Configuration space box ((24,8) (31,15) (0,0)) is assigned to process 11
+   Configuration space box ((32,8) (39,15) (0,0)) is assigned to process 12
+   Configuration space box ((40,8) (47,15) (0,0)) is assigne**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+   Phase space box ((48,32,-8,0) (55,39,7,15) (0,0,0,0)) is assigned to process 38, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,40,-8,0) (47,47,7,15) (0,0,0,0)) is assigned to process 45, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,32,-8,0) (7,39,7,15) (0,0,0,0)) is assigned to process 32, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,32,-8,0) (47,39,7,15) (0,0,0,0)) is assigned to process 37, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,40,-8,0) (7,47,7,15) (0,0,0,0)) is assigned to process 40, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,40,-8,0) (23,47,7,15) (0,0,0,0)) is assigned to process 42, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,40,-8,0) (63,47,7,15) (0,0,0,0)) is assigned to process 47, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,48,-8,0) (15,55,7,15) (0,0,0,0)) is assigned to process 49, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,48,-8,0) (23,55,7,15) (0,0,0,0)) is assigned to process 50, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,48,-8,0) (31,55,7,15) (0,0,0,0)) is assigned to process 51, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,48,-8,0) (39,55,7,15) (0,0,0,0)) is assigned to process 52, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,48,-8,0) (47,55,7,15) (0,0,0,0)) is assigned to process 53, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,56,-8,0) (7,63,7,15) (0,0,0,0)) is assigned to process 56, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,56,-8,0) (31,63,7,15) (0,0,0,0)) is assigned to process 59, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,56,-8,0) (47,63,7,15) (0,0,0,0)) is assigned to process 61, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,56,-8,0) (55,63,7,15) (0,0,0,0)) is assigned to process 62, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,56,-8,0) (63,63,7,15) (0,0,0,0)) is assigned to process 63, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,32,-8,0) (15,39,7,15) (0,0,0,0)) is assigned to process 33, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,32,-8,0) (23,39,7,15) (0,0,0,0)) is assigned to process 34, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,32,-8,0) (31,39,7,15) (0,0,0,0)) is assigned to process 35, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,32,-8,0) (39,39,7,15) (0,0,0,0)) is assigned to process 36, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,32,-8,0) (63,39,7,15) (0,0,0,0)) is assigned to process 39, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,40,-8,0) (15,47,7,15) (0,0,0,0)) is assigned to process 41, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,40,-8,0) (31,47,7,15) (0,0,0,0)) is assigned to process 43, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,40,-8,0) (39,47,7,15) (0,0,0,0)) is assigned to process 44, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,40,-8,0) (55,47,7,15) (0,0,0,0)) is assigned to process 46, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,48,-8,0) (7,55,7,15) (0,0,0,0)) is assigned to process 48, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,48,-8,0) (55,55,7,15) (0,0,0,0)) is assigned to process 54, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,48,-8,0) (63,55,7,15) (0,0,0,0)) is assigned to process 55, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,56,-8,0) (15,63,7,15) (0,0,0,0)) is assigned to process 57, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,56,-8,0) (23,63,7,15) (0,0,0,0)) is assigned to process 58, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,56,-8,0) (39,63,7,15) (0,0,0,0)) is assigned to process 60, has 16384 valid cells and 131072 ghost cells
+d to process 13
+   Configuration space box ((48,8) (55,15) (0,0)) is assigned to process 14
+   Configuration space box ((56,8) (63,15) (0,0)) is assigned to process 15
+   Configuration space box ((0,16) (7,23) (0,0)) is assigned to process 16
+   Configuration space box ((8,16) (15,23) (0,0)) is assigned to process 17
+   Configuration space box ((16,16) (23,23) (0,0)) is assigned to process 18
+   Configuration space box ((24,16) (31,23) (0,0)) is assigned to process 19
+   Configuration space box ((32,16) (39,23) (0,0)) is assigned to process 20
+   Configuration space box ((40,16) (47,23) (0,0)) is assigned to process 21
+   Configuration space box ((48,16) (55,23) (0,0)) is assigned to process 22
+   Configuration space box ((56,16) (63,23) (0,0)) is assigned to process 23
+   Configuration space box ((0,24) (7,31) (0,0)) is assigned to process 24
+   Configuration space box ((8,24) (15,31) (0,0)) is assigned to process 25
+   Configuration space box ((16,24) (23,31) (0,0)) is assigned to process 26
+   Configuration space box ((24,24) (31,31) (0,0)) is assigned to process 27
+   Configuration space box ((32,24) (39,31) (0,0)) is assigned to process 28
+   Configuration space box ((40,24) (47,31) (0,0)) is assigned to process 29
+   Configuration space box ((48,24) (55,31) (0,0)) is assigned to process 30
+   Configuration space box ((56,24) (63,31) (0,0)) is assigned to process 31
+   Configuration space box ((0,32) (7,39) (0,0)) is assigned to process 32
+   Configuration space box ((8,32) (15,39) (0,0)) is assigned to process 33
+   Configuration space box ((16,32) (23,39) (0,0)) is assigned to process 34
+   Configuration space box ((24,32) (31,39) (0,0)) is assigned to process 35
+   Configuration space box ((32,32) (39,39) (0,0)) is assigned to process 36
+   Configuration space box ((40,32) (47,39) (0,0)) is assigned to process 37
+   Configuration space box ((48,32) (55,39) (0,0)) is assigned to process 38
+   Configuration space box ((56,32) (63,39) (0,0)) is assigned to process 39
+   Configuration space box ((0,40) (7,47) (0,0)) is assigned to process 40
+   Configuration space box ((8,40) (15,47) (0,0)) is assigned to process 41
+   Configuration space box ((16,40) (23,47) (0,0)) is assigned to process 42
+   Configuration space box ((24,40) (31,47) (0,0)) is assigned to process 43
+   Configuration space box ((32,40) (39,47) (0,0)) is assigned to process 44
+   Configuration space box ((40,40) (47,47) (0,0)) is assigned to process 45
+   Configuration space box ((48,40) (55,47) (0,0)) is assigned to process 46
+   Configuration space box ((56,40) (63,47) (0,0)) is assigned to process 47
+   Configuration space box ((0,48) (7,55) (0,0)) is assigned to process 48
+   Configuration space box ((8,48) (15,55) (0,0)) is assigned to process 49
+   Configuration space box ((16,48) (23,55) (0,0)) is assigned to process 50
+   Configuration space box ((24,48) (31,55) (0,0)) is assigned to process 51
+   Configuration space box ((32,48) (39,55) (0,0)) is assigned to process 52
+   Configuration space box ((40,48) (47,55) (0,0)) is assigned to process 53
+   Configuration space box ((48,48) (55,55) (0,0)) is assigned to process 54
+   Configuration space box ((56,48) (63,55) (0,0)) is assigned to process 55
+   Configuration space box ((0,56) (7,63) (0,0)) is assigned to process 56
+   Configuration space box ((8,56) (15,63) (0,0)) is assigned to process 57
+   Configuration space box ((16,56) (23,63) (0,0)) is assigned to process 58
+   Configuration space box ((24,56) (31,63) (0,0)) is assigned to process 59
+   Configuration space box ((32,56) (39,63) (0,0)) is assigned to process 60
+   Configuration space box ((40,56) (47,63) (0,0)) is assigned to process 61
+   Configuration space box ((48,56) (55,63) (0,0)) is assigned to process 62
+   Configuration space box ((56,56) (63,63) (0,0)) is assigned to process 63
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,15) (0,0)) is assigned to process 0
+   Phase space box ((48,0,-8,0) (55,7,7,15) (0,0,0,0)) is assigned to process 6, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,8,-8,0) (7,15,7,15) (0,0,0,0)) is assigned to process 8, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,8,-8,0) (39,15,7,15) (0,0,0,0)) is assigned to process 12, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,8,-8,0) (47,15,7,15) (0,0,0,0)) is assigned to process 13, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,8,-8,0) (55,15,7,15) (0,0,0,0)) is assigned to process 14, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,0,-8,0) (7,7,7,15) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,0,-8,0) (23,7,7,15) (0,0,0,0)) is assigned to process 2, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,0,-8,0) (39,7,7,15) (0,0,0,0)) is assigned to process 4, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,0,-8,0) (47,7,7,15) (0,0,0,0)) is assigned to process 5, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,8,-8,0) (63,15,7,15) (0,0,0,0)) is assigned to process 15, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,16,-8,0) (15,23,7,15) (0,0,0,0)) is assigned to process 17, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,16,-8,0) (23,23,7,15) (0,0,0,0)) is assigned to process 18, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,16,-8,0) (39,23,7,15) (0,0,0,0)) is assigned to process 20, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,16,-8,0) (47,23,7,15) (0,0,0,0)) is assigned to process 21, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,24,-8,0) (15,31,7,15) (0,0,0,0)) is assigned to process 25, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,24,-8,0) (23,31,7,15) (0,0,0,0)) is assigned to process 26, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,24,-8,0) (31,31,7,15) (0,0,0,0)) is assigned to process 27, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,24,-8,0) (55,31,7,15) (0,0,0,0)) is assigned to process 30, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,24,-8,0) (63,31,7,15) (0,0,0,0)) is assigned to process 31, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,0,-8,0) (15,7,7,15) (0,0,0,0)) is assigned to process 1, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,0,-8,0) (31,7,7,15) (0,0,0,0)) is assigned to process 3, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,0,-8,0) (63,7,7,15) (0,0,0,0)) is assigned to process 7, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,8,-8,0) (15,15,7,15) (0,0,0,0)) is assigned to process 9, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,8,-8,0) (23,15,7,15) (0,0,0,0)) is assigned to process 10, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,8,-8,0) (31,15,7,15) (0,0,0,0)) is assigned to process 11, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,16,-8,0) (7,23,7,15) (0,0,0,0)) is assigned to process 16, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,16,-8,0) (31,23,7,15) (0,0,0,0)) is assigned to process 19, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,16,-8,0) (55,23,7,15) (0,0,0,0)) is assigned to process 22, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,16,-8,0) (63,23,7,15) (0,0,0,0)) is assigned to process 23, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,24,-8,0) (7,31,7,15) (0,0,0,0)) is assigned to process 24, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,24,-8,0) (39,31,7,15) (0,0,0,0)) is assigned to process 28, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,24,-8,0) (47,31,7,15) (0,0,0,0)) is assigned to process 29, has 16384 valid cells and 131072 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+Done adding species and constructing coordinates
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+"T0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))
+
+"eT0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+==================================================
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.08))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.08))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+-----------------------------------------------
+===============================================
+Unrecognized collision model; setting model to NULL
+      AMG solver residual = 0.00358854 after 1 iterations
+      AMG solver residual = 0.000298935 after 2 iterations
+      AMG solver residual = 0.00228663 after 1 iterations
+      AMG solver residual = 0.00803394 after 1 iterations
+      AMG solver residual = 0.000282543 after 2 iterations
+  Distribution Function Extrema:
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+      AMG solver residual = 0.00475808 after 1 iterations
+dtStable = 9.89546
+      AMG solver residual = 0.00367059 after 1 iterations
+      AMG solver residual = 0.000327961 after 2 iterations
+      AMG solver residual = 0.00714638 after 1 iterations
+      AMG solver residual = 0.00372198 after 1 iterations
+      AMG solver residual = 0.000347443 after 2 iterations
+      AMG solver residual = 0.00716126 after 1 iterations
+      AMG solver residual = 0.00367397 after 1 iterations
+      AMG solver residual = 0.000324803 after 2 iterations
+      AMG solver residual = 0.00714544 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+ subiteration:1/1
+
+ subiteration:1/1
+Step 1 completed, simulation time is 0.1
+ subiteration:1/1
+      AMG solver residual = 0.00370401 after 1 iterations
+      AMG solver residual = 0.000363363 after 2 iterations
+      AMG solver residual = 0.00691968 after 1 iterations
+      AMG solver residual = 0.00368729 after 1 iterations
+      AMG solver residual = 0.00032642 after 2 iterations
+      AMG solver residual = 0.0071479 after 1 iterations
+      AMG solver residual = 0.00369298 after 1 iterations
+      AMG solver residual = 0.000350319 after 2 iterations
+      AMG solver residual = 0.00715923 after 1 iterations
+      AMG solver residual = 0.00368119 after 1 iterations
+      AMG solver residual = 0.000323588 after 2 iterations
+      AMG solver residual = 0.0071478 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 2 completed, simulation time is 0.2
+      AMG solver residual = 0.00372132 after 1 iterations
+      AMG solver residual = 0.000361997 after 2 iterations
+      AMG solver residual = 0.00692226 after 1 iterations
+      AMG solver residual = 0.00368609 after 1 iterations
+      AMG solver residual = 0.000325756 after 2 iterations
+      AMG solver residual = 0.00715042 after 1 iterations
+      AMG solver residual = 0.00367154 after 1 iterations
+      AMG solver residual = 0.000353176 after 2 iterations
+      AMG solver residual = 0.00715768 after 1 iterations
+      AMG solver residual = 0.00366841 after 1 iterations
+      AMG solver residual = 0.000323884 after 2 iterations
+      AMG solver residual = 0.00715014 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 3 completed, simulation time is 0.3
+      AMG solver residual = 0.00372724 after 1 iterations
+      AMG solver residual = 0.000360624 after 2 iterations
+      AMG solver residual = 0.00692467 after 1 iterations
+      AMG solver residual = 0.00366344 after 1 iterations
+      AMG solver residual = 0.000326974 after 2 iterations
+      AMG solver residual = 0.00715235 after 1 iterations
+      AMG solver residual = 0.00365986 after 1 iterations
+      AMG solver residual = 0.000354975 after 2 iterations
+      AMG solver residual = 0.00715759 after 1 iterations
+      AMG solver residual = 0.00363512 after 1 iterations
+      AMG solver residual = 0.000326316 after 2 iterations
+      AMG solver residual = 0.00715156 after 1 iterations
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 4 completed, simulation time is 0.4
+      AMG solver residual = 0.00371239 after 1 iterations
+      AMG solver residual = 0.000360393 after 2 iterations
+      AMG solver residual = 0.00692562 after 1 iterations
+      AMG solver residual = 0.00362282 after 1 iterations
+      AMG solver residual = 0.000330339 after 2 iterations
+      AMG solver residual = 0.00715323 after 1 iterations
+      AMG solver residual = 0.00365487 after 1 iterations
+      AMG solver residual = 0.000355315 after 2 iterations
+      AMG solver residual = 0.00715932 after 1 iterations
+      AMG solver residual = 0.00358912 after 1 iterations
+      AMG solver residual = 0.000330641 after 2 iterations
+      AMG solver residual = 0.0071521 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 5 completed, simulation time is 0.5
+      AMG solver residual = 0.00367507 after 1 iterations
+      AMG solver residual = 0.00036203 after 2 iterations
+      AMG solver residual = 0.00692489 after 1 iterations
+      AMG solver residual = 0.00357493 after 1 iterations
+      AMG solver residual = 0.000335151 after 2 iterations
+      AMG solver residual = 0.00715352 after 1 iterations
+      AMG solver residual = 0.00364599 after 1 iterations
+      AMG solver residual = 0.000354807 after 2 iterations
+      AMG solver residual = 0.00716239 after 1 iterations
+      AMG solver residual = 0.00354284 after 1 iterations
+      AMG solver residual = 0.000335707 after 2 iterations
+      AMG solver residual = 0.00715253 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 6 completed, simulation time is 0.6
+      AMG solver residual = 0.0036226 after 1 iterations
+      AMG solver residual = 0.000365371 after 2 iterations
+      AMG solver residual = 0.00353212 after 1 iterations
+      AMG solver residual = 0.00033999 after 2 iterations
+      AMG solver residual = 0.00715294 after 1 iterations
+      AMG solver residual = 0.00362139 after 1 iterations
+      AMG solver residual = 0.000354639 after 2 iterations
+      AMG solver residual = 0.00716599 after 1 iterations
+      AMG solver residual = 0.00350654 after 1 iterations
+      AMG solver residual = 0.000339997 after 2 iterations
+      AMG solver residual = 0.00715375 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 7 completed, simulation time is 0.7
+      AMG solver residual = 0.00356759 after 1 iterations
+      AMG solver residual = 0.000369288 after 2 iterations
+      AMG solver residual = 0.00692244 after 1 iterations
+      AMG solver residual = 0.00350147 after 1 iterations
+      AMG solver residual = 0.000343444 after 2 iterations
+      AMG solver residual = 0.00715598 after 1 iterations
+      AMG solver residual = 0.0035749 after 1 iterations
+      AMG solver residual = 0.000355854 after 2 iterations
+      AMG solver residual = 0.0071694 after 1 iterations
+      AMG solver residual = 0.00348255 after 1 iterations
+      AMG solver residual = 0.000342493 after 2 iterations
+      AMG solver residual = 0.00715625 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 8 completed, simulation time is 0.8
+      AMG solver residual = 0.00352073 after 1 iterations
+      AMG solver residual = 0.000372206 after 2 iterations
+      AMG solver residual = 0.00692302 after 1 iterations
+      AMG solver residual = 0.00348078 after 1 iterations
+      AMG solver residual = 0.000344974 after 2 iterations
+      AMG solver residual = 0.00715911 after 1 iterations
+      AMG solver residual = 0.0035097 after 1 iterations
+      AMG solver residual = 0.00035873 after 2 iterations
+      AMG solver residual = 0.00717263 after 1 iterations
+      AMG solver residual = 0.00346397 after 1 iterations
+      AMG solver residual = 0.000343232 after 2 iterations
+      AMG solver residual = 0.00716003 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 9 completed, simulation time is 0.9
+      AMG solver residual = 0.00348324 after 1 iterations
+      AMG solver residual = 0.000373058 after 2 iterations
+      AMG solver residual = 0.00692503 after 1 iterations
+      AMG solver residual = 0.00345866 after 1 iterations
+      AMG solver residual = 0.000345197 after 2 iterations
+      AMG solver residual = 0.00716408 after 1 iterations
+      AMG solver residual = 0.00344029 after 1 iterations
+      AMG solver residual = 0.000362389 after 2 iterations
+      AMG solver residual = 0.00717618 after 1 iterations
+      AMG solver residual = 0.00343842 after 1 iterations
+      AMG solver residual = 0.000343246 after 2 iterations
+      AMG solver residual = 0.00716565 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 10 completed, simulation time is 1
+Writing checkpoint file
+Writing history file
+      AMG solver residual = 0.00345032 after 1 iterations
+      AMG solver residual = 0.000371789 after 2 iterations
+      AMG solver residual = 0.00692765 after 1 iterations
+      AMG solver residual = 0.00342776 after 1 iterations
+      AMG solver residual = 0.000345037 after 2 iterations
+      AMG solver residual = 0.0071694 after 1 iterations
+      AMG solver residual = 0.00337112 after 1 iterations
+      AMG solver residual = 0.000365547 after 2 iterations
+      AMG solver residual = 0.00718012 after 1 iterations
+      AMG solver residual = 0.00339921 after 1 iterations
+      AMG solver residual = 0.000343484 after 2 iterations
+      AMG solver residual = 0.00717141 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 11 completed, simulation time is 1.1
+      AMG solver residual = 0.00340957 after 1 iterations
+      AMG solver residual = 0.0003694 after 2 iterations
+      AMG solver residual = 0.00692952 after 1 iterations
+      AMG solver residual = 0.00337832 after 1 iterations
+      AMG solver residual = 0.000345654 after 2 iterations
+      AMG solver residual = 0.00717536 after 1 iterations
+      AMG solver residual = 0.00331495 after 1 iterations
+      AMG solver residual = 0.000366601 after 2 iterations
+      AMG solver residual = 0.00718507 after 1 iterations
+      AMG solver residual = 0.00334088 after 1 iterations
+      AMG solver residual = 0.000344794 after 2 iterations
+      AMG solver residual = 0.00717798 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 12 completed, simulation time is 1.2
+      AMG solver residual = 0.0033509 after 1 iterations
+      AMG solver residual = 0.000367169 after 2 iterations
+      AMG solver residual = 0.00693011 after 1 iterations
+      AMG solver residual = 0.00331118 after 1 iterations
+      AMG solver residual = 0.000347398 after 2 iterations
+      AMG solver residual = 0.00718213 after 1 iterations
+      AMG solver residual = 0.00327076 after 1 iterations
+      AMG solver residual = 0.000364982 after 2 iterations
+      AMG solver residual = 0.00719066 after 1 iterations
+      AMG solver residual = 0.00326874 after 1 iterations
+      AMG solver residual = 0.000347033 after 2 iterations
+      AMG solver residual = 0.00718558 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 13 completed, simulation time is 1.3
+      AMG solver residual = 0.00327272 after 1 iterations
+      AMG solver residual = 0.000365871 after 2 iterations
+      AMG solver residual = 0.00692973 after 1 iterations
+      AMG solver residual = 0.00323512 after 1 iterations
+      AMG solver residual = 0.00034969 after 2 iterations
+      AMG solver residual = 0.00718997 after 1 iterations
+      AMG solver residual = 0.00322916 after 1 iterations
+      AMG solver residual = 0.000361257 after 2 iterations
+      AMG solver residual = 0.00719614 after 1 iterations
+      AMG solver residual = 0.00319392 after 1 iterations
+      AMG solver residual = 0.000349209 after 2 iterations
+      AMG solver residual = 0.00719432 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 14 completed, simulation time is 1.4
+      AMG solver residual = 0.00318312 after 1 iterations
+      AMG solver residual = 0.00036532 after 2 iterations
+      AMG solver residual = 0.00692943 after 1 iterations
+      AMG solver residual = 0.00316218 after 1 iterations
+      AMG solver residual = 0.000351273 after 2 iterations
+      AMG solver residual = 0.00719884 after 1 iterations
+      AMG solver residual = 0.0031787 after 1 iterations
+      AMG solver residual = 0.000356648 after 2 iterations
+      AMG solver residual = 0.00720097 after 1 iterations
+      AMG solver residual = 0.00312743 after 1 iterations
+      AMG solver residual = 0.000349971 after 2 iterations
+      AMG solver residual = 0.00720404 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 15 completed, simulation time is 1.5
+      AMG solver residual = 0.00309562 after 1 iterations
+      AMG solver residual = 0.000364449 after 2 iterations
+      AMG solver residual = 0.00693039 after 1 iterations
+      AMG solver residual = 0.00310112 after 1 iterations
+      AMG solver residual = 0.000350882 after 2 iterations
+      AMG solver residual = 0.00720848 after 1 iterations
+      AMG solver residual = 0.00311304 after 1 iterations
+      AMG solver residual = 0.000352303 after 2 iterations
+      AMG solver residual = 0.00720545 after 1 iterations
+      AMG solver residual = 0.0030743 after 1 iterations
+      AMG solver residual = 0.00034833 after 2 iterations
+      AMG solver residual = 0.00721462 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 16 completed, simulation time is 1.6
+      AMG solver residual = 0.00302156 after 1 iterations
+      AMG solver residual = 0.000361983 after 2 iterations
+      AMG solver residual = 0.00693355 after 1 iterations
+      AMG solver residual = 0.00305299 after 1 iterations
+      AMG solver residual = 0.000347904 after 2 iterations
+      AMG solver residual = 0.00721883 after 1 iterations
+      AMG solver residual = 0.00303476 after 1 iterations
+      AMG solver residual = 0.000348723 after 2 iterations
+      AMG solver residual = 0.00721154 after 1 iterations
+      AMG solver residual = 0.00303157 after 1 iterations
+      AMG solver residual = 0.000344123 after 2 iterations
+      AMG solver residual = 0.00722697 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 17 completed, simulation time is 1.7
+      AMG solver residual = 0.0029636 after 1 iterations
+      AMG solver residual = 0.00035726 after 2 iterations
+      AMG solver residual = 0.00693984 after 1 iterations
+      AMG solver residual = 0.00301158 after 1 iterations
+      AMG solver residual = 0.000342612 after 2 iterations
+      AMG solver residual = 0.00723143 after 1 iterations
+      AMG solver residual = 0.00295408 after 1 iterations
+      AMG solver residual = 0.000345571 after 2 iterations
+      AMG solver residual = 0.0072241 after 1 iterations
+      AMG solver residual = 0.00299128 after 1 iterations
+      AMG solver residual = 0.000337955 after 2 iterations
+      AMG solver residual = 0.00724562 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 18 completed, simulation time is 1.8
+      AMG solver residual = 0.00291495 after 1 iterations
+      AMG solver residual = 0.000350555 after 2 iterations
+      AMG solver residual = 0.00695169 after 1 iterations
+      AMG solver residual = 0.00296843 after 1 iterations
+      AMG solver residual = 0.000335859 after 2 iterations
+      AMG solver residual = 0.00725252 after 1 iterations
+      AMG solver residual = 0.00288355 after 1 iterations
+      AMG solver residual = 0.000341874 after 2 iterations
+      AMG solver residual = 0.00725386 after 1 iterations
+      AMG solver residual = 0.00294651 after 1 iterations
+      AMG solver residual = 0.0003307 after 2 iterations
+      AMG solver residual = 0.00728413 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 19 completed, simulation time is 1.9
+      AMG solver residual = 0.0028648 after 1 iterations
+      AMG solver residual = 0.00034271 after 2 iterations
+      AMG solver residual = 0.00697618 after 1 iterations
+      AMG solver residual = 0.00291897 after 1 iterations
+      AMG solver residual = 0.000328471 after 2 iterations
+      AMG solver residual = 0.00729955 after 1 iterations
+      AMG solver residual = 0.00283178 after 1 iterations
+      AMG solver residual = 0.000336408 after 2 iterations
+      AMG solver residual = 0.00732454 after 1 iterations
+      AMG solver residual = 0.00289685 after 1 iterations
+      AMG solver residual = 0.000322815 after 2 iterations
+      AMG solver residual = 0.00737549 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 20 completed, simulation time is 2
+Writing checkpoint file
+Writing history file
+      AMG solver residual = 0.00280613 after 1 iterations
+      AMG solver residual = 0.000334399 after 2 iterations
+      AMG solver residual = 0.00703125 after 1 iterations
+      AMG solver residual = 0.00286672 after 1 iterations
+      AMG solver residual = 0.000320581 after 2 iterations
+      AMG solver residual = 0.00741285 after 1 iterations
+      AMG solver residual = 0.00280044 after 1 iterations
+      AMG solver residual = 0.000327856 after 2 iterations
+      AMG solver residual = 0.00748697 after 1 iterations
+      AMG solver residual = 0.00285104 after 1 iterations
+      AMG solver residual = 0.000313642 after 2 iterations
+      AMG solver residual = 0.00758689 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 21 completed, simulation time is 2.1
+      AMG solver residual = 0.00273918 after 1 iterations
+      AMG solver residual = 0.000325293 after 2 iterations
+      AMG solver residual = 0.007157 after 1 iterations
+      AMG solver residual = 0.00282146 after 1 iterations
+      AMG solver residual = 0.000310891 after 2 iterations
+      AMG solver residual = 0.00767055 after 1 iterations
+      AMG solver residual = 0.00278844 after 1 iterations
+      AMG solver residual = 0.00031447 after 2 iterations
+      AMG solver residual = 0.00783404 after 1 iterations
+      AMG solver residual = 0.00282427 after 1 iterations
+      AMG solver residual = 0.000300825 after 2 iterations
+      AMG solver residual = 0.008023 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 22 completed, simulation time is 2.2
+      AMG solver residual = 0.00267766 after 1 iterations
+      AMG solver residual = 0.00031379 after 2 iterations
+      AMG solver residual = 0.00743427 after 1 iterations
+      AMG solver residual = 0.00280916 after 1 iterations
+      AMG solver residual = 0.000296856 after 2 iterations
+      AMG solver residual = 0.00817808 after 1 iterations
+      AMG solver residual = 0.0027973 after 1 iterations
+      AMG solver residual = 0.000293793 after 2 iterations
+      AMG solver residual = 0.0084789 after 1 iterations
+      AMG solver residual = 0.00285046 after 1 iterations
+      AMG solver residual = 0.000281017 after 2 iterations
+      AMG solver residual = 0.00876047 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 23 completed, simulation time is 2.3
+      AMG solver residual = 0.00264038 after 1 iterations
+      AMG solver residual = 0.000296379 after 2 iterations
+      AMG solver residual = 0.00798322 after 1 iterations
+      AMG solver residual = 0.00285775 after 1 iterations
+      AMG solver residual = 0.000274713 after 2 iterations
+      AMG solver residual = 0.00898799 after 1 iterations
+      AMG solver residual = 0.00285046 after 1 iterations
+      AMG solver residual = 0.000263837 after 2 iterations
+      AMG solver residual = 0.00941964 after 1 iterations
+      AMG solver residual = 0.00296972 after 1 iterations
+      AMG solver residual = 0.000252103 after 2 iterations
+      AMG solver residual = 0.00971538 after 1 iterations
+      AMG solver residual = 0.00585571 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 24 completed, simulation time is 2.4
+      AMG solver residual = 0.00265387 after 1 iterations
+      AMG solver residual = 0.000267857 after 2 iterations
+      AMG solver residual = 0.00917455 after 1 iterations
+      AMG solver residual = 0.00301366 after 1 iterations
+      AMG solver residual = 0.000243702 after 2 iterations
+      AMG solver residual = 0.00996116 after 1 iterations
+      AMG solver residual = 0.00593536 after 1 iterations
+      AMG solver residual = 0.00301043 after 1 iterations
+      AMG solver residual = 0.000227246 after 2 iterations
+      AMG solver residual = 0.000156254 after 2 iterations
+      AMG solver residual = 0.00325356 after 1 iterations
+      AMG solver residual = 0.000218103 after 2 iterations
+      AMG solver residual = 0.000152225 after 2 iterations
+      AMG solver residual = 0.00561809 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 25 completed, simulation time is 2.5
+      AMG solver residual = 0.0027705 after 1 iterations
+      AMG solver residual = 0.000231996 after 2 iterations
+      AMG solver residual = 0.000159542 after 2 iterations
+      AMG solver residual = 0.003358 after 1 iterations
+      AMG solver residual = 0.000209608 after 2 iterations
+      AMG solver residual = 0.000149897 after 2 iterations
+      AMG solver residual = 0.00578049 after 1 iterations
+      AMG solver residual = 0.00340178 after 1 iterations
+      AMG solver residual = 0.000192787 after 2 iterations
+      AMG solver residual = 0.000146498 after 2 iterations
+      AMG solver residual = 0.00381934 after 1 iterations
+      AMG solver residual = 0.000187708 after 2 iterations
+      AMG solver residual = 0.000144287 after 2 iterations
+      AMG solver residual = 0.00624154 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 26 completed, simulation time is 2.6
+      AMG solver residual = 0.00308424 after 1 iterations
+      AMG solver residual = 0.000195752 after 2 iterations
+      AMG solver residual = 0.000148444 after 2 iterations
+      AMG solver residual = 0.00402112 after 1 iterations
+      AMG solver residual = 0.000181186 after 2 iterations
+      AMG solver residual = 0.000142774 after 2 iterations
+      AMG solver residual = 0.0063943 after 1 iterations
+      AMG solver residual = 0.0041949 after 1 iterations
+      AMG solver residual = 0.000168153 after 2 iterations
+      AMG solver residual = 0.000140244 after 2 iterations
+      AMG solver residual = 0.00481964 after 1 iterations
+      AMG solver residual = 0.000166603 after 2 iterations
+      AMG solver residual = 0.000139503 after 2 iterations
+      AMG solver residual = 0.00674699 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+ subiteration:1/1
+
+ subiteration:1/1
+Step 27 completed, simulation time is 2.7
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+      AMG solver residual = 0.00375239 after 1 iterations
+      AMG solver residual = 0.000168702 after 2 iterations
+      AMG solver residual = 0.00014075 after 2 iterations
+      AMG solver residual = 0.00515521 after 1 iterations
+      AMG solver residual = 0.000162564 after 2 iterations
+      AMG solver residual = 0.000138654 after 2 iterations
+      AMG solver residual = 0.00684898 after 1 iterations
+      AMG solver residual = 0.00553607 after 1 iterations
+      AMG solver residual = 0.000154078 after 2 iterations
+      AMG solver residual = 0.000136771 after 2 iterations
+      AMG solver residual = 0.00704025 after 1 iterations
+      AMG solver residual = 0.00634382 after 1 iterations
+      AMG solver residual = 0.000154453 after 2 iterations
+      AMG solver residual = 0.000136862 after 2 iterations
+      AMG solver residual = 0.00703555 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 28 completed, simulation time is 2.8
+      AMG solver residual = 0.00494243 after 1 iterations
+      AMG solver residual = 0.000153179 after 2 iterations
+      AMG solver residual = 0.000136454 after 2 iterations
+      AMG solver residual = 0.00680556 after 1 iterations
+      AMG solver residual = 0.000152268 after 2 iterations
+      AMG solver residual = 0.000136353 after 2 iterations
+      AMG solver residual = 0.00707999 after 1 iterations
+      AMG solver residual = 0.00736847 after 1 iterations
+      AMG solver residual = 0.000147034 after 2 iterations
+      AMG solver residual = 0.000134723 after 2 iterations
+      AMG solver residual = 0.007162 after 1 iterations
+      AMG solver residual = 0.00823129 after 1 iterations
+      AMG solver residual = 0.000148196 after 2 iterations
+      AMG solver residual = 0.000135181 after 2 iterations
+      AMG solver residual = 0.00712206 after 1 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 29 completed, simulation time is 2.9
+      AMG solver residual = 0.00667757 after 1 iterations
+      AMG solver residual = 0.000145669 after 2 iterations
+      AMG solver residual = 0.000134119 after 2 iterations
+      AMG solver residual = 0.00871972 after 1 iterations
+      AMG solver residual = 0.000147087 after 2 iterations
+      AMG solver residual = 0.000134787 after 2 iterations
+      AMG solver residual = 0.00712265 after 1 iterations
+      AMG solver residual = 0.00928517 after 1 iterations
+      AMG solver residual = 0.000143672 after 2 iterations
+      AMG solver residual = 0.000133166 after 2 iterations
+      AMG solver residual = 0.00712875 after 1 iterations
+      AMG solver residual = 0.000110396 after 2 iterations
+      AMG solver residual = 0.00013574 after 2 iterations
+      AMG solver residual = 0.000139375 after 2 iterations
+      AMG solver residual = 0.000141878 after 2 iterations
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.0149836 [max]	-5.1273e-10 [min]
+
+Step 30 completed, simulation time is 3
+Writing checkpoint file
+Writing history file

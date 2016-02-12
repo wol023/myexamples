@@ -1,0 +1,1688 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+Constructing slab geometry...
+xmax = 0.02, ymax = 0.02
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+Done constructing slab geometry
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+   Configuration space box ((0,0) (7,15) (0,0)) is assigned to process 0
+   Configuration space box ((8,0) (15,15) (0,0)) is assigned to process 1
+   Configuration space box ((16,0) (23,15) (0,0)) is assigned to process 2
+   Configuration space box ((24,0) (31,15) (0,0)) is assigned to process 3
+   Configuration space box ((32,0) (39,15) (0,0)) is assigned to process 4
+   Configuration space box ((40,0) (47,15) (0,0)) is assigned to process 5
+   Configuration space box ((48,0) (55,15) (0,0)) is assigned to process 6
+   Configuration space box ((56,0) (63,15) (0,0)) is assigned to process 7
+   Configuration space box ((0,16) (7,31) (0,0)) is assigned to process 8
+   Configuration space box ((8,16) (15,31) (0,0)) is assigned to process 9
+   Configuration space box ((16,16) (23,31) (0,0)) is assigned to process 10
+   Configuration space box ((24,16) (31,31) (0,0)) is assigned to process 11
+   Configuration space box ((32,16) (39,31) (0,0)) is assigned to process 12
+   Configuration space box ((40,16) (47,31) (0,0)) is assigned to process 13
+   Configuration space box ((48,16) (55,31) (0,0)) is assigned to process 14
+   Configuration space box ((56,16) (63,31) (0,0)) is assigned to process 15
+   Configuration space box ((0,32) (7,47) (0,0)) is assigned to process 16
+   Configuration space box ((8,32) (15,47) (0,0)) is assigned to process 17
+   Configuration space box ((16,32) (23,47) (0,0)) is assigned to process 18
+   Configuration space box ((24,32) (31,47) (0,0)) is assigned to process 19
+   Configuration space box ((32,32) (39,47) (0,0)) is assigned to process 20
+   Configuration space box ((40,32) (47,47) (0,0)) is assigned to process 21
+   Configuration space box (**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0490874
+**** dimensions = 64, 128
+   Phase space box ((48,64,-32,0) (55,79,31,31) (0,0,0,0)) is assigned to process 38, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((56,64,-32,0) (63,79,31,31) (0,0,0,0)) is assigned to process 39, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((48,80,-32,0) (55,95,31,31) (0,0,0,0)) is assigned to process 46, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((8,112,-32,0) (15,127,31,31) (0,0,0,0)) is assigned to process 57, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((0,64,-32,0) (7,79,31,31) (0,0,0,0)) is assigned to process 32, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((8,64,-32,0) (15,79,31,31) (0,0,0,0)) is assigned to process 33, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((16,64,-32,0) (23,79,31,31) (0,0,0,0)) is assigned to process 34, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((24,64,-32,0) (31,79,31,31) (0,0,0,0)) is assigned to process 35, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((32,64,-32,0) (39,79,31,31) (0,0,0,0)) is assigned to process 36, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((40,64,-32,0) (47,79,31,31) (0,0,0,0)) is assigned to process 37, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((0,80,-32,0) (7,95,31,31) (0,0,0,0)) is assigned to process 40, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((8,80,-32,0) (15,95,31,31) (0,0,0,0)) is assigned to process 41, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((16,80,-32,0) (23,95,31,31) (0,0,0,0)) is assigned to process 42, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((24,80,-32,0) (31,95,31,31) (0,0,0,0)) is assigned to process 43, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((32,80,-32,0) (39,95,31,31) (0,0,0,0)) is assigned to process 44, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((40,80,-32,0) (47,95,31,31) (0,0,0,0)) is assigned to process 45, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((56,80,-32,0) (63,95,31,31) (0,0,0,0)) is assigned to process 47, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((0,96,-32,0) (7,111,31,31) (0,0,0,0)) is assigned to process 48, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((8,96,-32,0) (15,111,31,31) (0,0,0,0)) is assigned to process 49, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((16,96,-32,0) (23,111,31,31) (0,0,0,0)) is assigned to process 50, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((24,96,-32,0) (31,111,31,31) (0,0,0,0)) is assigned to process 51, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((32,96,-32,0) (39,111,31,31) (0,0,0,0)) is assigned to process 52, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((40,96,-32,0) (47,111,31,31) (0,0,0,0)) is assigned to process 53, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((48,96,-32,0) (55,111,31,31) (0,0,0,0)) is assigned to process 54, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((56,96,-32,0) (63,111,31,31) (0,0,0,0)) is assigned to process 55, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((0,112,-32,0) (7,127,31,31) (0,0,0,0)) is assigned to process 56, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((16,112,-32,0) (23,127,31,31) (0,0,0,0)) is assigned to process 58, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((24,112,-32,0) (31,127,31,31) (0,0,0,0)) is assigned to process 59, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((32,112,-32,0) (39,127,31,31) (0,0,0,0)) is assigned to process 60, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((40,112,-32,0) (47,127,31,31) (0,0,0,0)) is assigned to process 61, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((48,112,-32,0) (55,127,31,31) (0,0,0,0)) is assigned to process 62, has 262144 valid cells and 843776 ghost cells
+(48,32) (55,47) (0,0)) is assigned to process 22
+   Configuration space box ((56,32) (63,47) (0,0)) is assigned to process 23
+   Configuration space box ((0,48) (7,63) (0,0)) is assigned to process 24
+   Configuration space box ((8,48) (15,63) (0,0)) is assigned to process 25
+   Configuration space box ((16,48) (23,63) (0,0)) is assigned to process 26
+   Configuration space box ((24,48) (31,63) (0,0)) is assigned to process 27
+   Phase space box ((56,112,-32,0) (63,127,31,31) (0,0,0,0)) is assigned to process 63, has 262144 valid cells and 843776 ghost cells
+   Configuration space box ((32,48) (39,63) (0,0)) is assigned to process 28
+   Configuration space box ((40,48) (47,63) (0,0)) is assigned to process 29
+   Configuration space box ((48,48) (55,63) (0,0)) is assigned to process 30
+   Configuration space box ((56,48) (63,63) (0,0)) is assigned to process 31
+   Configuration space box ((0,64) (7,79) (0,0)) is assigned to process 32
+   Configuration space box ((8,64) (15,79) (0,0)) is assigned to process 33
+   Configuration space box ((16,64) (23,79) (0,0)) is assigned to process 34
+   Configuration space box ((24,64) (31,79) (0,0)) is assigned to process 35
+   Configuration space box ((32,64) (39,79) (0,0)) is assigned to process 36
+   Configuration space box ((40,64) (47,79) (0,0)) is assigned to process 37
+   Configuration space box ((48,64) (55,79) (0,0)) is assigned to process 38
+   Configuration space box ((56,64) (63,79) (0,0)) is assigned to process 39
+   Configuration space box ((0,80) (7,95) (0,0)) is assigned to process 40
+   Configuration space box ((8,80) (15,95) (0,0)) is assigned to process 41
+   Configuration space box ((16,80) (23,95) (0,0)) is assigned to process 42
+   Configuration space box ((24,80) (31,95) (0,0)) is assigned to process 43
+   Configuration space box ((32,80) (39,95) (0,0)) is assigned to process 44
+   Configuration space box ((40,80) (47,95) (0,0)) is assigned to process 45
+   Configuration space box ((48,80) (55,95) (0,0)) is assigned to process 46
+   Configuration space box ((56,80) (63,95) (0,0)) is assigned to process 47
+   Configuration space box ((0,96) (7,111) (0,0)) is assigned to process 48
+   Configuration space box ((8,96) (15,111) (0,0)) is assigned to process 49
+   Configuration space box ((16,96) (23,111) (0,0)) is assigned to process 50
+   Configuration space box ((24,96) (31,111) (0,0)) is assigned to process 51
+   Configuration space box ((32,96) (39,111) (0,0)) is assigned to process 52
+   Configuration space box ((40,96) (47,111) (0,0)) is assigned to process 53
+   Configuration space box ((48,96) (55,111) (0,0)) is assigned to process 54
+   Configuration space box ((56,96) (63,111) (0,0)) is assigned to process 55
+   Configuration space box ((0,112) (7,127) (0,0)) is assigned to process 56
+   Configuration space box ((8,112) (15,127) (0,0)) is assigned to process 57
+   Configuration space box ((16,112) (23,127) (0,0)) is assigned to process 58
+   Configuration space box ((24,112) (31,127) (0,0)) is assigned to process 59
+   Configuration space box ((32,112) (39,127) (0,0)) is assigned to process 60
+   Configuration space box ((40,112) (47,127) (0,0)) is assigned to process 61
+   Configuration space box ((48,112) (55,127) (0,0)) is assigned to process 62
+   Configuration space box ((56,112) (63,127) (0,0)) is assigned to process 63
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-32,0) (-25,7) (0,0)) is assigned to process 0
+   Velocity space box ((-24,0) (-17,7) (0,0)) is assigned to process 1
+   Velocity space box ((-16,0) (-9,7) (0,0)) is assigned to process 2
+   Velocity space box ((-8,0) (-1,7) (0,0)) is assigned to process 3
+   Velocity space box ((0,0) (7,7) (0,0)) is assigned to process 4
+   Velocity space box ((8,0) (15,7) (0,0)) is assigned to process 5
+   Velocity space box ((16,0) (23,7) (0,0)) is assigned to process 6
+   Velocity space box ((24,0) (31,7) (0,0)) is assigned to process 7
+   Velocity space box ((-32,8) (-25,15) (0,0)) is assigned to process 8
+   Velocity space box ((-24,8) (-17,15) (0,0)) is assigned to process 9
+   Velocity space box ((-16,8) (-9,15) (0,0)) is assigned to process 10
+   Velocity space box ((-8,8) (-1,15) (0,0)) is assigned to process 11
+   Velocity space box ((0,8) (7,15) (0,0)) is assigned to process 12
+   Velocity space box ((8,8) (15,15) (0,0)) is assigned to process 13
+   Velocity space box ((16,8) (23,15) (0,0)) is assigned to process 14
+   Velocity space box ((24,8) (31,15) (0,0)) is assigned to process 15
+   Velocity space box ((-32,16) (-25,23) (0,0)) is assigned to process 16
+   Velocity space box ((-24,16) (-17,23) (0,0)) is assigned to process 17
+   Velocity space box ((-16,16) (-9,23) (0,0)) is assigned to process 18
+   Velocity space box ((-8,16) (-1,23) (0,0)) is assigned to process 19
+   Velocity space box ((0,16) (7,23) (0,0)) is assigned to process 20
+   Velocity space box ((8,16) (15,23) (0,0)) is assigned to process 21
+   Velocity space box ((16,16) (23,23) (0,0)) is assigned to process 22
+   Velocity space box ((24,16) (31,23) (0,0)) is assigned to process 23
+   Velocity space box ((-32,24) (-25,31) (0,0)) is assigned to process 24
+   Velocity space box ((-24,24) (-17,31) (0,0)) is assigned to process 25
+   Velocity space box ((-16,24) (-9,31) (0,0)) is assigned to process 26
+   Velocity space box ((-8,24) (-1,31) (0,0)) is assigned to process 27
+   Velocity space box ((0,24) (7,31) (0,0)) is assigned to process 28
+   Velocity space box ((8,24) (15,31) (0,0)) is assigned to process 29
+   Velocity space box ((16,24) (23,31) (0,0)) is assigned to process 30
+   Velocity space box ((24,24) (31,31) (0,0)) is assigned to process 31
+   Phase space box ((0,0,-32,0) (7,15,31,31) (0,0,0,0)) is assigned to process 0, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((16,0,-32,0) (23,15,31,31) (0,0,0,0)) is assigned to process 2, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((8,16,-32,0) (15,31,31,31) (0,0,0,0)) is assigned to process 9, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((32,48,-32,0) (39,63,31,31) (0,0,0,0)) is assigned to process 28, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((40,48,-32,0) (47,63,31,31) (0,0,0,0)) is assigned to process 29, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((48,48,-32,0) (55,63,31,31) (0,0,0,0)) is assigned to process 30, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((24,0,-32,0) (31,15,31,31) (0,0,0,0)) is assigned to process 3, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((32,0,-32,0) (39,15,31,31) (0,0,0,0)) is assigned to process 4, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((48,0,-32,0) (55,15,31,31) (0,0,0,0)) is assigned to process 6, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((56,0,-32,0) (63,15,31,31) (0,0,0,0)) is assigned to process 7, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((16,16,-32,0) (23,31,31,31) (0,0,0,0)) is assigned to process 10, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((24,16,-32,0) (31,31,31,31) (0,0,0,0)) is assigned to process 11, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((32,16,-32,0) (39,31,31,31) (0,0,0,0)) is assigned to process 12, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((40,16,-32,0) (47,31,31,31) (0,0,0,0)) is assigned to process 13, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((56,16,-32,0) (63,31,31,31) (0,0,0,0)) is assigned to process 15, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((8,32,-32,0) (15,47,31,31) (0,0,0,0)) is assigned to process 17, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((16,32,-32,0) (23,47,31,31) (0,0,0,0)) is assigned to process 18, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((24,32,-32,0) (31,47,31,31) (0,0,0,0)) is assigned to process 19, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((32,32,-32,0) (39,47,31,31) (0,0,0,0)) is assigned to process 20, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((40,32,-32,0) (47,47,31,31) (0,0,0,0)) is assigned to process 21, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((48,32,-32,0) (55,47,31,31) (0,0,0,0)) is assigned to process 22, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((56,32,-32,0) (63,47,31,31) (0,0,0,0)) is assigned to process 23, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((0,48,-32,0) (7,63,31,31) (0,0,0,0)) is assigned to process 24, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((8,48,-32,0) (15,63,31,31) (0,0,0,0)) is assigned to process 25, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((16,48,-32,0) (23,63,31,31) (0,0,0,0)) is assigned to process 26, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((24,48,-32,0) (31,63,31,31) (0,0,0,0)) is assigned to process 27, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((56,48,-32,0) (63,63,31,31) (0,0,0,0)) is assigned to process 31, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((8,0,-32,0) (15,15,31,31) (0,0,0,0)) is assigned to process 1, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((40,0,-32,0) (47,15,31,31) (0,0,0,0)) is assigned to process 5, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((0,16,-32,0) (7,31,31,31) (0,0,0,0)) is assigned to process 8, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((48,16,-32,0) (55,31,31,31) (0,0,0,0)) is assigned to process 14, has 262144 valid cells and 843776 ghost cells
+   Phase space box ((0,32,-32,0) (7,47,31,31) (0,0,0,0)) is assigned to process 16, has 262144 valid cells and 843776 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+Done adding species and constructing coordinates
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+"T0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+"eT0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+Time integration method: rk (4)
+      AMG solver residual = 0.00138065 after 2 iterations
+      AMG solver residual = 0.00132593 after 2 iterations
+      AMG solver residual = 0.00273259 after 2 iterations
+  Distribution Function Extrema:
+    Species 0:	0.000441842 [max]	-1.8262e-36 [min]
+
+
+Step 1
+      AMG solver residual = 0.00660887 after 1 iterations
+  --
+  Specified time step is higher than stable time step. Using subiterations.
+  1033 subiterations will be made with sub_dt = 4.84027e-05
+  You may disable this by setting simulation.fixed_dt_subiteration = false.
+  --
+  --
+  Subiteration:1 of 1033
+      AMG solver residual = 0.000571667 after 2 iterations
+      AMG solver residual = 0.00335962 after 2 iterations
+      AMG solver residual = 0.000448516 after 2 iterations
+      AMG solver residual = 0.000573047 after 2 iterations
+      AMG solver residual = 0.00335612 after 2 iterations
+  --
+  Subiteration:2 of 1033
+      AMG solver residual = 0.0005737 after 2 iterations
+      AMG solver residual = 0.00335005 after 2 iterations
+      AMG solver residual = 0.000447473 after 2 iterations
+      AMG solver residual = 0.00057474 after 2 iterations
+      AMG solver residual = 0.00334253 after 2 iterations
+  --
+  Subiteration:3 of 1033
+      AMG solver residual = 0.000574964 after 2 iterations
+      AMG solver residual = 0.00333241 after 2 iterations
+      AMG solver residual = 0.000449998 after 2 iterations
+      AMG solver residual = 0.000575581 after 2 iterations
+      AMG solver residual = 0.00332097 after 2 iterations
+  --
+  Subiteration:4 of 1033
+      AMG solver residual = 0.000575389 after 2 iterations
+      AMG solver residual = 0.003307 after 2 iterations
+      AMG solver residual = 0.000456054 after 2 iterations
+      AMG solver residual = 0.000575618 after 2 iterations
+      AMG solver residual = 0.0032919 after 2 iterations
+  --
+  Subiteration:5 of 1033
+      AMG solver residual = 0.000575048 after 2 iterations
+      AMG solver residual = 0.00327433 after 2 iterations
+      AMG solver residual = 0.000465515 after 2 iterations
+      AMG solver residual = 0.000574952 after 2 iterations
+      AMG solver residual = 0.00325589 after 2 iterations
+  --
+  Subiteration:6 of 1033
+      AMG solver residual = 0.000574069 after 2 iterations
+      AMG solver residual = 0.00323507 after 2 iterations
+      AMG solver residual = 0.000478093 after 2 iterations
+      AMG solver residual = 0.000573735 after 2 iterations
+      AMG solver residual = 0.00321372 after 2 iterations
+  --
+  Subiteration:7 of 1033
+      AMG solver residual = 0.000572628 after 2 iterations
+      AMG solver residual = 0.0031901 after 2 iterations
+      AMG solver residual = 0.000493372 after 2 iterations
+      AMG solver residual = 0.000572171 after 2 iterations
+      AMG solver residual = 0.00316645 after 2 iterations
+  --
+  Subiteration:8 of 1033
+      AMG solver residual = 0.000570951 after 2 iterations
+      AMG solver residual = 0.00314067 after 2 iterations
+      AMG solver residual = 0.000510855 after 2 iterations
+      AMG solver residual = 0.000570507 after 2 iterations
+      AMG solver residual = 0.00311554 after 2 iterations
+  --
+  Subiteration:9 of 1033
+      AMG solver residual = 0.000569306 after 2 iterations
+      AMG solver residual = 0.00308845 after 2 iterations
+      AMG solver residual = 0.000529996 after 2 iterations
+      AMG solver residual = 0.000569028 after 2 iterations
+      AMG solver residual = 0.00306291 after 2 iterations
+  --
+  Subiteration:10 of 1033
+      AMG solver residual = 0.000567994 after 2 iterations
+      AMG solver residual = 0.00303561 after 2 iterations
+      AMG solver residual = 0.000550243 after 2 iterations
+      AMG solver residual = 0.000568046 after 2 iterations
+      AMG solver residual = 0.00301098 after 2 iterations
+  --
+  Subiteration:11 of 1033
+      AMG solver residual = 0.000567336 after 2 iterations
+      AMG solver residual = 0.00298484 after 2 iterations
+      AMG solver residual = 0.000571067 after 2 iterations
+      AMG solver residual = 0.000567889 after 2 iterations
+      AMG solver residual = 0.00296268 after 2 iterations
+  --
+  Subiteration:12 of 1033
+      AMG solver residual = 0.000567662 after 2 iterations
+      AMG solver residual = 0.00293924 after 2 iterations
+      AMG solver residual = 0.000591973 after 2 iterations
+      AMG solver residual = 0.000568881 after 2 iterations
+      AMG solver residual = 0.00292123 after 2 iterations
+  --
+  Subiteration:13 of 1033
+      AMG solver residual = 0.000569289 after 2 iterations
+      AMG solver residual = 0.00290211 after 2 iterations
+      AMG solver residual = 0.000612508 after 2 iterations
+      AMG solver residual = 0.000571327 after 2 iterations
+      AMG solver residual = 0.00288985 after 2 iterations
+  --
+  Subiteration:14 of 1033
+      AMG solver residual = 0.000572508 after 2 iterations
+      AMG solver residual = 0.00287655 after 2 iterations
+      AMG solver residual = 0.000632276 after 2 iterations
+      AMG solver residual = 0.000575491 after 2 iterations
+      AMG solver residual = 0.00287135 after 2 iterations
+  --
+  Subiteration:15 of 1033
+      AMG solver residual = 0.000577559 after 2 iterations
+      AMG solver residual = 0.00286502 after 2 iterations
+      AMG solver residual = 0.000650925 after 2 iterations
+      AMG solver residual = 0.000581323 after 2 iterations
+      AMG solver residual = 0.00287172 after 2 iterations
+  --
+  Subiteration:16 of 1033
+      AMG solver residual = 0.000584312 after 2 iterations
+      AMG solver residual = 0.00287418 after 2 iterations
+      AMG solver residual = 0.000667071 after 2 iterations
+      AMG solver residual = 0.000589361 after 2 iterations
+      AMG solver residual = 0.00288624 after 2 iterations
+  --
+  Subiteration:17 of 1033
+      AMG solver residual = 0.000593352 after 2 iterations
+      AMG solver residual = 0.00289619 after 2 iterations
+      AMG solver residual = 0.000682597 after 2 iterations
+      AMG solver residual = 0.000599504 after 2 iterations
+      AMG solver residual = 0.00291554 after 2 iterations
+  --
+  Subiteration:18 of 1033
+      AMG solver residual = 0.000604503 after 2 iterations
+      AMG solver residual = 0.0029322 after 2 iterations
+      AMG solver residual = 0.000696341 after 2 iterations
+      AMG solver residual = 0.00061173 after 2 iterations
+      AMG solver residual = 0.00295759 after 2 iterations
+  --
+  Subiteration:19 of 1033
+      AMG solver residual = 0.000617703 after 2 iterations
+      AMG solver residual = 0.00297969 after 2 iterations
+      AMG solver residual = 0.000708178 after 2 iterations
+      AMG solver residual = 0.000625939 after 2 iterations
+      AMG solver residual = 0.00300948 after 2 iterations
+  --
+  Subiteration:20 of 1033
+      AMG solver residual = 0.000632832 after 2 iterations
+      AMG solver residual = 0.00303555 after 2 iterations
+      AMG solver residual = 0.000718039 after 2 iterations
+      AMG solver residual = 0.00064198 after 2 iterations
+      AMG solver residual = 0.00306801 after 2 iterations
+  --
+  Subiteration:21 of 1033
+      AMG solver residual = 0.00064967 after 2 iterations
+      AMG solver residual = 0.00309638 after 2 iterations
+      AMG solver residual = 0.000725889 after 2 iterations
+      AMG solver residual = 0.000659601 after 2 iterations
+      AMG solver residual = 0.00312987 after 2 iterations
+  --
+  Subiteration:22 of 1033
+      AMG solver residual = 0.00066798 after 2 iterations
+      AMG solver residual = 0.00315915 after 2 iterations
+      AMG solver residual = 0.00073176 after 2 iterations
+      AMG solver residual = 0.000678552 after 2 iterations
+      AMG solver residual = 0.00319229 after 2 iterations
+  --
+  Subiteration:23 of 1033
+      AMG solver residual = 0.000687484 after 2 iterations
+      AMG solver residual = 0.00322127 after 2 iterations
+      AMG solver residual = 0.000735734 after 2 iterations
+      AMG solver residual = 0.000698539 after 2 iterations
+      AMG solver residual = 0.00325297 after 2 iterations
+  --
+  Subiteration:24 of 1033
+      AMG solver residual = 0.00070788 after 2 iterations
+      AMG solver residual = 0.00328073 after 2 iterations
+      AMG solver residual = 0.00073794 after 2 iterations
+      AMG solver residual = 0.000719257 after 2 iterations
+      AMG solver residual = 0.0033102 after 2 iterations
+  --
+  Subiteration:25 of 1033
+      AMG solver residual = 0.000728858 after 2 iterations
+      AMG solver residual = 0.00333608 after 2 iterations
+      AMG solver residual = 0.000738552 after 2 iterations
+      AMG solver residual = 0.000740398 after 2 iterations
+      AMG solver residual = 0.00336281 after 2 iterations
+  --
+  Subiteration:26 of 1033
+      AMG solver residual = 0.000750114 after 2 iterations
+      AMG solver residual = 0.00338636 after 2 iterations
+      AMG solver residual = 0.000737786 after 2 iterations
+      AMG solver residual = 0.000761663 after 2 iterations
+      AMG solver residual = 0.00341006 after 2 iterations
+  --
+  Subiteration:27 of 1033
+      AMG solver residual = 0.000771353 after 2 iterations
+      AMG solver residual = 0.00343104 after 2 iterations
+      AMG solver residual = 0.000735891 after 2 iterations
+      AMG solver residual = 0.000782767 after 2 iterations
+      AMG solver residual = 0.00345157 after 2 iterations
+  --
+  Subiteration:28 of 1033
+      AMG solver residual = 0.000792301 after 2 iterations
+      AMG solver residual = 0.00346987 after 2 iterations
+      AMG solver residual = 0.000733157 after 2 iterations
+      AMG solver residual = 0.000803446 after 2 iterations
+      AMG solver residual = 0.00348723 after 2 iterations
+  --
+  Subiteration:29 of 1033
+      AMG solver residual = 0.000812705 after 2 iterations
+      AMG solver residual = 0.00350282 after 2 iterations
+      AMG solver residual = 0.000729909 after 2 iterations
+      AMG solver residual = 0.000823463 after 2 iterations
+      AMG solver residual = 0.00351706 after 2 iterations
+  --
+  Subiteration:30 of 1033
+      AMG solver residual = 0.000832339 after 2 iterations
+      AMG solver residual = 0.00353 after 2 iterations
+      AMG solver residual = 0.000726498 after 2 iterations
+      AMG solver residual = 0.000842606 after 2 iterations
+      AMG solver residual = 0.00354124 after 2 iterations
+  --
+  Subiteration:31 of 1033
+      AMG solver residual = 0.000851008 after 2 iterations
+      AMG solver residual = 0.00355161 after 2 iterations
+      AMG solver residual = 0.000723295 after 2 iterations
+      AMG solver residual = 0.000860699 after 2 iterations
+      AMG solver residual = 0.00356001 after 2 iterations
+  --
+  Subiteration:32 of 1033
+      AMG solver residual = 0.000868548 after 2 iterations
+      AMG solver residual = 0.00356791 after 2 iterations
+      AMG solver residual = 0.000720675 after 2 iterations
+      AMG solver residual = 0.000877592 after 2 iterations
+      AMG solver residual = 0.00357362 after 2 iterations
+  --
+  Subiteration:33 of 1033
+      AMG solver residual = 0.000884827 after 2 iterations
+      AMG solver residual = 0.00357919 after 2 iterations
+      AMG solver residual = 0.000719001 after 2 iterations
+      AMG solver residual = 0.00089317 after 2 iterations
+      AMG solver residual = 0.00358237 after 2 iterations
+  --
+  Subiteration:34 of 1033
+      AMG solver residual = 0.000899743 after 2 iterations
+      AMG solver residual = 0.00358574 after 2 iterations
+      AMG solver residual = 0.000718611 after 2 iterations
+      AMG solver residual = 0.000907348 after 2 iterations
+      AMG solver residual = 0.00358655 after 2 iterations
+  --
+  Subiteration:35 of 1033
+      AMG solver residual = 0.000916382 after 2 iterations
+      AMG solver residual = 0.00356605 after 2 iterations
+      AMG solver residual = 0.000719169 after 2 iterations
+      AMG solver residual = 0.000923227 after 2 iterations
+      AMG solver residual = 0.00356513 after 2 iterations
+  --
+  Subiteration:36 of 1033
+      AMG solver residual = 0.000928387 after 2 iterations
+      AMG solver residual = 0.00356495 after 2 iterations
+      AMG solver residual = 0.000722085 after 2 iterations
+      AMG solver residual = 0.000934453 after 2 iterations
+      AMG solver residual = 0.00356206 after 2 iterations
+  --
+  Subiteration:37 of 1033
+      AMG solver residual = 0.00093889 after 2 iterations
+      AMG solver residual = 0.00356013 after 2 iterations
+      AMG solver residual = 0.000727052 after 2 iterations
+      AMG solver residual = 0.000944188 after 2 iterations
+      AMG solver residual = 0.00355544 after 2 iterations
+  --
+  Subiteration:38 of 1033
+      AMG solver residual = 0.000947915 after 2 iterations
+      AMG solver residual = 0.0035519 after 2 iterations
+      AMG solver residual = 0.00073419 after 2 iterations
+      AMG solver residual = 0.000952473 after 2 iterations
+      AMG solver residual = 0.00354558 after 2 iterations
+  --
+  Subiteration:39 of 1033
+      AMG solver residual = 0.000955518 after 2 iterations
+      AMG solver residual = 0.00354059 after 2 iterations
+      AMG solver residual = 0.000743555 after 2 iterations
+      AMG solver residual = 0.000959377 after 2 iterations
+      AMG solver residual = 0.00353282 after 2 iterations
+  --
+  Subiteration:40 of 1033
+      AMG solver residual = 0.000961781 after 2 iterations
+      AMG solver residual = 0.00352653 after 2 iterations
+      AMG solver residual = 0.000755102 after 2 iterations
+      AMG solver residual = 0.000964998 after 2 iterations
+      AMG solver residual = 0.00351752 after 2 iterations
+  --
+  Subiteration:41 of 1033
+      AMG solver residual = 0.000966815 after 2 iterations
+      AMG solver residual = 0.00351011 after 2 iterations
+      AMG solver residual = 0.000768722 after 2 iterations
+      AMG solver residual = 0.000968293 after 2 iterations
+      AMG solver residual = 0.00349646 after 2 iterations
+  --
+  Subiteration:42 of 1033
+      AMG solver residual = 0.000969596 after 2 iterations
+      AMG solver residual = 0.00348824 after 2 iterations
+      AMG solver residual = 0.000784001 after 2 iterations
+      AMG solver residual = 0.000971754 after 2 iterations
+      AMG solver residual = 0.00347757 after 2 iterations
+  --
+  Subiteration:43 of 1033
+      AMG solver residual = 0.000972619 after 2 iterations
+      AMG solver residual = 0.0034687 after 2 iterations
+      AMG solver residual = 0.000801195 after 2 iterations
+      AMG solver residual = 0.000974378 after 2 iterations
+      AMG solver residual = 0.00345759 after 2 iterations
+  --
+  Subiteration:44 of 1033
+      AMG solver residual = 0.000974891 after 2 iterations
+      AMG solver residual = 0.00344837 after 2 iterations
+      AMG solver residual = 0.000819758 after 2 iterations
+      AMG solver residual = 0.000976349 after 2 iterations
+      AMG solver residual = 0.00343717 after 2 iterations
+  --
+  Subiteration:45 of 1033
+      AMG solver residual = 0.000976605 after 2 iterations
+      AMG solver residual = 0.0034279 after 2 iterations
+      AMG solver residual = 0.000839394 after 2 iterations
+      AMG solver residual = 0.000977869 after 2 iterations
+      AMG solver residual = 0.00341698 after 2 iterations
+  --
+  Subiteration:46 of 1033
+      AMG solver residual = 0.000977968 after 2 iterations
+      AMG solver residual = 0.00340803 after 2 iterations
+      AMG solver residual = 0.000859793 after 2 iterations
+      AMG solver residual = 0.000979147 after 2 iterations
+      AMG solver residual = 0.00339779 after 2 iterations
+  --
+  Subiteration:47 of 1033
+      AMG solver residual = 0.000979191 after 2 iterations
+      AMG solver residual = 0.00338954 after 2 iterations
+      AMG solver residual = 0.000880625 after 2 iterations
+      AMG solver residual = 0.000980397 after 2 iterations
+      AMG solver residual = 0.00338043 after 2 iterations
+  --
+  Subiteration:48 of 1033
+      AMG solver residual = 0.000980492 after 2 iterations
+      AMG solver residual = 0.00337328 after 2 iterations
+      AMG solver residual = 0.000901579 after 2 iterations
+      AMG solver residual = 0.000981835 after 2 iterations
+      AMG solver residual = 0.00336573 after 2 iterations
+  --
+  Subiteration:49 of 1033
+      AMG solver residual = 0.000982084 after 2 iterations
+      AMG solver residual = 0.00336009 after 2 iterations
+      AMG solver residual = 0.000922354 after 2 iterations
+      AMG solver residual = 0.000983671 after 2 iterations
+      AMG solver residual = 0.00335453 after 2 iterations
+  --
+  Subiteration:50 of 1033
+      AMG solver residual = 0.000984173 after 2 iterations
+      AMG solver residual = 0.00335079 after 2 iterations
+      AMG solver residual = 0.000942665 after 2 iterations
+      AMG solver residual = 0.000986104 after 2 iterations
+      AMG solver residual = 0.00334761 after 2 iterations
+  --
+  Subiteration:51 of 1033
+      AMG solver residual = 0.00098695 after 2 iterations
+      AMG solver residual = 0.00334611 after 2 iterations
+      AMG solver residual = 0.000962251 after 2 iterations
+      AMG solver residual = 0.000989314 after 2 iterations
+      AMG solver residual = 0.00334562 after 2 iterations
+  --
+  Subiteration:52 of 1033
+      AMG solver residual = 0.000990585 after 2 iterations
+      AMG solver residual = 0.00334663 after 2 iterations
+      AMG solver residual = 0.000980868 after 2 iterations
+      AMG solver residual = 0.000993458 after 2 iterations
+      AMG solver residual = 0.00334905 after 2 iterations
+  --
+  Subiteration:53 of 1033
+      AMG solver residual = 0.000995224 after 2 iterations
+      AMG solver residual = 0.00335275 after 2 iterations
+      AMG solver residual = 0.000998334 after 2 iterations
+      AMG solver residual = 0.000998667 after 2 iterations
+      AMG solver residual = 0.00335818 after 2 iterations
+  --
+  Subiteration:54 of 1033
+      AMG solver residual = 0.00100098 after 2 iterations
+      AMG solver residual = 0.00336462 after 2 iterations
+      AMG solver residual = 0.00101445 after 2 iterations
+      AMG solver residual = 0.00100504 after 2 iterations
+      AMG solver residual = 0.00337302 after 2 iterations
+  --
+  Subiteration:55 of 1033
+      AMG solver residual = 0.00100793 after 2 iterations
+      AMG solver residual = 0.00338214 after 2 iterations
+      AMG solver residual = 0.00102907 after 2 iterations
+      AMG solver residual = 0.00101263 after 2 iterations
+      AMG solver residual = 0.00339335 after 2 iterations
+  --
+  Subiteration:56 of 1033
+      AMG solver residual = 0.00101613 after 2 iterations
+      AMG solver residual = 0.00340496 after 2 iterations
+      AMG solver residual = 0.00104209 after 2 iterations
+      AMG solver residual = 0.00102146 after 2 iterations
+      AMG solver residual = 0.00341868 after 2 iterations
+  --
+  Subiteration:57 of 1033
+      AMG solver residual = 0.00102557 after 2 iterations
+      AMG solver residual = 0.00343249 after 2 iterations
+      AMG solver residual = 0.00105337 after 2 iterations
+      AMG solver residual = 0.00103153 after 2 iterations
+      AMG solver residual = 0.00344832 after 2 iterations
+  --
+  Subiteration:58 of 1033
+      AMG solver residual = 0.00103622 after 2 iterations
+      AMG solver residual = 0.00346395 after 2 iterations
+      AMG solver residual = 0.00106358 after 2 iterations
+      AMG solver residual = 0.001043 after 2 iterations
+      AMG solver residual = 0.00348063 after 2 iterations
+  --
+  Subiteration:59 of 1033
+      AMG solver residual = 0.00104821 after 2 iterations
+      AMG solver residual = 0.00349762 after 2 iterations
+      AMG solver residual = 0.00107135 after 2 iterations
+      AMG solver residual = 0.00105528 after 2 iterations
+      AMG solver residual = 0.00351621 after 2 iterations
+  --
+  Subiteration:60 of 1033
+      AMG solver residual = 0.001061 after 2 iterations
+      AMG solver residual = 0.00353414 after 2 iterations
+      AMG solver residual = 0.00107736 after 2 iterations
+      AMG solver residual = 0.00106855 after 2 iterations
+      AMG solver residual = 0.00355338 after 2 iterations
+  --
+  Subiteration:61 of 1033
+      AMG solver residual = 0.00107471 after 2 iterations
+      AMG solver residual = 0.00357179 after 2 iterations
+      AMG solver residual = 0.00108161 after 2 iterations
+      AMG solver residual = 0.00108265 after 2 iterations
+      AMG solver residual = 0.00359118 after 2 iterations
+  --
+  Subiteration:62 of 1033
+      AMG solver residual = 0.00108918 after 2 iterations
+      AMG solver residual = 0.00360962 after 2 iterations
+      AMG solver residual = 0.00108421 after 2 iterations
+      AMG solver residual = 0.00109743 after 2 iterations
+      AMG solver residual = 0.0036287 after 2 iterations
+  --
+  Subiteration:63 of 1033
+      AMG solver residual = 0.00110423 after 2 iterations
+      AMG solver residual = 0.00364678 after 2 iterations
+      AMG solver residual = 0.00108525 after 2 iterations
+      AMG solver residual = 0.0011127 after 2 iterations
+      AMG solver residual = 0.00366513 after 2 iterations
+  --
+  Subiteration:64 of 1033
+      AMG solver residual = 0.0011197 after 2 iterations
+      AMG solver residual = 0.00368249 after 2 iterations
+      AMG solver residual = 0.00108489 after 2 iterations
+      AMG solver residual = 0.00112827 after 2 iterations
+      AMG solver residual = 0.00369977 after 2 iterations
+  --
+  Subiteration:65 of 1033
+      AMG solver residual = 0.00113536 after 2 iterations
+      AMG solver residual = 0.00371612 after 2 iterations
+      AMG solver residual = 0.00108329 after 2 iterations
+      AMG solver residual = 0.00114394 after 2 iterations
+      AMG solver residual = 0.00373205 after 2 iterations
+  --
+  Subiteration:66 of 1033
+      AMG solver residual = 0.00115103 after 2 iterations
+      AMG solver residual = 0.00374713 after 2 iterations
+      AMG solver residual = 0.00108067 after 2 iterations
+      AMG solver residual = 0.00115952 after 2 iterations
+      AMG solver residual = 0.00376148 after 2 iterations
+  --
+  Subiteration:67 of 1033
+      AMG solver residual = 0.00116651 after 2 iterations
+      AMG solver residual = 0.00377512 after 2 iterations
+      AMG solver residual = 0.00107726 after 2 iterations
+      AMG solver residual = 0.00117479 after 2 iterations
+      AMG solver residual = 0.00378772 after 2 iterations
+  --
+  Subiteration:68 of 1033
+      AMG solver residual = 0.00118159 after 2 iterations
+      AMG solver residual = 0.00379976 after 2 iterations
+      AMG solver residual = 0.00107335 after 2 iterations
+      AMG solver residual = 0.00118959 after 2 iterations
+      AMG solver residual = 0.00381049 after 2 iterations
+  --
+  Subiteration:69 of 1033
+      AMG solver residual = 0.00119611 after 2 iterations
+      AMG solver residual = 0.00382082 after 2 iterations
+      AMG solver residual = 0.00106923 after 2 iterations
+      AMG solver residual = 0.00120372 after 2 iterations
+      AMG solver residual = 0.0038296 after 2 iterations
+  --
+  Subiteration:70 of 1033
+      AMG solver residual = 0.00120988 after 2 iterations
+      AMG solver residual = 0.00383816 after 2 iterations
+      AMG solver residual = 0.00106518 after 2 iterations
+      AMG solver residual = 0.00121704 after 2 iterations
+      AMG solver residual = 0.00384493 after 2 iterations
+  --
+  Subiteration:71 of 1033
+      AMG solver residual = 0.00122277 after 2 iterations
+      AMG solver residual = 0.00385168 after 2 iterations
+      AMG solver residual = 0.00106161 after 2 iterations
+      AMG solver residual = 0.00122939 after 2 iterations
+      AMG solver residual = 0.00385642 after 2 iterations
+  --
+  Subiteration:72 of 1033
+      AMG solver residual = 0.00123462 after 2 iterations
+      AMG solver residual = 0.00386134 after 2 iterations
+      AMG solver residual = 0.00105878 after 2 iterations
+      AMG solver residual = 0.00124065 after 2 iterations
+      AMG solver residual = 0.00386405 after 2 iterations
+  --
+  Subiteration:73 of 1033
+      AMG solver residual = 0.00124534 after 2 iterations
+      AMG solver residual = 0.00386713 after 2 iterations
+      AMG solver residual = 0.00105705 after 2 iterations
+      AMG solver residual = 0.00125072 after 2 iterations
+      AMG solver residual = 0.00386783 after 2 iterations
+  --
+  Subiteration:74 of 1033
+      AMG solver residual = 0.00125482 after 2 iterations
+      AMG solver residual = 0.00386908 after 2 iterations
+      AMG solver residual = 0.00105674 after 2 iterations
+      AMG solver residual = 0.00125954 after 2 iterations
+      AMG solver residual = 0.00386781 after 2 iterations
+  --
+  Subiteration:75 of 1033
+      AMG solver residual = 0.00126301 after 2 iterations
+      AMG solver residual = 0.00386727 after 2 iterations
+      AMG solver residual = 0.00105814 after 2 iterations
+      AMG solver residual = 0.00126704 after 2 iterations
+      AMG solver residual = 0.00386407 after 2 iterations
+  --
+  Subiteration:76 of 1033
+      AMG solver residual = 0.00126988 after 2 iterations
+      AMG solver residual = 0.00386178 after 2 iterations
+      AMG solver residual = 0.00106155 after 2 iterations
+      AMG solver residual = 0.00127321 after 2 iterations
+      AMG solver residual = 0.00385673 after 2 iterations
+  --
+  Subiteration:77 of 1033
+      AMG solver residual = 0.00127541 after 2 iterations
+      AMG solver residual = 0.00385274 after 2 iterations
+      AMG solver residual = 0.00106714 after 2 iterations
+      AMG solver residual = 0.00127806 after 2 iterations
+      AMG solver residual = 0.00384592 after 2 iterations
+  --
+  Subiteration:78 of 1033
+      AMG solver residual = 0.00127964 after 2 iterations
+      AMG solver residual = 0.00384033 after 2 iterations
+      AMG solver residual = 0.00107506 after 2 iterations
+      AMG solver residual = 0.00128164 after 2 iterations
+      AMG solver residual = 0.00383185 after 2 iterations
+  --
+  Subiteration:79 of 1033
+      AMG solver residual = 0.00128262 after 2 iterations
+      AMG solver residual = 0.00382474 after 2 iterations
+      AMG solver residual = 0.00108541 after 2 iterations
+      AMG solver residual = 0.001284 after 2 iterations
+      AMG solver residual = 0.00381474 after 2 iterations
+  --
+  Subiteration:80 of 1033
+      AMG solver residual = 0.00128443 after 2 iterations
+      AMG solver residual = 0.00380626 after 2 iterations
+      AMG solver residual = 0.00109822 after 2 iterations
+      AMG solver residual = 0.00128523 after 2 iterations
+      AMG solver residual = 0.00379487 after 2 iterations
+  --
+  Subiteration:81 of 1033
+      AMG solver residual = 0.00128516 after 2 iterations
+      AMG solver residual = 0.00378516 after 2 iterations
+      AMG solver residual = 0.00111342 after 2 iterations
+      AMG solver residual = 0.00128552 after 2 iterations
+      AMG solver residual = 0.0037727 after 2 iterations
+  --
+  Subiteration:82 of 1033
+      AMG solver residual = 0.00128503 after 2 iterations
+      AMG solver residual = 0.00376199 after 2 iterations
+      AMG solver residual = 0.00113091 after 2 iterations
+      AMG solver residual = 0.00128501 after 2 iterations
+      AMG solver residual = 0.00374868 after 2 iterations
+  --
+  Subiteration:83 of 1033
+      AMG solver residual = 0.00128419 after 2 iterations
+      AMG solver residual = 0.00373721 after 2 iterations
+      AMG solver residual = 0.00115046 after 2 iterations
+      AMG solver residual = 0.0012839 after 2 iterations
+      AMG solver residual = 0.00372338 after 2 iterations
+  --
+  Subiteration:84 of 1033
+      AMG solver residual = 0.00128284 after 2 iterations
+      AMG solver residual = 0.00371147 after 2 iterations
+      AMG solver residual = 0.00117191 after 2 iterations
+      AMG solver residual = 0.00128241 after 2 iterations
+      AMG solver residual = 0.00369753 after 2 iterations
+  --
+  Subiteration:85 of 1033
+      AMG solver residual = 0.00128124 after 2 iterations
+      AMG solver residual = 0.00368556 after 2 iterations
+      AMG solver residual = 0.00119496 after 2 iterations
+      AMG solver residual = 0.0012808 after 2 iterations
+      AMG solver residual = 0.00367195 after 2 iterations
+  --
+  Subiteration:86 of 1033
+      AMG solver residual = 0.00127752 after 2 iterations
+      AMG solver residual = 0.00367059 after 2 iterations
+      AMG solver residual = 0.00121903 after 2 iterations
+      AMG solver residual = 0.0012773 after 2 iterations
+      AMG solver residual = 0.00365721 after 2 iterations
+  --
+  Subiteration:87 of 1033
+      AMG solver residual = 0.00127635 after 2 iterations
+      AMG solver residual = 0.00364589 after 2 iterations
+      AMG solver residual = 0.00124401 after 2 iterations
+      AMG solver residual = 0.00127643 after 2 iterations
+      AMG solver residual = 0.00363395 after 2 iterations
+  --
+  Subiteration:88 of 1033
+      AMG solver residual = 0.00127578 after 2 iterations
+      AMG solver residual = 0.00362403 after 2 iterations
+      AMG solver residual = 0.00126949 after 2 iterations
+      AMG solver residual = 0.00127632 after 2 iterations
+      AMG solver residual = 0.00361416 after 2 iterations
+  --
+  Subiteration:89 of 1033
+      AMG solver residual = 0.0012761 after 2 iterations
+      AMG solver residual = 0.00360622 after 2 iterations
+      AMG solver residual = 0.00129503 after 2 iterations
+      AMG solver residual = 0.00127725 after 2 iterations
+      AMG solver residual = 0.00359905 after 2 iterations
+  --
+  Subiteration:90 of 1033
+      AMG solver residual = 0.00127761 after 2 iterations
+      AMG solver residual = 0.00359367 after 2 iterations
+      AMG solver residual = 0.00132041 after 2 iterations
+      AMG solver residual = 0.00127951 after 2 iterations
+      AMG solver residual = 0.0035898 after 2 iterations
+  --
+  Subiteration:91 of 1033
+      AMG solver residual = 0.00128058 after 2 iterations
+      AMG solver residual = 0.0035875 after 2 iterations
+      AMG solver residual = 0.0013451 after 2 iterations
+      AMG solver residual = 0.00128338 after 2 iterations
+      AMG solver residual = 0.00358743 after 2 iterations
+  --
+  Subiteration:92 of 1033
+      AMG solver residual = 0.00128528 after 2 iterations
+      AMG solver residual = 0.00358863 after 2 iterations
+      AMG solver residual = 0.0013688 after 2 iterations
+      AMG solver residual = 0.00128911 after 2 iterations
+      AMG solver residual = 0.00359273 after 2 iterations
+  --
+  Subiteration:93 of 1033
+      AMG solver residual = 0.00129195 after 2 iterations
+      AMG solver residual = 0.00359771 after 2 iterations
+      AMG solver residual = 0.00139115 after 2 iterations
+      AMG solver residual = 0.00129689 after 2 iterations
+      AMG solver residual = 0.00360616 after 2 iterations
+  --
+  Subiteration:94 of 1033
+      AMG solver residual = 0.00130076 after 2 iterations
+      AMG solver residual = 0.00361503 after 2 iterations
+      AMG solver residual = 0.00141181 after 2 iterations
+      AMG solver residual = 0.00130698 after 2 iterations
+      AMG solver residual = 0.00362756 after 2 iterations
+  --
+  Subiteration:95 of 1033
+      AMG solver residual = 0.00131194 after 2 iterations
+      AMG solver residual = 0.00364021 after 2 iterations
+      AMG solver residual = 0.00143045 after 2 iterations
+      AMG solver residual = 0.00131934 after 2 iterations
+      AMG solver residual = 0.00365702 after 2 iterations
+  --
+  Subiteration:96 of 1033
+      AMG solver residual = 0.00132543 after 2 iterations
+      AMG solver residual = 0.00367319 after 2 iterations
+      AMG solver residual = 0.00144687 after 2 iterations
+      AMG solver residual = 0.00133409 after 2 iterations
+      AMG solver residual = 0.00369361 after 2 iterations
+  --
+  Subiteration:97 of 1033
+      AMG solver residual = 0.00134131 after 2 iterations
+      AMG solver residual = 0.00371285 after 2 iterations
+      AMG solver residual = 0.00146071 after 2 iterations
+      AMG solver residual = 0.00135121 after 2 iterations
+      AMG solver residual = 0.00373628 after 2 iterations
+  --
+  Subiteration:98 of 1033
+      AMG solver residual = 0.00135954 after 2 iterations
+      AMG solver residual = 0.00375801 after 2 iterations
+      AMG solver residual = 0.00147179 after 2 iterations
+      AMG solver residual = 0.00137064 after 2 iterations
+      AMG solver residual = 0.00378374 after 2 iterations
+  --
+  Subiteration:99 of 1033
+      AMG solver residual = 0.00138003 after 2 iterations
+      AMG solver residual = 0.0038073 after 2 iterations
+      AMG solver residual = 0.00147993 after 2 iterations
+      AMG solver residual = 0.00139225 after 2 iterations
+      AMG solver residual = 0.00383456 after 2 iterations
+  --
+  Subiteration:100 of 1033
+      AMG solver residual = 0.00140261 after 2 iterations
+      AMG solver residual = 0.00385927 after 2 iterations
+      AMG solver residual = 0.00148498 after 2 iterations
+      AMG solver residual = 0.00141584 after 2 iterations
+      AMG solver residual = 0.00388732 after 2 iterations
+  --
+  Subiteration:101 of 1033
+      AMG solver residual = 0.00142707 after 2 iterations
+      AMG solver residual = 0.00391256 after 2 iterations
+      AMG solver residual = 0.00148682 after 2 iterations
+      AMG solver residual = 0.00144118 after 2 iterations
+      AMG solver residual = 0.00394069 after 2 iterations
+  --
+  Subiteration:102 of 1033
+      AMG solver residual = 0.00145315 after 2 iterations
+      AMG solver residual = 0.00396586 after 2 iterations
+      AMG solver residual = 0.00148536 after 2 iterations
+      AMG solver residual = 0.00146797 after 2 iterations
+      AMG solver residual = 0.00399347 after 2 iterations
+  --
+  Subiteration:103 of 1033
+      AMG solver residual = 0.00148055 after 2 iterations
+      AMG solver residual = 0.00401805 after 2 iterations
+      AMG solver residual = 0.00148059 after 2 iterations
+      AMG solver residual = 0.00149592 after 2 iterations
+      AMG solver residual = 0.00404463 after 2 iterations
+  --
+  Subiteration:104 of 1033
+      AMG solver residual = 0.00150893 after 2 iterations
+      AMG solver residual = 0.0040682 after 2 iterations
+      AMG solver residual = 0.00147252 after 2 iterations
+      AMG solver residual = 0.00152466 after 2 iterations
+      AMG solver residual = 0.00409337 after 2 iterations
+  --
+  Subiteration:105 of 1033
+      AMG solver residual = 0.00153794 after 2 iterations
+      AMG solver residual = 0.0041156 after 2 iterations
+      AMG solver residual = 0.00146124 after 2 iterations
+      AMG solver residual = 0.00155382 after 2 iterations
+      AMG solver residual = 0.00413906 after 2 iterations
+  --
+  Subiteration:106 of 1033
+      AMG solver residual = 0.00156719 after 2 iterations
+      AMG solver residual = 0.00415972 after 2 iterations
+      AMG solver residual = 0.00144689 after 2 iterations
+      AMG solver residual = 0.00158304 after 2 iterations
+      AMG solver residual = 0.00418125 after 2 iterations
+  --
+  Subiteration:107 of 1033
+      AMG solver residual = 0.00159632 after 2 iterations
+      AMG solver residual = 0.00420018 after 2 iterations
+      AMG solver residual = 0.00142964 after 2 iterations
+      AMG solver residual = 0.00161192 after 2 iterations
+      AMG solver residual = 0.00421966 after 2 iterations
+  --
+  Subiteration:108 of 1033
+      AMG solver residual = 0.00162492 after 2 iterations
+      AMG solver residual = 0.00423676 after 2 iterations
+      AMG solver residual = 0.00140976 after 2 iterations
+      AMG solver residual = 0.00164009 after 2 iterations
+      AMG solver residual = 0.00425413 after 2 iterations
+  --
+  Subiteration:109 of 1033
+      AMG solver residual = 0.00165262 after 2 iterations
+      AMG solver residual = 0.00426935 after 2 iterations
+      AMG solver residual = 0.00138748 after 2 iterations
+      AMG solver residual = 0.00166715 after 2 iterations
+      AMG solver residual = 0.00428459 after 2 iterations
+  --
+  Subiteration:110 of 1033
+      AMG solver residual = 0.00167905 after 2 iterations
+      AMG solver residual = 0.0042979 after 2 iterations
+      AMG solver residual = 0.00136347 after 2 iterations
+      AMG solver residual = 0.00169275 after 2 iterations
+      AMG solver residual = 0.00431103 after 2 iterations
+  --
+  Subiteration:111 of 1033
+      AMG solver residual = 0.00170383 after 2 iterations
+      AMG solver residual = 0.00432246 after 2 iterations
+      AMG solver residual = 0.00133793 after 2 iterations
+      AMG solver residual = 0.00171652 after 2 iterations
+      AMG solver residual = 0.0043335 after 2 iterations
+  --
+  Subiteration:112 of 1033
+      AMG solver residual = 0.00172664 after 2 iterations
+      AMG solver residual = 0.00434307 after 2 iterations
+      AMG solver residual = 0.00131151 after 2 iterations
+      AMG solver residual = 0.00173815 after 2 iterations
+      AMG solver residual = 0.00435207 after 2 iterations
+  --
+  Subiteration:113 of 1033
+      AMG solver residual = 0.00174713 after 2 iterations
+      AMG solver residual = 0.00435981 after 2 iterations
+      AMG solver residual = 0.00128486 after 2 iterations
+      AMG solver residual = 0.00175731 after 2 iterations
+      AMG solver residual = 0.0043668 after 2 iterations
+  --
+  Subiteration:114 of 1033
+      AMG solver residual = 0.00176503 after 2 iterations
+      AMG solver residual = 0.00437275 after 2 iterations
+      AMG solver residual = 0.00125868 after 2 iterations
+      AMG solver residual = 0.00177372 after 2 iterations
+      AMG solver residual = 0.00437778 after 2 iterations
+  --
+  Subiteration:115 of 1033
+      AMG solver residual = 0.00178004 after 2 iterations
+      AMG solver residual = 0.00438195 after 2 iterations
+      AMG solver residual = 0.00123379 after 2 iterations
+      AMG solver residual = 0.00178712 after 2 iterations
+      AMG solver residual = 0.00438504 after 2 iterations
+  --
+  Subiteration:116 of 1033
+      AMG solver residual = 0.00179194 after 2 iterations
+      AMG solver residual = 0.00438744 after 2 iterations
+      AMG solver residual = 0.00121102 after 2 iterations
+      AMG solver residual = 0.0017973 after 2 iterations
+      AMG solver residual = 0.00438861 after 2 iterations
+  --
+  Subiteration:117 of 1033
+      AMG solver residual = 0.00180032 after 2 iterations
+      AMG solver residual = 0.00438908 after 2 iterations
+      AMG solver residual = 0.00119082 after 2 iterations
+      AMG solver residual = 0.00180385 after 2 iterations
+      AMG solver residual = 0.00438831 after 2 iterations
+  --
+  Subiteration:118 of 1033
+      AMG solver residual = 0.00180535 after 2 iterations
+      AMG solver residual = 0.00438713 after 2 iterations
+      AMG solver residual = 0.00117503 after 2 iterations
+      AMG solver residual = 0.00180701 after 2 iterations
+      AMG solver residual = 0.00438438 after 2 iterations
+  --
+  Subiteration:119 of 1033
+      AMG solver residual = 0.00180676 after 2 iterations
+      AMG solver residual = 0.00438135 after 2 iterations
+      AMG solver residual = 0.00116399 after 2 iterations
+      AMG solver residual = 0.00180647 after 2 iterations
+      AMG solver residual = 0.00437658 after 2 iterations
+  --
+  Subiteration:120 of 1033
+      AMG solver residual = 0.00180442 after 2 iterations
+      AMG solver residual = 0.00437163 after 2 iterations
+      AMG solver residual = 0.00115846 after 2 iterations
+      AMG solver residual = 0.00180217 after 2 iterations
+      AMG solver residual = 0.00436473 after 2 iterations
+  --
+  Subiteration:121 of 1033
+      AMG solver residual = 0.00180007 after 2 iterations
+      AMG solver residual = 0.0043492 after 2 iterations
+      AMG solver residual = 0.00115931 after 2 iterations
+      AMG solver residual = 0.00179585 after 2 iterations
+      AMG solver residual = 0.00434012 after 2 iterations
+  --
+  Subiteration:122 of 1033
+      AMG solver residual = 0.00179018 after 2 iterations
+      AMG solver residual = 0.00433104 after 2 iterations
+      AMG solver residual = 0.00116647 after 2 iterations
+      AMG solver residual = 0.001784 after 2 iterations
+      AMG solver residual = 0.00431959 after 2 iterations
+  --
+  Subiteration:123 of 1033
+      AMG solver residual = 0.00177654 after 2 iterations
+      AMG solver residual = 0.00430822 after 2 iterations
+      AMG solver residual = 0.00118028 after 2 iterations
+      AMG solver residual = 0.00176844 after 2 iterations
+      AMG solver residual = 0.00429421 after 2 iterations
+  --
+  Subiteration:124 of 1033
+      AMG solver residual = 0.00175924 after 2 iterations
+      AMG solver residual = 0.00428034 after 2 iterations
+      AMG solver residual = 0.00120067 after 2 iterations
+      AMG solver residual = 0.0017493 after 2 iterations
+      AMG solver residual = 0.00426353 after 2 iterations
+  --
+  Subiteration:125 of 1033
+      AMG solver residual = 0.00173844 after 2 iterations
+      AMG solver residual = 0.00424692 after 2 iterations
+      AMG solver residual = 0.00122761 after 2 iterations
+      AMG solver residual = 0.00172677 after 2 iterations
+      AMG solver residual = 0.00422706 after 2 iterations
+  --
+  Subiteration:126 of 1033
+      AMG solver residual = 0.00171435 after 2 iterations
+      AMG solver residual = 0.00420743 after 2 iterations
+      AMG solver residual = 0.00126031 after 2 iterations
+      AMG solver residual = 0.00170111 after 2 iterations
+      AMG solver residual = 0.00418419 after 2 iterations
+  --
+  Subiteration:127 of 1033
+      AMG solver residual = 0.00168728 after 2 iterations
+      AMG solver residual = 0.00416125 after 2 iterations
+      AMG solver residual = 0.00129819 after 2 iterations
+      AMG solver residual = 0.00167263 after 2 iterations
+      AMG solver residual = 0.00413431 after 2 iterations
+  --
+  Subiteration:128 of 1033
+      AMG solver residual = 0.00165757 after 2 iterations
+      AMG solver residual = 0.00410772 after 2 iterations
+      AMG solver residual = 0.00134046 after 2 iterations
+      AMG solver residual = 0.00164173 after 2 iterations
+      AMG solver residual = 0.00407674 after 2 iterations
+  --
+  Subiteration:129 of 1033
+      AMG solver residual = 0.00162565 after 2 iterations
+      AMG solver residual = 0.00404618 after 2 iterations
+      AMG solver residual = 0.00138591 after 2 iterations
+      AMG solver residual = 0.00160888 after 2 iterations
+      AMG solver residual = 0.00401083 after 2 iterations
+  --
+  Subiteration:130 of 1033
+      AMG solver residual = 0.00159205 after 2 iterations
+      AMG solver residual = 0.00397595 after 2 iterations
+      AMG solver residual = 0.00143289 after 2 iterations
+      AMG solver residual = 0.00157465 after 2 iterations
+      AMG solver residual = 0.00393593 after 2 iterations
+  --
+  Subiteration:131 of 1033
+      AMG solver residual = 0.00155735 after 2 iterations
+      AMG solver residual = 0.00389662 after 2 iterations
+      AMG solver residual = 0.00148248 after 2 iterations
+      AMG solver residual = 0.00153969 after 2 iterations
+      AMG solver residual = 0.00385183 after 2 iterations
+  --
+  Subiteration:132 of 1033
+      AMG solver residual = 0.00152228 after 2 iterations
+      AMG solver residual = 0.0038078 after 2 iterations
+      AMG solver residual = 0.00153298 after 2 iterations
+      AMG solver residual = 0.0015047 after 2 iterations
+      AMG solver residual = 0.00375823 after 2 iterations
+  --
+  Subiteration:133 of 1033
+      AMG solver residual = 0.00148754 after 2 iterations
+      AMG solver residual = 0.00370987 after 2 iterations
+      AMG solver residual = 0.00158392 after 2 iterations
+      AMG solver residual = 0.00147051 after 2 iterations
+      AMG solver residual = 0.00365593 after 2 iterations
+  --
+  Subiteration:134 of 1033
+      AMG solver residual = 0.00145404 after 2 iterations
+      AMG solver residual = 0.00360363 after 2 iterations
+      AMG solver residual = 0.0016357 after 2 iterations
+      AMG solver residual = 0.00143802 after 2 iterations
+      AMG solver residual = 0.00354628 after 2 iterations
+  --
+  Subiteration:135 of 1033
+      AMG solver residual = 0.00142267 after 2 iterations
+      AMG solver residual = 0.00349126 after 2 iterations
+      AMG solver residual = 0.00168422 after 2 iterations
+      AMG solver residual = 0.00140816 after 2 iterations
+      AMG solver residual = 0.00343212 after 2 iterations
+  --
+  Subiteration:136 of 1033
+      AMG solver residual = 0.00139442 after 2 iterations
+      AMG solver residual = 0.00337626 after 2 iterations
+      AMG solver residual = 0.00173043 after 2 iterations
+      AMG solver residual = 0.00138193 after 2 iterations
+      AMG solver residual = 0.00331786 after 2 iterations
+  --
+  Subiteration:137 of 1033
+      AMG solver residual = 0.00137027 after 2 iterations
+      AMG solver residual = 0.00326399 after 2 iterations
+      AMG solver residual = 0.00177408 after 2 iterations
+      AMG solver residual = 0.0013603 after 2 iterations
+      AMG solver residual = 0.00320983 after 2 iterations
+  --
+  Subiteration:138 of 1033
+      AMG solver residual = 0.0013512 after 2 iterations
+      AMG solver residual = 0.00316162 after 2 iterations
+      AMG solver residual = 0.00181311 after 2 iterations
+      AMG solver residual = 0.00134422 after 2 iterations
+      AMG solver residual = 0.00311601 after 2 iterations
+  --
+  Subiteration:139 of 1033
+      AMG solver residual = 0.0013381 after 2 iterations
+      AMG solver residual = 0.00307771 after 2 iterations
+      AMG solver residual = 0.00184997 after 2 iterations
+      AMG solver residual = 0.00133452 after 2 iterations
+      AMG solver residual = 0.00304519 after 2 iterations
+  --
+  Subiteration:140 of 1033
+      AMG solver residual = 0.00133165 after 2 iterations
+      AMG solver residual = 0.00302111 after 2 iterations
+      AMG solver residual = 0.00188147 after 2 iterations
+      AMG solver residual = 0.00133179 after 2 iterations
+      AMG solver residual = 0.00300554 after 2 iterations
+  --
+  Subiteration:141 of 1033
+      AMG solver residual = 0.00133256 after 2 iterations
+      AMG solver residual = 0.00299838 after 2 iterations
+      AMG solver residual = 0.00190706 after 2 iterations
+      AMG solver residual = 0.00133662 after 2 iterations
+      AMG solver residual = 0.00300188 after 2 iterations
+  --
+  Subiteration:142 of 1033
+      AMG solver residual = 0.0013411 after 2 iterations
+      AMG solver residual = 0.0030128 after 2 iterations
+      AMG solver residual = 0.00192827 after 2 iterations
+      AMG solver residual = 0.00134914 after 2 iterations
+      AMG solver residual = 0.00303505 after 2 iterations
+  --
+  Subiteration:143 of 1033
+      AMG solver residual = 0.00135733 after 2 iterations
+      AMG solver residual = 0.00306272 after 2 iterations
+      AMG solver residual = 0.00194401 after 2 iterations
+      AMG solver residual = 0.00136927 after 2 iterations
+      AMG solver residual = 0.00310102 after 2 iterations
+  --
+  Subiteration:144 of 1033
+      AMG solver residual = 0.00138106 after 2 iterations
+      AMG solver residual = 0.00314213 after 2 iterations
+      AMG solver residual = 0.00195478 after 2 iterations
+      AMG solver residual = 0.00139669 after 2 iterations
+      AMG solver residual = 0.00319221 after 2 iterations
+  --
+  Subiteration:145 of 1033
+      AMG solver residual = 0.0014119 after 2 iterations
+      AMG solver residual = 0.00324212 after 2 iterations
+      AMG solver residual = 0.00195878 after 2 iterations
+      AMG solver residual = 0.00143089 after 2 iterations
+      AMG solver residual = 0.00329922 after 2 iterations
+  --
+  Subiteration:146 of 1033
+      AMG solver residual = 0.00144902 after 2 iterations
+      AMG solver residual = 0.00335426 after 2 iterations
+      AMG solver residual = 0.00195625 after 2 iterations
+      AMG solver residual = 0.00147097 after 2 iterations
+      AMG solver residual = 0.00341408 after 2 iterations
+  --
+  Subiteration:147 of 1033
+      AMG solver residual = 0.00149172 after 2 iterations
+      AMG solver residual = 0.00347023 after 2 iterations
+      AMG solver residual = 0.0019477 after 2 iterations
+      AMG solver residual = 0.00151616 after 2 iterations
+      AMG solver residual = 0.00352935 after 2 iterations
+  --
+  Subiteration:148 of 1033
+      AMG solver residual = 0.00153905 after 2 iterations
+      AMG solver residual = 0.00358388 after 2 iterations
+      AMG solver residual = 0.00193292 after 2 iterations
+      AMG solver residual = 0.00156549 after 2 iterations
+      AMG solver residual = 0.00363993 after 2 iterations
+  --
+  Subiteration:149 of 1033
+      AMG solver residual = 0.00159005 after 2 iterations
+      AMG solver residual = 0.00369102 after 2 iterations
+      AMG solver residual = 0.00191227 after 2 iterations
+      AMG solver residual = 0.00161797 after 2 iterations
+      AMG solver residual = 0.00374258 after 2 iterations
+  --
+  Subiteration:150 of 1033
+      AMG solver residual = 0.00164373 after 2 iterations
+      AMG solver residual = 0.00378922 after 2 iterations
+      AMG solver residual = 0.00188514 after 2 iterations
+      AMG solver residual = 0.00167261 after 2 iterations
+      AMG solver residual = 0.00383559 after 2 iterations
+  --
+  Subiteration:151 of 1033
+      AMG solver residual = 0.00169908 after 2 iterations
+      AMG solver residual = 0.00387734 after 2 iterations
+      AMG solver residual = 0.00185102 after 2 iterations
+      AMG solver residual = 0.00172844 after 2 iterations
+      AMG solver residual = 0.00391832 after 2 iterations
+  --
+  Subiteration:152 of 1033
+      AMG solver residual = 0.00175519 after 2 iterations
+      AMG solver residual = 0.00395515 after 2 iterations
+      AMG solver residual = 0.00181414 after 2 iterations
+      AMG solver residual = 0.00178455 after 2 iterations
+      AMG solver residual = 0.0039909 after 2 iterations
+  --
+  Subiteration:153 of 1033
+      AMG solver residual = 0.00181113 after 2 iterations
+      AMG solver residual = 0.00402301 after 2 iterations
+      AMG solver residual = 0.00177099 after 2 iterations
+      AMG solver residual = 0.00184005 after 2 iterations
+      AMG solver residual = 0.00405385 after 2 iterations
+  --
+  Subiteration:154 of 1033
+      AMG solver residual = 0.00186607 after 2 iterations
+      AMG solver residual = 0.00408159 after 2 iterations
+      AMG solver residual = 0.00172287 after 2 iterations
+      AMG solver residual = 0.00189415 after 2 iterations
+      AMG solver residual = 0.00410794 after 2 iterations
+  --
+  Subiteration:155 of 1033
+      AMG solver residual = 0.00191923 after 2 iterations
+      AMG solver residual = 0.00413171 after 2 iterations
+      AMG solver residual = 0.00167107 after 2 iterations
+      AMG solver residual = 0.00194609 after 2 iterations
+      AMG solver residual = 0.00415403 after 2 iterations
+  --
+  Subiteration:156 of 1033
+      AMG solver residual = 0.00196989 after 2 iterations
+      AMG solver residual = 0.00417425 after 2 iterations
+      AMG solver residual = 0.00161566 after 2 iterations
+      AMG solver residual = 0.00199519 after 2 iterations
+      AMG solver residual = 0.00419298 after 2 iterations
+  --
+  Subiteration:157 of 1033
+slurmstepd: *** STEP 989425.0 ON nid00058 CANCELLED AT 2016-01-24T01:14:25 DUE TO TIME LIMIT ***
+slurmstepd: *** JOB 989425 ON nid00058 CANCELLED AT 2016-01-24T01:14:25 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: got SIGCONT
+srun: forcing job termination

@@ -1,0 +1,4347 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+Constructing slab geometry...
+xmax = 0.02, ymax = 0.02
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+Done constructing slab geometry
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+   Configuration space box ((0,0) (7,7) (0,0)) is assigned to process 0
+   Configuration space box ((8,0) (15,7) (0,0)) is assigned to process 1
+   Configuration space box ((16,0) (23,7) (0,0)) is assigned to process 2
+   Configuration space box ((24,0) (31,7) (0,0)) is assigned to process 3
+   Configuration space box ((32,0) (39,7) (0,0)) is assigned to process 4
+   Configuration space box ((40,0) (47,7) (0,0)) is assigned to process 5
+   Configuration space box ((48,0) (55,7) (0,0)) is assigned to process 6
+   Configuration space box ((56,0) (63,7) (0,0)) is assigned to process 7
+   Configuration space box ((0,8) (7,15) (0,0)) is assigned to process 8
+   Configuration space box ((8,8) (15,15) (0,0)) is assigned to process 9
+   Configuration space box ((16,8) (23,15) (0,0)) is assigned to process 10
+   Configuration space box ((24,8) (31,15) (0,0)) is assigned to process 11
+   Configuration space box ((32,8) (39,15) (0,0)) is assigned to process 12
+   Configuration space box ((40,8) (47,15) (0,0)) is assigned to process 13
+   Configuration space box ((48,8) (55,15) (0,0)) is assigned to process 14
+   Configuration space box ((56,8) (63,15) (0,0)) is assigned to process 15
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+   Configuration space box ((0,16) (7,23) (0,0)) is assigned to process 16
+   Configuration space box ((8,16) (15,23) (0,0)) is assigned to process 17
+   Configuration space box ((16,16) (23,23) (0,0)) is assigned to process 18
+   Configuration space box ((24,16) (31,23) (0,0)) is assigned to process 19
+   Configuration space box ((32,16) (39,23) (0,0)) is assigned to process 20
+   Configuration space box ((40,16) (47,23) (0,0)) is assigned to process 21
+   Configuration space box ((48,16) (55,23) (0,0)) is assigned to process 22
+   Configuration space box ((56,16) (63,23) (0,0)) is assigned to process 23
+   Configuration space box ((0,24) (7,31) (0,0)) is assigned to process 24
+   Configuration space box ((8,24) (15,31) (0,0)) is assigned to process 25
+   Configuration space box ((16,24) (23,31) (0,0)) is assigned to process 26
+   Configuration space box ((24,24) (31,31) (0,0)) is assigned to process 27
+   Configuration space box ((32,24) (39,31) (0,0)) is assigned to process 28
+   Configuration space box ((**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+40,24) (47,31) (0,0)) is assigned to process 29
+   Configuration space box ((48,24) (55,31) (0,0)) is assigned to process 30
+   Configuration space box ((56,24) (63,31) (0,0)) is assigned to process 31
+   Configuration space box ((0,32) (7,39) (0,0)) is assigned to process 32
+   Configuration space box ((8,32) (15,39) (0,0)) is assigned to process 33
+   Configuration space box ((16,32) (23,39) (0,0)) is assigned to process 34
+   Configuration space box ((24,32) (31,39) (0,0)) is assigned to process 35
+   Configuration space box ((32,32) (39,39) (0,0)) is assigned to process 36
+   Configuration space box ((40,32) (47,39) (0,0)) is assigned to process 37
+   Configuration space box ((48,32) (55,39) (0,0)) is assigned to process 38
+   Configuration space box ((56,32) (63,39) (0,0)) is assigned to process 39
+   Configuration space box ((0,40) (7,47) (0,0)) is assigned to process 40
+   Configuration space box ((8,40) (15,47) (0,0)) is assigned to process 41
+   Configuration space box ((16,40) (23,47) (0,0)) is assi**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+gned to process 42
+   Configuration space box ((24,40) (31,47) (0,0)) is assigned to process 43
+   Configuration space box ((32,40) (39,47) (0,0)) is assigned to process 44
+   Configuration space box ((40,40) (47,47) (0,0)) is assigned to process 45
+   Configuration space box ((48,40) (55,47) (0,0)) is assigned to process 46
+   Configuration space box ((56,40) (63,47) (0,0)) is assigned to process 47
+   Configuration space box ((0,48) (7,55) (0,0)) is assigned to process 48
+   Configuration space box ((8,48) (15,55) (0,0)) is assigned to process 49
+   Configuration space box ((16,48) (23,55) (0,0)) is assigned to process 50
+   Configuration space box ((24,48) (31,55) (0,0)) is assigned to process 51
+   Configuration space box ((32,48) (39,55) (0,0)) is assigned to process 52
+   Configuration space box ((40,48) (47,55) (0,0)) is assigned to process 53
+   Configuration space box ((48,48) (55,55) (0,0)) is assigned to process 54
+   Configuration space box ((56,48) (63,55) (0,0)) is assigned to process 55
+   Conf**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+iguration space box ((0,56) (7,63) (0,0)) is assigned to process 56
+   Configuration space box ((8,56) (15,63) (0,0)) is assigned to process 57
+   Configuration space box ((16,56) (23,63) (0,0)) is assigned to process 58
+   Configuration space box ((24,56) (31,63) (0,0)) is assigned to process 59
+   Configuration space box ((32,56) (39,63) (0,0)) is assigned to process 60
+   Configuration space box ((40,56) (47,63) (0,0)) is assigned to process 61
+   Configuration space box ((48,56) (55,63) (0,0)) is assigned to process 62
+   Configuration space box ((56,56) (63,63) (0,0)) is assigned to process 63
+Constructing magnetic geometry
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,15) (0,0)) is assigned to process 0
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+   Phase space box ((8,48,-8,0) (15,55,7,15) (0,0,0,0)) is assigned to process 49, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,48,-8,0) (47,55,7,15) (0,0,0,0)) is assigned to process 53, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,48,-8,0) (55,55,7,15) (0,0,0,0)) is assigned to process 54, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,56,-8,0) (23,63,7,15) (0,0,0,0)) is assigned to process 58, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,56,-8,0) (31,63,7,15) (0,0,0,0)) is assigned to process 59, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,56,-8,0) (55,63,7,15) (0,0,0,0)) is assigned to process 62, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,56,-8,0) (63,63,7,15) (0,0,0,0)) is assigned to process 63, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,32,-8,0) (7,39,7,15) (0,0,0,0)) is assigned to process 32, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,32,-8,0) (15,39,7,15) (0,0,0,0)) is assigned to process 33, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,32,-8,0) (23,39,7,15) (0,0,0,0)) is assigned to process 34, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,32,-8,0) (31,39,7,15) (0,0,0,0)) is assigned to process 35, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,32,-8,0) (39,39,7,15) (0,0,0,0)) is assigned to process 36, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,32,-8,0) (47,39,7,15) (0,0,0,0)) is assigned to process 37, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,32,-8,0) (55,39,7,15) (0,0,0,0)) is assigned to process 38, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,32,-8,0) (63,39,7,15) (0,0,0,0)) is assigned to process 39, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,40,-8,0) (7,47,7,15) (0,0,0,0)) is assigned to process 40, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,40,-8,0) (15,47,7,15) (0,0,0,0)) is assigned to process 41, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,40,-8,0) (23,47,7,15) (0,0,0,0)) is assigned to process 42, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,40,-8,0) (31,47,7,15) (0,0,0,0)) is assigned to process 43, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,40,-8,0) (39,47,7,15) (0,0,0,0)) is assigned to process 44, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,40,-8,0) (47,47,7,15) (0,0,0,0)) is assigned to process 45, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,40,-8,0) (55,47,7,15) (0,0,0,0)) is assigned to process 46, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,40,-8,0) (63,47,7,15) (0,0,0,0)) is assigned to process 47, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,48,-8,0) (7,55,7,15) (0,0,0,0)) is assigned to process 48, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,48,-8,0) (23,55,7,15) (0,0,0,0)) is assigned to process 50, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,48,-8,0) (31,55,7,15) (0,0,0,0)) is assigned to process 51, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,48,-8,0) (39,55,7,15) (0,0,0,0)) is assigned to process 52, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,48,-8,0) (63,55,7,15) (0,0,0,0)) is assigned to process 55, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,56,-8,0) (7,63,7,15) (0,0,0,0)) is assigned to process 56, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,56,-8,0) (15,63,7,15) (0,0,0,0)) is assigned to process 57, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,56,-8,0) (39,63,7,15) (0,0,0,0)) is assigned to process 60, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,56,-8,0) (47,63,7,15) (0,0,0,0)) is assigned to process 61, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,16,-8,0) (47,23,7,15) (0,0,0,0)) is assigned to process 21, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,16,-8,0) (55,23,7,15) (0,0,0,0)) is assigned to process 22, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,16,-8,0) (63,23,7,15) (0,0,0,0)) is assigned to process 23, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,24,-8,0) (39,31,7,15) (0,0,0,0)) is assigned to process 28, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,24,-8,0) (47,31,7,15) (0,0,0,0)) is assigned to process 29, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,24,-8,0) (55,31,7,15) (0,0,0,0)) is assigned to process 30, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,0,-8,0) (7,7,7,15) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,0,-8,0) (15,7,7,15) (0,0,0,0)) is assigned to process 1, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,0,-8,0) (23,7,7,15) (0,0,0,0)) is assigned to process 2, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,0,-8,0) (31,7,7,15) (0,0,0,0)) is assigned to process 3, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,0,-8,0) (39,7,7,15) (0,0,0,0)) is assigned to process 4, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,0,-8,0) (47,7,7,15) (0,0,0,0)) is assigned to process 5, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,0,-8,0) (55,7,7,15) (0,0,0,0)) is assigned to process 6, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,0,-8,0) (63,7,7,15) (0,0,0,0)) is assigned to process 7, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,8,-8,0) (7,15,7,15) (0,0,0,0)) is assigned to process 8, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,8,-8,0) (15,15,7,15) (0,0,0,0)) is assigned to process 9, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,8,-8,0) (23,15,7,15) (0,0,0,0)) is assigned to process 10, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,8,-8,0) (31,15,7,15) (0,0,0,0)) is assigned to process 11, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,8,-8,0) (39,15,7,15) (0,0,0,0)) is assigned to process 12, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,8,-8,0) (47,15,7,15) (0,0,0,0)) is assigned to process 13, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,8,-8,0) (55,15,7,15) (0,0,0,0)) is assigned to process 14, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,8,-8,0) (63,15,7,15) (0,0,0,0)) is assigned to process 15, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,16,-8,0) (7,23,7,15) (0,0,0,0)) is assigned to process 16, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,16,-8,0) (15,23,7,15) (0,0,0,0)) is assigned to process 17, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,16,-8,0) (23,23,7,15) (0,0,0,0)) is assigned to process 18, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,16,-8,0) (31,23,7,15) (0,0,0,0)) is assigned to process 19, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,16,-8,0) (39,23,7,15) (0,0,0,0)) is assigned to process 20, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,24,-8,0) (7,31,7,15) (0,0,0,0)) is assigned to process 24, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,24,-8,0) (15,31,7,15) (0,0,0,0)) is assigned to process 25, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,24,-8,0) (23,31,7,15) (0,0,0,0)) is assigned to process 26, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,24,-8,0) (31,31,7,15) (0,0,0,0)) is assigned to process 27, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,24,-8,0) (63,31,7,15) (0,0,0,0)) is assigned to process 31, has 16384 valid cells and 131072 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.000544, charge = -1
+Done adding species and constructing coordinates
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+"T0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+"eT0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+==================================================
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+-----------------------------------------------
+===============================================
+Unrecognized collision model; setting model to NULL
+Unrecognized collision model; setting model to NULL
+      AMG solver residual = 0.135014 after 1 iterations
+      AMG solver residual = 0.135014 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.131711 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0347297
+      AMG solver residual = 0.0387938 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00232891
+      AMG solver residual = 0.0306568 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 0.000122159
+      AMG solver residual = 0.0245018 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 4.25739e-06
+      AMG solver residual = 0.0206994 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.61078e-07
+  Distribution Function Extrema:
+    Species 0:	0.000312079 [max]	-1.06859e-11 [min]
+    Species 1:	1.39997e-09 [max]	-4.79362e-17 [min]
+
+      AMG solver residual = 0.135014 after 1 iterations
+      AMG solver residual = 0.135014 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.131711 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0347297
+      AMG solver residual = 0.0387938 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00232891
+      AMG solver residual = 0.0306568 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 0.000122159
+      AMG solver residual = 0.0245018 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 4.25739e-06
+      AMG solver residual = 0.0206994 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.61078e-07
+dtStable = 0.957146
+      AMG solver residual = 0.13687 after 1 iterations
+      AMG solver residual = 0.13687 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.134015 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0270392
+      AMG solver residual = 0.0352791 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00143491
+      AMG solver residual = 0.0230469 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.70356e-05
+      AMG solver residual = 0.0201414 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.90129e-06
+      AMG solver residual = 0.0154504 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.05933e-07
+      AMG solver residual = 0.13687 after 1 iterations
+      AMG solver residual = 0.13687 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.134015 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0270392
+      AMG solver residual = 0.0352792 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00143491
+      AMG solver residual = 0.023047 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.70354e-05
+      AMG solver residual = 0.0201414 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.90129e-06
+      AMG solver residual = 0.0154504 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.05932e-07
+      AMG solver residual = 0.137893 after 1 iterations
+      AMG solver residual = 0.137893 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.135034 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0284995
+      AMG solver residual = 0.0344555 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00174905
+      AMG solver residual = 0.0273937 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 0.000106199
+      AMG solver residual = 0.0223522 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 5.26017e-06
+      AMG solver residual = 0.0197777 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 2.19342e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312079 [max]	-1.0686e-11 [min]
+    Species 1:	1.39997e-09 [max]	-4.79366e-17 [min]
+
+Step 1 completed, simulation time is 0.1
+      AMG solver residual = 0.137893 after 1 iterations
+      AMG solver residual = 0.137893 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.135034 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0284995
+      AMG solver residual = 0.0344555 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00174905
+      AMG solver residual = 0.0273937 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 0.000106199
+      AMG solver residual = 0.0223522 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 5.26017e-06
+      AMG solver residual = 0.0197777 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 2.19342e-07
+      AMG solver residual = 0.137426 after 1 iterations
+      AMG solver residual = 0.137426 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.134783 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0208646
+      AMG solver residual = 0.0311446 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00106768
+      AMG solver residual = 0.0176283 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 6.45543e-05
+      AMG solver residual = 0.0202039 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.95343e-06
+      AMG solver residual = 0.0202682 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.13728e-07
+      AMG solver residual = 0.137426 after 1 iterations
+      AMG solver residual = 0.137426 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.134783 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0208647
+      AMG solver residual = 0.0311447 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00106768
+      AMG solver residual = 0.0176284 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 6.45543e-05
+      AMG solver residual = 0.020204 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.95343e-06
+      AMG solver residual = 0.0202683 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.13727e-07
+      AMG solver residual = 0.131023 after 1 iterations
+      AMG solver residual = 0.131023 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128718 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0269363
+      AMG solver residual = 0.0322227 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00142882
+      AMG solver residual = 0.0267491 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.92437e-05
+      AMG solver residual = 0.0226307 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 4.26054e-06
+      AMG solver residual = 0.020246 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.69866e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312079 [max]	-1.06861e-11 [min]
+    Species 1:	1.39997e-09 [max]	-4.7937e-17 [min]
+
+Step 2 completed, simulation time is 0.2
+      AMG solver residual = 0.131023 after 1 iterations
+      AMG solver residual = 0.131023 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128718 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0269363
+      AMG solver residual = 0.0322227 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00142882
+      AMG solver residual = 0.0267491 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.92437e-05
+      AMG solver residual = 0.0226307 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 4.26054e-06
+      AMG solver residual = 0.020246 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.69866e-07
+      AMG solver residual = 0.131046 after 1 iterations
+      AMG solver residual = 0.131046 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128733 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0271674
+      AMG solver residual = 0.03242 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00142733
+      AMG solver residual = 0.0265084 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.75257e-05
+      AMG solver residual = 0.0226384 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 4.39168e-06
+      AMG solver residual = 0.0202355 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.9794e-07
+      AMG solver residual = 0.131046 after 1 iterations
+      AMG solver residual = 0.131046 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128733 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0271674
+      AMG solver residual = 0.0324201 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00142734
+      AMG solver residual = 0.0265085 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.75259e-05
+      AMG solver residual = 0.0226384 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 4.39169e-06
+      AMG solver residual = 0.0202355 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.9794e-07
+      AMG solver residual = 0.13106 after 1 iterations
+      AMG solver residual = 0.13106 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128749 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0271723
+      AMG solver residual = 0.032418 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.0014271
+      AMG solver residual = 0.026502 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.74864e-05
+      AMG solver residual = 0.022633 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 4.38951e-06
+      AMG solver residual = 0.0202345 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.97855e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.00031208 [max]	-1.06862e-11 [min]
+ subiteration:1/1
+    Species 1:	1.39997e-09 [max]	-4.79374e-17 [min]
+ subiteration:1/1
+
+Step 3 completed, simulation time is 0.3
+      AMG solver residual = 0.13106 after 1 iterations
+      AMG solver residual = 0.13106 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128749 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0271723
+      AMG solver residual = 0.032418 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.0014271
+      AMG solver residual = 0.026502 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.74864e-05
+      AMG solver residual = 0.022633 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 4.38951e-06
+      AMG solver residual = 0.0202345 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.97855e-07
+      AMG solver residual = 0.131006 after 1 iterations
+      AMG solver residual = 0.131006 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128723 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0260543
+      AMG solver residual = 0.0316798 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00116534
+      AMG solver residual = 0.024144 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.39856e-05
+      AMG solver residual = 0.0204229 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.75201e-06
+      AMG solver residual = 0.0180677 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.1968e-07
+      AMG solver residual = 0.131006 after 1 iterations
+      AMG solver residual = 0.131006 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128723 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0260544
+      AMG solver residual = 0.0316799 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00116534
+      AMG solver residual = 0.0241441 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.39857e-05
+      AMG solver residual = 0.020423 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.75201e-06
+      AMG solver residual = 0.0180677 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.1968e-07
+      AMG solver residual = 0.131021 after 1 iterations
+      AMG solver residual = 0.131021 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128739 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0260596
+      AMG solver residual = 0.031678 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00116518
+      AMG solver residual = 0.0241391 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.39693e-05
+      AMG solver residual = 0.0204189 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.75155e-06
+      AMG solver residual = 0.0180647 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.19637e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.00031208 [max]	-1.06862e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39997e-09 [max]	-4.79378e-17 [min]
+
+Step 4 completed, simulation time is 0.4
+      AMG solver residual = 0.131021 after 1 iterations
+      AMG solver residual = 0.131021 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128739 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0260596
+      AMG solver residual = 0.031678 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00116518
+      AMG solver residual = 0.0241391 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.39693e-05
+      AMG solver residual = 0.0204189 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.75155e-06
+      AMG solver residual = 0.0180647 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.19637e-07
+      AMG solver residual = 0.131035 after 1 iterations
+      AMG solver residual = 0.131035 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128754 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0260648
+      AMG solver residual = 0.0316762 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00116502
+      AMG solver residual = 0.0241342 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.39531e-05
+      AMG solver residual = 0.0204149 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.7511e-06
+      AMG solver residual = 0.0180618 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.19593e-07
+      AMG solver residual = 0.131035 after 1 iterations
+      AMG solver residual = 0.131035 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128754 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0260649
+      AMG solver residual = 0.0316763 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00116502
+      AMG solver residual = 0.0241343 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.39532e-05
+      AMG solver residual = 0.0204149 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.7511e-06
+      AMG solver residual = 0.0180618 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.19593e-07
+      AMG solver residual = 0.131338 after 1 iterations
+      AMG solver residual = 0.131338 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.129062 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0270909
+      AMG solver residual = 0.0312758 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114659
+      AMG solver residual = 0.0244646 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.22193e-05
+      AMG solver residual = 0.0201261 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.00127e-06
+      AMG solver residual = 0.0179987 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.13965e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.00031208 [max]	-1.06863e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39997e-09 [max]	-4.79382e-17 [min]
+
+Step 5 completed, simulation time is 0.5
+      AMG solver residual = 0.131338 after 1 iterations
+      AMG solver residual = 0.131338 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.129062 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0270909
+      AMG solver residual = 0.0312758 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114659
+      AMG solver residual = 0.0244646 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.22193e-05
+      AMG solver residual = 0.0201261 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.00127e-06
+      AMG solver residual = 0.0179987 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.13965e-07
+      AMG solver residual = 0.131352 after 1 iterations
+      AMG solver residual = 0.131352 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.129077 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0270975
+      AMG solver residual = 0.0312741 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.0011464
+      AMG solver residual = 0.0244604 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.22064e-05
+      AMG solver residual = 0.0201228 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.00119e-06
+      AMG solver residual = 0.0179971 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.1393e-07
+      AMG solver residual = 0.131352 after 1 iterations
+      AMG solver residual = 0.131352 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.129077 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0270976
+      AMG solver residual = 0.0312742 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.0011464
+      AMG solver residual = 0.0244604 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.22065e-05
+      AMG solver residual = 0.0201228 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.00119e-06
+      AMG solver residual = 0.0179971 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.1393e-07
+      AMG solver residual = 0.131321 after 1 iterations
+      AMG solver residual = 0.131321 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.129073 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0270432
+      AMG solver residual = 0.030849 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00119666
+      AMG solver residual = 0.0248977 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.67762e-05
+      AMG solver residual = 0.0205065 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.77862e-06
+      AMG solver residual = 0.0179742 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.0936e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312081 [max]	-1.06864e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39997e-09 [max]	-4.79386e-17 [min]
+
+Step 6 completed, simulation time is 0.6
+      AMG solver residual = 0.131321 after 1 iterations
+      AMG solver residual = 0.131321 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.129073 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0270432
+      AMG solver residual = 0.030849 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00119666
+      AMG solver residual = 0.0248977 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.67762e-05
+      AMG solver residual = 0.0205065 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.77862e-06
+      AMG solver residual = 0.0179742 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.0936e-07
+      AMG solver residual = 0.128945 after 1 iterations
+      AMG solver residual = 0.128945 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126699 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228824
+      AMG solver residual = 0.0304795 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00138281
+      AMG solver residual = 0.0257884 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.36883e-05
+      AMG solver residual = 0.0223072 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.30169e-06
+      AMG solver residual = 0.0190688 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.49989e-07
+      AMG solver residual = 0.128945 after 1 iterations
+      AMG solver residual = 0.128945 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126699 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228825
+      AMG solver residual = 0.0304796 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00138281
+      AMG solver residual = 0.0257886 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.36883e-05
+      AMG solver residual = 0.0223072 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.3017e-06
+      AMG solver residual = 0.0190689 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.49989e-07
+      AMG solver residual = 0.128958 after 1 iterations
+      AMG solver residual = 0.128958 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126713 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228855
+      AMG solver residual = 0.0304794 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00138263
+      AMG solver residual = 0.0257828 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.36717e-05
+      AMG solver residual = 0.0223045 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.30163e-06
+      AMG solver residual = 0.0190696 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.49958e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312081 [max]	-1.06865e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39998e-09 [max]	-4.7939e-17 [min]
+
+Step 7 completed, simulation time is 0.7
+      AMG solver residual = 0.128958 after 1 iterations
+      AMG solver residual = 0.128958 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126713 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228855
+      AMG solver residual = 0.0304794 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00138263
+      AMG solver residual = 0.0257828 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.36717e-05
+      AMG solver residual = 0.0223045 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.30163e-06
+      AMG solver residual = 0.0190696 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.49958e-07
+      AMG solver residual = 0.128985 after 1 iterations
+      AMG solver residual = 0.128985 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126742 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.022852
+      AMG solver residual = 0.0304484 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00137949
+      AMG solver residual = 0.0257414 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.35497e-05
+      AMG solver residual = 0.0222952 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.29735e-06
+      AMG solver residual = 0.0190451 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.49938e-07
+      AMG solver residual = 0.128986 after 1 iterations
+      AMG solver residual = 0.128986 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126742 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.022852
+      AMG solver residual = 0.0304485 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00137949
+      AMG solver residual = 0.0257416 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.35497e-05
+      AMG solver residual = 0.0222953 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.29736e-06
+      AMG solver residual = 0.0190452 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.49938e-07
+      AMG solver residual = 0.128998 after 1 iterations
+      AMG solver residual = 0.128998 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126755 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228552
+      AMG solver residual = 0.0304486 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00137932
+      AMG solver residual = 0.0257359 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.35334e-05
+      AMG solver residual = 0.0222926 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.29731e-06
+      AMG solver residual = 0.0190459 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.49909e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312081 [max]	-1.06866e-11 [min]
+    Species 1:	1.39998e-09 [max]	-4.79394e-17 [min]
+
+Step 8 completed, simulation time is 0.8
+      AMG solver residual = 0.128998 after 1 iterations
+      AMG solver residual = 0.128998 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126755 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228552
+      AMG solver residual = 0.0304486 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00137932
+      AMG solver residual = 0.0257359 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.35334e-05
+      AMG solver residual = 0.0222926 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.29731e-06
+      AMG solver residual = 0.0190459 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.49909e-07
+      AMG solver residual = 0.129011 after 1 iterations
+      AMG solver residual = 0.129011 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126769 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228584
+      AMG solver residual = 0.0304487 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00137915
+      AMG solver residual = 0.0257305 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.35171e-05
+      AMG solver residual = 0.0222899 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.29728e-06
+      AMG solver residual = 0.0190467 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.4988e-07
+      AMG solver residual = 0.129011 after 1 iterations
+      AMG solver residual = 0.129011 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.126769 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228585
+      AMG solver residual = 0.0304488 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00137916
+      AMG solver residual = 0.0257306 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 7.35171e-05
+      AMG solver residual = 0.02229 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.29728e-06
+      AMG solver residual = 0.0190467 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.4988e-07
+      AMG solver residual = 0.127028 after 1 iterations
+      AMG solver residual = 0.127028 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124709 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0261258
+      AMG solver residual = 0.032538 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114299
+      AMG solver residual = 0.0240985 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.62852e-05
+      AMG solver residual = 0.01912 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.355e-06
+      AMG solver residual = 0.0163166 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.33074e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312082 [max]	-1.06867e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39998e-09 [max]	-4.79398e-17 [min]
+
+Step 9 completed, simulation time is 0.9
+      AMG solver residual = 0.127028 after 1 iterations
+      AMG solver residual = 0.127028 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124709 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0261258
+      AMG solver residual = 0.032538 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114299
+      AMG solver residual = 0.0240985 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.62852e-05
+      AMG solver residual = 0.01912 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.355e-06
+      AMG solver residual = 0.0163166 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.33074e-07
+      AMG solver residual = 0.127039 after 1 iterations
+      AMG solver residual = 0.127039 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124721 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0261445
+      AMG solver residual = 0.0325414 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114341
+      AMG solver residual = 0.0240966 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.63252e-05
+      AMG solver residual = 0.0191331 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.36077e-06
+      AMG solver residual = 0.0163418 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.3315e-07
+      AMG solver residual = 0.127039 after 1 iterations
+      AMG solver residual = 0.127039 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124721 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0261446
+      AMG solver residual = 0.0325415 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114341
+      AMG solver residual = 0.0240967 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.63251e-05
+      AMG solver residual = 0.0191331 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.36077e-06
+      AMG solver residual = 0.0163418 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.3315e-07
+      AMG solver residual = 0.127051 after 1 iterations
+      AMG solver residual = 0.127051 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124734 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0261467
+      AMG solver residual = 0.0325416 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114331
+      AMG solver residual = 0.0240915 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.63184e-05
+      AMG solver residual = 0.0191315 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.3615e-06
+      AMG solver residual = 0.0163462 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.33152e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312082 [max]	-1.06868e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39998e-09 [max]	-4.79402e-17 [min]
+
+Step 10 completed, simulation time is 1
+Writing checkpoint file
+Writing history file
+      AMG solver residual = 0.127051 after 1 iterations
+      AMG solver residual = 0.127051 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124734 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0261467
+      AMG solver residual = 0.0325416 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114331
+      AMG solver residual = 0.0240915 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.63184e-05
+      AMG solver residual = 0.0191315 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.3615e-06
+      AMG solver residual = 0.0163462 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.33152e-07
+      AMG solver residual = 0.127063 after 1 iterations
+      AMG solver residual = 0.127063 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124746 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0261489
+      AMG solver residual = 0.0325419 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114321
+      AMG solver residual = 0.0240864 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.63116e-05
+      AMG solver residual = 0.0191298 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.36223e-06
+      AMG solver residual = 0.0163506 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.33155e-07
+      AMG solver residual = 0.127064 after 1 iterations
+      AMG solver residual = 0.127064 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124747 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.026149
+      AMG solver residual = 0.032542 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00114321
+      AMG solver residual = 0.0240865 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.63115e-05
+      AMG solver residual = 0.0191299 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.36222e-06
+      AMG solver residual = 0.0163505 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.33155e-07
+      AMG solver residual = 0.127181 after 1 iterations
+      AMG solver residual = 0.127181 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124913 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0242997
+      AMG solver residual = 0.0314897 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.0010619
+      AMG solver residual = 0.0224818 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.52451e-05
+      AMG solver residual = 0.0179405 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.44416e-06
+      AMG solver residual = 0.0163233 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.17926e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312082 [max]	-1.06869e-11 [min]
+    Species 1:	1.39998e-09 [max]	-4.79406e-17 [min]
+
+Step 11 completed, simulation time is 1.1
+      AMG solver residual = 0.127181 after 1 iterations
+      AMG solver residual = 0.127181 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.124913 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0242997
+      AMG solver residual = 0.0314897 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.0010619
+      AMG solver residual = 0.0224818 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.52451e-05
+      AMG solver residual = 0.0179405 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.44416e-06
+      AMG solver residual = 0.0163233 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.17926e-07
+      AMG solver residual = 0.118298 after 1 iterations
+      AMG solver residual = 0.118298 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116365 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0235716
+      AMG solver residual = 0.0325836 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000931602
+      AMG solver residual = 0.0223053 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.77786e-05
+      AMG solver residual = 0.0202202 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14222e-06
+      AMG solver residual = 0.0185175 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 7.05038e-08
+      AMG solver residual = 0.118299 after 1 iterations
+      AMG solver residual = 0.118299 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116365 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0235716
+      AMG solver residual = 0.0325837 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000931603
+      AMG solver residual = 0.0223053 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.77786e-05
+      AMG solver residual = 0.0202202 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14222e-06
+      AMG solver residual = 0.0185175 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 7.05039e-08
+      AMG solver residual = 0.118256 after 1 iterations
+      AMG solver residual = 0.118256 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116323 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0235168
+      AMG solver residual = 0.0326186 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000918394
+      AMG solver residual = 0.0220779 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.7229e-05
+      AMG solver residual = 0.0200608 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14671e-06
+      AMG solver residual = 0.0184776 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.99148e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312082 [max]	-1.0687e-11 [min]
+    Species 1:	1.39998e-09 [max]	-4.7941e-17 [min]
+
+Step 12 completed, simulation time is 1.2
+      AMG solver residual = 0.118256 after 1 iterations
+      AMG solver residual = 0.118256 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116323 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0235168
+      AMG solver residual = 0.0326186 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000918394
+      AMG solver residual = 0.0220779 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.7229e-05
+      AMG solver residual = 0.0200608 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14671e-06
+      AMG solver residual = 0.0184776 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.99148e-08
+      AMG solver residual = 0.118265 after 1 iterations
+      AMG solver residual = 0.118265 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116332 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.023519
+      AMG solver residual = 0.0326204 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000918426
+      AMG solver residual = 0.0220756 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.72283e-05
+      AMG solver residual = 0.0200584 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14667e-06
+      AMG solver residual = 0.0184786 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.99083e-08
+      AMG solver residual = 0.118265 after 1 iterations
+      AMG solver residual = 0.118265 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116332 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0235191
+      AMG solver residual = 0.0326204 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000918426
+      AMG solver residual = 0.0220756 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.72283e-05
+      AMG solver residual = 0.0200584 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14667e-06
+      AMG solver residual = 0.0184786 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.99083e-08
+      AMG solver residual = 0.118273 after 1 iterations
+      AMG solver residual = 0.118273 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.11634 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0235213
+      AMG solver residual = 0.0326223 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00091846
+      AMG solver residual = 0.0220733 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.72276e-05
+      AMG solver residual = 0.0200561 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14664e-06
+      AMG solver residual = 0.0184797 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.9902e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312083 [max]	-1.0687e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39998e-09 [max]	-4.79414e-17 [min]
+
+Step 13 completed, simulation time is 1.3
+      AMG solver residual = 0.118273 after 1 iterations
+      AMG solver residual = 0.118273 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.11634 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0235213
+      AMG solver residual = 0.0326223 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00091846
+      AMG solver residual = 0.0220733 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.72276e-05
+      AMG solver residual = 0.0200561 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14664e-06
+      AMG solver residual = 0.0184797 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.9902e-08
+      AMG solver residual = 0.118282 after 1 iterations
+      AMG solver residual = 0.118282 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116349 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.023523
+      AMG solver residual = 0.0326244 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000918666
+      AMG solver residual = 0.0220722 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.72303e-05
+      AMG solver residual = 0.0200549 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14632e-06
+      AMG solver residual = 0.018481 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.98969e-08
+      AMG solver residual = 0.118282 after 1 iterations
+      AMG solver residual = 0.118282 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116349 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.023523
+      AMG solver residual = 0.0326245 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000918666
+      AMG solver residual = 0.0220723 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 4.72303e-05
+      AMG solver residual = 0.020055 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.14632e-06
+      AMG solver residual = 0.018481 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.9897e-08
+      AMG solver residual = 0.118363 after 1 iterations
+      AMG solver residual = 0.118363 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116393 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.022865
+      AMG solver residual = 0.0325872 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109633
+      AMG solver residual = 0.0224246 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.4639e-05
+      AMG solver residual = 0.020637 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.8955e-06
+      AMG solver residual = 0.0201839 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10508e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312083 [max]	-1.06871e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39999e-09 [max]	-4.79418e-17 [min]
+
+Step 14 completed, simulation time is 1.4
+      AMG solver residual = 0.118363 after 1 iterations
+      AMG solver residual = 0.118363 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116393 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.022865
+      AMG solver residual = 0.0325872 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109633
+      AMG solver residual = 0.0224246 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.4639e-05
+      AMG solver residual = 0.020637 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.8955e-06
+      AMG solver residual = 0.0201839 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10508e-07
+      AMG solver residual = 0.118371 after 1 iterations
+      AMG solver residual = 0.118371 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116401 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228671
+      AMG solver residual = 0.0325897 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109631
+      AMG solver residual = 0.0224223 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46408e-05
+      AMG solver residual = 0.0206345 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89561e-06
+      AMG solver residual = 0.0201828 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10494e-07
+      AMG solver residual = 0.118371 after 1 iterations
+      AMG solver residual = 0.118371 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116401 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228672
+      AMG solver residual = 0.0325898 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109631
+      AMG solver residual = 0.0224223 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46408e-05
+      AMG solver residual = 0.0206346 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89561e-06
+      AMG solver residual = 0.0201828 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10494e-07
+      AMG solver residual = 0.118387 after 1 iterations
+      AMG solver residual = 0.118387 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116418 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229387
+      AMG solver residual = 0.0325991 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109573
+      AMG solver residual = 0.0224344 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46645e-05
+      AMG solver residual = 0.0206321 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89129e-06
+      AMG solver residual = 0.0202061 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10155e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312083 [max]	-1.06872e-11 [min]
+    Species 1:	1.39999e-09 [max]	-4.79422e-17 [min]
+
+Step 15 completed, simulation time is 1.5
+      AMG solver residual = 0.118387 after 1 iterations
+      AMG solver residual = 0.118387 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116418 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229387
+      AMG solver residual = 0.0325991 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109573
+      AMG solver residual = 0.0224344 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46645e-05
+      AMG solver residual = 0.0206321 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89129e-06
+      AMG solver residual = 0.0202061 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10155e-07
+      AMG solver residual = 0.118395 after 1 iterations
+      AMG solver residual = 0.118395 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116425 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229409
+      AMG solver residual = 0.0326018 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109572
+      AMG solver residual = 0.0224322 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46664e-05
+      AMG solver residual = 0.0206297 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89141e-06
+      AMG solver residual = 0.0202052 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10142e-07
+      AMG solver residual = 0.118395 after 1 iterations
+      AMG solver residual = 0.118395 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116425 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229409
+      AMG solver residual = 0.0326018 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109572
+      AMG solver residual = 0.0224322 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46664e-05
+      AMG solver residual = 0.0206297 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89141e-06
+      AMG solver residual = 0.0202052 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10142e-07
+      AMG solver residual = 0.118402 after 1 iterations
+      AMG solver residual = 0.118402 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116432 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229432
+      AMG solver residual = 0.0326045 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.0010957
+      AMG solver residual = 0.02243 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46684e-05
+      AMG solver residual = 0.0206274 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89153e-06
+      AMG solver residual = 0.0202043 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10129e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312084 [max]	-1.06873e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39999e-09 [max]	-4.79426e-17 [min]
+
+Step 16 completed, simulation time is 1.6
+      AMG solver residual = 0.118402 after 1 iterations
+      AMG solver residual = 0.118402 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116432 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229432
+      AMG solver residual = 0.0326045 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.0010957
+      AMG solver residual = 0.02243 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46684e-05
+      AMG solver residual = 0.0206274 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89153e-06
+      AMG solver residual = 0.0202043 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10129e-07
+      AMG solver residual = 0.118409 after 1 iterations
+      AMG solver residual = 0.118409 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116439 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229455
+      AMG solver residual = 0.0326073 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109569
+      AMG solver residual = 0.0224279 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46705e-05
+      AMG solver residual = 0.0206251 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89166e-06
+      AMG solver residual = 0.0202033 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10116e-07
+      AMG solver residual = 0.11841 after 1 iterations
+      AMG solver residual = 0.11841 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116439 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229455
+      AMG solver residual = 0.0326074 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109569
+      AMG solver residual = 0.0224279 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46705e-05
+      AMG solver residual = 0.0206251 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89166e-06
+      AMG solver residual = 0.0202034 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10116e-07
+      AMG solver residual = 0.118417 after 1 iterations
+      AMG solver residual = 0.118417 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116446 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229478
+      AMG solver residual = 0.0326102 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109567
+      AMG solver residual = 0.0224258 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46727e-05
+      AMG solver residual = 0.0206228 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89179e-06
+      AMG solver residual = 0.0202025 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10103e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312084 [max]	-1.06874e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39999e-09 [max]	-4.7943e-17 [min]
+
+Step 17 completed, simulation time is 1.7
+      AMG solver residual = 0.118417 after 1 iterations
+      AMG solver residual = 0.118417 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116446 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0229478
+      AMG solver residual = 0.0326102 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00109567
+      AMG solver residual = 0.0224258 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.46727e-05
+      AMG solver residual = 0.0206228 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.89179e-06
+      AMG solver residual = 0.0202025 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.10103e-07
+      AMG solver residual = 0.1184 after 1 iterations
+      AMG solver residual = 0.1184 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116433 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228638
+      AMG solver residual = 0.0325688 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00108616
+      AMG solver residual = 0.0223407 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.4121e-05
+      AMG solver residual = 0.0205605 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.87419e-06
+      AMG solver residual = 0.0202005 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.09597e-07
+      AMG solver residual = 0.1184 after 1 iterations
+      AMG solver residual = 0.1184 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116433 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0228638
+      AMG solver residual = 0.0325688 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00108616
+      AMG solver residual = 0.0223407 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.4121e-05
+      AMG solver residual = 0.0205606 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.87419e-06
+      AMG solver residual = 0.0202006 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.09597e-07
+      AMG solver residual = 0.118525 after 1 iterations
+      AMG solver residual = 0.118525 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116602 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201007
+      AMG solver residual = 0.031867 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679257
+      AMG solver residual = 0.0183488 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.44131e-05
+      AMG solver residual = 0.0111639 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35749e-06
+      AMG solver residual = 0.00721716 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69884e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312084 [max]	-1.06875e-11 [min]
+    Species 1:	1.39999e-09 [max]	-4.79434e-17 [min]
+
+Step 18 completed, simulation time is 1.8
+      AMG solver residual = 0.118525 after 1 iterations
+      AMG solver residual = 0.118525 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116602 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201007
+      AMG solver residual = 0.031867 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679257
+      AMG solver residual = 0.0183488 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.44131e-05
+      AMG solver residual = 0.0111639 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35749e-06
+      AMG solver residual = 0.00721716 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69884e-08
+      AMG solver residual = 0.118531 after 1 iterations
+      AMG solver residual = 0.118531 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116608 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201037
+      AMG solver residual = 0.03187 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679221
+      AMG solver residual = 0.018347 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.44084e-05
+      AMG solver residual = 0.0111624 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35695e-06
+      AMG solver residual = 0.00721412 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69663e-08
+      AMG solver residual = 0.118532 after 1 iterations
+      AMG solver residual = 0.118532 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116608 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201037
+      AMG solver residual = 0.0318701 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679221
+      AMG solver residual = 0.018347 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.44084e-05
+      AMG solver residual = 0.0111624 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35695e-06
+      AMG solver residual = 0.00721411 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69663e-08
+      AMG solver residual = 0.118538 after 1 iterations
+      AMG solver residual = 0.118538 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116614 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201068
+      AMG solver residual = 0.0318732 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679186
+      AMG solver residual = 0.0183453 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.44037e-05
+      AMG solver residual = 0.0111609 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.3564e-06
+      AMG solver residual = 0.00721106 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69443e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312085 [max]	-1.06876e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.39999e-09 [max]	-4.79438e-17 [min]
+
+Step 19 completed, simulation time is 1.9
+      AMG solver residual = 0.118538 after 1 iterations
+      AMG solver residual = 0.118538 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116614 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201068
+      AMG solver residual = 0.0318732 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679186
+      AMG solver residual = 0.0183453 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.44037e-05
+      AMG solver residual = 0.0111609 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.3564e-06
+      AMG solver residual = 0.00721106 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69443e-08
+      AMG solver residual = 0.118544 after 1 iterations
+      AMG solver residual = 0.118544 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.11662 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.02011
+      AMG solver residual = 0.0318765 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679153
+      AMG solver residual = 0.0183436 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43991e-05
+      AMG solver residual = 0.0111594 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35586e-06
+      AMG solver residual = 0.00720799 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69225e-08
+      AMG solver residual = 0.118544 after 1 iterations
+      AMG solver residual = 0.118544 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.11662 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.02011
+      AMG solver residual = 0.0318765 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679153
+      AMG solver residual = 0.0183436 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43991e-05
+      AMG solver residual = 0.0111594 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35586e-06
+      AMG solver residual = 0.00720799 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69225e-08
+      AMG solver residual = 0.11855 after 1 iterations
+      AMG solver residual = 0.11855 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116626 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201132
+      AMG solver residual = 0.0318798 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679121
+      AMG solver residual = 0.018342 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43945e-05
+      AMG solver residual = 0.011158 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35531e-06
+      AMG solver residual = 0.00720491 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69009e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312085 [max]	-1.06877e-11 [min]
+    Species 1:	1.39999e-09 [max]	-4.79442e-17 [min]
+
+Step 20 completed, simulation time is 2
+Writing checkpoint file
+Writing history file
+      AMG solver residual = 0.11855 after 1 iterations
+      AMG solver residual = 0.11855 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116626 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201132
+      AMG solver residual = 0.0318798 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679121
+      AMG solver residual = 0.018342 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43945e-05
+      AMG solver residual = 0.011158 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35531e-06
+      AMG solver residual = 0.00720491 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.69009e-08
+      AMG solver residual = 0.118556 after 1 iterations
+      AMG solver residual = 0.118556 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116632 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201164
+      AMG solver residual = 0.0318831 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00067909
+      AMG solver residual = 0.0183404 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.439e-05
+      AMG solver residual = 0.0111565 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35477e-06
+      AMG solver residual = 0.00720183 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.68793e-08
+      AMG solver residual = 0.118556 after 1 iterations
+      AMG solver residual = 0.118556 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116632 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201164
+      AMG solver residual = 0.0318832 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00067909
+      AMG solver residual = 0.0183405 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.439e-05
+      AMG solver residual = 0.0111565 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35476e-06
+      AMG solver residual = 0.00720182 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.68793e-08
+      AMG solver residual = 0.118562 after 1 iterations
+      AMG solver residual = 0.118562 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116637 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201197
+      AMG solver residual = 0.0318866 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679061
+      AMG solver residual = 0.018339 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43856e-05
+      AMG solver residual = 0.0111551 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35422e-06
+      AMG solver residual = 0.00719873 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.68579e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312085 [max]	-1.06878e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.4e-09 [max]	-4.79446e-17 [min]
+
+Step 21 completed, simulation time is 2.1
+      AMG solver residual = 0.118562 after 1 iterations
+      AMG solver residual = 0.118562 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116637 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201197
+      AMG solver residual = 0.0318866 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679061
+      AMG solver residual = 0.018339 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43856e-05
+      AMG solver residual = 0.0111551 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35422e-06
+      AMG solver residual = 0.00719873 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.68579e-08
+      AMG solver residual = 0.118568 after 1 iterations
+      AMG solver residual = 0.118568 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116643 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201229
+      AMG solver residual = 0.0318901 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679034
+      AMG solver residual = 0.0183375 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43811e-05
+      AMG solver residual = 0.0111537 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35367e-06
+      AMG solver residual = 0.00719562 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.68367e-08
+      AMG solver residual = 0.118568 after 1 iterations
+      AMG solver residual = 0.118568 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116643 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.020123
+      AMG solver residual = 0.0318901 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679034
+      AMG solver residual = 0.0183376 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43811e-05
+      AMG solver residual = 0.0111538 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35367e-06
+      AMG solver residual = 0.00719562 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.68367e-08
+      AMG solver residual = 0.118573 after 1 iterations
+      AMG solver residual = 0.118573 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116648 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201263
+      AMG solver residual = 0.0318937 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679008
+      AMG solver residual = 0.0183362 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43767e-05
+      AMG solver residual = 0.0111524 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35312e-06
+      AMG solver residual = 0.00719251 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.68156e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312086 [max]	-1.06878e-11 [min]
+ subiteration:1/1
+    Species 1:	1.4e-09 [max]	-4.7945e-17 [min]
+
+Step 22 completed, simulation time is 2.2
+      AMG solver residual = 0.118573 after 1 iterations
+      AMG solver residual = 0.118573 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116648 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201263
+      AMG solver residual = 0.0318937 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000679008
+      AMG solver residual = 0.0183362 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43767e-05
+      AMG solver residual = 0.0111524 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35312e-06
+      AMG solver residual = 0.00719251 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.68156e-08
+      AMG solver residual = 0.118579 after 1 iterations
+      AMG solver residual = 0.118579 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116653 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201296
+      AMG solver residual = 0.0318973 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678983
+      AMG solver residual = 0.0183348 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43724e-05
+      AMG solver residual = 0.011151 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35258e-06
+      AMG solver residual = 0.00718938 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.67946e-08
+      AMG solver residual = 0.118579 after 1 iterations
+      AMG solver residual = 0.118579 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116653 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201297
+      AMG solver residual = 0.0318973 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678983
+      AMG solver residual = 0.0183349 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43724e-05
+      AMG solver residual = 0.0111511 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35257e-06
+      AMG solver residual = 0.00718938 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.67946e-08
+      AMG solver residual = 0.118584 after 1 iterations
+      AMG solver residual = 0.118584 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116658 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.020133
+      AMG solver residual = 0.031901 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00067896
+      AMG solver residual = 0.0183336 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43681e-05
+      AMG solver residual = 0.0111497 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35203e-06
+      AMG solver residual = 0.00718624 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.67738e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312086 [max]	-1.06879e-11 [min]
+ subiteration:1/1
+    Species 1:	1.4e-09 [max]	-4.79454e-17 [min]
+
+Step 23 completed, simulation time is 2.3
+      AMG solver residual = 0.118584 after 1 iterations
+      AMG solver residual = 0.118584 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116658 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.020133
+      AMG solver residual = 0.031901 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00067896
+      AMG solver residual = 0.0183336 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43681e-05
+      AMG solver residual = 0.0111497 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35203e-06
+      AMG solver residual = 0.00718624 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.67738e-08
+      AMG solver residual = 0.118588 after 1 iterations
+      AMG solver residual = 0.118588 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116662 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201313
+      AMG solver residual = 0.0319042 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678898
+      AMG solver residual = 0.0183315 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.4353e-05
+      AMG solver residual = 0.0111493 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35027e-06
+      AMG solver residual = 0.00717334 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.67381e-08
+      AMG solver residual = 0.118589 after 1 iterations
+      AMG solver residual = 0.118589 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116662 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201313
+      AMG solver residual = 0.0319043 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678898
+      AMG solver residual = 0.0183316 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.4353e-05
+      AMG solver residual = 0.0111493 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.35027e-06
+      AMG solver residual = 0.00717333 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.67381e-08
+      AMG solver residual = 0.118593 after 1 iterations
+      AMG solver residual = 0.118593 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116666 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201348
+      AMG solver residual = 0.031908 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678878
+      AMG solver residual = 0.0183304 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43488e-05
+      AMG solver residual = 0.0111481 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.34972e-06
+      AMG solver residual = 0.00717018 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.67175e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312086 [max]	-1.0688e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.4e-09 [max]	-4.79458e-17 [min]
+
+Step 24 completed, simulation time is 2.4
+      AMG solver residual = 0.118593 after 1 iterations
+      AMG solver residual = 0.118593 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116666 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201348
+      AMG solver residual = 0.031908 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678878
+      AMG solver residual = 0.0183304 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43488e-05
+      AMG solver residual = 0.0111481 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.34972e-06
+      AMG solver residual = 0.00717018 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.67175e-08
+      AMG solver residual = 0.118598 after 1 iterations
+      AMG solver residual = 0.118598 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116671 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201383
+      AMG solver residual = 0.0319119 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678859
+      AMG solver residual = 0.0183293 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43447e-05
+      AMG solver residual = 0.0111468 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.34917e-06
+      AMG solver residual = 0.00716702 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.6697e-08
+      AMG solver residual = 0.118598 after 1 iterations
+      AMG solver residual = 0.118598 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116671 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201383
+      AMG solver residual = 0.031912 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678859
+      AMG solver residual = 0.0183293 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.43447e-05
+      AMG solver residual = 0.0111469 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.34917e-06
+      AMG solver residual = 0.00716701 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.66971e-08
+      AMG solver residual = 0.118603 after 1 iterations
+      AMG solver residual = 0.118603 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116675 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201421
+      AMG solver residual = 0.0319157 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678462
+      AMG solver residual = 0.0183211 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.42082e-05
+      AMG solver residual = 0.0111202 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.33298e-06
+      AMG solver residual = 0.00703689 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.63264e-08
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312087 [max]	-1.06881e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.4e-09 [max]	-4.79462e-17 [min]
+
+Step 25 completed, simulation time is 2.5
+      AMG solver residual = 0.118603 after 1 iterations
+      AMG solver residual = 0.118603 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116675 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201421
+      AMG solver residual = 0.0319157 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678462
+      AMG solver residual = 0.0183211 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.42082e-05
+      AMG solver residual = 0.0111202 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.33298e-06
+      AMG solver residual = 0.00703689 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.63264e-08
+      AMG solver residual = 0.118607 after 1 iterations
+      AMG solver residual = 0.118607 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116679 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201456
+      AMG solver residual = 0.0319197 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678446
+      AMG solver residual = 0.0183201 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.42042e-05
+      AMG solver residual = 0.011119 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.33242e-06
+      AMG solver residual = 0.00703377 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.63058e-08
+      AMG solver residual = 0.118607 after 1 iterations
+      AMG solver residual = 0.118607 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116679 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201457
+      AMG solver residual = 0.0319198 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678446
+      AMG solver residual = 0.0183201 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.42042e-05
+      AMG solver residual = 0.0111191 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.33242e-06
+      AMG solver residual = 0.00703376 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.63058e-08
+      AMG solver residual = 0.118612 after 1 iterations
+      AMG solver residual = 0.118612 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116683 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201492
+      AMG solver residual = 0.0319238 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678431
+      AMG solver residual = 0.0183192 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.42002e-05
+      AMG solver residual = 0.0111179 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.33187e-06
+      AMG solver residual = 0.00703063 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.62854e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312087 [max]	-1.06882e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.4e-09 [max]	-4.79466e-17 [min]
+
+Step 26 completed, simulation time is 2.6
+      AMG solver residual = 0.118612 after 1 iterations
+      AMG solver residual = 0.118612 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116683 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201492
+      AMG solver residual = 0.0319238 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678431
+      AMG solver residual = 0.0183192 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.42002e-05
+      AMG solver residual = 0.0111179 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.33187e-06
+      AMG solver residual = 0.00703063 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.62854e-08
+      AMG solver residual = 0.118616 after 1 iterations
+      AMG solver residual = 0.118616 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116686 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201529
+      AMG solver residual = 0.0319279 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678418
+      AMG solver residual = 0.0183183 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.41963e-05
+      AMG solver residual = 0.0111167 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.33132e-06
+      AMG solver residual = 0.00702748 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.62651e-08
+      AMG solver residual = 0.118616 after 1 iterations
+      AMG solver residual = 0.118616 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116686 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0201529
+      AMG solver residual = 0.031928 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000678418
+      AMG solver residual = 0.0183183 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.41963e-05
+      AMG solver residual = 0.0111168 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.33132e-06
+      AMG solver residual = 0.00702748 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.62651e-08
+      AMG solver residual = 0.11892 after 1 iterations
+      AMG solver residual = 0.11892 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116988 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0206257
+      AMG solver residual = 0.0318287 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000676745
+      AMG solver residual = 0.0186741 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.4109e-05
+      AMG solver residual = 0.0110274 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.29348e-06
+      AMG solver residual = 0.00677742 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.55599e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312087 [max]	-1.06883e-11 [min]
+    Species 1:	1.4e-09 [max]	-4.7947e-17 [min]
+
+Step 27 completed, simulation time is 2.7
+      AMG solver residual = 0.11892 after 1 iterations
+      AMG solver residual = 0.11892 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.116988 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0206257
+      AMG solver residual = 0.0318287 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000676745
+      AMG solver residual = 0.0186741 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 2.4109e-05
+      AMG solver residual = 0.0110274 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.29348e-06
+      AMG solver residual = 0.00677742 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 6.55599e-08
+      AMG solver residual = 0.130663 after 1 iterations
+      AMG solver residual = 0.130663 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128475 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0204608
+      AMG solver residual = 0.0314045 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000884467
+      AMG solver residual = 0.0195906 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 3.88185e-05
+      AMG solver residual = 0.0176547 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.69614e-06
+      AMG solver residual = 0.0149209 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 7.01686e-08
+      AMG solver residual = 0.130663 after 1 iterations
+      AMG solver residual = 0.130663 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128475 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0204609
+      AMG solver residual = 0.0314047 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000884468
+      AMG solver residual = 0.0195906 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 3.88186e-05
+      AMG solver residual = 0.0176547 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.69614e-06
+      AMG solver residual = 0.0149209 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 7.01687e-08
+      AMG solver residual = 0.130667 after 1 iterations
+      AMG solver residual = 0.130667 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128479 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0204652
+      AMG solver residual = 0.0314085 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000884487
+      AMG solver residual = 0.0195931 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 3.88198e-05
+      AMG solver residual = 0.0176557 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.69628e-06
+      AMG solver residual = 0.0149224 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 7.01644e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312088 [max]	-1.06884e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.40001e-09 [max]	-4.79474e-17 [min]
+
+Step 28 completed, simulation time is 2.8
+      AMG solver residual = 0.130667 after 1 iterations
+      AMG solver residual = 0.130667 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128479 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0204652
+      AMG solver residual = 0.0314085 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000884487
+      AMG solver residual = 0.0195931 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 3.88198e-05
+      AMG solver residual = 0.0176557 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.69628e-06
+      AMG solver residual = 0.0149224 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 7.01644e-08
+      AMG solver residual = 0.130671 after 1 iterations
+      AMG solver residual = 0.130671 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128482 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0204695
+      AMG solver residual = 0.0314125 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000884508
+      AMG solver residual = 0.0195957 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 3.8821e-05
+      AMG solver residual = 0.0176568 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.69643e-06
+      AMG solver residual = 0.0149239 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 7.01604e-08
+      AMG solver residual = 0.130671 after 1 iterations
+      AMG solver residual = 0.130671 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.128482 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0204695
+      AMG solver residual = 0.0314126 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000884509
+      AMG solver residual = 0.0195958 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 3.88211e-05
+      AMG solver residual = 0.0176568 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 1.69644e-06
+      AMG solver residual = 0.0149239 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 7.01604e-08
+      AMG solver residual = 0.12975 after 1 iterations
+      AMG solver residual = 0.12975 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.127442 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0258032
+      AMG solver residual = 0.034122 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000895813
+      AMG solver residual = 0.021299 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.03697e-05
+      AMG solver residual = 0.0164117 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.08421e-06
+      AMG solver residual = 0.0211506 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.25922e-07
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312088 [max]	-1.06885e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.40001e-09 [max]	-4.79479e-17 [min]
+
+Step 29 completed, simulation time is 2.9
+      AMG solver residual = 0.12975 after 1 iterations
+      AMG solver residual = 0.12975 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.127442 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0258032
+      AMG solver residual = 0.034122 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000895813
+      AMG solver residual = 0.021299 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 5.03697e-05
+      AMG solver residual = 0.0164117 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 3.08421e-06
+      AMG solver residual = 0.0211506 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 1.25922e-07
+      AMG solver residual = 0.132182 after 1 iterations
+      AMG solver residual = 0.132182 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.130024 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0221875
+      AMG solver residual = 0.0289082 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00090557
+      AMG solver residual = 0.0192302 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 6.09787e-05
+      AMG solver residual = 0.0190782 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.48698e-06
+      AMG solver residual = 0.0201281 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 8.1098e-08
+      AMG solver residual = 0.132183 after 1 iterations
+      AMG solver residual = 0.132183 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.130024 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0221875
+      AMG solver residual = 0.0289083 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.00090557
+      AMG solver residual = 0.0192303 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 6.09787e-05
+      AMG solver residual = 0.0190782 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.48698e-06
+      AMG solver residual = 0.0201281 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 8.1098e-08
+      AMG solver residual = 0.132188 after 1 iterations
+      AMG solver residual = 0.132188 after 1 iterations
+   GMRES pass  1, iteration   0:  relative residual = 1
+      AMG solver residual = 0.13003 after 1 iterations
+   GMRES pass  1, iteration   1: relative residual = 0.0221881
+      AMG solver residual = 0.0289069 after 1 iterations
+   GMRES pass  1, iteration   2: relative residual = 0.000905377
+      AMG solver residual = 0.0192274 after 1 iterations
+   GMRES pass  1, iteration   3: relative residual = 6.09652e-05
+      AMG solver residual = 0.0190795 after 1 iterations
+   GMRES pass  1, iteration   4: relative residual = 2.48655e-06
+      AMG solver residual = 0.0201283 after 1 iterations
+   GMRES pass  1, iteration   5: relative residual = 8.10707e-08
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+  Distribution Function Extrema:
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 0:	0.000312088 [max]	-1.06886e-11 [min]
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+ subiteration:1/1
+    Species 1:	1.40001e-09 [max]	-4.79483e-17 [min]
+
+Step 30 completed, simulation time is 3
+Writing checkpoint file
+Writing history file

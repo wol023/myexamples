@@ -1,0 +1,1366 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+Constructing slab geometry...
+xmax = 0.02, ymax = 0.02
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+Done constructing slab geometry
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+   Configuration space box ((0,0) (7,7) (0,0)) is assigned to process 0
+   Configuration space box ((8,0) (15,7) (0,0)) is assigned to process 1
+   Configuration space box ((16,0) (23,7) (0,0)) is assigned to process 2
+   Configuration space box ((24,0) (31,7) (0,0)) is assigned to process 3
+   Configuration space box ((32,0) (39,7) (0,0)) is assigned to process 4
+   Configuration space box ((40,0) (47,7) (0,0)) is assigned to process 5
+   Configuration space box ((48,0) (55,7) (0,0)) is assigned to process 6
+   Configuration space box ((56,0) (63,7) (0,0)) is assigned to process 7
+   Configuration space box ((0,8) (7,15) (0,0)) is assigned to process 8
+   Configuration space box ((8,8) (15,15) (0,0)) is assigned to process 9
+   Configuration space box ((16,8) (23,15) (0,0)) is assigned to process 10
+   Configuration space box ((24,8) (31,15) (0,0)) is assigned to process 11
+   Configuration space box ((32,8) (39,15) (0,0)) is assigned to process 12
+   Configuration space box ((40,8) (47,15) (0,0)) is assigned to process 13
+   Configuration space box ((48,8) (55,15) (0,0)) is assigned to process 14
+   Configuration space box ((56,8) (63,15) (0,0)) is assigned to process 15
+   Configuration space box ((0,16) (7,23) (0,0)) is assigned to process 16
+   Configuration space box ((8,16) (15,23) (0,0)) is assigned to process 17
+   Configuration space box ((16,16) (23,23) (0,0)) is assigned to process 18
+   Configuration space box ((24,16) (31,23) (0,0)) is assigned to process 19
+   Configuration space box ((32,16) (39,23) (0,0)) is assigned to process 20
+   Configuration space box ((40,16) (47,23) (0,0)) is assigned to process 21
+   Configuration space box ((48,16)**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+**** cellSp[0] = 0.0981748,  cellSp[1] = 0.0981748
+**** dimensions = 64, 64
+   Phase space box ((8,32,-8,0) (15,39,7,15) (0,0,0,0)) is assigned to process 33, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,40,-8,0) (15,47,7,15) (0,0,0,0)) is assigned to process 41, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,40,-8,0) (23,47,7,15) (0,0,0,0)) is assigned to process 42, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,56,-8,0) (39,63,7,15) (0,0,0,0)) is assigned to process 60, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,32,-8,0) (7,39,7,15) (0,0,0,0)) is assigned to process 32, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,32,-8,0) (23,39,7,15) (0,0,0,0)) is assigned to process 34, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,32,-8,0) (31,39,7,15) (0,0,0,0)) is assigned to process 35, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,32,-8,0) (39,39,7,15) (0,0,0,0)) is assigned to process 36, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,32,-8,0) (47,39,7,15) (0,0,0,0)) is assigned to process 37, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,32,-8,0) (55,39,7,15) (0,0,0,0)) is assigned to process 38, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,32,-8,0) (63,39,7,15) (0,0,0,0)) is assigned to process 39, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,40,-8,0) (7,47,7,15) (0,0,0,0)) is assigned to process 40, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,40,-8,0) (31,47,7,15) (0,0,0,0)) is assigned to process 43, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,40,-8,0) (39,47,7,15) (0,0,0,0)) is assigned to process 44, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,40,-8,0) (47,47,7,15) (0,0,0,0)) is assigned to process 45, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,40,-8,0) (55,47,7,15) (0,0,0,0)) is assigned to process 46, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,40,-8,0) (63,47,7,15) (0,0,0,0)) is assigned to process 47, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,48,-8,0) (7,55,7,15) (0,0,0,0)) is assigned to process 48, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,48,-8,0) (15,55,7,15) (0,0,0,0)) is assigned to process 49, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,48,-8,0) (23,55,7,15) (0,0,0,0)) is assigned to process 50, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,48,-8,0) (31,55,7,15) (0,0,0,0)) is assigned to process 51, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,48,-8,0) (39,55,7,15) (0,0,0,0)) is assigned to process 52, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,48,-8,0) (47,55,7,15) (0,0,0,0)) is assigned to process 53, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,48,-8,0) (55,55,7,15) (0,0,0,0)) is assigned to process 54, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,48,-8,0) (63,55,7,15) (0,0,0,0)) is assigned to process 55, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,56,-8,0) (7,63,7,15) (0,0,0,0)) is assigned to process 56, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,56,-8,0) (15,63,7,15) (0,0,0,0)) is assigned to process 57, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,56,-8,0) (23,63,7,15) (0,0,0,0)) is assigned to process 58, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,56,-8,0) (31,63,7,15) (0,0,0,0)) is assigned to process 59, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,56,-8,0) (47,63,7,15) (0,0,0,0)) is assigned to process 61, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,56,-8,0) (55,63,7,15) (0,0,0,0)) is assigned to process 62, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,56,-8,0) (63,63,7,15) (0,0,0,0)) is assigned to process 63, has 16384 valid cells and 131072 ghost cells
+ (55,23) (0,0)) is assigned to process 22
+   Configuration space box ((56,16) (63,23) (0,0)) is assigned to process 23
+   Configuration space box ((0,24) (7,31) (0,0)) is assigned to process 24
+   Configuration space box ((8,24) (15,31) (0,0)) is assigned to process 25
+   Configuration space box ((16,24) (23,31) (0,0)) is assigned to process 26
+   Configuration space box ((24,24) (31,31) (0,0)) is assigned to process 27
+   Configuration space box ((32,24) (39,31) (0,0)) is assigned to process 28
+   Configuration space box ((40,24) (47,31) (0,0)) is assigned to process 29
+   Configuration space box ((48,24) (55,31) (0,0)) is assigned to process 30
+   Configuration space box ((56,24) (63,31) (0,0)) is assigned to process 31
+   Configuration space box ((0,32) (7,39) (0,0)) is assigned to process 32
+   Configuration space box ((8,32) (15,39) (0,0)) is assigned to process 33
+   Configuration space box ((16,32) (23,39) (0,0)) is assigned to process 34
+   Configuration space box ((24,32) (31,39) (0,0)) is assigned to process 35
+   Configuration space box ((32,32) (39,39) (0,0)) is assigned to process 36
+   Configuration space box ((40,32) (47,39) (0,0)) is assigned to process 37
+   Configuration space box ((48,32) (55,39) (0,0)) is assigned to process 38
+   Configuration space box ((56,32) (63,39) (0,0)) is assigned to process 39
+   Configuration space box ((0,40) (7,47) (0,0)) is assigned to process 40
+   Configuration space box ((8,40) (15,47) (0,0)) is assigned to process 41
+   Configuration space box ((16,40) (23,47) (0,0)) is assigned to process 42
+   Configuration space box ((24,40) (31,47) (0,0)) is assigned to process 43
+   Configuration space box ((32,40) (39,47) (0,0)) is assigned to process 44
+   Configuration space box ((40,40) (47,47) (0,0)) is assigned to process 45
+   Configuration space box ((48,40) (55,47) (0,0)) is assigned to process 46
+   Configuration space box ((56,40) (63,47) (0,0)) is assigned to process 47
+   Configuration space box ((0,48) (7,55) (0,0)) is assigned to process 48
+   Configuration space box ((8,48) (15,55) (0,0)) is assigned to process 49
+   Configuration space box ((16,48) (23,55) (0,0)) is assigned to process 50
+   Configuration space box ((24,48) (31,55) (0,0)) is assigned to process 51
+   Configuration space box ((32,48) (39,55) (0,0)) is assigned to process 52
+   Configuration space box ((40,48) (47,55) (0,0)) is assigned to process 53
+   Configuration space box ((48,48) (55,55) (0,0)) is assigned to process 54
+   Configuration space box ((56,48) (63,55) (0,0)) is assigned to process 55
+   Configuration space box ((0,56) (7,63) (0,0)) is assigned to process 56
+   Configuration space box ((8,56) (15,63) (0,0)) is assigned to process 57
+   Configuration space box ((16,56) (23,63) (0,0)) is assigned to process 58
+   Configuration space box ((24,56) (31,63) (0,0)) is assigned to process 59
+   Configuration space box ((32,56) (39,63) (0,0)) is assigned to process 60
+   Configuration space box ((40,56) (47,63) (0,0)) is assigned to process 61
+   Configuration space box ((48,56) (55,63) (0,0)) is assigned to process 62
+   Configuration space box ((56,56) (63,63) (0,0)) is assigned to process 63
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,15) (0,0)) is assigned to process 0
+   Phase space box ((48,0,-8,0) (55,7,7,15) (0,0,0,0)) is assigned to process 6, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,16,-8,0) (7,23,7,15) (0,0,0,0)) is assigned to process 16, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,24,-8,0) (55,31,7,15) (0,0,0,0)) is assigned to process 30, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,0,-8,0) (7,7,7,15) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,0,-8,0) (23,7,7,15) (0,0,0,0)) is assigned to process 2, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,0,-8,0) (39,7,7,15) (0,0,0,0)) is assigned to process 4, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,0,-8,0) (63,7,7,15) (0,0,0,0)) is assigned to process 7, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,8,-8,0) (7,15,7,15) (0,0,0,0)) is assigned to process 8, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,8,-8,0) (63,15,7,15) (0,0,0,0)) is assigned to process 15, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,16,-8,0) (15,23,7,15) (0,0,0,0)) is assigned to process 17, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,16,-8,0) (23,23,7,15) (0,0,0,0)) is assigned to process 18, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,16,-8,0) (47,23,7,15) (0,0,0,0)) is assigned to process 21, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,16,-8,0) (63,23,7,15) (0,0,0,0)) is assigned to process 23, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,24,-8,0) (7,31,7,15) (0,0,0,0)) is assigned to process 24, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,24,-8,0) (15,31,7,15) (0,0,0,0)) is assigned to process 25, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,24,-8,0) (47,31,7,15) (0,0,0,0)) is assigned to process 29, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((56,24,-8,0) (63,31,7,15) (0,0,0,0)) is assigned to process 31, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,0,-8,0) (15,7,7,15) (0,0,0,0)) is assigned to process 1, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,0,-8,0) (31,7,7,15) (0,0,0,0)) is assigned to process 3, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,0,-8,0) (47,7,7,15) (0,0,0,0)) is assigned to process 5, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((8,8,-8,0) (15,15,7,15) (0,0,0,0)) is assigned to process 9, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,8,-8,0) (23,15,7,15) (0,0,0,0)) is assigned to process 10, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,8,-8,0) (31,15,7,15) (0,0,0,0)) is assigned to process 11, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,8,-8,0) (39,15,7,15) (0,0,0,0)) is assigned to process 12, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((40,8,-8,0) (47,15,7,15) (0,0,0,0)) is assigned to process 13, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,8,-8,0) (55,15,7,15) (0,0,0,0)) is assigned to process 14, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,16,-8,0) (31,23,7,15) (0,0,0,0)) is assigned to process 19, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,16,-8,0) (39,23,7,15) (0,0,0,0)) is assigned to process 20, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((48,16,-8,0) (55,23,7,15) (0,0,0,0)) is assigned to process 22, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((16,24,-8,0) (23,31,7,15) (0,0,0,0)) is assigned to process 26, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((24,24,-8,0) (31,31,7,15) (0,0,0,0)) is assigned to process 27, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((32,24,-8,0) (39,31,7,15) (0,0,0,0)) is assigned to process 28, has 16384 valid cells and 131072 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+Done adding species and constructing coordinates
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+"T0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+"eT0_grid_func":
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+==================================================
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 0.2
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 1
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+Time integration method: rk (4)
+      AMG solver residual = 0.000401988 after 2 iterations
+      AMG solver residual = 0.000325799 after 2 iterations
+      AMG solver residual = 0.000382301 after 2 iterations
+      AMG solver residual = 0.000429079 after 2 iterations
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02855e-18 [min]
+
+
+Step 1
+      AMG solver residual = 0.00419405 after 1 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000492346 after 2 iterations
+      AMG solver residual = 0.000422759 after 2 iterations
+      AMG solver residual = 0.000518284 after 2 iterations
+      AMG solver residual = 0.000611615 after 2 iterations
+      AMG solver residual = 0.000399099 after 2 iterations
+      AMG solver residual = 0.000451292 after 2 iterations
+      AMG solver residual = 0.00356382 after 1 iterations
+      AMG solver residual = 0.000505155 after 2 iterations
+      AMG solver residual = 0.000426882 after 2 iterations
+      AMG solver residual = 0.000527555 after 2 iterations
+      AMG solver residual = 0.000611504 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  4.86008 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.205758 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02855e-18 [min]
+
+Step 1 completed, simulation time is 0.1
+----
+
+Step 2
+      AMG solver residual = 0.000467894 after 2 iterations
+      AMG solver residual = 0.000543285 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000509786 after 2 iterations
+      AMG solver residual = 0.000428521 after 2 iterations
+      AMG solver residual = 0.000532158 after 2 iterations
+      AMG solver residual = 0.000609602 after 2 iterations
+      AMG solver residual = 0.000376649 after 2 iterations
+      AMG solver residual = 0.000396161 after 2 iterations
+      AMG solver residual = 0.0035952 after 1 iterations
+      AMG solver residual = 0.000507833 after 2 iterations
+      AMG solver residual = 0.000427132 after 2 iterations
+      AMG solver residual = 0.00053469 after 2 iterations
+      AMG solver residual = 0.000609478 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  4.63054 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.215958 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02855e-18 [min]
+
+Step 2 completed, simulation time is 0.2
+----
+
+Step 3
+      AMG solver residual = 0.000497158 after 2 iterations
+      AMG solver residual = 0.000564657 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000499016 after 2 iterations
+      AMG solver residual = 0.000424287 after 2 iterations
+      AMG solver residual = 0.000532738 after 2 iterations
+      AMG solver residual = 0.000600816 after 2 iterations
+      AMG solver residual = 0.000391343 after 2 iterations
+      AMG solver residual = 0.000423044 after 2 iterations
+      AMG solver residual = 0.00359653 after 1 iterations
+      AMG solver residual = 0.000483366 after 2 iterations
+      AMG solver residual = 0.000416714 after 2 iterations
+      AMG solver residual = 0.000526513 after 2 iterations
+      AMG solver residual = 0.000596279 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  4.43928 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.225262 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02855e-18 [min]
+
+Step 3 completed, simulation time is 0.3
+----
+
+Step 4
+      AMG solver residual = 0.00049905 after 2 iterations
+      AMG solver residual = 0.000566777 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000464275 after 2 iterations
+      AMG solver residual = 0.000405742 after 2 iterations
+      AMG solver residual = 0.000516959 after 2 iterations
+      AMG solver residual = 0.000582112 after 2 iterations
+      AMG solver residual = 0.000432069 after 2 iterations
+      AMG solver residual = 0.000490283 after 2 iterations
+      AMG solver residual = 0.00356178 after 1 iterations
+      AMG solver residual = 0.000441287 after 2 iterations
+      AMG solver residual = 0.000385925 after 2 iterations
+      AMG solver residual = 0.000501208 after 2 iterations
+      AMG solver residual = 0.000571463 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  4.27606 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.23386 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02855e-18 [min]
+
+Step 4 completed, simulation time is 0.4
+----
+
+Step 5
+      AMG solver residual = 0.00047285 after 2 iterations
+      AMG solver residual = 0.000552631 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000419819 after 2 iterations
+      AMG solver residual = 0.000361496 after 2 iterations
+      AMG solver residual = 0.000484412 after 2 iterations
+      AMG solver residual = 0.000552632 after 2 iterations
+      AMG solver residual = 0.000473896 after 2 iterations
+      AMG solver residual = 0.000539038 after 2 iterations
+      AMG solver residual = 0.00351598 after 1 iterations
+      AMG solver residual = 0.000400292 after 2 iterations
+      AMG solver residual = 0.000329271 after 2 iterations
+      AMG solver residual = 0.000461492 after 2 iterations
+      AMG solver residual = 0.000534434 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  4.12718 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.242296 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02855e-18 [min]
+
+Step 5 completed, simulation time is 0.5
+----
+
+Step 6
+      AMG solver residual = 0.000429267 after 2 iterations
+      AMG solver residual = 0.000514941 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000387368 after 2 iterations
+      AMG solver residual = 0.000302885 after 2 iterations
+      AMG solver residual = 0.000440964 after 2 iterations
+      AMG solver residual = 0.000512599 after 2 iterations
+      AMG solver residual = 0.000497104 after 2 iterations
+      AMG solver residual = 0.000564317 after 2 iterations
+      AMG solver residual = 0.00348246 after 1 iterations
+      AMG solver residual = 0.000382207 after 2 iterations
+      AMG solver residual = 0.000289538 after 2 iterations
+      AMG solver residual = 0.000417523 after 2 iterations
+      AMG solver residual = 0.00048964 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  4.02396 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.248511 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02856e-18 [min]
+
+Step 6 completed, simulation time is 0.6
+----
+
+Step 7
+      AMG solver residual = 0.000389865 after 2 iterations
+      AMG solver residual = 0.000455512 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000385228 after 2 iterations
+      AMG solver residual = 0.000298567 after 2 iterations
+      AMG solver residual = 0.0004006 after 2 iterations
+      AMG solver residual = 0.000470355 after 2 iterations
+      AMG solver residual = 0.000493204 after 2 iterations
+      AMG solver residual = 0.000574138 after 2 iterations
+      AMG solver residual = 0.00347733 after 1 iterations
+      AMG solver residual = 0.000396478 after 2 iterations
+      AMG solver residual = 0.000324864 after 2 iterations
+      AMG solver residual = 0.00038617 after 2 iterations
+      AMG solver residual = 0.000453063 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.91097 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.255691 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02856e-18 [min]
+
+Step 7 completed, simulation time is 0.7
+----
+
+Step 8
+      AMG solver residual = 0.000379077 after 2 iterations
+      AMG solver residual = 0.000419545 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000412052 after 2 iterations
+      AMG solver residual = 0.00035413 after 2 iterations
+      AMG solver residual = 0.000381085 after 2 iterations
+      AMG solver residual = 0.000446101 after 2 iterations
+      AMG solver residual = 0.000465048 after 2 iterations
+      AMG solver residual = 0.00056911 after 2 iterations
+      AMG solver residual = 0.00351662 after 1 iterations
+      AMG solver residual = 0.000430866 after 2 iterations
+      AMG solver residual = 0.000381533 after 2 iterations
+      AMG solver residual = 0.000382087 after 2 iterations
+      AMG solver residual = 0.00044609 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.82702 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.2613 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02856e-18 [min]
+
+Step 8 completed, simulation time is 0.8
+----
+
+Step 9
+      AMG solver residual = 0.000403663 after 2 iterations
+      AMG solver residual = 0.000444904 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000448754 after 2 iterations
+      AMG solver residual = 0.000401058 after 2 iterations
+      AMG solver residual = 0.000391031 after 2 iterations
+      AMG solver residual = 0.000455892 after 2 iterations
+      AMG solver residual = 0.000425965 after 2 iterations
+      AMG solver residual = 0.000544223 after 2 iterations
+      AMG solver residual = 0.00360957 after 1 iterations
+      AMG solver residual = 0.000464379 after 2 iterations
+      AMG solver residual = 0.000415075 after 2 iterations
+      AMG solver residual = 0.000404836 after 2 iterations
+      AMG solver residual = 0.000471819 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.77284 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.265052 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02856e-18 [min]
+
+Step 9 completed, simulation time is 0.9
+----
+
+Step 10
+      AMG solver residual = 0.000444904 after 2 iterations
+      AMG solver residual = 0.000488704 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000475888 after 2 iterations
+      AMG solver residual = 0.0004232 after 2 iterations
+      AMG solver residual = 0.00042178 after 2 iterations
+      AMG solver residual = 0.000490388 after 2 iterations
+      AMG solver residual = 0.00039644 after 2 iterations
+      AMG solver residual = 0.000503152 after 2 iterations
+      AMG solver residual = 0.00372535 after 1 iterations
+      AMG solver residual = 0.000481984 after 2 iterations
+      AMG solver residual = 0.00042746 after 2 iterations
+      AMG solver residual = 0.00044012 after 2 iterations
+      AMG solver residual = 0.00051068 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.71109 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.269463 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02856e-18 [min]
+
+Step 10 completed, simulation time is 1
+----
+Writing checkpoint file
+Writing history file
+
+Step 11
+      AMG solver residual = 0.000477956 after 2 iterations
+      AMG solver residual = 0.000518705 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000483152 after 2 iterations
+      AMG solver residual = 0.000428352 after 2 iterations
+      AMG solver residual = 0.00045704 after 2 iterations
+      AMG solver residual = 0.000527343 after 2 iterations
+      AMG solver residual = 0.000393258 after 2 iterations
+      AMG solver residual = 0.000468899 after 2 iterations
+      AMG solver residual = 0.00378006 after 1 iterations
+      AMG solver residual = 0.000478738 after 2 iterations
+      AMG solver residual = 0.000425474 after 2 iterations
+      AMG solver residual = 0.000472747 after 2 iterations
+      AMG solver residual = 0.00054288 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.68358 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.271475 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02857e-18 [min]
+
+Step 11 completed, simulation time is 1.1
+----
+
+Step 12
+      AMG solver residual = 0.000487447 after 2 iterations
+      AMG solver residual = 0.000535784 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000470373 after 2 iterations
+      AMG solver residual = 0.000419678 after 2 iterations
+      AMG solver residual = 0.000484309 after 2 iterations
+      AMG solver residual = 0.000552192 after 2 iterations
+      AMG solver residual = 0.000415075 after 2 iterations
+      AMG solver residual = 0.000461117 after 2 iterations
+      AMG solver residual = 0.00372893 after 1 iterations
+      AMG solver residual = 0.000458955 after 2 iterations
+      AMG solver residual = 0.000408252 after 2 iterations
+      AMG solver residual = 0.000493202 after 2 iterations
+      AMG solver residual = 0.000559191 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.67782 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.2719 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02857e-18 [min]
+
+Step 12 completed, simulation time is 1.2
+----
+
+Step 13
+      AMG solver residual = 0.000470865 after 2 iterations
+      AMG solver residual = 0.000544002 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000445767 after 2 iterations
+      AMG solver residual = 0.000393613 after 2 iterations
+      AMG solver residual = 0.000497032 after 2 iterations
+      AMG solver residual = 0.000560024 after 2 iterations
+      AMG solver residual = 0.000444535 after 2 iterations
+      AMG solver residual = 0.00047297 after 2 iterations
+      AMG solver residual = 0.00361989 after 1 iterations
+      AMG solver residual = 0.000433641 after 2 iterations
+      AMG solver residual = 0.000372921 after 2 iterations
+      AMG solver residual = 0.000497081 after 2 iterations
+      AMG solver residual = 0.000557762 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.66641 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.272746 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02858e-18 [min]
+
+Step 13 completed, simulation time is 1.3
+----
+
+Step 14
+      AMG solver residual = 0.000437998 after 2 iterations
+      AMG solver residual = 0.000541607 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000422368 after 2 iterations
+      AMG solver residual = 0.000351751 after 2 iterations
+      AMG solver residual = 0.000492713 after 2 iterations
+      AMG solver residual = 0.000550733 after 2 iterations
+      AMG solver residual = 0.0004642 after 2 iterations
+      AMG solver residual = 0.000491764 after 2 iterations
+      AMG solver residual = 0.00351949 after 1 iterations
+      AMG solver residual = 0.000415591 after 2 iterations
+      AMG solver residual = 0.000330824 after 2 iterations
+      AMG solver residual = 0.000483448 after 2 iterations
+      AMG solver residual = 0.000539737 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.67662 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.271989 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02859e-18 [min]
+
+Step 14 completed, simulation time is 1.4
+----
+
+Step 15
+      AMG solver residual = 0.000408003 after 2 iterations
+      AMG solver residual = 0.000528518 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000411483 after 2 iterations
+      AMG solver residual = 0.000317503 after 2 iterations
+      AMG solver residual = 0.000471788 after 2 iterations
+      AMG solver residual = 0.000526066 after 2 iterations
+      AMG solver residual = 0.00046597 after 2 iterations
+      AMG solver residual = 0.000512224 after 2 iterations
+      AMG solver residual = 0.00347362 after 1 iterations
+      AMG solver residual = 0.000412102 after 2 iterations
+      AMG solver residual = 0.000313518 after 2 iterations
+      AMG solver residual = 0.000454608 after 2 iterations
+      AMG solver residual = 0.000507666 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.69297 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.270785 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.0286e-18 [min]
+
+Step 15 completed, simulation time is 1.5
+----
+
+Step 16
+      AMG solver residual = 0.000399768 after 2 iterations
+      AMG solver residual = 0.000513639 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000415475 after 2 iterations
+      AMG solver residual = 0.000320217 after 2 iterations
+      AMG solver residual = 0.000438168 after 2 iterations
+      AMG solver residual = 0.000489262 after 2 iterations
+      AMG solver residual = 0.000452264 after 2 iterations
+      AMG solver residual = 0.000530835 after 2 iterations
+      AMG solver residual = 0.00351142 after 1 iterations
+      AMG solver residual = 0.000420468 after 2 iterations
+      AMG solver residual = 0.000333892 after 2 iterations
+      AMG solver residual = 0.00041711 after 2 iterations
+      AMG solver residual = 0.000466335 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.69709 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.270483 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02862e-18 [min]
+
+Step 16 completed, simulation time is 1.6
+----
+
+Step 17
+      AMG solver residual = 0.000416461 after 2 iterations
+      AMG solver residual = 0.000504874 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.00042721 after 2 iterations
+      AMG solver residual = 0.000351212 after 2 iterations
+      AMG solver residual = 0.000400533 after 2 iterations
+      AMG solver residual = 0.000446986 after 2 iterations
+      AMG solver residual = 0.000433445 after 2 iterations
+      AMG solver residual = 0.00054317 after 2 iterations
+      AMG solver residual = 0.00362984 after 1 iterations
+      AMG solver residual = 0.000431782 after 2 iterations
+      AMG solver residual = 0.000368863 after 2 iterations
+      AMG solver residual = 0.000382546 after 2 iterations
+      AMG solver residual = 0.000425493 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.70527 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.269886 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02864e-18 [min]
+
+Step 17 completed, simulation time is 1.7
+----
+
+Step 18
+      AMG solver residual = 0.000443019 after 2 iterations
+      AMG solver residual = 0.000499479 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000437207 after 2 iterations
+      AMG solver residual = 0.000384531 after 2 iterations
+      AMG solver residual = 0.000372252 after 2 iterations
+      AMG solver residual = 0.000411112 after 2 iterations
+      AMG solver residual = 0.00042194 after 2 iterations
+      AMG solver residual = 0.000546022 after 2 iterations
+      AMG solver residual = 0.00376689 after 1 iterations
+      AMG solver residual = 0.000438557 after 2 iterations
+      AMG solver residual = 0.000397806 after 2 iterations
+      AMG solver residual = 0.000365218 after 2 iterations
+      AMG solver residual = 0.000399416 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.71862 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.268917 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02866e-18 [min]
+
+Step 18 completed, simulation time is 1.8
+----
+
+Step 19
+      AMG solver residual = 0.000461169 after 2 iterations
+      AMG solver residual = 0.00049391 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000440379 after 2 iterations
+      AMG solver residual = 0.000406807 after 2 iterations
+      AMG solver residual = 0.000366379 after 2 iterations
+      AMG solver residual = 0.000395675 after 2 iterations
+      AMG solver residual = 0.000423867 after 2 iterations
+      AMG solver residual = 0.000538354 after 2 iterations
+      AMG solver residual = 0.00383599 after 1 iterations
+      AMG solver residual = 0.000438919 after 2 iterations
+      AMG solver residual = 0.000412172 after 2 iterations
+      AMG solver residual = 0.000373738 after 2 iterations
+      AMG solver residual = 0.000394058 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.73423 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.267793 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00029528 [max]	-8.02869e-18 [min]
+
+Step 19 completed, simulation time is 1.9
+----
+
+Step 20
+      AMG solver residual = 0.000461456 after 2 iterations
+      AMG solver residual = 0.000489999 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000437841 after 2 iterations
+      AMG solver residual = 0.000412514 after 2 iterations
+      AMG solver residual = 0.000385766 after 2 iterations
+      AMG solver residual = 0.000399366 after 2 iterations
+      AMG solver residual = 0.000434716 after 2 iterations
+      AMG solver residual = 0.000520833 after 2 iterations
+      AMG solver residual = 0.00380503 after 1 iterations
+      AMG solver residual = 0.000436159 after 2 iterations
+      AMG solver residual = 0.00040819 after 2 iterations
+      AMG solver residual = 0.00040307 after 2 iterations
+      AMG solver residual = 0.000394631 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.74416 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.267083 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295281 [max]	-8.02873e-18 [min]
+
+Step 20 completed, simulation time is 2
+----
+Writing checkpoint file
+Writing history file
+
+Step 21
+      AMG solver residual = 0.000446063 after 2 iterations
+      AMG solver residual = 0.000491261 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000434661 after 2 iterations
+      AMG solver residual = 0.000399539 after 2 iterations
+      AMG solver residual = 0.000419885 after 2 iterations
+      AMG solver residual = 0.000396194 after 2 iterations
+      AMG solver residual = 0.000444321 after 2 iterations
+      AMG solver residual = 0.000496608 after 2 iterations
+      AMG solver residual = 0.00370368 after 1 iterations
+      AMG solver residual = 0.000435227 after 2 iterations
+      AMG solver residual = 0.000386699 after 2 iterations
+      AMG solver residual = 0.000438627 after 2 iterations
+      AMG solver residual = 0.000368343 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.74981 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.26668 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295281 [max]	-8.02877e-18 [min]
+
+Step 21 completed, simulation time is 2.1
+----
+
+Step 22
+      AMG solver residual = 0.000426545 after 2 iterations
+      AMG solver residual = 0.000499711 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000435406 after 2 iterations
+      AMG solver residual = 0.000372076 after 2 iterations
+      AMG solver residual = 0.00045323 after 2 iterations
+      AMG solver residual = 0.000358556 after 2 iterations
+      AMG solver residual = 0.000445133 after 2 iterations
+      AMG solver residual = 0.000472397 after 2 iterations
+      AMG solver residual = 0.00358371 after 1 iterations
+      AMG solver residual = 0.000438439 after 2 iterations
+      AMG solver residual = 0.00035585 after 2 iterations
+      AMG solver residual = 0.000465969 after 2 iterations
+      AMG solver residual = 0.000303836 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.74548 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.266989 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295281 [max]	-8.02882e-18 [min]
+
+Step 22 completed, simulation time is 2.2
+----
+
+Step 23
+      AMG solver residual = 0.000417073 after 2 iterations
+      AMG solver residual = 0.00051468 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000440309 after 2 iterations
+      AMG solver residual = 0.000341477 after 2 iterations
+      AMG solver residual = 0.00047338 after 2 iterations
+      AMG solver residual = 0.00028345 after 2 iterations
+      AMG solver residual = 0.00043669 after 2 iterations
+      AMG solver residual = 0.000457616 after 2 iterations
+      AMG solver residual = 0.00350162 after 1 iterations
+      AMG solver residual = 0.000443498 after 2 iterations
+      AMG solver residual = 0.000328358 after 2 iterations
+      AMG solver residual = 0.000475717 after 2 iterations
+      AMG solver residual = 0.000219044 after 2 iterations
+  ----
+  dt: -1
+    dt scales:  3.75899 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.266029 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295281 [max]	-8.02884e-18 [min]
+
+Step 23 completed, simulation time is 2.3
+----
+
+Step 24
+      AMG solver residual = 0.000424052 after 2 iterations
+      AMG solver residual = 0.000530034 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000445137 after 2 iterations
+      AMG solver residual = 0.000320135 after 2 iterations
+      AMG solver residual = 0.000473702 after 2 iterations
+      AMG solver residual = 0.00977502 after 1 iterations
+      AMG solver residual = 0.00042535 after 2 iterations
+      AMG solver residual = 0.000460197 after 2 iterations
+      AMG solver residual = 0.00351108 after 1 iterations
+      AMG solver residual = 0.000445444 after 2 iterations
+      AMG solver residual = 0.000314454 after 2 iterations
+      AMG solver residual = 0.00046452 after 2 iterations
+      AMG solver residual = 0.0071877 after 1 iterations
+  ----
+  dt: -1
+    dt scales:  3.75852 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.266062 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295281 [max]	-8.02891e-18 [min]
+
+Step 24 completed, simulation time is 2.4
+----
+
+Step 25
+      AMG solver residual = 0.000440963 after 2 iterations
+      AMG solver residual = 0.000534717 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000444677 after 2 iterations
+      AMG solver residual = 0.000314847 after 2 iterations
+      AMG solver residual = 0.000453686 after 2 iterations
+      AMG solver residual = 0.00633371 after 1 iterations
+      AMG solver residual = 0.000420081 after 2 iterations
+      AMG solver residual = 0.000479113 after 2 iterations
+      AMG solver residual = 0.00361171 after 1 iterations
+      AMG solver residual = 0.000440549 after 2 iterations
+      AMG solver residual = 0.000317579 after 2 iterations
+      AMG solver residual = 0.000435026 after 2 iterations
+      AMG solver residual = 0.00450049 after 1 iterations
+  ----
+  dt: -1
+    dt scales:  3.77798 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.264692 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295282 [max]	-8.02894e-18 [min]
+
+Step 25 completed, simulation time is 2.5
+----
+
+Step 26
+      AMG solver residual = 0.000455001 after 2 iterations
+      AMG solver residual = 0.000524732 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000436679 after 2 iterations
+      AMG solver residual = 0.000325256 after 2 iterations
+      AMG solver residual = 0.000418752 after 2 iterations
+      AMG solver residual = 0.00389982 after 1 iterations
+      AMG solver residual = 0.00042581 after 2 iterations
+      AMG solver residual = 0.000501088 after 2 iterations
+      AMG solver residual = 0.00371133 after 1 iterations
+      AMG solver residual = 0.000429257 after 2 iterations
+      AMG solver residual = 0.000334357 after 2 iterations
+      AMG solver residual = 0.000395254 after 2 iterations
+      AMG solver residual = 0.00274521 after 1 iterations
+  ----
+  dt: -1
+    dt scales:  3.77809 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.264684 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295282 [max]	-8.02894e-18 [min]
+
+Step 26 completed, simulation time is 2.6
+----
+
+Step 27
+      AMG solver residual = 0.000456817 after 2 iterations
+      AMG solver residual = 0.000497876 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000423837 after 2 iterations
+      AMG solver residual = 0.000345334 after 2 iterations
+      AMG solver residual = 0.000379097 after 2 iterations
+      AMG solver residual = 0.00237406 after 1 iterations
+      AMG solver residual = 0.000439316 after 2 iterations
+      AMG solver residual = 0.000506767 after 2 iterations
+      AMG solver residual = 0.0036993 after 1 iterations
+      AMG solver residual = 0.0004167 after 2 iterations
+      AMG solver residual = 0.000356395 after 2 iterations
+      AMG solver residual = 0.000355868 after 2 iterations
+      AMG solver residual = 0.00170171 after 1 iterations
+  ----
+  dt: -1
+    dt scales:  3.80136 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.263064 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295283 [max]	-8.02898e-18 [min]
+
+Step 27 completed, simulation time is 2.7
+----
+
+Step 28
+      AMG solver residual = 0.000445216 after 2 iterations
+      AMG solver residual = 0.00045494 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000412962 after 2 iterations
+      AMG solver residual = 0.000365496 after 2 iterations
+      AMG solver residual = 0.000344891 after 2 iterations
+      AMG solver residual = 0.00149655 after 1 iterations
+      AMG solver residual = 0.000451916 after 2 iterations
+      AMG solver residual = 0.00047779 after 2 iterations
+      AMG solver residual = 0.0034948 after 1 iterations
+      AMG solver residual = 0.000410294 after 2 iterations
+      AMG solver residual = 0.000373163 after 2 iterations
+      AMG solver residual = 0.000322201 after 2 iterations
+      AMG solver residual = 0.00113343 after 1 iterations
+  ----
+  dt: -1
+    dt scales:  3.79952 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.263191 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295283 [max]	-8.02909e-18 [min]
+
+Step 28 completed, simulation time is 2.8
+----
+
+Step 29
+      AMG solver residual = 0.000427121 after 2 iterations
+      AMG solver residual = 0.000396189 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000411149 after 2 iterations
+      AMG solver residual = 0.000376181 after 2 iterations
+      AMG solver residual = 0.000315827 after 2 iterations
+      AMG solver residual = 0.00103031 after 1 iterations
+      AMG solver residual = 0.000455617 after 2 iterations
+      AMG solver residual = 0.000402851 after 2 iterations
+      AMG solver residual = 0.00300067 after 1 iterations
+      AMG solver residual = 0.000414861 after 2 iterations
+      AMG solver residual = 0.000376854 after 2 iterations
+      AMG solver residual = 0.000285363 after 2 iterations
+      AMG solver residual = 0.000841125 after 1 iterations
+  ----
+  dt: -1
+    dt scales:  3.82106 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.261707 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295284 [max]	-8.0293e-18 [min]
+
+Step 29 completed, simulation time is 2.9
+----
+
+Step 30
+      AMG solver residual = 0.000413856 after 2 iterations
+      AMG solver residual = 0.000327597 after 2 iterations
+  --
+  Subiteration:1 of 1
+      AMG solver residual = 0.000420561 after 2 iterations
+      AMG solver residual = 0.000372761 after 2 iterations
+      AMG solver residual = 0.000277046 after 2 iterations
+      AMG solver residual = 0.000790054 after 1 iterations
+      AMG solver residual = 0.000447445 after 2 iterations
+      AMG solver residual = 0.00029393 after 2 iterations
+      AMG solver residual = 0.00223853 after 1 iterations
+      AMG solver residual = 0.000428645 after 2 iterations
+      AMG solver residual = 0.000366294 after 2 iterations
+      AMG solver residual = 0.000233136 after 2 iterations
+      AMG solver residual = 0.000689886 after 1 iterations
+  ----
+  dt: -1
+    dt scales:  3.8259 (Vlasov)  1.79769e+308 (Collisions)  
+    CFL:  -0.261376 (Vlasov)  -0 (Collisions)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000295285 [max]	-8.0294e-18 [min]
+
+Step 30 completed, simulation time is 3
+----
+Writing checkpoint file
+Writing history file
