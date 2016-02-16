@@ -251,7 +251,9 @@ print 'c_elec_gyroradius         [cm] = ', c_elec_gyroradius, '   (/ref: ', c_el
 
 k_y        = 2.0*np.pi*m_y/(y_max*100)
 deltaL_max = 1./max(abs(dlnyydx))
-deltaL_diagnostic = abs(1./(dlnyydx[ int(float(x_index)/float(x_cells)*len(dlnyydx))-1 ]))
+x_diagnotic_index_in_plot = int(float(x_index)/float(x_cells)*len(dlnyydx))-1 
+#print 'x_diagnotic_index_in_plot = ', x_diagnotic_index_in_plot
+deltaL_diagnostic = abs(1./(dlnyydx[x_diagnotic_index_in_plot]))
 c_s        = 979000*((t0_grid_func*units_temperature)/ion_mass)**0.5
 rho_s      = 102*((ion_mass*t0_grid_func*units_temperature)**0.5)/b_t
 chi        = k_y*rho_s
@@ -279,6 +281,7 @@ ax1[0].plot(xcm,yy )
 ax1[0].set_xlabel('x (cm)')
 ax1[0].set_ylabel('density')
 ax1[1].plot(xcm,dlnyydx )
+ax1[1].scatter(xcm[x_diagnotic_index_in_plot],dlnyydx[x_diagnotic_index_in_plot] )
 ax1[1].set_xlabel('x (cm)')
 ax1[1].set_ylabel('d(ln n)/dx')
 #ax[1].set_ylim(-2, 0) 
@@ -335,8 +338,8 @@ yplot = scipy.fftpack.fftshift(yf)
 
 #print np.abs(yplot).argmax()
 freqmax=xf[np.abs(yplot).argmax()]
-print 'maximum frequency =', freqmax,'[Hz]'
-yv = np.real(y.max()*np.exp(-freqmax*1.j*2.0*np.pi*xt))
+print '|maximum frequency| =', abs(freqmax),'[Hz]'
+yv = np.real(y.max()*np.exp(abs(freqmax)*1.j*2.0*np.pi*xt))
 
 
 yfv = scipy.fftpack.fft(yv)
@@ -346,8 +349,8 @@ xfv = scipy.fftpack.fftshift(xfv)
 yplotv = scipy.fftpack.fftshift(yfv)
 
 
-print 'omega_star_computation/omega*             = ', freqmax/omega_star
-print 'omega_star_computation/omega*_diagntostic = ', freqmax/ omega_star_diagnostic
+print 'omega_star_computation/omega*             = ', abs(freqmax)/omega_star
+print 'omega_star_computation/omega*_diagntostic = ', abs(freqmax)/ omega_star_diagnostic
 
 
 fig2, ax2 = plt.subplots(2, 1)
