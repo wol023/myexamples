@@ -90,6 +90,39 @@ with open(fname[0], 'r') as f:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 t0_grid_func=float(lhsrhs[1])
                 print 'IN:t0_grid_func = ',t0_grid_func
+            if 'gksystem.num_cells' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                num_cells=lhsrhs[1].split()
+                #print 'IN:num_cells = ',num_cells
+                if len(num_cells) == 4:
+                    x_cells=int(num_cells[0])
+                    print 'IN:x_cells = ', x_cells
+                    y_cells=int(num_cells[1])
+                    print 'IN:y_cells = ', y_cells
+                elif len(num_cells) == 5:
+                    x_cells=int(num_cells[0])
+                    print 'IN:x_cells = ', x_cells
+                    y_cells=int(num_cells[1])
+                    print 'IN:y_cells = ', y_cells
+                    z_cells=int(num_cells[2])
+                    print 'IN:z_cells = ', z_cells
+            if '.history_indices' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                history_indices=lhsrhs[1].split()
+                if len(history_indices) == 2:
+                    x_index=int(history_indices[0])
+                    print 'IN:x_index = ', x_index
+                    y_index=int(history_indices[1])
+                    print 'IN:y_index = ', y_index
+                elif len(history_indices) == 3:
+                    x_index=int(history_indices[0])
+                    print 'IN:x_index = ', x_index
+                    y_index=int(history_indices[1])
+                    print 'IN:y_index = ', y_index
+                    z_index=int(history_indices[2])
+                    print 'IN:z_index = ', z_index
+
+
 f.closed
 print '*****************************************'
 ####
@@ -218,17 +251,21 @@ print 'c_elec_gyroradius         [cm] = ', c_elec_gyroradius, '   (/ref: ', c_el
 
 k_y        = 2.0*np.pi*m_y/(y_max*100)
 deltaL_max = 1./max(abs(dlnyydx))
+deltaL_diagnostic = abs(1./(dlnyydx[ int(float(x_index)/float(x_cells)*len(dlnyydx))-1 ]))
 c_s        = 979000*((t0_grid_func*units_temperature)/ion_mass)**0.5
 rho_s      = 102*((ion_mass*t0_grid_func*units_temperature)**0.5)/b_t
 chi        = k_y*rho_s
 omega_star = c_s*rho_s*k_y/deltaL_max
+omega_star_diagnostic = c_s*rho_s*k_y/ deltaL_diagnostic
 
-print 'k_y           [1/cm] = ', k_y
-print 'deltaL_max      [cm] = ', deltaL_max
-print 'c_s           [cm/s] = ', c_s
-print 'rho_s           [cm] = ', rho_s
-print 'chi              [-] = ', chi
-print 'omega*         [1/s] = ', omega_star
+print 'k_y             [1/cm] = ', k_y
+print 'deltaL_max        [cm] = ', deltaL_max
+print 'deltaL_diagnostic [cm] = ', deltaL_diagnostic
+print 'c_s             [cm/s] = ', c_s
+print 'rho_s             [cm] = ', rho_s
+print 'chi                [-] = ', chi
+print 'omega*           [1/s] = ', omega_star
+print 'omega*_diagnotic [1/s] = ', omega_star_diagnostic
 
 
 
@@ -309,7 +346,8 @@ xfv = scipy.fftpack.fftshift(xfv)
 yplotv = scipy.fftpack.fftshift(yfv)
 
 
-print 'omega_star_computation/omega_star_analytic =', freqmax/omega_star
+print 'omega_star_computation/omega*             = ', freqmax/omega_star
+print 'omega_star_computation/omega*_diagntostic = ', freqmax/ omega_star_diagnostic
 
 
 fig2, ax2 = plt.subplots(2, 1)
