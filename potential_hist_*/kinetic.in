@@ -11,10 +11,17 @@ gksystem.hdf_efield = true
 gksystem.hdf_ParallelMomentum = true
 gksystem.hdf_PoloidalMomentum = true
 
+gksystem.ti_class = "rk"
+gksystem.ti_method = "4"
+
+gksystem.using_F0 = false
+gksystem.imposing_bc_to_perturbation = false
+gksystem.imposing_bc_to_perturbation_rescale = false
+
 #####################################################
 # Time Stepping Definitions
 #####################################################
-simulation.max_step            = 1
+simulation.max_step            = 60
 simulation.max_time            = 100000.0
 #simulation.max_dt_grow         = 1.1
 #simulation.initial_dt_fraction = 0.5
@@ -36,19 +43,19 @@ simulation.1.history_indices = 16 16
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 32 32 32 16
-gksystem.is_periodic =  0  0  0  0
+gksystem.num_cells   = 64 128 64 32
+gksystem.is_periodic =  0  1  0  0
 
-gksystem.configuration_decomp = 2 2
-gksystem.velocity_decomp      =     2 2
-gksystem.phase_decomp         = 1 1 1 1
+gksystem.configuration_decomp = 8 8
+gksystem.velocity_decomp      =     8 4
+gksystem.phase_decomp         = 8 8 2 1
 
 
 #####################################################
 # Units Definitions
 #####################################################
 units.number_density = 1.0e20
-units.temperature    = 1.0e3
+units.temperature    = 2.0e2
 units.length         = 1.0
 units.mass           = 1.0
 units.magnetic_field = 1.0 
@@ -94,8 +101,8 @@ gksystem.magnetic_geometry_mapping.slab.By_inner = 0.00
 #####################################################
 # Phase Space Geometry Definitions
 #####################################################
-phase_space_mapping.v_parallel_max = 6.0
-phase_space_mapping.mu_max = 1.2
+phase_space_mapping.v_parallel_max = 4.0
+phase_space_mapping.mu_max = 2.0
 phase_space_mapping.velocity_type = "gyrokinetic"
 #phase_space_mapping.velocity_type = "ExB"
 #phase_space_mapping.velocity_type = "annular_poloidal_velocity"
@@ -110,24 +117,25 @@ phase_space_mapping.physical_velocity_components = true
 #####################################################
 gkvlasov.verbose = true
 #gkvlasov.face_avg_type = uw1
-#gkvlasov.face_avg_type = uw3
+gkvlasov.face_avg_type = uw3
 #gkvlasov.face_avg_type = uw5
 #gkvlasov.face_avg_type = weno5
-gkvlasov.face_avg_type = bweno
+#gkvlasov.face_avg_type = bweno
 
 #####################################################
 # Poisson Operator Definitions
 #####################################################
 gksystem.fixed_efield = false
-gksystem.consistent_potential_bcs = true
 gkpoisson.verbose = true
 
+gkpoissonboltzmann.preserve_initial_ni_average = true 
+
 #gkpoissonboltzmann.prefactor = global_neutrality
-gkpoissonboltzmann.prefactor = global_neutrality_initial
+#gkpoissonboltzmann.prefactor = global_neutrality_initial
 #gkpoissonboltzmann.prefactor = fs_neutrality
 #gkpoissonboltzmann.prefactor = fs_neutrality_initial
 #gkpoissonboltzmann.prefactor = fs_neutrality_global_ni
-#gkpoissonboltzmann.prefactor = fs_neutrality_initial_fs_ni
+gkpoissonboltzmann.prefactor = fs_neutrality_initial_fs_ni
 
 #####################################################
 # Species Definitions
@@ -140,7 +148,7 @@ boltzmann_electron.name = "electron"
 boltzmann_electron.mass              = 0.000544
 boltzmann_electron.charge            = -1.0
 #boltzmann_electron.temperature_shape = "uniform"
-boltzmann_electron.temperature       = 0.2
+boltzmann_electron.temperature       = 1.0
 
 
 #kinetic_species.2.name   = "electron"
@@ -152,6 +160,7 @@ boltzmann_electron.temperature       = 0.2
 #####################################################
 IC.potential.function = "zero_grid_func"
 IC.hydrogen.function = "maxwellian_phase_func" 
+IC.hydrogen_0.function = "maxwellian_0_phase_func"
 #IC.electron.function = "maxwellian_electron_phase_func"
 
 #####################################################
@@ -196,54 +205,57 @@ BC.potential.poloidal_upper.type = "neumann"
 #####################################################
 kinetic_function_library.number = 2
 kinetic_function_library.verbosity = 1
-kinetic_function_library.list = "maxwellian_phase_func" "maxwellian_electron_phase_func"
+kinetic_function_library.list = "maxwellian_phase_func" "maxwellian_0_phase_func"
 
 kinetic_function_library.maxwellian_phase_func.type = "maxwellian"
 kinetic_function_library.maxwellian_phase_func.vparallel.function = "Ion_vpar_grid_func"
 kinetic_function_library.maxwellian_phase_func.density.function = "N0_grid_func" 
 kinetic_function_library.maxwellian_phase_func.temperature.function = "T0_grid_func" 
 
-kinetic_function_library.maxwellian_electron_phase_func.type = "maxwellian"
-kinetic_function_library.maxwellian_electron_phase_func.vparallel.function = "ele_vpar_grid_func"
-kinetic_function_library.maxwellian_electron_phase_func.density.function = "eN0_grid_func" 
-kinetic_function_library.maxwellian_electron_phase_func.temperature.function = "eT0_grid_func" 
+kinetic_function_library.maxwellian_0_phase_func.type = "maxwellian"
+kinetic_function_library.maxwellian_0_phase_func.vparallel.function = "Ion_vpar_grid_func"
+kinetic_function_library.maxwellian_0_phase_func.density.function = "N0_0_grid_func" 
+kinetic_function_library.maxwellian_0_phase_func.temperature.function = "T0_0_grid_func" 
 
 #####################################################
 # Grid Function Definitions
 #####################################################
-grid_function_library.number = 7
+grid_function_library.number = 6
 grid_function_library.verbosity = 1
-grid_function_library.list = "zero_grid_func" "T0_grid_func" "eT0_grid_func" "N0_grid_func" "eN0_grid_func" "Ion_vpar_grid_func" "ele_vpar_grid_func"
+grid_function_library.list = "zero_grid_func" "T0_grid_func" "T0_0_grid_func" "N0_grid_func" "N0_0_grid_func" "Ion_vpar_grid_func" 
 
 grid_function_library.zero_grid_func.type = "zero" 
 
 grid_function_library.T0_grid_func.type = "cosine"
-grid_function_library.T0_grid_func.constant = 0.2
+grid_function_library.T0_grid_func.constant = 1.0
 grid_function_library.T0_grid_func.amplitude = 0.
 grid_function_library.T0_grid_func.mode = 1 0
 grid_function_library.T0_grid_func.phase = 0 0
 
-grid_function_library.eT0_grid_func.type = "cosine"
-grid_function_library.eT0_grid_func.constant = 0.2
-grid_function_library.eT0_grid_func.amplitude = 0.
-grid_function_library.eT0_grid_func.mode = 1 0
-grid_function_library.eT0_grid_func.phase = 0 0
+grid_function_library.T0_0_grid_func.type = "cosine"
+grid_function_library.T0_0_grid_func.constant = 1.0
+grid_function_library.T0_0_grid_func.amplitude = 0.
+grid_function_library.T0_0_grid_func.mode = 1 0
+grid_function_library.T0_0_grid_func.phase = 0 0
 
 
 #computational coordinate X runs 0 to 2pi. physical coordinate runs 0 to L.
 #For exponentially decreasing density, one should use exp(-(x-pi)/(2*pi*delta/L)) 
+
 grid_function_library.N0_grid_func.type = "arbitrary"
-grid_function_library.N0_grid_func.function = "(1+exp(-(x-pi)^2/(2*pi*0.01/0.02)-(y-pi)^2/(2*pi*0.01/0.02) ) )"
-#grid_function_library.N0_grid_func.function = "(1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))"
-#grid_function_library.N0_grid_func.function = "1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))"
-#grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
-grid_function_library.eN0_grid_func.type = "arbitrary"
-#grid_function_library.eN0_grid_func.function = "1.0+0.5*exp(-(x)/(pi))+0.01*exp(-(x-pi)^2/(0.1*PI))*cos(10*y)"
-grid_function_library.eN0_grid_func.function = "1.0*exp(-(x-pi)/(2*pi*0.01/0.02))"
+#grid_function_library.N0_grid_func.function = "(1.00+(1.00-1.05)/(2*pi)*(x) )*(1.0+0.001*cos(2*y) )"
+grid_function_library.N0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*5.0*0.02)) )*(1+0.00001*cos(2*y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )"
+
+
+grid_function_library.N0_0_grid_func.type = "arbitrary"
+#grid_function_library.N0_0_grid_func.function = "20.0+10.0*sin(2*x)"
+grid_function_library.N0_0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*5.0*0.02)) )"
+#grid_function_library.N0_0_grid_func.function = "1.00+(1.00-1.05)/(2*pi)*(x)"
+#grid_function_library.N0_0_grid_func.function = "1.0*exp( -(x-pi)/(2*pi*0.01/0    .02) )"
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
 grid_function_library.Ion_vpar_grid_func.value = 0.0
 
-grid_function_library.ele_vpar_grid_func.type = "constant"
-grid_function_library.ele_vpar_grid_func.value = 0.0
+#grid_function_library.ele_vpar_grid_func.type = "constant"
+#grid_function_library.ele_vpar_grid_func.value = 0.0
 
