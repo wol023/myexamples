@@ -311,8 +311,8 @@ with open("potential_hist_1.curve", 'r') as f:
 
 f.closed
 
-del x_list[-10:]
-del y_list[-10:]
+#del x_list[-10:]
+#del y_list[-10:]
 
 #make time unit to second/2/pi
 #print type(x_list)
