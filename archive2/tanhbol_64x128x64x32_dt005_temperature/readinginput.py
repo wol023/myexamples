@@ -211,12 +211,30 @@ pe=parse_expr(n0_grid_func,transformations=transformations)
 f = lambdify((x,y),pe)
 #print f(pi,pi) #test
 
-xx = np.linspace(0.0, np.pi*2, 100)
-xcm  = np.linspace(0.0, x_max*100, 100)
-yy = np.linspace(0.0, np.pi*2, 100)
+xx = np.linspace(0.0, np.pi*2, (x_cells))
+xcm  = np.linspace(0.0, x_max*100, (x_cells))
+yy = np.linspace(0.0, np.pi*2, (x_cells))
+yypert = np.linspace(0.0, np.pi*2, (x_cells))
 
 for i in range(len(xx)):
     yy[i] = f(xx[i],pi)
+
+#calc yypert
+dphasepert = np.pi/10
+#find optimum phase shift
+maxyypert_amp = 0.0
+maxyypert_phi_ind =0
+
+for j in range(10):
+    for i in range(len(xx)):
+        yypert[i] =abs(f(xx[i],dphasepert*j) - yy[i])
+    tempyypert_amp = max( (yypert))
+    if tempyypert_amp>maxyypert_amp:
+        maxyypert_amp=tempyypert_amp
+        maxyypert_phi_ind=j
+for i in range(len(xx)):
+    yypert[i] =abs(f(xx[i],dphasepert*maxyypert_phi_ind) - yy[i])
+
 
 dx = x_max*100/len(xx) #in [cm]
 dyydx = np.gradient(yy)/dx
@@ -226,8 +244,34 @@ dlnyydx[len(dlnyydx)-1] = dlnyydx[len(dlnyydx)-2] #fix discontinuity
 
 #print 'average density = ',np.average(yy)
 
-#print 'dln(n)/dx minimum = ',min(dlnyydx)
+#calculate spread indices
+contains_tanh =0
+contains_pert =0
 
+if 'tanh' in n0_grid_func:
+    contains_tanh =1
+    #print "contains_tanh"
+if ')**2' in n0_grid_func:
+    contains_pert =1
+    #print "contains_pert"
+
+if contains_tanh and contains_pert:
+    dlnyydx_abs = abs(dlnyydx)
+    dlnyydx_amplitude= max(dlnyydx_abs)
+    ispread_width=sum(dlnyydx_abs>dlnyydx_amplitude*0.33)
+    yypert_amplitude = max(yypert)
+    ispread_width_density_pert=sum(yypert>yypert_amplitude*0.10)
+    ispread_width = min(ispread_width,ispread_width_density_pert)
+elif contains_tanh:
+    dlnyydx_abs = abs(dlnyydx)
+    dlnyydx_amplitude= max(dlnyydx_abs)
+    ispread_width=sum(dlnyydx_abs>dlnyydx_amplitude*0.33)
+elif contains_pert:
+    yypert_amplitude = max(yypert)
+    ispread_width=sum(yypert>yypert_amplitude*0.10)
+else:
+    ispread_width=1
+    #print "does not contain spreading"
 
 print '********** DERIVED VARS *****************'
 b_t = bz_inner*1E4
@@ -264,21 +308,44 @@ deltaL_max = 1./max(abs(dlnyydx))
 x_point_index_in_plot = int(float(x_index)/float(x_cells)*len(dlnyydx))-1 
 #print 'x_point_index_in_plot = ', x_point_index_in_plot
 deltaL_point= abs(1./(dlnyydx[x_point_index_in_plot]))
+
+deltaL_spread =0.0
+#ispread_width = 10
+ispread_width = float(ispread_width)
+spread_ind_diff = range(-int(np.floor(ispread_width/2)),int(np.ceil(ispread_width/2)))
+if int(ispread_width)%2==0:
+    tempfirstinddiff=-spread_ind_diff[0]
+    del spread_ind_diff[0]
+    spread_ind_diff.append(tempfirstinddiff)
+#print spread_ind_diff
+
+for ind in spread_ind_diff :
+    deltaL_spread = deltaL_spread+dlnyydx[x_point_index_in_plot+ind] 
+deltaL_spread = deltaL_spread/ispread_width
+deltaL_spread = 1.0/abs(deltaL_spread)
+#print type(spread_ind_diff)
+spread_ind_diff=np.array(spread_ind_diff)
+spread_ind =  spread_ind_diff+ x_point_index_in_plot
+#print spread_ind
+
 c_s        = 979000*((electron_temperature*units_temperature)/ion_mass)**0.5
 rho_s      = 102*((ion_mass*electron_temperature*units_temperature)**0.5)/b_t
 chi        = k_y*rho_s
 omega_star = c_s*rho_s*k_y/deltaL_max
 omega_star_point= c_s*rho_s*k_y/ deltaL_point
+omega_star_spread= c_s*rho_s*k_y/ deltaL_spread
 
 print 'k_y             [1/cm] = ', k_y
 print 'deltaL_max        [cm] = ', deltaL_max
 print 'deltaL_point      [cm] = ', deltaL_point
+print 'deltaL_spread     [cm] = ', deltaL_spread
 print 'c_s             [cm/s] = ', c_s
 print 'rho_s             [cm] = ', rho_s
 print 'k_y*rho_s          [-] = ', chi
 print 'k_y*rho_i          [-] = ', k_y*c_ion_gyroradius
 print 'omega*           [1/s] = ', omega_star
 print 'omega*_point     [1/s] = ', omega_star_point
+print 'omega*_spread    [1/s] = ', omega_star_spread
 
 
 
@@ -287,14 +354,20 @@ print '*****************************************'
 
 
 
-fig1, ax1 = plt.subplots(1,1)
-ax1.plot(xcm,yy ,label='density')
-ax1.set_xlabel('x (cm)')
-#ax1[0].set_ylabel('density')
-ax1.plot(xcm,-dlnyydx ,label='gradient length' )
-ax1.scatter(xcm[x_point_index_in_plot],-dlnyydx[x_point_index_in_plot],label='measured point' )
-#ax1.set_xlabel('x (cm)')
-ax1.set_ylabel('density, -d(ln n)/dx [cm]')
+fig1, ax1 = plt.subplots(2,1)
+ax1[0].plot(xcm,yy ,'.-',label='density')
+ax1[0].set_xlabel('x (cm)')
+ax1[0].scatter(xcm[x_point_index_in_plot],yy[x_point_index_in_plot],marker="o",label='measured point' )
+ax1[0].legend()
+ax1[0].set_ylabel('density')
+
+ax1[1].plot(xcm,-dlnyydx ,'x-',label='gradient length' )
+ax1[1].plot(xcm,yypert*10000 ,'xr-',label='perturbationx10000' )
+ax1[1].scatter(xcm[spread_ind],yypert[spread_ind]*10000,label='average points' )
+#ax1[1].set_xlabel('x (cm)')
+
+ax1[1].set_ylabel('perturbation, -d(ln n)/dx [cm]')
+
 plt.legend()
 #ax[1].set_ylim(-2, 0) 
 #plt.show()
@@ -429,10 +502,11 @@ yplotv_fit = scipy.fftpack.fftshift(yfv_fit)
 
 ############
 
-print 'omega_star_fft/omega*           = ', abs(freqmax)/omega_star
-print 'omega_star_fft/omega*_point     = ', abs(freqmax)/ omega_star_point
-print 'omega_star_fitting/omega*       = ', abs(est_freq)/omega_star
-print 'omega_star_fitting/omega*_point = ', abs(est_freq)/omega_star_point
+print 'omega_star_fft/omega*            = ', abs(freqmax)/omega_star
+print 'omega_star_fft/omega*_point      = ', abs(freqmax)/ omega_star_point
+print 'omega_star_fitting/omega*        = ', abs(est_freq)/omega_star
+print 'omega_star_fitting/omega*_point  = ', abs(est_freq)/omega_star_point
+print 'omega_star_fitting/omega*_spread = ', abs(est_freq)/omega_star_spread
 
 
 fig2, ax2 = plt.subplots(2, 1)
