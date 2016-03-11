@@ -376,6 +376,7 @@ plt.legend()
 #read history file
 x_list=[]
 y_list=[]
+prev_lhsrhs_0 = '0000'
 with open("potential_hist_1.curve", 'r') as f:
     for line in f:
         if line.lstrip().startswith('#'): #skip comment
@@ -391,16 +392,20 @@ with open("potential_hist_1.curve", 'r') as f:
                 lhsrhs[l]=lhsrhs[l].rstrip()
                 lhsrhs[l]=lhsrhs[l].lstrip()
                 l=l+1
-            x_list.append(float(lhsrhs[0]))
-            y_list.append(float(lhsrhs[1]))
+            if  prev_lhsrhs_0 != lhsrhs[0]:
+                x_list.append(float(lhsrhs[0]))
+                y_list.append(float(lhsrhs[1]))
+                prev_lhsrhs_0 = lhsrhs[0]
 
 f.closed
 
-#del x_list[-20:]
-#del y_list[-20:]
+print x_list
 
-#del x_list[:20]
-#del y_list[:20]
+#del x_list[-25:]
+#del y_list[-25:]
+
+print x_list 
+
 
 #make time unit to second/2/pi
 #print type(x_list)
@@ -458,10 +463,10 @@ from scipy.optimize import leastsq
 
 #data = 3.0*np.sin(t+0.001) + 0.5 + np.random.randn(N) # create artificial data with noise
 
-guess_amplitude = (y.max()-y.min())/2.0
+guess_amplitude = (y.max()-y.min())/2
 guess_mean = np.mean(y)
 guess_phase = 0
-guess_freq = abs(freqmax)
+guess_freq = freqmax
 guess_lin = 0
 
 # we'll use this to plot our first estimate. This might already be good enough for you
@@ -469,16 +474,11 @@ data_first_guess = guess_amplitude*np.cos(guess_freq*2.0*np.pi*xt+guess_phase)+g
 
 # Define the function to optimize, in this case, we want to minimize the difference
 # between the actual data and our "guessed" parameters
-#optimize_func = lambda z: z[3]*np.cos(z[0]*2.0*np.pi*xt+z[1]) + z[2] - y
-#optimize_func = lambda z: z[2]*np.cos(z[0]*2.0*np.pi*xt+z[1])+guess_mean  - y
-optimize_func = lambda z: guess_amplitude*np.cos(z[0]*2.0*np.pi*xt+z[1])+guess_mean  - y
+optimize_func = lambda z: z[3]*np.cos(z[0]*2.0*np.pi*xt+z[1]) + z[2] - y
 #optimize_func = lambda z: guess_amplitude*np.cos(z[0]*2.0*np.pi*xt+z[1]) + z[2] - y
-est_freq, est_phase = leastsq(optimize_func, [guess_freq, guess_phase ])[0]
+est_freq, est_phase, est_mean, est_amplitude = leastsq(optimize_func, [guess_freq, guess_phase, guess_mean, guess_amplitude ])[0]
 
-data_fit = guess_mean + guess_amplitude*np.cos(est_freq*2.0*np.pi*xt+est_phase) 
-print guess_mean, guess_amplitude, est_freq, est_phase
-
-
+data_fit = est_mean + est_amplitude*np.cos(est_freq*2.0*np.pi*xt+est_phase) 
 # recreate the fitted curve using the optimized parameters
 
 #guess_amplitude = guess_amplitude-est_lin*(xt[len(xt)-1]-xt[0])
@@ -533,6 +533,29 @@ ax2[1].plot(xf,1.0/N * np.abs(yplotv),'r-')
 
 ax2[1].plot(xf,1.0/N * np.abs(yplotv_fit),'.g-')
 
-plt.show()
+#plt.show()
+
+fig1.savefig('foo1.png')
+fig2.savefig('foo2.png')
+#plt.close('all')
+with open('finish.txt', 'wb') as fh:
+    buf = "te = %f\n" % (units_temperature*boltzmann_electron_temperature)
+    fh.write(buf)
+    buf = "ti = %f\n" % (units_temperature*t0_grid_func)
+    fh.write(buf)
+    buf = "omega_star = %f\n" % (omega_star)
+    fh.write(buf)
+    buf = "omega_star_point = %f\n" % (omega_star_point)
+    fh.write(buf)
+    buf = "omega_star_spread = %f\n" % (omega_star_spread)
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*        = %f\n'%( abs(est_freq)/omega_star )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_point  = %f\n'%( abs(est_freq)/omega_star_point )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_spread = %f\n'%( abs(est_freq)/omega_star_spread )
+    fh.write(buf)
+
+
 
 

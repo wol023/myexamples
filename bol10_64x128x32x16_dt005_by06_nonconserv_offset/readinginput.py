@@ -376,6 +376,7 @@ plt.legend()
 #read history file
 x_list=[]
 y_list=[]
+prev_lhsrhs_0 = '0000'
 with open("potential_hist_1.curve", 'r') as f:
     for line in f:
         if line.lstrip().startswith('#'): #skip comment
@@ -391,16 +392,20 @@ with open("potential_hist_1.curve", 'r') as f:
                 lhsrhs[l]=lhsrhs[l].rstrip()
                 lhsrhs[l]=lhsrhs[l].lstrip()
                 l=l+1
-            x_list.append(float(lhsrhs[0]))
-            y_list.append(float(lhsrhs[1]))
+            if  prev_lhsrhs_0 != lhsrhs[0]:
+                x_list.append(float(lhsrhs[0]))
+                y_list.append(float(lhsrhs[1]))
+                prev_lhsrhs_0 = lhsrhs[0]
 
 f.closed
 
-#del x_list[-20:]
-#del y_list[-20:]
+print x_list
 
-#del x_list[:20]
-#del y_list[:20]
+#del x_list[-25:]
+#del y_list[-25:]
+
+print x_list 
+
 
 #make time unit to second/2/pi
 #print type(x_list)
@@ -528,6 +533,29 @@ ax2[1].plot(xf,1.0/N * np.abs(yplotv),'r-')
 
 ax2[1].plot(xf,1.0/N * np.abs(yplotv_fit),'.g-')
 
-plt.show()
+#plt.show()
+
+fig1.savefig('foo1.png')
+fig2.savefig('foo2.png')
+#plt.close('all')
+with open('finish.txt', 'wb') as fh:
+    buf = "te = %f\n" % (units_temperature*boltzmann_electron_temperature)
+    fh.write(buf)
+    buf = "ti = %f\n" % (units_temperature*t0_grid_func)
+    fh.write(buf)
+    buf = "omega_star = %f\n" % (omega_star)
+    fh.write(buf)
+    buf = "omega_star_point = %f\n" % (omega_star_point)
+    fh.write(buf)
+    buf = "omega_star_spread = %f\n" % (omega_star_spread)
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*        = %f\n'%( abs(est_freq)/omega_star )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_point  = %f\n'%( abs(est_freq)/omega_star_point )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_spread = %f\n'%( abs(est_freq)/omega_star_spread )
+    fh.write(buf)
+
+
 
 
