@@ -352,30 +352,46 @@ print 'omega*_spread    [1/s] = ', omega_star_spread
 
 print '*****************************************'
 
+from setupplot import init_plotting
+#### first plot
 
+init_plotting()
+plt.subplot(111)
+plt.gca().margins(0.1, 0.1)
+plt.plot(xcm,yy ,linestyle='-',linewidth=1,color='b',label='density')
+plt.scatter(xcm[x_point_index_in_plot],yy[x_point_index_in_plot],marker="o",linewidth=1,color='g',label='measured point' )
+plt.xlabel(u'x (cm)')
+plt.ylabel(u'density')
+#plt.ylabel(r'$\omega_{\mathrm{fit}} / (\omega_*/(1+k_y^2\rho_s^2)) $',fontsize=1.5*plt.rcParams['font.size'])
+#plt.title(u'Drift wave frequency')
+plt.gca().legend(bbox_to_anchor = (0.0, 0.1))
+## output resulting plot to file
+#plt.ylim(0.8,1.05)
+#
+plt.tight_layout()
+plt.savefig('foo1.png')
+plt.savefig('foo1.eps')
+plt.close()
 
-fig1, ax1 = plt.subplots(2,1)
-ax1[0].plot(xcm,yy ,'.-',label='density')
-ax1[0].set_xlabel('x (cm)')
-ax1[0].scatter(xcm[x_point_index_in_plot],yy[x_point_index_in_plot],marker="o",label='measured point' )
-ax1[0].legend()
-ax1[0].set_ylabel('density')
-
-ax1[1].plot(xcm,-dlnyydx ,'x-',label='gradient length' )
-ax1[1].plot(xcm,yypert*10000 ,'xr-',label='perturbationx10000' )
-ax1[1].scatter(xcm[spread_ind],yypert[spread_ind]*10000,label='average points' )
-#ax1[1].set_xlabel('x (cm)')
-
-ax1[1].set_ylabel('perturbation, -d(ln n)/dx [cm]')
-
-plt.legend()
-#ax[1].set_ylim(-2, 0) 
-#plt.show()
-
+######
+init_plotting()
+plt.subplot(111)
+plt.gca().margins(0.1, 0.1)
+plt.plot(xcm,-dlnyydx,linestyle='-',linewidth=1,color='b',label='inverse gradient length' )
+plt.plot(xcm,yypert*10000 ,marker='x',linestyle='-',linewidth=1,color='r',label='perturbationx10000' )
+plt.scatter(xcm[spread_ind],-dlnyydx[spread_ind],label='average points' )
+plt.xlabel(u'x (cm)')
+plt.ylabel(u'perturbation, -d(ln n)/dx [cm]')
+plt.gca().legend(bbox_to_anchor = (0.0, 0.15))
+plt.tight_layout()
+plt.savefig('foo2.png')
+plt.savefig('foo2.eps')
+plt.close()
 
 #read history file
 x_list=[]
 y_list=[]
+prev_lhsrhs_0 = '0000'
 with open("potential_hist_1.curve", 'r') as f:
     for line in f:
         if line.lstrip().startswith('#'): #skip comment
@@ -391,16 +407,20 @@ with open("potential_hist_1.curve", 'r') as f:
                 lhsrhs[l]=lhsrhs[l].rstrip()
                 lhsrhs[l]=lhsrhs[l].lstrip()
                 l=l+1
-            x_list.append(float(lhsrhs[0]))
-            y_list.append(float(lhsrhs[1]))
+            if  prev_lhsrhs_0 != lhsrhs[0]:
+                x_list.append(float(lhsrhs[0]))
+                y_list.append(float(lhsrhs[1]))
+                prev_lhsrhs_0 = lhsrhs[0]
 
 f.closed
 
-#del x_list[-20:]
-#del y_list[-20:]
+print x_list
 
-#del x_list[:20]
-#del y_list[:20]
+#del x_list[-25:]
+#del y_list[-25:]
+
+print x_list 
+
 
 #make time unit to second/2/pi
 #print type(x_list)
@@ -458,10 +478,10 @@ from scipy.optimize import leastsq
 
 #data = 3.0*np.sin(t+0.001) + 0.5 + np.random.randn(N) # create artificial data with noise
 
-guess_amplitude = (y.max()-y.min())/2.0
+guess_amplitude = (y.max()-y.min())/2
 guess_mean = np.mean(y)
 guess_phase = 0
-guess_freq = abs(freqmax)
+guess_freq = freqmax
 guess_lin = 0
 
 # we'll use this to plot our first estimate. This might already be good enough for you
@@ -469,16 +489,11 @@ data_first_guess = guess_amplitude*np.cos(guess_freq*2.0*np.pi*xt+guess_phase)+g
 
 # Define the function to optimize, in this case, we want to minimize the difference
 # between the actual data and our "guessed" parameters
-#optimize_func = lambda z: z[3]*np.cos(z[0]*2.0*np.pi*xt+z[1]) + z[2] - y
-#optimize_func = lambda z: z[2]*np.cos(z[0]*2.0*np.pi*xt+z[1])+guess_mean  - y
-optimize_func = lambda z: guess_amplitude*np.cos(z[0]*2.0*np.pi*xt+z[1])+guess_mean  - y
+optimize_func = lambda z: z[3]*np.cos(z[0]*2.0*np.pi*xt+z[1]) + z[2] - y
 #optimize_func = lambda z: guess_amplitude*np.cos(z[0]*2.0*np.pi*xt+z[1]) + z[2] - y
-est_freq, est_phase = leastsq(optimize_func, [guess_freq, guess_phase ])[0]
+est_freq, est_phase, est_mean, est_amplitude = leastsq(optimize_func, [guess_freq, guess_phase, guess_mean, guess_amplitude ])[0]
 
-data_fit = guess_mean + guess_amplitude*np.cos(est_freq*2.0*np.pi*xt+est_phase) 
-print guess_mean, guess_amplitude, est_freq, est_phase
-
-
+data_fit = est_mean + est_amplitude*np.cos(est_freq*2.0*np.pi*xt+est_phase) 
 # recreate the fitted curve using the optimized parameters
 
 #guess_amplitude = guess_amplitude-est_lin*(xt[len(xt)-1]-xt[0])
@@ -513,26 +528,61 @@ print 'omega_star_fitting/omega*        = ', abs(est_freq)/omega_star
 print 'omega_star_fitting/omega*_point  = ', abs(est_freq)/omega_star_point
 print 'omega_star_fitting/omega*_spread = ', abs(est_freq)/omega_star_spread
 
+init_plotting()
+plt.subplot(111)
+plt.gca().margins(0.1, 0.1)
+plt.plot(xt,y,marker='x',linestyle='-',linewidth=1,color='b',label='potential' )
+#plt.plot(xt,yv,linestyle='-',linewidth=1,color='r',label='fourier mode' )
+plt.plot(xt,data_fit,marker='.',linestyle='-',linewidth=1,color='g',label='fitting' )
+plt.gca().xaxis.get_major_formatter().set_powerlimits((-1, 1))
+plt.gca().yaxis.get_major_formatter().set_powerlimits((-1, 1))
+plt.xlabel(u'Time (s)')
+plt.ylabel(u'Amplitude')
+plt.gca().legend(bbox_to_anchor = (0.0, 0.1))
+plt.tight_layout()
+plt.savefig('foo3.png')
+plt.savefig('foo3.eps')
+plt.close()
 
-fig2, ax2 = plt.subplots(2, 1)
-ax2[0].plot(xt,y,'xb-')
-ax2[0].set_xlabel('Time (s)')
-ax2[0].set_ylabel('Amplitude')
+init_plotting()
+plt.subplot(111)
+plt.gca().margins(0.1, 0.1)
+plt.plot(xf,1.0/N * np.abs(yplot),marker='.',linestyle='-',linewidth=1,color='b',label='frequency spectrum' )
+#plt.plot(xf,1.0/N*np.abs(yplotv),linestyle='-',linewidth=1,color='r',label='dominant spectrum' )
+plt.plot(xf,1.0/N*np.abs(yplotv_fit),marker='.',linestyle='-',linewidth=1,color='g',label='fitted frequency spectrum' )
+plt.gca().xaxis.get_major_formatter().set_powerlimits((-1, 1))
+plt.gca().yaxis.get_major_formatter().set_powerlimits((-1, 1))
+print plt.gca().get_ylim()
+plt.ylim(plt.gca().get_ylim()[0],plt.gca().get_ylim()[1]*1.3)
+plt.xlabel(u'Freq. (Hz)')
+plt.ylabel(u'|Y(freq)|')
+plt.gca().legend(bbox_to_anchor = (0.1, 0.9))
+plt.tight_layout()
+plt.savefig('foo4.png')
+plt.savefig('foo4.eps')
+plt.close()
 
-ax2[0].plot(xt,yv,'r-')
 
-ax2[0].plot(xt,data_fit, '.g-')
+with open('finish.txt', 'wb') as fh:
+    buf = "te = %f\n" % (units_temperature*boltzmann_electron_temperature)
+    fh.write(buf)
+    buf = "ti = %f\n" % (units_temperature*t0_grid_func)
+    fh.write(buf)
+    buf = "omega_star = %f\n" % (omega_star)
+    fh.write(buf)
+    buf = "omega_star_point = %f\n" % (omega_star_point)
+    fh.write(buf)
+    buf = "omega_star_spread = %f\n" % (omega_star_spread)
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*        = %f\n'%( abs(est_freq)/omega_star )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_point  = %f\n'%( abs(est_freq)/omega_star_point )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_spread = %f\n'%( abs(est_freq)/omega_star_spread )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_1_chi2  = %f\n'%( abs(est_freq)/omega_star_point*(1.0+chi*chi) )
+    fh.write(buf)
 
 
-
-ax2[1].plot(xf,1.0/N * np.abs(yplot),'.b-') # plotting the frequency spectrum
-ax2[1].set_xlabel('Freq (Hz)')
-ax2[1].set_ylabel('|Y(freq)|')
-
-ax2[1].plot(xf,1.0/N * np.abs(yplotv),'r-')
-
-ax2[1].plot(xf,1.0/N * np.abs(yplotv_fit),'.g-')
-
-plt.show()
 
 
