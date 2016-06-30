@@ -1,0 +1,735 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 200000
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0.03
+**** cellSp[0] = 0.785398,  cellSp[1] = 0.785398, cellSp[2] = 0.785398
+**** dimensions = 8, 8, 8
+Done constructing slab geometry
+   Configuration space box ((0,0,0) (7,7,7) (0,0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+   Phase space box ((0,0,0,-8,0) (7,7,7,7,7) (0,0,0,0,0)) is assigned to process 0, has 65536 valid cells and 1507328 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.000544, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding congiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+"T0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Arbitrary grid function parameters:
+  function: 0.00
+  translated form: 0.00
+  postfix form: {0.00}
+  coordinate type: mapped
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )*( 1.0+0.00001*cos(2*y) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))*(1.0+0.00001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}{1.0}{0.00001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1.0*exp( -(x-pi)/(2*pi*0.04/0.02) )
+  translated form: 1.0*exp(-(x'-pi')/(2*pi'*0.04/0.02))
+  postfix form: {1.0}{x'[0]}{PI'}{-}{-:}{2}{PI'}{*}{0.04}{*}{0.02}{/}{/}{exp}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	1.9882 [max]	2.28175e-05 [min]
+    Species 1:	8.91888e-06 [max]	1.02359e-10 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 0.0016253.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+ GKSystem::advance 1
+ GKSystem::advance 2
+ TiRK:advance() i=0, m_nstages=4
+ TiRK:advance() i=0
+ TiRK:advance() i=1, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=1
+ TiRK:advance() i=2, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=2
+ TiRK:advance() i=3, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=3
+ GKSystem::advance 3
+ GKSystem::advance 4
+ GKSystem::advance 5
+ GKSystem::advance 6
+ GKSystem::advance 7.
+  ----
+  dt: 0.005
+    Vlasov    : 0.00208233 (time scale), 2.40116 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.78134e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	-nan [max]	-nan [min]
+    Species 1:	-nan [max]	-nan [min]
+
+Step 1 completed, simulation time is 0.005
+----
+
+Step 2
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 0.00162534.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+ GKSystem::advance 1
+ GKSystem::advance 2
+ TiRK:advance() i=0, m_nstages=4
+ TiRK:advance() i=0
+ TiRK:advance() i=1, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=1
+ TiRK:advance() i=2, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=2
+ TiRK:advance() i=3, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=3
+ GKSystem::advance 3
+ GKSystem::advance 4
+ GKSystem::advance 5
+ GKSystem::advance 6
+ GKSystem::advance 7.
+  ----
+  dt: 0.005
+    Vlasov    : 0.00208238 (time scale), 2.4011 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.78134e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	-nan [max]	-nan [min]
+    Species 1:	-nan [max]	-nan [min]
+
+Step 2 completed, simulation time is 0.01
+----
+
+Step 3
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 0.00162534.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+ GKSystem::advance 1
+ GKSystem::advance 2
+ TiRK:advance() i=0, m_nstages=4
+ TiRK:advance() i=0
+ TiRK:advance() i=1, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=1
+ TiRK:advance() i=2, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=2
+ TiRK:advance() i=3, m_nstages=4
+      BiCGStab converged successfully
+ TiRK:advance() i=3
+ GKSystem::advance 3
+ GKSystem::advance 4
+ GKSystem::advance 5
+ GKSystem::advance 6
+ GKSystem::advance 7.
+  ----
+  dt: 0.005
+    Vlasov    : 0.00208238 (time scale), 2.4011 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.78134e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	-nan [max]	-nan [min]
+    Species 1:	-nan [max]	-nan [min]
+
+Step 3 completed, simulation time is 0.015
+----
+
+Step 4
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 0.00162534.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+ GKSystem::advance 1
+ GKSystem::advance 2
+ TiRK:advance() i=0, m_nstages=4
+ TiRK:advance() i=0
+ TiRK:advance() i=1, m_nstages=4
+      BiCGStab converged successfully
