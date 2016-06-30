@@ -38,12 +38,12 @@ simulation.1.history_indices = 16 16
 # Computational Grid Definitions
 #####################################################
 #gksystem.num_cells   = 64 64 36 24
-gksystem.num_cells   = 32 32 36 18
+gksystem.num_cells   = 32 32 36 24
 gksystem.is_periodic = 0  1  0  0
 
 gksystem.configuration_decomp = 4 4
-gksystem.velocity_decomp      =     3 3
-gksystem.phase_decomp         = 4 2 3 3
+gksystem.velocity_decomp      =     4 4
+gksystem.phase_decomp         = 4 2 4 4
 
 #gksystem.configuration_decomp = 4 4
 #gksystem.velocity_decomp      =     2 2
@@ -116,6 +116,8 @@ phase_space_mapping.velocity_type = "gyrokinetic"
 # Vlasov Operator Definitions
 #####################################################
 gkvlasov.verbose = true
+gkvlasov.time_step_diagnostics = true
+
 #gkvlasov.face_avg_type = uw1
 gkvlasov.face_avg_type = uw3
 #gkvlasov.face_avg_type = uw5

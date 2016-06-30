@@ -1,0 +1,1582 @@
+ModuleCmd_Switch.c(172):ERROR:152: Module 'PrgEnv-intel' is currently not loaded
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 10
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 30949.7
+  TRANSIT TIME          [s]: 3.23105e-05
+  MAGNETIC MOMENT     [J/T]: 8.01088e-19
+  DIST. FUNCTION [s/(Am^6)]: 1.0737e+06
+  POTENTIAL             [V]: 10
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.000323105
+  DEBYE LENGTH          [m]: 2.35082e-06
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.000323105
+  DEBYE NUMBER             : 2.35082e-06
+
+***********************************************************************
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+Constructing slab geometry...
+xmax = 0.02, ymax = 0.02, zmax = 0.25
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0.06
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+Done constructing slab geometry
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Configuration space box ((0,0,0) (7,7,7) (0,0,0)) is assigned to process 0
+   Configuration space box ((8,0,0) (15,7,7) (0,0,0)) is assigned to process 1
+   Configuration space box ((16,0,0) (23,7,7) (0,0,0)) is assigned to process 2
+   Configuration space box ((24,0,0) (31,7,7) (0,0,0)) is assigned to process 3
+   Configuration space box ((0,8,0) (7,15,7) (0,0,0)) is assigned to process 4
+   Configuration space box ((8,8,0) (15,15,7) (0,0,0)) is assigned to process 5
+   Configuration space box ((16,8,0) (23,15,7) (0,0,0)) is assigned to process 6
+   Configuration space box ((24,8,0) (31,15,7) (0,0,0)) is assigned to process 7
+   Configuration space box ((0,16,0) (7,23,7) (0,0,0)) is assigned to process 8
+   Configuration space box ((8,16,0) (15,23,7) (0,0,0)) is assigned to process 9
+   Configuration space box ((16,16,0) (23,23,7) (0,0,0)) is assigned to process 10
+   Configuration space box ((24,16,0) (31,23,7) (0,0,0)) is assigned to process 11
+   Configuration space box ((0,24,0) (7,31,7) (0,0,0)) is assigned to process 12
+   Configuration space box ((8,24,0) (15,31,7) (0,0,0)) is assigned to process 13
+   Configuration space box ((16,24,0) (23,31,7) (0,0,0)) is assigned to process 14
+   Configuration space box ((24,24,0) (31,31,7) (0,0,0)) is assigned to process 15
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-18,0) (-10,5) (0,0)) is assigned to process 0
+   Velocity space box ((-9,0) (-1,5) (0,0)) is assigned to process 1
+   Velocity space box ((0,0) (8,5) (0,0)) is assigned to process 2
+   Velocity space box ((9,0) (17,5) (0,0)) is assigned to process 3
+   Velocity space box ((-18,6) (-10,11) (0,0)) is assigned to process 4
+   Velocity space box ((-9,6) (-1,11) (0,0)) is assigned to process 5
+   Velocity space box ((0,6) (8,11) (0,0)) is assigned to process 6
+   Velocity space box ((9,6) (17,11) (0,0)) is assigned to process 7
+   Velocity space box ((-18,12) (-10,17) (0,0)) is assigned to process 8
+   Velocity space box ((-9,12) (-1,17) (0,0)) is assigned to process 9
+   Velocity space box ((0,12) (8,17) (0,0)) is assigned to process 10
+   Velocity space box ((9,12) (17,17) (0,0)) is assigned to process 11
+   Velocity space box ((-18,18) (-10,23) (0,0)) is assigned to process 12
+   Velocity space box ((-9,18) (-1,23) (0,0)) is assigned to process 13
+   Velocity space box ((0,18) (8,23) (0,0)) is assigned to process 14
+   Velocity space box ((9,18) (17,23) (0,0)) is assigned to process 15
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((8,16,0,9,6) (15,31,7,17,11) (0,0,0,0,0)) is assigned to process 87, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,9,12) (15,15,7,17,17) (0,0,0,0,0)) is assigned to process 27, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((8,16,0,-18,12) (15,31,7,-10,17) (0,0,0,0,0)) is assigned to process 88, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,0,18) (15,15,7,8,23) (0,0,0,0,0)) is assigned to process 30, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((8,16,0,0,12) (15,31,7,8,17) (0,0,0,0,0)) is assigned to process 90, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,9,18) (15,15,7,17,23) (0,0,0,0,0)) is assigned to process 31, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((8,16,0,9,12) (15,31,7,17,17) (0,0,0,0,0)) is assigned to process 91, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,-18,6) (23,15,7,-10,11) (0,0,0,0,0)) is assigned to process 36, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((8,16,0,-18,18) (15,31,7,-10,23) (0,0,0,0,0)) is assigned to process 92, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,-9,12) (23,15,7,-1,17) (0,0,0,0,0)) is assigned to process 41, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((8,16,0,-9,18) (15,31,7,-1,23) (0,0,0,0,0)) is assigned to process 93, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,9,12) (23,15,7,17,17) (0,0,0,0,0)) is assigned to process 43, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((8,16,0,0,18) (15,31,7,8,23) (0,0,0,0,0)) is assigned to process 94, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,0,6) (15,15,7,8,11) (0,0,0,0,0)) is assigned to process 22, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((8,16,0,9,18) (15,31,7,17,23) (0,0,0,0,0)) is assigned to process 95, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,9,6) (15,15,7,17,11) (0,0,0,0,0)) is assigned to process 23, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,9,18) (23,15,7,17,23) (0,0,0,0,0)) is assigned to process 47, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,0,0) (7,31,7,8,5) (0,0,0,0,0)) is assigned to process 66, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((16,16,0,-18,0) (23,31,7,-10,5) (0,0,0,0,0)) is assigned to process 96, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,-18,12) (15,15,7,-10,17) (0,0,0,0,0)) is assigned to process 24, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,-9,0) (31,15,7,-1,5) (0,0,0,0,0)) is assigned to process 49, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,9,0) (7,31,7,17,5) (0,0,0,0,0)) is assigned to process 67, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((16,16,0,-9,0) (23,31,7,-1,5) (0,0,0,0,0)) is assigned to process 97, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,-9,12) (15,15,7,-1,17) (0,0,0,0,0)) is assigned to process 25, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,0,0) (31,15,7,8,5) (0,0,0,0,0)) is assigned to process 50, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,0,6) (7,31,7,8,11) (0,0,0,0,0)) is assigned to process 70, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((16,16,0,9,0) (23,31,7,17,5) (0,0,0,0,0)) is assigned to process 99, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,0,12) (15,15,7,8,17) (0,0,0,0,0)) is assigned to process 26, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,-18,6) (31,15,7,-10,11) (0,0,0,0,0)) is assigned to process 52, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,-18,12) (7,31,7,-10,17) (0,0,0,0,0)) is assigned to process 72, has 55296 valid cells and 1406976 ghost cells
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.785398
+**** dimensions = 32, 32, 8
+   Phase space box ((16,16,0,-9,6) (23,31,7,-1,11) (0,0,0,0,0)) is assigned to process 101, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,-18,18) (15,15,7,-10,23) (0,0,0,0,0)) is assigned to process 28, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,9,6) (31,15,7,17,11) (0,0,0,0,0)) is assigned to process 55, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,9,12) (7,31,7,17,17) (0,0,0,0,0)) is assigned to process 75, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,-18,18) (23,31,7,-10,23) (0,0,0,0,0)) is assigned to process 108, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,0,6) (23,31,7,8,11) (0,0,0,0,0)) is assigned to process 102, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,-9,18) (15,15,7,-1,23) (0,0,0,0,0)) is assigned to process 29, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,-18,12) (31,15,7,-10,17) (0,0,0,0,0)) is assigned to process 56, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,-9,18) (7,31,7,-1,23) (0,0,0,0,0)) is assigned to process 77, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,-9,18) (23,31,7,-1,23) (0,0,0,0,0)) is assigned to process 109, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,9,6) (23,31,7,17,11) (0,0,0,0,0)) is assigned to process 103, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,-18,0) (23,15,7,-10,5) (0,0,0,0,0)) is assigned to process 32, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,0,12) (31,15,7,8,17) (0,0,0,0,0)) is assigned to process 58, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,16,0,-9,0) (15,31,7,-1,5) (0,0,0,0,0)) is assigned to process 81, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,0,18) (23,31,7,8,23) (0,0,0,0,0)) is assigned to process 110, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,-18,12) (23,31,7,-10,17) (0,0,0,0,0)) is assigned to process 104, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,-9,0) (23,15,7,-1,5) (0,0,0,0,0)) is assigned to process 33, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,9,12) (31,15,7,17,17) (0,0,0,0,0)) is assigned to process 59, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,16,0,0,0) (15,31,7,8,5) (0,0,0,0,0)) is assigned to process 82, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,9,18) (23,31,7,17,23) (0,0,0,0,0)) is assigned to process 111, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,-9,12) (23,31,7,-1,17) (0,0,0,0,0)) is assigned to process 105, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,0,0) (23,15,7,8,5) (0,0,0,0,0)) is assigned to process 34, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,-18,18) (31,15,7,-10,23) (0,0,0,0,0)) is assigned to process 60, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,16,0,9,0) (15,31,7,17,5) (0,0,0,0,0)) is assigned to process 83, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,9,12) (23,31,7,17,17) (0,0,0,0,0)) is assigned to process 107, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,0,12) (23,31,7,8,17) (0,0,0,0,0)) is assigned to process 106, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,9,0) (23,15,7,17,5) (0,0,0,0,0)) is assigned to process 35, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,-9,18) (31,15,7,-1,23) (0,0,0,0,0)) is assigned to process 61, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,16,0,-9,6) (15,31,7,-1,11) (0,0,0,0,0)) is assigned to process 85, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,-18,0) (31,31,7,-10,5) (0,0,0,0,0)) is assigned to process 112, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,16,0,0,6) (15,31,7,8,11) (0,0,0,0,0)) is assigned to process 86, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,-9,6) (23,15,7,-1,11) (0,0,0,0,0)) is assigned to process 37, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,0,18) (31,15,7,8,23) (0,0,0,0,0)) is assigned to process 62, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,-9,0) (31,31,7,-1,5) (0,0,0,0,0)) is assigned to process 113, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,16,0,-9,12) (15,31,7,-1,17) (0,0,0,0,0)) is assigned to process 89, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,0,6) (23,15,7,8,11) (0,0,0,0,0)) is assigned to process 38, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,9,18) (31,15,7,17,23) (0,0,0,0,0)) is assigned to process 63, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,-9,0) (7,31,7,-1,5) (0,0,0,0,0)) is assigned to process 65, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,0,0) (31,31,7,8,5) (0,0,0,0,0)) is assigned to process 114, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,0,0) (23,31,7,8,5) (0,0,0,0,0)) is assigned to process 98, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,9,6) (23,15,7,17,11) (0,0,0,0,0)) is assigned to process 39, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,-18,0) (7,31,7,-10,5) (0,0,0,0,0)) is assigned to process 64, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,-18,6) (7,31,7,-10,11) (0,0,0,0,0)) is assigned to process 68, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,-9,6) (31,31,7,-1,11) (0,0,0,0,0)) is assigned to process 117, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,16,0,-18,6) (23,31,7,-10,11) (0,0,0,0,0)) is assigned to process 100, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,-18,12) (23,15,7,-10,17) (0,0,0,0,0)) is assigned to process 40, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,-18,18) (23,15,7,-10,23) (0,0,0,0,0)) is assigned to process 44, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,-9,6) (7,31,7,-1,11) (0,0,0,0,0)) is assigned to process 69, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,9,12) (31,31,7,17,17) (0,0,0,0,0)) is assigned to process 123, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,0,12) (23,15,7,8,17) (0,0,0,0,0)) is assigned to process 42, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,-9,18) (23,15,7,-1,23) (0,0,0,0,0)) is assigned to process 45, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,9,6) (7,31,7,17,11) (0,0,0,0,0)) is assigned to process 71, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,-9,18) (31,31,7,-1,23) (0,0,0,0,0)) is assigned to process 125, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((16,0,0,0,18) (23,15,7,8,23) (0,0,0,0,0)) is assigned to process 46, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,-9,12) (7,31,7,-1,17) (0,0,0,0,0)) is assigned to process 73, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,0,18) (31,31,7,8,23) (0,0,0,0,0)) is assigned to process 126, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,-18,0) (31,15,7,-10,5) (0,0,0,0,0)) is assigned to process 48, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,0,12) (7,31,7,8,17) (0,0,0,0,0)) is assigned to process 74, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,9,18) (31,31,7,17,23) (0,0,0,0,0)) is assigned to process 127, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,9,0) (31,15,7,17,5) (0,0,0,0,0)) is assigned to process 51, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,-18,18) (7,31,7,-10,23) (0,0,0,0,0)) is assigned to process 76, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,9,0) (31,31,7,17,5) (0,0,0,0,0)) is assigned to process 115, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,-9,6) (31,15,7,-1,11) (0,0,0,0,0)) is assigned to process 53, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,0,18) (7,31,7,8,23) (0,0,0,0,0)) is assigned to process 78, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,-18,6) (31,31,7,-10,11) (0,0,0,0,0)) is assigned to process 116, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,0,6) (31,15,7,8,11) (0,0,0,0,0)) is assigned to process 54, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,16,0,9,18) (7,31,7,17,23) (0,0,0,0,0)) is assigned to process 79, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,0,6) (31,31,7,8,11) (0,0,0,0,0)) is assigned to process 118, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,0,0,-9,12) (31,15,7,-1,17) (0,0,0,0,0)) is assigned to process 57, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,16,0,-18,0) (15,31,7,-10,5) (0,0,0,0,0)) is assigned to process 80, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,9,6) (31,31,7,17,11) (0,0,0,0,0)) is assigned to process 119, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,16,0,-18,6) (15,31,7,-10,11) (0,0,0,0,0)) is assigned to process 84, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,-18,12) (31,31,7,-10,17) (0,0,0,0,0)) is assigned to process 120, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,-9,12) (31,31,7,-1,17) (0,0,0,0,0)) is assigned to process 121, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,0,12) (31,31,7,8,17) (0,0,0,0,0)) is assigned to process 122, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((24,16,0,-18,18) (31,31,7,-10,23) (0,0,0,0,0)) is assigned to process 124, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,-9,0) (7,15,7,-1,5) (0,0,0,0,0)) is assigned to process 1, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,-18,12) (7,15,7,-10,17) (0,0,0,0,0)) is assigned to process 8, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,-9,12) (7,15,7,-1,17) (0,0,0,0,0)) is assigned to process 9, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,0,12) (7,15,7,8,17) (0,0,0,0,0)) is assigned to process 10, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,-18,18) (7,15,7,-10,23) (0,0,0,0,0)) is assigned to process 12, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,-9,18) (7,15,7,-1,23) (0,0,0,0,0)) is assigned to process 13, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,0,18) (7,15,7,8,23) (0,0,0,0,0)) is assigned to process 14, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,9,18) (7,15,7,17,23) (0,0,0,0,0)) is assigned to process 15, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,-18,0) (15,15,7,-10,5) (0,0,0,0,0)) is assigned to process 16, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,0,0) (7,15,7,8,5) (0,0,0,0,0)) is assigned to process 2, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,9,0) (7,15,7,17,5) (0,0,0,0,0)) is assigned to process 3, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,-18,6) (7,15,7,-10,11) (0,0,0,0,0)) is assigned to process 4, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,-9,6) (7,15,7,-1,11) (0,0,0,0,0)) is assigned to process 5, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,0,6) (7,15,7,8,11) (0,0,0,0,0)) is assigned to process 6, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,9,6) (7,15,7,17,11) (0,0,0,0,0)) is assigned to process 7, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,9,12) (7,15,7,17,17) (0,0,0,0,0)) is assigned to process 11, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,-9,0) (15,15,7,-1,5) (0,0,0,0,0)) is assigned to process 17, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,0,0) (15,15,7,8,5) (0,0,0,0,0)) is assigned to process 18, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,9,0) (15,15,7,17,5) (0,0,0,0,0)) is assigned to process 19, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,-18,6) (15,15,7,-10,11) (0,0,0,0,0)) is assigned to process 20, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((8,0,0,-9,6) (15,15,7,-1,11) (0,0,0,0,0)) is assigned to process 21, has 55296 valid cells and 1406976 ghost cells
+   Phase space box ((0,0,0,-18,0) (7,15,7,-10,5) (0,0,0,0,0)) is assigned to process 0, has 55296 valid cells and 1406976 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.0001, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding congiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+"T0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))
+  translated form: (1.0+sin(x'/2.0)*sin(x'/2.0))*(1+0.001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{2.0}{/}{sin}{x'[0]}{2.0}{/}{sin}{*}{+}{1}{0.001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (  1.0-0.0*0.05*tanh((x-pi)/(2*pi*10.0*0.02)) )*(1+0.01*cos(y)*exp(-(x-pi)^2/(2*pi*0.001/0.02 ) )  )
+  translated form: (1.0-0.0*0.05*tanh((x'-pi')/(2*pi'*10.0*0.02)))*(1+0.01*cos(y')*exp(-(x'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.0}{0.0}{0.05}{*}{x'[0]}{PI'}{-}{2}{PI'}{*}{10.0}{*}{0.02}{*}{/}{tanh}{*}{-}{1}{0.01}{y'[0]}{cos}{*}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{exp}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+Collision model for 1	electron:	Krook
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	5.26574e-07 [max]	4.66229e-22 [min]
+    Species 1:	1.86172e-13 [max]	1.64837e-28 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0109375,0.0109375,0.015625,-6.80556,5.5) and mapped coordinate = (17,17,0,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0109375,0.0109375,0.015625,-6.80556,5.5) and mapped coordinate = (17,17,0,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.26574e-07 [max]	4.66229e-22 [min]
+    Species 1:	1.86173e-13 [max]	1.64856e-28 [min]
+
+Step 1 completed, simulation time is 3.604e-05
+----
+
+Step 2
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.109375,-6.80556,5.5) and mapped coordinate = (12,15,3,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0121875,0.0096875,0.171875,6.80556,5.5) and mapped coordinate = (19,15,5,17,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.26574e-07 [max]	4.66228e-22 [min]
+    Species 1:	1.86173e-13 [max]	1.64913e-28 [min]
+
+Step 2 completed, simulation time is 7.208e-05
+----
+
+Step 3
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.234375,-6.80556,5.5) and mapped coordinate = (12,15,7,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.015625,-6.80556,5.5) and mapped coordinate = (12,15,0,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.26574e-07 [max]	4.66227e-22 [min]
+    Species 1:	1.86173e-13 [max]	1.64933e-28 [min]
+
+Step 3 completed, simulation time is 0.00010812
+----
+
+Step 4
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.046875,-6.80556,5.5) and mapped coordinate = (12,15,1,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.171875,-6.80556,5.5) and mapped coordinate = (12,15,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.26574e-07 [max]	4.66227e-22 [min]
+    Species 1:	1.86172e-13 [max]	1.64923e-28 [min]
+
+Step 4 completed, simulation time is 0.00014416
+----
+
+Step 5
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.171875,-6.80556,5.5) and mapped coordinate = (12,15,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.171875,-6.80556,5.5) and mapped coordinate = (12,15,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.26574e-07 [max]	4.66226e-22 [min]
+    Species 1:	1.86172e-13 [max]	1.64878e-28 [min]
+
+Step 5 completed, simulation time is 0.0001802
+----
+
+Step 6
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.171875,-6.80556,5.5) and mapped coordinate = (12,15,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.171875,-6.80556,5.5) and mapped coordinate = (12,15,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.26574e-07 [max]	4.66224e-22 [min]
+    Species 1:	1.86171e-13 [max]	1.64479e-28 [min]
+
+Step 6 completed, simulation time is 0.00021624
+----
+
+Step 7
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.171875,-6.80556,5.5) and mapped coordinate = (12,15,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0078125,0.0096875,0.171875,-6.80556,5.5) and mapped coordinate = (12,15,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.26575e-07 [max]	4.66344e-22 [min]
+    Species 1:	1.86227e-13 [max]	1.61444e-28 [min]
+
+Step 7 completed, simulation time is 0.00025228
+----
+
+Step 8
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0003125,0.0196875,0.109375,6.80556,5.5) and mapped coordinate = (0,31,3,17,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0003125,0.0196875,0.109375,6.80556,5.5) and mapped coordinate = (0,31,3,17,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.26618e-07 [max]	4.71072e-22 [min]
+    Species 1:	1.88168e-13 [max]	-1.50261e-22 [min]
+
+Step 8 completed, simulation time is 0.00028832
+----
+
+Step 9
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0196875,0.0196875,0.171875,-6.80556,5.5) and mapped coordinate = (31,31,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0196875,0.0196875,0.171875,-6.80556,5.5) and mapped coordinate = (31,31,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.63207e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.65339e-10 (time scale), 77449 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.27633e-07 [max]	4.91308e-22 [min]
+    Species 1:	7.17308e-13 [max]	-3.05596e-13 [min]
+
+Step 9 completed, simulation time is 0.00032436
+----
+
+Step 10
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0196875,0.0196875,0.234375,6.80556,5.5) and mapped coordinate = (31,31,7,17,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0196875,0.0196875,0.171875,-6.80556,5.5) and mapped coordinate = (31,31,5,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.632e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.6533e-10 (time scale), 77450.4 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.08121e-07 [max]	-5.04853e-09 [min]
+    Species 1:	1.12609e-06 [max]	-8.6713e-07 [min]
+
+Step 10 completed, simulation time is 0.0003604
+----
+
+Step 11
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0196875,0.0196875,0.234375,6.80556,5.5) and mapped coordinate = (31,31,7,17,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0196875,0.0196875,0.234375,6.80556,5.5) and mapped coordinate = (31,31,7,17,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.59047e-10.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab solver returned 3
+      BiCGStab solver returned 3
+  ----
+  dt: 3.604e-05
+    Vlasov    : 4.60009e-10 (time scale), 78346.3 (CFL)
+    Collisions: 0.0002 (time scale), 0.1802 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	3.72211e+16 [max]	-5.45028e+16 [min]
+    Species 1:	8.9684e+24 [max]	-7.73517e+24 [min]
+
+Step 11 completed, simulation time is 0.00039644
+----
+
+Step 12
+      BiCGStab solver returned 3
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0196875,0.0059375,0.078125,-6.80556,5.5) and mapped coordinate = (31,9,2,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (R,phi,Z,vparallel,mu) = (0.0196875,0.0059375,0.078125,-6.80556,5.5) and mapped coordinate = (31,9,2,-18,16)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+Rank 108 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 108
+Rank 77 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 77
+Rank 94 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 94
+Rank 51 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 51
+Rank 79 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 79
+Rank 31 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 31
+Rank 49 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 49
+Rank 103 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 103
+Rank 16 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 16
+Rank 104 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 104
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+Rank 45 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 45
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+Rank 87 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 87
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+Rank 91 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 91
+Rank 124 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 124
+Rank 36 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 36
+Rank 112 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 112
+Rank 126 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 126
+Rank 114 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 114
+Rank 115 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 115
+Rank 117 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 117
+Rank 95 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 95
+Rank 81 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 81
+Rank 96 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 96
+Rank 59 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 59
+Rank 127 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 127
+Rank 97 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 97
+Rank 119 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 119
+Rank 113 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 113
+Rank 116 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 116
+Rank 120 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 120
+Rank 107 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 107
+Rank 90 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 90
+Rank 33 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 33
+Rank 111 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 111
+Rank 86 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 86
+Rank 125 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 125
+Rank 105 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 105
+Rank 110 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 110
+Rank 118 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 118
+Rank 89 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 89
+Rank 69 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 69
+Rank 123 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 123
+Rank 99 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 99
+Rank 109 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 109
+Rank 100 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 100
+Rank 121 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 121
+Rank 92 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 92
+Rank 122 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 122
+Rank 102 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 102
+Rank 106 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 106
+Rank 88 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 88
+Rank 93 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 93
+Rank 17 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 17
+Rank 98 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 98
+Rank 54 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 54
+Rank 101 [Thu Jun 30 15:22:19 2016] [c4-2c1s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 101
+Rank 58 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 58
+Rank 70 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 70
+Rank 12 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 12
+Rank 76 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 76
+Rank 11 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 11
+Rank 78 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 78
+Rank 13 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 13
+Rank 80 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 80
+Rank 15 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 15
+Rank 53 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 53
+Rank 66 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 66
+Rank 3 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 3
+Rank 23 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 23
+Rank 64 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 64
+Rank 67 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 67
+Rank 18 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 18
+Rank 60 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 60
+Rank 71 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 71
+Rank 19 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 19
+Rank 50 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 50
+Rank 72 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 72
+Rank 1 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 1
+Rank 62 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 62
+Rank 75 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 75
+Rank 2 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 2
+Rank 44 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 44
+Rank 83 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 83
+Rank 7 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 7
+Rank 47 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 47
+Rank 85 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 85
+Rank 8 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 8
+Rank 63 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 63
+Rank 68 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 68
+Rank 0 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 0
+Rank 48 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 48
+Rank 73 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 73
+Rank 14 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 14
+Rank 27 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 27
+Rank 52 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 52
+Rank 74 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 74
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+Rank 55 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 55
+Rank 65 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 65
+Rank 21 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 21
+Rank 56 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 56
+Rank 82 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 82
+../src/driver/Simulation.cpp:458: Assertion `dt_stable > 1.0e-16' failed. !!!
+Rank 30 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 30
+Rank 61 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 61
+Rank 84 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n3] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 84
+Rank 20 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 20
+Rank 35 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 35
+Rank 46 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 46
+Rank 4 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 4
+Rank 24 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 24
+Rank 57 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n2] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 57
+Rank 10 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 10
+Rank 37 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 37
+Rank 6 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 6
+Rank 41 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 41
+Rank 9 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 9
+Rank 42 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 42
+Rank 5 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n0] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 5
+Rank 26 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 26
+Rank 28 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 28
+Rank 40 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 40
+Rank 38 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 38
+Rank 22 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 22
+Rank 34 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 34
+Rank 25 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 25
+Rank 29 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 29
+Rank 32 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 32
+Rank 43 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 43
+Rank 39 [Thu Jun 30 15:22:19 2016] [c1-1c0s7n1] application called MPI_Abort(MPI_COMM_WORLD, 255) - process 39
+srun: error: nid03935: tasks 107-127: Aborted
+srun: Terminating job step 853157.0
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: error: nid01758: tasks 44-64: Aborted
+srun: error: nid01759: tasks 65-85: Aborted
+srun: error: nid01756: tasks 0-21: Aborted
+srun: error: nid03934: tasks 86-106: Aborted
+srun: error: nid01757: tasks 22-43: Aborted

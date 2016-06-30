@@ -33,23 +33,23 @@ simulation.plot_interval       = 20
 simulation.plot_prefix         = "plt"
 simulation.histories = true
 simulation.1.history_field = "potential"
-simulation.1.history_indices = 16 16
+simulation.1.history_indices = 16 16 8
 
 
 #####################################################
 # Computational Grid Definitions
 #####################################################
-#gksystem.num_cells   = 64 64 36 24
-gksystem.num_cells   = 24 32 96 64
-gksystem.is_periodic = 0  1  0  0
+#gksystem.num_cells   = 64 64 16 36 24
+gksystem.num_cells   = 24 32 16 96 64
+gksystem.is_periodic = 0  1  1  0  0
 
 #gksystem.configuration_decomp = 4 4
 #gksystem.velocity_decomp      =     3 3
 #gksystem.phase_decomp         = 4 4 3 3
 
-gksystem.configuration_decomp = 4 8
+gksystem.configuration_decomp = 4 8 1
 gksystem.velocity_decomp      =     4 4
-gksystem.phase_decomp         = 4 8 4 4
+gksystem.phase_decomp         = 4 8 1 4 4
 
 #####################################################
 # Units Definitions
@@ -71,9 +71,10 @@ gksystem.magnetic_geometry_mapping.slab.num_quad_points = 5
 gksystem.magnetic_geometry_mapping.slab.axisymmetric = false
 gksystem.magnetic_geometry_mapping.slab.x_max = 0.008
 gksystem.magnetic_geometry_mapping.slab.y_max = 0.008
+gksystem.magnetic_geometry_mapping.slab.z_max = 8.000
 gksystem.magnetic_geometry_mapping.slab.Bz_inner = 3.0
 gksystem.magnetic_geometry_mapping.slab.Bz_outer = 3.0
-gksystem.magnetic_geometry_mapping.slab.By_inner = 0.01
+gksystem.magnetic_geometry_mapping.slab.By_inner = 0.00
 
 
 ##miller
@@ -185,6 +186,8 @@ BC.hydrogen.radial_upper.function = "maxwellian_phase_func"
 #BC.hydrogen.radial_outer.function = "maxwellian_phase_func"
 BC.hydrogen.poloidal_lower.function = "maxwellian_phase_func"
 BC.hydrogen.poloidal_upper.function = "maxwellian_phase_func"
+BC.hydrogen.toroidal_lower.function = "maxwellian_phase_func"
+BC.hydrogen.toroidal_upper.function = "maxwellian_phase_func"
 BC.hydrogen.vpar_lower.function = "maxwellian_phase_func"
 BC.hydrogen.vpar_upper.function = "maxwellian_phase_func"
 BC.hydrogen.mu_lower.function = "maxwellian_phase_func"
@@ -196,6 +199,8 @@ BC.electron.radial_upper.function = "maxwellian_electron_phase_func"
 ##BC.electron.radial_outer.function = "maxwellian_electron_phase_func"
 BC.electron.poloidal_lower.function = "maxwellian_electron_phase_func"
 BC.electron.poloidal_upper.function = "maxwellian_electron_phase_func"
+BC.electron.toroidal_lower.function = "maxwellian_electron_phase_func"
+BC.electron.toroidal_upper.function = "maxwellian_electron_phase_func"
 BC.electron.vpar_lower.function = "maxwellian_electron_phase_func"
 BC.electron.vpar_upper.function = "maxwellian_electron_phase_func"
 BC.electron.mu_lower.function = "maxwellian_electron_phase_func"
@@ -209,6 +214,8 @@ BC.potential.radial_upper.type = "dirichlet"
 #BC.potential.radial_upper.type = "neumann"
 BC.potential.poloidal_lower.type = "neumann"
 BC.potential.poloidal_upper.type = "neumann"
+BC.potential.toroidal_lower.type = "neumann"
+BC.potential.toroidal_upper.type = "neumann"
 
 #####################################################
 # Collisions Definitions
@@ -246,17 +253,11 @@ grid_function_library.list = "zero_grid_func" "T0_grid_func" "eT0_grid_func" "N0
 
 grid_function_library.zero_grid_func.type = "zero" 
 
-grid_function_library.T0_grid_func.type = "cosine"
-grid_function_library.T0_grid_func.constant = 1.0
-grid_function_library.T0_grid_func.amplitude = 0.
-grid_function_library.T0_grid_func.mode = 1 0
-grid_function_library.T0_grid_func.phase = 0 0
+grid_function_library.T0_grid_func.type = "arbitrary"
+grid_function_library.T0_grid_func.function = "1.0"
 
-grid_function_library.eT0_grid_func.type = "cosine"
-grid_function_library.eT0_grid_func.constant = 1.0
-grid_function_library.eT0_grid_func.amplitude = 0.
-grid_function_library.eT0_grid_func.mode = 1 0
-grid_function_library.eT0_grid_func.phase = 0 0
+grid_function_library.eT0_grid_func.type = "arbitrary"
+grid_function_library.eT0_grid_func.function = "1.0"
 
 
 #computational coordinate X runs 0 to 2pi. physical coordinate runs 0 to L.
