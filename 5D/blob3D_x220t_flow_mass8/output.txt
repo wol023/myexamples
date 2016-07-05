@@ -1,0 +1,1215 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 0.08
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.785398,  cellSp[1] = 0.785398, cellSp[2] = 0.392699
+**** dimensions = 8, 8, 16
+Done constructing slab geometry
+   Configuration space box ((0,0,0) (7,7,15) (0,0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+   Phase space box ((0,0,0,-8,0) (7,7,15,7,7) (0,0,0,0,0)) is assigned to process 0, has 131072 valid cells and 2228224 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 8, charge = 1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding congiration space variables
+Adding configuration space field variables...
+Done adding congiration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: -2
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+"T0_grid_func":
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+"potential_grid_func":
+Arbitrary grid function parameters:
+  function: ( -0.0000001*sin(y) )
+  coordinate type: mapped
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 0.01
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: -2
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+Time integration method: rk (4)
+  Distribution Function Extrema:
+    Species 0:	0.00378589 [max]	0 [min]
+
+
+Step 1
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0038196 [max]	-1.11238e-23 [min]
+
+Step 1 completed, simulation time is 0.0025
+----
+
+Step 2
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00381839 [max]	-2.22489e-23 [min]
+
+Step 2 completed, simulation time is 0.005
+----
+
+Step 3
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00379339 [max]	-3.3374e-23 [min]
+
+Step 3 completed, simulation time is 0.0075
+----
+
+Step 4
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00378571 [max]	-4.44991e-23 [min]
+
+Step 4 completed, simulation time is 0.01
+----
+
+Step 5
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00379347 [max]	-5.56241e-23 [min]
+
+Step 5 completed, simulation time is 0.0125
+----
+
+Step 6
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00377842 [max]	-6.6749e-23 [min]
+
+Step 6 completed, simulation time is 0.015
+----
+
+Step 7
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00377815 [max]	-7.78741e-23 [min]
+
+Step 7 completed, simulation time is 0.0175
+----
+
+Step 8
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00378282 [max]	-8.89992e-23 [min]
+
+Step 8 completed, simulation time is 0.02
+----
+
+Step 9
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376934 [max]	-1.00124e-22 [min]
+
+Step 9 completed, simulation time is 0.0225
+----
+
+Step 10
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0037747 [max]	-1.11249e-22 [min]
+
+Step 10 completed, simulation time is 0.025
+----
+Writing checkpoint file
+Writing history file
+
+Step 11
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00377638 [max]	-1.22374e-22 [min]
+
+Step 11 completed, simulation time is 0.0275
+----
+
+Step 12
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376249 [max]	-1.33499e-22 [min]
+
+Step 12 completed, simulation time is 0.03
+----
+
+Step 13
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00377253 [max]	-1.44624e-22 [min]
+
+Step 13 completed, simulation time is 0.0325
+----
+
+Step 14
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00377153 [max]	-1.55749e-22 [min]
+
+Step 14 completed, simulation time is 0.035
+----
+
+Step 15
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376109 [max]	-1.66874e-22 [min]
+
+Step 15 completed, simulation time is 0.0375
+----
+
+Step 16
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00377079 [max]	-1.77999e-22 [min]
+
+Step 16 completed, simulation time is 0.04
+----
+
+Step 17
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376735 [max]	-1.89124e-22 [min]
+
+Step 17 completed, simulation time is 0.0425
+----
+
+Step 18
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376168 [max]	-2.00249e-22 [min]
+
+Step 18 completed, simulation time is 0.045
+----
+
+Step 19
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0037682 [max]	-2.11374e-22 [min]
+
+Step 19 completed, simulation time is 0.0475
+----
+
+Step 20
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376262 [max]	-2.22499e-22 [min]
+
+Step 20 completed, simulation time is 0.05
+----
+Writing checkpoint file
+Writing history file
+
+Step 21
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376316 [max]	-2.33624e-22 [min]
+
+Step 21 completed, simulation time is 0.0525
+----
+
+Step 22
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376672 [max]	-2.44749e-22 [min]
+
+Step 22 completed, simulation time is 0.055
+----
+
+Step 23
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375875 [max]	-2.55874e-22 [min]
+
+Step 23 completed, simulation time is 0.0575
+----
+
+Step 24
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376357 [max]	-2.66999e-22 [min]
+
+Step 24 completed, simulation time is 0.06
+----
+
+Step 25
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376463 [max]	-2.78124e-22 [min]
+
+Step 25 completed, simulation time is 0.0625
+----
+
+Step 26
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375464 [max]	-2.89249e-22 [min]
+
+Step 26 completed, simulation time is 0.065
+----
+
+Step 27
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376296 [max]	-3.00374e-22 [min]
+
+Step 27 completed, simulation time is 0.0675
+----
+
+Step 28
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00376184 [max]	-3.11498e-22 [min]
+
+Step 28 completed, simulation time is 0.07
+----
+
+Step 29
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375387 [max]	-3.22623e-22 [min]
+
+Step 29 completed, simulation time is 0.0725
+----
+
+Step 30
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0037608 [max]	-3.33748e-22 [min]
+
+Step 30 completed, simulation time is 0.075
+----
+Writing checkpoint file
+Writing history file
+
+Step 31
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375777 [max]	-3.44873e-22 [min]
+
+Step 31 completed, simulation time is 0.0775
+----
+
+Step 32
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375347 [max]	-3.55998e-22 [min]
+
+Step 32 completed, simulation time is 0.08
+----
+
+Step 33
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375789 [max]	-3.67123e-22 [min]
+
+Step 33 completed, simulation time is 0.0825
+----
+
+Step 34
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375297 [max]	-3.78247e-22 [min]
+
+Step 34 completed, simulation time is 0.085
+----
+
+Step 35
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375276 [max]	-3.89372e-22 [min]
+
+Step 35 completed, simulation time is 0.0875
+----
+
+Step 36
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0037547 [max]	-4.00497e-22 [min]
+
+Step 36 completed, simulation time is 0.09
+----
+
+Step 37
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374786 [max]	-4.11622e-22 [min]
+
+Step 37 completed, simulation time is 0.0925
+----
+
+Step 38
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375185 [max]	-4.22747e-22 [min]
+
+Step 38 completed, simulation time is 0.095
+----
+
+Step 39
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00375143 [max]	-4.33872e-22 [min]
+
+Step 39 completed, simulation time is 0.0975
+----
+
+Step 40
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374547 [max]	-4.44997e-22 [min]
+
+Step 40 completed, simulation time is 0.1
+----
+Writing checkpoint file
+Writing history file
+
+Step 41
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0037506 [max]	-4.56122e-22 [min]
+
+Step 41 completed, simulation time is 0.1025
+----
+
+Step 42
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374795 [max]	-4.67246e-22 [min]
+
+Step 42 completed, simulation time is 0.105
+----
+
+Step 43
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374601 [max]	-4.78371e-22 [min]
+
+Step 43 completed, simulation time is 0.1075
+----
+
+Step 44
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374896 [max]	-4.89496e-22 [min]
+
+Step 44 completed, simulation time is 0.11
+----
+
+Step 45
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374422 [max]	-5.00621e-22 [min]
+
+Step 45 completed, simulation time is 0.1125
+----
+
+Step 46
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374589 [max]	-5.11746e-22 [min]
+
+Step 46 completed, simulation time is 0.115
+----
+
+Step 47
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374683 [max]	-5.22871e-22 [min]
+
+Step 47 completed, simulation time is 0.1175
+----
+
+Step 48
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374015 [max]	-5.33996e-22 [min]
+
+Step 48 completed, simulation time is 0.12
+----
+
+Step 49
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374508 [max]	-5.45121e-22 [min]
+
+Step 49 completed, simulation time is 0.1225
+----
+
+Step 50
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 2.0379e-07 (time scale), 12267.5 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.39067e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00374417 [max]	-5.56245e-22 [min]
+
+Step 50 completed, simulation time is 0.125
+----
+Writing checkpoint file
+Writing history file
+
+Step 51
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 1.59062e-07.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --

@@ -1,0 +1,589 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.4, ymax = 0.4, zmax = 4
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.392699,  cellSp[1] = 0.392699, cellSp[2] = 0.392699
+**** dimensions = 16, 16, 16
+Done constructing slab geometry
+   Configuration space box ((0,0,0) (15,15,15) (0,0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-4,0) (3,7) (0,0)) is assigned to process 0
+   Phase space box ((0,0,0,-4,0) (15,15,15,3,7) (0,0,0,0,0)) is assigned to process 0, has 262144 valid cells and 3276800 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.2, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding congiration space variables
+Adding configuration space field variables...
+Done adding congiration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+"T0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+"eT0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Arbitrary grid function parameters:
+  function: 0.0000001
+  coordinate type: mapped
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.00*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.00*cos(x) )*(1.0+0.1*sin(y)*sin(x)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	0.00290907 [max]	1.4059e-07 [min]
+    Species 1:	0.000100842 [max]	4.01817e-09 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 1e-06
+    Vlasov    : 0.000128488 (time scale), 0.00778282 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-315 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00290911 [max]	1.40441e-07 [min]
+    Species 1:	0.000100847 [max]	4.0047e-09 [min]
+
+Step 1 completed, simulation time is 1e-06
+----
+
+Step 2
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 1e-06
+    Vlasov    : 0.000128426 (time scale), 0.00778657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-315 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00294996 [max]	-1.08163e-06 [min]
+    Species 1:	0.000105046 [max]	-7.4216e-07 [min]
+
+Step 2 completed, simulation time is 2e-06
+----
+
+Step 3
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 1e-06
+    Vlasov    : 8.33841e-05 (time scale), 0.0119927 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-315 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	161.12 [max]	-133.75 [min]
+    Species 1:	178.414 [max]	-349.51 [min]
+
+Step 3 completed, simulation time is 3e-06
+----
+
+Step 4
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 8.02108e-13.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab solver returned 3
+      BiCGStab solver returned 3
+      BiCGStab solver returned 3
+  ----
+  dt: 1e-06
+    Vlasov    : 1.03555e-12 (time scale), 965672 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-315 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	3.64633e+67 [max]	-2.06481e+67 [min]
+    Species 1:	2.78336e+69 [max]	-1.77939e+69 [min]
+
+Step 4 completed, simulation time is 4e-06
+----
+
+Step 5
+      BiCGStab solver returned 3
