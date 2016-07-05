@@ -2123,3 +2123,157 @@ Step 77
 
 Step 77 completed, simulation time is 0.1925
 ----
+
+Step 78
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.80734e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 4.87795e-08 (time scale), 51251.1 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000691596 [max]	-5.08915e-20 [min]
+
+Step 78 completed, simulation time is 0.195
+----
+
+Step 79
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.80734e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 4.87795e-08 (time scale), 51251.1 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000693682 [max]	-5.93391e-20 [min]
+
+Step 79 completed, simulation time is 0.1975
+----
+
+Step 80
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.80734e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 4.87795e-08 (time scale), 51251.1 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000694146 [max]	-6.91177e-20 [min]
+
+Step 80 completed, simulation time is 0.2
+----
+Writing checkpoint file
+Writing history file
+
+Step 81
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.80734e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 4.87795e-08 (time scale), 51251.1 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000692502 [max]	-8.04246e-20 [min]
+
+Step 81 completed, simulation time is 0.2025
+----
+
+Step 82
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.80734e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 4.87795e-08 (time scale), 51251.1 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000694779 [max]	-9.34849e-20 [min]
+
+Step 82 completed, simulation time is 0.205
+----
+
+Step 83
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.80734e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 4.87795e-08 (time scale), 51251.1 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000694288 [max]	-1.08554e-19 [min]
+
+Step 83 completed, simulation time is 0.2075
+----
+
+Step 84
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.80734e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 4.87795e-08 (time scale), 51251.1 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000693563 [max]	-1.26467e-19 [min]
+
+Step 84 completed, simulation time is 0.21
+----
+
+Step 85
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 3.80734e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.0025
+    Vlasov    : 4.87795e-08 (time scale), 51251.1 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000694904 [max]	-1.47515e-19 [min]
+
+Step 85 completed, simulation time is 0.2125
+----
+
+Step 86
+slurmstepd: *** STEP 2257113.0 ON nid00229 CANCELLED AT 2016-05-19T13:26:17 DUE TO TIME LIMIT ***
+slurmstepd: *** JOB 2257113 ON nid00229 CANCELLED AT 2016-05-19T13:26:17 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: got SIGCONT
+srun: got SIGCONT
+srun: forcing job termination
