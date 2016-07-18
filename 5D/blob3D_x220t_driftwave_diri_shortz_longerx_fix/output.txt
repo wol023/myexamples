@@ -1,0 +1,5715 @@
+ main 1
+ main 2
+ main 3
+(N,1) simulation.verbosity ::  (=,10)
+(N,1) gksystem.verbosity ::  (=,10)
+(N,1) gksystem.hdf_density ::  (=,true)
+(N,1) gksystem.hdf_potential ::  (=,true)
+(N,1) gksystem.hdf_temperature ::  (=,true)
+(N,1) gksystem.hdf_dfn ::  (=,false)
+(N,1) gksystem.hdf_efield ::  (=,true)
+(N,1) gksystem.hdf_vparmu ::  (=,true)
+(N,5) gksystem.fixed_plot_indices ::  (=,4) (=,4) (=,4) (=,2) (=,4)
+(N,1) gksystem.ti_class ::  (=,rk)
+(N,1) gksystem.ti_method ::  (=,4)
+(N,1) simulation.max_step ::  (=,10000)
+(N,1) simulation.max_time ::  (=,100000.0)
+(N,1) simulation.fixed_dt ::  (=,0.001)
+(N,1) simulation.checkpoint_interval ::  (=,10)
+(N,1) simulation.checkpoint_prefix ::  (=,chk)
+(N,1) simulation.plot_interval ::  (=,1)
+(N,1) simulation.plot_prefix ::  (=,plt)
+(N,1) simulation.histories ::  (=,true)
+(N,1) simulation.1.history_field ::  (=,potential)
+(N,3) simulation.1.history_indices ::  (=,4) (=,2) (=,2)
+(N,5) gksystem.num_cells ::  (=,16) (=,16) (=,16) (=,8) (=,8)
+(N,5) gksystem.is_periodic ::  (=,0) (=,1) (=,1) (=,0) (=,0)
+(N,3) gksystem.configuration_decomp ::  (=,1) (=,1) (=,1)
+(N,2) gksystem.velocity_decomp ::  (=,1) (=,1)
+(N,5) gksystem.phase_decomp ::  (=,1) (=,1) (=,1) (=,1) (=,1)
+(N,1) units.number_density ::  (=,1.0e20)
+(N,1) units.temperature ::  (=,1.0e3)
+(N,1)    units.length ::  (=,1.0)
+(N,1)      units.mass ::  (=,1.0)
+(N,1) units.magnetic_field ::  (=,1.0)
+(N,1) gksystem.magnetic_geometry_mapping ::  (=,Slab)
+(N,1) gksystem.magnetic_geometry_mapping.slab.verbose ::  (=,true)
+(N,1) gksystem.magnetic_geometry_mapping.slab.visit_plotfile ::  (=,SlabViz)
+(N,1) gksystem.magnetic_geometry_mapping.slab.axisymmetric ::  (=,false)
+(N,1) gksystem.magnetic_geometry_mapping.slab.num_quad_points ::  (=,5)
+(N,1) gksystem.magnetic_geometry_mapping.slab.axisymmetric ::  (=,false)
+(N,1) gksystem.magnetic_geometry_mapping.slab.x_max ::  (=,4.0)
+(N,1) gksystem.magnetic_geometry_mapping.slab.y_max ::  (=,0.4)
+(N,1) gksystem.magnetic_geometry_mapping.slab.z_max ::  (=,0.4)
+(N,1) gksystem.magnetic_geometry_mapping.slab.Bz_inner ::  (=,3.0)
+(N,1) gksystem.magnetic_geometry_mapping.slab.Bz_outer ::  (=,3.0)
+(N,1) gksystem.magnetic_geometry_mapping.slab.By_inner ::  (=,0.0)
+(N,1) gksystem.magnetic_geometry_mapping.plot_magnetic_field ::  (=,true)
+(N,1) phase_space_mapping.v_parallel_max ::  (=,4.0)
+(N,1) phase_space_mapping.mu_max ::  (=,3.0)
+(N,1) phase_space_mapping.velocity_type ::  (=,gyrokinetic)
+(N,1) phase_space_mapping.no_drifts ::  (=,false)
+(N,1) phase_space_mapping.physical_velocity_components ::  (=,true)
+(N,1) phase_space_mapping.second_order ::  (=,true)
+(N,1) gkvlasov.verbose ::  (=,true)
+(N,1) gkvlasov.face_avg_type ::  (=,uw5)
+(N,1) gksystem.fixed_efield ::  (=,false)
+(N,1) gksystem.prescribed_efield ::  (=,false)
+(N,1) gksystem.prescribed_efield.Ex ::  (=,0.0)
+(N,1) gksystem.prescribed_efield.Ey ::  (=,-200.0)
+(N,1) gksystem.prescribed_efield.Ez ::  (=,0.0)
+(N,1) gkpoisson.verbose ::  (=,true)
+(N,1) gkpoissonboltzmann.preserve_initial_ni_average ::  (=,true)
+(N,1) gkpoissonboltzmann.prefactor ::  (=,fs_neutrality_global_ni)
+(N,1) gkpoissonboltzmann.verbose ::  (=,true)
+(N,1) gkpoissonboltzmann.nonlinear_relative_tolerance ::  (=,1.e-5)
+(N,1) gkpoissonboltzmann.nonlinear_maximum_iterations ::  (=,20)
+(N,1) gksystem.enforce_positivity ::  (=,true)
+(N,1) gksystem.enforce_positivity_type ::  (=,stage)
+(N,1) gksystem.max_positivity_iter ::  (=,5)
+(N,1) gksystem.positivity_verbose_output ::  (=,true)
+(N,1) kinetic_species.1.name ::  (=,hydrogen)
+(N,1) kinetic_species.1.mass ::  (=,2.0)
+(N,1) kinetic_species.1.charge ::  (=,1.0)
+(N,1) kinetic_species.2.name ::  (=,electron)
+(N,1) kinetic_species.2.mass ::  (=,0.000544)
+(N,1) kinetic_species.2.charge ::  (=,-1.0)
+(N,1) IC.potential.function ::  (=,potential_grid_func)
+(N,1) IC.hydrogen.function ::  (=,maxwellian_phase_func)
+(N,1) IC.electron.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.hydrogen.radial_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.radial_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.poloidal_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.poloidal_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.toroidal_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.toroidal_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.vpar_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.vpar_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.mu_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.mu_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.electron.radial_lower.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.radial_upper.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.poloidal_lower.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.poloidal_upper.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.toroidal_lower.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.toroidal_upper.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.vpar_lower.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.vpar_upper.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.mu_lower.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.electron.mu_upper.function ::  (=,maxwellian_electron_phase_func)
+(N,1) BC.potential.poloidal_lower.type ::  (=,neumann)
+(N,1) BC.potential.poloidal_upper.type ::  (=,neumann)
+(N,1) BC.potential.toroidal_lower.type ::  (=,neumann)
+(N,1) BC.potential.toroidal_upper.type ::  (=,neumann)
+(N,1) BC.potential.radial_lower.type ::  (=,dirichlet)
+(N,1) BC.potential.radial_upper.type ::  (=,dirichlet)
+(N,1) kinetic_function_library.number ::  (=,2)
+(N,1) kinetic_function_library.verbosity ::  (=,1)
+(N,2) kinetic_function_library.list ::  (=,maxwellian_phase_func) (=,maxwellian_electron_phase_func)
+(N,1) kinetic_function_library.maxwellian_phase_func.type ::  (=,maxwellian)
+(N,1) kinetic_function_library.maxwellian_phase_func.vparallel.function ::  (=,Ion_vpar_grid_func)
+(N,1) kinetic_function_library.maxwellian_phase_func.density.function ::  (=,N0_grid_func)
+(N,1) kinetic_function_library.maxwellian_phase_func.temperature.function ::  (=,T0_grid_func)
+(N,1) kinetic_function_library.maxwellian_electron_phase_func.type ::  (=,maxwellian)
+(N,1) kinetic_function_library.maxwellian_electron_phase_func.vparallel.function ::  (=,ele_vpar_grid_func)
+(N,1) kinetic_function_library.maxwellian_electron_phase_func.density.function ::  (=,eN0_grid_func)
+(N,1) kinetic_function_library.maxwellian_electron_phase_func.temperature.function ::  (=,eT0_grid_func)
+(N,1) grid_function_library.number ::  (=,7)
+(N,1) grid_function_library.verbosity ::  (=,10)
+(N,7) grid_function_library.list ::  (=,potential_grid_func) (=,T0_grid_func) (=,N0_grid_func) (=,Ion_vpar_grid_func) (=,eT0_grid_func) (=,eN0_grid_func) (=,ele_vpar_grid_func)
+(N,1) grid_function_library.potential_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.potential_grid_func.function ::  (=,0.0000001)
+(N,1) grid_function_library.T0_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.T0_grid_func.function ::  (=,1.0)
+(N,1) grid_function_library.eT0_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.eT0_grid_func.function ::  (=,1.0)
+(N,1) grid_function_library.N0_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.N0_grid_func.function ::  (=,( 1.00-0.01*cos(x)  ))
+(N,1) grid_function_library.eN0_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.eN0_grid_func.function ::  (=,( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  ))
+(N,1) grid_function_library.Ion_vpar_grid_func.type ::  (=,constant)
+(N,1) grid_function_library.Ion_vpar_grid_func.value ::  (=,0.0)
+(N,1) grid_function_library.ele_vpar_grid_func.type ::  (=,constant)
+(N,1) grid_function_library.ele_vpar_grid_func.value ::  (=,0.0)
+ main 4
+ Simulation 1
+m_verbosity = 10
+m_max_step = 10000
+m_max_time = 100000
+m_fixed_dt = 0.001
+m_max_dt_grow = 1.1
+m_initial_dt_fractiond = 0.1
+m_cfl = 1
+checkpoint interval = 10
+checkpoint prefix = chk
+plot interval = 1
+plot frefix = plt
+ Simulation 2
+ PositivityPostProcessor 1
+ GKSystem 1
+ GKSystem 2
+ GKUnits::GKUnits(ParmParse&) 1
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+ GKSystem 3
+ GKSystem 4
+ MagBlockCoordSys::MagBlockCoordSys() 1
+ m_verbose = 1
+ m_axisymmetric = 0
+ m_inner_radial_boundary = 0
+ m_outer_radial_boundary = 1
+Constructing slab geometry...
+xmax = 4, ymax = 0.4, zmax = 0.4
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.392699 * 16 = 6.28319, dx(m)*nx= 0.25 * 16 = 4, ( 1 : 0.63662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.025 * 16 = 0.4, ( 1 : 0.063662 )
+dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 0.025 * 16 = 0.4, ( 1 : 0.063662 )
+
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 1
+ m_mag_geomcoords->numBlocks() = 1
+ decomp = 1, 1, 1
+ nproc = 1
+ nproc = 1
+ nproc = 1
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 2
+ nproc_cfg = 1
+ nproc_cfg = 1
+ nproc_cfg = 1
+ n_loc[0] = 16
+ n_loc[1] = 16
+ n_loc[2] = 16
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 3
+ domain_box.smallEnd() = (0,0,0)
+ domain_box.smallEnd() + box_size-1 = (15,15,15)
+ box_size = (16,16,16)
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 4
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 5
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 6
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 7
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 8
+   Configuration space box ((0,0,0) (15,15,15) (0,0,0)) is assigned to process 0
+Constructing magnetic geometry
+ MagGeom::MagGeom() 1
+ MagGeom::computeFieldData (FluxBox) 1
+ MagGeom::computeFieldData (FluxBox) 2
+ MagGeom::computeFieldData (FluxBox) 4
+ MagGeom::MagGeom() 2
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::computeFieldData (FArrayBox) 1
+ MagGeom::computeFieldData (FArrayBox) 2
+ MagGeom::MagGeom() 2.5
+ MagGeom::MagGeom() plotCellData
+ MagGeom::MagGeom() plotCellData
+ MagGeom::MagGeom() 3
+ MagGeom::MagGeom() 4: plotFieldAlignment()
+ MagGeom::MagGeom() 6: m_coord_sys->numBlocks()=<1
+ MagGeom::MagGeom() 7
+ MagGeom::MagGeom() 8.
+Done constructing magnetic geometry
+ MagGeom::writeGeometryData() 1:3D
+ MagGeom::getCellVolumes() 1
+ MagGeom::getCellVolumes() 2
+ coord_sys.getNumN() = 9
+ MagGeom::writeGeometryData() 2
+ GKSystem 5
+   Velocity space box ((-4,0) (3,7) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 1 * 4 = 4, dv_parallel(m/s)*nvpar= 309497 * 4 = 1.23799e+06, ( 1 : 309497 )
+dmu*nmu= 0.375 * 8 = 3, dmu(J/T)*nmu= 3.00408e-17 * 8 = 2.40326e-16, ( 1 : 8.01088e-17 )
+
+ GKSystem 6
+ GKSystem:createPhaseSpace() 1
+ GKSystem:createPhaseSpace() 2
+ m_mag_geom_coords->numBlocks() = 1
+ GKSystem:createPhaseSpace() 3
+ GKSystem:createPhaseSpace() 4
+ PhaseBlockCoordSys::PhaseBlockCoordSys 1.
+ m_dx = (0.392699,0.392699,0.392699,1,0.375)
+ m_mapped_cell_volume = 0.0227097
+ m_mapped_face_area = (0.0578297,0.0578297,0.0578297,0.0227097,0.0605591)
+ GKSystem:createPhaseSpace() 5
+ decomps = (1,1,1,1,1) 
+ m_phase_decomposition = 1, 1, 1, 1, 1
+ m_mag_geom_type = Slab
+ GKSystem:createPhaseSpace() 6
+ PhaseGrid 1
+ box_size = (16,16,16,8,8)
+ PhaseGrid 2
+ domain_box.smallEnd() = (0,0,0,-4,0)
+ domain_box.smallEnd()+box_size-IntVect::Unit = (15,15,15,3,7)
+ m_local_velocity_slices.size() = 1 
+ procID() = 0 ((0,0,0) (15,15,15) (0,0,0)):  ((-4,0) (3,7) (0,0))
+ GKSystem:createPhaseSpace() 7
+   Phase space box ((0,0,0,-4,0) (15,15,15,3,7) (0,0,0,0,0)) is assigned to process 0, has 262144 valid cells and 3276800 ghost cells
+ PhaseGeom 1
+ PhaseGeom 2
+ m_velocity_type = gyrokinetic
+ m_freestream_components = (0,0,0,0,0)
+ m_no_drifts = 0
+ m_no_parallel_streaming = 0
+ m_second_order = 1
+ PhaseGeom::define() 1
+ cfg_ghostVect() =(4,4,4)
+ vel_ghostVect() =(4,4)
+ PhaseGeom::define() 2
+ cfg_NumN = 9
+ PhaseGeom::define() 3
+ PhaseGeom::define() 4
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ PhaseGeom::define() 5
+ PhaseGeom::define() 6
+ MagGeom::getCellVolumes() 1
+ PhaseGeom::define() 7
+ PhaseGeom::define() 8
+ PhaseGeom::define() 9
+ PhaseGeom::define() 10
+ PhaseGeom::define() 11
+ PhaseGeom::define() 12
+ PhaseGeom::define() 13
+ PhaseGeom 3
+ GKSystem:createPhaseSpace() 8
+ GKSystem 7
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.000544, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+ GKSystem 10
+ GKOps 1
+ GKUnits::GKUnits(ParmParse&) 1
+ GKSystemBC::GKSystemBC() 1
+ GKSystemBC::GKSystemBC() 2
+ GKSystemBC::GKSystemBC() 3
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+ GKSystemBC::GKSystemBC() 4
+ Arbitrary::Arbitrary() m_pscore->getFormula():0.0000001
+ Arbitrary::Arbitrary() m_pscore->getManipStr():0.0000001
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{0.0000001}
+ Arbitrary::Arbitrary() m_pscore->getFormula():1.0
+ Arbitrary::Arbitrary() m_pscore->getManipStr():1.0
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{1.0}
+ Arbitrary::Arbitrary() m_pscore->getFormula():( 1.00-0.01*cos(x)  )
+ Arbitrary::Arbitrary() m_pscore->getManipStr():(1.00-0.01*cos(x'))
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{1.00}{0.01}{x'[0]}{cos}{*}{-}
+ Arbitrary::Arbitrary() m_pscore->getFormula():1.0
+ Arbitrary::Arbitrary() m_pscore->getManipStr():1.0
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{1.0}
+ Arbitrary::Arbitrary() m_pscore->getFormula():( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+ Arbitrary::Arbitrary() m_pscore->getManipStr():((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+"T0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Arbitrary grid function parameters:
+  function: 0.0000001
+  translated form: 0.0000001
+  postfix form: {0.0000001}
+  coordinate type: mapped
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  translated form: (1.00-0.01*cos(x'))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )
+  translated form: ((1.00-0.01*cos(x'))*(1.0+0.1*sin(2*y')+0.00000000000*sin(z')))
+  postfix form: {1.00}{0.01}{x'[0]}{cos}{*}{-}{1.0}{0.1}{2}{y'[0]}{*}{sin}{*}{+}{0.00000000000}{z'[0]}{sin}{*}{+}{*}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+ GKSystemBC::GKSystemBC() 4.1
+ GKSystemBC::GKSystemBC() 4.2
+ GKSystemBC::GKSystemBC() 5
+ GKSystemBC::GKSystemBC() 6
+ GKSystemBC::GKSystemBC() 7.
+ GKSystemIC::GKSystemIC() 1
+ GKSystemIC::GKSystemIC() 2
+ GKSystemIC::GKSystemIC() 3
+ GKSystemIC::GKSystemIC() 4
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+ GKSystem 11
+ GKSystem 12
+Done creating GKSystem
+GKSystem 13.
+ Simulation 3
+ Simulation 4
+ GKSystem::initialize 1
+ GKOps::initializeState() 1
+ GKSystemIC::initializeSystem() 1
+  GKSystemIC::initializePotentialField() 1
+  GKSystemIC::initializePotentialField() 2
+  GKSystemIC::initializePotentialField() 3
+ GKSystemIC::initializeSystem() 2
+ GKSystemIC::initializeKineticSpecies() 1
+ GKSystemIC::initializeKineticSpecies() 2
+ GKSystemIC::initializeKineticSpecies() 3
+ GKSystemIC::initializeKineticSpecies() 4
+ GKSystemIC::initializeKineticSpecies() 2
+ GKSystemIC::initializeKineticSpecies() 3
+ GKSystemIC::initializeKineticSpecies() 4
+ GKSystemIC::initializeKineticSpecies() 5.
+ GKSystemIC::initializeSystem() 3.
+ GKOps::initializeState() 2
+ GKOps::initializeState() 3
+  GKSystem::initialize 1.1
+ GKSystem::initialize 2
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::initializeElecricField 1
+ GKOps::initializeElecricField 2
+ GKOps::initializeElecricField 3
+ GKOps::initializeElecricField 4
+ GKOps::initializeElecricField 5
+ GKOps::initializeElecricField 6
+ GKOps::createGKPoisson() 1
+ GKOps::createGKPoisson() 2
+ GKOps::createGKPoisson() 6
+ MagGeom::getCellVolumes() 1
+ GKPoisson 1
+ GKPoisson 2
+ GKPoisson 3
+ GKPoisson 4
+ GKPoisson 6
+ GKPoisson 7
+ GKOps::createGKPoisson() 7
+ GKOps::initializeElecricField 7
+ GKOps::initializeElecricField 8
+ GKOps::initializeElecricField 9
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 6
+ GKOps::computeEField 7
+ GKOps::computeEField 8
+ GKPoisson::setOperatorCoefficients 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ GKPoisson::setOperatorCoefficients 2
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ GKPoisson::setOperatorCoefficients 3
+ GKPoisson::setOperatorCoefficients 4
+ GKOps::computeEField 9
+ GKOps::computeEField 10
+ GKOps::computeEField 11
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+      BiCGStab converged successfully
+ GKOps::computeEField 12
+ GKOps::computeEField 21.5
+ GKOps::computeEField 22.4
+ FieldSolver::computeField FArray 1
+ FieldSolver::computeField FArray 2
+ FieldSolver::computeField FArray 3
+ FieldSolver::computeMappedField FArray 1
+ FieldSolver::computeMappedField FArray 2
+ FieldSolver::computeMappedField FArray 3 :3D
+ FieldSolver::computeMapped3DField FArray 1
+ FieldSolver::computeMapped3DField FArray 2
+ FieldSolver::computeMapped3DField FArray 3
+ FieldSolver::computeMapped3DField FArray 4
+ FieldSolver::computeMapped3DField FArray 5
+ FieldSolver::computeMapped3DField FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 3
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 4
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 5
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 7
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 8
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 9
+ FieldSolver::computeMapped3DField FArray 7
+ FieldSolver::computeMappedField FArray 5.
+ FieldSolver::computeField FArray 4
+ MagGeom::unmapGradient FArray 1
+ MagGeom::unmapGradient FArray 2
+ MagGeom::unmapGradient FArray 3: 3D
+ MagGeom::unmap3DGradient FArray 1
+ a_mapped_gradient.nComp() = 3
+ a_gradient.nComp() = 3
+ SpaceDim = 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 1
+ MagBlockCoordSys::getPointwiseNJInvers FArray 2
+ MagBlockCoordSys::getPointwiseNJInvers FArray 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 4
+ MagBlockCoordSys::getPointwiseNJInvers FArray 7
+ FieldSolver::computeField FArray 5
+ GKOps::computeEField 22.5
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ GKOps::computeEField 22.6
+ GKOps::computeEField 23
+ GKOps::computeEField 25
+ GKOps::initialize 11
+ GKSystem::initialize 7.1
+ GKSystem::initialize 8
+ Simulation 5
+  Distribution Function Extrema:
+    Species 0:	0.0029376 [max]	1.39211e-07 [min]
+    Species 1:	1.43954e-08 [max]	5.66795e-13 [min]
+
+ Simulation 6
+ Simulation 6.1: writePlotFile()
+m_verbosity = 10
+m_max_step = 10000
+m_max_time = 100000
+m_fixed_dt = 0.001
+m_max_dt_grow = 1.1
+m_initial_dt_fractiond = 0.1
+m_cfl = 1
+checkpoint interval = 10
+checkpoint prefix = chk
+plot interval = 1
+plot frefix = plt
+ GKSystem::writePlotFile() 0
+ GKSystem::writePlotFile() 1: m_hdf_potential
+ GKSystem::writePlotFile() 2: m_hdf_efield
+ GKSystem::writePlotFile() 9: m_hdf_vparmu
+ GKSystem::writePlotFile() 9.1: m_hdf_vparmu_atxy
+ GKSystem::writePlotFile() 10: m_hdf_density
+ GKSystem::writePlotFile() 14: m_hdf_temperature
+ GKSystem::writePlotFile() 9: m_hdf_vparmu
+ GKSystem::writePlotFile() 9.1: m_hdf_vparmu_atxy
+ GKSystem::writePlotFile() 10: m_hdf_density
+ GKSystem::writePlotFile() 14: m_hdf_temperature
+ main 5
+ Simulation::advance() 1
+
+Step 1
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 6
+ GKOps::computeEField 7
+ GKOps::computeEField 8
+ GKPoisson::setOperatorCoefficients 1
+ GKPoisson::setOperatorCoefficients 2
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ GKPoisson::setOperatorCoefficients 3
+ GKPoisson::setOperatorCoefficients 4
+ GKOps::computeEField 9
+ GKOps::computeEField 10
+ GKOps::computeEField 11
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+      BiCGStab converged successfully
+ GKOps::computeEField 12
+ GKOps::computeEField 21.5
+ GKOps::computeEField 22.4
+ FieldSolver::computeField FArray 1
+ FieldSolver::computeField FArray 2
+ FieldSolver::computeField FArray 3
+ FieldSolver::computeMappedField FArray 1
+ FieldSolver::computeMappedField FArray 2
+ FieldSolver::computeMappedField FArray 3 :3D
+ FieldSolver::computeMapped3DField FArray 1
+ FieldSolver::computeMapped3DField FArray 2
+ FieldSolver::computeMapped3DField FArray 3
+ FieldSolver::computeMapped3DField FArray 4
+ FieldSolver::computeMapped3DField FArray 5
+ FieldSolver::computeMapped3DField FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 3
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 4
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 5
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 7
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 8
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 9
+ FieldSolver::computeMapped3DField FArray 7
+ FieldSolver::computeMappedField FArray 5.
+ FieldSolver::computeField FArray 4
+ MagGeom::unmapGradient FArray 1
+ MagGeom::unmapGradient FArray 2
+ MagGeom::unmapGradient FArray 3: 3D
+ MagGeom::unmap3DGradient FArray 1
+ a_mapped_gradient.nComp() = 3
+ a_gradient.nComp() = 3
+ SpaceDim = 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 1
+ MagBlockCoordSys::getPointwiseNJInvers FArray 2
+ MagBlockCoordSys::getPointwiseNJInvers FArray 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 4
+ MagBlockCoordSys::getPointwiseNJInvers FArray 7
+ FieldSolver::computeField FArray 5
+ GKOps::computeEField 22.5
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ GKOps::computeEField 22.6
+ GKOps::computeEField 23
+ GKOps::computeEField 25
+ GKVlasov::computeDt() 1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKVlasov::ComputeMappedDtSpecies 1
+ face_area = (0.0578297,0.0578297,0.0578297,0.0227097,0.0605591)
+ mappedcellvolume = 0.0227097
+ GKVlasov::ComputeMappedDtSpecies 2
+ GKVlasov::ComputeMappedDtSpecies 2.1
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+ GKVlasov::ComputeMappedDtSpecies 3
+ GKVlasov::ComputeMappedDtSpecies 4
+ GKVlasov::ComputeMappedDtSpecies 4.1
+  thisMax = 104.572
+ GKVlasov::ComputeMappedDtSpecies 5.
+ GKVlasov::computeDt() 2
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKVlasov::ComputeMappedDtSpecies 1
+ face_area = (0.0578297,0.0578297,0.0578297,0.0227097,0.0605591)
+ mappedcellvolume = 0.0227097
+ GKVlasov::ComputeMappedDtSpecies 2
+ GKVlasov::ComputeMappedDtSpecies 2.1
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+ GKVlasov::ComputeMappedDtSpecies 3
+ GKVlasov::ComputeMappedDtSpecies 4
+ GKVlasov::ComputeMappedDtSpecies 4.1
+  thisMax = 6008.03
+ GKVlasov::ComputeMappedDtSpecies 5.
+ GKVlasov::computeDt() 2
+ GKVlasov::computeDt() 3.
+ GKVlasov::computeTimeScale() 1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKVlasov::computeTimeScale() 2.
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 0.000128923.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+ GKSystem::timesteptest() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+  tempmax[0] =  1.38957
+  tempmax[1] =  0.0185369
+  tempmax[2] =  2.47487
+  tempmax[3] =  3.98076e-05
+  tempmax[4] =  -0
+maxvelocities[0]=1.38957
+maxvelocities[1]=0.0185369
+maxvelocities[2]=2.47487
+maxvelocities[3]=3.98076e-05
+maxvelocities[4]=0
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+  tempmax[0] =  1.38957
+  tempmax[1] =  0.0185369
+  tempmax[2] =  150.061
+  tempmax[3] =  0.00241369
+  tempmax[4] =  -0
+maxvelocities[0]=1.38957
+maxvelocities[1]=0.0185369
+maxvelocities[2]=150.061
+maxvelocities[3]=0.00241369
+maxvelocities[4]=0
+
+m_num_cells[i]=16
+m_num_cells[i]=16
+m_num_cells[i]=16
+m_num_cells[i]=8
+m_num_cells[i]=8
+dx*nx= 0.392699 * 16 = 6.28319, dx(m)*nx= 0.25 * 16 = 4, ( 1 : 0.63662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.025 * 16 = 0.4, ( 1 : 0.063662 )
+dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 0.025 * 16 = 0.4, ( 1 : 0.063662 )
+dvpar*nvpar= 1 * 4 = 4, dv_parallel(m/s)*nvpar= 309497 * 4 = 1.23799e+06, ( 1 : 19343.6 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 1 * 4 = 4, dv_parallel(m/s)*nvpar= 218847 * 4 = 875389, ( 1 : 218847 )
+ [electron] mass = 0.000544
+  dvpar*nvpar= 1 * 4 = 4, dv_parallel(m/s)*nvpar= 1.32696e+07 * 4 = 5.30783e+07, ( 1 : 1.32696e+07 )
+dmu*nmu= 0.375 * 8 = 1.5, dmu(J/T)*nmu= 3.00408e-17 * 8 = 2.40326e-16, ( 1 : 1.00136e-17 )
+
+Estimated dt for parallel streaming
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=309497
+unit_dimension_time   [hydrogen]=3.23105e-06
+dt_z(s)[hydrogen]=dz(m)/vparmax_z(m/s)[hydrogen]=0.025/875389=2.85587e-08
+dt_z(-)[hydrogen]=0.00883883
+dt_y(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.025/0=inf
+dt_y(-)[hydrogen]=inf
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=309497
+unit_dimension_time   [electron]=3.23105e-06
+dt_z(s)[electron]=dz(m)/vparmax_z(m/s)[electron]=0.025/5.30783e+07=4.71002e-10
+dt_z(-)[electron]=0.000145774
+dt_y(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.025/0=inf
+dt_y(-)[electron]=inf
+
+ GKSystem::timesteptest() 2.
+ Simulation::advance() 2
+ Simulation::advance() 3
+ GKSystem::advance 1
+ GKSystem::advance 2
+ TiRK:advance() i=0, m_nstages=4
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::explicitOp 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 4
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 5
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=0, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=3, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=3, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=4, dir=4, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=5, dir=4, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 4
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 5
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=0, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=3, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=3, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=4, dir=4, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=5, dir=4, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 2.
+ GKOps::explicitOp 2
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ GKVlasov::evalRHS() 4.
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ GKVlasov::evalRHS() 4.
+ TiRK:advance() i=0
+ TiRK:advance() i=1, m_nstages=4
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 6
+ GKOps::computeEField 7
+ GKOps::computeEField 8
+ GKPoisson::setOperatorCoefficients 1
+ GKPoisson::setOperatorCoefficients 2
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ GKPoisson::setOperatorCoefficients 3
+ GKPoisson::setOperatorCoefficients 4
+ GKOps::computeEField 9
+ GKOps::computeEField 10
+ GKOps::computeEField 11
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+      BiCGStab converged successfully
+ GKOps::computeEField 12
+ GKOps::computeEField 21.5
+ GKOps::computeEField 22.4
+ FieldSolver::computeField FArray 1
+ FieldSolver::computeField FArray 2
+ FieldSolver::computeField FArray 3
+ FieldSolver::computeMappedField FArray 1
+ FieldSolver::computeMappedField FArray 2
+ FieldSolver::computeMappedField FArray 3 :3D
+ FieldSolver::computeMapped3DField FArray 1
+ FieldSolver::computeMapped3DField FArray 2
+ FieldSolver::computeMapped3DField FArray 3
+ FieldSolver::computeMapped3DField FArray 4
+ FieldSolver::computeMapped3DField FArray 5
+ FieldSolver::computeMapped3DField FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 3
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 4
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 5
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 7
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 8
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 9
+ FieldSolver::computeMapped3DField FArray 7
+ FieldSolver::computeMappedField FArray 5.
+ FieldSolver::computeField FArray 4
+ MagGeom::unmapGradient FArray 1
+ MagGeom::unmapGradient FArray 2
+ MagGeom::unmapGradient FArray 3: 3D
+ MagGeom::unmap3DGradient FArray 1
+ a_mapped_gradient.nComp() = 3
+ a_gradient.nComp() = 3
+ SpaceDim = 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 1
+ MagBlockCoordSys::getPointwiseNJInvers FArray 2
+ MagBlockCoordSys::getPointwiseNJInvers FArray 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 4
+ MagBlockCoordSys::getPointwiseNJInvers FArray 7
+ FieldSolver::computeField FArray 5
+ GKOps::computeEField 22.5
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ GKOps::computeEField 22.6
+ GKOps::computeEField 23
+ GKOps::computeEField 25
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::explicitOp 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 4
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 5
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=0, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=3, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=3, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=4, dir=4, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=5, dir=4, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 4
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 5
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=0, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=3, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=3, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=4, dir=4, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=5, dir=4, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 2.
+ GKOps::explicitOp 2
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ GKVlasov::evalRHS() 4.
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ GKVlasov::evalRHS() 4.
+ TiRK:advance() i=1
+ TiRK:advance() i=2, m_nstages=4
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 6
+ GKOps::computeEField 7
+ GKOps::computeEField 8
+ GKPoisson::setOperatorCoefficients 1
+ GKPoisson::setOperatorCoefficients 2
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ GKPoisson::setOperatorCoefficients 3
+ GKPoisson::setOperatorCoefficients 4
+ GKOps::computeEField 9
+ GKOps::computeEField 10
+ GKOps::computeEField 11
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagGeom::computeMappedGridDivergence 1
+ MagGeom::computeMappedGridDivergence 2
+ MagGeom::computeMappedGridDivergence 3
+ MagGeom::computeMappedGridDivergence 4
+ MagGeom::computeMetricTermProductAverage 1
+ MagGeom::computeMetricTermProductAverage 2
+ MagGeom::computeMetricTermProductAverage 3
+ MagGeom::computeMetricTermProductAverage 4
+ src/coord/configuration/MagGeom.cpp: SpaceDim =3
+ MagGeom::computeMetricTermProductAverage 5
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ MagGeom::computeMetricTermProductAverage 6
+ MagGeom::computeMetricTermProductAverage 7
+ MagGeom::computeMappedGridDivergence 5
+ MagGeom::computeMappedGridDivergence 6
+ MagGeom::computeMappedGridDivergence 7
+      BiCGStab converged successfully
+ GKOps::computeEField 12
+ GKOps::computeEField 21.5
+ GKOps::computeEField 22.4
+ FieldSolver::computeField FArray 1
+ FieldSolver::computeField FArray 2
+ FieldSolver::computeField FArray 3
+ FieldSolver::computeMappedField FArray 1
+ FieldSolver::computeMappedField FArray 2
+ FieldSolver::computeMappedField FArray 3 :3D
+ FieldSolver::computeMapped3DField FArray 1
+ FieldSolver::computeMapped3DField FArray 2
+ FieldSolver::computeMapped3DField FArray 3
+ FieldSolver::computeMapped3DField FArray 4
+ FieldSolver::computeMapped3DField FArray 5
+ FieldSolver::computeMapped3DField FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 3
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 4
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 5
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 7
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 8
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 9
+ FieldSolver::computeMapped3DField FArray 7
+ FieldSolver::computeMappedField FArray 5.
+ FieldSolver::computeField FArray 4
+ MagGeom::unmapGradient FArray 1
+ MagGeom::unmapGradient FArray 2
+ MagGeom::unmapGradient FArray 3: 3D
+ MagGeom::unmap3DGradient FArray 1
+ a_mapped_gradient.nComp() = 3
+ a_gradient.nComp() = 3
+ SpaceDim = 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 1
+ MagBlockCoordSys::getPointwiseNJInvers FArray 2
+ MagBlockCoordSys::getPointwiseNJInvers FArray 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 4
+ MagBlockCoordSys::getPointwiseNJInvers FArray 7
+ FieldSolver::computeField FArray 5
+ GKOps::computeEField 22.5
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ GKOps::computeEField 22.6
+ GKOps::computeEField 23
+ GKOps::computeEField 25
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::explicitOp 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ PhaseGeom::computeGKVelociites 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.63662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 0.063662
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 4
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 5
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=0, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=3, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=3, a_time=0.0005
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()

@@ -245,7 +245,7 @@ grid_function_library.N0_grid_func.function  = "( 1.00-0.01*cos(x)  )"
 grid_function_library.eN0_grid_func.type = "arbitrary"
 #grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
 #grid_function_library.eN0_grid_func.function = "(1.00+0.00001*exp(-(x-pi*3/2)^2/(2*pi*0.005/0.04)-(y-pi*3/2)^2/(2*pi*0.005/0.04)-(z-pi*3/2)^2/(2*pi*0.005/0.04))   )"
-grid_function_library.eN0_grid_func.function  = "( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )"
+grid_function_library.eN0_grid_func.function  = "( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000000*sin(z) )  )"
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
 grid_function_library.Ion_vpar_grid_func.value = 0.0
