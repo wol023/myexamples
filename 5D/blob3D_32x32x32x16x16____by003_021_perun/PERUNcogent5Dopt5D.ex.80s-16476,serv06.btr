@@ -1,0 +1,16 @@
+
+PERUNcogent5Dopt5D.ex:16476 terminated with signal 11 at PC=7f3b231ac2fa SP=7fff808f0f90.  Backtrace:
+/usr/local/openmpi/lib64/libmpi.so.1(+0x10c2fa)[0x7f3b231ac2fa]
+/usr/local/openmpi/lib64/libmpi.so.1(+0x10db83)[0x7f3b231adb83]
+/usr/local/openmpi/lib64/libmpi.so.1(ompi_btl_openib_connect_base_select_for_local_port+0xcf)[0x7f3b231a800f]
+/usr/local/openmpi/lib64/libmpi.so.1(+0xf8ea4)[0x7f3b23198ea4]
+/usr/local/openmpi/lib64/libmpi.so.1(mca_btl_base_select+0x163)[0x7f3b2317ba33]
+/usr/local/openmpi/lib64/libmpi.so.1(mca_bml_r2_component_init+0x11)[0x7f3b2317b381]
+/usr/local/openmpi/lib64/libmpi.so.1(mca_bml_base_init+0x6d)[0x7f3b23179b7d]
+/usr/local/openmpi/lib64/libmpi.so.1(+0x1eb6ff)[0x7f3b2328b6ff]
+/usr/local/openmpi/lib64/libmpi.so.1(mca_pml_base_select+0x398)[0x7f3b23289158]
+/usr/local/openmpi/lib64/libmpi.so.1(ompi_mpi_init+0x4c0)[0x7f3b23125350]
+/usr/local/openmpi/lib64/libmpi.so.1(MPI_Init+0x16b)[0x7f3b231441fb]
+./PERUNcogent5Dopt5D.ex[0x41341d]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f3b1f0e1be5]
+./PERUNcogent5Dopt5D.ex[0x41bd61]

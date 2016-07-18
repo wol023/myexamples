@@ -1,0 +1,7 @@
+#PBS -N cogent
+#PBS -V
+#PBS -l nodes=1:ppn=16
+cd $PBS_O_WORKDIR
+
+/usr/local/openmpi/bin/mpirun cogent.Linux.64.mpiCC.gfortran.OPT.MPI.ex gam_regression.in >& output.out
+
