@@ -1,0 +1,1714 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.4, ymax = 0.4, zmax = 40
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.392699,  cellSp[1] = 0.392699, cellSp[2] = 0.392699
+**** dimensions = 16, 16, 16
+Done constructing slab geometry
+   Configuration space box ((0,0,0) (15,15,15) (0,0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-4,0) (3,7) (0,0)) is assigned to process 0
+   Phase space box ((0,0,0,-4,0) (15,15,15,3,7) (0,0,0,0,0)) is assigned to process 0, has 262144 valid cells and 3276800 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.000544, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding congiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+"T0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+"eT0_grid_func":
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Arbitrary grid function parameters:
+  function: 0.0000001
+  coordinate type: mapped
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( 1.00-0.01*cos(x)  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: ( ( 1.00-0.01*cos(x) )*(1.0+0.1*sin(2*y)+0.00000000001*sin(z) )  )
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: 1.0
+  coordinate type: mapped
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	0.029376 [max]	1.39211e-06 [min]
+    Species 1:	1.43954e-07 [max]	5.66795e-12 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293773 [max]	1.39085e-06 [min]
+    Species 1:	1.43956e-07 [max]	5.66012e-12 [min]
+
+Step 1 completed, simulation time is 0.001
+----
+
+Step 2
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293784 [max]	1.38959e-06 [min]
+    Species 1:	1.43958e-07 [max]	5.65284e-12 [min]
+
+Step 2 completed, simulation time is 0.002
+----
+
+Step 3
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293794 [max]	1.38834e-06 [min]
+    Species 1:	1.43961e-07 [max]	5.64612e-12 [min]
+
+Step 3 completed, simulation time is 0.003
+----
+
+Step 4
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293802 [max]	1.38709e-06 [min]
+    Species 1:	1.43962e-07 [max]	5.63997e-12 [min]
+
+Step 4 completed, simulation time is 0.004
+----
+
+Step 5
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293809 [max]	1.38585e-06 [min]
+    Species 1:	1.43964e-07 [max]	5.6344e-12 [min]
+
+Step 5 completed, simulation time is 0.005
+----
+
+Step 6
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293815 [max]	1.38461e-06 [min]
+    Species 1:	1.43966e-07 [max]	5.62941e-12 [min]
+
+Step 6 completed, simulation time is 0.006
+----
+
+Step 7
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293819 [max]	1.38339e-06 [min]
+    Species 1:	1.43967e-07 [max]	5.62502e-12 [min]
+
+Step 7 completed, simulation time is 0.007
+----
+
+Step 8
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293822 [max]	1.38217e-06 [min]
+    Species 1:	1.43969e-07 [max]	5.62114e-12 [min]
+
+Step 8 completed, simulation time is 0.008
+----
+
+Step 9
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72689e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293823 [max]	1.38096e-06 [min]
+    Species 1:	1.4397e-07 [max]	5.61784e-12 [min]
+
+Step 9 completed, simulation time is 0.009
+----
+
+Step 10
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72688e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293823 [max]	1.37976e-06 [min]
+    Species 1:	1.43971e-07 [max]	5.61515e-12 [min]
+
+Step 10 completed, simulation time is 0.01
+----
+Writing checkpoint file
+Writing history file
+
+Step 11
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72688e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293821 [max]	1.37857e-06 [min]
+    Species 1:	1.43972e-07 [max]	5.61309e-12 [min]
+
+Step 11 completed, simulation time is 0.011
+----
+
+Step 12
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72688e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293818 [max]	1.3774e-06 [min]
+    Species 1:	1.43973e-07 [max]	5.61164e-12 [min]
+
+Step 12 completed, simulation time is 0.012
+----
+
+Step 13
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21047e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72688e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293814 [max]	1.37624e-06 [min]
+    Species 1:	1.43973e-07 [max]	5.61082e-12 [min]
+
+Step 13 completed, simulation time is 0.013
+----
+
+Step 14
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21046e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72688e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293808 [max]	1.3751e-06 [min]
+    Species 1:	1.43974e-07 [max]	5.61062e-12 [min]
+
+Step 14 completed, simulation time is 0.014
+----
+
+Step 15
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21046e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72688e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293808 [max]	1.37397e-06 [min]
+    Species 1:	1.43974e-07 [max]	5.61105e-12 [min]
+
+Step 15 completed, simulation time is 0.015
+----
+
+Step 16
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21046e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72688e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293809 [max]	1.37287e-06 [min]
+    Species 1:	1.43974e-07 [max]	5.6121e-12 [min]
+
+Step 16 completed, simulation time is 0.016
+----
+
+Step 17
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21046e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72687e-05 (time scale), 14.8657 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293809 [max]	1.37178e-06 [min]
+    Species 1:	1.43974e-07 [max]	5.61378e-12 [min]
+
+Step 17 completed, simulation time is 0.017
+----
+
+Step 18
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21046e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72687e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.029381 [max]	1.37071e-06 [min]
+    Species 1:	1.43974e-07 [max]	5.61607e-12 [min]
+
+Step 18 completed, simulation time is 0.018
+----
+
+Step 19
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21046e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72687e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293824 [max]	1.36967e-06 [min]
+    Species 1:	1.43974e-07 [max]	5.61732e-12 [min]
+
+Step 19 completed, simulation time is 0.019
+----
+
+Step 20
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21046e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72687e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293837 [max]	1.36864e-06 [min]
+    Species 1:	1.43973e-07 [max]	5.61601e-12 [min]
+
+Step 20 completed, simulation time is 0.02
+----
+Writing checkpoint file
+Writing history file
+
+Step 21
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21045e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72686e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293848 [max]	1.36765e-06 [min]
+    Species 1:	1.43973e-07 [max]	5.6149e-12 [min]
+
+Step 21 completed, simulation time is 0.021
+----
+
+Step 22
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21045e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72686e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293858 [max]	1.36667e-06 [min]
+    Species 1:	1.43972e-07 [max]	5.61399e-12 [min]
+
+Step 22 completed, simulation time is 0.022
+----
+
+Step 23
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21045e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72686e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293866 [max]	1.36573e-06 [min]
+    Species 1:	1.43971e-07 [max]	5.6133e-12 [min]
+
+Step 23 completed, simulation time is 0.023
+----
+
+Step 24
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21045e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72686e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293873 [max]	1.36482e-06 [min]
+    Species 1:	1.4397e-07 [max]	5.61282e-12 [min]
+
+Step 24 completed, simulation time is 0.024
+----
+
+Step 25
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21045e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72685e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0293978 [max]	1.36393e-06 [min]
+    Species 1:	1.43969e-07 [max]	5.61254e-12 [min]
+
+Step 25 completed, simulation time is 0.025
+----
+
+Step 26
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21044e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72685e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0294187 [max]	1.36308e-06 [min]
+    Species 1:	1.43968e-07 [max]	5.61247e-12 [min]
+
+Step 26 completed, simulation time is 0.026
+----
+
+Step 27
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21044e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72684e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0294392 [max]	1.36226e-06 [min]
+    Species 1:	1.43967e-07 [max]	5.61262e-12 [min]
+
+Step 27 completed, simulation time is 0.027
+----
+
+Step 28
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21043e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72684e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0294595 [max]	1.36147e-06 [min]
+    Species 1:	1.43965e-07 [max]	5.61299e-12 [min]
+
+Step 28 completed, simulation time is 0.028
+----
+
+Step 29
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21043e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72683e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0294795 [max]	1.36072e-06 [min]
+    Species 1:	1.43963e-07 [max]	5.61355e-12 [min]
+
+Step 29 completed, simulation time is 0.029
+----
+
+Step 30
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21043e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72683e-05 (time scale), 14.8658 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0294993 [max]	1.35987e-06 [min]
+    Species 1:	1.43962e-07 [max]	5.61433e-12 [min]
+
+Step 30 completed, simulation time is 0.03
+----
+Writing checkpoint file
+Writing history file
+
+Step 31
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21042e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72682e-05 (time scale), 14.8659 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0295188 [max]	1.35872e-06 [min]
+    Species 1:	1.4396e-07 [max]	5.6153e-12 [min]
+
+Step 31 completed, simulation time is 0.031
+----
+
+Step 32
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21042e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72682e-05 (time scale), 14.8659 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.029538 [max]	1.35758e-06 [min]
+    Species 1:	1.43957e-07 [max]	5.6165e-12 [min]
+
+Step 32 completed, simulation time is 0.032
+----
+
+Step 33
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21041e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72681e-05 (time scale), 14.8659 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.029557 [max]	1.35647e-06 [min]
+    Species 1:	1.43955e-07 [max]	5.61794e-12 [min]
+
+Step 33 completed, simulation time is 0.033
+----
+
+Step 34
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21041e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72681e-05 (time scale), 14.8659 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0295758 [max]	1.35537e-06 [min]
+    Species 1:	1.43953e-07 [max]	5.61955e-12 [min]
+
+Step 34 completed, simulation time is 0.034
+----
+
+Step 35
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.2104e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.7268e-05 (time scale), 14.8659 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0295943 [max]	1.3543e-06 [min]
+    Species 1:	1.4395e-07 [max]	5.61816e-12 [min]
+
+Step 35 completed, simulation time is 0.035
+----
+
+Step 36
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.2104e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72679e-05 (time scale), 14.8659 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0296125 [max]	1.35325e-06 [min]
+    Species 1:	1.43947e-07 [max]	5.61657e-12 [min]
+
+Step 36 completed, simulation time is 0.036
+----
+
+Step 37
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21039e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72679e-05 (time scale), 14.8659 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0296305 [max]	1.35223e-06 [min]
+    Species 1:	1.43944e-07 [max]	5.61505e-12 [min]
+
+Step 37 completed, simulation time is 0.037
+----
+
+Step 38
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21039e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72678e-05 (time scale), 14.866 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0296483 [max]	1.35124e-06 [min]
+    Species 1:	1.43941e-07 [max]	5.61355e-12 [min]
+
+Step 38 completed, simulation time is 0.038
+----
+
+Step 39
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21038e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72677e-05 (time scale), 14.866 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0296658 [max]	1.35028e-06 [min]
+    Species 1:	1.43938e-07 [max]	5.61194e-12 [min]
+
+Step 39 completed, simulation time is 0.039
+----
+
+Step 40
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21038e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72677e-05 (time scale), 14.866 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0296832 [max]	1.34935e-06 [min]
+    Species 1:	1.43935e-07 [max]	5.61034e-12 [min]
+
+Step 40 completed, simulation time is 0.04
+----
+Writing checkpoint file
+Writing history file
+
+Step 41
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21037e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72676e-05 (time scale), 14.866 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0297003 [max]	1.34845e-06 [min]
+    Species 1:	1.43932e-07 [max]	5.60166e-12 [min]
+
+Step 41 completed, simulation time is 0.041
+----
+
+Step 42
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21037e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72675e-05 (time scale), 14.866 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0297172 [max]	1.34758e-06 [min]
+    Species 1:	1.43928e-07 [max]	5.5914e-12 [min]
+
+Step 42 completed, simulation time is 0.042
+----
+
+Step 43
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21036e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72674e-05 (time scale), 14.866 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0297339 [max]	1.34676e-06 [min]
+    Species 1:	1.43925e-07 [max]	5.58188e-12 [min]
+
+Step 43 completed, simulation time is 0.043
+----
+
+Step 44
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21035e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72674e-05 (time scale), 14.8661 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0297504 [max]	1.34597e-06 [min]
+    Species 1:	1.43922e-07 [max]	5.57149e-12 [min]
+
+Step 44 completed, simulation time is 0.044
+----
+
+Step 45
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21035e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72672e-05 (time scale), 14.8661 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0297667 [max]	1.34522e-06 [min]
+    Species 1:	1.43918e-07 [max]	5.56179e-12 [min]
+
+Step 45 completed, simulation time is 0.045
+----
+
+Step 46
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21034e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72671e-05 (time scale), 14.8661 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0297828 [max]	1.34451e-06 [min]
+    Species 1:	1.43917e-07 [max]	5.55079e-12 [min]
+
+Step 46 completed, simulation time is 0.046
+----
+
+Step 47
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21032e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.7267e-05 (time scale), 14.8661 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0297987 [max]	1.34384e-06 [min]
+    Species 1:	1.43917e-07 [max]	5.54024e-12 [min]
+
+Step 47 completed, simulation time is 0.047
+----
+
+Step 48
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21031e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72668e-05 (time scale), 14.8662 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0298145 [max]	1.3432e-06 [min]
+    Species 1:	1.43922e-07 [max]	5.52826e-12 [min]
+
+Step 48 completed, simulation time is 0.048
+----
+
+Step 49
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.2103e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72667e-05 (time scale), 14.8662 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0298301 [max]	1.34259e-06 [min]
+    Species 1:	1.4393e-07 [max]	5.51094e-12 [min]
+
+Step 49 completed, simulation time is 0.049
+----
+
+Step 50
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21029e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72665e-05 (time scale), 14.8662 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0298456 [max]	1.34203e-06 [min]
+    Species 1:	1.43932e-07 [max]	5.49512e-12 [min]
+
+Step 50 completed, simulation time is 0.05
+----
+Writing checkpoint file
+Writing history file
+
+Step 51
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21026e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72662e-05 (time scale), 14.8663 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0298609 [max]	1.34149e-06 [min]
+    Species 1:	1.4394e-07 [max]	5.47048e-12 [min]
+
+Step 51 completed, simulation time is 0.051
+----
+
+Step 52
+      BiCGStab converged successfully
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 5.21023e-05.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.001
+    Vlasov    : 6.72658e-05 (time scale), 14.8664 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0298761 [max]	1.34095e-06 [min]
+    Species 1:	1.43965e-07 [max]	5.42634e-12 [min]
+
+Step 52 completed, simulation time is 0.052
+----

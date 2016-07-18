@@ -1,0 +1,1277 @@
+ModuleCmd_Switch.c(172):ERROR:152: Module 'PrgEnv-intel' is currently not loaded
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+****************** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+*********************************************************
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 0.04
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+Done constructing slab geometry
+   Configuration space box ((0,0,0) (7,7,3) (0,0,0)) is assigned to process 0
+   Configuration space box ((8,0,0) (15,7,3) (0,0,0)) is assigned to process 1
+   Configuration space box ((16,0,0) (23,7,3) (0,0,0)) is assigned to process 2
+   Configuration space box ((24,0,0) (31,7,3) (0,0,0)) is assigned to process 3
+   Configuration space box ((0,8,0) (7,15,3) (0,0,0)) is assigned to process 4
+   Configuration space box ((8,8,0) (15,15,3) (0,0,0)) is assigned to process 5
+   Configuration space box ((16,8,0) (23,15,3) (0,0,0)) is assigned to process 6
+   Configuration space box ((24,8,0) (31,15,3) (0,0,0)) is assigned to process 7
+   Configuration space box ((0,16,0) (7,23,3) (0,0,0)) is assigned to process 8
+   Configuration space box ((8,16,0) (15,23,3) (0,0,0)) is assigned to process 9
+   Configuration space box ((16,16,0) (23,23,3) (0,0,0)) is assigned to process 10
+   Configuration space box ((24,16,0) (31,23,3) (0,0,0)) is assigned to process 11
+   Configuration space box ((0,24,0) (7,31,3) (0,0,0)) is assigned to process 12
+   Configuration space box ((8,24,0) (15,31,3) (0,0,0)) is assigned to process 13
+   Configuration space box ((16,24,0) (23,31,3) (0,0,0)) is assigned to process 14
+   Configuration space box ((24,24,0) (31,31,3) (0,0,0)) is assigned to process 15
+   Configuration space box ((0,0,4) (7,7,7) (0,0,0)) is assigned to process 16
+   Configuration space box ((8,0,4) (15,7,7) (0,0,0)) is assigned to process 17
+   Configuration space box ((16,0,4) (23,7,7) (0,0,0)) is assigned to process 18
+   Configuration space box ((24,0,4) (31,7,7) (0,0,0)) is assigned to process 19
+   Configuration space box ((0,8,4) (7,15,7) (0,0,0)) is assigned to process 20
+   Configuration space box ((8,8,4) (15,15,7) (0,0,0)) is assigned to process 21
+   Configuration space box ((16,8,4) (23,15,7) (0,0,0)) is assigned to process 22
+   Configuration space box ((24,8,4) (31,15,7) (0,0,0)) is assigned to process 23
+   Configuration space box ((0,16,4) (7,23,7) (0,0,0)) is assigned to process 24
+   Configuration space box ((8,16,4) (15,23,7) (0,0,0)) is assigned to process 25
+   Configuration space box ((16,16,4) (23,23,7) (0,0,0)) is assigned to process 26
+   Configuration space box ((24,16,4) (31,23,7) (0,0,0)) is assigned to process 27
+   Configuration space box ((0,24,4) (7,31,7) (0,0,0)) is assigned to process 28
+   Configuration space box ((8,24,4) (15,31,7) (0,0,0)) is assigned to process 29
+   Configuration space box ((16,24,4) (23,31,7) (0,0,0)) is assigned to process 30
+   Configuration space box ((24,24,4) (31,31,7) (0,0,0)) is assigned to process 31
+   Configuration space box ((0,0,8) (7,7,11) (0,0,0)) is assigned to process 32
+   Configuration space box ((8,0,8) (15,7,11) (0,0,0)) is assigned to process 33
+   Configuration space box ((16,0,8) (23,7,11) (0,0,0)) is assigned to process 34
+   Configuration space box ((24,0,8) (31,7,11) (0,0,0)) is assigned to process 35
+   Configuration space box ((0,8,8) (7,15,11) (0,0,0)) is assigned to process 36
+   Configuration space box ((8,8,8) (15,15,11) (0,0,0)) is assigned to process 37
+   Configuration space box ((16,8,8) (23,15,11) (0,0,0)) is assigned to process 38
+   Configuration space box ((24,8,8) (31,15,11) (0,0,0)) is assigned to process 39
+   Configuration space box ((0,16,8) (7,23,11) (0,0,0)) is assigned to process 40
+   Configuration space box ((8,16,8) (15,23,11) (0,0,0)) is assigned to process 41
+   Configuration space box ((16,16,8) (23,23,11) (0,0,0)) is assigned to process 42
+   Configuration space box ((24,16,8) (31,23,11) (0,0,0)) is assigned to process 43
+   Configuration space box ((0,24,8) (7,31,11) (0,0,0)) is assigned to process 44
+   Configuration space box ((8,24,8) (15,31,11) (0,0,0)) is assigned to process 45
+   Configuration space box ((16,24,8) (23,31,11) (0,0,0)) is assigned to process 46
+   Configuration space box ((24,24,8) (31,31,11) (0,0,0)) is assigned to process 47
+   Configuration space box ((0,0,12) (7,7,15) (0,0,0)) is assigned to process 48
+   Configuration space box ((8,0,12) (15,7,15) (0,0,0)) is assigned to process 49
+   Configuration space box ((16,0,12) (23,7,15) (0,0,0)) is assigned to process 50
+   Configuration space box ((24,0,12) (31,7,15) (0,0,0)) is assigned to process 51
+   Configuration space box ((0,8,12) (7,15,15) (0,0,0)) is assigned to process 52
+   Configuration space box ((8,8,12) (15,15,15) (0,0,0)) is assigned to process 53
+   Configuration space box ((16,8,12) (23,15,15) (0,0,0)) is assigned to process 54
+   Configuration space box ((24,8,12) (31,15,15) (0,0,0)) is assigned to process 55
+   Configuration space box ((0,16,12) (7,23,15) (0,0,0)) is assigned to process 56
+   Configuration space box ((8,16,12) (15,23,15) (0,0,0)) is assigned to process 57
+   Configuration space box ((16,16,12) (23,23,15) (0,0,0)) is assigned to process 58
+   Configuration space box ((24,16,12) (31,23,15) (0,0,0)) is assigned to process 59
+   Configuration space box ((0,24,12) (7,31,15) (0,0,0)) is assigned to process 60
+   Configuration space box ((8,24,12) (15,31,15) (0,0,0)) is assigned to process 61
+   Configuration space box ((16,24,12) (23,31,15) (0,0,0)) is assigned to process 62
+   Configuration space box ((24,24,12) (31,31,15) (0,0,0)) is assigned to process 63
+Constructing magnetic geometry
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+ MagGeom::MagGeom() plotFaceData
+**** cellSp[0] = 0.19635,  cellSp[1] = 0.19635, cellSp[2] = 0.392699
+**** dimensions = 32, 32, 16
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+Done constructing magnetic geometry
+   Velocity space box ((-12,0) (-7,3) (0,0)) is assigned to process 0
+   Velocity space box ((-6,0) (-1,3) (0,0)) is assigned to process 1
+   Velocity space box ((0,0) (5,3) (0,0)) is assigned to process 2
+   Velocity space box ((6,0) (11,3) (0,0)) is assigned to process 3
+   Velocity space box ((-12,4) (-7,7) (0,0)) is assigned to process 4
+   Velocity space box ((-6,4) (-1,7) (0,0)) is assigned to process 5
+   Velocity space box ((0,4) (5,7) (0,0)) is assigned to process 6
+   Velocity space box ((6,4) (11,7) (0,0)) is assigned to process 7
+   Velocity space box ((-12,8) (-7,11) (0,0)) is assigned to process 8
+   Velocity space box ((-6,8) (-1,11) (0,0)) is assigned to process 9
+   Velocity space box ((0,8) (5,11) (0,0)) is assigned to process 10
+   Velocity space box ((6,8) (11,11) (0,0)) is assigned to process 11
+   Velocity space box ((-12,12) (-7,15) (0,0)) is assigned to process 12
+   Velocity space box ((-6,12) (-1,15) (0,0)) is assigned to process 13
+   Velocity space box ((0,12) (5,15) (0,0)) is assigned to process 14
+   Velocity space box ((6,12) (11,15) (0,0)) is assigned to process 15
+   Phase space box ((0,8,12,0,0) (7,15,15,11,15) (0,0,0,0,0)) is assigned to process 105, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,8,0,0) (7,15,11,11,15) (0,0,0,0,0)) is assigned to process 73, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,4,-12,0) (7,15,7,-1,15) (0,0,0,0,0)) is assigned to process 40, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,0,0,0) (7,7,3,11,15) (0,0,0,0,0)) is assigned to process 1, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,12,0,0) (23,15,15,11,15) (0,0,0,0,0)) is assigned to process 109, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,8,0,0) (23,23,11,11,15) (0,0,0,0,0)) is assigned to process 85, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,4,0,0) (23,15,7,11,15) (0,0,0,0,0)) is assigned to process 45, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,0,0,0) (23,7,3,11,15) (0,0,0,0,0)) is assigned to process 5, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,12,0,0) (7,23,15,11,15) (0,0,0,0,0)) is assigned to process 113, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,8,-12,0) (23,31,11,-1,15) (0,0,0,0,0)) is assigned to process 92, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,4,-12,0) (31,15,7,-1,15) (0,0,0,0,0)) is assigned to process 46, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,0,0,0) (7,15,3,11,15) (0,0,0,0,0)) is assigned to process 9, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,12,0,0) (23,23,15,11,15) (0,0,0,0,0)) is assigned to process 117, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,8,-12,0) (7,7,11,-1,15) (0,0,0,0,0)) is assigned to process 64, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,4,0,0) (23,23,7,11,15) (0,0,0,0,0)) is assigned to process 53, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,0,-12,0) (15,15,3,-1,15) (0,0,0,0,0)) is assigned to process 10, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,12,0,0) (23,31,15,11,15) (0,0,0,0,0)) is assigned to process 125, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,8,0,0) (7,7,11,11,15) (0,0,0,0,0)) is assigned to process 65, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,4,-12,0) (31,23,7,-1,15) (0,0,0,0,0)) is assigned to process 54, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,0,0,0) (15,15,3,11,15) (0,0,0,0,0)) is assigned to process 11, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,12,0,0) (31,31,15,11,15) (0,0,0,0,0)) is assigned to process 127, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,8,-12,0) (15,7,11,-1,15) (0,0,0,0,0)) is assigned to process 66, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,4,-12,0) (15,31,7,-1,15) (0,0,0,0,0)) is assigned to process 58, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,0,-12,0) (23,15,3,-1,15) (0,0,0,0,0)) is assigned to process 12, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,0,0,0) (23,15,3,11,15) (0,0,0,0,0)) is assigned to process 13, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,12,-12,0) (7,7,15,-1,15) (0,0,0,0,0)) is assigned to process 96, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,4,0,0) (15,31,7,11,15) (0,0,0,0,0)) is assigned to process 59, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,0,-12,0) (15,23,3,-1,15) (0,0,0,0,0)) is assigned to process 18, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,12,0,0) (7,7,15,11,15) (0,0,0,0,0)) is assigned to process 97, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,8,0,0) (15,7,11,11,15) (0,0,0,0,0)) is assigned to process 67, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,4,-12,0) (7,7,7,-1,15) (0,0,0,0,0)) is assigned to process 32, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,0,0,0) (15,23,3,11,15) (0,0,0,0,0)) is assigned to process 19, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,12,-12,0) (15,7,15,-1,15) (0,0,0,0,0)) is assigned to process 98, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,8,-12,0) (23,7,11,-1,15) (0,0,0,0,0)) is assigned to process 68, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,4,0,0) (7,7,7,11,15) (0,0,0,0,0)) is assigned to process 33, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,0,0,0) (23,23,3,11,15) (0,0,0,0,0)) is assigned to process 21, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,12,0,0) (15,7,15,11,15) (0,0,0,0,0)) is assigned to process 99, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,8,0,0) (23,7,11,11,15) (0,0,0,0,0)) is assigned to process 69, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,4,-12,0) (15,7,7,-1,15) (0,0,0,0,0)) is assigned to process 34, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,0,-12,0) (31,23,3,-1,15) (0,0,0,0,0)) is assigned to process 22, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,12,-12,0) (23,7,15,-1,15) (0,0,0,0,0)) is assigned to process 100, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,8,-12,0) (31,7,11,-1,15) (0,0,0,0,0)) is assigned to process 70, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,4,0,0) (15,7,7,11,15) (0,0,0,0,0)) is assigned to process 35, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,0,0,0) (31,23,3,11,15) (0,0,0,0,0)) is assigned to process 23, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,12,0,0) (23,7,15,11,15) (0,0,0,0,0)) is assigned to process 101, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,8,0,0) (31,7,11,11,15) (0,0,0,0,0)) is assigned to process 71, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,4,-12,0) (23,7,7,-1,15) (0,0,0,0,0)) is assigned to process 36, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,0,-12,0) (23,31,3,-1,15) (0,0,0,0,0)) is assigned to process 28, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,12,-12,0) (31,7,15,-1,15) (0,0,0,0,0)) is assigned to process 102, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,8,-12,0) (7,15,11,-1,15) (0,0,0,0,0)) is assigned to process 72, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,4,0,0) (23,7,7,11,15) (0,0,0,0,0)) is assigned to process 37, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,0,0,0) (31,31,3,11,15) (0,0,0,0,0)) is assigned to process 31, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,12,0,0) (31,7,15,11,15) (0,0,0,0,0)) is assigned to process 103, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,8,-12,0) (15,15,11,-1,15) (0,0,0,0,0)) is assigned to process 74, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,4,-12,0) (31,7,7,-1,15) (0,0,0,0,0)) is assigned to process 38, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,0,-12,0) (7,7,3,-1,15) (0,0,0,0,0)) is assigned to process 0, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,12,-12,0) (7,15,15,-1,15) (0,0,0,0,0)) is assigned to process 104, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,8,0,0) (15,15,11,11,15) (0,0,0,0,0)) is assigned to process 75, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,4,0,0) (31,7,7,11,15) (0,0,0,0,0)) is assigned to process 39, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,0,-12,0) (15,7,3,-1,15) (0,0,0,0,0)) is assigned to process 2, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,12,-12,0) (15,15,15,-1,15) (0,0,0,0,0)) is assigned to process 106, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,8,-12,0) (23,15,11,-1,15) (0,0,0,0,0)) is assigned to process 76, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,4,0,0) (7,15,7,11,15) (0,0,0,0,0)) is assigned to process 41, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,0,0,0) (15,7,3,11,15) (0,0,0,0,0)) is assigned to process 3, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,12,0,0) (15,15,15,11,15) (0,0,0,0,0)) is assigned to process 107, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,8,0,0) (23,15,11,11,15) (0,0,0,0,0)) is assigned to process 77, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,4,-12,0) (15,15,7,-1,15) (0,0,0,0,0)) is assigned to process 42, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,0,-12,0) (23,7,3,-1,15) (0,0,0,0,0)) is assigned to process 4, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,12,-12,0) (23,15,15,-1,15) (0,0,0,0,0)) is assigned to process 108, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,8,-12,0) (31,15,11,-1,15) (0,0,0,0,0)) is assigned to process 78, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,4,0,0) (15,15,7,11,15) (0,0,0,0,0)) is assigned to process 43, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,0,-12,0) (31,7,3,-1,15) (0,0,0,0,0)) is assigned to process 6, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,12,-12,0) (31,15,15,-1,15) (0,0,0,0,0)) is assigned to process 110, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,8,0,0) (31,15,11,11,15) (0,0,0,0,0)) is assigned to process 79, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,4,-12,0) (23,15,7,-1,15) (0,0,0,0,0)) is assigned to process 44, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,0,0,0) (31,7,3,11,15) (0,0,0,0,0)) is assigned to process 7, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,12,0,0) (31,15,15,11,15) (0,0,0,0,0)) is assigned to process 111, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,8,-12,0) (7,23,11,-1,15) (0,0,0,0,0)) is assigned to process 80, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,4,0,0) (31,15,7,11,15) (0,0,0,0,0)) is assigned to process 47, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,0,-12,0) (7,15,3,-1,15) (0,0,0,0,0)) is assigned to process 8, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,12,-12,0) (7,23,15,-1,15) (0,0,0,0,0)) is assigned to process 112, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,8,0,0) (7,23,11,11,15) (0,0,0,0,0)) is assigned to process 81, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,4,-12,0) (7,23,7,-1,15) (0,0,0,0,0)) is assigned to process 48, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,0,-12,0) (31,15,3,-1,15) (0,0,0,0,0)) is assigned to process 14, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,12,-12,0) (15,23,15,-1,15) (0,0,0,0,0)) is assigned to process 114, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,8,-12,0) (15,23,11,-1,15) (0,0,0,0,0)) is assigned to process 82, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,4,0,0) (7,23,7,11,15) (0,0,0,0,0)) is assigned to process 49, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,0,0,0) (31,15,3,11,15) (0,0,0,0,0)) is assigned to process 15, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,12,0,0) (15,23,15,11,15) (0,0,0,0,0)) is assigned to process 115, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,8,0,0) (15,23,11,11,15) (0,0,0,0,0)) is assigned to process 83, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,4,-12,0) (15,23,7,-1,15) (0,0,0,0,0)) is assigned to process 50, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,0,-12,0) (7,23,3,-1,15) (0,0,0,0,0)) is assigned to process 16, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,12,-12,0) (23,23,15,-1,15) (0,0,0,0,0)) is assigned to process 116, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,8,-12,0) (23,23,11,-1,15) (0,0,0,0,0)) is assigned to process 84, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,4,0,0) (15,23,7,11,15) (0,0,0,0,0)) is assigned to process 51, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,0,0,0) (7,23,3,11,15) (0,0,0,0,0)) is assigned to process 17, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,12,-12,0) (31,23,15,-1,15) (0,0,0,0,0)) is assigned to process 118, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,8,-12,0) (31,23,11,-1,15) (0,0,0,0,0)) is assigned to process 86, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,4,-12,0) (23,23,7,-1,15) (0,0,0,0,0)) is assigned to process 52, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,0,-12,0) (23,23,3,-1,15) (0,0,0,0,0)) is assigned to process 20, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,12,0,0) (31,23,15,11,15) (0,0,0,0,0)) is assigned to process 119, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,8,0,0) (31,23,11,11,15) (0,0,0,0,0)) is assigned to process 87, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,4,0,0) (31,23,7,11,15) (0,0,0,0,0)) is assigned to process 55, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,0,-12,0) (7,31,3,-1,15) (0,0,0,0,0)) is assigned to process 24, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,12,-12,0) (7,31,15,-1,15) (0,0,0,0,0)) is assigned to process 120, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,8,-12,0) (7,31,11,-1,15) (0,0,0,0,0)) is assigned to process 88, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,4,-12,0) (7,31,7,-1,15) (0,0,0,0,0)) is assigned to process 56, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,0,0,0) (7,31,3,11,15) (0,0,0,0,0)) is assigned to process 25, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,12,0,0) (7,31,15,11,15) (0,0,0,0,0)) is assigned to process 121, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,8,0,0) (7,31,11,11,15) (0,0,0,0,0)) is assigned to process 89, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,4,0,0) (7,31,7,11,15) (0,0,0,0,0)) is assigned to process 57, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,0,-12,0) (15,31,3,-1,15) (0,0,0,0,0)) is assigned to process 26, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,12,-12,0) (15,31,15,-1,15) (0,0,0,0,0)) is assigned to process 122, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,8,-12,0) (15,31,11,-1,15) (0,0,0,0,0)) is assigned to process 90, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,4,-12,0) (23,31,7,-1,15) (0,0,0,0,0)) is assigned to process 60, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,0,0,0) (15,31,3,11,15) (0,0,0,0,0)) is assigned to process 27, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,12,0,0) (15,31,15,11,15) (0,0,0,0,0)) is assigned to process 123, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,8,0,0) (15,31,11,11,15) (0,0,0,0,0)) is assigned to process 91, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,4,0,0) (23,31,7,11,15) (0,0,0,0,0)) is assigned to process 61, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,0,0,0) (23,31,3,11,15) (0,0,0,0,0)) is assigned to process 29, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,12,-12,0) (23,31,15,-1,15) (0,0,0,0,0)) is assigned to process 124, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,8,0,0) (23,31,11,11,15) (0,0,0,0,0)) is assigned to process 93, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,4,-12,0) (31,31,7,-1,15) (0,0,0,0,0)) is assigned to process 62, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,0,-12,0) (31,31,3,-1,15) (0,0,0,0,0)) is assigned to process 30, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,12,-12,0) (31,31,15,-1,15) (0,0,0,0,0)) is assigned to process 126, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,8,-12,0) (31,31,11,-1,15) (0,0,0,0,0)) is assigned to process 94, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,4,0,0) (31,31,7,11,15) (0,0,0,0,0)) is assigned to process 63, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,8,0,0) (31,31,11,11,15) (0,0,0,0,0)) is assigned to process 95, has 49152 valid cells and 1425408 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+Done adding species and constructing coordinates
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+"T0_grid_func":
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+"potential_grid_func":
+Arbitrary grid function parameters:
+  function: ( -0.0000001*sin(y) )
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.0005/0.04))   )
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+Time integration method: rk (4)
+  Distribution Function Extrema:
+    Species 0:	7.62171e-07 [max]	1.42829e-11 [min]
+
+
+Step 1
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.65183e-07 [max]	6.03661e-12 [min]
+
+Step 1 completed, simulation time is 0.005
+----
+
+Step 2
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.48043e-07 [max]	3.62205e-12 [min]
+
+Step 2 completed, simulation time is 0.01
+----
+
+Step 3
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.5615e-07 [max]	3.4843e-12 [min]
+
+Step 3 completed, simulation time is 0.015
+----
+
+Step 4
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.67665e-07 [max]	3.22435e-12 [min]
+
+Step 4 completed, simulation time is 0.02
+----
+
+Step 5
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.58466e-07 [max]	3.20276e-12 [min]
+
+Step 5 completed, simulation time is 0.025
+----
+
+Step 6
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.42568e-07 [max]	3.11831e-12 [min]
+
+Step 6 completed, simulation time is 0.03
+----
+
+Step 7
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.60094e-07 [max]	-6.32788e-12 [min]
+
+Step 7 completed, simulation time is 0.035
+----
+
+Step 8
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.58399e-07 [max]	-8.92868e-08 [min]
+
+Step 8 completed, simulation time is 0.04
+----
+
+Step 9
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	1.74439e-05 [max]	-1.74565e-05 [min]
+
+Step 9 completed, simulation time is 0.045
+----
+
+Step 10
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0025071 [max]	-0.00262334 [min]
+
+Step 10 completed, simulation time is 0.05
+----
+Writing checkpoint file
+Writing history file
+
+Step 11
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.411119 [max]	-0.363504 [min]
+
+Step 11 completed, simulation time is 0.055
+----
+
+Step 12
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	52.5515 [max]	-64.2985 [min]
+
+Step 12 completed, simulation time is 0.06
+----
+
+Step 13
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9610.72 [max]	-8252.87 [min]
+
+Step 13 completed, simulation time is 0.065
+----
+
+Step 14
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	1.30873e+06 [max]	-1.46245e+06 [min]
+
+Step 14 completed, simulation time is 0.07
+----
+
+Step 15
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	2.15471e+08 [max]	-2.06566e+08 [min]
+
+Step 15 completed, simulation time is 0.075
+----
+
+Step 16
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	3.16594e+10 [max]	-2.96073e+10 [min]
+
+Step 16 completed, simulation time is 0.08
+----
+
+Step 17
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	4.63636e+12 [max]	-4.90355e+12 [min]
+
+Step 17 completed, simulation time is 0.085
+----
+
+Step 18
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.68124e+14 [max]	-7.38401e+14 [min]
+
+Step 18 completed, simulation time is 0.09
+----
+
+Step 19
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	1.19187e+17 [max]	-1.17745e+17 [min]
+
+Step 19 completed, simulation time is 0.095
+----
+
+Step 20
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	1.84112e+19 [max]	-1.88492e+19 [min]
+
+Step 20 completed, simulation time is 0.1
+----
+Writing checkpoint file
+Writing history file
+
+Step 21
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	2.99019e+21 [max]	-2.65654e+21 [min]
+
+Step 21 completed, simulation time is 0.105
+----
+
+Step 22
+  --
+  Warning: fixed time step may be higher than the stable time step.
+  Stable time step = 2.91758e-08.
+  You may reduce the specified dt or enable subiteration by setting
+  simulation.fixed_dt_subiteration = true (default:false).
+  --
+  ----
+  dt: 0.005
+    Vlasov    : 3.73799e-08 (time scale), 133762 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	4.20996e+23 [max]	-4.70061e+23 [min]
+
+Step 22 completed, simulation time is 0.11
+----
+
+Step 23
+slurmstepd: *** JOB 2039057 ON nid00106 CANCELLED AT 2016-04-28T16:13:48 ***
+srun: got SIGCONT
+srun: got SIGCONT
+slurmstepd: *** STEP 2039057.0 ON nid00106 CANCELLED AT 2016-04-28T16:13:48 ***
+srun: forcing job termination
