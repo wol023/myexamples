@@ -1,0 +1,1083 @@
+ModuleCmd_Switch.c(172):ERROR:152: Module 'PrgEnv-intel' is currently not loaded
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 100
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.392699 * 16 = 6.28319, dx(m)*nx= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.785398 * 8 = 6.28319, dz(m)*nz= 12.5 * 8 = 100, ( 1 : 15.9155 )
+
+   Configuration space box ((0,0,0) (7,15,7) (0,0,0)) is assigned to process 0
+   Configuration space box ((8,0,0) (15,15,7) (0,0,0)) is assigned to process 1
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 309497 )
+dmu*nmu= 0.25 * 8 = 2, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 8.01088e-17 )
+
+   Phase space box ((0,0,0,-8,0) (7,15,7,7,7) (0,0,0,0,0)) is assigned to process 0, has 131072 valid cells and 2228224 ghost cells
+   Phase space box ((8,0,0,-8,0) (15,15,7,7,7) (0,0,0,0,0)) is assigned to process 1, has 131072 valid cells and 2228224 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 2, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+"T0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab solver returned -1
+  Distribution Function Extrema:
+    Species 0:	0.00141422 [max]	5.79483e-08 [min]
+    Species 1:	0.00141422 [max]	5.79483e-08 [min]
+
+
+Step 1
+      BiCGStab solver returned -1
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.03625,0.03625,81.25,-3.75,0.125) and mapped coordinate = (14,14,6,-8,0)
+The poloidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.03625,0.03625,81.25,-3.75,0.125) and mapped coordinate = (14,14,6,-8,0)
+The poloidal direction makes the largest contribution to the stable dt reciprocal at that point
+
+m_num_cells[i]=16
+m_num_cells[i]=16
+m_num_cells[i]=8
+m_num_cells[i]=16
+m_num_cells[i]=8
+dx*nx= 0.392699 * 16 = 6.28319, dx(m)*nx= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.785398 * 8 = 6.28319, dz(m)*nz= 12.5 * 8 = 100, ( 1 : 15.9155 )
+dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 9671.78 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 109424 * 8 = 875389, ( 1 : 218847 )
+ [electron] mass = 2
+  dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 109424 * 8 = 875389, ( 1 : 218847 )
+dmu*nmu= 0.25 * 8 = 1, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 1.00136e-17 )
+
+Estimated dt
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=309497
+unit_dimension_time   [hydrogen]=3.23105e-06
+[hydrogen] maxvel:phy_maxvel[0]=0:0(1:-nan)
+[hydrogen] maxvel:phy_maxvel[1]=0.00757277:2343.75(1:309497)
+[hydrogen] maxvel:phy_maxvel[2]=2.65165:820678(1:309497)
+[hydrogen] maxvel:phy_maxvel[3]=0:0(1:-nan)
+[hydrogen] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[hydrogen]=dz(m)/vparmax_z(m/s)[hydrogen]=12.5/875389=1.42794e-05
+dt_zpar(-)[hydrogen]=4.41942
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.0025/0=inf
+dt_ypar(-)[hydrogen]=inf
+dt_z(s)[hydrogen]=dz(m)/vmax_z(m/s)[hydrogen]=12.5/820678=1.52313e-05
+dt_z(-)[hydrogen]=4.71405
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.0025/2343.75=1.06667e-06
+dt_y(-)[hydrogen]=0.33013
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.0025/0=inf
+dt_x(-)[hydrogen]=inf
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=154748/0=inf
+dt_vpar(-)[hydrogen]=inf
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=309497
+unit_dimension_time   [electron]=3.23105e-06
+[electron] maxvel:phy_maxvel[0]=0:0(1:-nan)
+[electron] maxvel:phy_maxvel[1]=0.00757277:2343.75(1:309497)
+[electron] maxvel:phy_maxvel[2]=2.65165:820678(1:309497)
+[electron] maxvel:phy_maxvel[3]=0:0(1:-nan)
+[electron] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[electron]=dz(m)/vparmax_z(m/s)[electron]=12.5/875389=1.42794e-05
+dt_zpar(-)[electron]=4.41942
+dt_ypar(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.0025/0=inf
+dt_ypar(-)[electron]=inf
+dt_z(s)[electron]=dz(m)/vmax_z(m/s)[electron]=12.5/820678=1.52313e-05
+dt_z(-)[electron]=4.71405
+dt_y(s)[electron]=dy(m)/vmax_y(m/s)[electron]=0.0025/2343.75=1.06667e-06
+dt_y(-)[electron]=0.33013
+dt_x(s)[electron]=dx(m)/vmax_x(m/s)[electron]=0.0025/0=inf
+dt_x(-)[electron]=inf
+dt_vpar(s)[electron]=dvpar(m/s)/vmax_vpar(m/s/s)[electron]=154748/0=inf
+dt_vpar(-)[electron]=inf
+
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.216729
+    Vlasov    : 0.308524 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00143142 [max]	5.61589e-08 [min]
+    Species 1:	0.00143059 [max]	5.61609e-08 [min]
+
+Step 1 completed, simulation time is 0.216729
+----
+
+Step 2
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,68.75,-3.75,0.125) and mapped coordinate = (3,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,43.75,-3.75,0.125) and mapped coordinate = (4,7,3,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0663045
+    Vlasov    : 0.0943877 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00134569 [max]	5.59195e-08 [min]
+    Species 1:	0.0013463 [max]	5.59203e-08 [min]
+
+Step 2 completed, simulation time is 0.283033
+----
+
+Step 3
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,18.75,-3.75,0.125) and mapped coordinate = (4,7,1,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,43.75,-3.75,0.125) and mapped coordinate = (5,7,3,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0540556
+    Vlasov    : 0.0769507 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00136979 [max]	5.55626e-08 [min]
+    Species 1:	0.00136849 [max]	5.55565e-08 [min]
+
+Step 3 completed, simulation time is 0.337089
+----
+
+Step 4
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,56.25,-3.75,0.125) and mapped coordinate = (4,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,43.75,-3.75,0.125) and mapped coordinate = (5,7,3,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0472547
+    Vlasov    : 0.0672693 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00129994 [max]	5.58099e-08 [min]
+    Species 1:	0.00129766 [max]	5.57848e-08 [min]
+
+Step 4 completed, simulation time is 0.384343
+----
+
+Step 5
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,56.25,-3.75,0.125) and mapped coordinate = (4,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,43.75,-3.75,0.125) and mapped coordinate = (5,7,3,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0435814
+    Vlasov    : 0.0620402 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00131846 [max]	5.60263e-08 [min]
+    Species 1:	0.00131715 [max]	5.61127e-08 [min]
+
+Step 5 completed, simulation time is 0.427925
+----
+
+Step 6
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,31.25,-3.75,0.125) and mapped coordinate = (5,7,2,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,56.25,-3.75,0.125) and mapped coordinate = (6,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0417127
+    Vlasov    : 0.0593801 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00128196 [max]	5.57879e-08 [min]
+    Species 1:	0.00127974 [max]	5.5797e-08 [min]
+
+Step 6 completed, simulation time is 0.469637
+----
+
+Step 7
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,43.75,-3.75,0.125) and mapped coordinate = (5,7,3,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,18.75,-3.75,0.125) and mapped coordinate = (6,7,1,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0382733
+    Vlasov    : 0.0544839 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00124902 [max]	5.55197e-08 [min]
+    Species 1:	0.00124805 [max]	5.56334e-08 [min]
+
+Step 7 completed, simulation time is 0.507911
+----
+
+Step 8
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,56.25,-3.75,0.125) and mapped coordinate = (5,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,81.25,-3.75,0.125) and mapped coordinate = (6,7,6,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0363879
+    Vlasov    : 0.0518 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00124961 [max]	5.5448e-08 [min]
+    Species 1:	0.00124763 [max]	5.54557e-08 [min]
+
+Step 8 completed, simulation time is 0.544299
+----
+
+Step 9
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,6.25,-3.75,0.125) and mapped coordinate = (5,7,0,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,81.25,-3.75,0.125) and mapped coordinate = (6,7,6,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0355671
+    Vlasov    : 0.0506315 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.0011847 [max]	5.56235e-08 [min]
+    Species 1:	0.00118282 [max]	5.57357e-08 [min]
+
+Step 9 completed, simulation time is 0.579866
+----
+
+Step 10
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,56.25,-3.75,0.125) and mapped coordinate = (6,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,81.25,-3.75,0.125) and mapped coordinate = (7,7,6,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.034972
+    Vlasov    : 0.0497844 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00119359 [max]	5.55367e-08 [min]
+    Species 1:	0.00119196 [max]	5.55233e-08 [min]
+
+Step 10 completed, simulation time is 0.614838
+----
+Writing checkpoint file
+Writing history file
+
+Step 11
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,56.25,-3.75,0.125) and mapped coordinate = (6,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,31.25,-3.75,0.125) and mapped coordinate = (7,7,2,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0336153
+    Vlasov    : 0.0478531 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00116679 [max]	5.59795e-08 [min]
+    Species 1:	0.00116519 [max]	5.59633e-08 [min]
+
+Step 11 completed, simulation time is 0.648453
+----
+
+Step 12
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,93.75,-3.75,0.125) and mapped coordinate = (6,7,7,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,81.25,-3.75,0.125) and mapped coordinate = (7,7,6,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0329932
+    Vlasov    : 0.0469674 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00111832 [max]	5.58066e-08 [min]
+    Species 1:	0.00111711 [max]	5.57676e-08 [min]
+
+Step 12 completed, simulation time is 0.681446
+----
+
+Step 13
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,93.75,-3.75,0.125) and mapped coordinate = (6,7,7,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,31.25,-3.75,0.125) and mapped coordinate = (7,7,2,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.032875
+    Vlasov    : 0.0467992 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00112647 [max]	5.61929e-08 [min]
+    Species 1:	0.00112519 [max]	5.60626e-08 [min]
+
+Step 13 completed, simulation time is 0.714321
+----
+
+Step 14
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01625,0.01875,93.75,-3.75,0.125) and mapped coordinate = (6,7,7,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,6.25,-3.75,0.125) and mapped coordinate = (8,7,0,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0331012
+    Vlasov    : 0.0471212 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00111527 [max]	5.61832e-08 [min]
+    Species 1:	0.00111469 [max]	5.61101e-08 [min]
+
+Step 14 completed, simulation time is 0.747423
+----
+
+Step 15
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,93.75,-3.75,0.125) and mapped coordinate = (7,7,7,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,6.25,-3.75,0.125) and mapped coordinate = (8,7,0,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0326141
+    Vlasov    : 0.0464278 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00110062 [max]	5.63918e-08 [min]
+    Species 1:	0.00110102 [max]	5.62365e-08 [min]
+
+Step 15 completed, simulation time is 0.780037
+----
+
+Step 16
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,56.25,-3.75,0.125) and mapped coordinate = (7,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,68.75,-3.75,0.125) and mapped coordinate = (8,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0323141
+    Vlasov    : 0.0460007 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00109307 [max]	5.65989e-08 [min]
+    Species 1:	0.00109254 [max]	5.649e-08 [min]
+
+Step 16 completed, simulation time is 0.812351
+----
+
+Step 17
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,56.25,-3.75,0.125) and mapped coordinate = (7,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,68.75,-3.75,0.125) and mapped coordinate = (8,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0322254
+    Vlasov    : 0.0458744 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00108658 [max]	5.59688e-08 [min]
+    Species 1:	0.00108693 [max]	5.64564e-08 [min]
+
+Step 17 completed, simulation time is 0.844576
+----
+
+Step 18
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,56.25,-3.75,0.125) and mapped coordinate = (7,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,68.75,-3.75,0.125) and mapped coordinate = (8,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0322842
+    Vlasov    : 0.0459582 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00107125 [max]	5.63188e-08 [min]
+    Species 1:	0.00107318 [max]	5.66399e-08 [min]
+
+Step 18 completed, simulation time is 0.87686
+----
+
+Step 19
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,56.25,-3.75,0.125) and mapped coordinate = (7,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,68.75,-3.75,0.125) and mapped coordinate = (8,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0324734
+    Vlasov    : 0.0462275 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.001057 [max]	5.60586e-08 [min]
+    Species 1:	0.00105712 [max]	5.6491e-08 [min]
+
+Step 19 completed, simulation time is 0.909334
+----
+
+Step 20
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01875,0.01875,56.25,-3.75,0.125) and mapped coordinate = (7,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02375,0.01875,68.75,-3.75,0.125) and mapped coordinate = (9,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0327939
+    Vlasov    : 0.0466837 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00104911 [max]	5.59867e-08 [min]
+    Species 1:	0.00105051 [max]	5.65038e-08 [min]
+
+Step 20 completed, simulation time is 0.942128
+----
+Writing checkpoint file
+Writing history file
+
+Step 21
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,56.25,-3.75,0.125) and mapped coordinate = (8,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02375,0.01875,68.75,-3.75,0.125) and mapped coordinate = (9,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0327909
+    Vlasov    : 0.0466794 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00103563 [max]	5.64464e-08 [min]
+    Species 1:	0.00103602 [max]	5.67614e-08 [min]
+
+Step 21 completed, simulation time is 0.974919
+----
+
+Step 22
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,56.25,-3.75,0.125) and mapped coordinate = (8,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02375,0.01875,68.75,-3.75,0.125) and mapped coordinate = (9,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0325498
+    Vlasov    : 0.0463363 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00103774 [max]	5.61875e-08 [min]
+    Species 1:	0.00103709 [max]	5.64911e-08 [min]
+
+Step 22 completed, simulation time is 1.00747
+----
+
+Step 23
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02125,0.01875,56.25,-3.75,0.125) and mapped coordinate = (8,7,4,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.02375,0.01875,68.75,-3.75,0.125) and mapped coordinate = (9,7,5,-8,0)
+The radial direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: got SIGCONT
+slurmstepd: error: *** STEP 2761815.0 ON nid00043 CANCELLED AT 2016-07-21T10:29:20 ***
+slurmstepd: error: *** JOB 2761815 ON nid00043 CANCELLED AT 2016-07-21T10:29:20 ***
+srun: forcing job termination
