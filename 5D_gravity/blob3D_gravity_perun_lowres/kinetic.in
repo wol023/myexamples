@@ -9,7 +9,7 @@ gksystem.hdf_temperature = true
 #gksystem.hdf_dfn = true
 gksystem.hdf_efield = true
 gksystem.hdf_vparmu = true
-gksystem.fixed_plot_indices = 8 32 4 4 4
+gksystem.fixed_plot_indices = 2 2 2 2 2
 
 #gksystem.using_F0 = true
 #gksystem.imposing_bc_to_perturbation = true
@@ -39,12 +39,12 @@ simulation.1.history_indices = 4 2 2
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 32 64  8 24 16
+gksystem.num_cells   = 16 16 8 16 8
 gksystem.is_periodic =  0  1  1  0  0
 
-gksystem.configuration_decomp = 4 8 1 
-gksystem.velocity_decomp      =       4 2
-gksystem.phase_decomp         = 4 8 1 2 2
+gksystem.configuration_decomp = 2 1 1 
+gksystem.velocity_decomp      =       1 1
+gksystem.phase_decomp         = 2 1 1 1 1
 
 
 #####################################################
