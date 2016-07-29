@@ -1,0 +1,2574 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 400
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 195743
+  TRANSIT TIME          [s]: 5.10874e-06
+  MAGNETIC MOMENT     [J/T]: 3.20435e-17
+  DIST. FUNCTION [s/(Am^6)]: 4244.15
+  POTENTIAL             [V]: 400
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.0020435
+  DEBYE LENGTH          [m]: 1.48679e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.0020435
+  DEBYE NUMBER             : 1.48679e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.008, ymax = 0.008, zmax = 2.4
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.523599 * 12 = 6.28319, dx(m)*nx= 0.000666667 * 12 = 0.008, ( 1 : 0.00127324 )
+dy*ny= 0.19635 * 32 = 6.28319, dy(m)*ny= 0.00025 * 32 = 0.008, ( 1 : 0.00127324 )
+dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 0.15 * 16 = 2.4, ( 1 : 0.381972 )
+
+   Configuration space box ((0,0,0) (11,7,15) (0,0,0)) is assigned to process 0
+   Configuration space box ((0,8,0) (11,15,15) (0,0,0)) is assigned to process 1
+   Configuration space box ((0,16,0) (11,23,15) (0,0,0)) is assigned to process 2
+   Configuration space box ((0,24,0) (11,31,15) (0,0,0)) is assigned to process 3
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-32,0) (-25,11) (0,0)) is assigned to process 0
+   Velocity space box ((-24,0) (-17,11) (0,0)) is assigned to process 1
+   Velocity space box ((-16,0) (-9,11) (0,0)) is assigned to process 2
+   Velocity space box ((-8,0) (-1,11) (0,0)) is assigned to process 3
+   Velocity space box ((0,0) (7,11) (0,0)) is assigned to process 4
+   Velocity space box ((8,0) (15,11) (0,0)) is assigned to process 5
+   Velocity space box ((16,0) (23,11) (0,0)) is assigned to process 6
+   Velocity space box ((24,0) (31,11) (0,0)) is assigned to process 7
+   Velocity space box ((-32,12) (-25,23) (0,0)) is assigned to process 8
+   Velocity space box ((-24,12) (-17,23) (0,0)) is assigned to process 9
+   Velocity space box ((-16,12) (-9,23) (0,0)) is assigned to process 10
+   Velocity space box ((-8,12) (-1,23) (0,0)) is assigned to process 11
+   Velocity space box ((0,12) (7,23) (0,0)) is assigned to process 12
+   Velocity space box ((8,12) (15,23) (0,0)) is assigned to process 13
+   Velocity space box ((16,12) (23,23) (0,0)) is assigned to process 14
+   Velocity space box ((24,12) (31,23) (0,0)) is assigned to process 15
+   Velocity space box ((-32,24) (-25,35) (0,0)) is assigned to process 16
+   Velocity space box ((-24,24) (-17,35) (0,0)) is assigned to process 17
+   Velocity space box ((-16,24) (-9,35) (0,0)) is assigned to process 18
+   Velocity space box ((-8,24) (-1,35) (0,0)) is assigned to process 19
+   Velocity space box ((0,24) (7,35) (0,0)) is assigned to process 20
+   Velocity space box ((8,24) (15,35) (0,0)) is assigned to process 21
+   Velocity space box ((16,24) (23,35) (0,0)) is assigned to process 22
+   Velocity space box ((24,24) (31,35) (0,0)) is assigned to process 23
+   Velocity space box ((-32,36) (-25,47) (0,0)) is assigned to process 24
+   Velocity space box ((-24,36) (-17,47) (0,0)) is assigned to process 25
+   Velocity space box ((-16,36) (-9,47) (0,0)) is assigned to process 26
+   Velocity space box ((-8,36) (-1,47) (0,0)) is assigned to process 27
+   Velocity space box ((0,36) (7,47) (0,0)) is assigned to process 28
+   Velocity space box ((8,36) (15,47) (0,0)) is assigned to process 29
+   Velocity space box ((16,36) (23,47) (0,0)) is assigned to process 30
+   Velocity space box ((24,36) (31,47) (0,0)) is assigned to process 31
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.15625 * 32 = 5, dv_parallel(m/s)*nvpar= 30584.8 * 32 = 978715, ( 1 : 195743 )
+dmu*nmu= 0.104167 * 48 = 5, dmu(J/T)*nmu= 3.33787e-18 * 48 = 1.60218e-16, ( 1 : 3.20435e-17 )
+
+   Phase space box ((0,0,0,0,0) (11,7,15,7,11) (0,0,0,0,0)) is assigned to process 4, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,0,24) (11,23,15,7,35) (0,0,0,0,0)) is assigned to process 84, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,0,24) (11,31,15,7,35) (0,0,0,0,0)) is assigned to process 116, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,8,12) (11,15,15,15,23) (0,0,0,0,0)) is assigned to process 45, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-32,36) (11,31,15,-25,47) (0,0,0,0,0)) is assigned to process 120, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-24,12) (11,23,15,-17,23) (0,0,0,0,0)) is assigned to process 73, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,0,36) (11,31,15,7,47) (0,0,0,0,0)) is assigned to process 124, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-16,12) (11,23,15,-9,23) (0,0,0,0,0)) is assigned to process 74, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-24,24) (11,15,15,-17,35) (0,0,0,0,0)) is assigned to process 49, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-32,36) (11,15,15,-25,47) (0,0,0,0,0)) is assigned to process 56, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,16,24) (11,31,15,23,35) (0,0,0,0,0)) is assigned to process 118, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-8,12) (11,23,15,-1,23) (0,0,0,0,0)) is assigned to process 75, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-24,36) (11,31,15,-17,47) (0,0,0,0,0)) is assigned to process 121, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,0,12) (11,23,15,7,23) (0,0,0,0,0)) is assigned to process 76, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,24,36) (11,15,15,31,47) (0,0,0,0,0)) is assigned to process 63, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,16,0) (11,15,15,23,11) (0,0,0,0,0)) is assigned to process 38, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-16,36) (11,31,15,-9,47) (0,0,0,0,0)) is assigned to process 122, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,8,12) (11,23,15,15,23) (0,0,0,0,0)) is assigned to process 77, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,24,0) (11,15,15,31,11) (0,0,0,0,0)) is assigned to process 39, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-8,36) (11,31,15,-1,47) (0,0,0,0,0)) is assigned to process 123, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,16,12) (11,23,15,23,23) (0,0,0,0,0)) is assigned to process 78, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-32,12) (11,15,15,-25,23) (0,0,0,0,0)) is assigned to process 40, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-24,24) (11,23,15,-17,35) (0,0,0,0,0)) is assigned to process 81, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,16,36) (11,31,15,23,47) (0,0,0,0,0)) is assigned to process 126, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-16,24) (11,23,15,-9,35) (0,0,0,0,0)) is assigned to process 82, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-24,12) (11,15,15,-17,23) (0,0,0,0,0)) is assigned to process 41, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,24,36) (11,31,15,31,47) (0,0,0,0,0)) is assigned to process 127, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-16,12) (11,15,15,-9,23) (0,0,0,0,0)) is assigned to process 42, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-32,0) (11,31,15,-25,11) (0,0,0,0,0)) is assigned to process 96, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-8,24) (11,23,15,-1,35) (0,0,0,0,0)) is assigned to process 83, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-8,12) (11,15,15,-1,23) (0,0,0,0,0)) is assigned to process 43, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-24,0) (11,31,15,-17,11) (0,0,0,0,0)) is assigned to process 97, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,8,24) (11,23,15,15,35) (0,0,0,0,0)) is assigned to process 85, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,16,12) (11,15,15,23,23) (0,0,0,0,0)) is assigned to process 46, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-16,0) (11,31,15,-9,11) (0,0,0,0,0)) is assigned to process 98, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,24,24) (11,23,15,31,35) (0,0,0,0,0)) is assigned to process 87, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,24,12) (11,15,15,31,23) (0,0,0,0,0)) is assigned to process 47, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,0,0) (11,31,15,7,11) (0,0,0,0,0)) is assigned to process 100, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-32,36) (11,23,15,-25,47) (0,0,0,0,0)) is assigned to process 88, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-32,24) (11,15,15,-25,35) (0,0,0,0,0)) is assigned to process 48, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,16,0) (11,31,15,23,11) (0,0,0,0,0)) is assigned to process 102, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-24,36) (11,23,15,-17,47) (0,0,0,0,0)) is assigned to process 89, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-16,24) (11,15,15,-9,35) (0,0,0,0,0)) is assigned to process 50, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,24,0) (11,31,15,31,11) (0,0,0,0,0)) is assigned to process 103, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-16,36) (11,23,15,-9,47) (0,0,0,0,0)) is assigned to process 90, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-8,36) (11,23,15,-1,47) (0,0,0,0,0)) is assigned to process 91, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-8,24) (11,15,15,-1,35) (0,0,0,0,0)) is assigned to process 51, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-32,12) (11,31,15,-25,23) (0,0,0,0,0)) is assigned to process 104, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,0,24) (11,15,15,7,35) (0,0,0,0,0)) is assigned to process 52, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-16,12) (11,31,15,-9,23) (0,0,0,0,0)) is assigned to process 106, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,0,36) (11,23,15,7,47) (0,0,0,0,0)) is assigned to process 92, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,16,36) (11,23,15,23,47) (0,0,0,0,0)) is assigned to process 94, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,8,24) (11,15,15,15,35) (0,0,0,0,0)) is assigned to process 53, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-8,12) (11,31,15,-1,23) (0,0,0,0,0)) is assigned to process 107, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,16,24) (11,15,15,23,35) (0,0,0,0,0)) is assigned to process 54, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,0,12) (11,31,15,7,23) (0,0,0,0,0)) is assigned to process 108, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,24,36) (11,23,15,31,47) (0,0,0,0,0)) is assigned to process 95, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-32,0) (11,23,15,-25,11) (0,0,0,0,0)) is assigned to process 64, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,24,24) (11,15,15,31,35) (0,0,0,0,0)) is assigned to process 55, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,24,12) (11,31,15,31,23) (0,0,0,0,0)) is assigned to process 111, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-24,36) (11,15,15,-17,47) (0,0,0,0,0)) is assigned to process 57, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-32,24) (11,31,15,-25,35) (0,0,0,0,0)) is assigned to process 112, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-8,0) (11,23,15,-1,11) (0,0,0,0,0)) is assigned to process 67, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-16,36) (11,15,15,-9,47) (0,0,0,0,0)) is assigned to process 58, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,0,0) (11,23,15,7,11) (0,0,0,0,0)) is assigned to process 68, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-16,24) (11,31,15,-9,35) (0,0,0,0,0)) is assigned to process 114, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,8,0) (11,23,15,15,11) (0,0,0,0,0)) is assigned to process 69, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-8,36) (11,15,15,-1,47) (0,0,0,0,0)) is assigned to process 59, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-8,24) (11,31,15,-1,35) (0,0,0,0,0)) is assigned to process 115, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,8,12) (11,31,15,15,23) (0,0,0,0,0)) is assigned to process 109, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,16,0) (11,23,15,23,11) (0,0,0,0,0)) is assigned to process 70, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-24,24) (11,31,15,-17,35) (0,0,0,0,0)) is assigned to process 113, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,24,0) (11,23,15,31,11) (0,0,0,0,0)) is assigned to process 71, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,0,36) (11,15,15,7,47) (0,0,0,0,0)) is assigned to process 60, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,8,36) (11,15,15,15,47) (0,0,0,0,0)) is assigned to process 61, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,8,24) (11,31,15,15,35) (0,0,0,0,0)) is assigned to process 117, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,8,36) (11,23,15,15,47) (0,0,0,0,0)) is assigned to process 93, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,16,36) (11,15,15,23,47) (0,0,0,0,0)) is assigned to process 62, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,24,24) (11,31,15,31,35) (0,0,0,0,0)) is assigned to process 119, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-24,0) (11,23,15,-17,11) (0,0,0,0,0)) is assigned to process 65, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-32,0) (11,15,15,-25,11) (0,0,0,0,0)) is assigned to process 32, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,8,36) (11,31,15,15,47) (0,0,0,0,0)) is assigned to process 125, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-16,0) (11,23,15,-9,11) (0,0,0,0,0)) is assigned to process 66, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-24,0) (11,15,15,-17,11) (0,0,0,0,0)) is assigned to process 33, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-8,0) (11,31,15,-1,11) (0,0,0,0,0)) is assigned to process 99, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,24,12) (11,23,15,31,23) (0,0,0,0,0)) is assigned to process 79, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-16,0) (11,15,15,-9,11) (0,0,0,0,0)) is assigned to process 34, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,8,0) (11,31,15,15,11) (0,0,0,0,0)) is assigned to process 101, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-32,24) (11,23,15,-25,35) (0,0,0,0,0)) is assigned to process 80, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,-8,0) (11,15,15,-1,11) (0,0,0,0,0)) is assigned to process 35, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,-24,12) (11,31,15,-17,23) (0,0,0,0,0)) is assigned to process 105, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,16,24) (11,23,15,23,35) (0,0,0,0,0)) is assigned to process 86, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,0,0) (11,15,15,7,11) (0,0,0,0,0)) is assigned to process 36, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,24,0,16,12) (11,31,15,23,23) (0,0,0,0,0)) is assigned to process 110, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,16,0,-32,12) (11,23,15,-25,23) (0,0,0,0,0)) is assigned to process 72, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,8,0) (11,15,15,15,11) (0,0,0,0,0)) is assigned to process 37, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,8,0,0,12) (11,15,15,7,23) (0,0,0,0,0)) is assigned to process 44, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-8,12) (11,7,15,-1,23) (0,0,0,0,0)) is assigned to process 11, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-24,0) (11,7,15,-17,11) (0,0,0,0,0)) is assigned to process 1, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-8,0) (11,7,15,-1,11) (0,0,0,0,0)) is assigned to process 3, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-32,0) (11,7,15,-25,11) (0,0,0,0,0)) is assigned to process 0, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,8,0) (11,7,15,15,11) (0,0,0,0,0)) is assigned to process 5, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,16,0) (11,7,15,23,11) (0,0,0,0,0)) is assigned to process 6, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,24,0) (11,7,15,31,11) (0,0,0,0,0)) is assigned to process 7, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-24,12) (11,7,15,-17,23) (0,0,0,0,0)) is assigned to process 9, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-16,12) (11,7,15,-9,23) (0,0,0,0,0)) is assigned to process 10, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,0,12) (11,7,15,7,23) (0,0,0,0,0)) is assigned to process 12, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,8,12) (11,7,15,15,23) (0,0,0,0,0)) is assigned to process 13, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,16,12) (11,7,15,23,23) (0,0,0,0,0)) is assigned to process 14, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-32,24) (11,7,15,-25,35) (0,0,0,0,0)) is assigned to process 16, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-24,24) (11,7,15,-17,35) (0,0,0,0,0)) is assigned to process 17, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-16,24) (11,7,15,-9,35) (0,0,0,0,0)) is assigned to process 18, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-8,24) (11,7,15,-1,35) (0,0,0,0,0)) is assigned to process 19, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,0,24) (11,7,15,7,35) (0,0,0,0,0)) is assigned to process 20, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,8,24) (11,7,15,15,35) (0,0,0,0,0)) is assigned to process 21, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,16,24) (11,7,15,23,35) (0,0,0,0,0)) is assigned to process 22, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,24,24) (11,7,15,31,35) (0,0,0,0,0)) is assigned to process 23, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-24,36) (11,7,15,-17,47) (0,0,0,0,0)) is assigned to process 25, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-16,36) (11,7,15,-9,47) (0,0,0,0,0)) is assigned to process 26, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-8,36) (11,7,15,-1,47) (0,0,0,0,0)) is assigned to process 27, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,0,36) (11,7,15,7,47) (0,0,0,0,0)) is assigned to process 28, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,8,36) (11,7,15,15,47) (0,0,0,0,0)) is assigned to process 29, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,24,36) (11,7,15,31,47) (0,0,0,0,0)) is assigned to process 31, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-16,0) (11,7,15,-9,11) (0,0,0,0,0)) is assigned to process 2, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-32,12) (11,7,15,-25,23) (0,0,0,0,0)) is assigned to process 8, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,24,12) (11,7,15,31,23) (0,0,0,0,0)) is assigned to process 15, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,-32,36) (11,7,15,-25,47) (0,0,0,0,0)) is assigned to process 24, has 147456 valid cells and 2310144 ghost cells
+   Phase space box ((0,0,0,16,36) (11,7,15,23,47) (0,0,0,0,0)) is assigned to process 30, has 147456 valid cells and 2310144 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.01, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+"T0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))
+  translated form: (1.0+sin(x'/2.0)*sin(x'/2.0))*(1+0.001*cos(2*y'))
+  postfix form: {1.0}{x'[0]}{2.0}{/}{sin}{x'[0]}{2.0}{/}{sin}{*}{+}{1}{0.001}{2}{y'[0]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)
+  translated form: exp(-x'/(8.0*pi'))+0.00001*sin(y'+z')*sin(x'/2.0)
+  postfix form: {x'[0]}{-:}{8.0}{PI'}{*}{/}{exp}{0.00001}{y'[0]}{z'[0]}{+}{sin}{*}{x'[0]}{2.0}{/}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.003375,0.075,-4.92188,1.19792) and mapped coordinate = (11,13,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.006625,1.125,-4.92188,1.19792) and mapped coordinate = (11,26,7,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+
+m_num_cells[i]=12
+m_num_cells[i]=32
+m_num_cells[i]=16
+m_num_cells[i]=64
+m_num_cells[i]=48
+dx*nx= 0.523599 * 12 = 6.28319, dx(m)*nx= 0.000666667 * 12 = 0.008, ( 1 : 0.00127324 )
+dy*ny= 0.19635 * 32 = 6.28319, dy(m)*ny= 0.00025 * 32 = 0.008, ( 1 : 0.00127324 )
+dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 0.15 * 16 = 2.4, ( 1 : 0.381972 )
+dvpar*nvpar= 0.15625 * 32 = 5, dv_parallel(m/s)*nvpar= 30584.8 * 32 = 978715, ( 1 : 1529.24 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 0.15625 * 32 = 5, dv_parallel(m/s)*nvpar= 21626.8 * 32 = 692056, ( 1 : 138411 )
+ [electron] mass = 0.01
+  dvpar*nvpar= 0.15625 * 32 = 5, dv_parallel(m/s)*nvpar= 305848 * 32 = 9.78715e+06, ( 1 : 1.95743e+06 )
+dmu*nmu= 0.104167 * 48 = 2.5, dmu(J/T)*nmu= 3.33787e-18 * 48 = 1.60218e-16, ( 1 : 6.67574e-19 )
+
+Estimated dt
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=195743
+unit_dimension_time   [hydrogen]=5.10874e-06
+[hydrogen] maxvel:phy_maxvel[0]=1.33549e-16:2.61412e-11(1:195743)
+[hydrogen] maxvel:phy_maxvel[1]=2.80324e-16:5.48715e-11(1:195743)
+[hydrogen] maxvel:phy_maxvel[2]=3.48029:681243(1:195743)
+[hydrogen] maxvel:phy_maxvel[3]=7.23505e-16:2.77213e-05(1:3.83153e+10)
+[hydrogen] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[hydrogen]=dz(m)/vparmax_z(m/s)[hydrogen]=0.15/692056=2.16745e-07
+dt_zpar(-)[hydrogen]=0.0424264
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.00025/0=inf
+dt_ypar(-)[hydrogen]=inf
+dt_z(s)[hydrogen]=dz(m)/vmax_z(m/s)[hydrogen]=0.15/681243=2.20186e-07
+dt_z(-)[hydrogen]=0.0430998
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.00025/5.48715e-11=4.5561e+06
+dt_y(-)[hydrogen]=8.91824e+11
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.000666667/2.61412e-11=2.55025e+07
+dt_x(-)[hydrogen]=4.99194e+12
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=30584.8/2.77213e-05=1.1033e+09
+dt_vpar(-)[hydrogen]=2.15963e+14
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=195743
+unit_dimension_time   [electron]=5.10874e-06
+[electron] maxvel:phy_maxvel[0]=1.33549e-16:2.61412e-11(1:195743)
+[electron] maxvel:phy_maxvel[1]=2.80324e-16:5.48715e-11(1:195743)
+[electron] maxvel:phy_maxvel[2]=49.2188:9.63423e+06(1:195743)
+[electron] maxvel:phy_maxvel[3]=1.02319e-14:0.000392039(1:3.83153e+10)
+[electron] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[electron]=dz(m)/vparmax_z(m/s)[electron]=0.15/9.78715e+06=1.53262e-08
+dt_zpar(-)[electron]=0.003
+dt_ypar(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.00025/0=inf
+dt_ypar(-)[electron]=inf
+dt_z(s)[electron]=dz(m)/vmax_z(m/s)[electron]=0.15/9.63423e+06=1.55695e-08
+dt_z(-)[electron]=0.00304762
+dt_y(s)[electron]=dy(m)/vmax_y(m/s)[electron]=0.00025/5.48715e-11=4.5561e+06
+dt_y(-)[electron]=8.91824e+11
+dt_x(s)[electron]=dx(m)/vmax_x(m/s)[electron]=0.000666667/2.61412e-11=2.55025e+07
+dt_x(-)[electron]=4.99194e+12
+dt_vpar(s)[electron]=dvpar(m/s)/vmax_vpar(m/s/s)[electron]=30584.8/0.000392039=7.80148e+07
+dt_vpar(-)[electron]=1.52709e+13
+
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214086
+    Vlasov    : 0.00304762 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 1 completed, simulation time is 0.00214086
+----
+
+Step 2
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.525,-4.92188,1.19792) and mapped coordinate = (11,17,3,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.525,-4.92188,1.19792) and mapped coordinate = (11,17,3,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214086
+    Vlasov    : 0.00304762 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 2 completed, simulation time is 0.00428172
+----
+
+Step 3
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214086
+    Vlasov    : 0.00304762 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 3 completed, simulation time is 0.00642258
+----
+
+Step 4
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214086
+    Vlasov    : 0.00304762 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 4 completed, simulation time is 0.00856344
+----
+
+Step 5
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214086
+    Vlasov    : 0.00304761 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 5 completed, simulation time is 0.0107043
+----
+
+Step 6
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214086
+    Vlasov    : 0.00304761 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 6 completed, simulation time is 0.0128451
+----
+
+Step 7
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,1.275,-4.92188,1.19792) and mapped coordinate = (11,23,8,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.375,-4.92188,1.19792) and mapped coordinate = (11,19,2,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214085
+    Vlasov    : 0.00304761 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 7 completed, simulation time is 0.014986
+----
+
+Step 8
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,1.425,-4.92188,1.19792) and mapped coordinate = (11,21,9,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,1.425,-4.92188,1.19792) and mapped coordinate = (11,21,9,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214085
+    Vlasov    : 0.00304761 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 8 completed, simulation time is 0.0171269
+----
+
+Step 9
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,1.425,-4.92188,1.19792) and mapped coordinate = (11,21,9,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,1.425,-4.92188,1.19792) and mapped coordinate = (11,21,9,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214085
+    Vlasov    : 0.0030476 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 9 completed, simulation time is 0.0192677
+----
+
+Step 10
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,1.425,-4.92188,1.19792) and mapped coordinate = (11,21,9,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,1.425,-4.92188,1.19792) and mapped coordinate = (11,21,9,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214085
+    Vlasov    : 0.0030476 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19089e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 10 completed, simulation time is 0.0214086
+----
+
+Step 11
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214084
+    Vlasov    : 0.0030476 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19088e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 11 completed, simulation time is 0.0235494
+----
+
+Step 12
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214084
+    Vlasov    : 0.00304759 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19088e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 12 completed, simulation time is 0.0256902
+----
+
+Step 13
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214084
+    Vlasov    : 0.00304759 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19088e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 13 completed, simulation time is 0.0278311
+----
+
+Step 14
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214083
+    Vlasov    : 0.00304758 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19088e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 14 completed, simulation time is 0.0299719
+----
+
+Step 15
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214083
+    Vlasov    : 0.00304758 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19088e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 15 completed, simulation time is 0.0321127
+----
+
+Step 16
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214083
+    Vlasov    : 0.00304757 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19088e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 16 completed, simulation time is 0.0342536
+----
+
+Step 17
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214082
+    Vlasov    : 0.00304757 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19087e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 17 completed, simulation time is 0.0363944
+----
+
+Step 18
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214082
+    Vlasov    : 0.00304756 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19087e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 18 completed, simulation time is 0.0385352
+----
+
+Step 19
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214082
+    Vlasov    : 0.00304756 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19087e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57552e-19 [min]
+
+Step 19 completed, simulation time is 0.040676
+----
+
+Step 20
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214082
+    Vlasov    : 0.00304756 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19087e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57552e-19 [min]
+
+Step 20 completed, simulation time is 0.0428168
+----
+
+Step 21
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304755 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19087e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57552e-19 [min]
+
+Step 21 completed, simulation time is 0.0449577
+----
+
+Step 22
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304755 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19087e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57552e-19 [min]
+
+Step 22 completed, simulation time is 0.0470985
+----
+
+Step 23
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304755 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57552e-19 [min]
+
+Step 23 completed, simulation time is 0.0492393
+----
+
+Step 24
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57552e-19 [min]
+
+Step 24 completed, simulation time is 0.0513801
+----
+
+Step 25
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57552e-19 [min]
+
+Step 25 completed, simulation time is 0.0535209
+----
+
+Step 26
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57552e-19 [min]
+
+Step 26 completed, simulation time is 0.0556617
+----
+
+Step 27
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 27 completed, simulation time is 0.0578025
+----
+
+Step 28
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 28 completed, simulation time is 0.0599433
+----
+
+Step 29
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 29 completed, simulation time is 0.0620841
+----
+
+Step 30
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005875,0.075,-4.92188,1.19792) and mapped coordinate = (11,23,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 30 completed, simulation time is 0.0642249
+----
+
+Step 31
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 31 completed, simulation time is 0.0663657
+----
+
+Step 32
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000375,1.575,-4.92188,1.19792) and mapped coordinate = (11,1,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 32 completed, simulation time is 0.0685065
+----
+
+Step 33
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000375,1.575,-4.92188,1.19792) and mapped coordinate = (11,1,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000375,1.575,-4.92188,1.19792) and mapped coordinate = (11,1,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 33 completed, simulation time is 0.0706473
+----
+
+Step 34
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000375,1.575,-4.92188,1.19792) and mapped coordinate = (11,1,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000375,1.575,-4.92188,1.19792) and mapped coordinate = (11,1,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57555e-19 [min]
+
+Step 34 completed, simulation time is 0.0727881
+----
+
+Step 35
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000375,1.575,-4.92188,1.19792) and mapped coordinate = (11,1,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57555e-19 [min]
+
+Step 35 completed, simulation time is 0.0749289
+----
+
+Step 36
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000375,1.575,-4.92188,1.19792) and mapped coordinate = (11,1,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 36 completed, simulation time is 0.0770697
+----
+
+Step 37
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 37 completed, simulation time is 0.0792105
+----
+
+Step 38
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 38 completed, simulation time is 0.0813513
+----
+
+Step 39
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 39 completed, simulation time is 0.0834921
+----
+
+Step 40
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.000625,1.575,-4.92188,1.19792) and mapped coordinate = (11,2,10,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 40 completed, simulation time is 0.0856329
+----
+
+Step 41
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 41 completed, simulation time is 0.0877737
+----
+
+Step 42
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 42 completed, simulation time is 0.0899145
+----
+
+Step 43
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 43 completed, simulation time is 0.0920553
+----
+
+Step 44
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 44 completed, simulation time is 0.0941961
+----
+
+Step 45
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 45 completed, simulation time is 0.0963369
+----
+
+Step 46
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 46 completed, simulation time is 0.0984777
+----
+
+Step 47
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005375,0.075,-4.92188,1.19792) and mapped coordinate = (11,21,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 47 completed, simulation time is 0.100619
+----
+
+Step 48
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 48 completed, simulation time is 0.102759
+----
+
+Step 49
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 49 completed, simulation time is 0.1049
+----
+
+Step 50
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 50 completed, simulation time is 0.107041
+----
+
+Step 51
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 51 completed, simulation time is 0.109182
+----
+
+Step 52
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 52 completed, simulation time is 0.111323
+----
+
+Step 53
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.005125,0.075,-4.92188,1.19792) and mapped coordinate = (11,20,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 53 completed, simulation time is 0.113463
+----
+
+Step 54
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70837e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 54 completed, simulation time is 0.115604
+----
+
+Step 55
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 55 completed, simulation time is 0.117745
+----
+
+Step 56
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 56 completed, simulation time is 0.119886
+----
+
+Step 57
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 57 completed, simulation time is 0.122027
+----
+
+Step 58
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 58 completed, simulation time is 0.124167
+----
+
+Step 59
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00214081
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 59 completed, simulation time is 0.126308
+----
+
+Step 60
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 60 completed, simulation time is 0.128449
+----
+
+Step 61
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 61 completed, simulation time is 0.13059
+----
+
+Step 62
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004875,0.075,-4.92188,1.19792) and mapped coordinate = (11,19,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 62 completed, simulation time is 0.132731
+----
+
+Step 63
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 63 completed, simulation time is 0.134871
+----
+
+Step 64
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 64 completed, simulation time is 0.137012
+----
+
+Step 65
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 65 completed, simulation time is 0.139153
+----
+
+Step 66
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 66 completed, simulation time is 0.141294
+----
+
+Step 67
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 67 completed, simulation time is 0.143435
+----
+
+Step 68
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 68 completed, simulation time is 0.145575
+----
+
+Step 69
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 69 completed, simulation time is 0.147716
+----
+
+Step 70
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 70 completed, simulation time is 0.149857
+----
+
+Step 71
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 71 completed, simulation time is 0.151998
+----
+
+Step 72
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 72 completed, simulation time is 0.154139
+----
+
+Step 73
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 73 completed, simulation time is 0.156279
+----
+
+Step 74
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004625,0.075,-4.92188,1.19792) and mapped coordinate = (11,18,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 74 completed, simulation time is 0.15842
+----
+
+Step 75
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004125,0.075,-4.92188,1.19792) and mapped coordinate = (11,16,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304754 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 75 completed, simulation time is 0.160561
+----
+
+Step 76
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004125,0.075,-4.92188,1.19792) and mapped coordinate = (11,16,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 76 completed, simulation time is 0.162702
+----
+
+Step 77
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004125,0.075,-4.92188,1.19792) and mapped coordinate = (11,16,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 77 completed, simulation time is 0.164843
+----
+
+Step 78
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004125,0.075,-4.92188,1.19792) and mapped coordinate = (11,16,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 78 completed, simulation time is 0.166983
+----
+
+Step 79
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004125,0.075,-4.92188,1.19792) and mapped coordinate = (11,16,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 79 completed, simulation time is 0.169124
+----
+
+Step 80
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 80 completed, simulation time is 0.171265
+----
+
+Step 81
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 81 completed, simulation time is 0.173406
+----
+
+Step 82
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 82 completed, simulation time is 0.175547
+----
+
+Step 83
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57554e-19 [min]
+
+Step 83 completed, simulation time is 0.177687
+----
+
+Step 84
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 84 completed, simulation time is 0.179828
+----
+
+Step 85
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,0.075,-4.92188,1.19792) and mapped coordinate = (11,17,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 85 completed, simulation time is 0.181969
+----
+
+Step 86
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004125,0.075,-4.92188,1.19792) and mapped coordinate = (11,16,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.003875,0.075,-4.92188,1.19792) and mapped coordinate = (11,15,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0021408
+    Vlasov    : 0.00304753 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.19086e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.56357e-07 [max]	2.70836e-15 [min]
+    Species 1:	3.38123e-10 [max]	9.57553e-19 [min]
+
+Step 86 completed, simulation time is 0.18411
+----
+
+Step 87
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004125,0.075,-4.92188,1.19792) and mapped coordinate = (11,16,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.003875,0.075,-4.92188,1.19792) and mapped coordinate = (11,15,0,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
