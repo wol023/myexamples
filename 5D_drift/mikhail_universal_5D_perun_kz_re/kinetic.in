@@ -33,7 +33,7 @@ simulation.plot_interval       = 20
 simulation.plot_prefix         = "plt"
 simulation.histories = true
 simulation.1.history_field = "potential"
-simulation.1.history_indices = 8 16 8
+simulation.1.history_indices = 6 16 8
 
 
 #####################################################
@@ -69,9 +69,9 @@ gksystem.magnetic_geometry_mapping.slab.verbose  = true
 gksystem.magnetic_geometry_mapping.slab.visit_plotfile  = "SlabViz"
 gksystem.magnetic_geometry_mapping.slab.num_quad_points = 5
 gksystem.magnetic_geometry_mapping.slab.axisymmetric = false
-gksystem.magnetic_geometry_mapping.slab.x_max = 0.04
-gksystem.magnetic_geometry_mapping.slab.y_max = 0.04
-gksystem.magnetic_geometry_mapping.slab.z_max = 120.0
+gksystem.magnetic_geometry_mapping.slab.x_max = 0.008
+gksystem.magnetic_geometry_mapping.slab.y_max = 0.008
+gksystem.magnetic_geometry_mapping.slab.z_max = 2.4
 gksystem.magnetic_geometry_mapping.slab.Bz_inner = 3.0
 gksystem.magnetic_geometry_mapping.slab.Bz_outer = 3.0
 gksystem.magnetic_geometry_mapping.slab.By_inner = 0.0
@@ -273,7 +273,7 @@ grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "(1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))"
 #grid_function_library.N0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*0.2)) )*(1+0.0001*cos(y)*exp(-(x-pi)^2/(2*pi*0.02 ) )  )"
 #grid_function_library.N0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*10.0*0.02)))*(1+0.001*cos(y))"
-grid_function_library.N0_grid_func.function = "exp(-x/(2.0*pi*0.04/0.04))+0.00001*sin(y+z)*sin(x/2.0)"
+grid_function_library.N0_grid_func.function = "exp(-x/(8.0*pi))+0.00001*sin(y+z)*sin(x/2.0)"
 
 #grid_function_library.N0_grid_func.function = "(1+0.001*cos(2*y)*0.0)"
 #grid_function_library.N0_grid_func.function = "(1.0+0.1*exp(-(x-pi)^2/(2*pi*0.001/0.02)))*(1+0.00001*cos(2*y))"
