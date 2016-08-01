@@ -21,10 +21,10 @@ gksystem.fixed_plot_indices = 4 4 3 2 2
 simulation.max_step            = 10000
 simulation.max_time            = 100000.0
 #simulation.max_dt_grow         = 1.1
-#simulation.initial_dt_fraction = 0.5
-#simulation.cfl_number          = 0.9
+simulation.initial_dt_fraction = 1.0
+simulation.cfl_number          = 0.9
 #simulation.fixed_dt           = 0.0003
-simulation.fixed_dt           = 0.0040
+#simulation.fixed_dt           = 0.0040
 #simulation.fixed_dt_subiteration  = true
 ##simulation.fixed_dt           = 0.001
 simulation.checkpoint_interval = 10
@@ -40,7 +40,7 @@ simulation.1.history_indices = 4 2 2
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 8 8 8 32 4
+gksystem.num_cells   = 16 16 8 24 4
 gksystem.is_periodic =  1  1  1  0  0
 
 gksystem.configuration_decomp = 1 1 1 
@@ -106,7 +106,7 @@ gksystem.fixed_efield = true
 gksystem.prescribed_efield = true
 gksystem.prescribed_efield.ER   =    0.0
 gksystem.prescribed_efield.EPhi =    0.0
-gksystem.prescribed_efield.EZ   =    100.0
+gksystem.prescribed_efield.EZ   =    -100.0
 
 
 
