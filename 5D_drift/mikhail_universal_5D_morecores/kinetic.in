@@ -33,7 +33,7 @@ simulation.plot_interval       = 20
 simulation.plot_prefix         = "plt"
 simulation.histories = true
 simulation.1.history_field = "potential"
-simulation.1.history_indices = 16 16 8
+simulation.1.history_indices = 6 16 8
 
 
 #####################################################
@@ -47,9 +47,9 @@ gksystem.is_periodic = 0  1  1  0  0
 #gksystem.velocity_decomp      =     3 3
 #gksystem.phase_decomp         = 4 4 3 3
 
-gksystem.configuration_decomp = 2 4 1
+gksystem.configuration_decomp = 2 4 2
 gksystem.velocity_decomp      =       12 8
-gksystem.phase_decomp         = 2 4 1 12 8
+gksystem.phase_decomp         = 2 4 2 12 8
 
 #####################################################
 # Units Definitions
@@ -119,7 +119,7 @@ phase_space_mapping.velocity_type = "gyrokinetic"
 # Vlasov Operator Definitions
 #####################################################
 gkvlasov.verbose = true
-gkvlasov.time_step_diagnostics = true
+#gkvlasov.time_step_diagnostics = true
 
 #gkvlasov.face_avg_type = uw1
 gkvlasov.face_avg_type = uw3
