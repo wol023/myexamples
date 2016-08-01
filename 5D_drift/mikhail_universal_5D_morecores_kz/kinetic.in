@@ -11,7 +11,7 @@ gksystem.hdf_efield = true
 gksystem.hdf_vparmu = true
 #gksystem.hdf_ParallelMomentum = true
 #gksystem.hdf_PoloidalMomentum = true
-gksystem.fixed_plot_indices = 2 0 0 6 2
+gksystem.fixed_plot_indices = 2 2 2 6 2
 
 gksystem.ti_class = "rk"
 gksystem.ti_method = "4"
@@ -33,23 +33,23 @@ simulation.plot_interval       = 20
 simulation.plot_prefix         = "plt"
 simulation.histories = true
 simulation.1.history_field = "potential"
-simulation.1.history_indices = 16 16 8
+simulation.1.history_indices = 6 16 8
 
 
 #####################################################
 # Computational Grid Definitions
 #####################################################
 #gksystem.num_cells   = 64 64 16 36 24
-gksystem.num_cells   = 12 32 16 96 64
+gksystem.num_cells   = 12 32 32 96 64
 gksystem.is_periodic = 0  1  1  0  0
 
 #gksystem.configuration_decomp = 4 4
 #gksystem.velocity_decomp      =     3 3
 #gksystem.phase_decomp         = 4 4 3 3
 
-gksystem.configuration_decomp = 2 4 1
+gksystem.configuration_decomp = 2 4 2
 gksystem.velocity_decomp      =       12 8
-gksystem.phase_decomp         = 2 4 1 12 8
+gksystem.phase_decomp         = 2 4 2 12 8
 
 #####################################################
 # Units Definitions
@@ -119,7 +119,7 @@ phase_space_mapping.velocity_type = "gyrokinetic"
 # Vlasov Operator Definitions
 #####################################################
 gkvlasov.verbose = true
-gkvlasov.time_step_diagnostics = true
+#gkvlasov.time_step_diagnostics = true
 
 #gkvlasov.face_avg_type = uw1
 gkvlasov.face_avg_type = uw3
