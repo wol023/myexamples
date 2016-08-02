@@ -1,0 +1,1621 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.16, ymax = 0.16
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0.01
+Done constructing slab geometry
+
+dx*nx= 0.785398 * 8 = 6.28319, dx(m)*nx= 0.02 * 8 = 0.16, ( 1 : 0.0254648 )
+dy*ny= 0.19635 * 32 = 6.28319, dy(m)*ny= 0.005 * 32 = 0.16, ( 1 : 0.0254648 )
+
+   Configuration space box ((0,0) (7,31) (0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 309497 )
+dmu*nmu= 0.25 * 8 = 2, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 8.01088e-17 )
+
+   Phase space box ((0,0,-8,0) (7,31,7,7) (0,0,0,0)) is assigned to process 0, has 32768 valid cells and 212992 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.01, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 0
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+"T0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)) )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+0.0*exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))+0.00001*sin(2*y)  )
+  translated form: (1.00+0.0*exp(-(x'-pi')^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04))+0.00001*sin(2*y'))
+  postfix form: {1.00}{0.0}{x'[0]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{*}{+}{0.00001}{2}{y'[0]}{*}{sin}{*}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  0
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82554e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.05962e-11 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+Vlasov operator time step (0.488745) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1025,3.75,0.125) and mapped coordinate = (0,20,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346314) was limited by the velocity at (R,Z,vparallel,mu) = (0.09,0.0825,-3.75,0.125) and mapped coordinate = (4,16,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+
+m_num_cells[i]=8
+m_num_cells[i]=32
+m_num_cells[i]=16
+m_num_cells[i]=8
+dx*nx= 0.785398 * 8 = 6.28319, dx(m)*nx= 0.02 * 8 = 0.16, ( 1 : 0.0254648 )
+dy*ny= 0.19635 * 32 = 6.28319, dy(m)*ny= 0.005 * 32 = 0.16, ( 1 : 0.0254648 )
+dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 9671.78 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 109424 * 8 = 875389, ( 1 : 218847 )
+ [electron] mass = 0.01
+  dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 1.54748e+06 * 8 = 1.23799e+07, ( 1 : 3.09497e+06 )
+dmu*nmu= 0.25 * 8 = 1, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 1.00136e-17 )
+
+Estimated dt
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=309497
+unit_dimension_time   [hydrogen]=3.23105e-06
+[hydrogen] maxvel:phy_maxvel[0]=5.66202e-05:17.5238(1:309497)
+[hydrogen] maxvel:phy_maxvel[1]=0.00885786:2741.48(1:309497)
+[hydrogen] maxvel:phy_maxvel[2]=0.000124404:1.19164e+07(1:9.57883e+10)
+[hydrogen] maxvel:phy_maxvel[3]=0:0(1:-nan)
+
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.005/2917.95=1.71353e-06
+dt_ypar(-)[hydrogen]=0.530333
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.005/2741.48=1.82383e-06
+dt_y(-)[hydrogen]=0.56447
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.02/17.5238=0.00114131
+dt_x(-)[hydrogen]=353.231
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=154748/1.19164e+07=0.0129862
+dt_vpar(-)[hydrogen]=4019.17
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=309497
+unit_dimension_time   [electron]=3.23105e-06
+[electron] maxvel:phy_maxvel[0]=5.66202e-05:17.5238(1:309497)
+[electron] maxvel:phy_maxvel[1]=0.125018:38692.8(1:309497)
+[electron] maxvel:phy_maxvel[2]=0.00175933:1.68524e+08(1:9.57883e+10)
+[electron] maxvel:phy_maxvel[3]=0:0(1:-nan)
+
+dt_ypar(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.005/41266=1.21165e-07
+dt_ypar(-)[electron]=0.0375002
+dt_y(s)[electron]=dy(m)/vmax_y(m/s)[electron]=0.005/38692.8=1.29223e-07
+dt_y(-)[electron]=0.0399941
+dt_x(s)[electron]=dx(m)/vmax_x(m/s)[electron]=0.02/17.5238=0.00114131
+dt_x(-)[electron]=353.231
+dt_vpar(s)[electron]=dvpar(m/s)/vmax_vpar(m/s/s)[electron]=154748/1.68524e+08=0.00091826
+dt_vpar(-)[electron]=284.199
+
+kpar = 0.0327247 ~ 1.04719
+kperp = 9.81748 ~ 314.161
+rhos * kx = 0.0152312 * 9.81748 ~ 0.0152312 * 78.5398 = 0.149532 ~ 1.19626
+rhos * ky = 0.0152312 * 9.81748 ~ 0.0152312 * 314.159 = 0.149532 ~ 4.78503
+rhos * kperp = 0.0152312 * 9.81748 ~ 0.0152312 * 314.161 = 0.149532 ~ 4.78506
+omega_ea(1/s) = 211663 ~ 2.16744e+08
+omega_ea(-) = 0.683894 ~ 700.312
+delta_t_omega_ea (s) = 2.89889e-08 ~ 2.96848e-05
+delta_t_omega_ea (-) = 0.00897199 ~ 9.18736
+
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311682
+    Vlasov    : 0.03999 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73379e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47395 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82546e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.05926e-11 [min]
+
+Step 1 completed, simulation time is 0.0311682
+----
+
+Step 2
+      BiCGStab converged successfully
+Vlasov operator time step (0.488945) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0925,3.75,0.125) and mapped coordinate = (0,18,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346332) was limited by the velocity at (R,Z,vparallel,mu) = (0.11,0.0825,-3.75,0.125) and mapped coordinate = (5,16,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311699
+    Vlasov    : 0.0399922 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73388e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47414 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82542e-08 [min]
+    Species 1:	3.11811e-07 [max]	2.05906e-11 [min]
+
+Step 2 completed, simulation time is 0.0623382
+----
+
+Step 3
+      BiCGStab converged successfully
+Vlasov operator time step (0.489553) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0825,-3.75,0.125) and mapped coordinate = (7,16,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346373) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0825,-3.75,0.125) and mapped coordinate = (7,16,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311736
+    Vlasov    : 0.0399969 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73409e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47455 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82544e-08 [min]
+    Species 1:	3.1181e-07 [max]	2.05916e-11 [min]
+
+Step 3 completed, simulation time is 0.0935118
+----
+
+Step 4
+      BiCGStab converged successfully
+Vlasov operator time step (0.48901) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1425,3.75,0.125) and mapped coordinate = (0,28,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346357) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0575,3.75,0.125) and mapped coordinate = (0,11,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311722
+    Vlasov    : 0.0399951 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73401e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47439 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82551e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.05928e-11 [min]
+
+Step 4 completed, simulation time is 0.124684
+----
+
+Step 5
+      BiCGStab converged successfully
+Vlasov operator time step (0.488355) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1375,3.75,0.125) and mapped coordinate = (0,27,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346322) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1375,3.75,0.125) and mapped coordinate = (0,27,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.031169
+    Vlasov    : 0.039991 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73383e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47403 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82555e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.05904e-11 [min]
+
+Step 5 completed, simulation time is 0.155853
+----
+
+Step 6
+      BiCGStab converged successfully
+Vlasov operator time step (0.488222) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1375,3.75,0.125) and mapped coordinate = (0,27,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346311) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1325,3.75,0.125) and mapped coordinate = (0,26,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.031168
+    Vlasov    : 0.0399897 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73378e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47392 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82556e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.0588e-11 [min]
+
+Step 6 completed, simulation time is 0.187021
+----
+
+Step 7
+      BiCGStab converged successfully
+Vlasov operator time step (0.48871) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1375,3.75,0.125) and mapped coordinate = (0,27,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346332) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1475,-3.75,0.125) and mapped coordinate = (7,29,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311699
+    Vlasov    : 0.0399922 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73388e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47414 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82555e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.05868e-11 [min]
+
+Step 7 completed, simulation time is 0.218191
+----
+
+Step 8
+      BiCGStab converged successfully
+Vlasov operator time step (0.489291) was limited by the velocity at (R,Z,vparallel,mu) = (0.13,0.0175,-3.75,0.125) and mapped coordinate = (6,3,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346362) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0025,3.75,0.125) and mapped coordinate = (0,0,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311726
+    Vlasov    : 0.0399956 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73403e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47443 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82555e-08 [min]
+    Species 1:	3.11808e-07 [max]	2.05895e-11 [min]
+
+Step 8 completed, simulation time is 0.249363
+----
+
+Step 9
+      BiCGStab converged successfully
+Vlasov operator time step (0.488356) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0225,3.75,0.125) and mapped coordinate = (0,4,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346325) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0225,3.75,0.125) and mapped coordinate = (0,4,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311693
+    Vlasov    : 0.0399913 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73385e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47406 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82556e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.05911e-11 [min]
+
+Step 9 completed, simulation time is 0.280533
+----
+
+Step 10
+      BiCGStab converged successfully
+Vlasov operator time step (0.487609) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1025,3.75,0.125) and mapped coordinate = (0,20,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346286) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1025,3.75,0.125) and mapped coordinate = (0,20,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311657
+    Vlasov    : 0.0399868 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73365e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47367 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82557e-08 [min]
+    Species 1:	3.1181e-07 [max]	2.05946e-11 [min]
+
+Step 10 completed, simulation time is 0.311698
+----
+Writing checkpoint file
+Writing history file
+
+Step 11
+      BiCGStab converged successfully
+Vlasov operator time step (0.487435) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1025,3.75,0.125) and mapped coordinate = (0,20,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346276) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0975,3.75,0.125) and mapped coordinate = (0,19,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311648
+    Vlasov    : 0.0399856 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.7336e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47357 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82559e-08 [min]
+    Species 1:	3.11812e-07 [max]	2.05966e-11 [min]
+
+Step 11 completed, simulation time is 0.342863
+----
+
+Step 12
+      BiCGStab converged successfully
+Vlasov operator time step (0.487946) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1025,-3.75,0.125) and mapped coordinate = (7,20,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346301) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1025,-3.75,0.125) and mapped coordinate = (7,20,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311671
+    Vlasov    : 0.0399886 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73373e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47383 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.8256e-08 [min]
+    Species 1:	3.11812e-07 [max]	2.05967e-11 [min]
+
+Step 12 completed, simulation time is 0.37403
+----
+
+Step 13
+      BiCGStab converged successfully
+Vlasov operator time step (0.488974) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1025,-3.75,0.125) and mapped coordinate = (7,20,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346352) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1075,-3.75,0.125) and mapped coordinate = (7,21,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311717
+    Vlasov    : 0.0399944 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73398e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47433 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82559e-08 [min]
+    Species 1:	3.1181e-07 [max]	2.05964e-11 [min]
+
+Step 13 completed, simulation time is 0.405202
+----
+
+Step 14
+      BiCGStab converged successfully
+Vlasov operator time step (0.488472) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0625,3.75,0.125) and mapped coordinate = (0,12,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346313) was limited by the velocity at (R,Z,vparallel,mu) = (0.11,0.1575,-3.75,0.125) and mapped coordinate = (5,31,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311681
+    Vlasov    : 0.0399899 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73379e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47394 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.8256e-08 [min]
+    Species 1:	3.11808e-07 [max]	2.05966e-11 [min]
+
+Step 14 completed, simulation time is 0.43637
+----
+
+Step 15
+      BiCGStab converged successfully
+Vlasov operator time step (0.4875) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1425,3.75,0.125) and mapped coordinate = (0,28,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346281) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0625,3.75,0.125) and mapped coordinate = (0,12,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311653
+    Vlasov    : 0.0399863 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73363e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47363 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82561e-08 [min]
+    Species 1:	3.11808e-07 [max]	2.05985e-11 [min]
+
+Step 15 completed, simulation time is 0.467535
+----
+
+Step 16
+      BiCGStab converged successfully
+Vlasov operator time step (0.487057) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0575,-3.75,0.125) and mapped coordinate = (7,11,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346258) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0575,-3.75,0.125) and mapped coordinate = (7,11,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311632
+    Vlasov    : 0.0399836 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73351e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47339 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.8256e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.06007e-11 [min]
+
+Step 16 completed, simulation time is 0.498699
+----
+
+Step 17
+      BiCGStab converged successfully
+Vlasov operator time step (0.487257) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0575,-3.75,0.125) and mapped coordinate = (7,11,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346269) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0575,-3.75,0.125) and mapped coordinate = (7,11,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311642
+    Vlasov    : 0.0399848 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73356e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.4735 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.8256e-08 [min]
+    Species 1:	3.11808e-07 [max]	2.06024e-11 [min]
+
+Step 17 completed, simulation time is 0.529863
+----
+
+Step 18
+      BiCGStab converged successfully
+Vlasov operator time step (0.487977) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0575,-3.75,0.125) and mapped coordinate = (7,11,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346305) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0625,-3.75,0.125) and mapped coordinate = (7,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311675
+    Vlasov    : 0.0399891 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73375e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47387 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.8256e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.06029e-11 [min]
+
+Step 18 completed, simulation time is 0.56103
+----
+
+Step 19
+      BiCGStab converged successfully
+Vlasov operator time step (0.488259) was limited by the velocity at (R,Z,vparallel,mu) = (0.03,0.0175,3.75,0.125) and mapped coordinate = (1,3,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346295) was limited by the velocity at (R,Z,vparallel,mu) = (0.05,0.0075,3.75,0.125) and mapped coordinate = (2,1,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311665
+    Vlasov    : 0.0399878 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.7337e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47376 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.8256e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.0603e-11 [min]
+
+Step 19 completed, simulation time is 0.592197
+----
+
+Step 20
+      BiCGStab converged successfully
+Vlasov operator time step (0.488108) was limited by the velocity at (R,Z,vparallel,mu) = (0.03,0.1075,3.75,0.125) and mapped coordinate = (1,21,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.034629) was limited by the velocity at (R,Z,vparallel,mu) = (0.11,0.1175,-3.75,0.125) and mapped coordinate = (5,23,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311661
+    Vlasov    : 0.0399873 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73367e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47371 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82561e-08 [min]
+    Species 1:	3.11813e-07 [max]	2.06031e-11 [min]
+
+Step 20 completed, simulation time is 0.623363
+----
+Writing checkpoint file
+Writing history file
+
+Step 21
+      BiCGStab converged successfully
+Vlasov operator time step (0.487578) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1025,3.75,0.125) and mapped coordinate = (0,20,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346286) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1025,3.75,0.125) and mapped coordinate = (0,20,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311657
+    Vlasov    : 0.0399868 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73365e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47367 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82561e-08 [min]
+    Species 1:	3.11813e-07 [max]	2.0603e-11 [min]
+
+Step 21 completed, simulation time is 0.654529
+----
+
+Step 22
+      BiCGStab converged successfully
+Vlasov operator time step (0.487333) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0975,-3.75,0.125) and mapped coordinate = (7,19,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346273) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0975,-3.75,0.125) and mapped coordinate = (7,19,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311646
+    Vlasov    : 0.0399854 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73359e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47355 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82561e-08 [min]
+    Species 1:	3.11811e-07 [max]	2.0603e-11 [min]
+
+Step 22 completed, simulation time is 0.685693
+----
+
+Step 23
+      BiCGStab converged successfully
+Vlasov operator time step (0.487457) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0975,-3.75,0.125) and mapped coordinate = (7,19,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346279) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0975,-3.75,0.125) and mapped coordinate = (7,19,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311651
+    Vlasov    : 0.039986 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73362e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.4736 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82561e-08 [min]
+    Species 1:	3.11808e-07 [max]	2.06028e-11 [min]
+
+Step 23 completed, simulation time is 0.716858
+----
+
+Step 24
+      BiCGStab converged successfully
+Vlasov operator time step (0.487808) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0225,-3.75,0.125) and mapped coordinate = (7,4,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.034628) was limited by the velocity at (R,Z,vparallel,mu) = (0.11,0.0725,-3.75,0.125) and mapped coordinate = (5,14,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311652
+    Vlasov    : 0.0399861 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73362e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47361 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82561e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.06025e-11 [min]
+
+Step 24 completed, simulation time is 0.748024
+----
+
+Step 25
+      BiCGStab converged successfully
+Vlasov operator time step (0.488091) was limited by the velocity at (R,Z,vparallel,mu) = (0.13,0.1325,-3.75,0.125) and mapped coordinate = (6,26,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.034629) was limited by the velocity at (R,Z,vparallel,mu) = (0.11,0.0775,-3.75,0.125) and mapped coordinate = (5,15,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311661
+    Vlasov    : 0.0399873 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73367e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47371 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82562e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.06025e-11 [min]
+
+Step 25 completed, simulation time is 0.77919
+----
+
+Step 26
+      BiCGStab converged successfully
+Vlasov operator time step (0.488428) was limited by the velocity at (R,Z,vparallel,mu) = (0.13,0.1325,-3.75,0.125) and mapped coordinate = (6,26,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346321) was limited by the velocity at (R,Z,vparallel,mu) = (0.13,0.1275,-3.75,0.125) and mapped coordinate = (6,25,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311689
+    Vlasov    : 0.0399909 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73383e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47402 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82563e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.06035e-11 [min]
+
+Step 26 completed, simulation time is 0.810359
+----
+
+Step 27
+      BiCGStab converged successfully
+Vlasov operator time step (0.488377) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1425,3.75,0.125) and mapped coordinate = (0,28,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346324) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1475,3.75,0.125) and mapped coordinate = (0,29,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311692
+    Vlasov    : 0.0399912 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73384e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47405 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82564e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.06059e-11 [min]
+
+Step 27 completed, simulation time is 0.841528
+----
+
+Step 28
+      BiCGStab converged successfully
+Vlasov operator time step (0.487948) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1475,3.75,0.125) and mapped coordinate = (0,29,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346286) was limited by the velocity at (R,Z,vparallel,mu) = (0.09,0.0375,-3.75,0.125) and mapped coordinate = (4,7,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311658
+    Vlasov    : 0.0399869 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73365e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47368 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82566e-08 [min]
+    Species 1:	3.11808e-07 [max]	2.06086e-11 [min]
+
+Step 28 completed, simulation time is 0.872693
+----
+
+Step 29
+      BiCGStab converged successfully
+Vlasov operator time step (0.487571) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1325,-3.75,0.125) and mapped coordinate = (7,26,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.034627) was limited by the velocity at (R,Z,vparallel,mu) = (0.07,0.0025,3.75,0.125) and mapped coordinate = (3,0,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311643
+    Vlasov    : 0.039985 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73357e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47351 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82566e-08 [min]
+    Species 1:	3.11812e-07 [max]	2.06087e-11 [min]
+
+Step 29 completed, simulation time is 0.903858
+----
+
+Step 30
+      BiCGStab converged successfully
+Vlasov operator time step (0.487292) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0625,-3.75,0.125) and mapped coordinate = (7,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.034627) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1325,-3.75,0.125) and mapped coordinate = (7,26,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311643
+    Vlasov    : 0.0399849 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73357e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47351 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82565e-08 [min]
+    Species 1:	3.11815e-07 [max]	2.06086e-11 [min]
+
+Step 30 completed, simulation time is 0.935022
+----
+Writing checkpoint file
+Writing history file
+
+Step 31
+      BiCGStab converged successfully
+Vlasov operator time step (0.487213) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0625,-3.75,0.125) and mapped coordinate = (7,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346267) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0625,-3.75,0.125) and mapped coordinate = (7,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311641
+    Vlasov    : 0.0399847 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73356e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47349 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82566e-08 [min]
+    Species 1:	3.11813e-07 [max]	2.06092e-11 [min]
+
+Step 31 completed, simulation time is 0.966186
+----
+
+Step 32
+      BiCGStab converged successfully
+Vlasov operator time step (0.48741) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0625,-3.75,0.125) and mapped coordinate = (7,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346277) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0625,-3.75,0.125) and mapped coordinate = (7,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311649
+    Vlasov    : 0.0399857 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.7336e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47358 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82568e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.06111e-11 [min]
+
+Step 32 completed, simulation time is 0.997351
+----
+
+Step 33
+      BiCGStab converged successfully
+Vlasov operator time step (0.487855) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0575,3.75,0.125) and mapped coordinate = (0,11,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346272) was limited by the velocity at (R,Z,vparallel,mu) = (0.07,0.0425,3.75,0.125) and mapped coordinate = (3,8,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311645
+    Vlasov    : 0.0399853 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73358e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47354 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82569e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.06134e-11 [min]
+
+Step 33 completed, simulation time is 1.02852
+----
+
+Step 34
+      BiCGStab converged successfully
+Vlasov operator time step (0.487814) was limited by the velocity at (R,Z,vparallel,mu) = (0.11,0.1475,-3.75,0.125) and mapped coordinate = (5,29,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346267) was limited by the velocity at (R,Z,vparallel,mu) = (0.09,0.1575,-3.75,0.125) and mapped coordinate = (4,31,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.031164
+    Vlasov    : 0.0399846 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73355e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47348 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82568e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.06149e-11 [min]
+
+Step 34 completed, simulation time is 1.05968
+----
+
+Step 35
+      BiCGStab converged successfully
+Vlasov operator time step (0.487417) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1025,-3.75,0.125) and mapped coordinate = (7,20,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346276) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1075,3.75,0.125) and mapped coordinate = (0,21,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311649
+    Vlasov    : 0.0399857 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.7336e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47357 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82567e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.06158e-11 [min]
+
+Step 35 completed, simulation time is 1.09084
+----
+
+Step 36
+      BiCGStab converged successfully
+Vlasov operator time step (0.48667) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1025,-3.75,0.125) and mapped coordinate = (7,20,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.034624) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.1025,-3.75,0.125) and mapped coordinate = (7,20,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311616
+    Vlasov    : 0.0399815 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73342e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47321 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82567e-08 [min]
+    Species 1:	3.11807e-07 [max]	2.06158e-11 [min]
+
+Step 36 completed, simulation time is 1.12201
+----
+
+Step 37
+      BiCGStab converged successfully
+Vlasov operator time step (0.486298) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0175,-3.75,0.125) and mapped coordinate = (7,3,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346221) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0175,-3.75,0.125) and mapped coordinate = (7,3,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311599
+    Vlasov    : 0.0399793 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73332e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47302 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.82568e-08 [min]
+    Species 1:	3.11808e-07 [max]	2.06154e-11 [min]
+
+Step 37 completed, simulation time is 1.15317
+----
+
+Step 38
+      BiCGStab converged successfully
+Vlasov operator time step (0.486434) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0175,-3.75,0.125) and mapped coordinate = (7,3,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346227) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0175,-3.75,0.125) and mapped coordinate = (7,3,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311604
+    Vlasov    : 0.03998 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73336e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47308 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881915 [max]	5.8257e-08 [min]
+    Species 1:	3.11809e-07 [max]	2.0615e-11 [min]
+
+Step 38 completed, simulation time is 1.18433
+----
+
+Step 39
+      BiCGStab converged successfully
+Vlasov operator time step (0.487092) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0175,-3.75,0.125) and mapped coordinate = (7,3,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.034626) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0975,-3.75,0.125) and mapped coordinate = (7,19,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311634
+    Vlasov    : 0.0399839 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73352e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47342 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82572e-08 [min]
+    Species 1:	3.11813e-07 [max]	2.06146e-11 [min]
+
+Step 39 completed, simulation time is 1.21549
+----
+
+Step 40
+      BiCGStab converged successfully
+Vlasov operator time step (0.488116) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.1025,3.75,0.125) and mapped coordinate = (0,20,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346312) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0925,3.75,0.125) and mapped coordinate = (0,18,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.0311681
+    Vlasov    : 0.0399899 (time scale), 0.7794 (CFL)
+    Collisions: 1.79769e+308 (time scale), 1.73378e-310 (CFL)
+    ES_Alfven : 0.00897199 (time scale), 3.47394 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.000881916 [max]	5.82572e-08 [min]
+    Species 1:	3.11814e-07 [max]	2.06145e-11 [min]
+
+Step 40 completed, simulation time is 1.24666
+----
+Writing checkpoint file
+Writing history file
+
+Step 41
+      BiCGStab converged successfully
+Vlasov operator time step (0.487234) was limited by the velocity at (R,Z,vparallel,mu) = (0.15,0.0625,-3.75,0.125) and mapped coordinate = (7,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0346268) was limited by the velocity at (R,Z,vparallel,mu) = (0.01,0.0625,3.75,0.125) and mapped coordinate = (0,12,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+  --
+  Warning: electrostatic Alfven wave might not be resloved.
+  You may reduce the specified dt or adjust grid or enable wave resolution by setting
+  simulation.m_dt_wave_resolve = true (default:false).
+  --

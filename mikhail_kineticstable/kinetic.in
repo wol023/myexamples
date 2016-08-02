@@ -262,7 +262,7 @@ grid_function_library.eT0_grid_func.phase = 0 0
 grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "1.0*exp(-(x-pi)/(2*pi*0.01/0.02))+0.001*cos(2*y)*exp(-(x-pi)/(2*pi*0.01/0.02))"
 #grid_function_library.N0_grid_func.function = "(1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))"
-grid_function_library.N0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*0.2)) )*(1+0.001*cos(y)*exp(-(x-pi)^2/(2*pi*0.02 ) )  )"
+grid_function_library.N0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*0.2)) )*(1+0.001*cos(1*y)*exp(-(x-pi)^2/(2*pi*0.02 ) )  )"
 #grid_function_library.N0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*10.0*0.02)))*(1+0.001*cos(y))"
 
 #grid_function_library.N0_grid_func.function = "(1+0.001*cos(2*y)*0.0)"
