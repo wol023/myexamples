@@ -16,6 +16,139 @@ def find(pattern, path):
                result.append(os.path.join(root, name))
     return result
 
+def findpertbation(inputstr,tofind):
+    result = []
+    ind_first=inputstr.find(tofind)
+    ind_next=ind_first
+    while ind_next >= 0:
+        ind_first=ind_next
+        #print ind_next
+        balance=0
+        token = ''
+        for letter in inputstr[ind_first:]:
+            if ind_next==len(inputstr)-1:
+                ind_next=-1
+            else:
+                ind_next+=1
+            if letter =='(':
+                balance=balance+1
+                token +=letter
+                #print token,balance
+            elif letter ==')':
+                balance=balance-1
+                if balance == 0:
+                    token+=letter
+                    #print token,balance
+                    break
+                else:
+                    token+=letter
+                    #print token,balance
+            else:
+                if balance<1:
+                    continue
+                else:
+                    token+=letter
+                    #print token,balance
+        #now token has something like (1*y)
+        result.append(token)
+    return result
+
+def findmodenumber(token,tofind): #token is (1*y), tofind is y
+    modenumber=0.0
+    replaced_token=''
+    ind_var=token.find(tofind)
+    ind_pivot=ind_var
+    #scan to the left
+    #print 'ind_var=',ind_var
+    end_var=-1
+    start_var=ind_var
+    balance=0
+    while ind_var-1>=0:
+        #print 'token[',ind_var,']=',token[ind_var]
+        if token[ind_var]==')':
+            balance+=1
+            ind_var-=1
+            continue
+        if token[ind_var]=='(':
+            balance-=1
+            if balance<1:
+                ind_var-=1
+            continue
+
+        if token[ind_var]=='*':
+            if end_var==-1:#end_var was not set because * was ommitted
+                end_var=ind_var-1
+            #print 'end_var=',end_var
+            ind_var-=1
+            continue
+        #elif token[ind_var-1]=='(' or token[ind_var-1]=='+' or token[ind_var-1]=='-' or token[ind_var-1].isalpha():
+        elif (token[ind_var-1]=='+' or token[ind_var-1]=='-') and balance<1:
+            start_var=ind_var
+            ind_var-=1
+            #print 'start_var=',start_var
+            #print 'ind_var=',ind_var
+            break
+        elif token[ind_var].isdigit()or token[ind_var]=='.' or ind_var==ind_pivot:#digits
+            if end_var==-1 and token[ind_var-1]=='*':
+                end_var=ind_var-1
+            elif end_var==-1:
+                end_var=ind_var
+            ind_var-=1
+            #print 'ind_var=',ind_var
+            continue
+        else:
+            ind_var-=1
+            continue
+    #if start_var!=-1 and start_var!=end_var:
+    #    print 'token[',start_var,':',end_var,']=',token[start_var:end_var]
+
+    #scan to the right
+    ind_var=ind_pivot
+    balance=0
+    #print 'ind_var=',ind_var
+    while ind_var+1<=len(token):
+        #print 'token[',ind_var,']=',token[ind_var]
+        if token[ind_var]=='(':
+            balance+=1
+            #print 'token[',start_var,':',ind_var,']=',token[start_var:ind_var]
+            #print 'token[',ind_var,']=',token[ind_var],':balance=',balance
+            ind_var+=1
+            continue
+        if token[ind_var]==')':
+            balance-=1
+            #print 'token[',start_var,':',ind_var,']=',token[start_var:ind_var]
+            #print 'token[',ind_var,']=',token[ind_var],':balance=',balance
+            if balance<1 and balance>=0:
+                end_var=ind_var+1
+                ind_var+=1
+                break
+            elif balance<0:
+                end_var=ind_var
+                ind_var+=1
+                break
+            else:
+                ind_var+=1
+            continue
+
+        if (token[ind_var]=='+' or token[ind_var]=='-') and balance<1:
+            end_var=ind_var
+            ind_var+=1
+            break
+        else:
+            ind_var+=1
+
+    if start_var!=-1 and start_var!=end_var:
+        print tofind,': token[',start_var,':',end_var,']=',token[start_var:end_var]
+        replaced_token=token[start_var:end_var].replace(tofind,'1.0')
+        print tofind,': replaced_token=',replaced_token
+
+    if len(replaced_token)>0:
+        modenumber=eval(replaced_token)
+        print tofind,': evaluated_token=',modenumber
+    return modenumber
+
+
+
 
 #read input file
 fname=find('*.in', './')
@@ -23,6 +156,10 @@ fname=find('*.in', './')
 print '************ INPUT FILE *****************'
 boltzmann_electron_temperature = -1
 electron_temperature = -1
+x_max=1.0;
+y_max=1.0;
+z_max=1.0;
+
 with open(fname[0], 'r') as f:
     for line in f:
         if line.lstrip().startswith('#'): #skip comment
@@ -77,20 +214,52 @@ with open(fname[0], 'r') as f:
                 #print 'IN:ion_mass = ',ion_mass
             if '.N0_grid_func.function' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
-                n0_grid_func=lhsrhs[1][1:-1]
+                n0_grid_func=lhsrhs[1][1:-1] #remove double quotes
+                n0_grid_func=n0_grid_func.lstrip()
+                n0_grid_func=n0_grid_func.rstrip()
                 n0_grid_func=n0_grid_func.replace('^','**')
                 print 'IN:n0_grid_func = ',n0_grid_func
-                if '*y' in n0_grid_func:
-                    m_y = float(n0_grid_func[n0_grid_func.find('*y')-1 ]   )
-                    print 'IN:m_y = ',m_y
+    
+                m_y=0.0;
+                m_x=0.0;
+                m_z=0.0;
+
+                tokens=findpertbation(n0_grid_func,'sin(')
+                print 'sin():',tokens
+                for token in tokens:
+                    print "For ",token
+                    m_y=max(findmodenumber(token,'y'),m_y)
+                    m_x=max(findmodenumber(token,'x'),m_x)
+                    m_z=max(findmodenumber(token,'z'),m_z)
+
+                print 'IN:m_y=',m_y
+                print 'IN:m_x=',m_x
+                print 'IN:m_z=',m_z
+
+                tokens=findpertbation(n0_grid_func,'cos(')
+                print 'cos():',tokens
+                for token in tokens:
+                    print "For ",token
+                    m_y=max(findmodenumber(token,'y'),m_y)
+                    m_x=max(findmodenumber(token,'x'),m_x)
+                    m_z=max(findmodenumber(token,'z'),m_z)
+
+                print 'IN:m_y=',m_y
+                print 'IN:m_x=',m_x
+                print 'IN:m_z=',m_z
+                
             if 'gksystem.magnetic_geometry_mapping.slab.x_max' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 x_max = float(lhsrhs[1])
-                #print 'IN:x_max = ',x_max
+                print 'IN:x_max = ',x_max
             if 'gksystem.magnetic_geometry_mapping.slab.y_max' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 y_max = float(lhsrhs[1])
-                #print 'IN:y_max = ',y_max
+                print 'IN:y_max = ',y_max
+            if 'gksystem.magnetic_geometry_mapping.slab.z_max' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                z_max = float(lhsrhs[1])
+                print 'IN:z_max = ',z_max
 
             if '.T0_grid_func.constant' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
@@ -150,7 +319,6 @@ ref_time=0.0
 
 print '********** OUTPUT FILE ******************'
 fname=find('slurm-*.out', './')
-
 with open(fname[0], 'r') as f:
     for line in f:
         if line.lstrip().startswith('*'): #skip comment
@@ -188,6 +356,8 @@ with open(fname[0], 'r') as f:
             if 'DEBYE NUMBER' in lhsrhs[0]:
                 print lhsrhs[0],'=',lhsrhs[1]
                 ref_debyenumber=float(lhsrhs[1])
+                break
+
 f.closed
 #print '*****************************************'
 
@@ -321,10 +491,21 @@ print 'c_elec_gyroradius         [cm] = ', c_elec_gyroradius, '   (/ref: ', c_el
 
 
 k_y        = 2.0*np.pi*m_y/(y_max*100)
-k_x        = 2.0*np.pi*0.5/(x_max*100) 
-k_perp_y   = b_z/b_t*k_y
-k_perp_x   = k_x
-k_perp = np.sqrt(k_perp_x**2+k_perp_y**2)
+k_x        = 2.0*np.pi*m_x/(x_max*100) 
+k_z        = 2.0*np.pi*m_z/(z_max*100) 
+
+k_par      = (k_y*b_y+k_z*b_z)/b_t
+k_par_z    = k_par*b_z/b_t
+k_par_y    = k_par*b_y/b_t
+
+k_perp_z   = (k_z*b_y-k_y*b_z)*b_y/b_t/b_t
+k_perp_y   = (k_y*b_z-k_z*b_y)*b_z/b_t/b_t
+k_perp_x   = abs(k_x)
+k_perp_yz  = np.sqrt(k_perp_z*k_perp_z+k_perp_y*k_perp_y)
+#k_perp_yz  = np.sqrt((b_y/b_t*k_z)*(b_y/b_t*k_z)+(b_z/b_t*k_y)*(b_z/b_t*k_y))
+k_perp     = np.sqrt(k_perp_yz*k_perp_yz+k_x*k_x)
+
+#k_perp = np.sqrt(k_perp_x**2+k_perp_y**2)
 deltaL_max = 1./max(abs(dlnyydx))
 deltaL_inter_max = 1./max(abs(dlninter_yydx))
 x_point_index_in_plot = int(float(x_index)/float(x_cells)*len(dlnyydx))-1 
@@ -353,15 +534,27 @@ spread_ind =  spread_ind_diff+ x_point_index_in_plot
 c_s        = 979000*((electron_temperature*units_temperature)/ion_mass)**0.5
 rho_s      = 102*((ion_mass*electron_temperature*units_temperature)**0.5)/b_t
 chi        = k_perp*rho_s
-omega_star = c_s*rho_s*k_perp_y/deltaL_max
-omega_star_point= c_s*rho_s*k_perp_y/deltaL_point
-omega_star_spline = c_s*rho_s*k_perp_y/deltaL_inter_max
-omega_star_spread= c_s*rho_s*k_perp_y/ deltaL_spread
+#chi        = k_perp_yz*rho_s
+#omega_star = c_s*rho_s*k_perp_y/deltaL_max
+#omega_star_point= c_s*rho_s*k_perp_y/deltaL_point
+#omega_star_spline = c_s*rho_s*k_perp_y/deltaL_inter_max
+#omega_star_spread= c_s*rho_s*k_perp_y/ deltaL_spread
+omega_star = c_s*rho_s*k_perp_yz/deltaL_max
+omega_star_point= c_s*rho_s*k_perp_yz/deltaL_point
+omega_star_spline = c_s*rho_s*k_perp_yz/deltaL_inter_max
+omega_star_spread= c_s*rho_s*k_perp_yz/deltaL_spread
 
+print 'k_x             [1/cm] = ', k_x , 'check m_x = (',m_x,') with kinetic.in'
 print 'k_y             [1/cm] = ', k_y , 'check m_y = (',m_y,') with kinetic.in'
-print 'k_x             [1/cm] = ', k_x , 'check m_x = (0.5) with kinetic.in'
+print 'k_z             [1/cm] = ', k_z , 'check m_x = (',m_z,') with kinetic.in'
+print 'k_perp          [1/cm] = ', k_perp
+print 'k_perp_z        [1/cm] = ', k_perp_z
 print 'k_perp_y        [1/cm] = ', k_perp_y
 print 'k_perp_x        [1/cm] = ', k_perp_x
+print 'k_perp_yz       [1/cm] = ', k_perp_yz
+print 'k_par           [1/cm] = ', k_par
+print 'k_par_y         [1/cm] = ', k_par_y
+print 'k_par_z         [1/cm] = ', k_par_z
 print 'deltaL_max        [cm] = ', deltaL_max
 print 'deltaL_point      [cm] = ', deltaL_point
 print 'deltaL_spline     [cm] = ', deltaL_inter_max
@@ -369,13 +562,14 @@ if (ispread_width !=1):
     print 'deltaL_spread     [cm] = ', deltaL_spread
 print 'c_s             [cm/s] = ', c_s
 print 'rho_s             [cm] = ', rho_s
-print 'k_perp_y*rho_s     [-] = ', k_perp_y*rho_s
-print 'k_perp_y*rho_i     [-] = ', k_perp_y*c_ion_gyroradius
+print 'k_perp_yz*rho_s    [-] = ', k_perp_yz*rho_s
+print 'k_perp_yz*rho_i    [-] = ', k_perp_yz*c_ion_gyroradius
 print 'k_perp*rho_s       [-] = ', chi
 print 'k_perp*rho_i       [-] = ', chi/rho_s*c_ion_gyroradius
 print 'omega*           [1/s] = ', omega_star
 print 'omega*_point     [1/s] = ', omega_star_point
 print 'omega*_spline    [1/s] = ', omega_star_spline
+print 'omega*_spline_1_chi2[1/s] = ', omega_star_spline/(1.0+chi*chi)
 if (ispread_width !=1):
     print 'omega*_spread    [1/s] = ', omega_star_spread
 
