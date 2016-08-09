@@ -83,7 +83,7 @@ def findmodenumber(token,tofind): #token is (1*y), tofind is y
             continue
         #elif token[ind_var-1]=='(' or token[ind_var-1]=='+' or token[ind_var-1]=='-' or token[ind_var-1].isalpha():
         elif (token[ind_var-1]=='+' or token[ind_var-1]=='-') and balance<1:
-            start_var=ind_var
+            start_var=ind_var-1
             ind_var-=1
             #print 'start_var=',start_var
             #print 'ind_var=',ind_var
@@ -154,6 +154,9 @@ def findmodenumber(token,tofind): #token is (1*y), tofind is y
 fname=find('*.in', './')
 
 print '************ INPUT FILE *****************'
+with open('finish.txt', 'wb') as fh:
+    buf = "************ INPUT FILE *****************\n"
+    fh.write(buf)
 boltzmann_electron_temperature = -1
 electron_temperature = -1
 x_max=1.0;
@@ -200,18 +203,30 @@ with open(fname[0], 'r') as f:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 boltzmann_electron_temperature = float(lhsrhs[1])
                 print 'IN:boltzmann_electron_temperature = ',boltzmann_electron_temperature
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:boltzmann_electron_temperature = %f\n' % boltzmann_electron_temperature
+                    fh.write(buf)
             if 'gksystem.magnetic_geometry_mapping.slab.Bz_inner' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 bz_inner = float(lhsrhs[1])
                 #print 'IN:bz_inner = ',bz_inner
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'bz_inner = %f\n' % float(lhsrhs[1])
+                    fh.write(buf)
             if 'gksystem.magnetic_geometry_mapping.slab.By_inner' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 by_inner = float(lhsrhs[1])
                 #print 'IN:by_inner = ',by_inner
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'by_inner = %f\n' % float(lhsrhs[1])
+                    fh.write(buf)
             if 'kinetic_species.1.mass' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 ion_mass = float(lhsrhs[1])
                 #print 'IN:ion_mass = ',ion_mass
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'ion_mass = %f\n' % float(lhsrhs[1])
+                    fh.write(buf)
             if '.N0_grid_func.function' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 n0_grid_func=lhsrhs[1][1:-1] #remove double quotes
@@ -219,6 +234,9 @@ with open(fname[0], 'r') as f:
                 n0_grid_func=n0_grid_func.rstrip()
                 n0_grid_func=n0_grid_func.replace('^','**')
                 print 'IN:n0_grid_func = ',n0_grid_func
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:no_grid_func = %s\n' % n0_grid_func
+                    fh.write(buf)
     
                 m_y=0.0;
                 m_x=0.0;
@@ -226,49 +244,96 @@ with open(fname[0], 'r') as f:
 
                 tokens=findpertbation(n0_grid_func,'sin(')
                 print 'sin():',tokens
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'sin(): %s\n' % tokens
+                    fh.write(buf)
                 for token in tokens:
                     print "For ",token
-                    m_y=max(findmodenumber(token,'y'),m_y)
-                    m_x=max(findmodenumber(token,'x'),m_x)
-                    m_z=max(findmodenumber(token,'z'),m_z)
+                    temp_y=findmodenumber(token,'y')
+                    temp_x=findmodenumber(token,'x')
+                    temp_z=findmodenumber(token,'z')
+                    if abs(temp_y)>abs(m_y):
+                            m_y=temp_y
+                    if abs(temp_x)>abs(m_x):
+                            m_x=temp_x
+                    if abs(temp_z)>abs(m_z):
+                            m_z=temp_z
 
                 print 'IN:m_y=',m_y
                 print 'IN:m_x=',m_x
                 print 'IN:m_z=',m_z
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:m_y= %f\n' % m_y
+                    fh.write(buf)
+                    buf = 'IN:m_x= %f\n' % m_x
+                    fh.write(buf)
+                    buf = 'IN:m_z= %f\n' % m_z
+                    fh.write(buf)
 
                 tokens=findpertbation(n0_grid_func,'cos(')
                 print 'cos():',tokens
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'cos(): %s\n' % tokens
+                    fh.write(buf)
                 for token in tokens:
                     print "For ",token
-                    m_y=max(findmodenumber(token,'y'),m_y)
-                    m_x=max(findmodenumber(token,'x'),m_x)
-                    m_z=max(findmodenumber(token,'z'),m_z)
+                    temp_y=findmodenumber(token,'y')
+                    temp_x=findmodenumber(token,'x')
+                    temp_z=findmodenumber(token,'z')
+                    if abs(temp_y)>abs(m_y):
+                            m_y=temp_y
+                    if abs(temp_x)>abs(m_x):
+                            m_x=temp_x
+                    if abs(temp_z)>abs(m_z):
+                            m_z=temp_z
 
                 print 'IN:m_y=',m_y
                 print 'IN:m_x=',m_x
                 print 'IN:m_z=',m_z
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:m_y= %f\n' % m_y
+                    fh.write(buf)
+                    buf = 'IN:m_x= %f\n' % m_x
+                    fh.write(buf)
+                    buf = 'IN:m_z= %f\n' % m_z
+                    fh.write(buf)
                 
             if 'gksystem.magnetic_geometry_mapping.slab.x_max' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 x_max = float(lhsrhs[1])
                 print 'IN:x_max = ',x_max
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:x_max = %f\n' % x_max
+                    fh.write(buf)
             if 'gksystem.magnetic_geometry_mapping.slab.y_max' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 y_max = float(lhsrhs[1])
                 print 'IN:y_max = ',y_max
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:y_max = %f\n' % y_max
+                    fh.write(buf)
             if 'gksystem.magnetic_geometry_mapping.slab.z_max' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 z_max = float(lhsrhs[1])
                 print 'IN:z_max = ',z_max
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:z_max = %f\n' % z_max
+                    fh.write(buf)
 
             if '.T0_grid_func.constant' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 t0_grid_func=float(lhsrhs[1])
                 print 'IN:t0_grid_func = ',t0_grid_func
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:t0_grid_func = %f\n' % t0_grid_func
+                    fh.write(buf)
             if '.T0_grid_func.value' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 t0_grid_func=float(lhsrhs[1])
                 print 'IN:t0_grid_func = ',t0_grid_func
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:t0_grid_func = %f\n' % t0_grid_func
+                    fh.write(buf)
             if 'gksystem.num_cells' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 num_cells=lhsrhs[1].split()
@@ -308,9 +373,15 @@ f.closed
 if  boltzmann_electron_temperature == -1:
     electron_temperature=t0_grid_func
     print 'Te(kin) = ', electron_temperature
+    with open('finish.txt', 'a+') as fh:
+        buf = 'Te(kin) = %f\n' % electron_temperature
+        fh.write(buf)
 else:
     electron_temperature = boltzmann_electron_temperature
     print 'Te(bol) = ', electron_temperature
+    with open('finish.txt', 'a+') as fh:
+        buf = 'Te(bol) = %f\n' % electron_temperature
+        fh.write(buf)
     
 
 #read output file
@@ -318,6 +389,9 @@ else:
 ref_time=0.0
 
 print '********** OUTPUT FILE ******************'
+with open('finish.txt', 'a+') as fh:
+    buf = '********** OUTPUT FILE ******************\n'
+    fh.write(buf)
 fname=find('slurm-*.out', './')
 with open(fname[0], 'r') as f:
     for line in f:
@@ -337,24 +411,59 @@ with open(fname[0], 'r') as f:
             #print type( lhsrhs[0])
             if 'TRANSIT TIME' in lhsrhs[0]:
                 print lhsrhs[0],'=',lhsrhs[1]
+                with open('finish.txt', 'a+') as fh:
+                    buf = '%s = ' % lhsrhs[0]
+                    fh.write(buf)
+                    buf = '%s\n' % lhsrhs[1]
+                    fh.write(buf)
                 ref_time=float(lhsrhs[1])
             if 'THERMAL SPEED' in lhsrhs[0]:
                 print lhsrhs[0],'=',lhsrhs[1]
+                with open('finish.txt', 'a+') as fh:
+                    buf = '%s = ' % lhsrhs[0]
+                    fh.write(buf)
+                    buf = '%s\n' % lhsrhs[1]
+                    fh.write(buf)
                 ref_speed=float(lhsrhs[1])
             if 'GYROFREQUENCY' in lhsrhs[0]:
                 print lhsrhs[0],'=',lhsrhs[1]
+                with open('finish.txt', 'a+') as fh:
+                    buf = '%s = ' % lhsrhs[0]
+                    fh.write(buf)
+                    buf = '%s\n' % lhsrhs[1]
+                    fh.write(buf)
                 ref_gyrofrequency=float(lhsrhs[1])
             if 'GYRORADIUS' in lhsrhs[0]:
                 print lhsrhs[0],'=',lhsrhs[1]
+                with open('finish.txt', 'a+') as fh:
+                    buf = '%s = ' % lhsrhs[0]
+                    fh.write(buf)
+                    buf = '%s\n' % lhsrhs[1]
+                    fh.write(buf)
                 ref_gyroradius=float(lhsrhs[1])
             if 'DEBYE LENGTH' in lhsrhs[0]:
                 print lhsrhs[0],'=',lhsrhs[1]
+                with open('finish.txt', 'a+') as fh:
+                    buf = '%s = ' % lhsrhs[0]
+                    fh.write(buf)
+                    buf = '%s\n' % lhsrhs[1]
+                    fh.write(buf)
                 ref_debyelength=float(lhsrhs[1])
             if 'LARMOR NUMBER' in lhsrhs[0]:
                 print lhsrhs[0],'=',lhsrhs[1]
+                with open('finish.txt', 'a+') as fh:
+                    buf = '%s = ' % lhsrhs[0]
+                    fh.write(buf)
+                    buf = '%s\n' % lhsrhs[1]
+                    fh.write(buf)
                 ref_larmornumber=float(lhsrhs[1])
             if 'DEBYE NUMBER' in lhsrhs[0]:
                 print lhsrhs[0],'=',lhsrhs[1]
+                with open('finish.txt', 'a+') as fh:
+                    buf = '%s = ' % lhsrhs[0]
+                    fh.write(buf)
+                    buf = '%s\n' % lhsrhs[1]
+                    fh.write(buf)
                 ref_debyenumber=float(lhsrhs[1])
                 break
 
@@ -457,12 +566,22 @@ else:
     #print "does not contain spreading"
 
 print '********** DERIVED VARS *****************'
+with open('finish.txt', 'a+') as fh:
+    buf = '********** DERIVED VARS *****************\n'
+    fh.write(buf)
 b_z = bz_inner*1E4
 b_y = by_inner*1E4
 b_t = np.sqrt(bz_inner**2+by_inner**2)*1E4
 print 'b_z          [gauss] = ', b_z
 print 'b_y          [gauss] = ', b_y
 print 'b_t          [gauss] = ', b_t
+with open('finish.txt', 'a+') as fh:
+    buf = 'b_z          [gauss] = %f\n' % b_z
+    fh.write(buf)
+    buf = 'b_y          [gauss] = %f\n' % b_y
+    fh.write(buf)
+    buf = 'b_t          [gauss] = %f\n' % b_t
+    fh.write(buf)
 
 
 
@@ -481,13 +600,69 @@ c_elec_gyroradius          = c_elec_thermalspeed / c_elec_gyrofrequency
 
 
 print 'c_ion_thermalspeed      [cm/s] = ', c_ion_thermalspeed, '     (/ref: ', c_ion_thermalspeed/(ref_speed*100),' )' 
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_ion_thermalspeed      [cm/s] = %f' % c_ion_thermalspeed
+    fh.write(buf)
+    buf = '     (ref: %f' % (c_ion_thermalspeed/(ref_speed*100))
+    fh.write(buf)
+    buf = ')\n'
+    fh.write(buf)
 print 'c_elec_thermalspeed     [cm/s] = ', c_elec_thermalspeed, '     (/ref: ', c_elec_thermalspeed/(ref_speed*100), ' )'
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_elec_thermalspeed     [cm/s] = %f' % c_elec_thermalspeed
+    fh.write(buf)
+    buf = '     (ref: %f' % (c_elec_thermalspeed/(ref_speed*100))
+    fh.write(buf)
+    buf = ')\n'
+    fh.write(buf)
 print 'c_ion_transittimefor100cm  [s] = ', c_ion_transittimefor100cm, ' (/ref: ', c_ion_transittimefor100cm/ref_time,' )'
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_ion_transittimefor100cm  [s] = %f' % c_ion_transittimefor100cm
+    fh.write(buf)
+    buf = '     (ref: %f' % (c_ion_transittimefor100cm/ref_time )
+    fh.write(buf)
+    buf = ')\n'
+    fh.write(buf)
 print 'c_elec_transittimefor100cm [s] = ', c_elec_transittimefor100cm, ' (/ref: ', c_elec_transittimefor100cm/ref_time, ' )'
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_elec_transittimefor100cm [s] = %f' % c_elec_transittimefor100cm
+    fh.write(buf)
+    buf = '     (ref: %f' % (c_elec_transittimefor100cm/ref_time )
+    fh.write(buf)
+    buf = ')\n'
+    fh.write(buf)
 print 'c_ion_gyrofrequency      [1/s] = ', c_ion_gyrofrequency, '       (/ref: ', c_ion_gyrofrequency/ ref_gyrofrequency, ' )'
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_ion_gyrofrequency      [1/s] = %f' % c_ion_gyrofrequency
+    fh.write(buf)
+    buf = '     (ref: %f' % (c_ion_gyrofrequency/ ref_gyrofrequency)
+    fh.write(buf)
+    buf = ')\n'
+    fh.write(buf)
 print 'c_elec_gyrofrequency     [1/s] = ', c_elec_gyrofrequency, ' (/ref: ', c_elec_gyrofrequency/ ref_gyrofrequency, ' )'
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_elec_gyrofrequency     [1/s] = %f' % c_elec_gyrofrequency
+    fh.write(buf)
+    buf = '     (ref: %f' % (c_elec_gyrofrequency/ ref_gyrofrequency)
+    fh.write(buf)
+    buf = ')\n'
+    fh.write(buf)
 print 'c_ion_gyroradius          [cm] = ', c_ion_gyroradius, '   (/ref: ', c_ion_gyroradius / (units_length*100), ' )'
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_ion_gyroradius          [cm] = %f' % c_ion_gyroradius
+    fh.write(buf)
+    buf = '     (ref: %f' % (c_ion_gyroradius/ (units_length*100))
+    fh.write(buf)
+    buf = ')\n'
+    fh.write(buf)
 print 'c_elec_gyroradius         [cm] = ', c_elec_gyroradius, '   (/ref: ', c_elec_gyroradius / (units_length*100), ' )'
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_elec_gyroradius         [cm] = %f' % c_elec_gyroradius
+    fh.write(buf)
+    buf = '     (ref: %f' % (c_elec_gyroradius/ (units_length*100))
+    fh.write(buf)
+    buf = ')\n'
+    fh.write(buf)
 
 
 k_y        = 2.0*np.pi*m_y/(y_max*100)
@@ -545,35 +720,128 @@ omega_star_spline = c_s*rho_s*k_perp_yz/deltaL_inter_max
 omega_star_spread= c_s*rho_s*k_perp_yz/deltaL_spread
 
 print 'k_x             [1/cm] = ', k_x , 'check m_x = (',m_x,') with kinetic.in'
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_x             [1/cm] = %f' % k_x
+    fh.write(buf)
+    buf = ' check m_x = (%f' % m_x
+    fh.write(buf)
+    buf = ') with kinetic.in\n'
+    fh.write(buf)
 print 'k_y             [1/cm] = ', k_y , 'check m_y = (',m_y,') with kinetic.in'
-print 'k_z             [1/cm] = ', k_z , 'check m_x = (',m_z,') with kinetic.in'
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_y             [1/cm] = %f' % k_y
+    fh.write(buf)
+    buf = ' check m_y = (%f' % m_y
+    fh.write(buf)
+    buf = ') with kinetic.in\n'
+    fh.write(buf)
+print 'k_z             [1/cm] = ', k_z , 'check m_z = (',m_z,') with kinetic.in'
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_z             [1/cm] = %f' % k_z
+    fh.write(buf)
+    buf = ' check m_z = (%f' % m_z
+    fh.write(buf)
+    buf = ') with kinetic.in\n'
+    fh.write(buf)
 print 'k_perp          [1/cm] = ', k_perp
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp          [1/cm] = %f\n' % k_perp
+    fh.write(buf)
 print 'k_perp_z        [1/cm] = ', k_perp_z
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp_z        [1/cm] = %f\n' % k_perp_z
+    fh.write(buf)
 print 'k_perp_y        [1/cm] = ', k_perp_y
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp_y        [1/cm] = %f\n' % k_perp_y
+    fh.write(buf)
 print 'k_perp_x        [1/cm] = ', k_perp_x
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp_x        [1/cm] = %f\n' % k_perp_x
+    fh.write(buf)
 print 'k_perp_yz       [1/cm] = ', k_perp_yz
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp_yz        [1/cm] = %f\n' % k_perp_yz
+    fh.write(buf)
 print 'k_par           [1/cm] = ', k_par
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_par           [1/cm] = %f\n' % k_par
+    fh.write(buf)
 print 'k_par_y         [1/cm] = ', k_par_y
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_par_y         [1/cm] = %f\n' % k_par_y
+    fh.write(buf)
 print 'k_par_z         [1/cm] = ', k_par_z
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_par_z         [1/cm] = %f\n' % k_par_z
+    fh.write(buf)
 print 'deltaL_max        [cm] = ', deltaL_max
+with open('finish.txt', 'a+') as fh:
+    buf = 'deltaL_max        [cm] = %f\n' % deltaL_max
+    fh.write(buf)
 print 'deltaL_point      [cm] = ', deltaL_point
+with open('finish.txt', 'a+') as fh:
+    buf = 'deltaL_point     [cm] = %f\n' % deltaL_point
+    fh.write(buf)
 print 'deltaL_spline     [cm] = ', deltaL_inter_max
+with open('finish.txt', 'a+') as fh:
+    buf = 'deltaL_spline      [cm] = %f\n' % deltaL_inter_max
+    fh.write(buf)
 if (ispread_width !=1):
     print 'deltaL_spread     [cm] = ', deltaL_spread
+    with open('finish.txt', 'a+') as fh:
+        buf = 'deltaL_spread      [cm] = %f\n' % deltaL_spread
+        fh.write(buf)
 print 'c_s             [cm/s] = ', c_s
+with open('finish.txt', 'a+') as fh:
+    buf = 'c_s             [cm/s] = %f\n' % c_s
+    fh.write(buf)
 print 'rho_s             [cm] = ', rho_s
+with open('finish.txt', 'a+') as fh:
+    buf = 'rho_s             [cm] = %f\n' % rho_s
+    fh.write(buf)
 print 'k_perp_yz*rho_s    [-] = ', k_perp_yz*rho_s
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp_yz*rho_s    [-] = %f\n' % (k_perp_yz*rho_s)
+    fh.write(buf)
 print 'k_perp_yz*rho_i    [-] = ', k_perp_yz*c_ion_gyroradius
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp_yz*rho_i    [-] = %f\n' % (k_perp_yz*c_ion_gyroradius)
+    fh.write(buf)
 print 'k_perp*rho_s       [-] = ', chi
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp*rho_s       [-] = %f\n' % chi
+    fh.write(buf)
 print 'k_perp*rho_i       [-] = ', chi/rho_s*c_ion_gyroradius
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_perp*rho_i       [-] = %f\n' % (chi/rho_s*c_ion_gyroradius)
+    fh.write(buf)
 print 'omega*           [1/s] = ', omega_star
+with open('finish.txt', 'a+') as fh:
+    buf = 'omega*           [1/s] = %f\n' % omega_star
+    fh.write(buf)
 print 'omega*_point     [1/s] = ', omega_star_point
+with open('finish.txt', 'a+') as fh:
+    buf = 'omega*_point     [1/s] = %f\n' % omega_star_point
+    fh.write(buf)
 print 'omega*_spline    [1/s] = ', omega_star_spline
+with open('finish.txt', 'a+') as fh:
+    buf = 'omega*_spline     [1/s] = %f\n' % omega_star_spline
+    fh.write(buf)
 print 'omega*_spline_1_chi2[1/s] = ', omega_star_spline/(1.0+chi*chi)
+with open('finish.txt', 'a+') as fh:
+    buf = 'omega*_spline_1_chi2[1/s] = %f\n' % (omega_star_spline/(1.0+chi*chi))
+    fh.write(buf)
 if (ispread_width !=1):
     print 'omega*_spread    [1/s] = ', omega_star_spread
+    with open('finish.txt', 'a+') as fh:
+        buf = 'omega*_spread    [1/s] = %f\n' % omega_star_spread
+        fh.write(buf)
 
 print '*****************************************'
+with open('finish.txt', 'a+') as fh:
+    buf = '*****************************************\n'
+    fh.write(buf)
 
 #### first plot
 
@@ -674,6 +942,9 @@ yplot = scipy.fftpack.fftshift(yf)
 
 freqmax=xf[np.abs(yplot).argmax()]
 print '|maximum  freq. fft| =', abs(freqmax),'[Hz]'
+with open('finish.txt', 'a+') as fh:
+    buf = '|maximum  freq. fft| = %f\n' % abs(freqmax)
+    fh.write(buf)
 
 dphase = np.pi/100
 #find optimum phase shift
@@ -732,6 +1003,9 @@ data_fit = est_mean + est_amplitude*np.cos(est_freq*dimensional_xt+est_phase)
 #data_fit = est_mean+est_lin*xt + est_amplitude*np.cos(est_freq*2.0*np.pi*xt+est_phase) 
 
 print '|optimized  freq. fitting| =', abs(est_freq),'[Hz]'
+with open('finish.txt', 'a+') as fh:
+    buf = '|optimized  freq. fitting| = %f\n' % abs(est_freq)
+    fh.write(buf)
 
 
 yfv_fit = scipy.fftpack.fft(data_fit)
@@ -795,6 +1069,9 @@ extremum_logy2 = logy2[zero_crossings]
 lin_fitted_logy2 = np.polyfit(extremum_dimensional_xt,extremum_logy2,1)
 legend_lin_fitted_logy2 = 'y = (%g) x + (%g)' % (lin_fitted_logy2[0],lin_fitted_logy2[1])
 print legend_lin_fitted_logy2
+with open('finish.txt', 'a+') as fh:
+    buf = '%s\n' % legend_lin_fitted_logy2
+    fh.write(buf)
 
 init_plotting()
 plt.subplot(111)
@@ -842,7 +1119,7 @@ plt.close('all')
 
 
 
-with open('finish.txt', 'wb') as fh:
+with open('finish.txt', 'a+') as fh:
     buf = "te = %f\n" % (units_temperature*electron_temperature)
     fh.write(buf)
     buf = "ti = %f\n" % (units_temperature*t0_grid_func)
