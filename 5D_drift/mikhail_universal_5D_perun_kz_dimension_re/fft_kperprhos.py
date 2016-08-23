@@ -393,9 +393,6 @@ with open('finish.txt', 'a+') as fh:
     buf = '********** OUTPUT FILE ******************\n'
     fh.write(buf)
 fname=find('slurm-*.out', './')
-if len(fname)==0:
-	fname=find('perunoutput.out', './')
-
 with open(fname[0], 'r') as f:
     for line in f:
         if line.lstrip().startswith('*'): #skip comment
