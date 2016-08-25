@@ -1,0 +1,96 @@
+************ INPUT FILE *****************
+IN:x_max = 0.008000
+IN:y_max = 0.008000
+IN:z_max = 0.250000
+bz_inner = 3.000000
+by_inner = 0.030000
+ion_mass = 2.000000
+IN:no_grid_func = (  1.0-0.05*tanh((x-pi)/(2*pi*0.2)) )*(1+0.001*cos(y)*exp(-(x-pi)**2/(2*pi*0.02 ) )  )
+exp(): ['(-(x-np.pi)**2/(2*np.pi*0.02 ) )']
+sin(): []
+IN:m_y= 0.000000
+IN:m_x= 0.000000
+IN:m_z= 0.000000
+cos(): ['(y)']
+IN:m_y= 1.000000
+IN:m_x= 0.000000
+IN:m_z= 0.000000
+Te(kin) = 1.000000
+********** OUTPUT FILE ******************
+THERMAL SPEED       [m/s] = 195743
+TRANSIT TIME          [s] = 5.10874e-06
+GYROFREQUENCY       [1/s] = 9.57883e+07
+GYRORADIUS            [m] = 0.0020435
+DEBYE LENGTH          [m] = 1.48679e-05
+LARMOR NUMBER = 0.0020435
+DEBYE NUMBER = 1.48679e-05
+********** DERIVED VARS *****************
+b_z          [gauss] = 30000.000000
+b_y          [gauss] = 300.000000
+b_t          [gauss] = 30001.499963
+c_ion_thermalspeed      [cm/s] = 13828588.737949     (ref: 0.706467)
+c_elec_thermalspeed     [cm/s] = 838000000.000000     (ref: 42.811237)
+c_ion_transittimefor100cm  [s] = 0.000007     (ref: 1.415495)
+c_elec_transittimefor100cm [s] = 0.000000     (ref: 0.023358)
+c_ion_gyrofrequency      [1/s] = 143707184.820384     (ref: 1.500258)
+c_elec_gyrofrequency     [1/s] = 527728801744.515076     (ref: 5509.324226)
+c_ion_gyroradius          [cm] = 0.096228     (ref: 0.000962)
+c_elec_gyroradius         [cm] = 0.001588     (ref: 0.000016)
+k_x             [1/cm] = 0.000000 check m_x = (0.000000) with kinetic.in
+k_y             [1/cm] = 7.853982 check m_y = (1.000000) with kinetic.in
+k_z             [1/cm] = 0.000000 check m_z = (0.000000) with kinetic.in
+k_perp          [1/cm] = 7.853589
+k_perp_z        [1/cm] = -0.078532
+k_perp_y        [1/cm] = 7.853196
+k_perp_x        [1/cm] = 0.000000
+k_perp_yz        [1/cm] = 7.853589
+k_par           [1/cm] = 0.078536
+k_par_y         [1/cm] = 0.000785
+k_par_z         [1/cm] = 0.078532
+deltaL_max        [cm] = 3.050217
+deltaL_point     [cm] = 3.250829
+deltaL_analytic   [cm] = -0.127324
+deltaL_spline      [cm] = 3.098003
+deltaL_spread      [cm] = 3.355104
+c_s             [cm/s] = 13845150.775633
+rho_s             [cm] = 0.096162
+k_perp_yz*rho_s    [-] = 0.755215
+k_perp_yz*rho_i    [-] = 0.755732
+k_perp*rho_s       [-] = 0.755215
+k_perp*rho_i       [-] = 0.755732
+omega*           [1/s] = 3427972.260322
+omega*_point     [1/s] = 3216428.758088
+omega*)_analytic [1/s] = -82121700.853580
+omega*_spline     [1/s] = 3375096.561742
+omega*_spline_1_chi2[1/s] = 2149265.185777
+omega*_spread    [1/s] = 3116463.559052
+*****************************************
+y = (-489097) x + (-49.6698)
+|maximum  freq. fft| = 0.000000
+|optimized  freq. fitting| = 52557734.229419
+te = 400.000000
+ti = 400.000000
+omega_star       = 3427972.260322
+omega_star_point = 3216428.758088
+omega_star_analytic= -82121700.853580
+omega_star_spline = 3375096.561742
+omega_star_spread = 3116463.559052
+omega_star_fit/omega*        = 15.332019
+omega_star_fit/omega*_point  = 16.340401
+omega_star_fit/omega*_analytic= -0.639998
+omega_star_fit/omega*_spline = 15.572216
+omega_star_fit/omega*_spread = 16.864543
+omega_star_fit/omega*_1_chi2        = 24.076621
+omega_star_fit/omega*_point_1_chi2  = 25.660133
+omega_star_fit/omega*_analytic_1_chi2  = -1.005020
+omega_star_fit/omega*_spline_1_chi2  = 24.453815
+gamma  = -244548.561028
+gamma/omega*  = -0.071339
+gamma/omega*_point = -0.076031
+gamma/omega*_analytic = 0.002978
+gamma/omega*_spline  = -0.072457
+gamma/omega*_1_chi2  = -0.112027
+gamma/omega*_point_1_chi2 = -0.119395
+gamma/omega*_analytic_1_chi2 = 0.004676
+gamma/omega*_spline_1_chi2 = -0.113782
+gamma/omega_fit = -0.004653

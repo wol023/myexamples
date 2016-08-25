@@ -1,35 +1,66 @@
 import matplotlib.pyplot as plt
+graphDPI =200
 
 # set global settings
-def init_plotting():
-    plt.rcParams['figure.figsize'] = (4, 3)
-    plt.rcParams['font.size'] = 10
+def init_plotting(form=''):
+    if (form == '2x3'):
+        plt.rcParams['figure.figsize'] = (16, 9)
+#        plt.rcParams['savefig.dpi'] = 2*plt.rcParams['savefig.dpi']
+    elif (form == '2x2'):
+        plt.rcParams['figure.figsize'] = (12, 9)
+#        plt.rcParams['font.size'] = 10
 #    plt.rcParams['font.family'] = 'Times New Roman'
-    plt.rcParams['axes.labelsize'] = plt.rcParams['font.size']
-    plt.rcParams['axes.titlesize'] = 1.5*plt.rcParams['font.size']
-    plt.rcParams['legend.fontsize'] = plt.rcParams['font.size']
-    plt.rcParams['xtick.labelsize'] = plt.rcParams['font.size']
-    plt.rcParams['ytick.labelsize'] = plt.rcParams['font.size']
-    plt.rcParams['savefig.dpi'] = 2*plt.rcParams['savefig.dpi']
-    plt.rcParams['xtick.major.size'] = 3
-    plt.rcParams['xtick.minor.size'] = 3
-    plt.rcParams['xtick.major.width'] = 1
-    plt.rcParams['xtick.minor.width'] = 1
-    plt.rcParams['ytick.major.size'] = 3
-    plt.rcParams['ytick.minor.size'] = 3
-    plt.rcParams['ytick.major.width'] = 1
-    plt.rcParams['ytick.minor.width'] = 1
-    plt.rcParams['legend.frameon'] = False
-    plt.rcParams['legend.loc'] = 'center left'
-    plt.rcParams['axes.linewidth'] = 1
+#        plt.rcParams['axes.labelsize'] = plt.rcParams['font.size']
+#        plt.rcParams['axes.titlesize'] = 1.5*plt.rcParams['font.size']
+#        plt.rcParams['legend.fontsize'] = plt.rcParams['font.size']
+#        plt.rcParams['xtick.labelsize'] = plt.rcParams['font.size']
+#        plt.rcParams['ytick.labelsize'] = plt.rcParams['font.size']
+#        plt.rcParams['savefig.dpi'] = 2*plt.rcParams['savefig.dpi']
+#        plt.rcParams['xtick.major.size'] = 0
+#        plt.rcParams['xtick.minor.size'] = 0
+#        plt.rcParams['xtick.major.width'] = 0
+#        plt.rcParams['xtick.minor.width'] = 0
+#        plt.rcParams['ytick.major.size'] = 0
+#        plt.rcParams['ytick.minor.size'] = 0
+#        plt.rcParams['ytick.major.width'] = 0
+#        plt.rcParams['ytick.minor.width'] = 0
+#        plt.rcParams['legend.frameon'] = False
+#        plt.rcParams['legend.loc'] = 'center left'
+#        plt.rcParams['axes.linewidth'] = 0
 
-#    plt.gca().spines['right'].set_color('none')
-#    plt.gca().spines['top'].set_color('none')
-    plt.gca().xaxis.set_ticks_position('bottom')
-    plt.gca().yaxis.set_ticks_position('left')
+#        plt.gca().spines['right'].set_color('none')
+#        plt.gca().spines['top'].set_color('none')
+#        plt.gca().xaxis.set_ticks_position('bottom')
+#        plt.gca().yaxis.set_ticks_position('left')
+    else:
+        plt.rcParams['figure.figsize'] = (4, 3)
+        plt.rcParams['font.size'] = 10
+#    plt.rcParams['font.family'] = 'Times New Roman'
+        plt.rcParams['axes.labelsize'] = plt.rcParams['font.size']
+        plt.rcParams['axes.titlesize'] = 1.5*plt.rcParams['font.size']
+        plt.rcParams['legend.fontsize'] = plt.rcParams['font.size']
+        plt.rcParams['xtick.labelsize'] = plt.rcParams['font.size']
+        plt.rcParams['ytick.labelsize'] = plt.rcParams['font.size']
+        plt.rcParams['savefig.dpi'] = graphDPI
+        plt.rcParams['xtick.major.size'] = 3
+        plt.rcParams['xtick.minor.size'] = 3
+        plt.rcParams['xtick.major.width'] = 1
+        plt.rcParams['xtick.minor.width'] = 1
+        plt.rcParams['ytick.major.size'] = 3
+        plt.rcParams['ytick.minor.size'] = 3
+        plt.rcParams['ytick.major.width'] = 1
+        plt.rcParams['ytick.minor.width'] = 1
+        plt.rcParams['legend.frameon'] = False
+        plt.rcParams['legend.loc'] = 'center left'
+        plt.rcParams['axes.linewidth'] = 1
 
+#        plt.gca().spines['right'].set_color('none')
+#        plt.gca().spines['top'].set_color('none')
+        plt.gca().xaxis.set_ticks_position('bottom')
+        plt.gca().yaxis.set_ticks_position('left')
+ 
 
-## excample
+    ## excample
 #init_plotting()
 #
 ## begin subplots region

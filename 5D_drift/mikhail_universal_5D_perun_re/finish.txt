@@ -1,0 +1,39 @@
+************ INPUT FILE *****************
+IN:x_max = 0.008000
+IN:y_max = 0.008000
+IN:z_max = 2.400000
+bz_inner = 3.000000
+by_inner = 0.010000
+ion_mass = 2.000000
+IN:t0_grid_func = 1.000000
+IN:no_grid_func = exp(-x/(8.0*pi))+0.00001*sin(y)*sin(x/2.0)
+exp(): ['(-x/(8.0*np.pi))']
+sin(): ['(y)', '(x/2.0)']
+IN:m_y= 1.000000
+IN:m_x= 0.500000
+IN:m_z= 0.000000
+cos(): []
+IN:m_y= 1.000000
+IN:m_x= 0.500000
+IN:m_z= 0.000000
+Te(kin) = 1.000000
+********** OUTPUT FILE ******************
+THERMAL SPEED       [m/s] = 195743
+TRANSIT TIME          [s] = 5.10874e-06
+GYROFREQUENCY       [1/s] = 9.57883e+07
+GYRORADIUS            [m] = 0.0020435
+DEBYE LENGTH          [m] = 1.48679e-05
+LARMOR NUMBER = 0.0020435
+DEBYE NUMBER = 1.48679e-05
+********** DERIVED VARS *****************
+b_z          [gauss] = 30000.000000
+b_y          [gauss] = 100.000000
+b_t          [gauss] = 30000.166666
+c_ion_thermalspeed      [cm/s] = 13828588.737949     (ref: 0.706467)
+c_elec_thermalspeed     [cm/s] = 838000000.000000     (ref: 42.811237)
+c_ion_transittimefor100cm  [s] = 0.000007     (ref: 1.415495)
+c_elec_transittimefor100cm [s] = 0.000000     (ref: 0.023358)
+c_ion_gyrofrequency      [1/s] = 143700798.331116     (ref: 1.500192)
+c_elec_gyrofrequency     [1/s] = 527705348955.198364     (ref: 5509.079386)
+c_ion_gyroradius          [cm] = 0.096232     (ref: 0.000962)
+c_elec_gyroradius         [cm] = 0.001588     (ref: 0.000016)
