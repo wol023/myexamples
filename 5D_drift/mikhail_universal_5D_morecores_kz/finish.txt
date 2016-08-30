@@ -5,6 +5,7 @@ IN:z_max = 2.400000
 bz_inner = 3.000000
 by_inner = 0.000000
 ion_mass = 2.000000
+elec_mass = 0.010000
 IN:t0_grid_func = 1.000000
 IN:no_grid_func = exp(-x/(8.0*pi))+0.00001*sin(1*y+z)*sin(x/2.0)
 exp(): ['(-x/(8.0*np.pi))']
@@ -48,6 +49,7 @@ k_perp_yz        [1/cm] = 7.853982
 k_par           [1/cm] = 0.026180
 k_par_y         [1/cm] = 0.000000
 k_par_z         [1/cm] = 0.026180
+k_par*(vte*delta/cs)[] = 1.673508
 deltaL_max        [cm] = 2.933081
 deltaL_point     [cm] = 2.933081
 deltaL_analytic   [cm] = 3.200000
@@ -66,7 +68,7 @@ omega*_spline_1_chi2[1/s] = 1907590.138364
 *****************************************
 y = (578325) x + (-23.9349)
 |maximum  freq. fft| = 1948856.807462
-|optimized  freq. fitting| = 1912778.676716
+|optimized  freq. fitting| = 1912778.690632
 te = 400.000000
 ti = 400.000000
 omega_star       = 3565229.169165

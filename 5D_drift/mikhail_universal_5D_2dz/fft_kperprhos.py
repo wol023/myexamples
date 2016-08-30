@@ -258,10 +258,18 @@ with open(fname[0], 'r') as f:
             if 'kinetic_species.1.mass' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 ion_mass = float(lhsrhs[1])
-                #print 'IN:ion_mass = ',ion_mass
+                print 'IN:ion_mass = ',ion_mass
                 with open('finish.txt', 'a+') as fh:
                     buf = 'ion_mass = %f\n' % float(lhsrhs[1])
                     fh.write(buf)
+            if 'kinetic_species.2.mass' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                elec_mass = float(lhsrhs[1])
+                print 'IN:elec_mass = ',elec_mass
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'elec_mass = %f\n' % float(lhsrhs[1])
+                    fh.write(buf)
+
             if '.N0_grid_func.function' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 n0_grid_func=lhsrhs[1][1:-1] #remove double quotes
@@ -515,7 +523,7 @@ f.closed
 
 #print '********** CONSTANTS ********************'
 qe=0.00000000048032
-me=9.1094E-028
+me=9.1094E-028 #realistic electron mass
 mpn=1.6726E-024
 c= 29979000000
 #print 'qe  [StatC]= ',qe
@@ -637,9 +645,10 @@ c_ion_gyrofrequency        = 9580*(b_t/ ion_mass )
 c_elec_gyrofrequency       = 9580*(b_t/ ion_mass *ion_mass )*mpn/ me
 c_ion_gyroradius           = c_ion_thermalspeed / c_ion_gyrofrequency
 c_elec_gyroradius          = c_elec_thermalspeed / c_elec_gyrofrequency
-#c_debyelength=float(lhsrhs[1])
-#c_larmornumber=float(lhsrhs[1])
-#c_debyenumber=float(lhsrhs[1])
+
+v_te = 41900000*((2.0*electron_temperature*units_temperature)**0.5)*((me/mpn/elec_mass)**0.5)
+v_ti = 41900000*((2.0*electron_temperature*units_temperature)**0.5)*((me/mpn/ion_mass)**0.5)
+
 
 
 print 'c_ion_thermalspeed      [cm/s] = ', c_ion_thermalspeed, '     (/ref: ', c_ion_thermalspeed/(ref_speed*100),' )' 
@@ -716,12 +725,14 @@ k_par      = (k_y*b_y+k_z*b_z)/b_t
 k_par_z    = k_par*b_z/b_t
 k_par_y    = k_par*b_y/b_t
 
+
 k_perp_z   = (k_z*b_y-k_y*b_z)*b_y/b_t/b_t
 k_perp_y   = (k_y*b_z-k_z*b_y)*b_z/b_t/b_t
 k_perp_x   = abs(k_x)
 k_perp_yz  = np.sqrt(k_perp_z*k_perp_z+k_perp_y*k_perp_y)
 #k_perp_yz  = np.sqrt((b_y/b_t*k_z)*(b_y/b_t*k_z)+(b_z/b_t*k_y)*(b_z/b_t*k_y))
 k_perp     = np.sqrt(k_perp_yz*k_perp_yz+k_x*k_x)
+
 
 #k_perp = np.sqrt(k_perp_x**2+k_perp_y**2)
 deltaL_max = 1./max(abs(dlnyydx))
@@ -762,6 +773,8 @@ omega_star_analytic = c_s*rho_s*k_perp_yz/deltaL_analytic
 omega_star_point= c_s*rho_s*k_perp_yz/deltaL_point
 omega_star_spline = c_s*rho_s*k_perp_yz/deltaL_spline
 omega_star_spread= c_s*rho_s*k_perp_yz/deltaL_spread
+
+k_par_hat  = k_par*deltaL_spline*v_te/c_s
 
 print 'k_x             [1/cm] = ', k_x , 'check m_x = (',m_x,') with kinetic.in'
 with open('finish.txt', 'a+') as fh:
@@ -818,6 +831,10 @@ with open('finish.txt', 'a+') as fh:
 print 'k_par_z         [1/cm] = ', k_par_z
 with open('finish.txt', 'a+') as fh:
     buf = 'k_par_z         [1/cm] = %f\n' % k_par_z
+    fh.write(buf)
+print 'k_par*(vte*delta/cs)[] = ', k_par_hat
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_par*(vte*delta/cs)[] = %f\n' % k_par_hat
     fh.write(buf)
 print 'deltaL_max        [cm] = ', deltaL_max
 with open('finish.txt', 'a+') as fh:
