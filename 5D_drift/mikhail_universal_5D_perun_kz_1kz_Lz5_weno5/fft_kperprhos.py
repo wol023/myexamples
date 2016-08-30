@@ -21,36 +21,47 @@ def findpertbation(inputstr,tofind):
     ind_first=inputstr.find(tofind)
     ind_next=ind_first
     while ind_next >= 0:
-        ind_first=ind_next
-        #print ind_next
-        balance=0
-        token = ''
-        for letter in inputstr[ind_first:]:
-            if ind_next==len(inputstr)-1:
-                ind_next=-1
-            else:
-                ind_next+=1
-            if letter =='(':
-                balance=balance+1
-                token +=letter
-                #print token,balance
-            elif letter ==')':
-                balance=balance-1
-                if balance == 0:
-                    token+=letter
-                    #print token,balance
-                    break
+        ind_check=inputstr[ind_next:].find(tofind)
+        if ind_check>=0:
+            ind_first=ind_next
+            #print ind_next
+            balance=0
+            token = ''
+            for letter in inputstr[ind_first:]:
+                if ind_next==len(inputstr)-1:
+                    ind_next=-1
                 else:
-                    token+=letter
+                    ind_next+=1
+                if letter =='(':
+                    balance=balance+1
+                    token +=letter
                     #print token,balance
-            else:
-                if balance<1:
-                    continue
+                elif letter ==')':
+                    balance=balance-1
+                    if balance == 0:
+                        token+=letter
+                        #print token,balance
+                        break
+                    else:
+                        token+=letter
+                        #print token,balance
                 else:
-                    token+=letter
-                    #print token,balance
-        #now token has something like (1*y)
-        result.append(token)
+                    if balance<1:
+                        continue
+                    else:
+                        token+=letter
+                        #print token,balance
+            #now token has something like (1*y)
+            #replace pi to np.pi
+            
+            token=token.replace('pi','np.pi')
+            token=token.replace('PI','np.pi')
+            token=token.replace('Pi','np.pi')
+
+            result.append(token)
+        else:
+            ind_next=-1
+
     return result
 
 def findmodenumber(token,tofind): #token is (1*y), tofind is y
@@ -162,6 +173,7 @@ electron_temperature = -1
 x_max=1.0;
 y_max=1.0;
 z_max=1.0;
+deltaL_analytic=1;
 
 with open(fname[0], 'r') as f:
     for line in f:
@@ -220,13 +232,44 @@ with open(fname[0], 'r') as f:
                 with open('finish.txt', 'a+') as fh:
                     buf = 'by_inner = %f\n' % float(lhsrhs[1])
                     fh.write(buf)
+
+            if 'gksystem.magnetic_geometry_mapping.slab.x_max' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                x_max = float(lhsrhs[1])
+                print 'IN:x_max = ',x_max
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:x_max = %f\n' % x_max
+                    fh.write(buf)
+            if 'gksystem.magnetic_geometry_mapping.slab.y_max' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                y_max = float(lhsrhs[1])
+                print 'IN:y_max = ',y_max
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:y_max = %f\n' % y_max
+                    fh.write(buf)
+            if 'gksystem.magnetic_geometry_mapping.slab.z_max' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                z_max = float(lhsrhs[1])
+                print 'IN:z_max = ',z_max
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:z_max = %f\n' % z_max
+                    fh.write(buf)
+
             if 'kinetic_species.1.mass' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 ion_mass = float(lhsrhs[1])
-                #print 'IN:ion_mass = ',ion_mass
+                print 'IN:ion_mass = ',ion_mass
                 with open('finish.txt', 'a+') as fh:
                     buf = 'ion_mass = %f\n' % float(lhsrhs[1])
                     fh.write(buf)
+            if 'kinetic_species.2.mass' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                elec_mass = float(lhsrhs[1])
+                print 'IN:elec_mass = ',elec_mass
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'elec_mass = %f\n' % float(lhsrhs[1])
+                    fh.write(buf)
+
             if '.N0_grid_func.function' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 n0_grid_func=lhsrhs[1][1:-1] #remove double quotes
@@ -237,7 +280,34 @@ with open(fname[0], 'r') as f:
                 with open('finish.txt', 'a+') as fh:
                     buf = 'IN:no_grid_func = %s\n' % n0_grid_func
                     fh.write(buf)
-    
+
+                m_y=0.0;
+                m_x=0.0;
+                m_z=0.0;
+
+                #parse background 
+                tokens=findpertbation(n0_grid_func,'exp(')
+                print 'exp():',tokens
+
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'exp(): %s\n' % tokens
+                    fh.write(buf)
+
+                for token in tokens:
+                    print "For ",token
+                    #temp_y=findmodenumber(token,'y')
+                    temp_x=findmodenumber(token,'x')
+                    #temp_z=findmodenumber(token,'z')
+                    #if abs(temp_y)>abs(m_y):
+                    #        m_y=temp_y
+                    if abs(temp_x)>abs(m_x):
+                            m_x=temp_x
+                    #if abs(temp_z)>abs(m_z):
+                    #        m_z=temp_z
+                deltaL_analytic = -1.0/m_x/2.0/np.pi*x_max*100 #in cm
+                print 'IN:deltaL_analytic=',deltaL_analytic
+
+                #parse perturbations
                 m_y=0.0;
                 m_x=0.0;
                 m_z=0.0;
@@ -298,28 +368,6 @@ with open(fname[0], 'r') as f:
                     buf = 'IN:m_z= %f\n' % m_z
                     fh.write(buf)
                 
-            if 'gksystem.magnetic_geometry_mapping.slab.x_max' in lhsrhs[0]:
-                #print lhsrhs[0],'=',lhsrhs[1]
-                x_max = float(lhsrhs[1])
-                print 'IN:x_max = ',x_max
-                with open('finish.txt', 'a+') as fh:
-                    buf = 'IN:x_max = %f\n' % x_max
-                    fh.write(buf)
-            if 'gksystem.magnetic_geometry_mapping.slab.y_max' in lhsrhs[0]:
-                #print lhsrhs[0],'=',lhsrhs[1]
-                y_max = float(lhsrhs[1])
-                print 'IN:y_max = ',y_max
-                with open('finish.txt', 'a+') as fh:
-                    buf = 'IN:y_max = %f\n' % y_max
-                    fh.write(buf)
-            if 'gksystem.magnetic_geometry_mapping.slab.z_max' in lhsrhs[0]:
-                #print lhsrhs[0],'=',lhsrhs[1]
-                z_max = float(lhsrhs[1])
-                print 'IN:z_max = ',z_max
-                with open('finish.txt', 'a+') as fh:
-                    buf = 'IN:z_max = %f\n' % z_max
-                    fh.write(buf)
-
             if '.T0_grid_func.constant' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 t0_grid_func=float(lhsrhs[1])
@@ -475,7 +523,7 @@ f.closed
 
 #print '********** CONSTANTS ********************'
 qe=0.00000000048032
-me=9.1094E-028
+me=9.1094E-028 #realistic electron mass
 mpn=1.6726E-024
 c= 29979000000
 #print 'qe  [StatC]= ',qe
@@ -597,9 +645,10 @@ c_ion_gyrofrequency        = 9580*(b_t/ ion_mass )
 c_elec_gyrofrequency       = 9580*(b_t/ ion_mass *ion_mass )*mpn/ me
 c_ion_gyroradius           = c_ion_thermalspeed / c_ion_gyrofrequency
 c_elec_gyroradius          = c_elec_thermalspeed / c_elec_gyrofrequency
-#c_debyelength=float(lhsrhs[1])
-#c_larmornumber=float(lhsrhs[1])
-#c_debyenumber=float(lhsrhs[1])
+
+v_te = 41900000*((2.0*electron_temperature*units_temperature)**0.5)*((me/mpn/elec_mass)**0.5)
+v_ti = 41900000*((2.0*electron_temperature*units_temperature)**0.5)*((me/mpn/ion_mass)**0.5)
+
 
 
 print 'c_ion_thermalspeed      [cm/s] = ', c_ion_thermalspeed, '     (/ref: ', c_ion_thermalspeed/(ref_speed*100),' )' 
@@ -676,6 +725,7 @@ k_par      = (k_y*b_y+k_z*b_z)/b_t
 k_par_z    = k_par*b_z/b_t
 k_par_y    = k_par*b_y/b_t
 
+
 k_perp_z   = (k_z*b_y-k_y*b_z)*b_y/b_t/b_t
 k_perp_y   = (k_y*b_z-k_z*b_y)*b_z/b_t/b_t
 k_perp_x   = abs(k_x)
@@ -683,9 +733,10 @@ k_perp_yz  = np.sqrt(k_perp_z*k_perp_z+k_perp_y*k_perp_y)
 #k_perp_yz  = np.sqrt((b_y/b_t*k_z)*(b_y/b_t*k_z)+(b_z/b_t*k_y)*(b_z/b_t*k_y))
 k_perp     = np.sqrt(k_perp_yz*k_perp_yz+k_x*k_x)
 
+
 #k_perp = np.sqrt(k_perp_x**2+k_perp_y**2)
 deltaL_max = 1./max(abs(dlnyydx))
-deltaL_inter_max = 1./max(abs(dlninter_yydx))
+deltaL_spline = 1./max(abs(dlninter_yydx))
 x_point_index_in_plot = int(float(x_index)/float(x_cells)*len(dlnyydx))-1 
 #print 'x_point_index_in_plot = ', x_point_index_in_plot
 deltaL_point= abs(1./(dlnyydx[x_point_index_in_plot]))
@@ -711,16 +762,19 @@ spread_ind =  spread_ind_diff+ x_point_index_in_plot
 
 c_s        = 979000*((electron_temperature*units_temperature)/ion_mass)**0.5
 rho_s      = 102*((ion_mass*electron_temperature*units_temperature)**0.5)/b_t
-chi        = k_perp*rho_s
-#chi        = k_perp_yz*rho_s
+chi_x        = k_perp*rho_s
+chi        = k_perp_yz*rho_s
 #omega_star = c_s*rho_s*k_perp_y/deltaL_max
 #omega_star_point= c_s*rho_s*k_perp_y/deltaL_point
-#omega_star_spline = c_s*rho_s*k_perp_y/deltaL_inter_max
+#omega_star_spline = c_s*rho_s*k_perp_y/deltaL_spline
 #omega_star_spread= c_s*rho_s*k_perp_y/ deltaL_spread
 omega_star = c_s*rho_s*k_perp_yz/deltaL_max
+omega_star_analytic = c_s*rho_s*k_perp_yz/deltaL_analytic
 omega_star_point= c_s*rho_s*k_perp_yz/deltaL_point
-omega_star_spline = c_s*rho_s*k_perp_yz/deltaL_inter_max
+omega_star_spline = c_s*rho_s*k_perp_yz/deltaL_spline
 omega_star_spread= c_s*rho_s*k_perp_yz/deltaL_spread
+
+k_par_hat  = k_par*deltaL_spline*v_te/c_s
 
 print 'k_x             [1/cm] = ', k_x , 'check m_x = (',m_x,') with kinetic.in'
 with open('finish.txt', 'a+') as fh:
@@ -778,6 +832,10 @@ print 'k_par_z         [1/cm] = ', k_par_z
 with open('finish.txt', 'a+') as fh:
     buf = 'k_par_z         [1/cm] = %f\n' % k_par_z
     fh.write(buf)
+print 'k_par*(vte*delta/cs)[] = ', k_par_hat
+with open('finish.txt', 'a+') as fh:
+    buf = 'k_par*(vte*delta/cs)[] = %f\n' % k_par_hat
+    fh.write(buf)
 print 'deltaL_max        [cm] = ', deltaL_max
 with open('finish.txt', 'a+') as fh:
     buf = 'deltaL_max        [cm] = %f\n' % deltaL_max
@@ -786,9 +844,13 @@ print 'deltaL_point      [cm] = ', deltaL_point
 with open('finish.txt', 'a+') as fh:
     buf = 'deltaL_point     [cm] = %f\n' % deltaL_point
     fh.write(buf)
-print 'deltaL_spline     [cm] = ', deltaL_inter_max
+print 'deltaL_analytic   [cm] = ', deltaL_analytic
 with open('finish.txt', 'a+') as fh:
-    buf = 'deltaL_spline      [cm] = %f\n' % deltaL_inter_max
+    buf = 'deltaL_analytic   [cm] = %f\n' % deltaL_analytic
+    fh.write(buf)
+print 'deltaL_spline     [cm] = ', deltaL_spline
+with open('finish.txt', 'a+') as fh:
+    buf = 'deltaL_spline      [cm] = %f\n' % deltaL_spline
     fh.write(buf)
 if (ispread_width !=1):
     print 'deltaL_spread     [cm] = ', deltaL_spread
@@ -827,6 +889,10 @@ print 'omega*_point     [1/s] = ', omega_star_point
 with open('finish.txt', 'a+') as fh:
     buf = 'omega*_point     [1/s] = %f\n' % omega_star_point
     fh.write(buf)
+print 'omega*_analytic  [1/s] = ', omega_star_analytic
+with open('finish.txt', 'a+') as fh:
+    buf = 'omega*)_analytic [1/s] = %f\n' % omega_star_analytic
+    fh.write(buf)
 print 'omega*_spline    [1/s] = ', omega_star_spline
 with open('finish.txt', 'a+') as fh:
     buf = 'omega*_spline     [1/s] = %f\n' % omega_star_spline
@@ -834,6 +900,10 @@ with open('finish.txt', 'a+') as fh:
 print 'omega*_spline_1_chi2[1/s] = ', omega_star_spline/(1.0+chi*chi)
 with open('finish.txt', 'a+') as fh:
     buf = 'omega*_spline_1_chi2[1/s] = %f\n' % (omega_star_spline/(1.0+chi*chi))
+    fh.write(buf)
+print 'omega*_spline_1_chi_x2[1/s] = ', omega_star_spline/(1.0+chi_x*chi_x)
+with open('finish.txt', 'a+') as fh:
+    buf = 'omega*_spline_1_chi_x2[1/s] = %f\n' % (omega_star_spline/(1.0+chi_x*chi_x))
     fh.write(buf)
 if (ispread_width !=1):
     print 'omega*_spread    [1/s] = ', omega_star_spread
@@ -934,6 +1004,84 @@ xt = np.array(x_list)
 dimensional_xt = xt*2.0*np.pi
 y = np.array(y_list)
 
+
+
+
+
+##finding growth rate
+#take log
+logy2 = np.log(y*y)
+#find zero crossing
+#zero_crossings = np.where(np.diff(np.sign(np.gradient(logy2))))[0]
+zero_crossings = np.where(np.gradient(np.sign(np.gradient(logy2)))<0 )[0]
+extremum_dimensional_xt = dimensional_xt[zero_crossings]
+extremum_logy2 = logy2[zero_crossings]
+
+#scan the first slope
+
+from scipy.optimize import curve_fit
+def func_lin(x, aa, bb):
+        return aa*x + bb
+
+error_array_a=[]
+error_array_b=[]
+cutoff_index = len(extremum_dimensional_xt)-1
+for ind in enumerate(extremum_dimensional_xt):
+    if ind[0]>2:
+        #print ind[0]
+        xdata = extremum_dimensional_xt[0:ind[0]]
+        ydata = extremum_logy2[0:ind[0]]
+        popt, pcov = curve_fit(func_lin, xdata, ydata)
+        perr = np.sqrt(np.diag(pcov))
+        error_array_a.append(perr[0])
+        error_array_b.append(perr[1])
+        if len(error_array_a)>3 :
+            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 3.0:
+                cutoff_index = ind[0]-1
+                del error_array_a[-1]
+                del error_array_b[-1]
+                break
+        if len(error_array_b)>3 :
+            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 3.0:
+                cutoff_index = ind[0]-1
+                del error_array_a[-1]
+                del error_array_b[-1]
+                break
+#print cutoff_index
+        
+
+xdata = extremum_dimensional_xt[0:cutoff_index]
+ydata = extremum_logy2[0:cutoff_index]
+
+
+lin_fitted_logy2 = np.polyfit(xdata,ydata,1)
+legend_lin_fitted_logy2 = 'y = (%g) x + (%g)' % (lin_fitted_logy2[0],lin_fitted_logy2[1])
+print legend_lin_fitted_logy2
+with open('finish.txt', 'a+') as fh:
+    buf = '%s\n' % legend_lin_fitted_logy2
+    fh.write(buf)
+
+init_plotting()
+plt.subplot(111)
+plt.gca().margins(0.1, 0.1)
+plt.plot(dimensional_xt,logy2,linestyle='-',linewidth=1,color='b',label='ln(phi^2)' )
+plt.plot(extremum_dimensional_xt,extremum_logy2,marker='x',linewidth=1,color='g',label='extremum points' )
+plt.plot(xdata,lin_fitted_logy2[0]*xdata+lin_fitted_logy2[1],color='r',linewidth=1,label=legend_lin_fitted_logy2 )
+plt.gca().xaxis.get_major_formatter().set_powerlimits((-1, 1))
+plt.gca().yaxis.get_major_formatter().set_powerlimits((-1, 1))
+plt.xlabel(u'Time (s), x')
+plt.ylabel(u'ln(|phi|^2), y')
+plt.gca().legend(bbox_to_anchor = (0.1, 0.3))
+plt.tight_layout()
+plt.savefig('foo5.png')
+plt.savefig('foo5.eps')
+#plt.show()
+plt.close('all')
+#plt.clf()
+
+
+
+########################### FFT ##################################
 yf = scipy.fftpack.fft(y)
 xf = scipy.fftpack.fftfreq(N, T)
 
@@ -941,7 +1089,6 @@ xf = scipy.fftpack.fftshift(xf)
 yplot = scipy.fftpack.fftshift(yf)
 
 #print np.abs(yplot).argmax()
-
 
 freqmax=xf[np.abs(yplot).argmax()]
 print '|maximum  freq. fft| =', abs(freqmax),'[Hz]'
@@ -972,62 +1119,101 @@ xfv = scipy.fftpack.fftshift(xfv)
 yplotv = scipy.fftpack.fftshift(yfv)
 
 
-################# leastsq fitting
+################# leastsq fitting #################################3
 from scipy.optimize import leastsq
 
-#data = 3.0*np.sin(t+0.001) + 0.5 + np.random.randn(N) # create artificial data with noise
+#find linear growthing source range
+ind_source_start=0;
+ind_source_end=-1;
+for ind in enumerate(dimensional_xt):
+    if dimensional_xt[ind[0]]>=xdata[0]:
+        ind_source_start=ind[0]
+        break
+for ind in enumerate(dimensional_xt):
+    if dimensional_xt[ind[0]]>=xdata[-1]:
+        ind_source_end=ind[0]
+        break
+lin_dimensional_xt=dimensional_xt[ind_source_start:ind_source_end]
+lin_y=y[ind_source_start:ind_source_end]
 
-guess_amplitude = (y.max()-y.min())/2
-guess_mean = np.mean(y)
+#find nonlinear growthing source range
+ind_source_start=0;
+ind_source_end=-1;
+for ind in enumerate(dimensional_xt):
+    if dimensional_xt[ind[0]]>=extremum_dimensional_xt[0]:
+        ind_source_start=ind[0]
+        break
+for ind in enumerate(dimensional_xt):
+    if dimensional_xt[ind[0]]>=extremum_dimensional_xt[-1]:
+        ind_source_end=ind[0]
+        break
+nonlin_dimensional_xt=dimensional_xt[ind_source_start:ind_source_end]
+nonlin_y=y[ind_source_start:ind_source_end]
+
+
+
+#guess_amplitude = (y.max()-y.min())/2
+guess_amplitude= lin_y[-1]/np.exp(lin_fitted_logy2[0]/2.0*(lin_dimensional_xt[-1]-lin_dimensional_xt[0]  )   )
+print guess_amplitude
+guess_mean = 0
 guess_phase = 0
-guess_freq = freqmax
+#guess_freq = freqmax #estimate from fft
+guess_freq = omega_star_analytic/(1.0+chi*chi) #estimate from analytic freq
 guess_lin = 0
 
-# we'll use this to plot our first estimate. This might already be good enough for you
-#data_first_guess = guess_amplitude*np.cos(guess_freq*dimensional_xt+guess_phase)+guess_mean
+print freqmax
+print guess_freq
 
-# Define the function to optimize, in this case, we want to minimize the difference
-# between the actual data and our "guessed" parameters
-optimize_func = lambda z: z[3]*np.cos(z[0]*dimensional_xt+z[1]) + z[2] - y
-#optimize_func = lambda z: guess_amplitude*np.cos(z[0]*dimensional_xt+z[1]) + z[2] - y
+#data fit for linear region
+optimize_func = lambda z: z[3]*np.exp(lin_fitted_logy2[0]/2.0*lin_dimensional_xt)*np.cos(z[0]*lin_dimensional_xt+z[1]) + z[2] - lin_y
 est_freq, est_phase, est_mean, est_amplitude = leastsq(optimize_func, [guess_freq, guess_phase, guess_mean, guess_amplitude ])[0]
+lin_data_fit = est_mean + est_amplitude*np.exp(lin_fitted_logy2[0]/2.0*lin_dimensional_xt)*np.cos(est_freq*lin_dimensional_xt+est_phase) 
+#data fit for non_linear region
+optimize_func = lambda z: z[3]*np.exp(lin_fitted_logy2[0]/2.0*nonlin_dimensional_xt)*np.cos(z[0]*nonlin_dimensional_xt+z[1]) + z[2] - nonlin_y
+nonlin_est_freq, nonlin_est_phase, nonlin_est_mean, nonlin_est_amplitude = leastsq(optimize_func, [guess_freq, guess_phase, guess_mean, guess_amplitude ])[0]
+nonlin_data_fit = nonlin_est_mean + 0.5*nonlin_est_amplitude*np.exp(lin_fitted_logy2[0]/2.0*np.max(nonlin_dimensional_xt))*np.cos(nonlin_est_freq*nonlin_dimensional_xt+nonlin_est_phase) 
+nonlin_data_fit_with_linfreq = nonlin_est_mean + 0.5*nonlin_est_amplitude*np.exp(lin_fitted_logy2[0]/2.0*np.max(nonlin_dimensional_xt))*np.cos(est_freq*nonlin_dimensional_xt+nonlin_est_phase) 
+print 'lin freq.= ',est_freq
+print 'nonlin_freq. = ',nonlin_est_freq
 
-data_fit = est_mean + est_amplitude*np.cos(est_freq*dimensional_xt+est_phase) 
-# recreate the fitted curve using the optimized parameters
 
-#guess_amplitude = guess_amplitude-est_lin*(xt[len(xt)-1]-xt[0])
-#guess_freq = freqmax+4E5
-#
-#data_second_guess = guess_mean+est_lin*xt + guess_amplitude*np.cos(guess_freq*2.0*np.pi*xt+guess_phase) 
-#
-#optimize_func = lambda z: z[3]*np.cos(z[0]*2.0*np.pi*xt+z[1]) + z[2] - (y -est_lin*xt)
-#est_freq, est_phase, est_mean, est_amplitude = leastsq(optimize_func, [guess_freq, guess_phase, guess_mean, guess_amplitude])[0]
-#
-#data_fit = est_mean+est_lin*xt + est_amplitude*np.cos(est_freq*2.0*np.pi*xt+est_phase) 
 
 print '|optimized  freq. fitting| =', abs(est_freq),'[Hz]'
 with open('finish.txt', 'a+') as fh:
     buf = '|optimized  freq. fitting| = %f\n' % abs(est_freq)
     fh.write(buf)
 
-
-yfv_fit = scipy.fftpack.fft(data_fit)
-xfv_fit = scipy.fftpack.fftfreq(N, T)
+######## Check again with FFT #################
+lin_N = len(lin_dimensional_xt)
+lin_T = (lin_dimensional_xt[len(lin_dimensional_xt)-1]-lin_dimensional_xt[0])/2.0/np.pi/ lin_N
+yfv_fit = scipy.fftpack.fft(lin_data_fit)
+xfv_fit = scipy.fftpack.fftfreq(lin_N, lin_T)
 
 xfv_fit = scipy.fftpack.fftshift(xfv_fit)
 yplotv_fit = scipy.fftpack.fftshift(yfv_fit)
+######## Check again with FFT #################
+nonlin_N = len(nonlin_dimensional_xt)
+nonlin_T = (nonlin_dimensional_xt[len(nonlin_dimensional_xt)-1]-nonlin_dimensional_xt[0])/2.0/np.pi/ nonlin_N
+nonlin_yfv_fit = scipy.fftpack.fft(nonlin_data_fit)
+nonlin_xfv_fit = scipy.fftpack.fftfreq(nonlin_N, nonlin_T)
+
+nonlin_xfv_fit = scipy.fftpack.fftshift(nonlin_xfv_fit)
+nonlin_yplotv_fit = scipy.fftpack.fftshift(nonlin_yfv_fit)
 
 
-############
 
-legend_data_fit = r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_point, abs(est_freq)/omega_star_point*(1.0+chi*chi))+'\n'+r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_spline, abs(est_freq)/omega_star_spline*(1.0+chi*chi))
+###########################################
+
+legend_data_fit = r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_point, abs(est_freq)/omega_star_point*(1.0+chi*chi))+'\n'+r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_analytic, abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
 
 init_plotting()
 plt.subplot(111)
 plt.gca().margins(0.1, 0.1)
 plt.plot(dimensional_xt,y,marker='.',linestyle='-',linewidth=1,color='b',label='potential' )
 #plt.plot(dimensional_xt,yv,linestyle='-',linewidth=1,color='r',label='fourier mode' )
-plt.plot(dimensional_xt,data_fit,marker='.',linestyle='-',linewidth=1,color='g',label=legend_data_fit )
+#plt.plot(lin_dimensional_xt,lin_data_fit,marker='.',linestyle='-',linewidth=1,color='g',label=legend_data_fit )
+#plt.plot(nonlin_dimensional_xt,nonlin_data_fit,marker='.',linestyle='-',linewidth=1,color='g',label=legend_data_fit )
+plt.plot(nonlin_dimensional_xt,nonlin_data_fit_with_linfreq,marker='.',linestyle='-',linewidth=1,color='g',label=legend_data_fit )
 plt.gca().xaxis.get_major_formatter().set_powerlimits((-1, 1))
 plt.gca().yaxis.get_major_formatter().set_powerlimits((-1, 1))
 plt.xlabel(u'Time (s)')
@@ -1046,8 +1232,11 @@ plt.subplot(111)
 plt.gca().margins(0.1, 0.1)
 plt.plot(xf,1.0/N*np.abs(yplot),marker='.',linestyle='-',linewidth=1,color='b',label='FFT spectrum of raw signal' )
 #plt.plot(xf,1.0/N*np.abs(yplotv),linestyle='-',linewidth=1,color='r',label='dominant spectrum' )
-plt.plot(xf,1.0/N*np.abs(yplotv_fit),marker='.',linestyle='-',linewidth=1,color='g',label='FFT spectrum of fitted signal' )
-xf2lim=xf[len(xf)/2+abs( len(xf)/2-np.argmax(abs(yplotv_fit)) )*3]
+#plt.plot(xfv_fit,1.0/N*np.abs(yplotv_fit),marker='.',linestyle='-',linewidth=1,color='g',label='FFT spectrum of fitted signal' )
+plt.plot(nonlin_xfv_fit,1.0/nonlin_N*np.abs(nonlin_yplotv_fit),marker='.',linestyle='-',linewidth=1,color='g',label='FFT spectrum of fitted signal' )
+#xf2lim=xf[len(xf)/2+abs( len(xf)/2-np.argmax(abs(yplotv_fit)) )*3]
+#xf2lim=xfv_fit[len(xfv_fit)/2+abs( len(xfv_fit)/2-np.argmax(abs(yplotv_fit)) )*3]
+xf2lim=nonlin_xfv_fit[len(nonlin_xfv_fit)/2+abs( len(nonlin_xfv_fit)/2-np.argmax(abs(nonlin_yplotv_fit)) )*3]
 plt.gca().xaxis.get_major_formatter().set_powerlimits((-1, 1))
 plt.gca().yaxis.get_major_formatter().set_powerlimits((-1, 1))
 plt.xlim(-abs(xf2lim),abs(xf2lim))
@@ -1062,53 +1251,26 @@ plt.savefig('foo4.eps')
 plt.close('all')
 #plt.clf()
 
-#take log
-logy2 = np.log(y*y)
-#find zero crossing
-#zero_crossings = np.where(np.diff(np.sign(np.gradient(logy2))))[0]
-zero_crossings = np.where(np.gradient(np.sign(np.gradient(logy2)))<0 )[0]
-extremum_dimensional_xt = dimensional_xt[zero_crossings]
-extremum_logy2 = logy2[zero_crossings]
-lin_fitted_logy2 = np.polyfit(extremum_dimensional_xt,extremum_logy2,1)
-legend_lin_fitted_logy2 = 'y = (%g) x + (%g)' % (lin_fitted_logy2[0],lin_fitted_logy2[1])
-print legend_lin_fitted_logy2
-with open('finish.txt', 'a+') as fh:
-    buf = '%s\n' % legend_lin_fitted_logy2
-    fh.write(buf)
 
+
+starting_amplitude = est_amplitude
+
+optimize_func = lambda z: z[1] + starting_amplitude*np.exp(lin_fitted_logy2[0]/2.0*lin_dimensional_xt)*np.cos(z[2]*lin_dimensional_xt+z[0]) - lin_y
+refine_est_phase, refine_est_mean, refine_est_freq = leastsq(optimize_func, [est_phase, est_mean, est_freq])[0]
+data_fit_with_growth_refine = refine_est_mean + starting_amplitude*np.exp(lin_fitted_logy2[0]/2.0*lin_dimensional_xt)*np.cos(refine_est_freq*lin_dimensional_xt+refine_est_phase) 
+
+print 'refine_est_freq. = ',refine_est_freq
+
+legend_data_fit_with_growth = r'$\gamma/\omega^*, \gamma/\omega^*_d$'+' = (%g, %g)'% ( lin_fitted_logy2[0]/2.0/omega_star_point, lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+chi*chi))+'\n'+r'$\gamma/\omega^*, \gamma/\omega^*_d$'+' = (%g, %g)'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic, lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
 init_plotting()
 plt.subplot(111)
 plt.gca().margins(0.1, 0.1)
-plt.plot(dimensional_xt,logy2,linestyle='-',linewidth=1,color='b',label='ln(phi^2)' )
-plt.plot(extremum_dimensional_xt,extremum_logy2,marker='x',linewidth=1,color='g',label='extremum points' )
-plt.plot(extremum_dimensional_xt,lin_fitted_logy2[0]*extremum_dimensional_xt+lin_fitted_logy2[1],color='r',linewidth=1,label=legend_lin_fitted_logy2 )
-plt.gca().xaxis.get_major_formatter().set_powerlimits((-1, 1))
-plt.gca().yaxis.get_major_formatter().set_powerlimits((-1, 1))
-plt.xlabel(u'Time (s), x')
-plt.ylabel(u'ln(|phi|^2), y')
-plt.gca().legend(bbox_to_anchor = (0.1, 0.3))
-plt.tight_layout()
-plt.savefig('foo5.png')
-plt.savefig('foo5.eps')
-plt.close('all')
-#plt.clf()
-
-starting_amplitude= np.exp((extremum_logy2[-1]-lin_fitted_logy2[0]*extremum_dimensional_xt[-1])/2.0)
-#data_fit_with_growth = est_mean + starting_amplitude*np.exp(lin_fitted_logy2[0]/2.0*dimensional_xt)*np.cos(est_freq*dimensional_xt+est_phase) 
-#adjust phase
-#data_fit_with_growth_guess = est_mean + starting_amplitude*np.exp(lin_fitted_logy2[0]/2.0*dimensional_xt)*np.cos(est_freq*dimensional_xt+est_phase) 
-optimize_func = lambda z: z[1] + starting_amplitude*np.exp(lin_fitted_logy2[0]/2.0*dimensional_xt)*np.cos(est_freq*dimensional_xt+z[0]) - y
-refine_est_phase, refine_est_mean = leastsq(optimize_func, [est_phase, est_mean])[0]
-data_fit_with_growth_refine = refine_est_mean + starting_amplitude*np.exp(lin_fitted_logy2[0]/2.0*dimensional_xt)*np.cos(est_freq*dimensional_xt+refine_est_phase) 
-
-
-legend_data_fit_with_growth = r'$\gamma/\omega^*, \gamma/\omega^*_d$'+' = (%g, %g)'% ( lin_fitted_logy2[0]/2.0/omega_star_point, lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+chi*chi))+'\n'+r'$\gamma/\omega^*, \gamma/\omega^*_d$'+' = (%g, %g)'% ( lin_fitted_logy2[0]/2.0/omega_star_spline, lin_fitted_logy2[0]/2.0/omega_star_spline*(1.0+chi*chi))
-init_plotting()
-plt.subplot(111)
-plt.gca().margins(0.1, 0.1)
-plt.plot(dimensional_xt,y,marker='.',linestyle='-',linewidth=1,color='b',label='potential' )
+#plt.plot(dimensional_xt,y,marker='.',linestyle='-',linewidth=1,color='b',label='potential' )
+plt.plot(lin_dimensional_xt,lin_y,marker='.',linestyle='-',linewidth=1,color='b',label='potential' )
 #plt.plot(dimensional_xt,data_fit_with_growth,linestyle='-',linewidth=1,color='g',label=legend_data_fit_with_growth )
-plt.plot(dimensional_xt,data_fit_with_growth_refine,linestyle='-',linewidth=1,color='r',label=legend_data_fit_with_growth )
+#plt.plot(dimensional_xt,data_fit_with_growth_refine,linestyle='-',linewidth=1,color='r',label=legend_data_fit_with_growth )
+plt.plot(lin_dimensional_xt,data_fit_with_growth_refine,linestyle='-',linewidth=1,color='r',label=legend_data_fit_with_growth )
+#plt.plot(lin_dimensional_xt,lin_data_fit,linestyle='-',linewidth=1,color='r',label=legend_data_fit )
 plt.gca().xaxis.get_major_formatter().set_powerlimits((-1, 1))
 plt.gca().yaxis.get_major_formatter().set_powerlimits((-1, 1))
 plt.xlabel(u'Time (s)')
@@ -1131,6 +1293,8 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = "omega_star_point = %f\n" % (omega_star_point)
     fh.write(buf)
+    buf = "omega_star_analytic= %f\n" % (omega_star_analytic)
+    fh.write(buf)
     buf = "omega_star_spline = %f\n" % (omega_star_spline)
     fh.write(buf)
     if (ispread_width !=1):
@@ -1139,6 +1303,8 @@ with open('finish.txt', 'a+') as fh:
     buf = 'omega_star_fit/omega*        = %f\n'%( abs(est_freq)/omega_star )
     fh.write(buf)
     buf = 'omega_star_fit/omega*_point  = %f\n'%( abs(est_freq)/omega_star_point )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_analytic= %f\n'%( abs(est_freq)/omega_star_analytic)
     fh.write(buf)
     buf = 'omega_star_fit/omega*_spline = %f\n'%( abs(est_freq)/omega_star_spline )
     fh.write(buf)
@@ -1149,6 +1315,8 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'omega_star_fit/omega*_point_1_chi2  = %f\n'%( abs(est_freq)/omega_star_point*(1.0+chi*chi) )
     fh.write(buf)
+    buf = 'omega_star_fit/omega*_analytic_1_chi2  = %f\n'%( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) )
+    fh.write(buf)
     buf = 'omega_star_fit/omega*_spline_1_chi2  = %f\n'%( abs(est_freq)/omega_star_spline*(1.0+chi*chi) )
     fh.write(buf)
     buf = 'gamma  = %f\n'%(lin_fitted_logy2[0]/2.0)
@@ -1157,11 +1325,15 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'gamma/omega*_point = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_point)
     fh.write(buf)
+    buf = 'gamma/omega*_analytic = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_analytic)
+    fh.write(buf)
     buf = 'gamma/omega*_spline  = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_spline)
     fh.write(buf)
     buf = 'gamma/omega*_1_chi2  = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star*(1.0+chi*chi))
     fh.write(buf)
     buf = 'gamma/omega*_point_1_chi2 = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+chi*chi))
+    fh.write(buf)
+    buf = 'gamma/omega*_analytic_1_chi2 = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
     fh.write(buf)
     buf = 'gamma/omega*_spline_1_chi2 = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_spline*(1.0+chi*chi))
     fh.write(buf)
@@ -1173,6 +1345,7 @@ print "te = " , (units_temperature*electron_temperature)
 print "ti = " , (units_temperature*t0_grid_func)
 print "omega_star        = " , (omega_star)
 print "omega_star_point  = " , (omega_star_point)
+print "omega_star_analytic = " , (omega_star_analytic)
 print "omega_star_spline = " , (omega_star_spline)
 if (ispread_width !=1):
     print "omega_star_spread = " , (omega_star_spread)
@@ -1181,21 +1354,32 @@ if (ispread_width !=1):
 #print 'omega_star_FFT/omega*_spline = ', abs(freqmax)/omega_star_spline
 print 'omega_star_fit/omega*        = ',( abs(est_freq)/omega_star )
 print 'omega_star_fit/omega*_point  = ',( abs(est_freq)/omega_star_point )
+print 'omega_star_fit/omega*_analytic = ',( abs(est_freq)/omega_star_analytic)
 print 'omega_star_fit/omega*_spline = ',( abs(est_freq)/omega_star_spline )
 if (ispread_width !=1):
     print 'omega_star_fit/omega*_spread = ',( abs(est_freq)/omega_star_spread )
 print 'omega_star_fit/omega*_1_chi2        = ',( abs(est_freq)/omega_star*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_point_1_chi2  = ',( abs(est_freq)/omega_star_point*(1.0+chi*chi) )
+print 'omega_star_fit/omega*_analytic_1_chi2  = ',( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_spline_1_chi2 = ',( abs(est_freq)/omega_star_spline*(1.0+chi*chi) )
 print 'gamma  = ',(lin_fitted_logy2[0]/2.0)
 print 'gamma/omega*         = ',(lin_fitted_logy2[0]/2.0/omega_star)
 print 'gamma/omega*_point   = ',(lin_fitted_logy2[0]/2.0/omega_star_point)
+print 'gamma/omega*_analytic= ',(lin_fitted_logy2[0]/2.0/omega_star_analytic)
 print 'gamma/omega*_spline  = ',(lin_fitted_logy2[0]/2.0/omega_star_spline)
 
 print 'gamma/omega*_1_chi2        = ',(lin_fitted_logy2[0]/2.0/omega_star*(1.0+chi*chi))
 print 'gamma/omega*_point_1_chi2  = ',(lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+chi*chi))
+print 'gamma/omega*_analytic_1_chi2  = ',(lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
 print 'gamma/omega*_spline_1_chi2 = ',(lin_fitted_logy2[0]/2.0/omega_star_spline*(1.0+chi*chi))
 print 'gamma/omega_fit = ',(lin_fitted_logy2[0]/2.0/abs(est_freq))
+
+
+with open('finish_kparhat_chi_gamma_omega2.txt', 'wb') as fh:
+    buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\n" 
+    fh.write(buf)
+    buf = "%f\t%f\t%f\t%f\t%f\t%f\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(lin_fitted_logy2[0]/2.0/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ) )
+    fh.write(buf)
 
 
 import pylab

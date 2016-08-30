@@ -762,8 +762,8 @@ spread_ind =  spread_ind_diff+ x_point_index_in_plot
 
 c_s        = 979000*((electron_temperature*units_temperature)/ion_mass)**0.5
 rho_s      = 102*((ion_mass*electron_temperature*units_temperature)**0.5)/b_t
-chi        = k_perp*rho_s
-#chi        = k_perp_yz*rho_s
+chi_x        = k_perp*rho_s
+chi        = k_perp_yz*rho_s
 #omega_star = c_s*rho_s*k_perp_y/deltaL_max
 #omega_star_point= c_s*rho_s*k_perp_y/deltaL_point
 #omega_star_spline = c_s*rho_s*k_perp_y/deltaL_spline
@@ -900,6 +900,10 @@ with open('finish.txt', 'a+') as fh:
 print 'omega*_spline_1_chi2[1/s] = ', omega_star_spline/(1.0+chi*chi)
 with open('finish.txt', 'a+') as fh:
     buf = 'omega*_spline_1_chi2[1/s] = %f\n' % (omega_star_spline/(1.0+chi*chi))
+    fh.write(buf)
+print 'omega*_spline_1_chi_x2[1/s] = ', omega_star_spline/(1.0+chi_x*chi_x)
+with open('finish.txt', 'a+') as fh:
+    buf = 'omega*_spline_1_chi_x2[1/s] = %f\n' % (omega_star_spline/(1.0+chi_x*chi_x))
     fh.write(buf)
 if (ispread_width !=1):
     print 'omega*_spread    [1/s] = ', omega_star_spread
@@ -1369,6 +1373,13 @@ print 'gamma/omega*_point_1_chi2  = ',(lin_fitted_logy2[0]/2.0/omega_star_point*
 print 'gamma/omega*_analytic_1_chi2  = ',(lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
 print 'gamma/omega*_spline_1_chi2 = ',(lin_fitted_logy2[0]/2.0/omega_star_spline*(1.0+chi*chi))
 print 'gamma/omega_fit = ',(lin_fitted_logy2[0]/2.0/abs(est_freq))
+
+
+with open('finish_kparhat_chi_gamma_omega2.txt', 'wb') as fh:
+    buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\n" 
+    fh.write(buf)
+    buf = "%f\t%f\t%f\t%f\t%f\t%f\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(lin_fitted_logy2[0]/2.0/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ) )
+    fh.write(buf)
 
 
 import pylab
