@@ -19,12 +19,12 @@ gksystem.fixed_plot_indices = 2 2 2 2 2
 #####################################################
 simulation.max_step            = 10000
 simulation.max_time            = 100000.0
-#simulation.max_dt_grow         = 1.1
-#simulation.initial_dt_fraction = 1.0
-#simulation.cfl_number          = 0.9
+simulation.max_dt_grow         = 1.1
+simulation.initial_dt_fraction = 1.0
+simulation.cfl_number          = 0.9
 #simulation.fixed_dt           = 0.0003
-simulation.fixed_dt           = 0.00001
-simulation.fixed_dt_subiteration  = true
+#simulation.fixed_dt           = 0.00001
+#simulation.fixed_dt_subiteration  = true
 ##simulation.fixed_dt           = 0.001
 simulation.checkpoint_interval = 10
 simulation.checkpoint_prefix   = "chk"
@@ -95,9 +95,9 @@ gkvlasov.verbose = true
 gkvlasov.time_step_diagnostics = true
 
 #gkvlasov.face_avg_type = uw1
-gkvlasov.face_avg_type = uw3
+#gkvlasov.face_avg_type = uw3
 #gkvlasov.face_avg_type = uw5
-#gkvlasov.face_avg_type = weno5
+gkvlasov.face_avg_type = weno5
 #gkvlasov.face_avg_type = bweno
 
 #####################################################
