@@ -6,7 +6,7 @@ gksystem.verbosity   = 10
 gksystem.hdf_density = true
 gksystem.hdf_potential = true
 gksystem.hdf_temperature = true
-#gksystem.hdf_dfn = true
+gksystem.hdf_dfn = true
 gksystem.hdf_efield = true
 gksystem.hdf_vparmu = true
 gksystem.fixed_plot_indices = 2 2 2 2 2
@@ -36,11 +36,14 @@ simulation.1.history_field = "potential"
 simulation.1.history_indices = 4 2 2 
 
 
+gksystem.enforce_positivity = false
+gksystem.enforce_positivity_type = "stage"
+
 #####################################################
 # Computational Grid Definitions
 #####################################################
 gksystem.num_cells   = 16 16 8 16 8
-gksystem.is_periodic =  1  1  0  0  0
+gksystem.is_periodic =  0  0  0  0  0
 
 gksystem.configuration_decomp = 1 1 1 
 gksystem.velocity_decomp      =       1 1
@@ -97,8 +100,8 @@ gkvlasov.time_step_diagnostics = true
 #gkvlasov.face_avg_type = uw1
 #gkvlasov.face_avg_type = uw3
 #gkvlasov.face_avg_type = uw5
-gkvlasov.face_avg_type = weno5
-#gkvlasov.face_avg_type = bweno
+#gkvlasov.face_avg_type = weno5
+gkvlasov.face_avg_type = bweno
 
 #####################################################
 # Poisson Operator Definitions
@@ -184,18 +187,18 @@ BC.electron.mu_lower.function = "maxwellian_electron_phase_func"
 BC.electron.mu_upper.function = "maxwellian_electron_phase_func"
 BC.electron.logical_sheath = true
 
-#BC.potential.radial_inner.type = "neumann"
-#BC.potential.radial_outer.type = "neumann"
-#BC.potential.radial_lower.type = "dirichlet"
-#BC.potential.radial_upper.type = "dirichlet"
-BC.potential.radial_lower.type = "neumann"
-BC.potential.radial_upper.type = "neumann"
-BC.potential.poloidal_lower.type = "neumann"
-BC.potential.poloidal_upper.type = "neumann"
-#BC.potential.toroidal_lower.type = "neumann"
-#BC.potential.toroidal_upper.type = "neumann"
-BC.potential.toroidal_lower.type = "dirichlet"
-BC.potential.toroidal_upper.type = "dirichlet"
+#BC.potential.radial_lower.type = "neumann"
+#BC.potential.radial_upper.type = "neumann"
+#BC.potential.poloidal_lower.type = "neumann"
+#BC.potential.poloidal_upper.type = "neumann"
+BC.potential.toroidal_lower.type = "neumann"
+BC.potential.toroidal_upper.type = "neumann"
+BC.potential.radial_lower.type = "dirichlet"
+BC.potential.radial_upper.type = "dirichlet"
+BC.potential.poloidal_lower.type = "dirichlet"
+BC.potential.poloidal_upper.type = "dirichlet"
+#BC.potential.toroidal_lower.type = "dirichlet"
+#BC.potential.toroidal_upper.type = "dirichlet"
 
 #####################################################
 # Collisions Definitions
@@ -243,12 +246,14 @@ grid_function_library.eT0_grid_func.value = 1.0
 grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
-grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+#grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+grid_function_library.N0_grid_func.function = "(1.00)"
 
 grid_function_library.eN0_grid_func.type = "arbitrary"
 #grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
 #grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
-grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+#grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+grid_function_library.eN0_grid_func.function = "(1.00)"
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
 grid_function_library.Ion_vpar_grid_func.value = 0.0

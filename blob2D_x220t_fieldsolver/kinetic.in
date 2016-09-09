@@ -6,7 +6,7 @@ gksystem.verbosity   = 10
 gksystem.hdf_density = true
 gksystem.hdf_potential = true
 gksystem.hdf_temperature = true
-gksystem.hdf_dfn = false
+gksystem.hdf_dfn = true
 gksystem.hdf_efield = true
 gksystem.hdf_vparmu = true
 gksystem.fixed_plot_indices = 4 4 4 2 4
@@ -39,8 +39,8 @@ simulation.1.history_indices = 4 2
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 32 32  16 16
-gksystem.is_periodic =  1  1    0  0
+gksystem.num_cells   = 32 16  24 18
+gksystem.is_periodic =  0  0    0  0
 
 gksystem.configuration_decomp = 1 1  
 gksystem.velocity_decomp      =       1 1
@@ -234,14 +234,14 @@ grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
 #grid_function_library.N0_grid_func.function  = "(1.00+0.0000001*exp(-(x-pi/2)^2/(2*pi*0.005/0.04)-(y-pi/2)^2/(2*pi*0.005/0.04)-(z-pi/2)^2/(2*pi*0.005/0.04))   )"
 #grid_function_library.N0_grid_func.function  = "(1.00+0.00001*exp(-(x-pi/2)^2/(2*pi*0.005/0.04)-(y-pi/2)^2/(2*pi*0.005/0.04))   )"
-grid_function_library.N0_grid_func.function  = "(1.00+0.00000*sin(x)*sin(y) )"
+grid_function_library.N0_grid_func.function  = "(1.00+0.00001*sin(x/2)*sin(y/2) )"
 
 
 grid_function_library.eN0_grid_func.type = "arbitrary"
 #grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
 #grid_function_library.eN0_grid_func.function = "(1.00+0.0000001*exp(-(x-pi*3/2)^2/(2*pi*0.005/0.04)-(y-pi*3/2)^2/(2*pi*0.005/0.04)-(z-pi*3/2)^2/(2*pi*0.005/0.04))   )"
 #grid_function_library.eN0_grid_func.function = "(1.00+0.00001*exp(-(x-pi*3/2)^2/(2*pi*0.005/0.04)-(y-pi*3/2)^2/(2*pi*0.005/0.04))   )"
-grid_function_library.eN0_grid_func.function  = "(1.00+0.00001*cos(x)*cos(y) )"
+grid_function_library.eN0_grid_func.function  = "(1.00+0.00001*cos(2*x)*cos(y) )"
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
 grid_function_library.Ion_vpar_grid_func.value = 0.0

@@ -1,1 +1,1 @@
-/home/wonjae/ws/trunkESL/trunk_dev/exec/cogent.Linux.64.mpicxx.gfortran.OPT.MPI.ex  kinetic.in |tee output.txt
+/home/wonjae/ws/trunkESL/trunk/exec/cogent.Linux.64.mpicxx.gfortran.OPT.MPI.ex  kinetic.in |tee output.txt

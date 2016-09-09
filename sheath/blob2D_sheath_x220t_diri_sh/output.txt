@@ -1,0 +1,1631 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0.01
+Done constructing slab geometry
+
+dx*nx= 0.392699 * 16 = 6.28319, dx(m)*nx= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+
+   Configuration space box ((0,0) (15,15) (0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 309497 )
+dmu*nmu= 0.25 * 8 = 2, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 8.01088e-17 )
+
+   Phase space box ((0,0,-8,0) (15,15,7,7) (0,0,0,0)) is assigned to process 0, has 32768 valid cells and 188416 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.01, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 0
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+"T0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  1
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  1
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	5.51197e-05 [max]	3.64096e-09 [min]
+    Species 1:	1.94877e-08 [max]	1.28727e-12 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+Vlasov operator time step (0.246824) was limited by the velocity at (R,Z,vparallel,mu) = (0.03625,0.00125,3.75,0.125) and mapped coordinate = (14,0,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0174531) was limited by the velocity at (R,Z,vparallel,mu) = (0.03625,0.00125,3.75,0.125) and mapped coordinate = (14,0,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+
+m_num_cells[i]=16
+m_num_cells[i]=16
+m_num_cells[i]=16
+m_num_cells[i]=8
+dx*nx= 0.392699 * 16 = 6.28319, dx(m)*nx= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 9671.78 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 109424 * 8 = 875389, ( 1 : 218847 )
+ [electron] mass = 0.01
+  dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 1.54748e+06 * 8 = 1.23799e+07, ( 1 : 3.09497e+06 )
+dmu*nmu= 0.25 * 8 = 1, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 1.00136e-17 )
+
+Estimated dt
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=309497
+unit_dimension_time   [hydrogen]=3.23105e-06
+[hydrogen] maxvel:phy_maxvel[0]=1.76573e-15:5.46488e-10(1:309497)
+[hydrogen] maxvel:phy_maxvel[1]=0.00883879:2735.58(1:309497)
+[hydrogen] maxvel:phy_maxvel[2]=4.09913e-15:0.000392649(1:9.57883e+10)
+[hydrogen] maxvel:phy_maxvel[3]=0:0(1:-nan)
+
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.0025/2917.95=8.56766e-07
+dt_ypar(-)[hydrogen]=0.265167
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.0025/2735.58=9.13884e-07
+dt_y(-)[hydrogen]=0.282844
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.0025/5.46488e-10=4.57467e+06
+dt_x(-)[hydrogen]=1.41585e+12
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=154748/0.000392649=3.94114e+08
+dt_vpar(-)[hydrogen]=1.21977e+14
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=309497
+unit_dimension_time   [electron]=3.23105e-06
+[electron] maxvel:phy_maxvel[0]=1.76573e-15:5.46488e-10(1:309497)
+[electron] maxvel:phy_maxvel[1]=0.124999:38686.9(1:309497)
+[electron] maxvel:phy_maxvel[2]=5.79705e-14:0.00555289(1:9.57883e+10)
+[electron] maxvel:phy_maxvel[3]=0:0(1:-nan)
+
+dt_ypar(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.0025/41266=6.05825e-08
+dt_ypar(-)[electron]=0.0187501
+dt_y(s)[electron]=dy(m)/vmax_y(m/s)[electron]=0.0025/38686.9=6.46214e-08
+dt_y(-)[electron]=0.0200001
+dt_x(s)[electron]=dx(m)/vmax_x(m/s)[electron]=0.0025/5.46488e-10=4.57467e+06
+dt_x(-)[electron]=1.41585e+12
+dt_vpar(s)[electron]=dvpar(m/s)/vmax_vpar(m/s/s)[electron]=154748/0.00555289=2.78681e+07
+dt_vpar(-)[electron]=8.62508e+12
+
+ky = 39.2699 ~ 628.319
+kx = 39.2699 ~ 628.319
+kpar  = 0.130899 ~ 2.09438
+kperp = 55.5359 ~ 888.574
+rhos = 0.0152312
+rhos * ky    = 0.598129 ~ 9.57006
+rhos * kx    = 0.598129 ~ 9.57006
+rhos * kperp = 0.84588 ~ 13.5341
+omega_ea(1/s) = 299339 ~ 7.66309e+07
+omega_ea(-)   = 0.967181 ~ 247.598
+delta_t_omega_ea (s) = 8.19929e-08 ~ 2.09902e-05
+delta_t_omega_ea (-) = 0.0253765 ~ 6.49639
+
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+  ----
+  dt: 0.0157078
+    Vlasov    : 0.0200001 (time scale), 0.785385 (CFL)
+    Collisions: 1.79769e+308 (time scale), 8.73775e-311 (CFL)
+    ES_Alfven : 0.0253765 (time scale), 0.618989 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.5154e-05 [max]	3.49045e-09 [min]
+    Species 1:	1.95037e-08 [max]	6.06221e-13 [min]
+
+Step 1 completed, simulation time is 0.0157078
+----
+
+Step 2
+      BiCGStab converged successfully
+Vlasov operator time step (0.205312) was limited by the velocity at (R,Z,vparallel,mu) = (0.01125,0.03875,3.75,0.125) and mapped coordinate = (4,15,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0171569) was limited by the velocity at (R,Z,vparallel,mu) = (0.01125,0.03875,3.75,0.125) and mapped coordinate = (4,15,7,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+  ----
+  dt: 0.0154412
+    Vlasov    : 0.0196607 (time scale), 0.785385 (CFL)
+    Collisions: 1.79769e+308 (time scale), 8.58946e-311 (CFL)
+    ES_Alfven : 0.0253765 (time scale), 0.608484 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.51861e-05 [max]	3.32236e-09 [min]
+    Species 1:	1.94969e-08 [max]	2.99713e-13 [min]
+
+Step 2 completed, simulation time is 0.031149
+----
+
+Step 3
+      BiCGStab converged successfully
+Vlasov operator time step (0.0635756) was limited by the velocity at (R,Z,vparallel,mu) = (0.00625,0.03875,-3.75,0.125) and mapped coordinate = (2,15,-8,0)
+The (radial) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0141241) was limited by the velocity at (R,Z,vparallel,mu) = (0.00625,0.03875,-3.75,0.125) and mapped coordinate = (2,15,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+  ----
+  dt: 0.0127117
+    Vlasov    : 0.0161853 (time scale), 0.785385 (CFL)
+    Collisions: 1.79769e+308 (time scale), 7.07113e-311 (CFL)
+    ES_Alfven : 0.0253765 (time scale), 0.500924 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.52099e-05 [max]	3.17892e-09 [min]
+    Species 1:	1.95033e-08 [max]	2.62791e-13 [min]
+
+Step 3 completed, simulation time is 0.0438607
+----
+
+Step 4
+      BiCGStab converged successfully
+Vlasov operator time step (0.0428918) was limited by the velocity at (R,Z,vparallel,mu) = (0.00375,0.03875,3.75,0.125) and mapped coordinate = (1,15,7,0)
+The (radial) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0125795) was limited by the velocity at (R,Z,vparallel,mu) = (0.00625,0.03875,-3.75,0.125) and mapped coordinate = (2,15,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+  ----
+  dt: 0.0113215
+    Vlasov    : 0.0144153 (time scale), 0.785385 (CFL)
+    Collisions: 1.79769e+308 (time scale), 6.29781e-311 (CFL)
+    ES_Alfven : 0.0253765 (time scale), 0.446141 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.52286e-05 [max]	3.04956e-09 [min]
+    Species 1:	1.95206e-08 [max]	-1.9577e-12 [min]
+
+Step 4 completed, simulation time is 0.0551822
+----
+
+Step 5
+      BiCGStab converged successfully
+Vlasov operator time step (0.0358326) was limited by the velocity at (R,Z,vparallel,mu) = (0.00375,0.03875,3.75,0.125) and mapped coordinate = (1,15,7,0)
+The (radial) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.011804) was limited by the velocity at (R,Z,vparallel,mu) = (0.00625,0.03875,-3.75,0.125) and mapped coordinate = (2,15,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+  ----
+  dt: 0.0106236
+    Vlasov    : 0.0135266 (time scale), 0.785385 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.90955e-311 (CFL)
+    ES_Alfven : 0.0253765 (time scale), 0.418637 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.5244e-05 [max]	2.92935e-09 [min]
+    Species 1:	1.95685e-08 [max]	-8.74864e-12 [min]
+
+Step 5 completed, simulation time is 0.0658058
+----
+
+Step 6
+      BiCGStab converged successfully
+Vlasov operator time step (0.034119) was limited by the velocity at (R,Z,vparallel,mu) = (0.00375,0.03875,3.75,0.125) and mapped coordinate = (1,15,7,0)
+The (radial) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0115924) was limited by the velocity at (R,Z,vparallel,mu) = (0.00625,0.03875,-3.75,0.125) and mapped coordinate = (2,15,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+  ----
+  dt: 0.0104332
+    Vlasov    : 0.0132841 (time scale), 0.785385 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.80364e-311 (CFL)
+    ES_Alfven : 0.0253765 (time scale), 0.411134 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.52574e-05 [max]	2.81419e-09 [min]
+    Species 1:	1.96239e-08 [max]	-1.2835e-11 [min]
+
+Step 6 completed, simulation time is 0.076239
+----
+
+Step 7
+      BiCGStab converged successfully
+Vlasov operator time step (0.0344508) was limited by the velocity at (R,Z,vparallel,mu) = (0.00375,0.03875,3.75,0.125) and mapped coordinate = (1,15,7,0)
+The (radial) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0116431) was limited by the velocity at (R,Z,vparallel,mu) = (0.00625,0.03875,-3.75,0.125) and mapped coordinate = (2,15,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+  ----
+  dt: 0.0104788
+    Vlasov    : 0.0133422 (time scale), 0.785385 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.82902e-311 (CFL)
+    ES_Alfven : 0.0253765 (time scale), 0.412932 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.52695e-05 [max]	2.70219e-09 [min]
+    Species 1:	1.96674e-08 [max]	-1.37261e-11 [min]
+
+Step 7 completed, simulation time is 0.0867178
+----
+
+Step 8
+      BiCGStab converged successfully
+Vlasov operator time step (0.035422) was limited by the velocity at (R,Z,vparallel,mu) = (0.00375,0.03875,3.75,0.125) and mapped coordinate = (1,15,7,0)
+The (radial) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0117718) was limited by the velocity at (R,Z,vparallel,mu) = (0.00625,0.03875,-3.75,0.125) and mapped coordinate = (2,15,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+      BiCGStab converged successfully
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+  ----
+  dt: 0.0105946
+    Vlasov    : 0.0134897 (time scale), 0.785385 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.89346e-311 (CFL)
+    ES_Alfven : 0.0253765 (time scale), 0.417497 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	5.52806e-05 [max]	2.59237e-09 [min]
+    Species 1:	1.97011e-08 [max]	-1.81895e-11 [min]
+
+Step 8 completed, simulation time is 0.0973124
+----
+
+Step 9
+      BiCGStab converged successfully
+Vlasov operator time step (0.0359839) was limited by the velocity at (R,Z,vparallel,mu) = (0.00375,0.03875,3.75,0.125) and mapped coordinate = (1,15,7,0)
+The (radial) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0118423) was limited by the velocity at (R,Z,vparallel,mu) = (0.00625,0.03875,-3.75,0.125) and mapped coordinate = (2,15,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
+direction=1
+side=0
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,0,-8,0)
+ hi_end=(15,4,7,7)
+direction=1
+side=1
+lo_end=(0,0,-8,0)
+hi_end=(15,15,7,7)
+ghost_vect=(4,4,4,4)
+ lo_end=(0,11,-8,0)
+ hi_end=(15,15,7,7)
