@@ -32,20 +32,27 @@ Constructing slab geometry...
 xmax = 0.04, ymax = 0.04
 Bz_inner = 3, Bz_outer = 3
 By_inner  = 0
-**** cellSp[0] = 0.19635,  cellSp[1] = 0.392699
-**** dimensions = 32, 16
 Done constructing slab geometry
+
+dx*nx= 0.19635 * 32 = 6.28319, dx(m)*nx= 0.00125 * 32 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+
    Configuration space box ((0,0) (31,15) (0,0)) is assigned to process 0
 Constructing magnetic geometry
 Done constructing magnetic geometry
    Velocity space box ((-12,0) (11,17) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 103166 * 12 = 1.23799e+06, ( 1 : 309497 )
+dmu*nmu= 0.111111 * 18 = 2, dmu(J/T)*nmu= 8.90098e-18 * 18 = 1.60218e-16, ( 1 : 8.01088e-17 )
+
    Phase space box ((0,0,-12,0) (31,15,11,17) (0,0,0,0)) is assigned to process 0, has 221184 valid cells and 577536 ghost cells
 Adding species and constructing gyrocenter coordinates...
    hydrogen: kinetic species with mass = 2, charge = 1
    electron: kinetic species with mass = 2, charge = -1
 Done adding species and constructing coordinates
 Adding fluid species...
-Done adding congiration space variables
+Done adding confiration space variables
 Adding configuration space field variables...
 Done adding configuration space variables
 
@@ -75,21 +82,29 @@ Constant grid function parameters:
 "N0_grid_func":
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 "T0_grid_func":
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 "eN0_grid_func":
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 "eT0_grid_func":
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 "ele_vpar_grid_func":
@@ -99,6 +114,8 @@ Constant grid function parameters:
 "potential_grid_func":
 Arbitrary grid function parameters:
   function: 0.0000001
+  translated form: 0.0000001
+  postfix form: {0.0000001}
   coordinate type: mapped
 
 ===============================================
@@ -110,11 +127,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -127,11 +148,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -148,11 +173,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -165,11 +194,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -182,11 +215,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -199,11 +236,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -216,11 +257,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -233,11 +278,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -250,11 +299,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -267,11 +320,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*sin(x/2)*sin(y/2) )
+  translated form: (1.00+0.00001*sin(x'/2)*sin(y'/2))
+  postfix form: {1.00}{0.00001}{x'[0.000000000000000e+00]}{2}{/}{sin}{*}{y'[0.000000000000000e+00]}{2}{/}{sin}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -279,6 +336,7 @@ Constant grid function parameters:
   value: 0
 
 
+  logical_sheath  =  0
 -----------------------------------------------
 ===============================================
 
@@ -289,11 +347,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -306,11 +368,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -323,11 +389,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -340,11 +410,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -357,11 +431,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -374,11 +452,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -391,11 +473,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -408,11 +494,15 @@ Maxwellian kinetic function parameters:
 -- Density --
 Arbitrary grid function parameters:
   function: (1.00+0.00001*cos(2*x)*cos(y) )
+  translated form: (1.00+0.00001*cos(2*x')*cos(y'))
+  postfix form: {1.00}{0.00001}{2}{x'[0.000000000000000e+00]}{*}{cos}{*}{y'[0.000000000000000e+00]}{cos}{*}{+}
   coordinate type: mapped
 
 -- Temperature --
 Arbitrary grid function parameters:
   function: 1.0
+  translated form: 1.0
+  postfix form: {1.0}
   coordinate type: mapped
 
 -- Vparallel --
@@ -420,6 +510,7 @@ Constant grid function parameters:
   value: 0
 
 
+  logical_sheath  =  0
 -----------------------------------------------
 ===============================================
 No collision model specified for hydrogen.
@@ -429,12 +520,74 @@ Collision model for 1	electron:	None
 Time integration method: rk (4)
       BiCGStab converged successfully
   Distribution Function Extrema:
-    Species 0:	6.13841e-05 [max]	1.54134e-12 [min]
-    Species 1:	6.13841e-05 [max]	1.54132e-12 [min]
+    Species 0:	6.22426e-05 [max]	2.39197e-09 [min]
+    Species 1:	6.22426e-05 [max]	2.39195e-09 [min]
 
 
 Step 1
       BiCGStab converged successfully
+
+m_num_cells[i]=32
+m_num_cells[i]=16
+m_num_cells[i]=24
+m_num_cells[i]=18
+dx*nx= 0.19635 * 32 = 6.28319, dx(m)*nx= 0.00125 * 32 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 103166 * 12 = 1.23799e+06, ( 1 : 6447.85 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 72949.1 * 12 = 875389, ( 1 : 218847 )
+ [electron] mass = 2
+  dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 72949.1 * 12 = 875389, ( 1 : 218847 )
+dmu*nmu= 0.111111 * 18 = 1, dmu(J/T)*nmu= 8.90098e-18 * 18 = 1.60218e-16, ( 1 : 4.45049e-18 )
+
+Estimated dt
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=309497
+unit_dimension_time   [hydrogen]=3.23105e-06
+[hydrogen] maxvel:phy_maxvel[0]=2.87766e-05:8.90628(1:309497)
+[hydrogen] maxvel:phy_maxvel[1]=3.17092e-05:9.81389(1:309497)
+[hydrogen] maxvel:phy_maxvel[2]=0:0(1:-nan)
+[hydrogen] maxvel:phy_maxvel[3]=0:0(1:-nan)
+
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.0025/0=inf
+dt_ypar(-)[hydrogen]=inf
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.0025/9.81389=0.000254741
+dt_y(-)[hydrogen]=78.8416
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.00125/8.90628=0.00014035
+dt_x(-)[hydrogen]=43.438
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=103166/0=inf
+dt_vpar(-)[hydrogen]=inf
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=309497
+unit_dimension_time   [electron]=3.23105e-06
+[electron] maxvel:phy_maxvel[0]=2.87766e-05:8.90628(1:309497)
+[electron] maxvel:phy_maxvel[1]=3.17092e-05:9.81389(1:309497)
+[electron] maxvel:phy_maxvel[2]=0:0(1:-nan)
+[electron] maxvel:phy_maxvel[3]=0:0(1:-nan)
+
+dt_ypar(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.0025/0=inf
+dt_ypar(-)[electron]=inf
+dt_y(s)[electron]=dy(m)/vmax_y(m/s)[electron]=0.0025/9.81389=0.000254741
+dt_y(-)[electron]=78.8416
+dt_x(s)[electron]=dx(m)/vmax_x(m/s)[electron]=0.00125/8.90628=0.00014035
+dt_x(-)[electron]=43.438
+dt_vpar(s)[electron]=dvpar(m/s)/vmax_vpar(m/s/s)[electron]=103166/0=inf
+dt_vpar(-)[electron]=inf
+
+ky = 39.2699 ~ 628.319
+kx = 39.2699 ~ 1256.64
+kpar  = 0 ~ 0
+kperp = 55.536 ~ 1404.96
+rhos = 0.00107702
+rhos * ky    = 0.0422943 ~ 0.67671
+rhos * kx    = 0.0422943 ~ 1.35342
+rhos * kperp = 0.0598132 ~ 1.51317
+omega_ea(1/s) = 0 ~ 0
+omega_ea(-)   = 0 ~ 0
+delta_t_omega_ea (s) = inf ~ inf
+delta_t_omega_ea (-) = inf ~ inf
+
       BiCGStab converged successfully
       BiCGStab converged successfully
       BiCGStab converged successfully
@@ -442,10 +595,11 @@ Step 1
   dt: 0.005
     Vlasov    : 43.1365 (time scale), 0.000115911 (CFL)
     Collisions: 1.79769e+308 (time scale), 2.78134e-311 (CFL)
+    ES_Alfven : inf (time scale), 0 (CFL)
   ----
   Distribution Function Extrema:
-    Species 0:	6.13841e-05 [max]	1.54134e-12 [min]
-    Species 1:	6.13841e-05 [max]	1.54132e-12 [min]
+    Species 0:	6.22426e-05 [max]	2.39197e-09 [min]
+    Species 1:	6.22426e-05 [max]	2.39195e-09 [min]
 
 Step 1 completed, simulation time is 0.005
 ----
@@ -459,10 +613,11 @@ Step 2
   dt: 0.005
     Vlasov    : 43.1363 (time scale), 0.000115912 (CFL)
     Collisions: 1.79769e+308 (time scale), 2.78134e-311 (CFL)
+    ES_Alfven : inf (time scale), 0 (CFL)
   ----
   Distribution Function Extrema:
-    Species 0:	6.13841e-05 [max]	1.54134e-12 [min]
-    Species 1:	6.13841e-05 [max]	1.54132e-12 [min]
+    Species 0:	6.22426e-05 [max]	2.39197e-09 [min]
+    Species 1:	6.22426e-05 [max]	2.39195e-09 [min]
 
 Step 2 completed, simulation time is 0.01
 ----
@@ -476,10 +631,11 @@ Step 3
   dt: 0.005
     Vlasov    : 43.136 (time scale), 0.000115912 (CFL)
     Collisions: 1.79769e+308 (time scale), 2.78134e-311 (CFL)
+    ES_Alfven : inf (time scale), 0 (CFL)
   ----
   Distribution Function Extrema:
-    Species 0:	6.13841e-05 [max]	1.54134e-12 [min]
-    Species 1:	6.13841e-05 [max]	1.54132e-12 [min]
+    Species 0:	6.22426e-05 [max]	2.39197e-09 [min]
+    Species 1:	6.22426e-05 [max]	2.39195e-09 [min]
 
 Step 3 completed, simulation time is 0.015
 ----
