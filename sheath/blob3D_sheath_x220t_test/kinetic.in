@@ -244,13 +244,15 @@ grid_function_library.eT0_grid_func.type = "constant"
 grid_function_library.eT0_grid_func.value = 1.0
 
 grid_function_library.N0_grid_func.type = "arbitrary"
-grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.004/0.02))    )"
+#grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.004/0.02))    )"
+grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02))+sin(y/2)+exp(-(z-pi)^2/(2*pi*0.004/0.02))    )"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
 #grid_function_library.N0_grid_func.function = "(1.00)"
 
 grid_function_library.eN0_grid_func.type = "arbitrary"
-grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.004/0.02))    )"
+#grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.004/0.02))    )"
+grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02))+sin(y/2)+exp(-(z-pi)^2/(2*pi*0.004/0.02))    )"
 #grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
 #grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
 #grid_function_library.eN0_grid_func.function = "(1.00)"

@@ -1,10 +1,13 @@
 import numpy as np
 import h5py
 import matplotlib.pyplot as plt
+from mpl_toolkits import axes_grid1 
 from scipy import interpolate
 from scipy import ndimage
 import pylab as pl
 from scipy.optimize import leastsq
+
+from mayavi import mlab
 
 
 #setup plot
@@ -40,11 +43,19 @@ def init_plotting(form=''):
 #        plt.gca().spines['top'].set_color('none')
 #        plt.gca().xaxis.set_ticks_position('bottom')
 #        plt.gca().yaxis.set_ticks_position('left')
- 
+def add_colorbar(im, aspect=20, pad_fraction=0.5, **kwargs):
+    """Add a vertical color bar to an image plot."""
+    divider = axes_grid1.make_axes_locatable(im.axes)
+    width = axes_grid1.axes_size.AxesY(im.axes, aspect=1.0/aspect)
+    pad = axes_grid1.axes_size.Fraction(pad_fraction, width)
+    current_ax = plt.gca()
+    cax = divider.append_axes("right", size=width, pad=pad)
+    plt.sca(current_ax)
+    return im.axes.figure.colorbar(im, cax=cax, **kwargs)
 
 
 # import dfn
-File =h5py.File('./plt_dfn_plots/plt.1.hydrogen.dfn0000.5d.map.hdf5','r')     
+File =h5py.File('./plt_dfn_plots/plt.1.hydrogen.dfn0000.5d.hdf5','r')     
 
 print File.items()
 print 
@@ -66,6 +77,11 @@ cells = File['level_0']['boxes'][0]
 print cells
 dim=len(cells)/2
 print dim
+if dim>3:
+    cfg_dim=dim-2
+else:
+    cfg_dim=dim
+
 if dim<5:
     xcell_beg=cells[0]
     xcell_fin=cells[0+dim]
@@ -116,29 +132,33 @@ else:
 data = File['level_0']['data:datatype=0'][:]
 print 'level_0/data:datatype=0 -> len = ',len(data)
 if dim<5:
-    data4d=data.reshape((num_xcell,num_ycell,num_vparcell,num_mucell),order='F')
-    print data4d.shape
+    dataNd=data.reshape((num_xcell,num_ycell,num_vparcell,num_mucell),order='F')
+    print dataNd.shape
 else:
     print num_xcell*num_ycell*num_zcell*num_vparcell*num_mucell
-    data5d=data.reshape((num_xcell,num_ycell,num_zcell,num_vparcell,num_mucell),order='F')
-    print data5d.shape
+    dataNd=data.reshape((num_xcell,num_ycell,num_zcell,num_vparcell,num_mucell),order='F')
+    print dataNd.shape
 File.close()
 
 
 # diagnostic points
-x_pt = 10
-y_pt = 10
-z_pt = 1
-x_rbf_refine = 5
-y_rbf_refine = 5
+x_pt = 4
+y_pt = 5
+z_pt = 6
+vpar_rbf_refine = 5
+mu_rbf_refine = 5
 rbf_smooth = 0
 
 #phase
 VPAR,MU = np.mgrid[-1:1:(num_vparcell*1j),0:1:(num_mucell*1j)]
 
 #refine
-rbf = interpolate.Rbf(VPAR.ravel(), MU.ravel(), data4d[x_pt,y_pt,:,:].ravel(), smooth=rbf_smooth)
-VPAR_REFINE, MU_REFINE = np.mgrid[-1:1:(num_vparcell*1j*x_rbf_refine), 0:1:(num_mucell*1j*y_rbf_refine)]
+if dim<5:
+    rbf = interpolate.Rbf(VPAR.ravel(), MU.ravel(), dataNd[x_pt,y_pt,:,:].ravel(), smooth=rbf_smooth)
+else:
+    rbf = interpolate.Rbf(VPAR.ravel(), MU.ravel(), dataNd[x_pt,y_pt,z_pt,:,:].ravel(), smooth=rbf_smooth)
+    
+VPAR_REFINE, MU_REFINE = np.mgrid[-1:1:(num_vparcell*1j*vpar_rbf_refine), 0:1:(num_mucell*1j*mu_rbf_refine)]
 saved_rbf=rbf(VPAR_REFINE,MU_REFINE)
 
 
@@ -166,13 +186,20 @@ for i in range(num_vparcell):
     for j in range(num_mucell):
         f_model[i][j]=coef_maxwell*np.exp(-0.5*(VPAR_SCALE[i]**2+MU_SCALE[j]*Bhat)/That)
 
-delta_f_model = (f_model-data4d[x_pt,y_pt,:,:])
+if dim<5:
+    delta_f_model = (f_model-dataNd[x_pt,y_pt,:,:])
+else:
+    delta_f_model = (f_model-dataNd[x_pt,y_pt,z_pt,:,:])
 
 #least square fitting on a slice of MU index=0
 guess_den =coef_maxwell 
 guess_temp =1.0/(2.0*That)
 guess_shift =0.0
-optimize_func = lambda z: z[0]*np.exp(-z[1]*(VPAR_SCALE-z[2])**2)-data4d[x_pt,y_pt,:,0] 
+if dim<5:
+    optimize_func = lambda z: z[0]*np.exp(-z[1]*(VPAR_SCALE-z[2])**2)-dataNd[x_pt,y_pt,:,0] 
+else:
+    optimize_func = lambda z: z[0]*np.exp(-z[1]*(VPAR_SCALE-z[2])**2)-dataNd[x_pt,y_pt,z_pt,:,0] 
+
 est_den, est_temp, est_shift = leastsq(optimize_func, [guess_den, guess_temp, guess_shift])[0]
 fitted_f = est_den*np.exp(-est_temp*VPAR_SCALE**2)
 t_fit = 1.0/(est_temp*2.0)
@@ -182,33 +209,55 @@ print 't_fit = ',t_fit
 print 'n_fit = ',n_fit
 print 'vshift_fit = ',est_shift
 
-
 #density sum
-X,Y = np.mgrid[0:1:(num_xcell*1j),0:1:(num_ycell*1j)]
-f_vpar_mu_sum = np.zeros((num_xcell,num_ycell))
-delta_Mu = 1.0*Mu_max/num_mucell
-delta_Vpar = 2.0*Vpar_max/num_vparcell
-print delta_Mu
-print delta_Vpar
-for i in range(num_xcell):
-    for j in range(num_ycell):
-        sumovervparandmu=0.0
-        for k in range(num_vparcell):
-            sumovermu=0.0
-            for l in range(num_mucell):
-                sumovermu=sumovermu+data4d[i,j,k,l]
-            sumovermu=sumovermu*delta_Mu
-            sumovervparandmu=sumovervparandmu+sumovermu
-        sumovervparandmu=sumovervparandmu*delta_Vpar 
-        f_vpar_mu_sum[i,j]=f_vpar_mu_sum[i,j]+sumovervparandmu
+if dim<5:
+    X,Y = np.mgrid[0:1:(num_xcell*1j),0:1:(num_ycell*1j)]
+    f_vpar_mu_sum = np.zeros((num_xcell,num_ycell))
+    delta_Mu = 1.0*Mu_max/num_mucell
+    delta_Vpar = 2.0*Vpar_max/num_vparcell
+    for i in range(num_xcell):
+        for j in range(num_ycell):
+            sumovervparandmu=0.0
+            for k in range(num_vparcell):
+                sumovermu=0.0
+                for l in range(num_mucell):
+                    sumovermu=sumovermu+dataNd[i,j,k,l]
+                sumovermu=sumovermu*delta_Mu
+                sumovervparandmu=sumovervparandmu+sumovermu
+            sumovervparandmu=sumovervparandmu*delta_Vpar 
+            f_vpar_mu_sum[i,j]=f_vpar_mu_sum[i,j]+sumovervparandmu
+else:
+    X,Y,Z = np.mgrid[0:1:(num_xcell*1j),0:1:(num_ycell*1j),0:1:(num_zcell*1j)]
+    f_vpar_mu_sum = np.zeros((num_xcell,num_ycell,num_zcell))
+    delta_Mu = 1.0*Mu_max/num_mucell
+    delta_Vpar = 2.0*Vpar_max/num_vparcell
+    for i in range(num_xcell):
+        for j in range(num_ycell):
+            for k in range(num_zcell):
+                sumovervparandmu=0.0
+                for l in range(num_vparcell):
+                    sumovermu=0.0
+                    for m in range(num_mucell):
+                        sumovermu=sumovermu+dataNd[i,j,k,l,m]
+                    sumovermu=sumovermu*delta_Mu
+                    sumovervparandmu=sumovervparandmu+sumovermu
+                sumovervparandmu=sumovervparandmu*delta_Vpar 
+                f_vpar_mu_sum[i,j,k]=f_vpar_mu_sum[i,j,k]+sumovervparandmu
+print f_vpar_mu_sum.shape
 
 
 #sum over mu
 f_mu_sum = np.zeros(num_vparcell)
-for i in range(num_vparcell):
-    for j in range(num_mucell):
-        f_mu_sum[i]=f_mu_sum[i]+data4d[x_pt,y_pt,i,j]
-    f_mu_sum[i]=f_mu_sum[i]/num_mucell
+if dim<5:
+    for i in range(num_vparcell):
+        for j in range(num_mucell):
+            f_mu_sum[i]=f_mu_sum[i]+dataNd[x_pt,y_pt,i,j]
+        f_mu_sum[i]=f_mu_sum[i]/num_mucell
+else:
+    for i in range(num_vparcell):
+        for j in range(num_mucell):
+            f_mu_sum[i]=f_mu_sum[i]+dataNd[x_pt,y_pt,z_pt,i,j]
+        f_mu_sum[i]=f_mu_sum[i]/num_mucell
 
 f_mu_sum_rbf = np.zeros(len(VPAR_REFINE[:,0]))
 for i in range(len(VPAR_REFINE[:,0])):
@@ -218,33 +267,141 @@ for i in range(len(VPAR_REFINE[:,0])):
 
 
 
-
-#raw density
+#raw density 2D 
 init_plotting()
 plt.subplot(111)
 #plt.gca().margins(0.1, 0.1)
-plt.contourf(X,Y,f_vpar_mu_sum,100)
+if dim<5:
+    im=plt.contourf(X,Y,f_vpar_mu_sum,100)
+else:
+    im=plt.contourf(X[:,:,0],Y[:,:,0],f_vpar_mu_sum[:,:,z_pt],100)
 plt.title(u'n(X,Y)')
 plt.xlabel(u'X')
 plt.ylabel(u'Y')
+plt.colorbar()
 plt.tight_layout()
 plt.savefig('fig1.png')
 plt.savefig('fig1.eps')
 plt.close('all')
 
+#raw density 2D imshow
+init_plotting()
+plt.subplot(111)
+#plt.gca().margins(0.1, 0.1)
+if dim<5:
+    im=plt.imshow(f_vpar_mu_sum.T,interpolation='none',origin="lower",extent=[0,1,0,1],aspect=1.0)
+else:
+    im=plt.imshow(f_vpar_mu_sum[:,:,z_pt].T,interpolation='none',origin="lower",extent=[0,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+plt.title(u'n(X,Y)')
+plt.xlabel(u'X')
+plt.ylabel(u'Y')
+add_colorbar(im)
+plt.tight_layout()
+plt.savefig('fig1_im.png')
+plt.savefig('fig1_im.eps')
+plt.close('all')
+
+
+
+if dim>=5:
+    #raw density 3D mlab
+    wh=1 # 0: black background, 1: whithe background
+    fig=mlab.figure(bgcolor=(wh,wh,wh),size=(800,600))
+    mlab.contour3d(f_vpar_mu_sum,contours=10,transparent=True,opacity=0.8)
+    ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+    ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
+    ax.axes.property.color=(1-wh,1-wh,1-wh)
+    ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+    ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+    ax.axes.label_format='%.2f'
+    cb=mlab.colorbar(title='Density', orientation='vertical')
+    cb.title_text_property.color=(1-wh,1-wh,1-wh)
+    cb.label_text_property.color=(1-wh,1-wh,1-wh)
+
+    mlab.savefig('fig1_mlab_iso.png')
+    fig.scene.save_ps('fig1_mlab_iso.eps')
+    #arr=mlab.screenshot()
+    #plt.imshow(arr)
+    #plt.axis('off')
+    #plt.savefig('fig1_mlab_iso.eps')
+    #plt.savefig('fig1_mlab_iso.pdf')
+    mlab.close(all=True)
+    
+    
+    #raw density 3D mlab volume
+    wh=0 # 0: black background, 1: whithe background
+    fig=mlab.figure(bgcolor=(wh,wh,wh),size=(800,600))
+    mlab.pipeline.volume(mlab.pipeline.scalar_field(f_vpar_mu_sum))
+    ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+    ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
+    ax.axes.property.color=(1-wh,1-wh,1-wh)
+    ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+    ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+    ax.axes.label_format='%.2f'
+    cb=mlab.colorbar(title='Density', orientation='vertical')
+    cb.title_text_property.color=(1-wh,1-wh,1-wh)
+    cb.label_text_property.color=(1-wh,1-wh,1-wh)
+    mlab.savefig('fig1_mlab_volume.png')
+    fig.scene.save_ps('fig1_mlab_volume.eps')
+    mlab.close(all=True)
+    
+    #raw density 3D mlab slace
+    wh=1 # 0: black background, 1: whithe background
+    fig=mlab.figure(bgcolor=(wh,wh,wh),size=(800,600))
+    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(f_vpar_mu_sum),plane_orientation='x_axes',slice_index=x_pt)
+    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(f_vpar_mu_sum),plane_orientation='y_axes',slice_index=y_pt)
+    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(f_vpar_mu_sum),plane_orientation='z_axes',slice_index=z_pt)
+    ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+    ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
+    ax.axes.property.color=(1-wh,1-wh,1-wh)
+    ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+    ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+    ax.axes.label_format='%.2f'
+    cb=mlab.colorbar(title='Density', orientation='vertical')
+    cb.title_text_property.color=(1-wh,1-wh,1-wh)
+    cb.label_text_property.color=(1-wh,1-wh,1-wh)
+    mlab.savefig('fig1_mlab_slice.png')
+    fig.scene.save_ps('fig1_mlab_slice.eps')
+    mlab.close(all=True)
+
+
 #raw f
 init_plotting()
 plt.subplot(111)
 #plt.gca().margins(0.1, 0.1)
-plt.contourf(VPAR,MU,data4d[x_pt,y_pt,:,:],100)
+if dim<5:
+    plt.contourf(VPAR,MU,dataNd[x_pt,y_pt,:,:],100)
+else:
+    plt.contourf(VPAR,MU,dataNd[x_pt,y_pt,z_pt,:,:],100)
 plt.title(r'$f(\bar{v}_\parallel,\bar{\mu})$')
 plt.xlabel(r'$\bar{v}_\parallel$')
 plt.ylabel(r'$\bar{\mu}$')
-plt.tight_layout()
 plt.colorbar();
+plt.tight_layout()
 plt.savefig('fig2.png')
 plt.savefig('fig2.eps')
 plt.close('all')
+
+#raw f imshow
+init_plotting()
+plt.subplot(111)
+#plt.gca().margins(0.1, 0.1)
+if dim<5:
+    im=plt.contourf(dataNd[x_pt,y_pt,:,:].T,interpolation='none',origin="lower",extent=[-1,1,0,1],aspect=1.0)
+else:
+    im=plt.imshow(dataNd[x_pt,y_pt,z_pt,:,:].T,interpolation='none',origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+plt.title(r'$f(\bar{v}_\parallel,\bar{\mu})$')
+plt.xlabel(r'$\bar{v}_\parallel$')
+plt.ylabel(r'$\bar{\mu}$')
+add_colorbar(im)
+plt.tight_layout()
+plt.savefig('fig2_im.png')
+plt.savefig('fig2_im.eps')
+plt.show()
+
+plt.close('all')
+
+#############################################
 
 ##refine
 init_plotting()
@@ -330,7 +487,7 @@ plt.close('all')
 init_plotting()
 fig=plt.subplot(111)
 #plt.gca().margins(0.1, 0.1)
-plt.plot(VPAR[:,0], f_model[:,0]/data4d[x_pt,y_pt,:,0])
+plt.plot(VPAR[:,0], f_model[:,0]/dataNd[x_pt,y_pt,:,0])
 plt.xlabel(r'$\bar{v}_\parallel$')
 plt.ylabel(u'f_model/f(MU=0)')
 plt.tight_layout()
@@ -343,8 +500,8 @@ legend_maxwellian = 'MAXWELLIAN\n'+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit
 init_plotting()
 fig=plt.subplot(111)
 #plt.gca().margins(0.1, 0.1)
-#plt.plot(VPAR[:,0], fitted_f/data4d[x_pt,y_pt,:,0])
-plt.plot(VPAR[:,0], data4d[x_pt,y_pt,:,0],linewidth=1.5,color='b',label='COGENT')
+#plt.plot(VPAR[:,0], fitted_f/dataNd[x_pt,y_pt,:,0])
+plt.plot(VPAR[:,0], dataNd[x_pt,y_pt,:,0],linewidth=1.5,color='b',label='COGENT')
 plt.plot(VPAR[:,0], fitted_f,linewidth=1.5,linestyle='--',color='k',label=legend_maxwellian)
 plt.xlabel(r'$\bar{v}_\parallel$')
 plt.ylabel(u'f_fit/f(MU=0)')
@@ -359,7 +516,7 @@ plt.close('all')
 init_plotting()
 plt.subplot(111)
 #plt.gca().margins(0.1, 0.1)
-plt.imshow(data4d[x_pt,y_pt,:,:].T,interpolation='none',origin="lower",extent=[-1,1,0,1], aspect=1.60)
+plt.imshow(dataNd[x_pt,y_pt,:,:].T,interpolation='none',origin="lower",extent=[-1,1,0,1], aspect=1.60)
 plt.title(r'$f(\bar{v}_\parallel,\bar{\mu})$')
 plt.xlabel(r'$\bar{v}_\parallel$')
 plt.ylabel(r'$\bar{\mu}$')
