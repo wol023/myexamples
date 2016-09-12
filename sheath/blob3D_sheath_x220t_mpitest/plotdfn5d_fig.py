@@ -86,10 +86,6 @@ max_box_intvect=max_box_intvect.astype(int)
 total_box=np.zeros(( num_decomposition,dim*2 ))
 total_box=total_box.astype(int)
 
-accum_box=np.zeros(dim*2 )
-accum_box=accum_box.astype(int)
-accum_box=min_box_intvect
-
 for i in range(dim*2):
     for j in range(num_decomposition):
         total_box[j][i]=boxes[j][i]
@@ -101,6 +97,17 @@ for i in range(dim*2):
 
 print 'lo=',min_box_intvect
 print 'hi=',max_box_intvect
+domain_box_intvect=min_box_intvect
+domain_box_intvect[dim:dim*2]=max_box_intvect[dim:dim*2]
+print 'domain=',domain_box_intvect
+
+shifter=np.zeros(dim*2)
+shifter=shifter.astype(int)
+for i in range(dim):
+    shifter[i]=-domain_box_intvect[i]
+for i in range(dim):
+    shifter[i+dim]=-domain_box_intvect[i]
+print shifter
 
 if dim<5:
     dir_x=0
@@ -146,27 +153,49 @@ print 'prod_num_cell_loc=',prod_num_cell_loc
      
 data = File['level_0']['data:datatype=0'][:]
 previous_index=0
-extend_dir=-1
+
+if dim<5:
+    dataNd=np.linspace(0.0,0.1,num=prod_num_cell_total).reshape((num_cell_total[0],num_cell_total[1],num_cell_total[2],num_cell_total[3]) )
+else:
+    dataNd=np.linspace(0.0,0.1,num=prod_num_cell_total).reshape((num_cell_total))
+num_cell_loc=num_cell_loc.astype(int)
+
 for i in range(num_decomposition):
     cells = File['level_0']['boxes'][i]
     print 'decomposition=',i
     print 'cells=',cells
-    for j in range(len(accum_box)/2,len(accum_box)):
-        if accum_box[j]<cells[j]:
-            extend_dir=j-len(accum_box)/2
-    print 'extend_dir=',extend_dir
+    
+    cells_shift=cells
+    for j in range(len(cells_shift)):
+        cells_shift[j]=cells[j]+shifter[j]
+    
         
     if dim<5:
         dataNd_loc=data[previous_index:prod_num_cell_loc*(i+1)].reshape((num_cell_loc[dir_x],num_cell_loc[dir_y],num_cell_loc[dir_vpar],num_cell_loc[dir_mu]),order='F')
     else:
-        dataNd_loc=data[previous_index:prod_num_cell_loc*(i+1)].reshape((num_cell_loc[dir_x],num_cell_loc[dir_y],num_cell_loc[dir_z],num_cell_loc[dir_vpar],num_cell_loc[dir_mu]),order='F')
-    previous_index=prod_num_cell_loc*(i+1)
-    print dataNd_loc.shape
+        print previous_index
+        print prod_num_cell_loc*(i+1)
+        print prod_num_cell_loc
+        print prod_num_cell_total
+        print (prod_num_cell_loc*(i+1)-previous_index)
+        print prod_num_cell_total/(prod_num_cell_loc*(i+1)-previous_index)
 
-    if extend_dir==-1:
-        dataNd=dataNd_loc
-    else:
-        dataNd=np.concatenate((dataNd,dataNd_loc),axis=extend_dir)
+        dataNd_loc=data[previous_index:prod_num_cell_loc*(i+1)].reshape((num_cell_loc[dir_x],num_cell_loc[dir_y],num_cell_loc[dir_z],num_cell_loc[dir_vpar],num_cell_loc[dir_mu]),order='F')
+
+    previous_index=prod_num_cell_loc*(i+1)
+
+    print cells_shift
+    print cells_shift[dir_x],cells_shift[dim+dir_x]+1
+    print cells_shift[dir_y],cells_shift[dim+dir_y]+1
+    print cells_shift[dir_z],cells_shift[dim+dir_z]+1
+    print cells_shift[dir_vpar],cells_shift[dim+dir_vpar]+1
+    print cells_shift[dir_mu],cells_shift[dim+dir_mu]+1
+
+
+
+    dataNd[cells_shift[dir_x]:cells_shift[dim+dir_x]+1, cells_shift[dir_y]:cells_shift[dim+dir_y]+1, cells_shift[dir_z]:cells_shift[dim+dir_z]+1, cells_shift[dir_vpar]:cells_shift[dim+dir_vpar]+1, cells_shift[dir_mu]:cells_shift[dim+dir_mu]+1]=dataNd_loc
+
+
 File.close()
 print dataNd.shape
 

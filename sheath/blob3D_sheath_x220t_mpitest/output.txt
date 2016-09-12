@@ -42,14 +42,17 @@ dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 6.25 * 16 = 100, ( 1 : 15.9155 )
    Configuration space box ((0,0,8) (7,11,15) (0,0,0)) is assigned to process 0
 Constructing magnetic geometry
 Done constructing magnetic geometry
-   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+   Velocity space box ((-8,0) (-1,7) (0,0)) is assigned to process 0
+   Velocity space box ((0,0) (7,7) (0,0)) is assigned to process 0
 
 Done creating velocity coordinate
 dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 309497 )
 dmu*nmu= 0.25 * 8 = 2, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 8.01088e-17 )
 
-   Phase space box ((0,0,0,-8,0) (7,11,7,7,7) (0,0,0,0,0)) is assigned to process 0, has 98304 valid cells and 1867776 ghost cells
-   Phase space box ((0,0,8,-8,0) (7,11,15,7,7) (0,0,0,0,0)) is assigned to process 0, has 98304 valid cells and 1867776 ghost cells
+   Phase space box ((0,0,0,-8,0) (7,11,7,-1,7) (0,0,0,0,0)) is assigned to process 0, has 49152 valid cells and 1261568 ghost cells
+   Phase space box ((0,0,0,0,0) (7,11,7,7,7) (0,0,0,0,0)) is assigned to process 0, has 49152 valid cells and 1261568 ghost cells
+   Phase space box ((0,0,8,-8,0) (7,11,15,-1,7) (0,0,0,0,0)) is assigned to process 0, has 49152 valid cells and 1261568 ghost cells
+   Phase space box ((0,0,8,0,0) (7,11,15,7,7) (0,0,0,0,0)) is assigned to process 0, has 49152 valid cells and 1261568 ghost cells
 Adding species and constructing gyrocenter coordinates...
    hydrogen: kinetic species with mass = 2, charge = 1
    electron: kinetic species with mass = 0.01, charge = -1
@@ -637,8 +640,8 @@ delta_t_omega_ea (-) = 0.211472 ~ 34.5056
 num_cells = 8 12 16 16 8 
 is_periodic = 0 0 0 0 0 
 configuration_decomposition = 1 1 2 
-velocity_decomposition = 1 1 
-phase_decomposition = 1 1 2 1 1 
+velocity_decomposition = 2 1 
+phase_decomposition = 1 1 2 2 1 
 enforce_positivity = 0
 enforce_positivity_type = stage
   ----
@@ -669,4 +672,40 @@ The (poloidal) direction makes the largest contribution to the stable dt recipro
 Vlasov operator time step (0.100588) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0375,0.0216667,46.875,-3.75,0.125) and mapped coordinate = (7,6,7,-8,0)
 The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
       BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 8 12 16 16 8 
+is_periodic = 0 0 0 0 0 
+configuration_decomposition = 1 1 2 
+velocity_decomposition = 2 1 
+phase_decomposition = 1 1 2 2 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.0905291
+    Vlasov    : 0.128873 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.03585e-310 (CFL)
+    ES_Alfven : 0.211472 (time scale), 0.428091 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	0.00328936 [max]	6.46755e-08 [min]
+    Species 1:	1.16395e-06 [max]	2.28673e-11 [min]
+
+Step 2 completed, simulation time is 0.207607
+----
+soln_dfn.ghostvect=(0,0,0,0,0)
+dfn.ghostvect=(0,0,0,0,0)
+dfn.ghostvect=(0,0,0,0,0)
+dfn.ghostvect=(0,0,0,0,0)
+soln_dfn.ghostvect=(0,0,0,0,0)
+dfn.ghostvect=(0,0,0,0,0)
+dfn.ghostvect=(0,0,0,0,0)
+dfn.ghostvect=(0,0,0,0,0)
+
+Step 3
+      BiCGStab converged successfully
+Vlasov operator time step (0.136038) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0375,0.00833333,71.875,-3.75,0.125) and mapped coordinate = (7,2,11,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0688298) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0375,0.00833333,71.875,-3.75,0.125) and mapped coordinate = (7,2,11,-8,0)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
       BiCGStab converged successfully
