@@ -58,88 +58,124 @@ def add_colorbar(im, aspect=20, pad_fraction=0.5, **kwargs):
 File =h5py.File('./plt_dfn_plots/plt.1.hydrogen.dfn0000.5d.hdf5','r')     
 
 print File.items()
-print 
-print File['Chombo_global'].attrs['SpaceDim']
-print
-print File['level_0'].items()
-print
-print File['level_0']['Processors'][:]
-print 
-print File['level_0']['boxes'][:]
-print 
-print File['level_0']['data:offsets=0'][:]
-print 
-print len(File['level_0']['data:datatype=0'][:])
-print 
-print File['level_0']['data_attributes'].attrs.items()
+#print 
+#print File['Chombo_global'].attrs['SpaceDim']
+#print
+#print File['level_0'].items()
+#print
+#print File['level_0']['Processors'][:]
+#print 
+#print File['level_0']['boxes'][:]
+#print 
+#print File['level_0']['data:offsets=0'][:]
+#print 
+#print len(File['level_0']['data:datatype=0'][:])
+#print 
+#print File['level_0']['data_attributes'].attrs.items()
 
-cells = File['level_0']['boxes'][0]
-print cells
-dim=len(cells)/2
-print dim
+boxes=File['level_0']['boxes'][:]
+num_decomposition = len(boxes)#boxes.shape[0]
+
+dim=len(boxes[0])/2
+
+min_box_intvect=np.ones(dim*2)
+max_box_intvect=np.ones(dim*2)
+min_box_intvect=min_box_intvect.astype(int)
+max_box_intvect=max_box_intvect.astype(int)
+
+total_box=np.zeros(( num_decomposition,dim*2 ))
+total_box=total_box.astype(int)
+
+accum_box=np.zeros(dim*2 )
+accum_box=accum_box.astype(int)
+accum_box=min_box_intvect
+
+for i in range(dim*2):
+    for j in range(num_decomposition):
+        total_box[j][i]=boxes[j][i]
+print total_box
+
+for i in range(dim*2):
+    min_box_intvect[i]=min(total_box[:,i])
+    max_box_intvect[i]=max(total_box[:,i])
+
+print 'lo=',min_box_intvect
+print 'hi=',max_box_intvect
+
+if dim<5:
+    dir_x=0
+    dir_y=1
+    dir_vpar=2
+    dir_mu=3
+else:
+    dir_x=0
+    dir_y=1
+    dir_z=2
+    dir_vpar=3
+    dir_mu=4
+
 if dim>3:
     cfg_dim=dim-2
 else:
     cfg_dim=dim
 
-if dim<5:
-    xcell_beg=cells[0]
-    xcell_fin=cells[0+dim]
-    num_xcell=xcell_fin-xcell_beg+1
-    print xcell_beg,xcell_fin,num_xcell
-    print
-    ycell_beg=cells[1]
-    ycell_fin=cells[1+dim]
-    num_ycell=ycell_fin-ycell_beg+1
-    print ycell_beg,ycell_fin,num_ycell
-    print
-    vparcell_beg=cells[2]
-    vparcell_fin=cells[2+dim]
-    num_vparcell=vparcell_fin-vparcell_beg+1
-    print vparcell_beg,vparcell_fin,num_vparcell
-    print
-    mucell_beg=cells[3]
-    mucell_fin=cells[3+dim]
-    num_mucell=mucell_fin-mucell_beg+1
-    print mucell_beg,mucell_fin,num_mucell
-else:
-    xcell_beg=cells[0]
-    xcell_fin=cells[0+dim]
-    num_xcell=xcell_fin-xcell_beg+1
-    print xcell_beg,xcell_fin,num_xcell
-    print
-    ycell_beg=cells[1]
-    ycell_fin=cells[1+dim]
-    num_ycell=ycell_fin-ycell_beg+1
-    print ycell_beg,ycell_fin,num_ycell
-    print
-    zcell_beg=cells[2]
-    zcell_fin=cells[2+dim]
-    num_zcell=zcell_fin-zcell_beg+1
-    print zcell_beg,zcell_fin,num_zcell
-    print
-    vparcell_beg=cells[3]
-    vparcell_fin=cells[3+dim]
-    num_vparcell=vparcell_fin-vparcell_beg+1
-    print vparcell_beg,vparcell_fin,num_vparcell
-    print
-    mucell_beg=cells[4]
-    mucell_fin=cells[4+dim]
-    num_mucell=mucell_fin-mucell_beg+1
-    print mucell_beg,mucell_fin,num_mucell
 
+num_cell_total=np.ones(dim)
+num_cell_total=num_cell_total.astype(int)
+for i in range(dim):
+    xcell_beg=min_box_intvect[i]
+    xcell_fin=max_box_intvect[i+dim]
+    num_xcell=xcell_fin-xcell_beg+1
+    #print xcell_beg,xcell_fin,num_xcell
+    num_cell_total[i]=num_xcell
+print num_cell_total
+prod_num_cell_total = np.prod(num_cell_total)
+print 'prod_num_cell_total=',prod_num_cell_total
 
+num_cell_loc=np.ones(dim)
+num_cell_loc=num_cell_loc.astype(int)
+for i in range(dim):
+    xcell_beg=boxes[0][i]
+    xcell_fin=boxes[0][i+dim]
+    num_xcell=xcell_fin-xcell_beg+1
+    #print xcell_beg,xcell_fin,num_xcell
+    num_cell_loc[i]=num_xcell
+print num_cell_loc
+prod_num_cell_loc = np.prod(num_cell_loc)
+print 'prod_num_cell_loc=',prod_num_cell_loc
+     
 data = File['level_0']['data:datatype=0'][:]
-print 'level_0/data:datatype=0 -> len = ',len(data)
-if dim<5:
-    dataNd=data.reshape((num_xcell,num_ycell,num_vparcell,num_mucell),order='F')
-    print dataNd.shape
-else:
-    print num_xcell*num_ycell*num_zcell*num_vparcell*num_mucell
-    dataNd=data.reshape((num_xcell,num_ycell,num_zcell,num_vparcell,num_mucell),order='F')
-    print dataNd.shape
-File.close()
+previous_index=0
+extend_dir=-1
+for i in range(num_decomposition):
+    cells = File['level_0']['boxes'][i]
+    print 'decomposition=',i
+    print 'cells=',cells
+    for j in range(len(accum_box)/2,len(accum_box)):
+        if accum_box[j]<cells[j]:
+            extend_dir=j-len(accum_box)/2
+    print 'extend_dir=',extend_dir
+        
+    if dim<5:
+        dataNd_loc=data[previous_index:prod_num_cell_loc*(i+1)].reshape((num_cell_loc[dir_x],num_cell_loc[dir_y],num_cell_loc[dir_vpar],num_cell_loc[dir_mu]),order='F')
+    else:
+        dataNd_loc=data[previous_index:prod_num_cell_loc*(i+1)].reshape((num_cell_loc[dir_x],num_cell_loc[dir_y],num_cell_loc[dir_z],num_cell_loc[dir_vpar],num_cell_loc[dir_mu]),order='F')
+    previous_index=prod_num_cell_loc*(i+1)
+    print dataNd_loc.shape
 
+    if extend_dir==-1:
+        dataNd=dataNd_loc
+    else:
+        dataNd=np.concatenate((dataNd,dataNd_loc),axis=extend_dir)
+File.close()
+print dataNd.shape
+
+num_xcell=num_cell_total[dir_x] #
+num_ycell=num_cell_total[dir_y] #
+if dim>=5:
+    num_zcell=num_cell_total[dir_z] #
+num_vparcell=num_cell_total[dir_vpar] #
+num_mucell=num_cell_total[dir_mu] #
 
 # diagnostic points
 x_pt = 4
