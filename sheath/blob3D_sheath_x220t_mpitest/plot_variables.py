@@ -255,589 +255,216 @@ def findmodenumber(token,tofind): #token is (1*y), tofind is y
 
 
 ############################################
-# B vector
-try:
-    bvecfilename
-except NameError:
-    print "skip magnetic vector plots."
-else:
-    print "B vector file is set."
-    
-    File =h5py.File(bvecfilename,'r')     
-    #print File.items()
+from import_cfgdim_comps import import_cfgdim_comps
 
-    #print 
-    print File['Chombo_global'].attrs['SpaceDim']
-    #print
-    #print File['level_0'].items()
-    #print
-    #print File['level_0']['Processors'][:]
-    print 
-    print File['level_0']['boxes'][:]
-    #print 
-    #print File['level_0']['data:offsets=0'][:]
-    print 
-    print len(File['level_0']['data:datatype=0'][:])
-    #print 
-    #print File['level_0']['data_attributes'].attrs.items()
-    #print 
-    #print File['level_0']['data_attributes'].attrs.keys()
-    
-    ghost = File['level_0']['data_attributes'].attrs.get('ghost')
-    print 'ghost=',ghost
-    comps = File['level_0']['data_attributes'].attrs.get('comps')
-    print 'comps=',comps
+#############################
+###############import Bvector
+dataNd_bvec_comps=import_cfgdim_comps(filename='./BField_cc3d.hdf5')
+dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec =import_cfgdim_comps(filename='./BField_cc3d.hdf5',withghost=1)
 
-    boxes=File['level_0']['boxes'][:]
-    num_decomposition = len(boxes)#boxes.shape[0]
-    
-    dim=len(boxes[0])/2
-    
-    min_box_intvect=np.ones(dim*2)
-    max_box_intvect=np.ones(dim*2)
-    min_box_intvect=min_box_intvect.astype(int)
-    max_box_intvect=max_box_intvect.astype(int)
-    
-    total_box=np.zeros(( num_decomposition,dim*2 ))
-    total_box=total_box.astype(int)
-    
-    for i in range(dim*2):
-        for j in range(num_decomposition):
-            total_box[j][i]=boxes[j][i]
-    print total_box
-    
-    for i in range(dim*2):
-        min_box_intvect[i]=min(total_box[:,i])
-        max_box_intvect[i]=max(total_box[:,i])
-    
-    print 'lo=',min_box_intvect
-    print 'hi=',max_box_intvect
-    domain_box_intvect=min_box_intvect
-    domain_box_intvect[dim:dim*2]=max_box_intvect[dim:dim*2]
-    print 'domain=',domain_box_intvect
-    
-    shifter=np.zeros(dim*2)
-    shifter=shifter.astype(int)
-    for i in range(dim):
-        shifter[i]=-domain_box_intvect[i]
-    for i in range(dim):
-        shifter[i+dim]=-domain_box_intvect[i]
-    print 'domian_shifter=',shifter
+#magnetic field vector without ghost
+wh=1 # 0: black background, 1: whithe background
+fig=mlab.figure(bgcolor=(wh,wh,wh),size=(800,600))
+src=mlab.pipeline.vector_field(dataNd_bvec_comps[:,:,:,0],dataNd_bvec_comps[:,:,:,2],-dataNd_bvec_comps[:,:,:,1])
+vh=mlab.pipeline.vectors(src,mask_points=4)
+ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
+ax.axes.property.color=(1-wh,1-wh,1-wh)
+ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.label_format='%.2f'
+#cb=mlab.colorbar(vh,title='Magnetic field',orientation='vertical',label_fmt='%.1f' )
+#cb.title_text_property.color=(1-wh,1-wh,1-wh)
+#cb.label_text_property.color=(1-wh,1-wh,1-wh)
+mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
+mlab.savefig('fig_bvec.png')
+fig.scene.save_ps('fig_bvec.eps')
+mlab.close(all=True)
 
-    if dim<3:
-        dir_x=0
-        dir_y=1
-    else:
-        dir_x=0
-        dir_y=1
-        dir_z=2
+#magnetic field vector with outer ghost
+var = dataNd_bvec_with_outer_ghost_comps
+ghost_var=num_ghost_bvec
+dghost=np.zeros(len(ghost_var))
+for i in range(len(dghost)):
+    dghost[i]=float(ghost_var[i])/(var.shape[i]-2*ghost_var[i])
+range_var=[0-dghost[0],1+dghost[0],0-dghost[1],1+dghost[1],0-dghost[2],1+dghost[2]]
+#magnetic field vector with outer ghost
+wh=1 # 0: black background, 1: whithe background
+fig=mlab.figure(bgcolor=(wh,wh,wh),size=(800,600))
+src=mlab.pipeline.vector_field(var[:,:,:,0],var[:,:,:,2],-var[:,:,:,1])
+vh=mlab.pipeline.vectors(src,mask_points=4)
+ol=mlab.outline(color=(1-wh,1-wh,1-wh))
 
-    num_cell_loc=np.ones(dim)
-    num_cell_loc=num_cell_loc.astype(int)
-    for i in range(dim):
-        xcell_beg=boxes[0][i]
-        xcell_fin=boxes[0][i+dim]
-        num_xcell=xcell_fin-xcell_beg+1
-        #print xcell_beg,xcell_fin,num_xcell
-        num_cell_loc[i]=num_xcell
-    print 'num_cell_loc=',num_cell_loc
-    prod_num_cell_loc = np.prod(num_cell_loc)
-    print 'prod_num_cell_loc=',prod_num_cell_loc
-    num_cell_loc_comps=np.append(num_cell_loc,[comps])
-    print 'num_cell_loc_comps=',num_cell_loc_comps
-    prod_num_cell_loc_comps = np.prod(num_cell_loc_comps)
-    print 'prod_num_cell_loc_comps=',prod_num_cell_loc_comps
-   
-    num_cell_loc_with_ghost=np.ones(dim)
-    num_cell_loc_with_ghost=num_cell_loc_with_ghost.astype(int)
-    for i in range(dim):
-        num_cell_loc_with_ghost[i]=num_cell_loc[i]+2*ghost[i]
-    print 'num_cell_loc_with_ghost=',num_cell_loc_with_ghost
-    prod_num_cell_loc_with_ghost = np.prod(num_cell_loc_with_ghost)
-    print 'prod_num_cell_loc_with_ghost=',prod_num_cell_loc_with_ghost
-    num_cell_loc_with_ghost_comps=np.append(num_cell_loc_with_ghost,[comps])
-    print 'num_cell_loc_with_ghost_comps=',num_cell_loc_with_ghost_comps
-    prod_num_cell_loc_with_ghost_comps = np.prod(num_cell_loc_with_ghost_comps)
-    print 'prod_num_cell_loc_with_ghost_comps=',prod_num_cell_loc_with_ghost_comps
- 
-    num_cell_total=np.ones(dim)
-    num_cell_total=num_cell_total.astype(int)
-    for i in range(dim):
-        xcell_beg=min_box_intvect[i]
-        xcell_fin=max_box_intvect[i+dim]
-        num_xcell=xcell_fin-xcell_beg+1
-        #print xcell_beg,xcell_fin,num_xcell
-        num_cell_total[i]=num_xcell
-    print 'num_cell_total=',num_cell_total
-    prod_num_cell_total = np.prod(num_cell_total)
-    print 'prod_num_cell_total=',prod_num_cell_total
+ax = mlab.axes(nb_labels=5,ranges=range_var)
 
-    num_cell_total_comps=np.append(num_cell_total,[comps])
-    print 'num_cell_total_comps=',num_cell_total_comps
-    prod_num_cell_total_comps = np.prod(num_cell_total_comps)
-    print 'prod_num_cell_total_comps=',prod_num_cell_total_comps
+ax.axes.property.color=(1-wh,1-wh,1-wh)
+ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.label_format='%.2f'
+#cb=mlab.colorbar(vh,title='Magnetic field',orientation='vertical',label_fmt='%.1f' )
+#cb.title_text_property.color=(1-wh,1-wh,1-wh)
+#cb.label_text_property.color=(1-wh,1-wh,1-wh)
+mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
+mlab.savefig('fig_bvec_outer_ghost.png')
+fig.scene.save_ps('fig_bvec_outer_ghost.eps')
+mlab.close(all=True)
 
-    decomposition=np.ones(dim)
-    decomposition=decomposition.astype(int)
-    for i in range(dim):
-        decomposition[i] = num_cell_total[i]/num_cell_loc[i]
-    print 'decomposition=',decomposition
+#############################
+###############import Evector
+dataNd_evec_comps=import_cfgdim_comps(filename='./plt_efield_plots/plt.efield0001.cell.3d.hdf5',withghost=0)
+dataNd_evec_with_outer_ghost_comps,num_ghost_evec=import_cfgdim_comps(filename='./plt_efield_plots/plt.efield0001.cell.3d.hdf5',withghost=1)
 
-    num_cell_total_with_ghost=np.ones(dim)
-    num_cell_total_with_ghost=num_cell_total_with_ghost.astype(int)
-    for i in range(dim):
-        num_cell_total_with_ghost[i]=(num_cell_loc[i]+2*ghost[i])*decomposition[i]
-    print 'num_cell_total_with_ghost=',num_cell_total_with_ghost
-    prod_num_cell_total_with_ghost = np.prod(num_cell_total_with_ghost)
-    print 'prod_num_cell_total_with_ghost=',prod_num_cell_total_with_ghost
+#electric field vector with outer ghost
+var = dataNd_evec_comps
+wh=1 # 0: black background, 1: whithe background
+fig=mlab.figure(bgcolor=(wh,wh,wh),size=(800,600))
+src=mlab.pipeline.vector_field(var[:,:,:,0],var[:,:,:,2],-var[:,:,:,1])
+vh=mlab.pipeline.vectors(src,mask_points=4)
+ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
+ax.axes.property.color=(1-wh,1-wh,1-wh)
+ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.label_format='%.2f'
+#cb=mlab.colorbar(vh,title='Magnetic field',orientation='vertical',label_fmt='%.1f' )
+#cb.title_text_property.color=(1-wh,1-wh,1-wh)
+#cb.label_text_property.color=(1-wh,1-wh,1-wh)
+mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
+mlab.savefig('fig_evec.png')
+fig.scene.save_ps('fig_evec.eps')
+mlab.close(all=True)
 
 
-    num_cell_total_with_ghost_comps=np.append(num_cell_total_with_ghost,[comps])
-    print 'num_cell_total_with_ghost_comps=',num_cell_total_with_ghost_comps
-    prod_num_cell_total_with_ghost_comps = np.prod(num_cell_total_with_ghost_comps)
-    print 'prod_num_cell_total_with_ghost_comps=',prod_num_cell_total_with_ghost_comps
+#electric field vector with outer ghost
+var = dataNd_evec_with_outer_ghost_comps
+ghost_var=num_ghost_evec
+dghost=np.zeros(len(ghost_var))
+for i in range(len(dghost)):
+    dghost[i]=float(ghost_var[i])/(var.shape[i]-2*ghost_var[i])
+range_var=[0-dghost[0],1+dghost[0],0-dghost[1],1+dghost[1],0-dghost[2],1+dghost[2]]
+wh=1 # 0: black background, 1: whithe background
+fig=mlab.figure(bgcolor=(wh,wh,wh),size=(800,600))
+src=mlab.pipeline.vector_field(var[:,:,:,0],var[:,:,:,2],-var[:,:,:,1])
+vh=mlab.pipeline.vectors(src,mask_points=4)
+ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+
+ax = mlab.axes(nb_labels=5,ranges=range_var)
+
+ax.axes.property.color=(1-wh,1-wh,1-wh)
+ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.label_format='%.2f'
+#cb=mlab.colorbar(vh,title='Magnetic field',orientation='vertical',label_fmt='%.1f' )
+#cb.title_text_property.color=(1-wh,1-wh,1-wh)
+#cb.label_text_property.color=(1-wh,1-wh,1-wh)
+mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
+mlab.savefig('fig_evec_outer_ghost.png')
+fig.scene.save_ps('fig_evec_outer_ghost.eps')
+mlab.close(all=True)
 
 
-    num_cell_total_with_outer_ghost=np.ones(dim)
-    num_cell_total_with_outer_ghost=num_cell_total_with_outer_ghost.astype(int)
-    for i in range(dim):
-        num_cell_total_with_outer_ghost[i]=num_cell_loc[i]*decomposition[i]+2*ghost[i]
-    print 'num_cell_total_with_outer_ghost=',num_cell_total_with_outer_ghost
-    prod_num_cell_total_with_outer_ghost = np.prod(num_cell_total_with_outer_ghost)
-    print 'prod_num_cell_total_with_outer_ghost=',prod_num_cell_total_with_outer_ghost
-
-    num_cell_total_with_outer_ghost_comps=np.append(num_cell_total_with_outer_ghost,[comps])
-    print 'num_cell_total_with_outer_ghost_comps=',num_cell_total_with_outer_ghost_comps
-    prod_num_cell_total_with_outer_ghost_comps = np.prod(num_cell_total_with_outer_ghost_comps)
-    print 'prod_num_cell_total_with_outer_ghost_comps=',prod_num_cell_total_with_outer_ghost_comps
-
-    #import potential data
-    data = File['level_0']['data:datatype=0'][:]
-    previous_index=0
-    
-    dataNd_bvec_with_ghost_comps=np.linspace(0.0,0.1,num=prod_num_cell_total_with_ghost_comps).reshape((num_cell_total_with_ghost_comps))
-    dataNd_bvec_comps=np.linspace(0.0,0.1,num=prod_num_cell_total_comps).reshape((num_cell_total_comps))
-    dataNd_bvec_with_outer_ghost_comps=np.linspace(0.0,0.1,num=prod_num_cell_total_with_outer_ghost_comps).reshape((num_cell_total_with_outer_ghost_comps))
-
-    dataNd_loc_with_ghost_comps=np.linspace(0.0,0.1,num=prod_num_cell_loc_with_ghost_comps).reshape((num_cell_loc_with_ghost_comps))
-    
-    cells_shift=np.zeros(dim*2)
-    cells_shift=cells_shift.astype(int)
-    cells_shift_with_ghost=np.zeros(dim*2)
-    cells_shift_with_ghost=cells_shift_with_ghost.astype(int)
- 
-    for i in range(num_decomposition):
-        cells = File['level_0']['boxes'][i]
-        sys.stdout.write('.')
-        sys.stdout.flush()
-        #print 'cells=',cells
-        
-        for j in range(len(cells_shift_with_ghost)):
-            cells_shift[j]=cells[j]+shifter[j]
-        print cells_shift
-
-        for j in range(dim):
-            temp_decomp= cells_shift[j]/num_cell_loc[j]
-            cells_shift_with_ghost[j]=cells_shift[j]+ghost[j]*temp_decomp*2
-            cells_shift_with_ghost[j+dim]=(cells_shift[j]+ghost[j]*temp_decomp*2)+num_cell_loc_with_ghost[j]-1
-
-        #print 'cells=',cells
-        #print 'cells_shift=',cells_shift
-        #print 'cells_shift_with_ghost=',cells_shift_with_ghost
-            
-        if dim<3:
-            dataNd_loc_with_ghost_comps=data[previous_index:prod_num_cell_loc_with_ghost*(i+1)].reshape((num_cell_loc_with_ghost[dir_x],num_cell_loc_with_ghost[dir_y]),order='F')
-        else:
-            for d in range(comps):
-                print 'i=',i
-                print 'd=',d
-                print 'previous_index=',previous_index
-                print 'loc_end_index =',prod_num_cell_loc_with_ghost*(d+1)+prod_num_cell_loc_with_ghost*(i)*comps
-                dataNd_loc_with_ghost_comps[:,:,:,d]=data[previous_index:prod_num_cell_loc_with_ghost*(d+1)+prod_num_cell_loc_with_ghost*(i)*comps].reshape((num_cell_loc_with_ghost[dir_x],num_cell_loc_with_ghost[dir_y],num_cell_loc_with_ghost[dir_z]),order='F') 
-                previous_index=prod_num_cell_loc_with_ghost*(d+1)+prod_num_cell_loc_with_ghost*(i)*comps
-                
-    
-        for d in range(comps):
-            dataNd_bvec_with_ghost_comps[cells_shift_with_ghost[dir_x]:cells_shift_with_ghost[dim+dir_x]+1, cells_shift_with_ghost[dir_y]:cells_shift_with_ghost[dim+dir_y]+1, cells_shift_with_ghost[dir_z]:cells_shift_with_ghost[dim+dir_z]+1,d]=dataNd_loc_with_ghost_comps[:,:,:,d]
-    
-    
-    File.close()
-
-    #removing all ghost cells
-    for i in range(num_cell_total_comps[0]):
-        current_decomp_i=i/num_cell_loc[0]
-        for j in range(num_cell_total[1]):
-            current_decomp_j=j/num_cell_loc[1]
-            for k in range(num_cell_total[2]):
-                current_decomp_k=k/num_cell_loc[2]
-                for d in range(comps):
-                    dataNd_bvec_comps[i,j,k,d]=dataNd_bvec_with_ghost_comps[ghost[0]+ghost[0]*2*current_decomp_i+i,ghost[1]+ghost[1]*2*current_decomp_j+j,ghost[2]+ghost[2]*2*current_decomp_k+k,d]
+#############################
+###############import potential
+dataNd_potential_comps=import_cfgdim_comps(filename='./plt_potential_plots/plt.potential0001.3d.hdf5',withghost=0)
+dataNd_potential_with_outer_ghost_comps,num_ghost_potential=import_cfgdim_comps(filename='./plt_potential_plots/plt.potential0001.3d.hdf5',withghost=1)
 
 #potential without ghost
-    wh=1 # 0: black background, 1: whithe background
-    fig=mlab.figure(bgcolor=(wh,wh,wh),size=(800,600))
-    src=mlab.pipeline.vector_field(dataNd_bvec_comps[:,:,:,0],dataNd_bvec_comps[:,:,:,1],dataNd_bvec_comps[:,:,:,2])
-    vh=mlab.pipeline.vectors(src,mask_points=4)
-    ol=mlab.outline(color=(1-wh,1-wh,1-wh))
-    ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
-    ax.axes.property.color=(1-wh,1-wh,1-wh)
-    ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.label_format='%.2f'
-    cb=mlab.colorbar(vh,title='Magnetic field',orientation='vertical',label_fmt='%.1f' )
-    cb.title_text_property.color=(1-wh,1-wh,1-wh)
-    cb.label_text_property.color=(1-wh,1-wh,1-wh)
-    mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
-    mlab.show()
+var = dataNd_potential_comps
+wh=1 # 0: black background, 1: whithe background
+fig=mlab.figure(bgcolor=(wh,wh,wh),size=(600,600))
+mlab.contour3d(var[:,:,:,0],contours=10,transparent=True,opacity=0.8)
+ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
+ax.axes.property.color=(1-wh,1-wh,1-wh)
+ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.label_format='%.2f'
+cb=mlab.colorbar(title='Potential', orientation='vertical')
+cb.title_text_property.color=(1-wh,1-wh,1-wh)
+cb.label_text_property.color=(1-wh,1-wh,1-wh)
+mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
+mlab.savefig('fig_pot_iso.png')
+fig.scene.save_ps('fig_pot_iso.eps')
+mlab.close(all=True)
 
+#potential with outer ghost
+var = dataNd_potential_with_outer_ghost_comps
+ghost_var=num_ghost_potential
+dghost=np.zeros(len(ghost_var))
+for i in range(len(dghost)):
+    dghost[i]=float(ghost_var[i])/(var.shape[i]-2*ghost_var[i])
+range_var=[0-dghost[0],1+dghost[0],0-dghost[1],1+dghost[1],0-dghost[2],1+dghost[2]]
+wh=1 # 0: black background, 1: whithe background
+fig=mlab.figure(bgcolor=(wh,wh,wh),size=(600,600))
+mlab.contour3d(var[:,:,:,0],contours=10,transparent=True,opacity=0.8)
+ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+ax = mlab.axes(nb_labels=5,ranges=range_var)
+ax.axes.property.color=(1-wh,1-wh,1-wh)
+ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.label_format='%.2f'
+cb=mlab.colorbar(title='Potential', orientation='vertical')
+cb.title_text_property.color=(1-wh,1-wh,1-wh)
+cb.label_text_property.color=(1-wh,1-wh,1-wh)
+mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
+mlab.savefig('fig_pot_iso_outer_ghost.png')
+fig.scene.save_ps('fig_pot_iso_outer_ghost.eps')
+mlab.close(all=True)
 
+#potential slice 
+var = dataNd_potential_comps
+x_pt=6
+y_pt=6
+z_pt=6
+range_var=[0,1,0,1,0,1]
+wh=1 # 0: black background, 1: whithe background
+fig=mlab.figure(bgcolor=(wh,wh,wh),size=(600,600))
+mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(var[:,:,:,0]),plane_orientation='x_axes',slice_index=x_pt)
+mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(var[:,:,:,0]),plane_orientation='y_axes',slice_index=y_pt)
+mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(var[:,:,:,0]),plane_orientation='z_axes',slice_index=z_pt)
+ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+ax = mlab.axes(nb_labels=5,ranges=range_var)
+ax.axes.property.color=(1-wh,1-wh,1-wh)
+ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.label_format='%.2f'
+cb=mlab.colorbar(title='Potential', orientation='vertical')
+cb.title_text_property.color=(1-wh,1-wh,1-wh)
+cb.label_text_property.color=(1-wh,1-wh,1-wh)
+mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
+mlab.savefig('fig_pot_slice.png')
+fig.scene.save_ps('fig_pot_slice.eps')
+#
 
-
-
-
-
-
-
-
-
-
-
-
-
-################################################################
-# potential
-
-try:
-    potentialfilename
-except NameError:
-    print "skip potential plots."
-else:
-    print "potential file is set."
-    
-    File =h5py.File(potentialfilename,'r')     
-    #print File.items()
-
-    print 
-    print File['Chombo_global'].attrs['SpaceDim']
-    #print
-    #print File['level_0'].items()
-    #print
-    #print File['level_0']['Processors'][:]
-    print 
-    print File['level_0']['boxes'][:]
-    #print 
-    #print File['level_0']['data:offsets=0'][:]
-    print 
-    print len(File['level_0']['data:datatype=0'][:])
-    #print 
-    #print File['level_0']['data_attributes'].attrs.items()
-    print 
-    print File['level_0']['data_attributes'].attrs.keys()
-    
-    ghost = File['level_0']['data_attributes'].attrs.get('ghost')
-    print 'ghost=',ghost
-
-    comps = File['level_0']['data_attributes'].attrs.get('comps')
-    print 'comps=',comps
-
-    boxes=File['level_0']['boxes'][:]
-    num_decomposition = len(boxes)#boxes.shape[0]
-    
-    dim=len(boxes[0])/2
-    
-    min_box_intvect=np.ones(dim*2)
-    max_box_intvect=np.ones(dim*2)
-    min_box_intvect=min_box_intvect.astype(int)
-    max_box_intvect=max_box_intvect.astype(int)
-    
-    total_box=np.zeros(( num_decomposition,dim*2 ))
-    total_box=total_box.astype(int)
-    
-    for i in range(dim*2):
-        for j in range(num_decomposition):
-            total_box[j][i]=boxes[j][i]
-    print total_box
-    
-    for i in range(dim*2):
-        min_box_intvect[i]=min(total_box[:,i])
-        max_box_intvect[i]=max(total_box[:,i])
-    
-    print 'lo=',min_box_intvect
-    print 'hi=',max_box_intvect
-    domain_box_intvect=min_box_intvect
-    domain_box_intvect[dim:dim*2]=max_box_intvect[dim:dim*2]
-    print 'domain=',domain_box_intvect
-    
-    shifter=np.zeros(dim*2)
-    shifter=shifter.astype(int)
-    for i in range(dim):
-        shifter[i]=-domain_box_intvect[i]
-    for i in range(dim):
-        shifter[i+dim]=-domain_box_intvect[i]
-    print 'domian_shifter=',shifter
-
-    if dim<3:
-        dir_x=0
-        dir_y=1
-    else:
-        dir_x=0
-        dir_y=1
-        dir_z=2
-
-    num_cell_loc=np.ones(dim)
-    num_cell_loc=num_cell_loc.astype(int)
-    for i in range(dim):
-        xcell_beg=boxes[0][i]
-        xcell_fin=boxes[0][i+dim]
-        num_xcell=xcell_fin-xcell_beg+1
-        #print xcell_beg,xcell_fin,num_xcell
-        num_cell_loc[i]=num_xcell
-    print 'num_cell_loc=',num_cell_loc
-    prod_num_cell_loc = np.prod(num_cell_loc)
-    print 'prod_num_cell_loc=',prod_num_cell_loc
-   
-    num_cell_loc_with_ghost=np.ones(dim)
-    num_cell_loc_with_ghost=num_cell_loc_with_ghost.astype(int)
-    for i in range(dim):
-        num_cell_loc_with_ghost[i]=num_cell_loc[i]+2*ghost[i]
-    print 'num_cell_loc_with_ghost=',num_cell_loc_with_ghost
-    prod_num_cell_loc_with_ghost = np.prod(num_cell_loc_with_ghost)
-    print 'prod_num_cell_loc_with_ghost=',prod_num_cell_loc_with_ghost
- 
-    num_cell_total=np.ones(dim)
-    num_cell_total=num_cell_total.astype(int)
-    for i in range(dim):
-        xcell_beg=min_box_intvect[i]
-        xcell_fin=max_box_intvect[i+dim]
-        num_xcell=xcell_fin-xcell_beg+1
-        #print xcell_beg,xcell_fin,num_xcell
-        num_cell_total[i]=num_xcell
-    print 'num_cell_total=',num_cell_total
-    prod_num_cell_total = np.prod(num_cell_total)
-    print 'prod_num_cell_total=',prod_num_cell_total
-
-    decomposition=np.ones(dim)
-    decomposition=decomposition.astype(int)
-    for i in range(dim):
-        decomposition[i] = num_cell_total[i]/num_cell_loc[i]
-    print 'decomposition=',decomposition
-
-    num_cell_total_with_ghost=np.ones(dim)
-    num_cell_total_with_ghost=num_cell_total_with_ghost.astype(int)
-    for i in range(dim):
-        num_cell_total_with_ghost[i]=(num_cell_loc[i]+2*ghost[i])*decomposition[i]
-    print 'num_cell_total_with_ghost=',num_cell_total_with_ghost
-    prod_num_cell_total_with_ghost = np.prod(num_cell_total_with_ghost)
-    print 'prod_num_cell_total_with_ghost=',prod_num_cell_total_with_ghost
-
-    num_cell_total_with_ghost_comps=np.append(num_cell_total_with_ghost,[comps])
-    print 'num_cell_total_with_ghost_comps=',num_cell_total_with_ghost_comps
-    prod_num_cell_total_with_ghost_comps = np.prod(num_cell_total_with_ghost_comps)
-    print 'prod_num_cell_total_with_ghost_comps=',prod_num_cell_total_with_ghost_comps
-
-
-
-    num_cell_total_with_outer_ghost=np.ones(dim)
-    num_cell_total_with_outer_ghost=num_cell_total_with_outer_ghost.astype(int)
-    for i in range(dim):
-        num_cell_total_with_outer_ghost[i]=num_cell_loc[i]*decomposition[i]+2*ghost[i]
-    print 'num_cell_total_with_outer_ghost=',num_cell_total_with_outer_ghost
-    prod_num_cell_total_with_outer_ghost = np.prod(num_cell_total_with_outer_ghost)
-    print 'prod_num_cell_total_with_outer_ghost=',prod_num_cell_total_with_outer_ghost
-
-
-    #import potential data
-    data = File['level_0']['data:datatype=0'][:]
-    previous_index=0
-    
-    dataNd_potential_with_ghost=np.linspace(0.0,0.1,num=prod_num_cell_total_with_ghost).reshape((num_cell_total_with_ghost))
-    dataNd_potential=np.linspace(0.0,0.1,num=prod_num_cell_total).reshape((num_cell_total))
-    dataNd_potential_with_outer_ghost=np.linspace(0.0,0.1,num=prod_num_cell_total_with_outer_ghost).reshape((num_cell_total_with_outer_ghost))
-    
-    cells_shift=np.zeros(dim*2)
-    cells_shift=cells_shift.astype(int)
-    cells_shift_with_ghost=np.zeros(dim*2)
-    cells_shift_with_ghost=cells_shift_with_ghost.astype(int)
-    
-    for i in range(num_decomposition):
-        cells = File['level_0']['boxes'][i]
-        sys.stdout.write('.')
-        sys.stdout.flush()
-        #print 'cells=',cells
-        
-        for j in range(len(cells_shift_with_ghost)):
-            cells_shift[j]=cells[j]+shifter[j]
-        for j in range(dim):
-            temp_decomp= cells_shift[j]/num_cell_loc[j]
-            cells_shift_with_ghost[j]=cells_shift[j]+ghost[j]*temp_decomp*2
-            cells_shift_with_ghost[j+dim]=(cells_shift[j]+ghost[j]*temp_decomp*2)+num_cell_loc_with_ghost[j]-1
-
-        #print 'cells=',cells
-        #print 'cells_shift=',cells_shift
-        #print 'cells_shift_with_ghost=',cells_shift_with_ghost
-            
-        if dim<3:
-            dataNd_loc_with_ghost=data[previous_index:prod_num_cell_loc_with_ghost*(i+1)].reshape((num_cell_loc_with_ghost[dir_x],num_cell_loc_with_ghost[dir_y]),order='F')
-        else:
-            dataNd_loc_with_ghost=data[previous_index:prod_num_cell_loc_with_ghost*(i+1)].reshape((num_cell_loc_with_ghost[dir_x],num_cell_loc_with_ghost[dir_y],num_cell_loc_with_ghost[dir_z]),order='F')
-    
-        previous_index=prod_num_cell_loc_with_ghost*(i+1)
-    
-        #print cells_shift
-        #print cells_shift[dir_x],cells_shift[dim+dir_x]+1
-        #print cells_shift[dir_y],cells_shift[dim+dir_y]+1
-        #print cells_shift[dir_z],cells_shift[dim+dir_z]+1
-    
-        dataNd_potential_with_ghost[cells_shift_with_ghost[dir_x]:cells_shift_with_ghost[dim+dir_x]+1, cells_shift_with_ghost[dir_y]:cells_shift_with_ghost[dim+dir_y]+1, cells_shift_with_ghost[dir_z]:cells_shift_with_ghost[dim+dir_z]+1]=dataNd_loc_with_ghost
-    
-    
-    File.close()
-
-
-    print 'num_decomposition=',num_decomposition
-
-    print 'dataNd_potential_with_ghost.shape=',dataNd_potential_with_ghost.shape
-    print 'dataNd_potential_with_outer_ghost.shape=',dataNd_potential_with_outer_ghost.shape
-    print 'dataNd_potential.shape=',dataNd_potential.shape
-    print 'decomposition=',decomposition
-    print 'ghost=',ghost
-
-    print num_cell_total_with_ghost
-    print num_cell_total_with_outer_ghost
-    print num_cell_total
-    print num_cell_loc
-
-    #removing all ghost cells
-    for i in range(num_cell_total[0]):
-        current_decomp_i=i/num_cell_loc[0]
-        for j in range(num_cell_total[1]):
-            current_decomp_j=j/num_cell_loc[1]
-            for k in range(num_cell_total[2]):
-                current_decomp_k=k/num_cell_loc[2]
-                dataNd_potential[i,j,k]=dataNd_potential_with_ghost[ghost[0]+ghost[0]*2*current_decomp_i+i,ghost[1]+ghost[1]*2*current_decomp_j+j,ghost[2]+ghost[2]*2*current_decomp_k+k]
-
-    #removing inner ghost cells
-    for i in range(num_cell_total_with_outer_ghost[0]):
-        current_decomp_i=(i+ghost[0])/num_cell_loc[0]
-        if current_decomp_i>decomposition[0]:
-            last_decomp_i=1
-        elif current_decomp_i==0:
-            last_decomp_i=-1
-        else:
-            last_decomp_i=0
-        for j in range(num_cell_total_with_outer_ghost[1]):
-            current_decomp_j=(j+ghost[1])/num_cell_loc[1]
-            if current_decomp_j>decomposition[1]:
-                last_decomp_j=1
-            elif current_decomp_j==0:
-                last_decomp_j=-1
-            else:
-                last_decomp_j=0
-            for k in range(num_cell_total_with_outer_ghost[2]):
-                current_decomp_k=(k+ghost[2])/num_cell_loc[2]
-                if current_decomp_k>decomposition[2]:
-                    last_decomp_k=1
-                elif current_decomp_k==0:
-                    last_decomp_k=-1
-                else:
-                    last_decomp_k=0
-                dataNd_potential_with_outer_ghost[i,j,k]=dataNd_potential_with_ghost[ghost[0]*2*(current_decomp_i-last_decomp_i-1)+i,ghost[1]*2*(current_decomp_j-last_decomp_j-1)+j,ghost[2]*2*(current_decomp_k-last_decomp_k-1)+k]
-
-    print 'dataNd_potential_with_ghost.shape=',dataNd_potential_with_ghost.shape
-    print 'dataNd_potential_with_outer_ghost.shape=',dataNd_potential_with_outer_ghost.shape
-    print 'dataNd_potential.shape=',dataNd_potential.shape
-
-    #potential without ghost
-    wh=1 # 0: black background, 1: whithe background
-    fig=mlab.figure(bgcolor=(wh,wh,wh),size=(600,600))
-    mlab.contour3d(dataNd_potential,contours=10,transparent=True,opacity=0.8)
-    ol=mlab.outline(color=(1-wh,1-wh,1-wh))
-    ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
-    ax.axes.property.color=(1-wh,1-wh,1-wh)
-    ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.label_format='%.2f'
-    cb=mlab.colorbar(title='Potential', orientation='vertical')
-    cb.title_text_property.color=(1-wh,1-wh,1-wh)
-    cb.label_text_property.color=(1-wh,1-wh,1-wh)
-
-    mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
-
-    mlab.savefig('fig10_mlab_iso.png')
-    fig.scene.save_ps('fig10_mlab_iso.eps')
-    #mlab.close(all=True)
-
-    #potential with outer ghost 
-    wh=1 # 0: black background, 1: whithe background
-    fig=mlab.figure(bgcolor=(wh,wh,wh),size=(600,600))
-    mlab.contour3d(dataNd_potential_with_outer_ghost,contours=10,transparent=True,opacity=0.8,extent=[0,num_cell_total_with_outer_ghost[0],0,num_cell_total_with_outer_ghost[1],0,num_cell_total_with_outer_ghost[2]])
-    ol=mlab.outline(color=(1-wh,1-wh,1-wh))
-    ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
-    ax.axes.property.color=(1-wh,1-wh,1-wh)
-    ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.label_format='%.2f'
-    cb=mlab.colorbar(title='Potential', orientation='vertical')
-    cb.title_text_property.color=(1-wh,1-wh,1-wh)
-    cb.label_text_property.color=(1-wh,1-wh,1-wh)
-    mlab.plot3d([ghost[0]         +1, num_cell_total[0]+1], [ghost[1]         +1, ghost[1]         +1], [ghost[2]         +1, ghost[2]         +1], color=(1,0,0), tube_radius=0.1)
-    mlab.plot3d([ghost[0]         +1, num_cell_total[0]+1], [ghost[1]         +1, ghost[1]         +1], [num_cell_total[2]+1, num_cell_total[2]+1], color=(1,0,0), tube_radius=0.1)
-    mlab.plot3d([ghost[0]         +1, num_cell_total[0]+1], [num_cell_total[1]+1, num_cell_total[1]+1], [ghost[2]         +1,ghost[2]          +1], color=(1,0,0), tube_radius=0.1)
-    mlab.plot3d([ghost[0]         +1, num_cell_total[0]+1], [num_cell_total[1]+1, num_cell_total[1]+1], [num_cell_total[2]+1, num_cell_total[2]+1], color=(1,0,0), tube_radius=0.1)
-
-    mlab.plot3d([ghost[0]         +1, ghost[0]         +1], [ghost[1]         +1, num_cell_total[1]+1], [ghost[2]         +1, ghost[2]         +1], color=(0,1,0), tube_radius=0.1)
-    mlab.plot3d([ghost[0]         +1, ghost[0]         +1], [ghost[1]         +1, num_cell_total[1]+1], [num_cell_total[2]+1, num_cell_total[2]+1], color=(0,1,0), tube_radius=0.1)
-    mlab.plot3d([num_cell_total[0]+1, num_cell_total[0]+1], [ghost[1]         +1, num_cell_total[1]+1], [ghost[2]         +1,ghost[2]          +1], color=(0,1,0), tube_radius=0.1)
-    mlab.plot3d([num_cell_total[0]+1, num_cell_total[0]+1], [ghost[1]         +1, num_cell_total[1]+1], [num_cell_total[2]+1, num_cell_total[2]+1], color=(0,1,0), tube_radius=0.1)
-
-    mlab.plot3d([ghost[0]         +1, ghost[0]         +1], [ghost[1]         +1, ghost[1]         +1],[ghost[2]          +1, num_cell_total[2]+1],  color=(0,0,1), tube_radius=0.1)
-    mlab.plot3d([ghost[0]         +1, ghost[0]         +1], [num_cell_total[1]+1, num_cell_total[1]+1],[ghost[2]          +1, num_cell_total[2]+1],  color=(0,0,1), tube_radius=0.1)
-    mlab.plot3d([num_cell_total[0]+1, num_cell_total[0]+1], [ghost[1]         +1, ghost[1]         +1],[ghost[2]          +1, num_cell_total[2]+1],  color=(0,0,1), tube_radius=0.1)
-    mlab.plot3d([num_cell_total[0]+1, num_cell_total[0]+1], [num_cell_total[1]+1, num_cell_total[1]+1],[ghost[2]          +1, num_cell_total[2]+1],  color=(0,0,1), tube_radius=0.1)
-
-    mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
-
-    mlab.savefig('fig10_mlab_iso_outer_ghost.png')
-    fig.scene.save_ps('fig10_mlab_iso_outer_ghost.eps')
-    #mlab.close(all=True)
-       
-    #potential 3D mlab slice without ghost
-    wh=1 # 0: black background, 1: whithe background
-    fig=mlab.figure(bgcolor=(wh,wh,wh),size=(600,600))
-    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(dataNd_potential),plane_orientation='x_axes',slice_index=x_pt)
-    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(dataNd_potential),plane_orientation='y_axes',slice_index=y_pt)
-    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(dataNd_potential),plane_orientation='z_axes',slice_index=z_pt)
-    ol=mlab.outline(color=(1-wh,1-wh,1-wh))
-    ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
-    ax.axes.property.color=(1-wh,1-wh,1-wh)
-    ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.label_format='%.2f'
-    cb=mlab.colorbar(title='Density', orientation='vertical')
-    cb.title_text_property.color=(1-wh,1-wh,1-wh)
-    cb.label_text_property.color=(1-wh,1-wh,1-wh)
-    mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
-    mlab.savefig('fig10_mlab_slice.png')
-    fig.scene.save_ps('fig10_mlab_slice.eps')
-
-    #potential 3D mlab slice with ghost
-    wh=1 # 0: black background, 1: whithe background
-    fig=mlab.figure(bgcolor=(wh,wh,wh),size=(600,600))
-    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(dataNd_potential_with_outer_ghost),plane_orientation='x_axes',slice_index=x_pt)
-    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(dataNd_potential_with_outer_ghost),plane_orientation='y_axes',slice_index=y_pt)
-    mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(dataNd_potential_with_outer_ghost),plane_orientation='z_axes',slice_index=z_pt)
-    ol=mlab.outline(color=(1-wh,1-wh,1-wh))
-    ax = mlab.axes(nb_labels=5,ranges=[0,1,0,1,0,1])
-    ax.axes.property.color=(1-wh,1-wh,1-wh)
-    ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
-    ax.axes.label_format='%.2f'
-    cb=mlab.colorbar(title='Density', orientation='vertical')
-    cb.title_text_property.color=(1-wh,1-wh,1-wh)
-    cb.label_text_property.color=(1-wh,1-wh,1-wh)
-    mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
-    mlab.savefig('fig10_mlab_slice_outer_ghost.png')
-    fig.scene.save_ps('fig10_mlab_slice_outer_ghost.eps')
+#potential slice with outer ghost
+x_pt=6
+y_pt=6
+z_pt=6
+var = dataNd_potential_with_outer_ghost_comps
+ghost_var=num_ghost_potential
+dghost=np.zeros(len(ghost_var))
+for i in range(len(dghost)):
+    dghost[i]=float(ghost_var[i])/(var.shape[i]-2*ghost_var[i])
+range_var=[0-dghost[0],1+dghost[0],0-dghost[1],1+dghost[1],0-dghost[2],1+dghost[2]]
+wh=1 # 0: black background, 1: whithe background
+fig=mlab.figure(bgcolor=(wh,wh,wh),size=(600,600))
+mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(var[:,:,:,0]),plane_orientation='x_axes',slice_index=x_pt)
+mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(var[:,:,:,0]),plane_orientation='y_axes',slice_index=y_pt)
+mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(var[:,:,:,0]),plane_orientation='z_axes',slice_index=z_pt)
+ol=mlab.outline(color=(1-wh,1-wh,1-wh))
+ax = mlab.axes(nb_labels=5,ranges=range_var)
+ax.axes.property.color=(1-wh,1-wh,1-wh)
+ax.axes.axis_title_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.axis_label_text_property.color = (1-wh,1-wh,1-wh)
+ax.axes.label_format='%.2f'
+cb=mlab.colorbar(title='Potential', orientation='vertical')
+cb.title_text_property.color=(1-wh,1-wh,1-wh)
+cb.label_text_property.color=(1-wh,1-wh,1-wh)
+mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
+mlab.savefig('fig_pot_slice_outer_ghost.png')
+fig.scene.save_ps('fig_pot_slice_outer_ghost.eps')
+mlab.show()
+#
 
 
 
