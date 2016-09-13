@@ -46,6 +46,8 @@ z_pt = 6
 hdffilename='./plt_dfn_plots/plt.1.hydrogen.dfn0004.5d.hdf5'
 # import potential
 potentialfilename='./plt_potential_plots/plt.potential0001.3d.hdf5'
+# import B bector
+bvecfilename='./BField_cc3d.hdf5'
 
 
 
@@ -252,7 +254,55 @@ def findmodenumber(token,tofind): #token is (1*y), tofind is y
     return modenumber
 
 
+############################################
+# B vector
+try:
+    bvecfilename
+except NameError:
+    print "skip magnetic vector plots."
+else:
+    print "B vector file is set."
+    
+    File =h5py.File(bvecfilename,'r')     
+    print File.items()
 
+    print 
+    print File['Chombo_global'].attrs['SpaceDim']
+    print
+    print File['level_0'].items()
+    #print
+    #print File['level_0']['Processors'][:]
+    print 
+    print File['level_0']['boxes'][:]
+    print 
+    print File['level_0']['data:offsets=0'][:]
+    print 
+    print len(File['level_0']['data:datatype=0'][:])
+    print 
+    print File['level_0']['data_attributes'].attrs.items()
+    print 
+    print File['level_0']['data_attributes'].attrs.keys()
+    
+    ghost = File['level_0']['data_attributes'].attrs.get('ghost')
+    print 'ghost=',ghost
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+################################################################
+# potential
 
 try:
     potentialfilename
@@ -575,18 +625,6 @@ else:
     mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
     mlab.savefig('fig10_mlab_slice_outer_ghost.png')
     fig.scene.save_ps('fig10_mlab_slice_outer_ghost.eps')
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

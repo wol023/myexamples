@@ -43,9 +43,11 @@ z_pt = 6
 #############################################################
 #############################################################
 # import dfn
-hdffilename='./plt_dfn_plots/plt.1.hydrogen.dfn0004.5d.hdf5'
+hdffilename='./plt_dfn_plots/plt.1.hydrogen.dfn0000.5d.hdf5'
 # import potential
 potentialfilename='./plt_potential_plots/plt.potential0001.3d.hdf5'
+# import B bector
+bvecfilename='./BField_cc3d.hdf5'
 
 
 
@@ -252,7 +254,234 @@ def findmodenumber(token,tofind): #token is (1*y), tofind is y
     return modenumber
 
 
+############################################
+# B vector
+try:
+    bvecfilename
+except NameError:
+    print "skip magnetic vector plots."
+else:
+    print "B vector file is set."
+    
+    File =h5py.File(bvecfilename,'r')     
+    #print File.items()
 
+    #print 
+    print File['Chombo_global'].attrs['SpaceDim']
+    #print
+    #print File['level_0'].items()
+    #print
+    #print File['level_0']['Processors'][:]
+    print 
+    print File['level_0']['boxes'][:]
+    #print 
+    #print File['level_0']['data:offsets=0'][:]
+    print 
+    print len(File['level_0']['data:datatype=0'][:])
+    #print 
+    #print File['level_0']['data_attributes'].attrs.items()
+    #print 
+    #print File['level_0']['data_attributes'].attrs.keys()
+    
+    ghost = File['level_0']['data_attributes'].attrs.get('ghost')
+    print 'ghost=',ghost
+    comps = File['level_0']['data_attributes'].attrs.get('comps')
+    print 'comps=',comps
+
+    boxes=File['level_0']['boxes'][:]
+    num_decomposition = len(boxes)#boxes.shape[0]
+    
+    dim=len(boxes[0])/2
+    
+    min_box_intvect=np.ones(dim*2)
+    max_box_intvect=np.ones(dim*2)
+    min_box_intvect=min_box_intvect.astype(int)
+    max_box_intvect=max_box_intvect.astype(int)
+    
+    total_box=np.zeros(( num_decomposition,dim*2 ))
+    total_box=total_box.astype(int)
+    
+    for i in range(dim*2):
+        for j in range(num_decomposition):
+            total_box[j][i]=boxes[j][i]
+    print total_box
+    
+    for i in range(dim*2):
+        min_box_intvect[i]=min(total_box[:,i])
+        max_box_intvect[i]=max(total_box[:,i])
+    
+    print 'lo=',min_box_intvect
+    print 'hi=',max_box_intvect
+    domain_box_intvect=min_box_intvect
+    domain_box_intvect[dim:dim*2]=max_box_intvect[dim:dim*2]
+    print 'domain=',domain_box_intvect
+    
+    shifter=np.zeros(dim*2)
+    shifter=shifter.astype(int)
+    for i in range(dim):
+        shifter[i]=-domain_box_intvect[i]
+    for i in range(dim):
+        shifter[i+dim]=-domain_box_intvect[i]
+    print 'domian_shifter=',shifter
+
+    if dim<3:
+        dir_x=0
+        dir_y=1
+    else:
+        dir_x=0
+        dir_y=1
+        dir_z=2
+
+    num_cell_loc=np.ones(dim)
+    num_cell_loc=num_cell_loc.astype(int)
+    for i in range(dim):
+        xcell_beg=boxes[0][i]
+        xcell_fin=boxes[0][i+dim]
+        num_xcell=xcell_fin-xcell_beg+1
+        #print xcell_beg,xcell_fin,num_xcell
+        num_cell_loc[i]=num_xcell
+    print 'num_cell_loc=',num_cell_loc
+    prod_num_cell_loc = np.prod(num_cell_loc)
+    print 'prod_num_cell_loc=',prod_num_cell_loc
+    num_cell_loc_comps=np.append(num_cell_loc,[comps])
+    print 'num_cell_loc_comps=',num_cell_loc_comps
+    prod_num_cell_loc_comps = np.prod(num_cell_loc_comps)
+    print 'prod_num_cell_loc_comps=',prod_num_cell_loc_comps
+   
+    num_cell_loc_with_ghost=np.ones(dim)
+    num_cell_loc_with_ghost=num_cell_loc_with_ghost.astype(int)
+    for i in range(dim):
+        num_cell_loc_with_ghost[i]=num_cell_loc[i]+2*ghost[i]
+    print 'num_cell_loc_with_ghost=',num_cell_loc_with_ghost
+    prod_num_cell_loc_with_ghost = np.prod(num_cell_loc_with_ghost)
+    print 'prod_num_cell_loc_with_ghost=',prod_num_cell_loc_with_ghost
+    num_cell_loc_with_ghost_comps=np.append(num_cell_loc_with_ghost,[comps])
+    print 'num_cell_loc_with_ghost_comps=',num_cell_loc_with_ghost_comps
+    prod_num_cell_loc_with_ghost_comps = np.prod(num_cell_loc_with_ghost_comps)
+    print 'prod_num_cell_loc_with_ghost_comps=',prod_num_cell_loc_with_ghost_comps
+ 
+    num_cell_total=np.ones(dim)
+    num_cell_total=num_cell_total.astype(int)
+    for i in range(dim):
+        xcell_beg=min_box_intvect[i]
+        xcell_fin=max_box_intvect[i+dim]
+        num_xcell=xcell_fin-xcell_beg+1
+        #print xcell_beg,xcell_fin,num_xcell
+        num_cell_total[i]=num_xcell
+    print 'num_cell_total=',num_cell_total
+    prod_num_cell_total = np.prod(num_cell_total)
+    print 'prod_num_cell_total=',prod_num_cell_total
+
+    num_cell_total_comps=np.append(num_cell_total,[comps])
+    print 'num_cell_total_comps=',num_cell_total_comps
+    prod_num_cell_total_comps = np.prod(num_cell_total_comps)
+    print 'prod_num_cell_total_comps=',prod_num_cell_total_comps
+
+    decomposition=np.ones(dim)
+    decomposition=decomposition.astype(int)
+    for i in range(dim):
+        decomposition[i] = num_cell_total[i]/num_cell_loc[i]
+    print 'decomposition=',decomposition
+
+    num_cell_total_with_ghost=np.ones(dim)
+    num_cell_total_with_ghost=num_cell_total_with_ghost.astype(int)
+    for i in range(dim):
+        num_cell_total_with_ghost[i]=(num_cell_loc[i]+2*ghost[i])*decomposition[i]
+    print 'num_cell_total_with_ghost=',num_cell_total_with_ghost
+    prod_num_cell_total_with_ghost = np.prod(num_cell_total_with_ghost)
+    print 'prod_num_cell_total_with_ghost=',prod_num_cell_total_with_ghost
+
+
+    num_cell_total_with_ghost_comps=np.append(num_cell_total_with_ghost,[comps])
+    print 'num_cell_total_with_ghost_comps=',num_cell_total_with_ghost_comps
+    prod_num_cell_total_with_ghost_comps = np.prod(num_cell_total_with_ghost_comps)
+    print 'prod_num_cell_total_with_ghost_comps=',prod_num_cell_total_with_ghost_comps
+
+
+    num_cell_total_with_outer_ghost=np.ones(dim)
+    num_cell_total_with_outer_ghost=num_cell_total_with_outer_ghost.astype(int)
+    for i in range(dim):
+        num_cell_total_with_outer_ghost[i]=num_cell_loc[i]*decomposition[i]+2*ghost[i]
+    print 'num_cell_total_with_outer_ghost=',num_cell_total_with_outer_ghost
+    prod_num_cell_total_with_outer_ghost = np.prod(num_cell_total_with_outer_ghost)
+    print 'prod_num_cell_total_with_outer_ghost=',prod_num_cell_total_with_outer_ghost
+
+    num_cell_total_with_outer_ghost_comps=np.append(num_cell_total_with_outer_ghost,[comps])
+    print 'num_cell_total_with_outer_ghost_comps=',num_cell_total_with_outer_ghost_comps
+    prod_num_cell_total_with_outer_ghost_comps = np.prod(num_cell_total_with_outer_ghost_comps)
+    print 'prod_num_cell_total_with_outer_ghost_comps=',prod_num_cell_total_with_outer_ghost_comps
+
+    #import potential data
+    data = File['level_0']['data:datatype=0'][:]
+    previous_index=0
+    
+    dataNd_bvec_with_ghost_comps=np.linspace(0.0,0.1,num=prod_num_cell_total_with_ghost_comps).reshape((num_cell_total_with_ghost_comps))
+    dataNd_bvec_comps=np.linspace(0.0,0.1,num=prod_num_cell_total_comps).reshape((num_cell_total_comps))
+    dataNd_bvec_with_outer_ghost_comps=np.linspace(0.0,0.1,num=prod_num_cell_total_with_outer_ghost_comps).reshape((num_cell_total_with_outer_ghost_comps))
+
+    dataNd_loc_with_ghost_comps=np.linspace(0.0,0.1,num=prod_num_cell_loc_with_ghost_comps).reshape((num_cell_loc_with_ghost_comps))
+    
+    cells_shift=np.zeros(dim*2)
+    cells_shift=cells_shift.astype(int)
+    cells_shift_with_ghost=np.zeros(dim*2)
+    cells_shift_with_ghost=cells_shift_with_ghost.astype(int)
+ 
+    for i in range(num_decomposition):
+        cells = File['level_0']['boxes'][i]
+        sys.stdout.write('.')
+        sys.stdout.flush()
+        #print 'cells=',cells
+        
+        for j in range(len(cells_shift_with_ghost)):
+            cells_shift[j]=cells[j]+shifter[j]
+        print cells_shift
+
+        for j in range(dim):
+            temp_decomp= cells_shift[j]/num_cell_loc[j]
+            cells_shift_with_ghost[j]=cells_shift[j]+ghost[j]*temp_decomp*2
+            cells_shift_with_ghost[j+dim]=(cells_shift[j]+ghost[j]*temp_decomp*2)+num_cell_loc_with_ghost[j]-1
+
+        #print 'cells=',cells
+        #print 'cells_shift=',cells_shift
+        #print 'cells_shift_with_ghost=',cells_shift_with_ghost
+            
+        if dim<3:
+            dataNd_loc_with_ghost_comps=data[previous_index:prod_num_cell_loc_with_ghost*(i+1)].reshape((num_cell_loc_with_ghost[dir_x],num_cell_loc_with_ghost[dir_y]),order='F')
+        else:
+            for d in range(comps):
+                print 'd=',d
+                print 'previous_index=',previous_index
+                print 'prod_num_cell_loc_with_ghost=',prod_num_cell_loc_with_ghost
+                dataNd_loc_with_ghost_comps[:,:,:,d]=data[previous_index:prod_num_cell_loc_with_ghost*(i+1)*(d+1)].reshape((num_cell_loc_with_ghost[dir_x],num_cell_loc_with_ghost[dir_y],num_cell_loc_with_ghost[dir_z]),order='F') 
+                previous_index=prod_num_cell_loc_with_ghost*(i+1)*(d+1)
+                
+   ######################################continue 
+        #print cells_shift
+        #print cells_shift[dir_x],cells_shift[dim+dir_x]+1
+        #print cells_shift[dir_y],cells_shift[dim+dir_y]+1
+        #print cells_shift[dir_z],cells_shift[dim+dir_z]+1
+    
+        dataNd_potential_with_ghost[cells_shift_with_ghost[dir_x]:cells_shift_with_ghost[dim+dir_x]+1, cells_shift_with_ghost[dir_y]:cells_shift_with_ghost[dim+dir_y]+1, cells_shift_with_ghost[dir_z]:cells_shift_with_ghost[dim+dir_z]+1]=dataNd_loc_with_ghost
+    
+    
+    File.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+################################################################
+# potential
 
 try:
     potentialfilename
@@ -262,27 +491,30 @@ else:
     print "potential file is set."
     
     File =h5py.File(potentialfilename,'r')     
-    print File.items()
+    #print File.items()
 
     print 
     print File['Chombo_global'].attrs['SpaceDim']
-    print
-    print File['level_0'].items()
+    #print
+    #print File['level_0'].items()
     #print
     #print File['level_0']['Processors'][:]
     print 
     print File['level_0']['boxes'][:]
-    print 
-    print File['level_0']['data:offsets=0'][:]
+    #print 
+    #print File['level_0']['data:offsets=0'][:]
     print 
     print len(File['level_0']['data:datatype=0'][:])
-    print 
-    print File['level_0']['data_attributes'].attrs.items()
+    #print 
+    #print File['level_0']['data_attributes'].attrs.items()
     print 
     print File['level_0']['data_attributes'].attrs.keys()
     
     ghost = File['level_0']['data_attributes'].attrs.get('ghost')
     print 'ghost=',ghost
+
+    comps = File['level_0']['data_attributes'].attrs.get('comps')
+    print 'comps=',comps
 
     boxes=File['level_0']['boxes'][:]
     num_decomposition = len(boxes)#boxes.shape[0]
@@ -373,6 +605,13 @@ else:
     print 'num_cell_total_with_ghost=',num_cell_total_with_ghost
     prod_num_cell_total_with_ghost = np.prod(num_cell_total_with_ghost)
     print 'prod_num_cell_total_with_ghost=',prod_num_cell_total_with_ghost
+
+    num_cell_total_with_ghost_comps=np.append(num_cell_total_with_ghost,[comps])
+    print 'num_cell_total_with_ghost_comps=',num_cell_total_with_ghost_comps
+    prod_num_cell_total_with_ghost_comps = np.prod(num_cell_total_with_ghost_comps)
+    print 'prod_num_cell_total_with_ghost_comps=',prod_num_cell_total_with_ghost_comps
+
+
 
     num_cell_total_with_outer_ghost=np.ones(dim)
     num_cell_total_with_outer_ghost=num_cell_total_with_outer_ghost.astype(int)
@@ -575,18 +814,6 @@ else:
     mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
     mlab.savefig('fig10_mlab_slice_outer_ghost.png')
     fig.scene.save_ps('fig10_mlab_slice_outer_ghost.eps')
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
