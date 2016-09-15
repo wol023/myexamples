@@ -42,7 +42,7 @@ gksystem.enforce_positivity_type = "stage"
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 16 16 8 16 8
+gksystem.num_cells   = 8 8 24 16 8
 gksystem.is_periodic =  1  1  0  0  0
 
 gksystem.configuration_decomp = 1 1 1 
@@ -58,6 +58,7 @@ units.temperature    = 1.0e3
 units.length         = 1.0
 units.mass           = 1.0
 units.magnetic_field = 1.0 
+units.debye_number_mult_factor = 1.0e5
 
 #####################################################
 # Magnetic Geometry Definitions
