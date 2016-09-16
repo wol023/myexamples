@@ -236,7 +236,7 @@ import sys
 #withghost=1 : include outer ghost cells
 #withghost=2 : include inner and outer ghost cells
 
-def import_cfgdim_comps(filename,withghost=0):
+def import_multdim_comps(filename,withghost=0):
     try:
         filename
     except NameError:
@@ -297,14 +297,26 @@ def import_cfgdim_comps(filename,withghost=0):
             shifter[i+dim]=-domain_box_intvect[i]
         #print 'domian_shifter=',shifter
     
+        print 'dim=',dim
         if dim<3:
             dir_x=0
             dir_y=1
-        else:
+        elif dim ==3:
             dir_x=0
             dir_y=1
             dir_z=2
-    
+        elif dim ==4:
+            dir_x=0
+            dir_y=1
+            dir_vpar=2
+            dir_mu=3
+        elif dim ==5:
+            dir_x=0
+            dir_y=1
+            dir_z=2
+            dir_vpar=3
+            dir_mu=4
+ 
         num_cell_loc=np.ones(dim)
         num_cell_loc=num_cell_loc.astype(int)
         for i in range(dim):
@@ -332,6 +344,13 @@ def import_cfgdim_comps(filename,withghost=0):
         #print 'num_cell_loc_with_ghost_comps=',num_cell_loc_with_ghost_comps
         prod_num_cell_loc_with_ghost_comps = np.prod(num_cell_loc_with_ghost_comps)
         #print 'prod_num_cell_loc_with_ghost_comps=',prod_num_cell_loc_with_ghost_comps
+        num_cell_loc_with_ghost_tuple=()
+        for i in range(len(num_cell_loc_with_ghost)):
+            num_cell_loc_with_ghost_tuple=num_cell_loc_with_ghost_tuple+(num_cell_loc_with_ghost[i],)
+        print 'num_cell_loc_with_ghost_tuple=',num_cell_loc_with_ghost_tuple
+
+
+
      
         num_cell_total=np.ones(dim)
         num_cell_total=num_cell_total.astype(int)
@@ -427,56 +446,194 @@ def import_cfgdim_comps(filename,withghost=0):
                 if dim==3:
                     dataNd_loc_with_ghost_comps[:,:,:,d]=data[previous_index:prod_num_cell_loc_with_ghost*(d+1)+prod_num_cell_loc_with_ghost*(i)*comps].reshape((num_cell_loc_with_ghost[dir_x],num_cell_loc_with_ghost[dir_y],num_cell_loc_with_ghost[dir_z]),order='F') 
                 elif dim==5:
-                    num_cell_loc_tuple = dataNd_loc_with_ghost_comps.shape
-                    num_cell_loc_tuple = num_cell_loc_tuple[:-1]
-                    dataNd_loc_with_ghost_comps[:,:,:,:,:,d]=data[previous_index:prod_num_cell_loc_with_ghost*(d+1)+prod_num_cell_loc_with_ghost*(i)*comps].reshape(num_cell_loc_tuple,order='F') 
+                    dataNd_loc_with_ghost_comps[:,:,:,:,:,d]=data[previous_index:prod_num_cell_loc_with_ghost*(d+1)+prod_num_cell_loc_with_ghost*(i)*comps].reshape(num_cell_loc_with_ghost_tuple,order='F') 
 
                 previous_index=prod_num_cell_loc_with_ghost*(d+1)+prod_num_cell_loc_with_ghost*(i)*comps
                     
         
             for d in range(comps):
-                dataNd_bvec_with_ghost_comps[cells_shift_with_ghost[dir_x]:cells_shift_with_ghost[dim+dir_x]+1, cells_shift_with_ghost[dir_y]:cells_shift_with_ghost[dim+dir_y]+1, cells_shift_with_ghost[dir_z]:cells_shift_with_ghost[dim+dir_z]+1,d]=dataNd_loc_with_ghost_comps[:,:,:,d]
+                if dim==3:
+                    dataNd_bvec_with_ghost_comps[cells_shift_with_ghost[dir_x]:cells_shift_with_ghost[dim+dir_x]+1, cells_shift_with_ghost[dir_y]:cells_shift_with_ghost[dim+dir_y]+1, cells_shift_with_ghost[dir_z]:cells_shift_with_ghost[dim+dir_z]+1,d]=dataNd_loc_with_ghost_comps[:,:,:,d]
+                elif dim==5:
+                    dataNd_bvec_with_ghost_comps[cells_shift_with_ghost[dir_x]:cells_shift_with_ghost[dim+dir_x]+1, cells_shift_with_ghost[dir_y]:cells_shift_with_ghost[dim+dir_y]+1, cells_shift_with_ghost[dir_z]:cells_shift_with_ghost[dim+dir_z]+1, cells_shift_with_ghost[dir_vpar]:cells_shift_with_ghost[dim+dir_vpar]+1,cells_shift_with_ghost[dir_mu]:cells_shift_with_ghost[dim+dir_mu]+1,d]=dataNd_loc_with_ghost_comps[:,:,:,:,:,d]
+
         
         
         File.close()
     
-        #removing all ghost cells
-        for i in range(num_cell_total_comps[0]):
-            current_decomp_i=i/num_cell_loc[0]
-            for j in range(num_cell_total[1]):
-                current_decomp_j=j/num_cell_loc[1]
-                for k in range(num_cell_total[2]):
-                    current_decomp_k=k/num_cell_loc[2]
-                    for d in range(comps):
-                        dataNd_bvec_comps[i,j,k,d]=dataNd_bvec_with_ghost_comps[ghost[0]+ghost[0]*2*current_decomp_i+i,ghost[1]+ghost[1]*2*current_decomp_j+j,ghost[2]+ghost[2]*2*current_decomp_k+k,d]
+        #If we have nonzero ghost cells then remove them
+        sum_ghosts=0
+        for i in range(len(ghost)):
+            sum_ghosts=sum_ghosts+ghost[i]
+        if sum_ghosts>0: 
+            #removing all ghost cells
+            if dim==2:
+                for i in range(num_cell_total[0]):
+                    current_decomp_i=i/num_cell_loc[0]
+                    for j in range(num_cell_total[1]):
+                        current_decomp_j=j/num_cell_loc[1]
+                        for d in range(comps):
+                            dataNd_bvec_comps[i,j,d]=dataNd_bvec_with_ghost_comps[ghost[0]+ghost[0]*2*current_decomp_i+i,ghost[1]+ghost[1]*2*current_decomp_j+j,d]
+            elif dim==3:
+                for i in range(num_cell_total[0]):
+                    current_decomp_i=i/num_cell_loc[0]
+                    for j in range(num_cell_total[1]):
+                        current_decomp_j=j/num_cell_loc[1]
+                        for k in range(num_cell_total[2]):
+                            current_decomp_k=k/num_cell_loc[2]
+                            for d in range(comps):
+                                dataNd_bvec_comps[i,j,k,d]=dataNd_bvec_with_ghost_comps[ghost[0]+ghost[0]*2*current_decomp_i+i,ghost[1]+ghost[1]*2*current_decomp_j+j,ghost[2]+ghost[2]*2*current_decomp_k+k,d]
+            elif dim==4:
+                for i in range(num_cell_total[0]): #x
+                    current_decomp_i=i/num_cell_loc[0]
+                    for j in range(num_cell_total[1]): #y
+                        current_decomp_j=j/num_cell_loc[1]
+                        for k in range(num_cell_total[2]): #vpar
+                            current_decomp_k=k/num_cell_loc[2]
+                            for l in range(num_cell_total[3]): #mu
+                                current_decomp_l=l/num_cell_loc[3]
+                                for d in range(comps): #components
+                                    dataNd_bvec_comps[i,j,k,l,d]=dataNd_bvec_with_ghost_comps[ghost[0]+ghost[0]*2*current_decomp_i+i,ghost[1]+ghost[1]*2*current_decomp_j+j,ghost[2]+ghost[2]*2*current_decomp_k+k, ghost[3]+ghost[3]*2*current_decomp_l+l, d]
+            elif dim==5:
+                for i in range(num_cell_total[0]): #x
+                    current_decomp_i=i/num_cell_loc[0]
+                    for j in range(num_cell_total[1]): #y
+                        current_decomp_j=j/num_cell_loc[1]
+                        for k in range(num_cell_total[2]): #z
+                            current_decomp_k=k/num_cell_loc[2]
+                            for l in range(num_cell_total[3]): #vpar
+                                current_decomp_l=l/num_cell_loc[3]
+                                for m in range(num_cell_total[4]): #mu
+                                    current_decomp_m=m/num_cell_loc[4]
+                                    for d in range(comps): #components
+                                        dataNd_bvec_comps[i,j,k,l,m,d]=dataNd_bvec_with_ghost_comps[ghost[0]+ghost[0]*2*current_decomp_i+i,ghost[1]+ghost[1]*2*current_decomp_j+j,ghost[2]+ghost[2]*2*current_decomp_k+k, ghost[3]+ghost[3]*2*current_decomp_l+l, ghost[4]+ghost[4]*2*current_decomp_m+m,  d]
+    
 
-    #removing inner ghost cells
-        for i in range(num_cell_total_with_outer_ghost[0]):
-            current_decomp_i=(i+ghost[0])/num_cell_loc[0]
-            if current_decomp_i>decomposition[0]:
-                last_decomp_i=1
-            elif current_decomp_i==0:
-                last_decomp_i=-1
-            else:
-                last_decomp_i=0
-            for j in range(num_cell_total_with_outer_ghost[1]):
-                current_decomp_j=(j+ghost[1])/num_cell_loc[1]
-                if current_decomp_j>decomposition[1]:
-                    last_decomp_j=1
-                elif current_decomp_j==0:
-                    last_decomp_j=-1
-                else:
-                    last_decomp_j=0
-                for k in range(num_cell_total_with_outer_ghost[2]):
-                    current_decomp_k=(k+ghost[2])/num_cell_loc[2]
-                    if current_decomp_k>decomposition[2]:
-                        last_decomp_k=1
-                    elif current_decomp_k==0:
-                        last_decomp_k=-1
+
+    
+            #removing inner ghost cells
+            if dim==3:
+                for i in range(num_cell_total_with_outer_ghost[0]):
+                    current_decomp_i=(i+ghost[0])/num_cell_loc[0]
+                    if current_decomp_i>decomposition[0]:
+                        last_decomp_i=1
+                    elif current_decomp_i==0:
+                        last_decomp_i=-1
                     else:
-                        last_decomp_k=0
-                    for d in range(comps):
-                        dataNd_bvec_with_outer_ghost_comps[i,j,k,d]=dataNd_bvec_with_ghost_comps[ghost[0]*2*(current_decomp_i-last_decomp_i-1)+i,ghost[1]*2*(current_decomp_j-last_decomp_j-1)+j,ghost[2]*2*(current_decomp_k-last_decomp_k-1)+k,d]
+                        last_decomp_i=0
+                    for j in range(num_cell_total_with_outer_ghost[1]):
+                        current_decomp_j=(j+ghost[1])/num_cell_loc[1]
+                        if current_decomp_j>decomposition[1]:
+                            last_decomp_j=1
+                        elif current_decomp_j==0:
+                            last_decomp_j=-1
+                        else:
+                            last_decomp_j=0
+                        for k in range(num_cell_total_with_outer_ghost[2]):
+                            current_decomp_k=(k+ghost[2])/num_cell_loc[2]
+                            if current_decomp_k>decomposition[2]:
+                                last_decomp_k=1
+                            elif current_decomp_k==0:
+                                last_decomp_k=-1
+                            else:
+                                last_decomp_k=0
+                            for d in range(comps):
+                                dataNd_bvec_with_outer_ghost_comps[i,j,k,d]=dataNd_bvec_with_ghost_comps[ghost[0]*2*(current_decomp_i-last_decomp_i-1)+i,ghost[1]*2*(current_decomp_j-last_decomp_j-1)+j,ghost[2]*2*(current_decomp_k-last_decomp_k-1)+k,d]
+            elif dim==4:
+                for i in range(num_cell_total_with_outer_ghost[0]): #x
+                    current_decomp_i=(i+ghost[0])/num_cell_loc[0]
+                    if current_decomp_i>decomposition[0]:
+                        last_decomp_i=1
+                    elif current_decomp_i==0:
+                        last_decomp_i=-1
+                    else:
+                        last_decomp_i=0
+                    for j in range(num_cell_total_with_outer_ghost[1]): #y
+                        current_decomp_j=(j+ghost[1])/num_cell_loc[1]
+                        if current_decomp_j>decomposition[1]:
+                            last_decomp_j=1
+                        elif current_decomp_j==0:
+                            last_decomp_j=-1
+                        else:
+                            last_decomp_j=0
+                        for k in range(num_cell_total_with_outer_ghost[2]): #vpar
+                            current_decomp_k=(k+ghost[2])/num_cell_loc[2]
+                            if current_decomp_k>decomposition[2]:
+                                last_decomp_k=1
+                            elif current_decomp_k==0:
+                                last_decomp_k=-1
+                            else:
+                                last_decomp_k=0
+                            for l in range(num_cell_total_with_outer_ghost[3]): #mu
+                                current_decomp_l=(l+ghost[3])/num_cell_loc[3]
+                                if current_decomp_l>decomposition[3]:
+                                    last_decomp_l=1
+                                elif current_decomp_l==0:
+                                    last_decomp_l=-1
+                                else:
+                                    last_decomp_l=0
+                                for d in range(comps):
+                                    dataNd_bvec_with_outer_ghost_comps[i,j,k,l,d]=dataNd_bvec_with_ghost_comps[ghost[0]*2*(current_decomp_i-last_decomp_i-1)+i,ghost[1]*2*(current_decomp_j-last_decomp_j-1)+j,ghost[2]*2*(current_decomp_k-last_decomp_k-1)+k,ghost[3]*2*(current_decomp_l-last_decomp_l-1)+l,d]
+            elif dim==5:
+                for i in range(num_cell_total_with_outer_ghost[0]): #x
+                    current_decomp_i=(i+ghost[0])/num_cell_loc[0]
+                    if current_decomp_i>decomposition[0]:
+                        last_decomp_i=1
+                    elif current_decomp_i==0:
+                        last_decomp_i=-1
+                    else:
+                        last_decomp_i=0
+                    for j in range(num_cell_total_with_outer_ghost[1]): #y
+                        current_decomp_j=(j+ghost[1])/num_cell_loc[1]
+                        if current_decomp_j>decomposition[1]:
+                            last_decomp_j=1
+                        elif current_decomp_j==0:
+                            last_decomp_j=-1
+                        else:
+                            last_decomp_j=0
+                        for k in range(num_cell_total_with_outer_ghost[2]): #z
+                            current_decomp_k=(k+ghost[2])/num_cell_loc[2]
+                            if current_decomp_k>decomposition[2]:
+                                last_decomp_k=1
+                            elif current_decomp_k==0:
+                                last_decomp_k=-1
+                            else:
+                                last_decomp_k=0
+                            for l in range(num_cell_total_with_outer_ghost[3]): #vpar
+                                current_decomp_l=(l+ghost[3])/num_cell_loc[3]
+                                if current_decomp_l>decomposition[3]:
+                                    last_decomp_l=1
+                                elif current_decomp_l==0:
+                                    last_decomp_l=-1
+                                else:
+                                    last_decomp_l=0
+                                for m in range(num_cell_total_with_outer_ghost[4]): #mu
+                                    current_decomp_m=(m+ghost[4])/num_cell_loc[4]
+                                    if current_decomp_m>decomposition[4]:
+                                        last_decomp_m=1
+                                    elif current_decomp_m==0:
+                                        last_decomp_m=-1
+                                    else:
+                                        last_decomp_m=0
+                                    for d in range(comps):
+                                        dataNd_bvec_with_outer_ghost_comps[i,j,k,l,m,d]=dataNd_bvec_with_ghost_comps[ghost[0]*2*(current_decomp_i-last_decomp_i-1)+i,ghost[1]*2*(current_decomp_j-last_decomp_j-1)+j,ghost[2]*2*(current_decomp_k-last_decomp_k-1)+k,ghost[3]*2*(current_decomp_l-last_decomp_l-1)+l,ghost[4]*2*(current_decomp_m-last_decomp_m-1)+m,d]
+
+        else:
+            #just copy
+            if dim==2:
+                dataNd_bvec_comps[:,:,:]                       =dataNd_bvec_with_ghost_comps[:,:,:]
+                dataNd_bvec_with_outer_ghost_comps[:,:,:]      =dataNd_bvec_with_ghost_comps[:,:,:]
+            elif dim==3:
+                dataNd_bvec_comps[:,:,:,:]                     =dataNd_bvec_with_ghost_comps[:,:,:,:]
+                dataNd_bvec_with_outer_ghost_comps[:,:,:,:]    =dataNd_bvec_with_ghost_comps[:,:,:,:]
+            elif dim==4:
+                dataNd_bvec_comps[:,:,:,:,:]                   =dataNd_bvec_with_ghost_comps[:,:,:,:,:]
+                dataNd_bvec_with_outer_ghost_comps[:,:,:,:,:]  =dataNd_bvec_with_ghost_comps[:,:,:,:,:]
+            elif dim==5:
+                dataNd_bvec_comps[:,:,:,:,:,:]                 =dataNd_bvec_with_ghost_comps[:,:,:,:,:,:]
+                dataNd_bvec_with_outer_ghost_comps[:,:,:,:,:,:]=dataNd_bvec_with_ghost_comps[:,:,:,:,:,:]
+
+        
 
 
         print ' collected ', num_decomposition, 'decompositions'
@@ -651,7 +808,18 @@ def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600
         mlab.view(roll=0,azimuth=60,elevation=30,distance='auto')
         return fig
 
+    elif var_dim==5:
+        if var_components>1:
+            print 'dfn plot with mult components'
+            return
+        else:
+            print 'dfn plot with single component'
+            #try collect for density
+            return 
     return 
+
+
+
 
 
 

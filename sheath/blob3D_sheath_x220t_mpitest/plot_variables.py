@@ -25,35 +25,99 @@ from sympy.abc import x, y, z
 #from sympy.utilities.lambdify import implemented_function
 #from sympy import Function
 
-
-
-
 #############################################################
 ########################## diagnostic points
-x_pt = 4
-y_pt = 5
-z_pt = 6
+x_pt = 2
+y_pt = 2
+z_pt = 2
 #vpar_rbf_refine = 5
 #mu_rbf_refine = 5
 #rbf_smooth = 0
 #############################################################
 #############################################################
-# import dfn
-hdffilename='./plt_dfn_plots/plt.1.hydrogen.dfn0000.5d.hdf5'
-
 
 from plot_cogent_pack import init_plotting
 from plot_cogent_pack import add_colorbar
 from plot_cogent_pack import find
 from plot_cogent_pack import findpertbation
 from plot_cogent_pack import findmodenumber
-from plot_cogent_pack import import_cfgdim_comps
+from plot_cogent_pack import import_multdim_comps
 from plot_cogent_pack import plot_Nd
 
 #############################
 ###############import dfn
-densityfilename='./plt_dfn_plots/plt.1.hydrogen.dfn0001.5d.hdf5'
-dataNd_density_comps=import_cfgdim_comps(filename=densityfilename)
+dfnfilename='./plt_dfn_plots/plt.2.electron.dfn0000.5d.hdf5'
+dataNd_dfn_comps=import_multdim_comps(filename=dfnfilename)
+title_var='distr. function'
+num_cell_total_comps_tuple=dataNd_dfn_comps.shape
+pdim=len(num_cell_total_comps_tuple)-1
+
+from read_input_deck import *
+
+if 'electron' in dfnfilename:
+    mhat = elec_mass
+    That = et0_grid_func
+    print 'electron (mhat, That) = ', mhat, That
+elif 'hydrogen' in dfnfilename:
+    mhat = ion_mass
+    That = t0_grid_func
+    print 'hydrogen (mhat, That) = ', mhat, That
+else:
+    mhat = 1.0
+    That = 1.0
+    print 'default (mhat, That) = ', mhat, That
+
+coef_maxwell=nhat/np.sqrt(np.pi)*(0.5*mhat/That)**(1.5)
+print coef_maxwell
+
+
+vpar_cell_dim_begin = -1.0*Vpar_max+(Vpar_max*1.0+Vpar_max*1.0)/float(num_cell_total_comps_tuple[-3])/2.0
+vpar_cell_dim_end   =  1.0*Vpar_max-(Vpar_max*1.0+Vpar_max*1.0)/float(num_cell_total_comps_tuple[-3])/2.0
+mu_cell_dim_begin = Mu_max*0.0+(Mu_max*1.0-Mu_max*0.0)/float(num_cell_total_comps_tuple[-2])/2.0
+mu_cell_dim_end   = Mu_max*1.0-(Mu_max*1.0-Mu_max*0.0)/float(num_cell_total_comps_tuple[-2])/2.0
+VPAR_CELL,MU_CELL = np.mgrid[vpar_cell_dim_begin:vpar_cell_dim_end:(num_cell_total_comps_tuple[-3]*1j),mu_cell_dim_begin:mu_cell_dim_end:(num_cell_total_comps_tuple[-2]*1j)]
+
+#VPAR_SCALE = VPAR_CELL[:,0]*np.sqrt(mhat) #for trunk
+VPAR_SCALE = VPAR_CELL[:,0] #for mass dependent normalization
+MU_SCALE = MU_CELL[0,:]
+
+#least square fitting on a slice of MU index=0
+guess_den =coef_maxwell 
+guess_temp =1.0/(2.0*That)
+guess_shift =0.0
+if pdim<5:
+    optimize_func = lambda z: z[0]*np.exp(-z[1]*(VPAR_SCALE-z[2])**2)-dataNd_dfn_comps[x_pt,y_pt,:,0,0] 
+else:
+    optimize_func = lambda z: z[0]*np.exp(-z[1]*(VPAR_SCALE-z[2])**2)-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,0] 
+
+est_den, est_temp, est_shift = leastsq(optimize_func, [guess_den, guess_temp, guess_shift])[0]
+fitted_f = est_den*np.exp(-est_temp*VPAR_SCALE**2)
+t_fit = 1.0/(est_temp*2.0)
+n_fit = est_den*np.sqrt(np.pi)/(0.5*mhat/t_fit)**(1.5)/np.exp(-MU_SCALE[0]*Bhat/2.0/t_fit)
+vshift_fit = est_shift
+print 't_fit = ',t_fit
+print 'n_fit = ',n_fit
+print 'vshift_fit = ',est_shift
+
+#raw f imshow
+init_plotting()
+plt.subplot(111)
+#plt.gca().margins(0.1, 0.1)
+if pdim<5:
+    im=plt.imshow(dataNd_dfn_comps[x_pt,y_pt,:,:,0].T,interpolation='none',origin="lower",extent=[-1,1,0,1],aspect=1.0)
+else:
+    im=plt.imshow(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,0].T,interpolation='none',origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+plt.title(r'$f(\bar{v}_\parallel,\bar{\mu})$')
+plt.xlabel(r'$\bar{v}_\parallel$')
+plt.ylabel(r'$\bar{\mu}$')
+add_colorbar(im)
+plt.tight_layout()
+plt.show()
+
+
+
+
+fig=plot_Nd(dataNd_bvec_comps,titleIn=title_var)
 
 
 
@@ -62,8 +126,8 @@ dataNd_density_comps=import_cfgdim_comps(filename=densityfilename)
 ###############import Bvector
 # import B bector
 bvecfilename='./BField_cc3d.hdf5'
-dataNd_bvec_comps=import_cfgdim_comps(filename=bvecfilename)
-dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec =import_cfgdim_comps(filename=bvecfilename,withghost=1)
+dataNd_bvec_comps=import_multdim_comps(filename=bvecfilename)
+dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec =import_multdim_comps(filename=bvecfilename,withghost=1)
 title_var='B field'
 
 fig=plot_Nd(dataNd_bvec_comps,titleIn=title_var)
@@ -75,8 +139,8 @@ fig=plot_Nd(dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec,titleIn=title_var)
 #############################
 ###############import Evector
 evecfilename='./plt_efield_plots/plt.efield0001.cell.3d.hdf5'
-dataNd_evec_comps=import_cfgdim_comps(filename=evecfilename)
-dataNd_evec_with_outer_ghost_comps,num_ghost_evec=import_cfgdim_comps(filename=evecfilename,withghost=1)
+dataNd_evec_comps=import_multdim_comps(filename=evecfilename)
+dataNd_evec_with_outer_ghost_comps,num_ghost_evec=import_multdim_comps(filename=evecfilename,withghost=1)
 title_var='E field'
 
 fig=plot_Nd(dataNd_evec_comps,titleIn=title_var)
@@ -89,8 +153,8 @@ fig=plot_Nd(dataNd_evec_with_outer_ghost_comps,num_ghost_evec,titleIn=title_var)
 ###############import potential
 # import potential
 potentialfilename='./plt_potential_plots/plt.potential0001.3d.hdf5'
-dataNd_potential_comps=import_cfgdim_comps(filename=potentialfilename)
-dataNd_potential_with_outer_ghost_comps,num_ghost_potential=import_cfgdim_comps(filename=potentialfilename,withghost=1)
+dataNd_potential_comps=import_multdim_comps(filename=potentialfilename)
+dataNd_potential_with_outer_ghost_comps,num_ghost_potential=import_multdim_comps(filename=potentialfilename,withghost=1)
 title_var='potential'
 
 plot_Nd(dataNd_potential_comps,titleIn=title_var)
@@ -102,8 +166,8 @@ plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,titleIn=titl
 #############################
 ###############import density
 densityfilename='./plt_density_plots/plt.1.hydrogen.density0001.3d.hdf5'
-dataNd_density_comps=import_cfgdim_comps(filename=densityfilename)
-dataNd_density_with_outer_ghost_comps,num_ghost_density=import_cfgdim_comps(filename=densityfilename,withghost=1)
+dataNd_density_comps=import_multdim_comps(filename=densityfilename)
+dataNd_density_with_outer_ghost_comps,num_ghost_density=import_multdim_comps(filename=densityfilename,withghost=1)
 title_var='density'
 
 plot_Nd(dataNd_density_comps,titleIn=title_var)
@@ -111,156 +175,11 @@ plot_Nd(dataNd_density_with_outer_ghost_comps,num_ghost_density,titleIn=title_va
 plot_Nd(dataNd_density_comps,titleIn=title_var,sliced=1,x_slice=0.5,y_slice=0.25,z_slice=0.75)
 plot_Nd(dataNd_density_with_outer_ghost_comps,num_ghost_density,titleIn=title_var,x_slice=0.5,y_slice=0.0,z_slice=1.5)
 #
+#############################################
 
 
 
 
-
-#############################################################
-File =h5py.File(hdffilename,'r')     
-
-print File.items()
-#print 
-#print File['Chombo_global'].attrs['SpaceDim']
-#print
-#print File['level_0'].items()
-#print
-#print File['level_0']['Processors'][:]
-#print 
-#print File['level_0']['boxes'][:]
-#print 
-#print File['level_0']['data:offsets=0'][:]
-#print 
-#print len(File['level_0']['data:datatype=0'][:])
-#print 
-#print File['level_0']['data_attributes'].attrs.items()
-
-boxes=File['level_0']['boxes'][:]
-num_decomposition = len(boxes)#boxes.shape[0]
-
-dim=len(boxes[0])/2
-
-min_box_intvect=np.ones(dim*2)
-max_box_intvect=np.ones(dim*2)
-min_box_intvect=min_box_intvect.astype(int)
-max_box_intvect=max_box_intvect.astype(int)
-
-total_box=np.zeros(( num_decomposition,dim*2 ))
-total_box=total_box.astype(int)
-
-for i in range(dim*2):
-    for j in range(num_decomposition):
-        total_box[j][i]=boxes[j][i]
-#print total_box
-
-for i in range(dim*2):
-    min_box_intvect[i]=min(total_box[:,i])
-    max_box_intvect[i]=max(total_box[:,i])
-
-print 'lo=',min_box_intvect
-print 'hi=',max_box_intvect
-domain_box_intvect=min_box_intvect
-domain_box_intvect[dim:dim*2]=max_box_intvect[dim:dim*2]
-print 'domain=',domain_box_intvect
-
-shifter=np.zeros(dim*2)
-shifter=shifter.astype(int)
-for i in range(dim):
-    shifter[i]=-domain_box_intvect[i]
-for i in range(dim):
-    shifter[i+dim]=-domain_box_intvect[i]
-print 'domian_shifter=',shifter
-
-if dim<5:
-    dir_x=0
-    dir_y=1
-    dir_vpar=2
-    dir_mu=3
-else:
-    dir_x=0
-    dir_y=1
-    dir_z=2
-    dir_vpar=3
-    dir_mu=4
-
-if dim>3:
-    cfg_dim=dim-2
-else:
-    cfg_dim=dim
-
-
-num_cell_total=np.ones(dim)
-num_cell_total=num_cell_total.astype(int)
-for i in range(dim):
-    xcell_beg=min_box_intvect[i]
-    xcell_fin=max_box_intvect[i+dim]
-    num_xcell=xcell_fin-xcell_beg+1
-    #print xcell_beg,xcell_fin,num_xcell
-    num_cell_total[i]=num_xcell
-print 'num_cell_total=',num_cell_total
-prod_num_cell_total = np.prod(num_cell_total)
-print 'prod_num_cell_total=',prod_num_cell_total
-
-num_cell_loc=np.ones(dim)
-num_cell_loc=num_cell_loc.astype(int)
-for i in range(dim):
-    xcell_beg=boxes[0][i]
-    xcell_fin=boxes[0][i+dim]
-    num_xcell=xcell_fin-xcell_beg+1
-    #print xcell_beg,xcell_fin,num_xcell
-    num_cell_loc[i]=num_xcell
-print 'num_cell_loc=',num_cell_loc
-prod_num_cell_loc = np.prod(num_cell_loc)
-print 'prod_num_cell_loc=',prod_num_cell_loc
-     
-data = File['level_0']['data:datatype=0'][:]
-previous_index=0
-
-if dim<5:
-    dataNd=np.linspace(0.0,0.1,num=prod_num_cell_total).reshape((num_cell_total[0],num_cell_total[1],num_cell_total[2],num_cell_total[3]) )
-else:
-    dataNd=np.linspace(0.0,0.1,num=prod_num_cell_total).reshape((num_cell_total))
-num_cell_loc=num_cell_loc.astype(int)
-
-cells_shift=np.zeros(dim*2)
-cells_shift=cells_shift.astype(int)
-
-for i in range(num_decomposition):
-    cells = File['level_0']['boxes'][i]
-    sys.stdout.write('.')
-    sys.stdout.flush()
-    #print 'cells=',cells
-    
-    for j in range(len(cells_shift)):
-        cells_shift[j]=cells[j]+shifter[j]
-        
-    if dim<5:
-        dataNd_loc=data[previous_index:prod_num_cell_loc*(i+1)].reshape((num_cell_loc[dir_x],num_cell_loc[dir_y],num_cell_loc[dir_vpar],num_cell_loc[dir_mu]),order='F')
-    else:
-        #print previous_index
-        #print prod_num_cell_loc*(i+1)
-        #print prod_num_cell_loc
-        #print prod_num_cell_total
-        #print (prod_num_cell_loc*(i+1)-previous_index)
-        #print prod_num_cell_total/(prod_num_cell_loc*(i+1)-previous_index)
-
-        dataNd_loc=data[previous_index:prod_num_cell_loc*(i+1)].reshape((num_cell_loc[dir_x],num_cell_loc[dir_y],num_cell_loc[dir_z],num_cell_loc[dir_vpar],num_cell_loc[dir_mu]),order='F')
-
-    previous_index=prod_num_cell_loc*(i+1)
-
-    #print cells_shift
-    #print cells_shift[dir_x],cells_shift[dim+dir_x]+1
-    #print cells_shift[dir_y],cells_shift[dim+dir_y]+1
-    #print cells_shift[dir_z],cells_shift[dim+dir_z]+1
-    #print cells_shift[dir_vpar],cells_shift[dim+dir_vpar]+1
-    #print cells_shift[dir_mu],cells_shift[dim+dir_mu]+1
-
-
-
-    dataNd[cells_shift[dir_x]:cells_shift[dim+dir_x]+1, cells_shift[dir_y]:cells_shift[dim+dir_y]+1, cells_shift[dir_z]:cells_shift[dim+dir_z]+1, cells_shift[dir_vpar]:cells_shift[dim+dir_vpar]+1, cells_shift[dir_mu]:cells_shift[dim+dir_mu]+1]=dataNd_loc
-
-
-File.close()
 print 'num_decomposition=',num_decomposition
 print 'dataNd.shape=',dataNd.shape
 
@@ -282,225 +201,6 @@ VPAR,MU = np.mgrid[-1:1:(num_vparcell*1j),0:1:(num_mucell*1j)]
 #    
 #VPAR_REFINE, MU_REFINE = np.mgrid[-1:1:(num_vparcell*1j*vpar_rbf_refine), 0:1:(num_mucell*1j*mu_rbf_refine)]
 #saved_rbf=rbf(VPAR_REFINE,MU_REFINE)
-
-
-#### READ INPUT DECK
-fname=find('*.in', './')
-
-with open(fname[0], 'r') as f:
-    for line in f:
-        if line.lstrip().startswith('#'): #skip comment
-            continue
-        line =line.rstrip() #skip blank line
-        if not line:
-            continue 
-        else: #noncomment line
-            strippedline=line
-            lhsrhs = strippedline.split("=")
-            l=0
-            while l<len(lhsrhs): #strip white spaces in lhs
-                lhsrhs[l]=lhsrhs[l].rstrip()
-                lhsrhs[l]=lhsrhs[l].lstrip()
-                l=l+1
-            if 'units.number_density' in lhsrhs[0]:
-                units_number_density =float(lhsrhs[1])
-                print 'IN:units_number_density = ',units_number_density
-            if 'units.temperature' in lhsrhs[0]:
-                units_temperature = float(lhsrhs[1])
-                print 'IN:units_temperature = ',units_temperature
-            if 'units.length' in lhsrhs[0]:
-                units_length = float(lhsrhs[1])
-                print 'IN:units_length= ',units_length
-            if 'units.mass' in lhsrhs[0]:
-                units_mass = float(lhsrhs[1])
-                print 'IN:units_mass = ',units_mass
-            if 'units.magnetic_field' in lhsrhs[0]:
-                units_magnetic_field = float(lhsrhs[1])
-                print 'IN:units_magnetic_field = ',units_magnetic_field
-            if 'boltzmann_electron.temperature' in lhsrhs[0]:
-                boltzmann_electron_temperature = float(lhsrhs[1])
-                print 'IN:boltzmann_electron_temperature = ',boltzmann_electron_temperature
-            if 'gksystem.magnetic_geometry_mapping.slab.Bz_inner' in lhsrhs[0]:
-                bz_inner = float(lhsrhs[1])
-                print 'IN:bz_inner = ',bz_inner
-            if 'gksystem.magnetic_geometry_mapping.slab.By_inner' in lhsrhs[0]:
-                by_inner = float(lhsrhs[1])
-                print 'IN:by_inner = ',by_inner
-            if 'gksystem.magnetic_geometry_mapping.slab.x_max' in lhsrhs[0]:
-                x_max = float(lhsrhs[1])
-                print 'IN:x_max = ',x_max
-            if 'gksystem.magnetic_geometry_mapping.slab.y_max' in lhsrhs[0]:
-                y_max = float(lhsrhs[1])
-                print 'IN:y_max = ',y_max
-            if 'gksystem.magnetic_geometry_mapping.slab.z_max' in lhsrhs[0]:
-                z_max = float(lhsrhs[1])
-                print 'IN:z_max = ',z_max
-            if 'kinetic_species.1.mass' in lhsrhs[0]:
-                ion_mass = float(lhsrhs[1])
-                print 'IN:ion_mass = ',ion_mass
-            if 'kinetic_species.2.mass' in lhsrhs[0]:
-                elec_mass = float(lhsrhs[1])
-                print 'IN:elec_mass = ',elec_mass
-
-            if 'phase_space_mapping.v_parallel_max' in lhsrhs[0]:
-                v_parallel_max= float(lhsrhs[1])
-                print 'IN:v_parallel_max= ',v_parallel_max
-            if 'phase_space_mapping.mu_max' in lhsrhs[0]:
-                mu_max= float(lhsrhs[1])
-                print 'IN:mu_max= ',mu_max
-
-
-            if '.N0_grid_func.function' in lhsrhs[0]:
-                #print lhsrhs[0],'=',lhsrhs[1]
-                n0_grid_func=lhsrhs[1][1:-1] #remove double quotes
-                n0_grid_func=n0_grid_func.lstrip()
-                n0_grid_func=n0_grid_func.rstrip()
-                n0_grid_func=n0_grid_func.replace('^','**')
-                print 'IN:n0_grid_func = ',n0_grid_func
-                m_y=0.0;
-                m_x=0.0;
-                m_z=0.0;
-                #parse background 
-                tokens=findpertbation(n0_grid_func,'exp(')
-                #print 'exp():',tokens
-                for token in tokens:
-                    #print "For ",token
-                    #temp_y=findmodenumber(token,'y')
-                    temp_x=findmodenumber(token,'x')
-                    #temp_z=findmodenumber(token,'z')
-                    #if abs(temp_y)>abs(m_y):
-                    #        m_y=temp_y
-                    if abs(temp_x)>abs(m_x):
-                            m_x=temp_x
-                    #if abs(temp_z)>abs(m_z):
-                    #        m_z=temp_z
-                if m_x==0:
-                    m_x=1.0E50
-                deltaL_analytic = -1.0/m_x/2.0/np.pi*x_max*100 #in cm
-                print 'IN:deltaL_analytic=',deltaL_analytic
-
-                #parse perturbations
-                m_y=0.0;
-                m_x=0.0;
-                m_z=0.0;
-
-                tokens=findpertbation(n0_grid_func,'sin(')
-                #print 'sin():',tokens
-                for token in tokens:
-                    #print "For ",token
-                    temp_y=findmodenumber(token,'y')
-                    temp_x=findmodenumber(token,'x')
-                    temp_z=findmodenumber(token,'z')
-                    if abs(temp_y)>abs(m_y):
-                            m_y=temp_y
-                    if abs(temp_x)>abs(m_x):
-                            m_x=temp_x
-                    if abs(temp_z)>abs(m_z):
-                            m_z=temp_z
-
-                print 'IN:m_y=',m_y
-                print 'IN:m_x=',m_x
-                print 'IN:m_z=',m_z
-
-                tokens=findpertbation(n0_grid_func,'cos(')
-                #print 'cos():',tokens
-                for token in tokens:
-                    #print "For ",token
-                    temp_y=findmodenumber(token,'y')
-                    temp_x=findmodenumber(token,'x')
-                    temp_z=findmodenumber(token,'z')
-                    if abs(temp_y)>abs(m_y):
-                            m_y=temp_y
-                    if abs(temp_x)>abs(m_x):
-                            m_x=temp_x
-                    if abs(temp_z)>abs(m_z):
-                            m_z=temp_z
-
-                print 'IN:m_y=',m_y
-                print 'IN:m_x=',m_x
-                print 'IN:m_z=',m_z
-                
-            if '.T0_grid_func.constant' in lhsrhs[0]:
-                #print lhsrhs[0],'=',lhsrhs[1]
-                t0_grid_func=float(lhsrhs[1])
-                print 'IN:t0_grid_func = ',t0_grid_func
-            if '.T0_grid_func.value' in lhsrhs[0]:
-                #print lhsrhs[0],'=',lhsrhs[1]
-                t0_grid_func=float(lhsrhs[1])
-                print 'IN:t0_grid_func = ',t0_grid_func
-            if '.eT0_grid_func.constant' in lhsrhs[0]:
-                #print lhsrhs[0],'=',lhsrhs[1]
-                et0_grid_func=float(lhsrhs[1])
-                print 'IN:et0_grid_func = ',et0_grid_func
-            if '.eT0_grid_func.value' in lhsrhs[0]:
-                #print lhsrhs[0],'=',lhsrhs[1]
-                et0_grid_func=float(lhsrhs[1])
-                print 'IN:et0_grid_func = ',et0_grid_func
-            
-            if 'gksystem.num_cells' in lhsrhs[0]:
-                num_cells=lhsrhs[1].split()
-                #print 'IN:num_cells = ',num_cells
-                if len(num_cells) == 4:
-                    x_cells=int(num_cells[0])
-                    #print 'IN:x_cells = ', x_cells
-                    y_cells=int(num_cells[1])
-                    #print 'IN:y_cells = ', y_cells
-                elif len(num_cells) == 5:
-                    x_cells=int(num_cells[0])
-                    #print 'IN:x_cells = ', x_cells
-                    y_cells=int(num_cells[1])
-                    #print 'IN:y_cells = ', y_cells
-                    z_cells=int(num_cells[2])
-                    #print 'IN:z_cells = ', z_cells
-            if '.history_indices' in lhsrhs[0]:
-                history_indices=lhsrhs[1].split()
-                if len(history_indices) == 2:
-                    x_index=int(history_indices[0])
-                    #print 'IN:x_index = ', x_index
-                    y_index=int(history_indices[1])
-                    #print 'IN:y_index = ', y_index
-                elif len(history_indices) == 3:
-                    x_index=int(history_indices[0])
-                    #print 'IN:x_index = ', x_index
-                    y_index=int(history_indices[1])
-                    #print 'IN:y_index = ', y_index
-                    z_index=int(history_indices[2])
-                    #print 'IN:z_index = ', z_index
-
-
-
-#reconstruct from model Maxwellian
-Bhat = np.sqrt(bz_inner**2+by_inner**2)
-
-if 'electron' in hdffilename:
-    mhat = elec_mass
-    That = et0_grid_func
-    print 'electron (mass, t0) = ', mhat, That
-elif 'hydrogen' in hdffilename:
-    mhat = ion_mass
-    That = t0_grid_func
-    print 'hydrogen (mass, t0) = ', mhat, That
-else:
-    mhat = 1.0
-    That = 1.0
-    print 'default (mass, t0) = ', mhat, That
-
-
-transformations = (standard_transformations + (implicit_multiplication_application,))
-pe=parse_expr(n0_grid_func,transformations=transformations)
-f_n0_grid_func= lambdify((x,y,z),pe)
-
-in_f_n0 = f_n0_grid_func(0,0,0)
-if in_f_n0 >0.0:
-    nhat = in_f_n0
-    print 'nhat = ', nhat
-else:
-    nhat =1.0
-    print 'nhat(default) = ', nhat
-
-Vpar_max = v_parallel_max
-Mu_max = mu_max
-print '(vpar_max, mu_max) = ', Vpar_max, Mu_max
 
 
 vpar_cell_dim_begin = -1.0*Vpar_max+(Vpar_max*1.0+Vpar_max*1.0)/num_vparcell/2.0
