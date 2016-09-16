@@ -3,7 +3,7 @@ from mayavi import mlab
 
 #import multi component variables 
 
-def plot_Nd(var,ghostIn=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1):
+def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1):
     #wh=1 # 0: black background, 1: whithe background
     #first check the rank of input data
     var_shape=var.shape
@@ -86,11 +86,34 @@ def plot_Nd(var,ghostIn=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-
             #vectors.glyph.glyph_source.glyph_source = vectors.glyph.glyph_source.glyph_dict['arrow_source']
             vh.glyph.glyph_source.glyph_source = vh.glyph.glyph_source.glyph_dict['arrow_source']
             vh.glyph.glyph.scale_factor = 1.0
+
+            engine=mlab.get_engine()
+            s=engine.current_scene
+            module_manager = s.children[0].children[0]
+            module_manager.vector_lut_manager.show_scalar_bar = True
+            module_manager.vector_lut_manager.show_legend = True
+            module_manager.vector_lut_manager.scalar_bar.title = titleIn
+            module_manager.vector_lut_manager.scalar_bar_representation.position2 = np.array([ 0.1,  0.8])
+            module_manager.vector_lut_manager.scalar_bar_representation.position = np.array([ 0.05,  0.1])
+            module_manager.vector_lut_manager.label_text_property.color = (1-wh,1-wh, 1-wh)
+            module_manager.vector_lut_manager.title_text_property.color = (1-wh, 1-wh, 1-wh)
+
+###3
+#            cb=mlab.vectorbar(title=titleIn,orientation='vertical' )
+            #cb.title_text_property.color=(1-wh,1-wh,1-wh)
+            #cb.label_text_property.color=(1-wh,1-wh,1-wh)
+#            engine=mlab.get_engine()
+#            module_manager = engine.scenes[0].children[0].children[0]
+#            module_manager.vector_lut_manager.scalar_bar.orientation = 'vertical'
+#            module_manager.vector_lut_manager.scalar_bar_representation.position2 = np.array([ 0.1,  0.8])
+#            module_manager.vector_lut_manager.scalar_bar_representation.position = np.array([ 0.05,  0.1])
+#            module_manager.vector_lut_manager.scalar_bar_representation.maximum_size = np.array([100000, 100000])
+
         elif sliced==0 and (x_slice==-1 and y_slice==-1 and z_slice==-1):
             #try iso plot 
             fig=mlab.figure(bgcolor=(wh,wh,wh),size=(fig_size_x,fig_size_y))
             ch=mlab.contour3d(var[:,:,:,0],contours=10,transparent=True,opacity=0.8)
-            cb=mlab.colorbar(title='Magnetic field',orientation='vertical' )
+            cb=mlab.colorbar(title=titleIn,orientation='vertical' )
             cb.title_text_property.color=(1-wh,1-wh,1-wh)
             cb.label_text_property.color=(1-wh,1-wh,1-wh)
         else:
@@ -114,7 +137,7 @@ def plot_Nd(var,ghostIn=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-
                     szh=mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(var[:,:,:,0]),plane_orientation='z_axes',slice_index=z_slice_pt)
                     szh.ipw.slice_position=z_slice_pt+1
 
-            cb=mlab.colorbar(title='Magnetic field',orientation='vertical' )
+            cb=mlab.colorbar(title=titleIn,orientation='vertical' )
             cb.title_text_property.color=(1-wh,1-wh,1-wh)
             cb.label_text_property.color=(1-wh,1-wh,1-wh)
 
