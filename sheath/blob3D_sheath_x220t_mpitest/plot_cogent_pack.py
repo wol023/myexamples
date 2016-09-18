@@ -33,6 +33,9 @@ from sympy.abc import x, y, z
 # label formatter
 import matplotlib.ticker as ticker 
 
+#for sleep
+import time
+
 #setup plot
 graphDPI =200
 # set global settings
@@ -1061,11 +1064,378 @@ def get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max):
 
 
 
+def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+
+    dataNd_dfn_comps=import_multdim_comps(filename=pathfilename)
+    title_var='distr. function'
+    num_cell_total_comps_tuple=dataNd_dfn_comps.shape
+    from read_input_deck import *
+    VPAR_SCALE, MU_SCALE = get_vpar_mu_scales(num_cell_total_comps_tuple,Vpar_max,Mu_max)
+    VPAR_N, MU_N = get_vpar_mu_scales(num_cell_total_comps_tuple)
+    
+    #velocity space
+    fig_dfn2d=plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        plt.savefig(filename.replace('.hdf5','.vpar_mu.png'))
+        plt.savefig(filename.replace('.hdf5','.vpar_mu.eps'))
+        os.chdir(basedir)
+    if showplots==0:
+        plt.close('all')
+    
+    fig_dfn2d_interp=plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var,interpolation='spline36')
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.png'))
+        plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.eps'))
+        os.chdir(basedir)
+    if showplots==0:
+        plt.close('all')
+        #plt.close(fig_dfn2d)
+    
+    #example vpar plot overplot
+    fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,:])),label='COGENT'%MU_N[0],legend=1 )
+    #oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,1,:],fig=fig,xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,1,:])),label='f(mu=%g)'%(MU_N[1]),legend=1 )
+    #example mu=0 fitting
+    coef_maxwell,mhat,That = get_maxwellian_coef(pathfilename,ion_mass,t0_grid_func,elec_mass,et0_grid_func,nhat)
+    fitted_f, n_fit, t_fit, vshift_fit = get_maxwellian_fitting(coef_maxwell,mhat, That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=0)
+    # plot fitting
+    legend_maxwellian = '\n\nMAXWELLIAN\n'+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit,t_fit,vshift_fit)
+    oplot_1d(fitted_f,fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_compare.png'))
+        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_compare.eps'))
+        os.chdir(basedir)
+    if showplots==0:
+        plt.close('all')
+    
+    #get density by summation over velocity
+    f_vpar_mu_sum = get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max)
+    fig=plot_Nd(f_vpar_mu_sum,title='integrated f')
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.f_sum_mlab_iso.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.f_sum_mlab_iso.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    #fig.scene.save_ps('fig1_mlab_iso.pdf')
+    #mlab.show()
+    #arr=mlab.screenshot()
+    #plt.imshow(arr)
+    #plt.axis('off')
+    #plt.savefig('fig1_mlab_iso.eps')
+    #plt.savefig('fig1_mlab_iso.pdf')
+    #fig.scene.close()
+    if showplots==0:
+        mlab.close(all=True)
+
+    #sliced plot
+    fig=plot_Nd(f_vpar_mu_sum,title='integrated f',x_slice=2,y_slice=2,z_slice=2)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.f_sum_mlab_slice.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.f_sum_mlab_slice.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    return
+ 
+
+def plot_potential(pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+    
+    dataNd_potential_comps=import_multdim_comps(filename=pathfilename)
+    if ghost>0:
+        dataNd_potential_with_outer_ghost_comps,num_ghost_potential=import_multdim_comps(filename=pathfilename,withghost=1)
+    title_var='potential'
+    
+    fig=plot_Nd(dataNd_potential_comps,title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.potential_mlab_iso.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.potential_mlab_iso.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+    fig=plot_Nd(dataNd_potential_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.potential_mlab_slice.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.potential_mlab_slice.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
 
 
 
+    if ghost>0:
+        fig=plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.potential_mlab_ghost_iso.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.potential_mlab_ghost_iso.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+        fig=plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.potential_mlab_ghost_slice.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.potential_mlab_ghost_slice.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+    return
+
+    
+def plot_bvec(pathfilename,saveplots=1,showplots=0,ghost=0,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+
+    dataNd_bvec_comps=import_multdim_comps(filename=pathfilename)
+    if ghost>0:
+        dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec =import_multdim_comps(filename=pathfilename,withghost=1)
+    title_var='B field'
+    
+    fig=plot_Nd(dataNd_bvec_comps,title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.bvec_mlab.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.bvec_mlab_ps.eps'))
+        #fig.scene.save_gl2ps(filename.replace('.hdf5','.bvec_mlab_gl2ps.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    if ghost>0:
+        fig=plot_Nd(dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec,title=title_var) 
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.bvec_mlab_ghost.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.bvec_mlab_ghost_ps.eps'))
+            #fig.scene.save_gl2ps(filename.replace('.hdf5','.bvec_mlab_ghost_gl2ps.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+    return
+
+    
+def plot_evec(pathfilename,saveplots=1,showplots=0,ghost=0,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+
+    dataNd_evec_comps=import_multdim_comps(filename=pathfilename)
+    if ghost>0:
+        dataNd_evec_with_outer_ghost_comps,num_ghost_evec=import_multdim_comps(filename=pathfilename,withghost=1)
+    title_var='E field'
+    
+    fig=plot_Nd(dataNd_evec_comps,title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.evec_mlab.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.evec_mlab_ps.eps'))
+        #fig.scene.save_gl2ps(filename.replace('.hdf5','.evec_mlab_gl2ps.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    if ghost>0:
+        fig=plot_Nd(dataNd_evec_with_outer_ghost_comps,num_ghost_evec,title=title_var)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.evec_mlab_ghost.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.evec_mlab_ghost_ps.eps'))
+            #fig.scene.save_gl2ps(filename.replace('.hdf5','.evec_mlab_ghost_gl2ps.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+    return
 
 
+    
+def plot_density(pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+
+    dataNd_density_comps=import_multdim_comps(filename=pathfilename)
+    if ghost>0:
+        dataNd_density_with_outer_ghost_comps,num_ghost_density=import_multdim_comps(filename=pathfilename,withghost=1)
+    title_var='density'
+    
+    fig=plot_Nd(dataNd_density_comps,title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.mlab_iso.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.mlab_iso.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    fig=plot_Nd(dataNd_density_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.mlab_slice.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.mlab_slice.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    if ghost>0:
+        fig=plot_Nd(dataNd_density_with_outer_ghost_comps,num_ghost_density,title=title_var)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.mlab_ghost_iso.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.mlab_ghost_iso.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+        fig=plot_Nd(dataNd_density_with_outer_ghost_comps,num_ghost_density,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.mlab_ghost_slice.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.mlab_ghost_slice.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+    return
 
 
 
