@@ -1,0 +1,1072 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  LARMOR NUMBER **2        : 1.04397e-05
+  DEBYE NUMBER             : 0.00235082
+  DEBYE NUMBER **2         : 5.52635e-06
+  DEBYE NUMBER/MULT_FAC    : 2.35082e-05
+  DEBYE NUMBER/MULT_FAC **2: 5.52635e-10
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 100
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.785398 * 8 = 6.28319, dx(m)*nx= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.785398 * 8 = 6.28319, dy(m)*ny= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.261799 * 24 = 6.28319, dz(m)*nz= 4.16667 * 24 = 100, ( 1 : 15.9155 )
+
+   Configuration space box ((0,0,0) (7,7,23) (0,0,0)) is assigned to process 0
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 309497 )
+dmu*nmu= 0.25 * 8 = 2, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 8.01088e-17 )
+
+   Phase space box ((0,0,0,-8,0) (7,7,23,7,7) (0,0,0,0,0)) is assigned to process 0, has 196608 valid cells and 2949120 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.01, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 0
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 0
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+"T0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  1
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00)
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  1
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	0.000877253 [max]	5.79483e-08 [min]
+    Species 1:	3.10156e-07 [max]	2.04878e-11 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+Vlasov operator time step (1.22647) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0125,0.0125,97.9167,-3.75,0.125) and mapped coordinate = (2,2,23,-8,0)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0867247) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0275,0.0175,97.9167,-3.75,0.125) and mapped coordinate = (5,3,23,-8,0)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+
+m_num_cells[i]=8
+m_num_cells[i]=8
+m_num_cells[i]=24
+m_num_cells[i]=16
+m_num_cells[i]=8
+dx*nx= 0.785398 * 8 = 6.28319, dx(m)*nx= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.785398 * 8 = 6.28319, dy(m)*ny= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.261799 * 24 = 6.28319, dz(m)*nz= 4.16667 * 24 = 100, ( 1 : 15.9155 )
+dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 154748 * 8 = 1.23799e+06, ( 1 : 9671.78 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 109424 * 8 = 875389, ( 1 : 218847 )
+ [electron] mass = 0.01
+  dvpar*nvpar= 0.5 * 8 = 4, dv_parallel(m/s)*nvpar= 1.54748e+06 * 8 = 1.23799e+07, ( 1 : 3.09497e+06 )
+dmu*nmu= 0.25 * 8 = 1, dmu(J/T)*nmu= 2.00272e-17 * 8 = 1.60218e-16, ( 1 : 1.00136e-17 )
+
+Estimated dt
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=309497
+unit_dimension_time   [hydrogen]=3.23105e-06
+[hydrogen] maxvel:phy_maxvel[0]=3.49719e-17:1.08237e-11(1:309497)
+[hydrogen] maxvel:phy_maxvel[1]=3.49719e-17:1.08237e-11(1:309497)
+[hydrogen] maxvel:phy_maxvel[2]=2.65165:820678(1:309497)
+[hydrogen] maxvel:phy_maxvel[3]=1.21385e-10:11.6273(1:9.57883e+10)
+[hydrogen] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[hydrogen]=dz(m)/vparmax_z(m/s)[hydrogen]=4.16667/875389=4.75979e-06
+dt_zpar(-)[hydrogen]=1.47314
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.005/0=inf
+dt_ypar(-)[hydrogen]=inf
+dt_z(s)[hydrogen]=dz(m)/vmax_z(m/s)[hydrogen]=4.16667/820678=5.07711e-06
+dt_z(-)[hydrogen]=1.57135
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.005/1.08237e-11=4.6195e+08
+dt_y(-)[hydrogen]=1.42972e+14
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.005/1.08237e-11=4.6195e+08
+dt_x(-)[hydrogen]=1.42972e+14
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=154748/11.6273=13309.1
+dt_vpar(-)[hydrogen]=4.11912e+09
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=309497
+unit_dimension_time   [electron]=3.23105e-06
+[electron] maxvel:phy_maxvel[0]=3.49719e-17:1.08237e-11(1:309497)
+[electron] maxvel:phy_maxvel[1]=3.49719e-17:1.08237e-11(1:309497)
+[electron] maxvel:phy_maxvel[2]=37.5:1.16061e+07(1:309497)
+[electron] maxvel:phy_maxvel[3]=1.71665e-09:164.435(1:9.57883e+10)
+[electron] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[electron]=dz(m)/vparmax_z(m/s)[electron]=4.16667/1.23799e+07=3.36568e-07
+dt_zpar(-)[electron]=0.104167
+dt_ypar(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.005/0=inf
+dt_ypar(-)[electron]=inf
+dt_z(s)[electron]=dz(m)/vmax_z(m/s)[electron]=4.16667/1.16061e+07=3.59006e-07
+dt_z(-)[electron]=0.111111
+dt_y(s)[electron]=dy(m)/vmax_y(m/s)[electron]=0.005/1.08237e-11=4.6195e+08
+dt_y(-)[electron]=1.42972e+14
+dt_x(s)[electron]=dx(m)/vmax_x(m/s)[electron]=0.005/1.08237e-11=4.6195e+08
+dt_x(-)[electron]=1.42972e+14
+dt_vpar(s)[electron]=dvpar(m/s)/vmax_vpar(m/s/s)[electron]=154748/164.435=941.094
+dt_vpar(-)[electron]=2.91266e+08
+
+kz = 0.015708 ~ 0.376991
+ky = 39.2699 ~ 314.159
+kx = 39.2699 ~ 314.159
+kpar  = 0.015708 ~ 0.376991
+kperp = 55.536 ~ 444.288
+rhos = 0.0152313
+rhos * ky    = 0.598132 ~ 4.78506
+rhos * kx    = 0.598132 ~ 4.78506
+rhos * kperp = 0.845887 ~ 6.7671
+omega_ea(1/s) = 71841.3 ~ 1.37935e+07
+omega_ea(-)   = 0.232123 ~ 44.5676
+delta_t_omega_ea (s) = 4.55517e-07 ~ 8.74593e-05
+delta_t_omega_ea (-) = 0.140981 ~ 27.0684
+
+direction=2
+side=0
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,0,-8,0)
+ hi_end=(7,7,4,7,7)
+ iside=           0
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          -4
+  ibdryboxhi2=          -1
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           7
+   kbdry=          -1
+  jsrc_offset=          15
+   ksrc_offset=          -1
+  vn_jbdry =           8
+   vn_kbdry =           0
+ phi_jbdry =           8
+ phi_kbdry =           0
+direction=2
+side=1
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,19,-8,0)
+ hi_end=(7,7,23,7,7)
+ iside=           1
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          24
+  ibdryboxhi2=          27
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           0
+   kbdry=          24
+  jsrc_offset=          -1
+   ksrc_offset=          47
+  vn_jbdry =           0
+   vn_kbdry =          24
+ phi_jbdry =          -1
+ phi_kbdry =          23
+direction=2
+side=0
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,0,-8,0)
+ hi_end=(7,7,4,7,7)
+ iside=           0
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          -4
+  ibdryboxhi2=          -1
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           7
+   kbdry=          -1
+  jsrc_offset=          15
+   ksrc_offset=          -1
+  vn_jbdry =           8
+   vn_kbdry =           0
+ phi_jbdry =           8
+ phi_kbdry =           0
+direction=2
+side=1
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,19,-8,0)
+ hi_end=(7,7,23,7,7)
+ iside=           1
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          24
+  ibdryboxhi2=          27
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           0
+   kbdry=          24
+  jsrc_offset=          -1
+   ksrc_offset=          47
+  vn_jbdry =           0
+   vn_kbdry =          24
+ phi_jbdry =          -1
+ phi_kbdry =          23
+      BiCGStab converged successfully
+direction=2
+side=0
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,0,-8,0)
+ hi_end=(7,7,4,7,7)
+ iside=           0
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          -4
+  ibdryboxhi2=          -1
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           7
+   kbdry=          -1
+  jsrc_offset=          15
+   ksrc_offset=          -1
+  vn_jbdry =           8
+   vn_kbdry =           0
+ phi_jbdry =           8
+ phi_kbdry =           0
+direction=2
+side=1
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,19,-8,0)
+ hi_end=(7,7,23,7,7)
+ iside=           1
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          24
+  ibdryboxhi2=          27
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           0
+   kbdry=          24
+  jsrc_offset=          -1
+   ksrc_offset=          47
+  vn_jbdry =           0
+   vn_kbdry =          24
+ phi_jbdry =          -1
+ phi_kbdry =          23
+direction=2
+side=0
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,0,-8,0)
+ hi_end=(7,7,4,7,7)
+ iside=           0
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          -4
+  ibdryboxhi2=          -1
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           7
+   kbdry=          -1
+  jsrc_offset=          15
+   ksrc_offset=          -1
+  vn_jbdry =           8
+   vn_kbdry =           0
+ phi_jbdry =           8
+ phi_kbdry =           0
+direction=2
+side=1
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,19,-8,0)
+ hi_end=(7,7,23,7,7)
+ iside=           1
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          24
+  ibdryboxhi2=          27
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           0
+   kbdry=          24
+  jsrc_offset=          -1
+   ksrc_offset=          47
+  vn_jbdry =           0
+   vn_kbdry =          24
+ phi_jbdry =          -1
+ phi_kbdry =          23
+      BiCGStab converged successfully
+direction=2
+side=0
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,0,-8,0)
+ hi_end=(7,7,4,7,7)
+ iside=           0
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          -4
+  ibdryboxhi2=          -1
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           7
+   kbdry=          -1
+  jsrc_offset=          15
+   ksrc_offset=          -1
+  vn_jbdry =           8
+   vn_kbdry =           0
+ phi_jbdry =           8
+ phi_kbdry =           0
+direction=2
+side=1
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,19,-8,0)
+ hi_end=(7,7,23,7,7)
+ iside=           1
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          24
+  ibdryboxhi2=          27
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           0
+   kbdry=          24
+  jsrc_offset=          -1
+   ksrc_offset=          47
+  vn_jbdry =           0
+   vn_kbdry =          24
+ phi_jbdry =          -1
+ phi_kbdry =          23
+direction=2
+side=0
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,0,-8,0)
+ hi_end=(7,7,4,7,7)
+ iside=           0
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          -4
+  ibdryboxhi2=          -1
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           7
+   kbdry=          -1
+  jsrc_offset=          15
+   ksrc_offset=          -1
+  vn_jbdry =           8
+   vn_kbdry =           0
+ phi_jbdry =           8
+ phi_kbdry =           0
+direction=2
+side=1
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,19,-8,0)
+ hi_end=(7,7,23,7,7)
+ iside=           1
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          24
+  ibdryboxhi2=          27
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           0
+   kbdry=          24
+  jsrc_offset=          -1
+   ksrc_offset=          47
+  vn_jbdry =           0
+   vn_kbdry =          24
+ phi_jbdry =          -1
+ phi_kbdry =          23
+      BiCGStab converged successfully
+direction=2
+side=0
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,0,-8,0)
+ hi_end=(7,7,4,7,7)
+ iside=           0
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          -4
+  ibdryboxhi2=          -1
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           7
+   kbdry=          -1
+  jsrc_offset=          15
+   ksrc_offset=          -1
+  vn_jbdry =           8
+   vn_kbdry =           0
+ phi_jbdry =           8
+ phi_kbdry =           0
+direction=2
+side=1
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,19,-8,0)
+ hi_end=(7,7,23,7,7)
+ iside=           1
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          24
+  ibdryboxhi2=          27
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           0
+   kbdry=          24
+  jsrc_offset=          -1
+   ksrc_offset=          47
+  vn_jbdry =           0
+   vn_kbdry =          24
+ phi_jbdry =          -1
+ phi_kbdry =          23
+direction=2
+side=0
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,0,-8,0)
+ hi_end=(7,7,4,7,7)
+ iside=           0
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          -4
+  ibdryboxhi2=          -1
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           7
+   kbdry=          -1
+  jsrc_offset=          15
+   ksrc_offset=          -1
+  vn_jbdry =           8
+   vn_kbdry =           0
+ phi_jbdry =           8
+ phi_kbdry =           0
+direction=2
+side=1
+lo_end=(0,0,0,-8,0)
+hi_end=(7,7,23,7,7)
+ghost_vect=(4,4,4,4,4)
+ lo_end=(0,0,19,-8,0)
+ hi_end=(7,7,23,7,7)
+ iside=           1
+  ibdryboxlo0=           0
+  ibdryboxhi0=           7
+  ibdryboxlo1=           0
+  ibdryboxhi1=           7
+  ibdryboxlo2=          24
+  ibdryboxhi2=          27
+  ibdryboxlo3=          -8
+  ibdryboxhi3=           7
+  ibdryboxlo4=           0
+  ibdryboxhi4=           7
+  jbdry=           0
+   kbdry=          24
+  jsrc_offset=          -1
+   ksrc_offset=          47
+  vn_jbdry =           0
+   vn_kbdry =          24
+ phi_jbdry =          -1
+ phi_kbdry =          23
+num_cells = 8 8 24 16 8 
+is_periodic = 1 1 0 0 0 
+configuration_decomposition = 1 1 1 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 1 1 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.0780522
+    Vlasov    : 0.111111 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 4.3418e-310 (CFL)
+    ES_Alfven : 0.140981 (time scale), 0.553636 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	4.26466e+13 [max]	-4.27121e+13 [min]
+    Species 1:	4.37399e+13 [max]	-4.53197e+13 [min]
+
+Step 1 completed, simulation time is 0.0780522
+----
+
+Step 2
+      BiCGStab converged successfully
+Vlasov operator time step (2.63489e-27) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0375,0.0375,97.9167,-3.75,0.125) and mapped coordinate = (7,7,23,-8,0)
+The (vparallel) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (1.86315e-28) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0375,0.0375,97.9167,-3.75,0.125) and mapped coordinate = (7,7,23,-8,0)
+The (vparallel) direction makes the largest contribution to the stable dt reciprocal at that point

@@ -10562,3 +10562,43 @@ Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = 
 The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
       BiCGStab converged successfully
       BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00407136
+    Vlasov    : 0.00579578 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.26477e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	4.0777e-06 [max]	1.03159e-14 [min]
+    Species 1:	1.50752e-09 [max]	3.99234e-18 [min]
+
+Step 461 completed, simulation time is 3.23679
+----
+
+Step 462
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00366667,0.007125,2.8125,-4.92188,1.19792) and mapped coordinate = (5,28,4,-32,11)
+The poloidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00366667,0.007125,2.8125,-4.92188,1.19792) and mapped coordinate = (5,28,4,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+  ----
+  dt: 0.00407606
+    Vlasov    : 0.00580247 (time scale), 0.70247 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.26738e-311 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	4.08342e-06 [max]	1.03299e-14 [min]
+    Species 1:	1.51191e-09 [max]	3.99302e-18 [min]
+
+Step 462 completed, simulation time is 3.24087
+----
+
+Step 463
+      BiCGStab converged successfully
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00366667,0.001625,9.6875,-4.92188,1.19792) and mapped coordinate = (5,6,15,-32,11)
+The poloidal direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00433333,0.005375,5.9375,-4.92188,1.19792) and mapped coordinate = (6,21,9,-32,11)
+The toroidal direction makes the largest contribution to the stable dt reciprocal at that point
