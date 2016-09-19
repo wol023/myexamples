@@ -1,0 +1,2768 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 0.04
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.19635 * 32 = 6.28319, dx(m)*nx= 0.00125 * 32 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.0981748 * 64 = 6.28319, dy(m)*ny= 0.000625 * 64 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.785398 * 8 = 6.28319, dz(m)*nz= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+
+   Configuration space box ((0,0,0) (7,7,3) (0,0,0)) is assigned to process 0
+   Configuration space box ((8,0,0) (15,7,3) (0,0,0)) is assigned to process 1
+   Configuration space box ((16,0,0) (23,7,3) (0,0,0)) is assigned to process 2
+   Configuration space box ((24,0,0) (31,7,3) (0,0,0)) is assigned to process 3
+   Configuration space box ((0,8,0) (7,15,3) (0,0,0)) is assigned to process 4
+   Configuration space box ((8,8,0) (15,15,3) (0,0,0)) is assigned to process 5
+   Configuration space box ((16,8,0) (23,15,3) (0,0,0)) is assigned to process 6
+   Configuration space box ((24,8,0) (31,15,3) (0,0,0)) is assigned to process 7
+   Configuration space box ((0,16,0) (7,23,3) (0,0,0)) is assigned to process 8
+   Configuration space box ((8,16,0) (15,23,3) (0,0,0)) is assigned to process 9
+   Configuration space box ((16,16,0) (23,23,3) (0,0,0)) is assigned to process 10
+   Configuration space box ((24,16,0) (31,23,3) (0,0,0)) is assigned to process 11
+   Configuration space box ((0,24,0) (7,31,3) (0,0,0)) is assigned to process 12
+   Configuration space box ((8,24,0) (15,31,3) (0,0,0)) is assigned to process 13
+   Configuration space box ((16,24,0) (23,31,3) (0,0,0)) is assigned to process 14
+   Configuration space box ((24,24,0) (31,31,3) (0,0,0)) is assigned to process 15
+   Configuration space box ((0,32,0) (7,39,3) (0,0,0)) is assigned to process 16
+   Configuration space box ((8,32,0) (15,39,3) (0,0,0)) is assigned to process 17
+   Configuration space box ((16,32,0) (23,39,3) (0,0,0)) is assigned to process 18
+   Configuration space box ((24,32,0) (31,39,3) (0,0,0)) is assigned to process 19
+   Configuration space box ((0,40,0) (7,47,3) (0,0,0)) is assigned to process 20
+   Configuration space box ((8,40,0) (15,47,3) (0,0,0)) is assigned to process 21
+   Configuration space box ((16,40,0) (23,47,3) (0,0,0)) is assigned to process 22
+   Configuration space box ((24,40,0) (31,47,3) (0,0,0)) is assigned to process 23
+   Configuration space box ((0,48,0) (7,55,3) (0,0,0)) is assigned to process 24
+   Configuration space box ((8,48,0) (15,55,3) (0,0,0)) is assigned to process 25
+   Configuration space box ((16,48,0) (23,55,3) (0,0,0)) is assigned to process 26
+   Configuration space box ((24,48,0) (31,55,3) (0,0,0)) is assigned to process 27
+   Configuration space box ((0,56,0) (7,63,3) (0,0,0)) is assigned to process 28
+   Configuration space box ((8,56,0) (15,63,3) (0,0,0)) is assigned to process 29
+   Configuration space box ((16,56,0) (23,63,3) (0,0,0)) is assigned to process 30
+   Configuration space box ((24,56,0) (31,63,3) (0,0,0)) is assigned to process 31
+   Configuration space box ((0,0,4) (7,7,7) (0,0,0)) is assigned to process 32
+   Configuration space box ((8,0,4) (15,7,7) (0,0,0)) is assigned to process 33
+   Configuration space box ((16,0,4) (23,7,7) (0,0,0)) is assigned to process 34
+   Configuration space box ((24,0,4) (31,7,7) (0,0,0)) is assigned to process 35
+   Configuration space box ((0,8,4) (7,15,7) (0,0,0)) is assigned to process 36
+   Configuration space box ((8,8,4) (15,15,7) (0,0,0)) is assigned to process 37
+   Configuration space box ((16,8,4) (23,15,7) (0,0,0)) is assigned to process 38
+   Configuration space box ((24,8,4) (31,15,7) (0,0,0)) is assigned to process 39
+   Configuration space box ((0,16,4) (7,23,7) (0,0,0)) is assigned to process 40
+   Configuration space box ((8,16,4) (15,23,7) (0,0,0)) is assigned to process 41
+   Configuration space box ((16,16,4) (23,23,7) (0,0,0)) is assigned to process 42
+   Configuration space box ((24,16,4) (31,23,7) (0,0,0)) is assigned to process 43
+   Configuration space box ((0,24,4) (7,31,7) (0,0,0)) is assigned to process 44
+   Configuration space box ((8,24,4) (15,31,7) (0,0,0)) is assigned to process 45
+   Configuration space box ((16,24,4) (23,31,7) (0,0,0)) is assigned to process 46
+   Configuration space box ((24,24,4) (31,31,7) (0,0,0)) is assigned to process 47
+   Configuration space box ((0,32,4) (7,39,7) (0,0,0)) is assigned to process 48
+   Configuration space box ((8,32,4) (15,39,7) (0,0,0)) is assigned to process 49
+   Configuration space box ((16,32,4) (23,39,7) (0,0,0)) is assigned to process 50
+   Configuration space box ((24,32,4) (31,39,7) (0,0,0)) is assigned to process 51
+   Configuration space box ((0,40,4) (7,47,7) (0,0,0)) is assigned to process 52
+   Configuration space box ((8,40,4) (15,47,7) (0,0,0)) is assigned to process 53
+   Configuration space box ((16,40,4) (23,47,7) (0,0,0)) is assigned to process 54
+   Configuration space box ((24,40,4) (31,47,7) (0,0,0)) is assigned to process 55
+   Configuration space box ((0,48,4) (7,55,7) (0,0,0)) is assigned to process 56
+   Configuration space box ((8,48,4) (15,55,7) (0,0,0)) is assigned to process 57
+   Configuration space box ((16,48,4) (23,55,7) (0,0,0)) is assigned to process 58
+   Configuration space box ((24,48,4) (31,55,7) (0,0,0)) is assigned to process 59
+   Configuration space box ((0,56,4) (7,63,7) (0,0,0)) is assigned to process 60
+   Configuration space box ((8,56,4) (15,63,7) (0,0,0)) is assigned to process 61
+   Configuration space box ((16,56,4) (23,63,7) (0,0,0)) is assigned to process 62
+   Configuration space box ((24,56,4) (31,63,7) (0,0,0)) is assigned to process 63
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-12,0) (-7,3) (0,0)) is assigned to process 0
+   Velocity space box ((-6,0) (-1,3) (0,0)) is assigned to process 1
+   Velocity space box ((0,0) (5,3) (0,0)) is assigned to process 2
+   Velocity space box ((6,0) (11,3) (0,0)) is assigned to process 3
+   Velocity space box ((-12,4) (-7,7) (0,0)) is assigned to process 4
+   Velocity space box ((-6,4) (-1,7) (0,0)) is assigned to process 5
+   Velocity space box ((0,4) (5,7) (0,0)) is assigned to process 6
+   Velocity space box ((6,4) (11,7) (0,0)) is assigned to process 7
+   Velocity space box ((-12,8) (-7,11) (0,0)) is assigned to process 8
+   Velocity space box ((-6,8) (-1,11) (0,0)) is assigned to process 9
+   Velocity space box ((0,8) (5,11) (0,0)) is assigned to process 10
+   Velocity space box ((6,8) (11,11) (0,0)) is assigned to process 11
+   Velocity space box ((-12,12) (-7,15) (0,0)) is assigned to process 12
+   Velocity space box ((-6,12) (-1,15) (0,0)) is assigned to process 13
+   Velocity space box ((0,12) (5,15) (0,0)) is assigned to process 14
+   Velocity space box ((6,12) (11,15) (0,0)) is assigned to process 15
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 103166 * 12 = 1.23799e+06, ( 1 : 309497 )
+dmu*nmu= 0.125 * 16 = 2, dmu(J/T)*nmu= 1.00136e-17 * 16 = 1.60218e-16, ( 1 : 8.01088e-17 )
+
+   Phase space box ((24,16,0,-12,0) (31,23,3,-1,15) (0,0,0,0,0)) is assigned to process 22, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,0,0,0) (15,31,3,11,15) (0,0,0,0,0)) is assigned to process 27, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,0,0,0) (23,31,3,11,15) (0,0,0,0,0)) is assigned to process 29, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,0,-12,0) (7,7,3,-1,15) (0,0,0,0,0)) is assigned to process 0, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,0,0,0) (15,7,3,11,15) (0,0,0,0,0)) is assigned to process 3, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,0,-12,0) (31,7,3,-1,15) (0,0,0,0,0)) is assigned to process 6, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,0,0,0) (31,7,3,11,15) (0,0,0,0,0)) is assigned to process 7, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,0,0,0) (7,15,3,11,15) (0,0,0,0,0)) is assigned to process 9, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,0,-12,0) (15,15,3,-1,15) (0,0,0,0,0)) is assigned to process 10, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,0,0,0) (23,15,3,11,15) (0,0,0,0,0)) is assigned to process 13, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,0,0,0) (31,15,3,11,15) (0,0,0,0,0)) is assigned to process 15, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,0,-12,0) (7,23,3,-1,15) (0,0,0,0,0)) is assigned to process 16, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,0,0,0) (7,23,3,11,15) (0,0,0,0,0)) is assigned to process 17, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,0,0,0) (15,23,3,11,15) (0,0,0,0,0)) is assigned to process 19, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,0,-12,0) (23,23,3,-1,15) (0,0,0,0,0)) is assigned to process 20, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,0,0,0) (23,23,3,11,15) (0,0,0,0,0)) is assigned to process 21, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,0,0,0) (31,23,3,11,15) (0,0,0,0,0)) is assigned to process 23, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,0,0,0) (7,31,3,11,15) (0,0,0,0,0)) is assigned to process 25, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,0,-12,0) (15,31,3,-1,15) (0,0,0,0,0)) is assigned to process 26, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,0,-12,0) (23,31,3,-1,15) (0,0,0,0,0)) is assigned to process 28, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,0,-12,0) (31,31,3,-1,15) (0,0,0,0,0)) is assigned to process 30, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,0,0,0) (31,31,3,11,15) (0,0,0,0,0)) is assigned to process 31, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,0,0,0) (7,7,3,11,15) (0,0,0,0,0)) is assigned to process 1, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,0,-12,0) (15,7,3,-1,15) (0,0,0,0,0)) is assigned to process 2, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,0,-12,0) (23,7,3,-1,15) (0,0,0,0,0)) is assigned to process 4, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,0,-12,0) (7,15,3,-1,15) (0,0,0,0,0)) is assigned to process 8, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,0,0,0) (15,15,3,11,15) (0,0,0,0,0)) is assigned to process 11, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,0,-12,0) (23,15,3,-1,15) (0,0,0,0,0)) is assigned to process 12, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,0,-12,0) (31,15,3,-1,15) (0,0,0,0,0)) is assigned to process 14, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,0,-12,0) (15,23,3,-1,15) (0,0,0,0,0)) is assigned to process 18, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,0,-12,0) (7,31,3,-1,15) (0,0,0,0,0)) is assigned to process 24, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,56,4,-12,0) (7,63,7,-1,15) (0,0,0,0,0)) is assigned to process 120, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,56,0,-12,0) (23,63,3,-1,15) (0,0,0,0,0)) is assigned to process 60, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,4,0,0) (7,7,7,11,15) (0,0,0,0,0)) is assigned to process 65, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,56,4,-12,0) (23,63,7,-1,15) (0,0,0,0,0)) is assigned to process 124, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,0,0,0) (23,7,3,11,15) (0,0,0,0,0)) is assigned to process 5, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,32,0,0,0) (7,39,3,11,15) (0,0,0,0,0)) is assigned to process 33, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,4,0,0) (31,15,7,11,15) (0,0,0,0,0)) is assigned to process 79, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,40,4,-12,0) (7,47,7,-1,15) (0,0,0,0,0)) is assigned to process 104, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,56,0,0,0) (23,63,3,11,15) (0,0,0,0,0)) is assigned to process 61, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,40,4,0,0) (7,47,7,11,15) (0,0,0,0,0)) is assigned to process 105, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,0,4,-12,0) (7,7,7,-1,15) (0,0,0,0,0)) is assigned to process 64, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,56,0,-12,0) (31,63,3,-1,15) (0,0,0,0,0)) is assigned to process 62, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,40,4,-12,0) (15,47,7,-1,15) (0,0,0,0,0)) is assigned to process 106, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,4,0,0) (15,7,7,11,15) (0,0,0,0,0)) is assigned to process 67, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,56,0,0,0) (31,63,3,11,15) (0,0,0,0,0)) is assigned to process 63, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,40,4,-12,0) (23,47,7,-1,15) (0,0,0,0,0)) is assigned to process 108, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,4,0,0) (23,7,7,11,15) (0,0,0,0,0)) is assigned to process 69, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,32,0,-12,0) (7,39,3,-1,15) (0,0,0,0,0)) is assigned to process 32, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,40,4,-12,0) (31,47,7,-1,15) (0,0,0,0,0)) is assigned to process 110, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,4,0,0) (31,7,7,11,15) (0,0,0,0,0)) is assigned to process 71, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,32,0,-12,0) (15,39,3,-1,15) (0,0,0,0,0)) is assigned to process 34, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,4,-12,0) (7,15,7,-1,15) (0,0,0,0,0)) is assigned to process 72, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,48,4,0,0) (7,55,7,11,15) (0,0,0,0,0)) is assigned to process 113, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,32,0,0,0) (15,39,3,11,15) (0,0,0,0,0)) is assigned to process 35, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,48,4,-12,0) (15,55,7,-1,15) (0,0,0,0,0)) is assigned to process 114, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,8,4,0,0) (7,15,7,11,15) (0,0,0,0,0)) is assigned to process 73, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,32,0,0,0) (23,39,3,11,15) (0,0,0,0,0)) is assigned to process 37, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,48,4,-12,0) (23,55,7,-1,15) (0,0,0,0,0)) is assigned to process 116, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,4,0,0) (15,15,7,11,15) (0,0,0,0,0)) is assigned to process 75, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,32,0,-12,0) (31,39,3,-1,15) (0,0,0,0,0)) is assigned to process 38, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,48,4,0,0) (23,55,7,11,15) (0,0,0,0,0)) is assigned to process 117, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,4,0,0) (23,15,7,11,15) (0,0,0,0,0)) is assigned to process 77, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,32,0,0,0) (31,39,3,11,15) (0,0,0,0,0)) is assigned to process 39, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,56,4,0,0) (7,63,7,11,15) (0,0,0,0,0)) is assigned to process 121, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,4,0,0) (7,23,7,11,15) (0,0,0,0,0)) is assigned to process 81, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,40,0,0,0) (7,47,3,11,15) (0,0,0,0,0)) is assigned to process 41, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,56,4,-12,0) (15,63,7,-1,15) (0,0,0,0,0)) is assigned to process 122, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,4,-12,0) (15,23,7,-1,15) (0,0,0,0,0)) is assigned to process 82, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,40,0,-12,0) (15,47,3,-1,15) (0,0,0,0,0)) is assigned to process 42, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,56,4,0,0) (15,63,7,11,15) (0,0,0,0,0)) is assigned to process 123, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,16,4,0,0) (15,23,7,11,15) (0,0,0,0,0)) is assigned to process 83, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,40,0,0,0) (15,47,3,11,15) (0,0,0,0,0)) is assigned to process 43, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,56,4,0,0) (23,63,7,11,15) (0,0,0,0,0)) is assigned to process 125, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,4,0,0) (23,23,7,11,15) (0,0,0,0,0)) is assigned to process 85, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,40,0,-12,0) (23,47,3,-1,15) (0,0,0,0,0)) is assigned to process 44, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,56,4,-12,0) (31,63,7,-1,15) (0,0,0,0,0)) is assigned to process 126, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,4,-12,0) (31,23,7,-1,15) (0,0,0,0,0)) is assigned to process 86, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,40,0,0,0) (23,47,3,11,15) (0,0,0,0,0)) is assigned to process 45, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,56,4,0,0) (31,63,7,11,15) (0,0,0,0,0)) is assigned to process 127, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,16,4,0,0) (31,23,7,11,15) (0,0,0,0,0)) is assigned to process 87, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,40,0,-12,0) (31,47,3,-1,15) (0,0,0,0,0)) is assigned to process 46, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,32,4,-12,0) (7,39,7,-1,15) (0,0,0,0,0)) is assigned to process 96, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,4,0,0) (7,31,7,11,15) (0,0,0,0,0)) is assigned to process 89, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,40,0,0,0) (31,47,3,11,15) (0,0,0,0,0)) is assigned to process 47, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,32,4,-12,0) (23,39,7,-1,15) (0,0,0,0,0)) is assigned to process 100, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,4,-12,0) (15,31,7,-1,15) (0,0,0,0,0)) is assigned to process 90, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,48,0,-12,0) (15,55,3,-1,15) (0,0,0,0,0)) is assigned to process 50, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,32,4,0,0) (23,39,7,11,15) (0,0,0,0,0)) is assigned to process 101, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,24,4,0,0) (15,31,7,11,15) (0,0,0,0,0)) is assigned to process 91, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,48,0,0,0) (15,55,3,11,15) (0,0,0,0,0)) is assigned to process 51, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,32,4,-12,0) (31,39,7,-1,15) (0,0,0,0,0)) is assigned to process 102, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,4,0,0) (23,31,7,11,15) (0,0,0,0,0)) is assigned to process 93, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,48,0,-12,0) (31,55,3,-1,15) (0,0,0,0,0)) is assigned to process 54, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,32,4,0,0) (31,39,7,11,15) (0,0,0,0,0)) is assigned to process 103, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,0,4,-12,0) (15,7,7,-1,15) (0,0,0,0,0)) is assigned to process 66, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,48,0,0,0) (31,55,3,11,15) (0,0,0,0,0)) is assigned to process 55, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,40,4,0,0) (15,47,7,11,15) (0,0,0,0,0)) is assigned to process 107, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,0,4,-12,0) (23,7,7,-1,15) (0,0,0,0,0)) is assigned to process 68, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,56,0,-12,0) (7,63,3,-1,15) (0,0,0,0,0)) is assigned to process 56, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,40,4,0,0) (23,47,7,11,15) (0,0,0,0,0)) is assigned to process 109, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,0,4,-12,0) (31,7,7,-1,15) (0,0,0,0,0)) is assigned to process 70, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,56,0,0,0) (7,63,3,11,15) (0,0,0,0,0)) is assigned to process 57, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,40,4,0,0) (31,47,7,11,15) (0,0,0,0,0)) is assigned to process 111, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,8,4,-12,0) (15,15,7,-1,15) (0,0,0,0,0)) is assigned to process 74, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,56,0,-12,0) (15,63,3,-1,15) (0,0,0,0,0)) is assigned to process 58, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,48,4,0,0) (15,55,7,11,15) (0,0,0,0,0)) is assigned to process 115, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,8,4,-12,0) (23,15,7,-1,15) (0,0,0,0,0)) is assigned to process 76, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,56,0,0,0) (15,63,3,11,15) (0,0,0,0,0)) is assigned to process 59, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,48,4,-12,0) (31,55,7,-1,15) (0,0,0,0,0)) is assigned to process 118, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,8,4,-12,0) (31,15,7,-1,15) (0,0,0,0,0)) is assigned to process 78, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,32,0,-12,0) (23,39,3,-1,15) (0,0,0,0,0)) is assigned to process 36, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,48,4,0,0) (31,55,7,11,15) (0,0,0,0,0)) is assigned to process 119, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,40,0,-12,0) (7,47,3,-1,15) (0,0,0,0,0)) is assigned to process 40, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,32,4,0,0) (7,39,7,11,15) (0,0,0,0,0)) is assigned to process 97, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,48,0,-12,0) (7,55,3,-1,15) (0,0,0,0,0)) is assigned to process 48, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,32,4,-12,0) (15,39,7,-1,15) (0,0,0,0,0)) is assigned to process 98, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,16,4,-12,0) (7,23,7,-1,15) (0,0,0,0,0)) is assigned to process 80, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,48,0,0,0) (7,55,3,11,15) (0,0,0,0,0)) is assigned to process 49, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((8,32,4,0,0) (15,39,7,11,15) (0,0,0,0,0)) is assigned to process 99, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,24,4,-12,0) (7,31,7,-1,15) (0,0,0,0,0)) is assigned to process 88, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,48,0,0,0) (23,55,3,11,15) (0,0,0,0,0)) is assigned to process 53, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((0,48,4,-12,0) (7,55,7,-1,15) (0,0,0,0,0)) is assigned to process 112, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,24,4,-12,0) (23,31,7,-1,15) (0,0,0,0,0)) is assigned to process 92, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,4,-12,0) (31,31,7,-1,15) (0,0,0,0,0)) is assigned to process 94, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,48,0,-12,0) (23,55,3,-1,15) (0,0,0,0,0)) is assigned to process 52, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((24,24,4,0,0) (31,31,7,11,15) (0,0,0,0,0)) is assigned to process 95, has 49152 valid cells and 1425408 ghost cells
+   Phase space box ((16,16,4,-12,0) (23,23,7,-1,15) (0,0,0,0,0)) is assigned to process 84, has 49152 valid cells and 1425408 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+"T0_grid_func":
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+"potential_grid_func":
+Arbitrary grid function parameters:
+  function: ( -0.0000001*sin(y) )
+  translated form: (-0.0000001*sin(y'))
+  postfix form: {0.0000001}{-:}{y'[0]}{sin}{*}
+  coordinate type: mapped
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.04)))
+  postfix form: {1.00}{x'[0]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0,0)
+  phase: (0,0,0)
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+prescribed_efield.Erphiz: 0,0,-200
+Time integration method: rk (4)
+  Distribution Function Extrema:
+    Species 0:	7.55327e-07 [max]	1.53872e-11 [min]
+
+
+Step 1
+
+
+m_num_cells[i]=32
+m_num_cells[i]=64
+m_num_cells[i]=8
+m_num_cells[i]=24
+m_num_cells[i]=16
+dx*nx= 0.19635 * 32 = 6.28319, dx(m)*nx= 0.00125 * 32 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.0981748 * 64 = 6.28319, dy(m)*ny= 0.000625 * 64 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.785398 * 8 = 6.28319, dz(m)*nz= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 103166 * 12 = 1.23799e+06, ( 1 : 6447.85 )
+ [hydrogen] mass = 2
+
+
+
+
+
+
+  dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 72949.1 * 12 = 875389, ( 1 : 218847 )
+dmu*nmu= 0.125 * 16 = 1, dmu(J/T)*nmu= 1.00136e-17 * 16 = 1.60218e-16, ( 1 : 5.0068e-18 )
+
+Estimated dt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=309497
+unit_dimension_time   [hydrogen]=3.23105e-06
+[hydrogen] maxvel:phy_maxvel[0]=0.215403:66666.7(1:309497)
+[hydrogen] maxvel:phy_maxvel[1]=0:0(1:-nan)
+[hydrogen] maxvel:phy_maxvel[2]=2.71058:838915(1:309497)
+[hydrogen] maxvel:phy_maxvel[3]=0:0(1:-nan)
+[hydrogen] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[hydrogen]=dz(m)/vparmax_z(m/s)[hydrogen]=0.005/875389=5.71174e-09
+dt_zpar(-)[hydrogen]=0.00176777
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.000625/0=inf
+dt_ypar(-)[hydrogen]=inf
+dt_z(s)[hydrogen]=dz(m)/vmax_z(m/s)[hydrogen]=0.005/838915=5.96008e-09
+dt_z(-)[hydrogen]=0.00184463
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.000625/0=inf
+dt_y(-)[hydrogen]=inf
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.00125/66666.7=1.875e-08
+dt_x(-)[hydrogen]=0.00580307
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=103166/0=inf
+dt_vpar(-)[hydrogen]=inf
+
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.65094e-07 [max]	1.53854e-11 [min]
+
+Step 1 completed, simulation time is 0.001
+----
+
+Step 2
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.70106e-07 [max]	1.53811e-11 [min]
+
+Step 2 completed, simulation time is 0.002
+----
+
+Step 3
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.70439e-07 [max]	1.53742e-11 [min]
+
+Step 3 completed, simulation time is 0.003
+----
+
+Step 4
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.66291e-07 [max]	1.53648e-11 [min]
+
+Step 4 completed, simulation time is 0.004
+----
+
+Step 5
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.57962e-07 [max]	1.53532e-11 [min]
+
+Step 5 completed, simulation time is 0.005
+----
+
+Step 6
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.45843e-07 [max]	1.53408e-11 [min]
+
+Step 6 completed, simulation time is 0.006
+----
+
+Step 7
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.51163e-07 [max]	1.53299e-11 [min]
+
+Step 7 completed, simulation time is 0.007
+----
+
+Step 8
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.56153e-07 [max]	1.53238e-11 [min]
+
+Step 8 completed, simulation time is 0.008
+----
+
+Step 9
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.56981e-07 [max]	1.53266e-11 [min]
+
+Step 9 completed, simulation time is 0.009
+----
+
+Step 10
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.53759e-07 [max]	1.53174e-11 [min]
+
+Step 10 completed, simulation time is 0.01
+----
+Writing checkpoint file
+Writing history file
+
+Step 11
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.46694e-07 [max]	1.53009e-11 [min]
+
+Step 11 completed, simulation time is 0.011
+----
+
+Step 12
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.3608e-07 [max]	1.52866e-11 [min]
+
+Step 12 completed, simulation time is 0.012
+----
+
+Step 13
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.40973e-07 [max]	1.52779e-11 [min]
+
+Step 13 completed, simulation time is 0.013
+----
+
+Step 14
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.45474e-07 [max]	1.52785e-11 [min]
+
+Step 14 completed, simulation time is 0.014
+----
+
+Step 15
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.46241e-07 [max]	1.52843e-11 [min]
+
+Step 15 completed, simulation time is 0.015
+----
+
+Step 16
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.4334e-07 [max]	1.52697e-11 [min]
+
+Step 16 completed, simulation time is 0.016
+----
+
+Step 17
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.36922e-07 [max]	1.52282e-11 [min]
+
+Step 17 completed, simulation time is 0.017
+----
+
+Step 18
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.27218e-07 [max]	1.51922e-11 [min]
+
+Step 18 completed, simulation time is 0.018
+----
+
+Step 19
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.3296e-07 [max]	1.51781e-11 [min]
+
+Step 19 completed, simulation time is 0.019
+----
+
+Step 20
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.3687e-07 [max]	1.51807e-11 [min]
+
+Step 20 completed, simulation time is 0.02
+----
+Writing checkpoint file
+Writing history file
+
+Step 21
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.37378e-07 [max]	1.51955e-11 [min]
+
+Step 21 completed, simulation time is 0.021
+----
+
+Step 22
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.34527e-07 [max]	1.51969e-11 [min]
+
+Step 22 completed, simulation time is 0.022
+----
+
+Step 23
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.28438e-07 [max]	1.51265e-11 [min]
+
+Step 23 completed, simulation time is 0.023
+----
+
+Step 24
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.19894e-07 [max]	1.50876e-11 [min]
+
+Step 24 completed, simulation time is 0.024
+----
+
+Step 25
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.26314e-07 [max]	1.5074e-11 [min]
+
+Step 25 completed, simulation time is 0.025
+----
+
+Step 26
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.29634e-07 [max]	1.50802e-11 [min]
+
+Step 26 completed, simulation time is 0.026
+----
+
+Step 27
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.29814e-07 [max]	1.51012e-11 [min]
+
+Step 27 completed, simulation time is 0.027
+----
+
+Step 28
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.26887e-07 [max]	1.51323e-11 [min]
+
+Step 28 completed, simulation time is 0.028
+----
+
+Step 29
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.20955e-07 [max]	1.50503e-11 [min]
+
+Step 29 completed, simulation time is 0.029
+----
+
+Step 30
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.14947e-07 [max]	1.50033e-11 [min]
+
+Step 30 completed, simulation time is 0.03
+----
+Writing checkpoint file
+Writing history file
+
+Step 31
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.20599e-07 [max]	1.49852e-11 [min]
+
+Step 31 completed, simulation time is 0.031
+----
+
+Step 32
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.23358e-07 [max]	1.499e-11 [min]
+
+Step 32 completed, simulation time is 0.032
+----
+
+Step 33
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.2319e-07 [max]	1.50125e-11 [min]
+
+Step 33 completed, simulation time is 0.033
+----
+
+Step 34
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.20125e-07 [max]	1.50477e-11 [min]
+
+Step 34 completed, simulation time is 0.034
+----
+
+Step 35
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.14252e-07 [max]	1.49973e-11 [min]
+
+Step 35 completed, simulation time is 0.035
+----
+
+Step 36
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.10598e-07 [max]	1.49398e-11 [min]
+
+Step 36 completed, simulation time is 0.036
+----
+
+Step 37
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.15554e-07 [max]	1.4914e-11 [min]
+
+Step 37 completed, simulation time is 0.037
+----
+
+Step 38
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.1779e-07 [max]	1.49141e-11 [min]
+
+Step 38 completed, simulation time is 0.038
+----
+
+Step 39
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.17276e-07 [max]	1.49346e-11 [min]
+
+Step 39 completed, simulation time is 0.039
+----
+
+Step 40
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.1404e-07 [max]	1.49704e-11 [min]
+
+Step 40 completed, simulation time is 0.04
+----
+Writing checkpoint file
+Writing history file
+
+Step 41
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.08165e-07 [max]	1.49625e-11 [min]
+
+Step 41 completed, simulation time is 0.041
+----
+
+Step 42
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.06693e-07 [max]	1.48936e-11 [min]
+
+Step 42 completed, simulation time is 0.042
+----
+
+Step 43
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.11016e-07 [max]	1.48588e-11 [min]
+
+Step 43 completed, simulation time is 0.043
+----
+
+Step 44
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.12764e-07 [max]	1.48522e-11 [min]
+
+Step 44 completed, simulation time is 0.044
+----
+
+Step 45
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.11912e-07 [max]	1.48685e-11 [min]
+
+Step 45 completed, simulation time is 0.045
+----
+
+Step 46
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.08491e-07 [max]	1.49023e-11 [min]
+
+Step 46 completed, simulation time is 0.046
+----
+
+Step 47
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.02577e-07 [max]	1.49412e-11 [min]
+
+Step 47 completed, simulation time is 0.047
+----
+
+Step 48
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.03128e-07 [max]	1.48611e-11 [min]
+
+Step 48 completed, simulation time is 0.048
+----
+
+Step 49
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.06872e-07 [max]	1.48168e-11 [min]
+
+Step 49 completed, simulation time is 0.049
+----
+
+Step 50
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.08164e-07 [max]	1.48028e-11 [min]
+
+Step 50 completed, simulation time is 0.05
+----
+Writing checkpoint file
+Writing history file
+
+Step 51
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.06988e-07 [max]	1.48135e-11 [min]
+
+Step 51 completed, simulation time is 0.051
+----
+
+Step 52
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.03375e-07 [max]	1.48438e-11 [min]
+
+Step 52 completed, simulation time is 0.052
+----
+
+Step 53
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.97398e-07 [max]	1.48889e-11 [min]
+
+Step 53 completed, simulation time is 0.053
+----
+
+Step 54
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.99833e-07 [max]	1.4839e-11 [min]
+
+Step 54 completed, simulation time is 0.054
+----
+
+Step 55
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.03042e-07 [max]	1.47855e-11 [min]
+
+Step 55 completed, simulation time is 0.055
+----
+
+Step 56
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.03909e-07 [max]	1.47637e-11 [min]
+
+Step 56 completed, simulation time is 0.056
+----
+
+Step 57
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	7.02423e-07 [max]	1.47683e-11 [min]
+
+Step 57 completed, simulation time is 0.057
+----
+
+Step 58
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.98616e-07 [max]	1.47941e-11 [min]
+
+Step 58 completed, simulation time is 0.058
+----
+
+Step 59
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.92561e-07 [max]	1.48365e-11 [min]
+
+Step 59 completed, simulation time is 0.059
+----
+
+Step 60
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.96754e-07 [max]	1.48246e-11 [min]
+
+Step 60 completed, simulation time is 0.06
+----
+Writing checkpoint file
+Writing history file
+
+Step 61
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.99467e-07 [max]	1.47625e-11 [min]
+
+Step 61 completed, simulation time is 0.061
+----
+
+Step 62
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.99936e-07 [max]	1.4733e-11 [min]
+
+Step 62 completed, simulation time is 0.062
+----
+
+Step 63
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.98154e-07 [max]	1.47313e-11 [min]
+
+Step 63 completed, simulation time is 0.063
+----
+
+Step 64
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.94156e-07 [max]	1.47523e-11 [min]
+
+Step 64 completed, simulation time is 0.064
+----
+
+Step 65
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.89481e-07 [max]	1.47912e-11 [min]
+
+Step 65 completed, simulation time is 0.065
+----
+
+Step 66
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.93852e-07 [max]	1.48158e-11 [min]
+
+Step 66 completed, simulation time is 0.066
+----
+
+Step 67
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.96104e-07 [max]	1.47458e-11 [min]
+
+Step 67 completed, simulation time is 0.067
+----
+
+Step 68
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.96199e-07 [max]	1.47092e-11 [min]
+
+Step 68 completed, simulation time is 0.068
+----
+
+Step 69
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.94135e-07 [max]	1.47012e-11 [min]
+
+Step 69 completed, simulation time is 0.069
+----
+
+Step 70
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.89948e-07 [max]	1.47171e-11 [min]
+
+Step 70 completed, simulation time is 0.07
+----
+Writing checkpoint file
+Writing history file
+
+Step 71
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.8723e-07 [max]	1.47522e-11 [min]
+
+Step 71 completed, simulation time is 0.071
+----
+
+Step 72
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.91098e-07 [max]	1.4802e-11 [min]
+
+Step 72 completed, simulation time is 0.072
+----
+
+Step 73
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.92919e-07 [max]	1.47339e-11 [min]
+
+Step 73 completed, simulation time is 0.073
+----
+
+Step 74
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.92661e-07 [max]	1.46907e-11 [min]
+
+Step 74 completed, simulation time is 0.074
+----
+
+Step 75
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.90328e-07 [max]	1.46768e-11 [min]
+
+Step 75 completed, simulation time is 0.075
+----
+
+Step 76
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.85958e-07 [max]	1.46877e-11 [min]
+
+Step 76 completed, simulation time is 0.076
+----
+
+Step 77
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.85071e-07 [max]	1.47187e-11 [min]
+
+Step 77 completed, simulation time is 0.077
+----
+
+Step 78
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.88468e-07 [max]	1.47655e-11 [min]
+
+Step 78 completed, simulation time is 0.078
+----
+
+Step 79
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.89884e-07 [max]	1.47258e-11 [min]
+
+Step 79 completed, simulation time is 0.079
+----
+
+Step 80
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.89293e-07 [max]	1.46765e-11 [min]
+
+Step 80 completed, simulation time is 0.08
+----
+Writing checkpoint file
+Writing history file
+
+Step 81
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.86704e-07 [max]	1.46571e-11 [min]
+
+Step 81 completed, simulation time is 0.081
+----
+
+Step 82
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.82155e-07 [max]	1.4663e-11 [min]
+
+Step 82 completed, simulation time is 0.082
+----
+
+Step 83
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.82989e-07 [max]	1.469e-11 [min]
+
+Step 83 completed, simulation time is 0.083
+----
+
+Step 84
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.85944e-07 [max]	1.47337e-11 [min]
+
+Step 84 completed, simulation time is 0.084
+----
+
+Step 85
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.86978e-07 [max]	1.47204e-11 [min]
+
+Step 85 completed, simulation time is 0.085
+----
+
+Step 86
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.86072e-07 [max]	1.46657e-11 [min]
+
+Step 86 completed, simulation time is 0.086
+----
+
+Step 87
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.83237e-07 [max]	1.46411e-11 [min]
+
+Step 87 completed, simulation time is 0.087
+----
+
+Step 88
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.78516e-07 [max]	1.46424e-11 [min]
+
+Step 88 completed, simulation time is 0.088
+----
+
+Step 89
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.80972e-07 [max]	1.46654e-11 [min]
+
+Step 89 completed, simulation time is 0.089
+----
+
+Step 90
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.83509e-07 [max]	1.47059e-11 [min]
+
+Step 90 completed, simulation time is 0.09
+----
+Writing checkpoint file
+Writing history file
+
+Step 91
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.84183e-07 [max]	1.4717e-11 [min]
+
+Step 91 completed, simulation time is 0.091
+----
+
+Step 92
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.82978e-07 [max]	1.46574e-11 [min]
+
+Step 92 completed, simulation time is 0.092
+----
+
+Step 93
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.79909e-07 [max]	1.46282e-11 [min]
+
+Step 93 completed, simulation time is 0.093
+----
+
+Step 94
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.75091e-07 [max]	1.46252e-11 [min]
+
+Step 94 completed, simulation time is 0.094
+----
+
+Step 95
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.7901e-07 [max]	1.46444e-11 [min]
+
+Step 95 completed, simulation time is 0.095
+----
+
+Step 96
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.81153e-07 [max]	1.46817e-11 [min]
+
+Step 96 completed, simulation time is 0.096
+----
+
+Step 97
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.81485e-07 [max]	1.47151e-11 [min]
+
+Step 97 completed, simulation time is 0.097
+----
+
+Step 98
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.79995e-07 [max]	1.46513e-11 [min]
+
+Step 98 completed, simulation time is 0.098
+----
+
+Step 99
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.76703e-07 [max]	1.46178e-11 [min]
+
+Step 99 completed, simulation time is 0.099
+----
+
+Step 100
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.73593e-07 [max]	1.46108e-11 [min]
+
+Step 100 completed, simulation time is 0.1
+----
+Writing checkpoint file
+Writing history file
+
+Step 101
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.77095e-07 [max]	1.46263e-11 [min]
+
+Step 101 completed, simulation time is 0.101
+----
+
+Step 102
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.78864e-07 [max]	1.46605e-11 [min]
+
+Step 102 completed, simulation time is 0.102
+----
+
+Step 103
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.78872e-07 [max]	1.47095e-11 [min]
+
+Step 103 completed, simulation time is 0.103
+----
+
+Step 104
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.77111e-07 [max]	1.46467e-11 [min]
+
+Step 104 completed, simulation time is 0.104
+----
+
+Step 105
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.73605e-07 [max]	1.46094e-11 [min]
+
+Step 105 completed, simulation time is 0.105
+----
+
+Step 106
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.72114e-07 [max]	1.45987e-11 [min]
+
+Step 106 completed, simulation time is 0.106
+----
+
+Step 107
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.7522e-07 [max]	1.46108e-11 [min]
+
+Step 107 completed, simulation time is 0.107
+----
+
+Step 108
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.76635e-07 [max]	1.4642e-11 [min]
+
+Step 108 completed, simulation time is 0.108
+----
+
+Step 109
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.76333e-07 [max]	1.46886e-11 [min]
+
+Step 109 completed, simulation time is 0.109
+----
+
+Step 110
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.74314e-07 [max]	1.46433e-11 [min]
+
+Step 110 completed, simulation time is 0.11
+----
+Writing checkpoint file
+Writing history file
+
+Step 111
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.70602e-07 [max]	1.46026e-11 [min]
+
+Step 111 completed, simulation time is 0.111
+----
+
+Step 112
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.70651e-07 [max]	1.45886e-11 [min]
+
+Step 112 completed, simulation time is 0.112
+----
+
+Step 113
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.7338e-07 [max]	1.45976e-11 [min]
+
+Step 113 completed, simulation time is 0.113
+----
+
+Step 114
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.74457e-07 [max]	1.46259e-11 [min]
+
+Step 114 completed, simulation time is 0.114
+----
+
+Step 115
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.73861e-07 [max]	1.467e-11 [min]
+
+Step 115 completed, simulation time is 0.115
+----
+
+Step 116
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.71595e-07 [max]	1.46409e-11 [min]
+
+Step 116 completed, simulation time is 0.116
+----
+
+Step 117
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.67686e-07 [max]	1.45971e-11 [min]
+
+Step 117 completed, simulation time is 0.117
+----
+
+Step 118
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.69202e-07 [max]	1.458e-11 [min]
+
+Step 118 completed, simulation time is 0.118
+----
+
+Step 119
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.71571e-07 [max]	1.45861e-11 [min]
+
+Step 119 completed, simulation time is 0.119
+----
+
+Step 120
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.72325e-07 [max]	1.46118e-11 [min]
+
+Step 120 completed, simulation time is 0.12
+----
+Writing checkpoint file
+Writing history file
+
+Step 121
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.71448e-07 [max]	1.46536e-11 [min]
+
+Step 121 completed, simulation time is 0.121
+----
+
+Step 122
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.68945e-07 [max]	1.46391e-11 [min]
+
+Step 122 completed, simulation time is 0.122
+----
+
+Step 123
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.64848e-07 [max]	1.45927e-11 [min]
+
+Step 123 completed, simulation time is 0.123
+----
+
+Step 124
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.67762e-07 [max]	1.45729e-11 [min]
+
+Step 124 completed, simulation time is 0.124
+----
+
+Step 125
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.69788e-07 [max]	1.45763e-11 [min]
+
+Step 125 completed, simulation time is 0.125
+----
+
+Step 126
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.70233e-07 [max]	1.45995e-11 [min]
+
+Step 126 completed, simulation time is 0.126
+----
+
+Step 127
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.69087e-07 [max]	1.4639e-11 [min]
+
+Step 127 completed, simulation time is 0.127
+----
+
+Step 128
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.66358e-07 [max]	1.46379e-11 [min]
+
+Step 128 completed, simulation time is 0.128
+----
+
+Step 129
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.63116e-07 [max]	1.45891e-11 [min]
+
+Step 129 completed, simulation time is 0.129
+----
+
+Step 130
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.6633e-07 [max]	1.45669e-11 [min]
+
+Step 130 completed, simulation time is 0.13
+----
+Writing checkpoint file
+Writing history file
+
+Step 131
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.68027e-07 [max]	1.45678e-11 [min]
+
+Step 131 completed, simulation time is 0.131
+----
+
+Step 132
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.68177e-07 [max]	1.45887e-11 [min]
+
+Step 132 completed, simulation time is 0.132
+----
+
+Step 133
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.66773e-07 [max]	1.46261e-11 [min]
+
+Step 133 completed, simulation time is 0.133
+----
+
+Step 134
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.63828e-07 [max]	1.46371e-11 [min]
+
+Step 134 completed, simulation time is 0.134
+----
+
+Step 135
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.62034e-07 [max]	1.45862e-11 [min]
+
+Step 135 completed, simulation time is 0.135
+----
+
+Step 136
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.64905e-07 [max]	1.45618e-11 [min]
+
+Step 136 completed, simulation time is 0.136
+----
+
+Step 137
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.66286e-07 [max]	1.45606e-11 [min]
+
+Step 137 completed, simulation time is 0.137
+----
+
+Step 138
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.66153e-07 [max]	1.45792e-11 [min]
+
+Step 138 completed, simulation time is 0.138
+----
+
+Step 139
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.64502e-07 [max]	1.46146e-11 [min]
+
+Step 139 completed, simulation time is 0.139
+----
+
+Step 140
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.61348e-07 [max]	1.46364e-11 [min]
+
+Step 140 completed, simulation time is 0.14
+----
+Writing checkpoint file
+Writing history file
+
+Step 141
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.60943e-07 [max]	1.45839e-11 [min]
+
+Step 141 completed, simulation time is 0.141
+----
+
+Step 142
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.63484e-07 [max]	1.45575e-11 [min]
+
+Step 142 completed, simulation time is 0.142
+----
+
+Step 143
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.64563e-07 [max]	1.45543e-11 [min]
+
+Step 143 completed, simulation time is 0.143
+----
+
+Step 144
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.64158e-07 [max]	1.4571e-11 [min]
+
+Step 144 completed, simulation time is 0.144
+----
+
+Step 145
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.62269e-07 [max]	1.46045e-11 [min]
+
+Step 145 completed, simulation time is 0.145
+----
+
+Step 146
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.58915e-07 [max]	1.4636e-11 [min]
+
+Step 146 completed, simulation time is 0.146
+----
+
+Step 147
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.59843e-07 [max]	1.45819e-11 [min]
+
+Step 147 completed, simulation time is 0.147
+----
+
+Step 148
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.62067e-07 [max]	1.45539e-11 [min]
+
+Step 148 completed, simulation time is 0.148
+----
+
+Step 149
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.62854e-07 [max]	1.45488e-11 [min]
+
+Step 149 completed, simulation time is 0.149
+----
+
+Step 150
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.62188e-07 [max]	1.45637e-11 [min]
+
+Step 150 completed, simulation time is 0.15
+----
+Writing checkpoint file
+Writing history file
+
+Step 151
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.60071e-07 [max]	1.45955e-11 [min]
+
+Step 151 completed, simulation time is 0.151
+----
+
+Step 152
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.56525e-07 [max]	1.46357e-11 [min]
+
+Step 152 completed, simulation time is 0.152
+----
+
+Step 153
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.58734e-07 [max]	1.45803e-11 [min]
+
+Step 153 completed, simulation time is 0.153
+----
+
+Step 154
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.60652e-07 [max]	1.45508e-11 [min]
+
+Step 154 completed, simulation time is 0.154
+----
+
+Step 155
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.61158e-07 [max]	1.45441e-11 [min]
+
+Step 155 completed, simulation time is 0.155
+----
+
+Step 156
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.60241e-07 [max]	1.45573e-11 [min]
+
+Step 156 completed, simulation time is 0.156
+----
+
+Step 157
+  ----
+  dt: 0.001
+    Vlasov    : 0.0013997 (time scale), 0.714438 (CFL)
+    Collisions: 1.79769e+308 (time scale), 5.56268e-312 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	6.57905e-07 [max]	1.45875e-11 [min]
+
+Step 157 completed, simulation time is 0.157
+----
+
+Step 158
