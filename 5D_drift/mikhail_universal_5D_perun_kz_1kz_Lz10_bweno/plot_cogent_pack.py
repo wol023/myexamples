@@ -30,6 +30,23 @@ from sympy.abc import x, y, z
 #from sympy.utilities.lambdify import implemented_function
 #from sympy import Function
 
+# label formatter
+import matplotlib.ticker as ticker 
+
+#for sleep
+import time
+
+#for sftp
+import base64
+import pysftp
+import os
+cnopts = pysftp.CnOpts()
+cnopts.hostkeys = None
+
+
+
+
+
 #setup plot
 graphDPI =200
 # set global settings
@@ -63,7 +80,17 @@ def init_plotting(form=''):
 #        plt.gca().spines['top'].set_color('none')
 #        plt.gca().xaxis.set_ticks_position('bottom')
 #        plt.gca().yaxis.set_ticks_position('left')
-def add_colorbar(im, aspect=20, pad_fraction=0.5, **kwargs):
+
+def latex_float(f):
+    float_str = "{0:.2g}".format(f)
+    #float_str = "{0:.6g}".format(f)
+    if "e" in float_str:
+        base, exponent = float_str.split("e")
+        return r"${0} \times 10^{{{1}}}$".format(base, int(exponent))
+    else:
+        return r"$%.2g$"%f
+
+def add_colorbar(im, aspect=20, pad_fraction=0.5, field=[], **kwargs):
     """Add a vertical color bar to an image plot."""
     divider = axes_grid1.make_axes_locatable(im.axes)
     width = axes_grid1.axes_size.AxesY(im.axes, aspect=1.0/aspect)
@@ -71,7 +98,19 @@ def add_colorbar(im, aspect=20, pad_fraction=0.5, **kwargs):
     current_ax = plt.gca()
     cax = divider.append_axes("right", size=width, pad=pad)
     plt.sca(current_ax)
-    return im.axes.figure.colorbar(im, cax=cax, **kwargs)
+    cb = im.axes.figure.colorbar(im, cax=cax, **kwargs)
+    #change number of ticks
+    m0=field.min()            # colorbar min value
+    m4=field.max()             # colorbar max value
+    num_ticks=5
+    ticks = np.linspace(m0, m4, num_ticks)
+    labels = np.linspace(m0, m4, num_ticks)
+    labels_math=[latex_float(i) for i in labels]
+    cb.set_ticks(ticks)
+    cb.set_ticklabels(labels_math)
+    
+    cb.update_ticks()
+    return cb
 
 
 def find(pattern, path):
@@ -237,10 +276,12 @@ import sys
 #withghost=2 : include inner and outer ghost cells
 
 def import_multdim_comps(filename,withghost=0):
+
+
     try:
         filename
     except NameError:
-        print filename,"is NOTi found."
+        print filename,"is NOT found."
     else:
         print filename,"is found."
         File =h5py.File(filename,'r')     
@@ -649,6 +690,72 @@ def import_multdim_comps(filename,withghost=0):
             print num_cell_total_comps,'->',dataNd_bvec_comps.shape
             return dataNd_bvec_comps
 
+def check_and_try_cluster(pathfilename,host=[],username=[],password=[],basepath=[],targetpath=[]):
+    head=os.path.split(pathfilename)
+    path_loc=head[0]
+    file_loc=head[1]
+    print path_loc
+    print file_loc
+
+    homedir=os.getcwd()
+
+    if not os.path.exists(path_loc):
+        os.mkdir(path_loc)
+        print path_loc+'/', 'is created.'
+    else:
+        print path_loc+'/', 'already exists.'
+
+    status=0
+
+    if host!=[] and username!=[] and password!=[] and basepath!=[] and targetpath!=[]:
+        with pysftp.Connection(host=host, username=username, password=base64.b64decode(password),cnopts=cnopts) as sftp:
+            if sftp.exists(basepath):
+                with sftp.cd(basepath):
+                    if sftp.exists(targetpath):
+                        with sftp.cd(targetpath):
+                            currentdirlist=os.listdir(path_loc)
+                            if file_loc in currentdirlist:
+                                print file_loc, 'is found in local machine.'
+                                status = 1
+                            else:
+                                print file_loc, 'is NOT found in local machine.. start downloading.'
+                                if sftp.exists(path_loc):
+                                    with sftp.cd(path_loc):
+                                        if sftp.exists(file_loc):
+                                            os.chdir(path_loc)
+                                            sftp.get(file_loc, preserve_mtime=True)
+                                            print file_loc,'download completed.'
+                                            os.chdir(homedir)
+                                            status=2
+                                        else:
+                                            print file_loc,'is not found in', host
+                                            status=-1
+                                else:
+                                    print path_loc,'is not found in', host
+                                    status=-2
+
+                    else:
+                        print targetpath,'is not found in', host
+                        status=-3
+            else:
+                print basepath,'is not found in', host
+                status=-4
+
+    return status
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ########################################
@@ -657,7 +764,7 @@ from mayavi import mlab
 
 #import multi component variables 
 
-def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1):
+def plot_Nd(var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1,interpolation='none',label=''):
     #wh=1 # 0: black background, 1: whithe background
     #first check the rank of input data
     var_shape=var.shape
@@ -665,7 +772,7 @@ def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600
     var_dim=len(var_shape)-1
 
     #set environment
-    if ghostIn==[]:
+    if ghostIn==[]: #no ghost cell
         #no ghost input
         #axes numbering
         range_var=[0]*var_dim*2
@@ -679,13 +786,14 @@ def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600
             bounds_var_ax[2*i+1]=var.shape[i]
         #outline boundary
         bounds_var_ol = [1]*(2*(len(var.shape)-1))
+        #print 'bounds_var_ol=',bounds_var_ol
         for i in range((len(var.shape)-1)):
             bounds_var_ol[2*i]=1
             bounds_var_ol[2*i+1]=var.shape[i]
         ax_line_width=1.0
         ol_line_width=1.0
  
-    else:
+    else: #ghost cell
         dghost=np.zeros(len(ghostIn))
         for i in range(len(dghost)):
             dghost[i]=float(ghostIn[i])/(var.shape[i]-2*ghostIn[i])
@@ -707,24 +815,40 @@ def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600
         ax_line_width=1.0
         ol_line_width=2.0
 
-    if x_slice<0:#default slice middle
+    if x_slice==-1:#default slice middle
         x_slice_pt=float(bounds_var_ol[2*0+1])/2+float(bounds_var_ol[2*0])/2-1
     else:
-        x_slice_pt=float(bounds_var_ol[2*0])+(float(bounds_var_ol[2*0+1])-float(bounds_var_ol[2*0]))*x_slice-1
-    if y_slice<0:
-        y_slice_pt=float(bounds_var_ol[2*1+1])/2+float(bounds_var_ol[2*1])/2-1
-    else:
-        y_slice_pt=float(bounds_var_ol[2*1])+(float(bounds_var_ol[2*1+1])-float(bounds_var_ol[2*1]))*y_slice-1
-    if z_slice<0:
-        z_slice_pt=float(bounds_var_ol[2*2+1])/2+float(bounds_var_ol[2*2])/2-1
-    else:
-        z_slice_pt=float(bounds_var_ol[2*2])+(float(bounds_var_ol[2*2+1])-float(bounds_var_ol[2*2]))*z_slice-1
+        if type(x_slice)==type(1):#consider it as point
+            print 'x_slice=', x_slice, type(x_slice)
+            x_slice_pt=float(bounds_var_ol[2*0])+x_slice-1
+        else: #considier it a number between 0.0 to 1.0
+            x_slice_pt=float(bounds_var_ol[2*0])+(float(bounds_var_ol[2*0+1])-float(bounds_var_ol[2*0]))*x_slice-1
+    if var_dim>1:
+        if y_slice==-1:#default slice middle
+            y_slice_pt=float(bounds_var_ol[2*1+1])/2+float(bounds_var_ol[2*1])/2-1
+        else:
+            if type(y_slice)==type(1):#consider it as point
+                print 'y_slice=', y_slice, type(y_slice)
+                y_slice_pt=float(bounds_var_ol[2*1])+y_slice-1
+            else: #considier it a number between 0.0 to 1.0
+                y_slice_pt=float(bounds_var_ol[2*1])+(float(bounds_var_ol[2*1+1])-float(bounds_var_ol[2*1]))*y_slice-1
+    if var_dim>2:
+        if z_slice==-1:#default slice middle
+            z_slice_pt=float(bounds_var_ol[2*2+1])/2+float(bounds_var_ol[2*2])/2-1
+        else:
+            if type(z_slice)==type(1):#consider it as point
+                print 'z_slice=', z_slice, type(z_slice)
+                z_slice_pt=float(bounds_var_ol[2*2])+z_slice-1
+            else: #considier it a number between 0.0 to 1.0
+                z_slice_pt=float(bounds_var_ol[2*2])+(float(bounds_var_ol[2*2+1])-float(bounds_var_ol[2*2]))*z_slice-1
 
-        print bounds_var_ax
-        print bounds_var_ol
-        print x_slice_pt,x_slice
-        print y_slice_pt,y_slice
-        print z_slice_pt,z_slice
+    #print bounds_var_ax
+    #print bounds_var_ol
+    #print x_slice_pt,x_slice
+    #if var_dim>1:
+    #    print y_slice_pt,y_slice
+    #if var_dim>2:
+    #    print z_slice_pt,z_slice
 
  
     #Start plotting   
@@ -746,28 +870,18 @@ def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600
             module_manager = s.children[0].children[0]
             module_manager.vector_lut_manager.show_scalar_bar = True
             module_manager.vector_lut_manager.show_legend = True
-            module_manager.vector_lut_manager.scalar_bar.title = titleIn
+            module_manager.vector_lut_manager.scalar_bar.title = title
             module_manager.vector_lut_manager.scalar_bar_representation.position2 = np.array([ 0.1,  0.8])
             module_manager.vector_lut_manager.scalar_bar_representation.position = np.array([ 0.05,  0.1])
             module_manager.vector_lut_manager.label_text_property.color = (1-wh,1-wh, 1-wh)
             module_manager.vector_lut_manager.title_text_property.color = (1-wh, 1-wh, 1-wh)
 
-###3
-#            cb=mlab.vectorbar(title=titleIn,orientation='vertical' )
-            #cb.title_text_property.color=(1-wh,1-wh,1-wh)
-            #cb.label_text_property.color=(1-wh,1-wh,1-wh)
-#            engine=mlab.get_engine()
-#            module_manager = engine.scenes[0].children[0].children[0]
-#            module_manager.vector_lut_manager.scalar_bar.orientation = 'vertical'
-#            module_manager.vector_lut_manager.scalar_bar_representation.position2 = np.array([ 0.1,  0.8])
-#            module_manager.vector_lut_manager.scalar_bar_representation.position = np.array([ 0.05,  0.1])
-#            module_manager.vector_lut_manager.scalar_bar_representation.maximum_size = np.array([100000, 100000])
 
         elif sliced==0 and (x_slice==-1 and y_slice==-1 and z_slice==-1):
             #try iso plot 
             fig=mlab.figure(bgcolor=(wh,wh,wh),size=(fig_size_x,fig_size_y))
             ch=mlab.contour3d(var[:,:,:,0],contours=10,transparent=True,opacity=0.8)
-            cb=mlab.colorbar(title=titleIn,orientation='vertical' )
+            cb=mlab.colorbar(title=title,orientation='vertical' )
             cb.title_text_property.color=(1-wh,1-wh,1-wh)
             cb.label_text_property.color=(1-wh,1-wh,1-wh)
         else:
@@ -791,7 +905,7 @@ def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600
                     szh=mlab.pipeline.image_plane_widget(mlab.pipeline.scalar_field(var[:,:,:,0]),plane_orientation='z_axes',slice_index=z_slice_pt)
                     szh.ipw.slice_position=z_slice_pt+1
 
-            cb=mlab.colorbar(title=titleIn,orientation='vertical' )
+            cb=mlab.colorbar(title=title,orientation='vertical' )
             cb.title_text_property.color=(1-wh,1-wh,1-wh)
             cb.label_text_property.color=(1-wh,1-wh,1-wh)
 
@@ -815,12 +929,592 @@ def plot_Nd(var,ghostIn=[],titleIn='variable',wh=1,fig_size_x=800,fig_size_y=600
         else:
             print 'dfn plot with single component'
             #try collect for density
+
             return 
+    elif var_dim==2:
+        #possibly vpar mu plot, only plot first component
+        init_plotting()
+        fig=plt.figure()
+        plt.subplot(111)
+        #plt.gca().margins(0.1, 0.1)
+        im=plt.imshow(var[:,:,0].T,interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+        if title=='':
+            pass
+        else:
+            plt.title(title)
+        if xlabel=='xlabel':
+            plt.xlabel(r'$\bar{v}_\parallel$')
+        else:
+            plt.xlabel(xlabel)
+        if ylabel=='ylabel':
+            plt.ylabel(r'$\bar{\mu}$')
+        else:
+            plt.ylabel(ylabel)
+        add_colorbar(im,field=var[:,:,0])
+        plt.tight_layout()
+        return fig
+    elif var_dim==1:
+        #simple line out plot
+        print 'Try using oplot_1d'
+        init_plotting()
+        fig=plt.figure()
+        plt.subplot(111)
+        #plt.gca().margins(0.1, 0.1)
+        if xaxis==[]:
+            im=plt.plot(range(len(var[:,0])),var[:,0],label=label)
+        elif len(xaxis)==len(var[:,0]):
+            im=plt.plot(xaxis,var[:,0],label=label)
+        else:
+            im=plt.plot(range(len(var[:,0])),var[:,0],label=label)
+        if title=='':
+            pass
+        else:
+            plt.title(title)
+        if xlabel=='xlabel':
+            plt.xlabel(r'$\bar{v}_\parallel$')
+        else:
+            plt.xlabel(xlabel)
+        if ylabel=='ylabel':
+            plt.ylabel(r'$f$')
+        else:
+            plt.ylabel(ylabel)
+        plt.tight_layout()
+        return fig
+
+
     return 
 
 
 
+def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,linewidth=1.5,linestyle='-',color='b',label='',legend=[]):
+    #consider vpar-f simple plot 
+    if fig==[]:
+        fig=plt.figure()
+    else:
+        fig=plt.figure(fig.number)
+    ax1=plt.gca()
+    if xaxis==[]:
+        xaxis=np.linspace(-1,1,len(var))
+    ax1.plot(xaxis,var,linewidth=linewidth,linestyle=linestyle,color=color,label=label)
+    if title=='':
+        pass 
+    else:
+        plt.title(title)
+    if xlabel=='xlabel':
+        plt.xlabel(r'$\bar{v}_\parallel$')
+    else:
+        plt.xlabel(xlabel)
+    if ylabel=='ylabel':
+        plt.ylabel(r'$f$')
+    else:
+        plt.ylabel(ylabel)
+    if legend==[]:
+        pass
+    else:
+        plt.gca().legend(loc='best')
+    plt.tight_layout()
+    return fig
 
+   
+
+def get_vpar_mu_scales(num_cell_total_comps_tuple,Vpar_max=1.0,Mu_max=1.0):
+    #num_cell_total_comps_tuple[-3] = vpar cell
+    #num_cell_total_comps_tuple[-2] = mu cell
+    vpar_cell_dim_begin = -1.0*Vpar_max+(Vpar_max*1.0+Vpar_max*1.0)/float(num_cell_total_comps_tuple[-3])/2.0
+    vpar_cell_dim_end   =  1.0*Vpar_max-(Vpar_max*1.0+Vpar_max*1.0)/float(num_cell_total_comps_tuple[-3])/2.0
+    mu_cell_dim_begin = Mu_max*0.0+(Mu_max*1.0-Mu_max*0.0)/float(num_cell_total_comps_tuple[-2])/2.0
+    mu_cell_dim_end   = Mu_max*1.0-(Mu_max*1.0-Mu_max*0.0)/float(num_cell_total_comps_tuple[-2])/2.0
+    VPAR_CELL,MU_CELL = np.mgrid[vpar_cell_dim_begin:vpar_cell_dim_end:(num_cell_total_comps_tuple[-3]*1j),mu_cell_dim_begin:mu_cell_dim_end:(num_cell_total_comps_tuple[-2]*1j)]
+    
+    #VPAR_SCALE = VPAR_CELL[:,0]*np.sqrt(mhat) #for trunk
+    VPAR_SCALE = VPAR_CELL[:,0] #for mass dependent normalization
+    MU_SCALE = MU_CELL[0,:]
+    return VPAR_SCALE, MU_SCALE
+
+
+def get_maxwellian_coef(dfnfilename,mi,ti,me,te,nhat):
+    if 'electron' in dfnfilename:
+        mhat = me
+        That = te
+        coef_maxwell=nhat/np.sqrt(np.pi)*(0.5*mhat/That)**(1.5)
+        print 'electron (coef, mhat, That) = ', coef_maxwell, mhat, That
+        return coef_maxwell,mhat,That
+    elif 'hydrogen' in dfnfilename:
+        mhat = mi
+        That = ti
+        coef_maxwell=nhat/np.sqrt(np.pi)*(0.5*mhat/That)**(1.5)
+        print 'hydrogen (coef, mhat, That) = ', coef_maxwell, mhat, That
+        return coef_maxwell,mhat,That
+    else:
+        mhat = 1.0
+        That = 1.0
+        coef_maxwell=nhat/np.sqrt(np.pi)*(0.5*mhat/That)**(1.5)
+        print 'default (coef, mhat, That) = ', coef_maxwell, mhat, That
+        return coef_maxwell,mhat,That
+    
+
+def get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE,mu_ind=0):
+    #least square fitting on a slice of MU index=0
+    guess_den =coef_maxwell 
+    guess_temp =1.0/(2.0*That)
+    guess_shift =0.0
+    optimize_func = lambda z: z[0]*np.exp(-z[1]*(VPAR_SCALE-z[2])**2)-data_dfn[:,mu_ind,0] 
+    
+    est_den, est_temp, est_shift = leastsq(optimize_func, [guess_den, guess_temp, guess_shift])[0]
+    fitted_f = est_den*np.exp(-est_temp*VPAR_SCALE**2)
+    t_fit = 1.0/(est_temp*2.0)
+    n_fit = est_den*np.sqrt(np.pi)/(0.5*mhat/t_fit)**(1.5)/np.exp(-MU_SCALE[mu_ind]*Bhat/2.0/t_fit)
+    vshift_fit = est_shift
+    print '(n_fit, t_fit, vshift_fit) = ',n_fit,t_fit,vshift_fit
+    return fitted_f, n_fit, t_fit, vshift_fit
+
+def get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max):
+    num_cell_total_comps_tuple=dataNd_dfn_comps.shape
+    #num_cell_total_comps_tuple[-6] = x cell
+    #num_cell_total_comps_tuple[-5] = y cell ; x for 4D
+    #num_cell_total_comps_tuple[-4] = z cell ; y for 4D
+    #num_cell_total_comps_tuple[-3] = vpar cell
+    #num_cell_total_comps_tuple[-2] = mu cell
+    #num_cell_total_comps_tuple[-1] = comps
+    dim=len(num_cell_total_comps_tuple)-1
+    print 'dim=',dim
+
+    #density sum
+    if dim==4:
+        num_xcell=num_cell_total_comps_tuple[-5]
+        num_ycell=num_cell_total_comps_tuple[-4]
+        num_vparcell=num_cell_total_comps_tuple[-3]
+        num_mucell=num_cell_total_comps_tuple[-2]
+        num_compcell=num_cell_total_comps_tuple[-1]
+        f_vpar_mu_sum = np.zeros((num_xcell,num_ycell,num_compcell))
+        delta_Mu = 1.0*Mu_max/num_mucell
+        delta_Vpar = 2.0*Vpar_max/num_vparcell
+        for d in range(num_compcell):
+            for i in range(num_xcell):
+                for j in range(num_ycell):
+                    sumovervparandmu=0.0
+                    for k in range(num_vparcell):
+                        sumovermu=0.0
+                        for l in range(num_mucell):
+                            sumovermu=sumovermu+dataNd_dfn_comps[i,j,k,l,d]
+                        sumovermu=sumovermu*delta_Mu
+                        sumovervparandmu=sumovervparandmu+sumovermu
+                    sumovervparandmu=sumovervparandmu*delta_Vpar 
+                    f_vpar_mu_sum[i,j,d]=f_vpar_mu_sum[i,j,d]+sumovervparandmu
+    elif dim==5:
+        num_xcell=num_cell_total_comps_tuple[-6]
+        num_ycell=num_cell_total_comps_tuple[-5]
+        num_zcell=num_cell_total_comps_tuple[-4]
+        num_vparcell=num_cell_total_comps_tuple[-3]
+        num_mucell=num_cell_total_comps_tuple[-2]
+        num_compcell=num_cell_total_comps_tuple[-1]
+        f_vpar_mu_sum = np.zeros((num_xcell,num_ycell,num_zcell,num_compcell))
+        delta_Mu = 1.0*Mu_max/num_mucell
+        delta_Vpar = 2.0*Vpar_max/num_vparcell
+        for d in range(num_compcell):
+            for i in range(num_xcell):
+                for j in range(num_ycell):
+                    for k in range(num_zcell):
+                        sumovervparandmu=0.0
+                        for l in range(num_vparcell):
+                            sumovermu=0.0
+                            for m in range(num_mucell):
+                                sumovermu=sumovermu+dataNd_dfn_comps[i,j,k,l,m,d]
+                            sumovermu=sumovermu*delta_Mu
+                            sumovervparandmu=sumovervparandmu+sumovermu
+                        sumovervparandmu=sumovervparandmu*delta_Vpar 
+                        f_vpar_mu_sum[i,j,k,d]=f_vpar_mu_sum[i,j,k,d]+sumovervparandmu
+    print f_vpar_mu_sum.shape
+    return f_vpar_mu_sum
+
+####sum over mu
+###f_mu_sum = np.zeros(num_vparcell)
+###if dim<5:
+###    for i in range(num_vparcell):
+###        for j in range(num_mucell):
+###            f_mu_sum[i]=f_mu_sum[i]+dataNd[x_pt,y_pt,i,j]
+###        f_mu_sum[i]=f_mu_sum[i]/num_mucell
+###else:
+###    for i in range(num_vparcell):
+###        for j in range(num_mucell):
+###            f_mu_sum[i]=f_mu_sum[i]+dataNd[x_pt,y_pt,z_pt,i,j]
+###        f_mu_sum[i]=f_mu_sum[i]/num_mucell
+###
+
+
+
+def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+
+    dataNd_dfn_comps=import_multdim_comps(filename=pathfilename)
+    title_var='distr. function'
+    num_cell_total_comps_tuple=dataNd_dfn_comps.shape
+    from read_input_deck import *
+    VPAR_SCALE, MU_SCALE = get_vpar_mu_scales(num_cell_total_comps_tuple,Vpar_max,Mu_max)
+    VPAR_N, MU_N = get_vpar_mu_scales(num_cell_total_comps_tuple)
+    
+    #velocity space
+    fig_dfn2d=plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        plt.savefig(filename.replace('.hdf5','.vpar_mu.png'))
+        plt.savefig(filename.replace('.hdf5','.vpar_mu.eps'))
+        os.chdir(basedir)
+    if showplots==0:
+        plt.close('all')
+    
+    fig_dfn2d_interp=plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var,interpolation='spline36')
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.png'))
+        plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.eps'))
+        os.chdir(basedir)
+    if showplots==0:
+        plt.close('all')
+        #plt.close(fig_dfn2d)
+    
+    #example vpar plot overplot
+    fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,:])),label='COGENT'%MU_N[0],legend=1 )
+    #oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,1,:],fig=fig,xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,1,:])),label='f(mu=%g)'%(MU_N[1]),legend=1 )
+    #example mu=0 fitting
+    coef_maxwell,mhat,That = get_maxwellian_coef(pathfilename,ion_mass,t0_grid_func,elec_mass,et0_grid_func,nhat)
+    fitted_f, n_fit, t_fit, vshift_fit = get_maxwellian_fitting(coef_maxwell,mhat, That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=0)
+    # plot fitting
+    legend_maxwellian = '\n\nMAXWELLIAN\n'+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit,t_fit,vshift_fit)
+    oplot_1d(fitted_f,fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_compare.png'))
+        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_compare.eps'))
+        os.chdir(basedir)
+    if showplots==0:
+        plt.close('all')
+    
+    #get density by summation over velocity
+    f_vpar_mu_sum = get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max)
+    fig=plot_Nd(f_vpar_mu_sum,title='integrated f')
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.f_sum_mlab_iso.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.f_sum_mlab_iso.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    #fig.scene.save_ps('fig1_mlab_iso.pdf')
+    #mlab.show()
+    #arr=mlab.screenshot()
+    #plt.imshow(arr)
+    #plt.axis('off')
+    #plt.savefig('fig1_mlab_iso.eps')
+    #plt.savefig('fig1_mlab_iso.pdf')
+    #fig.scene.close()
+    if showplots==0:
+        mlab.close(all=True)
+
+    #sliced plot
+    fig=plot_Nd(f_vpar_mu_sum,title='integrated f',x_slice=2,y_slice=2,z_slice=2)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.f_sum_mlab_slice.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.f_sum_mlab_slice.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    return
+ 
+
+def plot_potential(pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+    
+    dataNd_potential_comps=import_multdim_comps(filename=pathfilename)
+    if ghost>0:
+        dataNd_potential_with_outer_ghost_comps,num_ghost_potential=import_multdim_comps(filename=pathfilename,withghost=1)
+    title_var='potential'
+    
+    fig=plot_Nd(dataNd_potential_comps,title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.potential_mlab_iso.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.potential_mlab_iso.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+    fig=plot_Nd(dataNd_potential_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.potential_mlab_slice.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.potential_mlab_slice.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+
+
+    if ghost>0:
+        fig=plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.potential_mlab_ghost_iso.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.potential_mlab_ghost_iso.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+        fig=plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.potential_mlab_ghost_slice.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.potential_mlab_ghost_slice.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+    return
+
+    
+def plot_bvec(pathfilename,saveplots=1,showplots=0,ghost=0,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+
+    dataNd_bvec_comps=import_multdim_comps(filename=pathfilename)
+    if ghost>0:
+        dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec =import_multdim_comps(filename=pathfilename,withghost=1)
+    title_var='B field'
+    
+    fig=plot_Nd(dataNd_bvec_comps,title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.bvec_mlab.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.bvec_mlab_ps.eps'))
+        #fig.scene.save_gl2ps(filename.replace('.hdf5','.bvec_mlab_gl2ps.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    if ghost>0:
+        fig=plot_Nd(dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec,title=title_var) 
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.bvec_mlab_ghost.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.bvec_mlab_ghost_ps.eps'))
+            #fig.scene.save_gl2ps(filename.replace('.hdf5','.bvec_mlab_ghost_gl2ps.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+    return
+
+    
+def plot_evec(pathfilename,saveplots=1,showplots=0,ghost=0,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+
+    dataNd_evec_comps=import_multdim_comps(filename=pathfilename)
+    if ghost>0:
+        dataNd_evec_with_outer_ghost_comps,num_ghost_evec=import_multdim_comps(filename=pathfilename,withghost=1)
+    title_var='E field'
+    
+    fig=plot_Nd(dataNd_evec_comps,title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.evec_mlab.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.evec_mlab_ps.eps'))
+        #fig.scene.save_gl2ps(filename.replace('.hdf5','.evec_mlab_gl2ps.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    if ghost>0:
+        fig=plot_Nd(dataNd_evec_with_outer_ghost_comps,num_ghost_evec,title=title_var)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.evec_mlab_ghost.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.evec_mlab_ghost_ps.eps'))
+            #fig.scene.save_gl2ps(filename.replace('.hdf5','.evec_mlab_ghost_gl2ps.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+    return
+
+
+    
+def plot_density(pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+    head=os.path.split(pathfilename)
+    path=head[0]
+    filename=head[1]
+    print path
+    print filename
+    basedir=os.getcwd()
+    if targetdir==[]:
+        targetdir='./python_auto_plots'
+
+    dataNd_density_comps=import_multdim_comps(filename=pathfilename)
+    if ghost>0:
+        dataNd_density_with_outer_ghost_comps,num_ghost_density=import_multdim_comps(filename=pathfilename,withghost=1)
+    title_var='density'
+    
+    fig=plot_Nd(dataNd_density_comps,title=title_var)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.mlab_iso.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.mlab_iso.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    fig=plot_Nd(dataNd_density_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        mlab.savefig(filename.replace('.hdf5','.mlab_slice.png'))
+        fig.scene.save_ps(filename.replace('.hdf5','.mlab_slice.eps'))
+        time.sleep(1)
+        os.chdir(basedir)
+    if showplots==0:
+        mlab.close(all=True)
+
+    if ghost>0:
+        fig=plot_Nd(dataNd_density_with_outer_ghost_comps,num_ghost_density,title=title_var)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.mlab_ghost_iso.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.mlab_ghost_iso.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+        fig=plot_Nd(dataNd_density_with_outer_ghost_comps,num_ghost_density,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+                print targetdir+'/', 'is created.'
+            else:
+                print targetdir+'/', 'already exists.'
+            os.chdir(targetdir)
+            mlab.savefig(filename.replace('.hdf5','.mlab_ghost_slice.png'))
+            fig.scene.save_ps(filename.replace('.hdf5','.mlab_ghost_slice.eps'))
+            time.sleep(1)
+            os.chdir(basedir)
+        if showplots==0:
+            mlab.close(all=True)
+
+    return
 
 
 
