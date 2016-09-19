@@ -51,10 +51,15 @@ print files
 
 
 plot_output='./python_auto_plots.0.dir'
-if os.path.exists(plot_output):
-    int_oldnum=int(plot_output.split('./python_auto_plots.')[1].split('.dir')[0])
-    str_newnum=str(int_oldnum+1)
-    plot_output='./python_auto_plots.'+str_newnum+'.dir'
+notunique=1
+while notunique:
+    if os.path.exists(plot_output):
+        notunique=1
+        int_oldnum=int(plot_output.split('./python_auto_plots.')[1].split('.dir')[0])
+        str_newnum=str(int_oldnum+1)
+        plot_output='./python_auto_plots.'+str_newnum+'.dir'
+    else:
+        notunique=0
 
 
 for i in range(len(pathfiles)):

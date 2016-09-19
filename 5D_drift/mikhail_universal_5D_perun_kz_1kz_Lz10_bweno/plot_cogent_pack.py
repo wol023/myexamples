@@ -81,6 +81,11 @@ def init_plotting(form=''):
 #        plt.gca().xaxis.set_ticks_position('bottom')
 #        plt.gca().yaxis.set_ticks_position('left')
 
+def printProgress(transferred, toBeTransferred):
+    #print "Transferred: {0}\tOut of : {1}".format(transferred, toBeTransferred)
+    print "Transferred: {:5.2f} %\r".format(float(transferred)/toBeTransferred*100),
+
+
 def latex_float(f):
     float_str = "{0:.2g}".format(f)
     #float_str = "{0:.6g}".format(f)
@@ -723,7 +728,7 @@ def check_and_try_cluster(pathfilename,host=[],username=[],password=[],basepath=
                                     with sftp.cd(path_loc):
                                         if sftp.exists(file_loc):
                                             os.chdir(path_loc)
-                                            sftp.get(file_loc, preserve_mtime=True)
+                                            sftp.get(file_loc, preserve_mtime=True,callback=printProgress)
                                             print file_loc,'download completed.'
                                             os.chdir(homedir)
                                             status=2

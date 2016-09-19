@@ -7,7 +7,7 @@ cnopts.hostkeys = None
 
 
 
-with open('perun_cluster_target.txt','r') as fo:
+with open('perun_cluster_target_small.txt','r') as fo:
     lines= fo.read().splitlines()
 host=lines[0]
 user=lines[1]
@@ -31,7 +31,12 @@ print paths
 print files
 
 homedir=os.getcwd()
-    
+
+def printTotals(transferred, toBeTransferred):
+    #print "Transferred: {0}\tOut of : {1}".format(transferred, toBeTransferred)
+    print "Transferred: {:5.2f} %\r".format(float(transferred)/toBeTransferred*100),
+
+
 with pysftp.Connection(host, username=user, password=base64.b64decode(pword),cnopts=cnopts) as sftp:
     with sftp.cd(basepath):
         with sftp.cd(targetpath):
@@ -49,7 +54,7 @@ with pysftp.Connection(host, username=user, password=base64.b64decode(pword),cno
                 else:
                     print files[i], 'is NOT found.. start downloading.'
                     os.chdir(paths[i])
-                    sftp.get(pathfiles[i], preserve_mtime=True)
+                    sftp.get(pathfiles[i], preserve_mtime=True,callback=printTotals)
                     print files[i], 'download completed.'
                     os.chdir(homedir)
 
