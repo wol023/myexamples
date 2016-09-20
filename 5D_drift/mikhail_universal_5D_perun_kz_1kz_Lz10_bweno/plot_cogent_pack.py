@@ -9,6 +9,7 @@ import pylab as pl
 
 #for least squre fit
 from scipy.optimize import leastsq
+from scipy.optimize import curve_fit
 
 #to 3D plot
 from mayavi import mlab
@@ -712,39 +713,39 @@ def check_and_try_cluster(pathfilename,host=[],username=[],password=[],basepath=
 
     status=0
 
-    if host!=[] and username!=[] and password!=[] and basepath!=[] and targetpath!=[]:
-        with pysftp.Connection(host=host, username=username, password=base64.b64decode(password),cnopts=cnopts) as sftp:
-            if sftp.exists(basepath):
-                with sftp.cd(basepath):
-                    if sftp.exists(targetpath):
-                        with sftp.cd(targetpath):
-                            currentdirlist=os.listdir(path_loc)
-                            if file_loc in currentdirlist:
-                                print file_loc, 'is found in local machine.'
-                                status = 1
-                            else:
-                                print file_loc, 'is NOT found in local machine.. start downloading.'
-                                if sftp.exists(path_loc):
-                                    with sftp.cd(path_loc):
-                                        if sftp.exists(file_loc):
-                                            os.chdir(path_loc)
-                                            sftp.get(file_loc, preserve_mtime=True,callback=printProgress)
-                                            print file_loc,'download completed.'
-                                            os.chdir(homedir)
-                                            status=2
-                                        else:
-                                            print file_loc,'is not found in', host
-                                            status=-1
-                                else:
-                                    print path_loc,'is not found in', host
-                                    status=-2
+    currentdirlist=os.listdir(path_loc)
+    if file_loc in currentdirlist:
+        print file_loc, 'is found in local machine.'
+        status = 1
+    else:
+        print file_loc, 'is NOT found in local machine.. start downloading.'
+        if host!=[] and username!=[] and password!=[] and basepath!=[] and targetpath!=[]:
+            with pysftp.Connection(host=host, username=username, password=base64.b64decode(password),cnopts=cnopts) as sftp:
+                if sftp.exists(basepath):
+                    with sftp.cd(basepath):
+                        if sftp.exists(targetpath):
+                            with sftp.cd(targetpath):
+                                    if sftp.exists(path_loc):
+                                        with sftp.cd(path_loc):
+                                            if sftp.exists(file_loc):
+                                                os.chdir(path_loc)
+                                                sftp.get(file_loc, preserve_mtime=True,callback=printProgress)
+                                                print file_loc,'download completed.'
+                                                os.chdir(homedir)
+                                                status=2
+                                            else:
+                                                print file_loc,'is not found in', host
+                                                status=-1
+                                    else:
+                                        print path_loc,'is not found in', host
+                                        status=-2
 
-                    else:
-                        print targetpath,'is not found in', host
-                        status=-3
-            else:
-                print basepath,'is not found in', host
-                status=-4
+                        else:
+                            print targetpath,'is not found in', host
+                            status=-3
+                else:
+                    print basepath,'is not found in', host
+                    status=-4
 
     return status
 
@@ -1001,6 +1002,7 @@ def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxi
     if xaxis==[]:
         xaxis=np.linspace(-1,1,len(var))
     ax1.plot(xaxis,var,linewidth=linewidth,linestyle=linestyle,color=color,label=label)
+    ax1.ticklabel_format(axis='y', style='sci', scilimits=(-2,2))
     if title=='':
         pass 
     else:
@@ -1016,7 +1018,13 @@ def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxi
     if legend==[]:
         pass
     else:
-        plt.gca().legend(loc='best')
+        ymin, ymax = ax1.get_ylim()
+        ax1.set_ylim([ymin, ymax*1.2])
+
+        handles, labels = ax1.get_legend_handles_labels()
+        lgd = ax1.legend(handles, labels, loc='upper right', bbox_to_anchor=(1.0,1.0))
+        #plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=2, mode="expand", borderaxespad=0.)
+
     plt.tight_layout()
     return fig
 
@@ -1035,6 +1043,17 @@ def get_vpar_mu_scales(num_cell_total_comps_tuple,Vpar_max=1.0,Mu_max=1.0):
     VPAR_SCALE = VPAR_CELL[:,0] #for mass dependent normalization
     MU_SCALE = MU_CELL[0,:]
     return VPAR_SCALE, MU_SCALE
+
+def get_vpar_mu_scales_meshgrid(num_cell_total_comps_tuple,Vpar_max=1.0,Mu_max=1.0):
+    #num_cell_total_comps_tuple[-3] = vpar cell
+    #num_cell_total_comps_tuple[-2] = mu cell
+    vpar_cell_dim_begin = -1.0*Vpar_max+(Vpar_max*1.0+Vpar_max*1.0)/float(num_cell_total_comps_tuple[-3])/2.0
+    vpar_cell_dim_end   =  1.0*Vpar_max-(Vpar_max*1.0+Vpar_max*1.0)/float(num_cell_total_comps_tuple[-3])/2.0
+    mu_cell_dim_begin = Mu_max*0.0+(Mu_max*1.0-Mu_max*0.0)/float(num_cell_total_comps_tuple[-2])/2.0
+    mu_cell_dim_end   = Mu_max*1.0-(Mu_max*1.0-Mu_max*0.0)/float(num_cell_total_comps_tuple[-2])/2.0
+    VPAR_CELL,MU_CELL = np.mgrid[vpar_cell_dim_begin:vpar_cell_dim_end:(num_cell_total_comps_tuple[-3]*1j),mu_cell_dim_begin:mu_cell_dim_end:(num_cell_total_comps_tuple[-2]*1j)]
+    
+    return VPAR_CELL, MU_CELL
 
 
 def get_maxwellian_coef(dfnfilename,mi,ti,me,te,nhat):
@@ -1056,7 +1075,7 @@ def get_maxwellian_coef(dfnfilename,mi,ti,me,te,nhat):
         coef_maxwell=nhat/np.sqrt(np.pi)*(0.5*mhat/That)**(1.5)
         print 'default (coef, mhat, That) = ', coef_maxwell, mhat, That
         return coef_maxwell,mhat,That
-    
+
 
 def get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE,mu_ind=0):
     #least square fitting on a slice of MU index=0
@@ -1066,7 +1085,7 @@ def get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SC
     optimize_func = lambda z: z[0]*np.exp(-z[1]*(VPAR_SCALE-z[2])**2)-data_dfn[:,mu_ind,0] 
     
     est_den, est_temp, est_shift = leastsq(optimize_func, [guess_den, guess_temp, guess_shift])[0]
-    fitted_f = est_den*np.exp(-est_temp*VPAR_SCALE**2)
+    fitted_f = est_den*np.exp(-est_temp*(VPAR_SCALE-est_shift)**2)
     t_fit = 1.0/(est_temp*2.0)
     n_fit = est_den*np.sqrt(np.pi)/(0.5*mhat/t_fit)**(1.5)/np.exp(-MU_SCALE[mu_ind]*Bhat/2.0/t_fit)
     vshift_fit = est_shift
@@ -1075,14 +1094,13 @@ def get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SC
 
 def get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE,mu_ind=0):
     #least square fitting on a slice of MU index=0
-    #guess_den =coef_maxwell 
     guess_temp =1.0/(2.0*That)
     guess_shift =0.0
     fixed_max_den=max(data_dfn[:,mu_ind,0])
     optimize_func = lambda z: fixed_max_den*np.exp(-z[0]*(VPAR_SCALE-z[1])**2)-data_dfn[:,mu_ind,0] 
     
     est_temp, est_shift = leastsq(optimize_func, [guess_temp, guess_shift])[0]
-    fitted_f = fixed_max_den*np.exp(-est_temp*VPAR_SCALE**2)
+    fitted_f = fixed_max_den*np.exp(-est_temp*(VPAR_SCALE-est_shift)**2)
     t_fit = 1.0/(est_temp*2.0)
     n_fit = fixed_max_den*np.sqrt(np.pi)/(0.5*mhat/t_fit)**(1.5)/np.exp(-MU_SCALE[mu_ind]*Bhat/2.0/t_fit)
     vshift_fit = est_shift
@@ -1178,11 +1196,11 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
         targetdir='./python_auto_plots'
 
     dataNd_dfn_comps=import_multdim_comps(filename=pathfilename)
-    title_var='$f(v_\parallel, \mu)$'
+    title_var=r'$f(\bar{v}_\parallel, \bar{\mu})$'
     num_cell_total_comps_tuple=dataNd_dfn_comps.shape
     from read_input_deck import *
     VPAR_SCALE, MU_SCALE = get_vpar_mu_scales(num_cell_total_comps_tuple,Vpar_max,Mu_max)
-    VPAR_N, MU_N = get_vpar_mu_scales(num_cell_total_comps_tuple)
+    VPAR_N, MU_N = get_vpar_mu_scales(num_cell_total_comps_tuple) #default max
     
     #velocity space
     fig_dfn2d=plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var)
@@ -1263,9 +1281,13 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     for i in range(data_2d_shape[1]):
         sys.stdout.write('mu_ind='+str(i))
         sys.stdout.flush()
-        #fitted_f, n_fit, t_fit, vshift_fit = get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
+        #fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
         fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
         data2d_maxwell[:,i,0]=fitted_f
+
+    #
+    #VPAR_CELL,MU_CELL=get_vpar_mu_scales_meshgrid(num_cell_total_comps_tuple,Vpar_max,Mu_max)
+
 
     plot_Nd(data2d_maxwell-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title="$f_M - f_{COGENT}$",interpolation='spline36')
     if saveplots>0:
@@ -1285,7 +1307,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     mu_pt=1
 
     fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
-    legend_maxwellian = '\n\nMAXWELLIAN\n'+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
+    legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
     oplot_1d(data2d_maxwell[:,mu_pt,0],fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
     if saveplots>0:
         if not os.path.exists(targetdir):
@@ -1345,7 +1367,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
         mlab.close(all=True)
 
     #sliced plot
-    fig=plot_Nd(f_vpar_mu_sum,title='integrated f',x_slice=2,y_slice=2,z_slice=2)
+    fig=plot_Nd(f_vpar_mu_sum,title='integrated f',x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)

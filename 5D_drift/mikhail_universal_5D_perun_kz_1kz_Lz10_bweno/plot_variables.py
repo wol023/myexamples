@@ -16,9 +16,9 @@ import time
 
 #############################################################
 ########################## diagnostic points
-x_pt = 3
-y_pt = 4
-z_pt = 7
+x_pt = 6
+y_pt = 16
+z_pt = 8
 #############################################################
 #############################################################
 from plot_cogent_pack import *
@@ -32,14 +32,28 @@ pword=lines[2]
 basepath=lines[3]
 targetpath=lines[4]
 nextline=lines[5]
-pathfiles=lines[6:]
+rawpathfiles=lines[6:]
 print 'host=',host
 print 'user=',user
 print 'pword=',pword
 print 'basepath=',basepath
 print 'targetpath=',targetpath
 print nextline
+#print rawpathfiles
+
+pathfiles=[]
+for i in range(len(rawpathfiles)):
+    if rawpathfiles[i].lstrip().startswith('#'): #skip comment
+        continue
+    line =rawpathfiles[i].rstrip() #skip blank line
+    if not line:
+        continue 
+    else:
+        pathfiles.append(line)
+
 print pathfiles
+
+
 paths=[]
 files=[]
 for i in range(len(pathfiles)):
