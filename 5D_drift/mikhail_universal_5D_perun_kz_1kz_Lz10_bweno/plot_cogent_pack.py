@@ -992,6 +992,26 @@ def plot_Nd(var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=
 
 
 
+def oplot_2d(var,x=[],y=[],fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',wh=1,fig_size_x=800,fig_size_y=600,linewidth=1.5,linestyle='-',color='b',label='',legend=[]):
+    #consider vpar-mu simple plot 
+    if fig==[]:
+        fig=plt.figure()
+        print 'here'
+    else:
+        fig=plt.figure(fig.number)
+        print 'there', fig.number
+    ax1=fig.gca()
+    if x==[] or y==[]:
+        x=np.linspace(-1,1,var.shape[0])
+        y=np.linspace( 0,1,var.shape[1])
+        x,y = np.meshgrid(x,y)
+    print 'x.shape=',x.shape
+    print 'y.shape=',y.shape
+    ax1.contour(x,y,var.T, 8 , label=label)
+    return fig
+
+
+
 def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,linewidth=1.5,linestyle='-',color='b',label='',legend=[]):
     #consider vpar-f simple plot 
     if fig==[]:
@@ -1075,6 +1095,51 @@ def get_maxwellian_coef(dfnfilename,mi,ti,me,te,nhat):
         coef_maxwell=nhat/np.sqrt(np.pi)*(0.5*mhat/That)**(1.5)
         print 'default (coef, mhat, That) = ', coef_maxwell, mhat, That
         return coef_maxwell,mhat,That
+
+
+
+def twoD_Gaussian_wrapper((x, y,b,m), n0, t0, vs0):
+    vs0 = float(vs0)
+    b = float(b)
+    m = float(m)
+    a = 1.0/(2*t0)
+    c = b/(2*t0)
+    amplitude = n0/np.sqrt(np.pi)*(m/(2.0*t0))**(1.5)
+    g = amplitude*np.exp( - (a*((x-vs0)**2) + c*(y)) )
+    return g.ravel()
+
+
+def get_maxwellian_fitting_2D(mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE):
+
+    fixed_max_den=max(data_dfn[:,0])
+    n_guess = fixed_max_den*np.sqrt(np.pi)/(0.5*mhat/That)**(1.5)/np.exp(-MU_SCALE[0]*Bhat/2.0/That)
+    vs_guess =0.0
+    t_guess =That
+    initial_guess = (n_guess,t_guess,vs_guess)
+
+    print "initial_guess=",initial_guess
+    
+    print "VPAR_SCALE.shape=", VPAR_SCALE.shape
+    print "MU_SCALE.shape=", MU_SCALE.shape
+
+    x,y = np.meshgrid(VPAR_SCALE,MU_SCALE)
+    print "x.shape=",x.shape
+    print "y.shape=",y.shape
+    
+    print "data_dfn.shape=",data_dfn.shape
+
+    popt, pcov = curve_fit(twoD_Gaussian_wrapper, (x, y,Bhat,mhat), data_dfn.T.ravel(), p0=initial_guess)
+    data_fitted_raveled = twoD_Gaussian_wrapper((x,y,Bhat,mhat),*popt)
+    data_fitted = data_fitted_raveled.reshape(len(MU_SCALE),len(VPAR_SCALE)).T
+    data_fitted = data_fitted.reshape(len(VPAR_SCALE),len(MU_SCALE),1)
+    print "data_fitted.shape=",data_fitted.shape
+
+    return data_fitted, popt
+
+
+
+
+
 
 
 def get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE,mu_ind=0):
@@ -1228,21 +1293,48 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
         plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.png'))
         plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.eps'))
         os.chdir(basedir)
-    if showplots==0:
-        plt.close('all')
+#    if showplots==0:
+#        plt.close('all')
         #plt.close(fig_dfn2d)
 
 
+    # For all mu maxwellian fitting
+    coef_maxwell,mhat,That = get_maxwellian_coef(pathfilename,ion_mass,t0_grid_func,elec_mass,et0_grid_func,nhat)
+    
+    #data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].shape
+    #data2d_maxwell=np.linspace(0.0,0.1,data_2d_shape[0]*data_2d_shape[1]*data_2d_shape[2]).reshape((data_2d_shape[0],data_2d_shape[1],data_2d_shape[2]))
+    #n_fit=np.linspace(0.0,0.1,data_2d_shape[1])
+    #t_fit=np.linspace(0.0,0.1,data_2d_shape[1])
+    #vshift_fit=np.linspace(0.0,0.1,data_2d_shape[1])
+    #for i in range(data_2d_shape[1]):
+    #    sys.stdout.write('mu_ind='+str(i))
+    #    sys.stdout.flush()
+    #    #fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
+    #    fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
+    #    data2d_maxwell[:,i,0]=fitted_f
 
-#    #example vpar plot overplot
-#    fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,:])),label='COGENT'%MU_N[0],legend=1 )
-#    #oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,1,:],fig=fig,xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,1,:])),label='f(mu=%g)'%(MU_N[1]),legend=1 )
-#    #example mu=0 fitting
-#    coef_maxwell,mhat,That = get_maxwellian_coef(pathfilename,ion_mass,t0_grid_func,elec_mass,et0_grid_func,nhat)
-#    fitted_f, n_fit, t_fit, vshift_fit = get_maxwellian_fitting(coef_maxwell,mhat, That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=0)
-#    # plot fitting
-#    legend_maxwellian = '\n\nMAXWELLIAN\n'+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit,t_fit,vshift_fit)
-#    oplot_1d(fitted_f,fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1)
+
+
+    #plot_Nd(data2d_maxwell-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title="$f_M - f_{COGENT}$",interpolation='spline36')
+    #if saveplots>0:
+    #    if not os.path.exists(targetdir):
+    #        os.mkdir(targetdir)
+    #        print targetdir+'/', 'is created.'
+    #    else:
+    #        print targetdir+'/', 'already exists.'
+    #    os.chdir(targetdir)
+    #    plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_interp.png'))
+    #    plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_interp.eps'))
+    #    os.chdir(basedir)
+    #if showplots==0:
+    #    plt.close('all')
+
+#    #plot difference
+#    mu_pt=1
+#
+#    fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+#    legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
+#    oplot_1d(data2d_maxwell[:,mu_pt,0],fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
 #    if saveplots>0:
 #        if not os.path.exists(targetdir):
 #            os.mkdir(targetdir)
@@ -1250,14 +1342,15 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
 #        else:
 #            print targetdir+'/', 'already exists.'
 #        os.chdir(targetdir)
-#        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_compare.png'))
-#        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_compare.eps'))
+#        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_mu_1.png'))
+#        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_mu_1.eps'))
 #        os.chdir(basedir)
 #    if showplots==0:
 #        plt.close('all')
 #
-#    #maxwell difference plot
-#    fig=oplot_1d(fitted_f-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,0],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,0,0])),label='(f_M-f_S)/f_M'%MU_N[0],legend=1 )
+#
+#     #maxwell difference plot
+#    fig=oplot_1d(data2d_maxwell[:,mu_pt,0]-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0],xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='f_M - f_S' )
 #    if saveplots>0:
 #        if not os.path.exists(targetdir):
 #            os.mkdir(targetdir)
@@ -1265,31 +1358,21 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
 #        else:
 #            print targetdir+'/', 'already exists.'
 #        os.chdir(targetdir)
-#        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff.png'))
-#        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff.eps'))
+#        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_at_1.png'))
+#        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_at_1.eps'))
 #        os.chdir(basedir)
 #    if showplots==0:
 #        plt.close('all')
 
-    # For all mu maxwellian fitting
-    coef_maxwell,mhat,That = get_maxwellian_coef(pathfilename,ion_mass,t0_grid_func,elec_mass,et0_grid_func,nhat)
-    data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].shape
-    data2d_maxwell=np.linspace(0.0,0.1,data_2d_shape[0]*data_2d_shape[1]*data_2d_shape[2]).reshape((data_2d_shape[0],data_2d_shape[1],data_2d_shape[2]))
-    n_fit=np.linspace(0.0,0.1,data_2d_shape[1])
-    t_fit=np.linspace(0.0,0.1,data_2d_shape[1])
-    vshift_fit=np.linspace(0.0,0.1,data_2d_shape[1])
-    for i in range(data_2d_shape[1]):
-        sys.stdout.write('mu_ind='+str(i))
-        sys.stdout.flush()
-        #fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
-        fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
-        data2d_maxwell[:,i,0]=fitted_f
-
-    #
-    #VPAR_CELL,MU_CELL=get_vpar_mu_scales_meshgrid(num_cell_total_comps_tuple,Vpar_max,Mu_max)
+ 
 
 
-    plot_Nd(data2d_maxwell-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title="$f_M - f_{COGENT}$",interpolation='spline36')
+    #2dfitting
+    data_fitted,popt=get_maxwellian_fitting_2D(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,0],VPAR_SCALE,MU_SCALE)
+    print "Popt=",popt
+
+    oplot_2d(data_fitted[:,:,0],fig=fig_dfn2d_interp)
+    #oplot_2d(data_fitted[:,:,0],fig=fit_2d)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1297,8 +1380,8 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
         else:
             print targetdir+'/', 'already exists.'
         os.chdir(targetdir)
-        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_interp.png'))
-        plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_interp.eps'))
+        plt.savefig(filename.replace('.hdf5','.vpar_mu_interp_maxwellian.png'))
+        plt.savefig(filename.replace('.hdf5','.vpar_mu_interp_maxwellian.eps'))
         os.chdir(basedir)
     if showplots==0:
         plt.close('all')
@@ -1307,8 +1390,8 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     mu_pt=1
 
     fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
-    legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
-    oplot_1d(data2d_maxwell[:,mu_pt,0],fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
+    legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(popt[0],popt[1],popt[2])
+    oplot_1d(data_fitted[:,mu_pt,0],fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1324,7 +1407,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
 
 
      #maxwell difference plot
-    fig=oplot_1d(data2d_maxwell[:,mu_pt,0]-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0],xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='f_M - f_S' )
+    fig=oplot_1d(data_fitted[:,mu_pt,0]-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0],xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='f_M - f_S' )
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1338,7 +1421,27 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     if showplots==0:
         plt.close('all')
 
-    
+    plot_Nd(data_fitted-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title="$f_M - f_{COGENT}$",interpolation='spline36')
+    if saveplots>0:
+        if not os.path.exists(targetdir):
+            os.mkdir(targetdir)
+            print targetdir+'/', 'is created.'
+        else:
+            print targetdir+'/', 'already exists.'
+        os.chdir(targetdir)
+        plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwell_2d_diff_interp.png'))
+        plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwell_2d_diff_interp.eps'))
+        os.chdir(basedir)
+    if showplots==0:
+        plt.close('all')
+
+
+
+
+
+
+
+   
 
     
     #get density by summation over velocity
