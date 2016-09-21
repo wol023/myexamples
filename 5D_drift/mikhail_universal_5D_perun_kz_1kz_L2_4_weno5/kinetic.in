@@ -5,8 +5,8 @@ simulation.verbosity = 10
 gksystem.verbosity   = 10
 gksystem.hdf_density = true
 gksystem.hdf_potential = true
-#gksystem.hdf_temperature = true
-#gksystem.hdf_dfn = true
+gksystem.hdf_temperature = true
+gksystem.hdf_dfn = true
 gksystem.hdf_efield = true
 gksystem.hdf_vparmu = true
 #gksystem.hdf_ParallelMomentum = true
@@ -75,6 +75,7 @@ gksystem.magnetic_geometry_mapping.slab.z_max = 2.4
 gksystem.magnetic_geometry_mapping.slab.Bz_inner = 3.0
 gksystem.magnetic_geometry_mapping.slab.Bz_outer = 3.0
 gksystem.magnetic_geometry_mapping.slab.By_inner = 0.0
+gksystem.magnetic_geometry_mapping.plot_magnetic_field = true
 
 
 ##miller
