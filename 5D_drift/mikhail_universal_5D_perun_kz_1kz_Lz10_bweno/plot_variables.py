@@ -80,7 +80,13 @@ for i in range(len(pathfiles)):
     status=check_and_try_cluster(pathfiles[i],host=host,username=user,password=pword,basepath=basepath,targetpath=targetpath)
     if status>0:
         if 'dfn' in pathfiles[i]:
-            plot_dfn(pathfiles[i],x_pt=x_pt,y_pt=y_pt,z_pt=z_pt,targetdir=plot_output)
+            if 'hydrogen' in pathfiles[i]:
+                speciesname='i'
+            elif 'electron' in pathfiles[i]:
+                speciesname='e'
+            else:
+                speciesname='s'
+            plot_dfn(pathfiles[i],speciesname=speciesname,x_pt=x_pt,y_pt=y_pt,z_pt=z_pt,targetdir=plot_output)
         if 'potential' in pathfiles[i]:
             plot_potential(pathfiles[i],ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=plot_output)
         if 'BField' in pathfiles[i]:
@@ -88,7 +94,13 @@ for i in range(len(pathfiles)):
         if 'efield' in pathfiles[i]:
             plot_evec(pathfiles[i],ghost=0,targetdir=plot_output)
         if 'density' in pathfiles[i]:
-            plot_density(pathfiles[i],ghost=0,targetdir=plot_output)
+            if 'hydrogen' in pathfiles[i]:
+                speciesname='i'
+            elif 'electron' in pathfiles[i]:
+                speciesname='e'
+            else:
+                speciesname='s'
+            plot_density(pathfiles[i],ghost=0,speciesname=speciesname,targetdir=plot_output)
     else:
         print 'No', pathfiles[i], 'is found.. skipping the file.'
 
