@@ -770,7 +770,7 @@ from mayavi import mlab
 
 #import multi component variables 
 
-def plot_Nd(var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1,interpolation='none',label=''):
+def plot_Nd(var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1,interpolation='none',label='',symmetric_cbar=0):
     #wh=1 # 0: black background, 1: whithe background
     #first check the rank of input data
     var_shape=var.shape
@@ -943,7 +943,18 @@ def plot_Nd(var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=
         fig=plt.figure()
         plt.subplot(111)
         #plt.gca().margins(0.1, 0.1)
-        im=plt.imshow(var[:,:,0].T,interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+        if symmetric_cbar>0:
+            v_min = var[:,:,0].min()
+            v_max = var[:,:,0].max()
+            if v_min<0 and v_max>0:
+                v_min=-max(abs(v_min),abs(v_max))
+                v_max=max(abs(v_min),abs(v_max))
+                v_max=max(abs(v_min),abs(v_max))
+                im=plt.imshow(var[:,:,0].T,vmin=v_min,vmax=v_max,interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+            else:
+                im=plt.imshow(var[:,:,0].T,interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+        else:
+            im=plt.imshow(var[:,:,0].T,interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
         if title=='':
             pass
         else:
@@ -1012,7 +1023,7 @@ def oplot_2d(var,x=[],y=[],fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='yl
 
 
 
-def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,linewidth=1.5,linestyle='-',color='b',label='',legend=[]):
+def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,linewidth=1.5,linestyle='-',color='b',label='',legend=[],symmetric_ylim=0):
     #consider vpar-f simple plot 
     if fig==[]:
         fig=plt.figure()
@@ -1035,6 +1046,12 @@ def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxi
         plt.ylabel(r'$f$')
     else:
         plt.ylabel(ylabel)
+
+    if symmetric_ylim>0:
+        ymin, ymax = ax1.get_ylim()
+        if ymin<0 and ymax>0:
+           ax1.set_ylim([-max(abs(ymin), abs(ymax)),max(abs(ymin),abs(ymax))])
+
     if legend==[]:
         pass
     else:
@@ -1250,7 +1267,7 @@ def get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max):
 
 
 
-def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir=[]):
+def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir=[]):
     head=os.path.split(pathfilename)
     path=head[0]
     filename=head[1]
@@ -1261,7 +1278,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
         targetdir='./python_auto_plots'
 
     dataNd_dfn_comps=import_multdim_comps(filename=pathfilename)
-    title_var=r'$f(\bar{v}_\parallel, \bar{\mu})$'
+    title_var=r'$f_%s(\bar{v}_\parallel, \bar{\mu})$'%speciesname
     num_cell_total_comps_tuple=dataNd_dfn_comps.shape
     from read_input_deck import *
     VPAR_SCALE, MU_SCALE = get_vpar_mu_scales(num_cell_total_comps_tuple,Vpar_max,Mu_max)
@@ -1269,30 +1286,34 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     
     #velocity space
     fig_dfn2d=plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var)
-    if saveplots>0:
-        if not os.path.exists(targetdir):
-            os.mkdir(targetdir)
-            print targetdir+'/', 'is created.'
-        else:
-            print targetdir+'/', 'already exists.'
-        os.chdir(targetdir)
-        plt.savefig(filename.replace('.hdf5','.vpar_mu.png'))
-        plt.savefig(filename.replace('.hdf5','.vpar_mu.eps'))
-        os.chdir(basedir)
-    if showplots==0:
-        plt.close('all')
-    
-    fig_dfn2d_interp=plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var,interpolation='spline36')
-    if saveplots>0:
-        if not os.path.exists(targetdir):
-            os.mkdir(targetdir)
-            print targetdir+'/', 'is created.'
-        else:
-            print targetdir+'/', 'already exists.'
-        os.chdir(targetdir)
-        plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.png'))
-        plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.eps'))
-        os.chdir(basedir)
+#uncomment below for dfn2d plot
+#    if saveplots>0:
+#        if not os.path.exists(targetdir):
+#            os.mkdir(targetdir)
+#            print targetdir+'/', 'is created.'
+#        else:
+#            print targetdir+'/', 'already exists.'
+#        os.chdir(targetdir)
+#        plt.savefig(filename.replace('.hdf5','.vpar_mu.png'))
+#        plt.savefig(filename.replace('.hdf5','.vpar_mu.eps'))
+#        os.chdir(basedir)
+
+ #uncomment below for interpolation plot
+ #   if showplots==0:
+ #       plt.close('all')
+ #   
+ #   fig_dfn2d_interp=plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var,interpolation='spline36')
+ #   if saveplots>0:
+ #       if not os.path.exists(targetdir):
+ #           os.mkdir(targetdir)
+ #           print targetdir+'/', 'is created.'
+ #       else:
+ #           print targetdir+'/', 'already exists.'
+ #       os.chdir(targetdir)
+ #       plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.png'))
+ #       plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.eps'))
+ #       os.chdir(basedir)
+
 #    if showplots==0:
 #        plt.close('all')
         #plt.close(fig_dfn2d)
@@ -1371,7 +1392,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     data_fitted,popt=get_maxwellian_fitting_2D(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,0],VPAR_SCALE,MU_SCALE)
     print "Popt=",popt
 
-    oplot_2d(data_fitted[:,:,0],fig=fig_dfn2d_interp)
+    oplot_2d(data_fitted[:,:,0],fig=fig_dfn2d)
     #oplot_2d(data_fitted[:,:,0],fig=fit_2d)
     if saveplots>0:
         if not os.path.exists(targetdir):
@@ -1390,8 +1411,8 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     mu_pt=1
 
     fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
-    legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(popt[0],popt[1],popt[2])
-    oplot_1d(data_fitted[:,mu_pt,0],fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
+    legend_maxwellian = 'Maxwell. '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(popt[0],popt[1],popt[2])
+    oplot_1d(data_fitted[:,mu_pt,0],fig,title=('$f_'+speciesname)+'(\mu=%.g)$'%MU_N[mu_pt],linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel=r'$f_%s$'%speciesname)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1407,7 +1428,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
 
 
      #maxwell difference plot
-    fig=oplot_1d(data_fitted[:,mu_pt,0]-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0],xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='f_M - f_S' )
+    fig=oplot_1d(data_fitted[:,mu_pt,0]-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0],xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$f_M-f_%s$'%speciesname,legend=1,ylabel='$\delta f$' ,symmetric_ylim=1, title=('$f_M-f_'+speciesname)+'(\mu=%.g)$'%MU_N[mu_pt])
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1421,7 +1442,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     if showplots==0:
         plt.close('all')
 
-    plot_Nd(data_fitted-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title="$f_M - f_{COGENT}$",interpolation='spline36')
+    plot_Nd(data_fitted-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title='$f_M-f_%s$'%speciesname,interpolation='spline36',symmetric_cbar=1)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1446,7 +1467,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
     
     #get density by summation over velocity
     f_vpar_mu_sum = get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max)
-    fig=plot_Nd(f_vpar_mu_sum,title='integrated f')
+    fig=plot_Nd(f_vpar_mu_sum,title='<f_%s>'%speciesname)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1470,7 +1491,7 @@ def plot_dfn(pathfilename,saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir
         mlab.close(all=True)
 
     #sliced plot
-    fig=plot_Nd(f_vpar_mu_sum,title='integrated f',x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
+    fig=plot_Nd(f_vpar_mu_sum,title='<f_%s>'%speciesname,x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1670,7 +1691,7 @@ def plot_evec(pathfilename,saveplots=1,showplots=0,ghost=0,targetdir=[]):
 
 
     
-def plot_density(pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+def plot_density(pathfilename,saveplots=1,showplots=0,ghost=0,speciesname='',x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
     head=os.path.split(pathfilename)
     path=head[0]
     filename=head[1]
@@ -1683,7 +1704,7 @@ def plot_density(pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slic
     dataNd_density_comps=import_multdim_comps(filename=pathfilename)
     if ghost>0:
         dataNd_density_with_outer_ghost_comps,num_ghost_density=import_multdim_comps(filename=pathfilename,withghost=1)
-    title_var='density'
+    title_var='density, '+speciesname
     
     fig=plot_Nd(dataNd_density_comps,title=title_var)
     if saveplots>0:
