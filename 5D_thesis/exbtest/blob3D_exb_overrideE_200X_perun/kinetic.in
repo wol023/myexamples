@@ -110,9 +110,9 @@ gksystem.fixed_efield = true
 
 
 gksystem.prescribed_efield = true
-gksystem.prescribed_efield.ER =  0.0
+gksystem.prescribed_efield.ER =  200.0
 gksystem.prescribed_efield.EPhi = 0.0
-gksystem.prescribed_efield.EZ =  -200.0
+gksystem.prescribed_efield.EZ =  0.0
 
 
 
@@ -216,6 +216,7 @@ grid_function_library.T0_grid_func.phase = 0 0 0
 grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
 grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+#grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
 
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"

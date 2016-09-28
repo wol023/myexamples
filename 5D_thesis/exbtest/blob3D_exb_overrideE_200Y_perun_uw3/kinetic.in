@@ -98,9 +98,9 @@ gkvlasov.verbose = true
 gkvlasov.time_step_diagnostics = true
 
 #gkvlasov.face_avg_type = uw1
-#gkvlasov.face_avg_type = uw3
+gkvlasov.face_avg_type = uw3
 #gkvlasov.face_avg_type = uw5
-gkvlasov.face_avg_type = weno5
+#gkvlasov.face_avg_type = weno5
 #gkvlasov.face_avg_type = bweno
 
 #####################################################

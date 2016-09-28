@@ -11,7 +11,7 @@ gksystem.hdf_efield = true
 gksystem.hdf_vparmu = true
 
 
-gksystem.fixed_plot_indices = 8 16 4 4 4
+gksystem.fixed_plot_indices = 8 8 8 4 4
 
 gksystem.ti_class = "rk"
 gksystem.ti_method = "4"
@@ -25,13 +25,13 @@ simulation.max_time            = 100000.0
 #simulation.initial_dt_fraction = 0.5
 #simulation.cfl_number          = 0.9
 #simulation.fixed_dt           = 0.0003
-simulation.fixed_dt           = 0.0050
+simulation.fixed_dt           = 0.50
 simulation.fixed_dt_subiteration  = true
 ##simulation.fixed_dt           = 0.001
 simulation.checkpoint_interval = 100
 simulation.checkpoint_prefix   = "chk"
 #simulation.restart_file = "chk1500.4d.hdf5"
-simulation.plot_interval       = 2
+simulation.plot_interval       = 1
 simulation.plot_prefix         = "plt"
 simulation.histories = true
 simulation.1.history_field = "potential"
@@ -41,12 +41,12 @@ simulation.1.history_indices = 4 2 2
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 32 32  16 24 16
+gksystem.num_cells   = 16 16 64 32 16
 gksystem.is_periodic =  1  1  1  0  0
 
-gksystem.configuration_decomp = 4 4 2 
-gksystem.velocity_decomp      =       4 4
-gksystem.phase_decomp         = 4 4 2 2 1
+gksystem.configuration_decomp = 2 2 8 
+gksystem.velocity_decomp      =       4 1
+gksystem.phase_decomp         = 2 2 8 4 1
 
 
 #####################################################
@@ -64,7 +64,6 @@ units.magnetic_field = 1.0
 gksystem.magnetic_geometry_mapping = "Slab"
 gksystem.magnetic_geometry_mapping.slab.verbose  = true
 gksystem.magnetic_geometry_mapping.slab.visit_plotfile  = "SlabViz"
-gksystem.magnetic_geometry_mapping.slab.axisymmetric  = false
 gksystem.magnetic_geometry_mapping.slab.num_quad_points = 5
 gksystem.magnetic_geometry_mapping.slab.axisymmetric = false
 gksystem.magnetic_geometry_mapping.slab.x_max = 0.04
@@ -78,8 +77,8 @@ gksystem.magnetic_geometry_mapping.plot_magnetic_field = true
 #####################################################
 # Phase Space Geometry Definitions
 #####################################################
-phase_space_mapping.v_parallel_max = 4.0
-phase_space_mapping.mu_max = 3.0
+phase_space_mapping.v_parallel_max = 5.0
+phase_space_mapping.mu_max = 4.0
 phase_space_mapping.second_order = true
 phase_space_mapping.velocity_type = "gyrokinetic"
 
@@ -109,10 +108,10 @@ gkvlasov.face_avg_type = weno5
 gksystem.fixed_efield = true
 
 
-gksystem.prescribed_efield = true
+gksystem.prescribed_efield = false
 gksystem.prescribed_efield.ER =  0.0
 gksystem.prescribed_efield.EPhi = 0.0
-gksystem.prescribed_efield.EZ =  -200.0
+gksystem.prescribed_efield.EZ =  0.0
 
 
 
@@ -206,16 +205,14 @@ grid_function_library.potential_grid_func.type = "arbitrary"
 #grid_function_library.potential_grid_func.function = "( 0.0000001*exp(-(x-pi)^2/(2*pi*0.002/0.02))*sin(y) )"
 grid_function_library.potential_grid_func.function = "( 0.0)"
 
-grid_function_library.T0_grid_func.type = "cosine"
-grid_function_library.T0_grid_func.constant = 1.0
-grid_function_library.T0_grid_func.amplitude = 0.
-grid_function_library.T0_grid_func.mode = 1 0 0
-grid_function_library.T0_grid_func.phase = 0 0 0
+grid_function_library.T0_grid_func.type = "arbitrary"
+grid_function_library.T0_grid_func.function = "1.0"
 
 
 grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
-grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+#grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.005/0.04)-(y-pi)^2/(2*pi*0.005/0.04)-(z-pi)^2/(2*pi*1.0/100))   )"
 
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"

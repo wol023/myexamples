@@ -9,29 +9,27 @@ gksystem.hdf_temperature = true
 gksystem.hdf_dfn = true
 gksystem.hdf_efield = true
 gksystem.hdf_vparmu = true
+gksystem.fixed_plot_indices = 8 8 4 4 4
 
-
-gksystem.fixed_plot_indices = 8 16 4 4 4
-
-gksystem.ti_class = "rk"
-gksystem.ti_method = "4"
-
+#gksystem.using_F0 = true
+#gksystem.imposing_bc_to_perturbation = true
+#gksystem.imposing_bc_to_perturbation_rescale = true
 #####################################################
 # Time Stepping Definitions
 #####################################################
-simulation.max_step            = 70
+simulation.max_step            = 10000
 simulation.max_time            = 100000.0
 #simulation.max_dt_grow         = 1.1
 #simulation.initial_dt_fraction = 0.5
 #simulation.cfl_number          = 0.9
 #simulation.fixed_dt           = 0.0003
-simulation.fixed_dt           = 0.0050
-simulation.fixed_dt_subiteration  = true
+simulation.fixed_dt           = 0.0025
+#simulation.fixed_dt_subiteration  = true
 ##simulation.fixed_dt           = 0.001
-simulation.checkpoint_interval = 100
+simulation.checkpoint_interval = 10
 simulation.checkpoint_prefix   = "chk"
 #simulation.restart_file = "chk1500.4d.hdf5"
-simulation.plot_interval       = 2
+simulation.plot_interval       = 1
 simulation.plot_prefix         = "plt"
 simulation.histories = true
 simulation.1.history_field = "potential"
@@ -41,19 +39,19 @@ simulation.1.history_indices = 4 2 2
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 32 32  16 24 16
+gksystem.num_cells   = 16 16 32 48 16
 gksystem.is_periodic =  1  1  1  0  0
 
-gksystem.configuration_decomp = 4 4 2 
+gksystem.configuration_decomp = 2 4 4 
 gksystem.velocity_decomp      =       4 4
-gksystem.phase_decomp         = 4 4 2 2 1
+gksystem.phase_decomp         = 2 4 4 4 1
 
 
 #####################################################
 # Units Definitions
 #####################################################
 units.number_density = 1.0e20
-units.temperature    = 400.0
+units.temperature    = 1.0e3
 units.length         = 1.0
 units.mass           = 1.0
 units.magnetic_field = 1.0 
@@ -64,12 +62,11 @@ units.magnetic_field = 1.0
 gksystem.magnetic_geometry_mapping = "Slab"
 gksystem.magnetic_geometry_mapping.slab.verbose  = true
 gksystem.magnetic_geometry_mapping.slab.visit_plotfile  = "SlabViz"
-gksystem.magnetic_geometry_mapping.slab.axisymmetric  = false
 gksystem.magnetic_geometry_mapping.slab.num_quad_points = 5
 gksystem.magnetic_geometry_mapping.slab.axisymmetric = false
 gksystem.magnetic_geometry_mapping.slab.x_max = 0.04
 gksystem.magnetic_geometry_mapping.slab.y_max = 0.04
-gksystem.magnetic_geometry_mapping.slab.z_max = 100.0
+gksystem.magnetic_geometry_mapping.slab.z_max = 0.08
 gksystem.magnetic_geometry_mapping.slab.Bz_inner = 3.0
 gksystem.magnetic_geometry_mapping.slab.Bz_outer = 3.0
 gksystem.magnetic_geometry_mapping.slab.By_inner = 0.0
@@ -78,61 +75,55 @@ gksystem.magnetic_geometry_mapping.plot_magnetic_field = true
 #####################################################
 # Phase Space Geometry Definitions
 #####################################################
-phase_space_mapping.v_parallel_max = 4.0
-phase_space_mapping.mu_max = 3.0
-phase_space_mapping.second_order = true
+phase_space_mapping.v_parallel_max = 3.0
+phase_space_mapping.mu_max = 0.05
 phase_space_mapping.velocity_type = "gyrokinetic"
-
 #phase_space_mapping.velocity_type = "ExB"
 #phase_space_mapping.velocity_type = "annular_poloidal_velocity"
 #phase_space_mapping.velocity_type = "annular_radial_velocity"
 #phase_space_mapping.velocity_type = "annular_radpol_velocity"
-#phase_space_mapping.no_drifts = false
-#phase_space_mapping.physical_velocity_components = true
-
+phase_space_mapping.no_drifts = false
+phase_space_mapping.physical_velocity_components = true
+phase_space_mapping.second_order = true
 
 #####################################################
 # Vlasov Operator Definitions
 #####################################################
 gkvlasov.verbose = true
-gkvlasov.time_step_diagnostics = true
-
 #gkvlasov.face_avg_type = uw1
 #gkvlasov.face_avg_type = uw3
 #gkvlasov.face_avg_type = uw5
-gkvlasov.face_avg_type = weno5
-#gkvlasov.face_avg_type = bweno
+#gkvlasov.face_avg_type = weno5
+gkvlasov.face_avg_type = bweno
 
 #####################################################
 # Poisson Operator Definitions
 #####################################################
 gksystem.fixed_efield = true
 
-
-gksystem.prescribed_efield = true
-gksystem.prescribed_efield.ER =  0.0
-gksystem.prescribed_efield.EPhi = 0.0
-gksystem.prescribed_efield.EZ =  -200.0
+gksystem.prescribed_efield = false
+gksystem.prescribed_efield.Ex =    0.0
+gksystem.prescribed_efield.Ey =    0.0
+gksystem.prescribed_efield.Ez =  200.0
 
 
 
 gkpoisson.verbose = true
-gkpoisson.second_order = true
 
-#gkpoissonboltzmann.preserve_initial_ni_average = true
+gkpoissonboltzmann.preserve_initial_ni_average = true
 
 #gkpoissonboltzmann.prefactor = global_neutrality
 #gkpoissonboltzmann.prefactor = global_neutrality_initial
 #gkpoissonboltzmann.prefactor = fs_neutrality
 #gkpoissonboltzmann.prefactor = fs_neutrality_initial
-#gkpoissonboltzmann.prefactor = fs_neutrality_global_ni
+gkpoissonboltzmann.prefactor = fs_neutrality_global_ni
 #gkpoissonboltzmann.prefactor = fs_neutrality_initial_fs_ni
 
-#gkpoissonboltzmann.verbose = true
-#gkpoissonboltzmann.nonlinear_relative_tolerance = 1.e-5
-#gkpoissonboltzmann.nonlinear_maximum_iterations = 20
+gkpoissonboltzmann.verbose = true
+gkpoissonboltzmann.nonlinear_relative_tolerance = 1.e-5
+gkpoissonboltzmann.nonlinear_maximum_iterations = 20
 
-gkpoissonboltzmann.second_order = true
+#gkpoissonboltzmann.second_order = true
 #gkpoisson.second_order = true
 #####################################################
 # Species Definitions
@@ -172,7 +163,6 @@ BC.hydrogen.mu_upper.function = "maxwellian_phase_func"
 
 #BC.potential.radial_inner.type = "neumann"
 #BC.potential.radial_outer.type = "neumann"
-
 BC.potential.radial_lower.type = "neumann"
 BC.potential.radial_upper.type = "neumann"
 BC.potential.poloidal_lower.type = "neumann"
@@ -204,21 +194,19 @@ grid_function_library.list = "potential_grid_func" "T0_grid_func" "N0_grid_func"
 grid_function_library.potential_grid_func.type = "arbitrary" 
 #grid_function_library.potential_grid_func.function = "( -0.0001*exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi/2)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0008/0.02)) )"
 #grid_function_library.potential_grid_func.function = "( 0.0000001*exp(-(x-pi)^2/(2*pi*0.002/0.02))*sin(y) )"
-grid_function_library.potential_grid_func.function = "( 0.0)"
+grid_function_library.potential_grid_func.function = "( -0.0000001*sin(y) )"
 
-grid_function_library.T0_grid_func.type = "cosine"
-grid_function_library.T0_grid_func.constant = 1.0
-grid_function_library.T0_grid_func.amplitude = 0.
-grid_function_library.T0_grid_func.mode = 1 0 0
-grid_function_library.T0_grid_func.phase = 0 0 0
+grid_function_library.T0_grid_func.type = "arbitrary"
+grid_function_library.T0_grid_func.function = "0.01"
 
 
 grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
-grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04)-(z-pi/2)^2/(2*pi*0.0005/0.08)    )   )"
 
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
-grid_function_library.Ion_vpar_grid_func.value = 0.0
+grid_function_library.Ion_vpar_grid_func.value = -2.0
+
 
 
