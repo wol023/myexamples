@@ -1333,7 +1333,8 @@ nonlin_yplotv_fit = scipy.fftpack.fftshift(nonlin_yfv_fit)
 
 ###########################################
 
-legend_data_fit = r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_point, abs(est_freq)/omega_star_point*(1.0+chi*chi))+'\n'+r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_analytic, abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
+#legend_data_fit = r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_point, abs(est_freq)/omega_star_point*(1.0+chi*chi))+'\n'+r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_analytic, abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
+legend_data_fit = r'$\omega/\omega^*$'+' = %g'%(abs(est_freq)/omega_star_analytic)+'\n'+r'$\omega/\omega^*_d$'+' = %g'%(abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
 
 init_plotting()
 plt.subplot(111)
@@ -1407,7 +1408,7 @@ refine_est_growth=est_growth #fix growth rate
 print 'est_freq. = ',est_freq
 print 'refine_est_freq. = ',refine_est_freq
 
-legend_data_fit_with_growth = r'$\gamma/\omega^*, \gamma/\omega^*_d$'+' = (%g, %g)'% ( lin_fitted_logy2[0]/2.0/omega_star_point, lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+chi*chi))+'\n'+r'$\gamma/\omega^*, \gamma/\omega^*_d$'+' = (%g, %g)'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic, lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
+legend_data_fit_with_growth = r'$\gamma/\omega^*$'+' = %g'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic)+'\n'+r'$\gamma/\omega^*_d$'+' = %g'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
 init_plotting()
 plt.subplot(111)
 plt.gca().margins(0.1, 0.1)
@@ -1485,6 +1486,8 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'gamma/omega_fit = %f\n'%(refine_est_growth/abs(est_freq))
     fh.write(buf)
+    buf = 'omega/kpar = %f\n'%((abs(est_freq))/k_par)
+    fh.write(buf)
 
 
 print "te = " , (units_temperature*electron_temperature)
@@ -1519,17 +1522,18 @@ print 'gamma/omega*_point_1_chi2  = ',(refine_est_growth/omega_star_point*(1.0+c
 print 'gamma/omega*_analytic_1_chi2  = ',(refine_est_growth/omega_star_analytic*(1.0+chi*chi))
 print 'gamma/omega*_spline_1_chi2 = ',(refine_est_growth/omega_star_spline*(1.0+chi*chi))
 print 'gamma/omega_fit = ',(refine_est_growth/abs(est_freq))
+print 'omega/kpar= ',((abs(est_freq))/k_par)
 
 
 with open('finish_kparhat_chi_gamma_omega2.txt', 'wb') as fh:
-    buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\n" 
+    buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\tomega/kpar\n" 
     fh.write(buf)
-    buf = "%f\t%f\t%f\t%f\t%f\t%f\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ) )
+    buf = "%f\t%f\t%f\t%f\t%f\t%f\t%g\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ),((abs(est_freq))/k_par))
     fh.write(buf)
 
 
 import pylab
-from PIL import Image
+import Image
 init_plotting('2x3')
 f = pylab.figure()
 for n, fname in enumerate(('foo1.png', 'foo2.png', 'foo3.png', 'foo4.png', 'foo5.png','foo6.png')):

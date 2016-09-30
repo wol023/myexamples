@@ -303,6 +303,9 @@ def import_multdim_comps(filename,withghost=0):
         #print 
         #print File['level_0']['data_attributes'].attrs.keys()
         
+        cogent_time = File['level_0'].attrs.get('time')
+        print 'cogent_time =',cogent_time,type(cogent_time)
+
         ghost = File['level_0']['data_attributes'].attrs.get('ghost')
         print 'ghost=',ghost
         comps = File['level_0']['data_attributes'].attrs.get('comps')
@@ -687,14 +690,14 @@ def import_multdim_comps(filename,withghost=0):
         if (withghost==1):
             print 'Added outer ghost cells',ghost
             print num_cell_total_comps,'->',dataNd_bvec_with_outer_ghost_comps.shape
-            return dataNd_bvec_with_outer_ghost_comps, ghost
+            return dataNd_bvec_with_outer_ghost_comps, ghost, cogent_time
         elif (withghost==2):
             print 'Added inner and outer ghost cells',ghost
             print num_cell_total_comps,'->',dataNd_bvec_with_ghost_comps.shape
-            return dataNd_bvec_with_ghost_comps, ghost
+            return dataNd_bvec_with_ghost_comps, ghost, cogent_time
         else:
             print num_cell_total_comps,'->',dataNd_bvec_comps.shape
-            return dataNd_bvec_comps
+            return dataNd_bvec_comps, cogent_time
 
 def check_and_try_cluster(pathfilename,host=[],username=[],password=[],basepath=[],targetpath=[]):
     head=os.path.split(pathfilename)
@@ -890,6 +893,7 @@ def plot_Nd(var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=
             cb=mlab.colorbar(title=title,orientation='vertical' )
             cb.title_text_property.color=(1-wh,1-wh,1-wh)
             cb.label_text_property.color=(1-wh,1-wh,1-wh)
+
         else:
             #try slice plot 
             fig=mlab.figure(bgcolor=(wh,wh,wh),size=(fig_size_x,fig_size_y))
@@ -1056,10 +1060,11 @@ def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxi
         pass
     else:
         ymin, ymax = ax1.get_ylim()
-        ax1.set_ylim([ymin, ymax*1.2])
+        ax1.set_ylim([ymin, ymax*1.25])
 
         handles, labels = ax1.get_legend_handles_labels()
-        lgd = ax1.legend(handles, labels, loc='upper right', bbox_to_anchor=(1.0,1.0))
+        lgd = ax1.legend(handles, labels, loc='upper left', bbox_to_anchor=(0.0,1.0))
+        #lgd = ax1.legend(handles, labels, loc='upper right', bbox_to_anchor=(1.0,1.0))
         #plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=2, mode="expand", borderaxespad=0.)
 
     plt.tight_layout()
@@ -1277,8 +1282,9 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
     if targetdir==[]:
         targetdir='./python_auto_plots'
 
-    dataNd_dfn_comps=import_multdim_comps(filename=pathfilename)
+    dataNd_dfn_comps,cogent_time=import_multdim_comps(filename=pathfilename)
     title_var=r'$f_%s(\bar{v}_\parallel, \bar{\mu})$'%speciesname
+    title_var=title_var+r'$(t=%.2f)$'%cogent_time
     num_cell_total_comps_tuple=dataNd_dfn_comps.shape
     from read_input_deck import *
     VPAR_SCALE, MU_SCALE = get_vpar_mu_scales(num_cell_total_comps_tuple,Vpar_max,Mu_max)
@@ -1410,9 +1416,49 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
     #plot difference
     mu_pt=1
 
+    #hard coding
+    print 'Trying readding post processing file: finish.txt'
+    wave_phase_speed = -1.0
+    thermal_speed = -1.0
+    fname=find('finish.txt', './')
+    if len(fname)==0:
+        print 'finish.txt file was not found!'
+    else:
+        with open(fname[0], 'r') as f:
+            for line in f:
+                if line.lstrip().startswith('**'): #skip comment
+                    continue
+                line =line.rstrip() #skip blank line
+                if not line:
+                    continue 
+                else: #noncomment line
+                    strippedline=line
+                    if 'omega/kpar' in strippedline:
+                        lhsrhs = strippedline.split("=")
+                        #print lhsrhs[0],'=',lhsrhs[1],type(lhsrhs[1])
+                        wave_phase_speed = float(lhsrhs[1])
+                        print lhsrhs[0],'=', wave_phase_speed, type(wave_phase_speed)
+                    elif 'THERMAL SPEED' in strippedline:
+                        lhsrhs = strippedline.split("=")
+                        thermal_speed = float(lhsrhs[1])
+                        print lhsrhs[0],'=', thermal_speed, type(thermal_speed)
+                    else:
+                        continue
+ 
+
     fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+
+    if wave_phase_speed != -1.0:
+        normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
+        plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
+
     legend_maxwellian = 'Maxwell. '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(popt[0],popt[1],popt[2])
-    oplot_1d(data_fitted[:,mu_pt,0],fig,title=('$f_'+speciesname)+'(\mu=%.g)$'%MU_N[mu_pt],linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel=r'$f_%s$'%speciesname)
+
+    title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
+    title_var=title_var+r' $t=%.2f)$'%cogent_time
+    oplot_1d(data_fitted[:,mu_pt,0],fig,title=title_var,linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel=r'$f_%s$'%speciesname)
+          
+
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1428,7 +1474,14 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
 
 
      #maxwell difference plot
-    fig=oplot_1d(data_fitted[:,mu_pt,0]-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0],xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$f_M-f_%s$'%speciesname,legend=1,ylabel='$\delta f$' ,symmetric_ylim=1, title=('$f_M-f_'+speciesname)+'(\mu=%.g)$'%MU_N[mu_pt])
+    if wave_phase_speed != -1.0:
+        fig=plt.figure()
+        normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
+        plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
+
+    title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
+    title_var=title_var+r' $t=%.2f)$'%cogent_time
+    fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0],fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$f_%s-f_M$'%speciesname,legend=1,ylabel='$f_'+speciesname+'-f_M$',symmetric_ylim=1, title=title_var)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1442,7 +1495,10 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
     if showplots==0:
         plt.close('all')
 
-    plot_Nd(data_fitted-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title='$f_M-f_%s$'%speciesname,interpolation='spline36',symmetric_cbar=1)
+
+    title_var='$f_%s-f_M$'%speciesname
+    title_var=title_var+r'$(t=%.2f)$'%cogent_time
+    plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data_fitted,title=title_var,interpolation='spline36',symmetric_cbar=1)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1467,7 +1523,7 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
     
     #get density by summation over velocity
     f_vpar_mu_sum = get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max)
-    fig=plot_Nd(f_vpar_mu_sum,title='<f_%s>'%speciesname)
+    fig=plot_Nd(f_vpar_mu_sum,title='<f_%s>'%speciesname+',t=%.2f'%cogent_time)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1491,7 +1547,7 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
         mlab.close(all=True)
 
     #sliced plot
-    fig=plot_Nd(f_vpar_mu_sum,title='<f_%s>'%speciesname,x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
+    fig=plot_Nd(f_vpar_mu_sum,title='<f_%s>'%speciesname+',t=%.2f'%cogent_time,x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1519,10 +1575,11 @@ def plot_potential(pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_sl
     if targetdir==[]:
         targetdir='./python_auto_plots'
     
-    dataNd_potential_comps=import_multdim_comps(filename=pathfilename)
+    dataNd_potential_comps, cogent_time=import_multdim_comps(filename=pathfilename)
     if ghost>0:
-        dataNd_potential_with_outer_ghost_comps,num_ghost_potential=import_multdim_comps(filename=pathfilename,withghost=1)
+        dataNd_potential_with_outer_ghost_comps,num_ghost_potential,cogent_time=import_multdim_comps(filename=pathfilename,withghost=1)
     title_var='potential'
+    title_var=title_var+'(t=%.2f)'%cogent_time
     
     fig=plot_Nd(dataNd_potential_comps,title=title_var)
     if saveplots>0:
@@ -1598,9 +1655,9 @@ def plot_bvec(pathfilename,saveplots=1,showplots=0,ghost=0,targetdir=[]):
     if targetdir==[]:
         targetdir='./python_auto_plots'
 
-    dataNd_bvec_comps=import_multdim_comps(filename=pathfilename)
+    dataNd_bvec_comps,cogent_time=import_multdim_comps(filename=pathfilename)
     if ghost>0:
-        dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec =import_multdim_comps(filename=pathfilename,withghost=1)
+        dataNd_bvec_with_outer_ghost_comps,num_ghost_bvec,cogent_time =import_multdim_comps(filename=pathfilename,withghost=1)
     title_var='B field'
     
     fig=plot_Nd(dataNd_bvec_comps,title=title_var)
@@ -1649,10 +1706,11 @@ def plot_evec(pathfilename,saveplots=1,showplots=0,ghost=0,targetdir=[]):
     if targetdir==[]:
         targetdir='./python_auto_plots'
 
-    dataNd_evec_comps=import_multdim_comps(filename=pathfilename)
+    dataNd_evec_comps,cogent_time=import_multdim_comps(filename=pathfilename)
     if ghost>0:
-        dataNd_evec_with_outer_ghost_comps,num_ghost_evec=import_multdim_comps(filename=pathfilename,withghost=1)
+        dataNd_evec_with_outer_ghost_comps,num_ghost_evec,cogent_time=import_multdim_comps(filename=pathfilename,withghost=1)
     title_var='E field'
+    title_var=title_var+'(t=%.2f)'%cogent_time
     
     fig=plot_Nd(dataNd_evec_comps,title=title_var)
     if saveplots>0:
@@ -1701,10 +1759,11 @@ def plot_density(pathfilename,saveplots=1,showplots=0,ghost=0,speciesname='',x_s
     if targetdir==[]:
         targetdir='./python_auto_plots'
 
-    dataNd_density_comps=import_multdim_comps(filename=pathfilename)
+    dataNd_density_comps,cogent_time=import_multdim_comps(filename=pathfilename)
     if ghost>0:
-        dataNd_density_with_outer_ghost_comps,num_ghost_density=import_multdim_comps(filename=pathfilename,withghost=1)
+        dataNd_density_with_outer_ghost_comps,num_ghost_density,cogent_time=import_multdim_comps(filename=pathfilename,withghost=1)
     title_var='density, '+speciesname
+    title_var=title_var+'(t=%.2f)'%cogent_time
     
     fig=plot_Nd(dataNd_density_comps,title=title_var)
     if saveplots>0:

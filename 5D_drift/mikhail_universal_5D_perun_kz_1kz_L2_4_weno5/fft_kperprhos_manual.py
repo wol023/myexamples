@@ -159,17 +159,72 @@ def findmodenumber(token,tofind): #token is (1*y), tofind is y
     return modenumber
 
 
+#######################################################################
+#### ASSIGN CONTANTS
+qe=0.00000000048032   # electric unit charge [StatC]
+me_theory=9.1094E-028 # realistic electron mass [gram]
+mpn=1.6726E-024       # proton or neutron mass [gram]
+c= 29979000000        # speed of light [cm/s]
+evtoerg=1.6022E-12    # conversion factor [erg/ev]
+teslatogause=1.0E4    # conversion factor [gauss/T]
+#### ASSIGN CONTANTS
+#######################################################################
 
 
-#read input file
+#######################################################################
+#### READ INPUT DECK
+## find input file by extension '.in' from current directory
 fname=find('*.in', './')
 
 print '************ INPUT FILE *****************'
 with open('finish.txt', 'wb') as fh:
     buf = "************ INPUT FILE *****************\n"
     fh.write(buf)
+
+#Start read the input file line by line
+#Extract useful parameters
+#
+# units_number_density
+# units_temperature 
+# units_length 
+# units_mass 
+# units_magnetic_field
+# boltzmann_electron_temperature 
+# bz_inner 
+# by_inner 
+# x_max 
+# y_max 
+# z_max 
+# ion_mass 
+# elec_mass 
+# deltaL_analytic 
+# m_x
+# m_y
+# m_z
+# t0_grid_func 
+# et0_grid_func 
+# x_cells
+# y_cells
+# z_cells
+# x_index
+# y_index
+# z_index
+# electron_temperature  
+# B_y
+# B_z
+# B_t
+# Te_ev
+# Ti_ev
+# Te_erg
+# Ti_erg
+# me_g 
+# mi_g
+
+
+#initialize variables
 boltzmann_electron_temperature = -1
 electron_temperature = -1
+et0_grid_func= -1
 x_max=1.0;
 y_max=1.0;
 z_max=1.0;
@@ -382,6 +437,21 @@ with open(fname[0], 'r') as f:
                 with open('finish.txt', 'a+') as fh:
                     buf = 'IN:t0_grid_func = %f\n' % t0_grid_func
                     fh.write(buf)
+            if '.eT0_grid_func.constant' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                et0_grid_func=float(lhsrhs[1])
+                print 'IN:et0_grid_func = ',et0_grid_func
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:et0_grid_func = %f\n' % et0_grid_func
+                    fh.write(buf)
+            if '.eT0_grid_func.value' in lhsrhs[0]:
+                #print lhsrhs[0],'=',lhsrhs[1]
+                et0_grid_func=float(lhsrhs[1])
+                print 'IN:et0_grid_func = ',et0_grid_func
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:et0_grid_func = %f\n' % et0_grid_func
+                    fh.write(buf)
+            
             if 'gksystem.num_cells' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
                 num_cells=lhsrhs[1].split()
@@ -416,10 +486,13 @@ with open(fname[0], 'r') as f:
 
 
 f.closed
-#print '*****************************************'
-####
+
 if  boltzmann_electron_temperature == -1:
-    electron_temperature=t0_grid_func
+    if et0_grid_func != -1:
+        electron_temperature=et0_grid_func
+    else:
+        electron_temperature=t0_grid_func
+
     print 'Te(kin) = ', electron_temperature
     with open('finish.txt', 'a+') as fh:
         buf = 'Te(kin) = %f\n' % electron_temperature
@@ -430,9 +503,51 @@ else:
     with open('finish.txt', 'a+') as fh:
         buf = 'Te(bol) = %f\n' % electron_temperature
         fh.write(buf)
+
+
+
+
+B_z = bz_inner*units_magnetic_field*teslatogause
+B_y = by_inner*units_magnetic_field*teslatogause
+B_t = np.sqrt(B_z**2+B_y**2)
+print 'B_z          [gauss] = ', B_z
+print 'B_y          [gauss] = ', B_y
+print 'B_t          [gauss] = ', B_t
+with open('finish.txt', 'a+') as fh:
+    buf = 'B_z          [gauss] = %f\n' % B_z
+    fh.write(buf)
+    buf = 'B_y          [gauss] = %f\n' % B_y
+    fh.write(buf)
+    buf = 'B_t          [gauss] = %f\n' % B_t
+    fh.write(buf)
     
 
-#read output file
+Te_ev = electron_temperature*units_temperature
+Ti_ev = t0_grid_func * units_temperature
+
+Te_erg = Te_ev * evtoerg
+Ti_erg = Ti_ev * evtoerg
+
+me_g= elec_mass*units_mass*mpn
+mi_g= ion_mass*units_mass*mpn
+
+#### READ INPUT DECK
+#######################################################################
+
+#######################################################################
+#### READ OUTPUT FILE
+# Try reading slurm-*.out file from nersc CORI run
+# If the file is not found, try reading output file from from perun-cluster 
+# varialbe list
+#
+# ref_time
+# ref_speed
+# ref_gyrofrequency 
+# ref_gyroradius 
+# ref_debyelength
+# ref_larmornumber
+# ref_debyenumber
+#
 
 ref_time=0.0
 
@@ -440,6 +555,7 @@ print '********** OUTPUT FILE ******************'
 with open('finish.txt', 'a+') as fh:
     buf = '********** OUTPUT FILE ******************\n'
     fh.write(buf)
+
 fname=find('slurm-*.out', './')
 if len(fname)==0:
 	fname=find('perunoutput.out', './')
@@ -519,20 +635,16 @@ with open(fname[0], 'r') as f:
                 break
 
 f.closed
-#print '*****************************************'
+#### READ OUTPUT FILE
+#######################################################################
 
-#print '********** CONSTANTS ********************'
-qe=0.00000000048032
-me=9.1094E-028 #realistic electron mass
-mpn=1.6726E-024
-c= 29979000000
-#print 'qe  [StatC]= ',qe
-#print 'me  [gram] = ',me
-#print 'mpn [gram] = ',mpn
-#print 'c   [cm/s] = ',c
-
-#print '*****************************************'
-
+#######################################################################
+#### RECONSTRUCT BACKGROUND DENSITY FROM INPUT DECK
+# After executing this routine we have
+# xx : 0 ~ 2pi
+# yy : density profile, n(x)
+# xcm : physical x domain in [cm] 
+# dx : x direction grid spacing  in [cm]
 
 from sympy.parsing.sympy_parser import parse_expr
 from sympy.parsing.sympy_parser import standard_transformations
@@ -616,125 +728,129 @@ else:
     ispread_width=1
     #print "does not contain spreading"
 
+#### RECONSTRUCT BACKGROUND DENSITY FROM INPUT DECK
+#######################################################################
+
 print '********** DERIVED VARS *****************'
 with open('finish.txt', 'a+') as fh:
     buf = '********** DERIVED VARS *****************\n'
     fh.write(buf)
-b_z = bz_inner*1E4
-b_y = by_inner*1E4
-b_t = np.sqrt(bz_inner**2+by_inner**2)*1E4
-print 'b_z          [gauss] = ', b_z
-print 'b_y          [gauss] = ', b_y
-print 'b_t          [gauss] = ', b_t
-with open('finish.txt', 'a+') as fh:
-    buf = 'b_z          [gauss] = %f\n' % b_z
-    fh.write(buf)
-    buf = 'b_y          [gauss] = %f\n' % b_y
-    fh.write(buf)
-    buf = 'b_t          [gauss] = %f\n' % b_t
-    fh.write(buf)
 
 
+##################  NOT USED
+#c_ion_thermalspeed         = 41900000*(( t0_grid_func*units_temperature)**0.5)*((me_theory/mpn/ion_mass)**0.5)
+#c_elec_thermalspeed        = 41900000*(electron_temperature*units_temperature)**0.5
+#c_ion_transittimefor100cm  = units_length*100/ c_ion_thermalspeed
+#
+#c_elec_transittimefor100cm = units_length*100/ c_elec_thermalspeed
+#c_ion_gyrofrequency        = 9580*(B_t/ ion_mass )
+#c_elec_gyrofrequency       = 9580*(B_t/ ion_mass *ion_mass )*mpn/ me_theory
+#c_ion_gyroradius           = c_ion_thermalspeed / c_ion_gyrofrequency
+#c_elec_gyroradius          = c_elec_thermalspeed / c_elec_gyrofrequency
+#
+#print 'c_ion_thermalspeed      [cm/s] = ', c_ion_thermalspeed, '     (/ref: ', c_ion_thermalspeed/(ref_speed*100),' )' 
+#with open('finish.txt', 'a+') as fh:
+#    buf = 'c_ion_thermalspeed      [cm/s] = %f' % c_ion_thermalspeed
+#    fh.write(buf)
+#    buf = '     (ref: %f' % (c_ion_thermalspeed/(ref_speed*100))
+#    fh.write(buf)
+#    buf = ')\n'
+#    fh.write(buf)
+#print 'c_elec_thermalspeed     [cm/s] = ', c_elec_thermalspeed, '     (/ref: ', c_elec_thermalspeed/(ref_speed*100), ' )'
+#with open('finish.txt', 'a+') as fh:
+#    buf = 'c_elec_thermalspeed     [cm/s] = %f' % c_elec_thermalspeed
+#    fh.write(buf)
+#    buf = '     (ref: %f' % (c_elec_thermalspeed/(ref_speed*100))
+#    fh.write(buf)
+#    buf = ')\n'
+#    fh.write(buf)
+#print 'c_ion_transittimefor100cm  [s] = ', c_ion_transittimefor100cm, ' (/ref: ', c_ion_transittimefor100cm/ref_time,' )'
+#with open('finish.txt', 'a+') as fh:
+#    buf = 'c_ion_transittimefor100cm  [s] = %f' % c_ion_transittimefor100cm
+#    fh.write(buf)
+#    buf = '     (ref: %f' % (c_ion_transittimefor100cm/ref_time )
+#    fh.write(buf)
+#    buf = ')\n'
+#    fh.write(buf)
+#print 'c_elec_transittimefor100cm [s] = ', c_elec_transittimefor100cm, ' (/ref: ', c_elec_transittimefor100cm/ref_time, ' )'
+#with open('finish.txt', 'a+') as fh:
+#    buf = 'c_elec_transittimefor100cm [s] = %f' % c_elec_transittimefor100cm
+#    fh.write(buf)
+#    buf = '     (ref: %f' % (c_elec_transittimefor100cm/ref_time )
+#    fh.write(buf)
+#    buf = ')\n'
+#    fh.write(buf)
+#print 'c_ion_gyrofrequency      [1/s] = ', c_ion_gyrofrequency, '       (/ref: ', c_ion_gyrofrequency/ ref_gyrofrequency, ' )'
+#with open('finish.txt', 'a+') as fh:
+#    buf = 'c_ion_gyrofrequency      [1/s] = %f' % c_ion_gyrofrequency
+#    fh.write(buf)
+#    buf = '     (ref: %f' % (c_ion_gyrofrequency/ ref_gyrofrequency)
+#    fh.write(buf)
+#    buf = ')\n'
+#    fh.write(buf)
+#print 'c_elec_gyrofrequency     [1/s] = ', c_elec_gyrofrequency, ' (/ref: ', c_elec_gyrofrequency/ ref_gyrofrequency, ' )'
+#with open('finish.txt', 'a+') as fh:
+#    buf = 'c_elec_gyrofrequency     [1/s] = %f' % c_elec_gyrofrequency
+#    fh.write(buf)
+#    buf = '     (ref: %f' % (c_elec_gyrofrequency/ ref_gyrofrequency)
+#    fh.write(buf)
+#    buf = ')\n'
+#    fh.write(buf)
+#print 'c_ion_gyroradius          [cm] = ', c_ion_gyroradius, '   (/ref: ', c_ion_gyroradius / (units_length*100), ' )'
+#with open('finish.txt', 'a+') as fh:
+#    buf = 'c_ion_gyroradius          [cm] = %f' % c_ion_gyroradius
+#    fh.write(buf)
+#    buf = '     (ref: %f' % (c_ion_gyroradius/ (units_length*100))
+#    fh.write(buf)
+#    buf = ')\n'
+#    fh.write(buf)
+#print 'c_elec_gyroradius         [cm] = ', c_elec_gyroradius, '   (/ref: ', c_elec_gyroradius / (units_length*100), ' )'
+#with open('finish.txt', 'a+') as fh:
+#    buf = 'c_elec_gyroradius         [cm] = %f' % c_elec_gyroradius
+#    fh.write(buf)
+#    buf = '     (ref: %f' % (c_elec_gyroradius/ (units_length*100))
+#    fh.write(buf)
+#    buf = ')\n'
+#    fh.write(buf)
+#############################
 
-c_ion_thermalspeed         = 41900000*(( t0_grid_func*units_temperature)**0.5)*((me/mpn/ion_mass)**0.5)
-c_elec_thermalspeed        = 41900000*(electron_temperature*units_temperature)**0.5
-c_ion_transittimefor100cm  = units_length*100/ c_ion_thermalspeed
+#######################################################################
+#### DEFINE SPEED and GYROFREQUENCY and GYRORADIUS
+# v_ti [cm/s]
+# v_te [cm/s]
+# omega_ci
+# omega_ce
+# omega_pi
+# c_s
+# rho_s
+# rho_i
+# omega_star
 
-c_elec_transittimefor100cm = units_length*100/ c_elec_thermalspeed
-c_ion_gyrofrequency        = 9580*(b_t/ ion_mass )
-c_elec_gyrofrequency       = 9580*(b_t/ ion_mass *ion_mass )*mpn/ me
-c_ion_gyroradius           = c_ion_thermalspeed / c_ion_gyrofrequency
-c_elec_gyroradius          = c_elec_thermalspeed / c_elec_gyrofrequency
+v_ti = (2.0*Ti_erg/mi_g)**0.5
+v_te = (2.0*Te_erg/me_g)**0.5
 
-v_te = 41900000*((2.0*electron_temperature*units_temperature)**0.5)*((me/mpn/elec_mass)**0.5)
-v_ti = 41900000*((2.0*electron_temperature*units_temperature)**0.5)*((me/mpn/ion_mass)**0.5)
+omega_ci =  qe*B_t/mi_g/c
+omega_ce =  qe*B_t/me_g/c
+omega_pi = (4.0*np.pi*qe**2*units_number_density*1.E-6/mi_g)**0.5 #assumed n0 is 1
 
-
-
-print 'c_ion_thermalspeed      [cm/s] = ', c_ion_thermalspeed, '     (/ref: ', c_ion_thermalspeed/(ref_speed*100),' )' 
-with open('finish.txt', 'a+') as fh:
-    buf = 'c_ion_thermalspeed      [cm/s] = %f' % c_ion_thermalspeed
-    fh.write(buf)
-    buf = '     (ref: %f' % (c_ion_thermalspeed/(ref_speed*100))
-    fh.write(buf)
-    buf = ')\n'
-    fh.write(buf)
-print 'c_elec_thermalspeed     [cm/s] = ', c_elec_thermalspeed, '     (/ref: ', c_elec_thermalspeed/(ref_speed*100), ' )'
-with open('finish.txt', 'a+') as fh:
-    buf = 'c_elec_thermalspeed     [cm/s] = %f' % c_elec_thermalspeed
-    fh.write(buf)
-    buf = '     (ref: %f' % (c_elec_thermalspeed/(ref_speed*100))
-    fh.write(buf)
-    buf = ')\n'
-    fh.write(buf)
-print 'c_ion_transittimefor100cm  [s] = ', c_ion_transittimefor100cm, ' (/ref: ', c_ion_transittimefor100cm/ref_time,' )'
-with open('finish.txt', 'a+') as fh:
-    buf = 'c_ion_transittimefor100cm  [s] = %f' % c_ion_transittimefor100cm
-    fh.write(buf)
-    buf = '     (ref: %f' % (c_ion_transittimefor100cm/ref_time )
-    fh.write(buf)
-    buf = ')\n'
-    fh.write(buf)
-print 'c_elec_transittimefor100cm [s] = ', c_elec_transittimefor100cm, ' (/ref: ', c_elec_transittimefor100cm/ref_time, ' )'
-with open('finish.txt', 'a+') as fh:
-    buf = 'c_elec_transittimefor100cm [s] = %f' % c_elec_transittimefor100cm
-    fh.write(buf)
-    buf = '     (ref: %f' % (c_elec_transittimefor100cm/ref_time )
-    fh.write(buf)
-    buf = ')\n'
-    fh.write(buf)
-print 'c_ion_gyrofrequency      [1/s] = ', c_ion_gyrofrequency, '       (/ref: ', c_ion_gyrofrequency/ ref_gyrofrequency, ' )'
-with open('finish.txt', 'a+') as fh:
-    buf = 'c_ion_gyrofrequency      [1/s] = %f' % c_ion_gyrofrequency
-    fh.write(buf)
-    buf = '     (ref: %f' % (c_ion_gyrofrequency/ ref_gyrofrequency)
-    fh.write(buf)
-    buf = ')\n'
-    fh.write(buf)
-print 'c_elec_gyrofrequency     [1/s] = ', c_elec_gyrofrequency, ' (/ref: ', c_elec_gyrofrequency/ ref_gyrofrequency, ' )'
-with open('finish.txt', 'a+') as fh:
-    buf = 'c_elec_gyrofrequency     [1/s] = %f' % c_elec_gyrofrequency
-    fh.write(buf)
-    buf = '     (ref: %f' % (c_elec_gyrofrequency/ ref_gyrofrequency)
-    fh.write(buf)
-    buf = ')\n'
-    fh.write(buf)
-print 'c_ion_gyroradius          [cm] = ', c_ion_gyroradius, '   (/ref: ', c_ion_gyroradius / (units_length*100), ' )'
-with open('finish.txt', 'a+') as fh:
-    buf = 'c_ion_gyroradius          [cm] = %f' % c_ion_gyroradius
-    fh.write(buf)
-    buf = '     (ref: %f' % (c_ion_gyroradius/ (units_length*100))
-    fh.write(buf)
-    buf = ')\n'
-    fh.write(buf)
-print 'c_elec_gyroradius         [cm] = ', c_elec_gyroradius, '   (/ref: ', c_elec_gyroradius / (units_length*100), ' )'
-with open('finish.txt', 'a+') as fh:
-    buf = 'c_elec_gyroradius         [cm] = %f' % c_elec_gyroradius
-    fh.write(buf)
-    buf = '     (ref: %f' % (c_elec_gyroradius/ (units_length*100))
-    fh.write(buf)
-    buf = ')\n'
-    fh.write(buf)
-
+c_s      = (Te_erg/mi_g)**0.5
+rho_s    = c_s/omega_ci
+rho_i    = v_ti/omega_ci
 
 k_y        = 2.0*np.pi*m_y/(y_max*100)
 k_x        = 2.0*np.pi*m_x/(x_max*100) 
 k_z        = 2.0*np.pi*m_z/(z_max*100) 
 
-k_par      = (k_y*b_y+k_z*b_z)/b_t
-k_par_z    = k_par*b_z/b_t
-k_par_y    = k_par*b_y/b_t
+k_par      = (k_y*B_y+k_z*B_z)/B_t
+k_par_z    = k_par*B_z/B_t
+k_par_y    = k_par*B_y/B_t
 
-
-k_perp_z   = (k_z*b_y-k_y*b_z)*b_y/b_t/b_t
-k_perp_y   = (k_y*b_z-k_z*b_y)*b_z/b_t/b_t
+k_perp_z   = (k_z*B_y-k_y*B_z)*B_y/B_t/B_t
+k_perp_y   = (k_y*B_z-k_z*B_y)*B_z/B_t/B_t
 k_perp_x   = abs(k_x)
 k_perp_yz  = np.sqrt(k_perp_z*k_perp_z+k_perp_y*k_perp_y)
-#k_perp_yz  = np.sqrt((b_y/b_t*k_z)*(b_y/b_t*k_z)+(b_z/b_t*k_y)*(b_z/b_t*k_y))
 k_perp     = np.sqrt(k_perp_yz*k_perp_yz+k_x*k_x)
 
-
-#k_perp = np.sqrt(k_perp_x**2+k_perp_y**2)
 deltaL_max = 1./max(abs(dlnyydx))
 deltaL_spline = 1./max(abs(dlninter_yydx))
 x_point_index_in_plot = int(float(x_index)/float(x_cells)*len(dlnyydx))-1 
@@ -760,9 +876,7 @@ spread_ind_diff=np.array(spread_ind_diff)
 spread_ind =  spread_ind_diff+ x_point_index_in_plot
 #print spread_ind
 
-c_s        = 979000*((electron_temperature*units_temperature)/ion_mass)**0.5
-rho_s      = 102*((ion_mass*electron_temperature*units_temperature)**0.5)/b_t
-chi_x        = k_perp*rho_s
+chi_x      = k_perp*rho_s
 chi        = k_perp_yz*rho_s
 #omega_star = c_s*rho_s*k_perp_y/deltaL_max
 #omega_star_point= c_s*rho_s*k_perp_y/deltaL_point
@@ -774,7 +888,7 @@ omega_star_point= c_s*rho_s*k_perp_yz/deltaL_point
 omega_star_spline = c_s*rho_s*k_perp_yz/deltaL_spline
 omega_star_spread= c_s*rho_s*k_perp_yz/deltaL_spread
 
-k_par_hat  = k_par*deltaL_spline*v_te/c_s
+k_par_hat  = k_par*deltaL_analytic*v_te/c_s
 
 print 'k_x             [1/cm] = ', k_x , 'check m_x = (',m_x,') with kinetic.in'
 with open('finish.txt', 'a+') as fh:
@@ -869,17 +983,17 @@ print 'k_perp_yz*rho_s    [-] = ', k_perp_yz*rho_s
 with open('finish.txt', 'a+') as fh:
     buf = 'k_perp_yz*rho_s    [-] = %f\n' % (k_perp_yz*rho_s)
     fh.write(buf)
-print 'k_perp_yz*rho_i    [-] = ', k_perp_yz*c_ion_gyroradius
+print 'k_perp_yz*rho_i    [-] = ', k_perp_yz*rho_i
 with open('finish.txt', 'a+') as fh:
-    buf = 'k_perp_yz*rho_i    [-] = %f\n' % (k_perp_yz*c_ion_gyroradius)
+    buf = 'k_perp_yz*rho_i    [-] = %f\n' % (k_perp_yz*rho_i)
     fh.write(buf)
-print 'k_perp*rho_s       [-] = ', chi
+print 'k_perp*rho_s       [-] = ', k_perp*rho_s
 with open('finish.txt', 'a+') as fh:
-    buf = 'k_perp*rho_s       [-] = %f\n' % chi
+    buf = 'k_perp*rho_s       [-] = %f\n' % k_perp*rho_s
     fh.write(buf)
-print 'k_perp*rho_i       [-] = ', chi/rho_s*c_ion_gyroradius
+print 'k_perp*rho_i       [-] = ', k_perp*rho_i
 with open('finish.txt', 'a+') as fh:
-    buf = 'k_perp*rho_i       [-] = %f\n' % (chi/rho_s*c_ion_gyroradius)
+    buf = 'k_perp*rho_i       [-] = %f\n' % (k_perp*rho_i)
     fh.write(buf)
 print 'omega*           [1/s] = ', omega_star
 with open('finish.txt', 'a+') as fh:
@@ -916,7 +1030,11 @@ with open('finish.txt', 'a+') as fh:
     buf = '*****************************************\n'
     fh.write(buf)
 
-#### first plot
+#### DEFINE SPEED and GYROFREQUENCY and GYRORADIUS
+#######################################################################
+
+#######################################################################
+#### plot
 
 init_plotting()
 plt.subplot(111)
@@ -953,7 +1071,20 @@ plt.savefig('foo2.eps')
 plt.close('all')
 #plt.clf()
 
-#read history file
+#### plot
+#######################################################################
+
+
+
+#######################################################################
+#### read history file
+## 1. Look for the growth rate
+## 2. Perform FFT on raw signal (optional)
+## 3. Linear squre fit to optimize freq, phase, mean, amplitude :fix growth rate
+## 4. Perform FFT on reconstructed signal (optional)
+## 5. Linear squre fit to optimize phase, mean, freq : assume that amplitude and growthrate are correct 
+
+
 x_list=[]
 y_list=[]
 prev_lhsrhs_0 = '0000'
@@ -1006,8 +1137,6 @@ y = np.array(y_list)
 
 
 
-
-
 ##finding growth rate
 #take log
 logy2 = np.log(y*y)
@@ -1036,13 +1165,13 @@ for ind in enumerate(extremum_dimensional_xt):
         error_array_a.append(perr[0])
         error_array_b.append(perr[1])
         if len(error_array_a)>3 :
-            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 3.0:
+            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 2.0:#3.0:
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
                 break
         if len(error_array_b)>3 :
-            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 3.0:
+            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 2.0:#3.0:
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
@@ -1204,7 +1333,8 @@ nonlin_yplotv_fit = scipy.fftpack.fftshift(nonlin_yfv_fit)
 
 ###########################################
 
-legend_data_fit = r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_point, abs(est_freq)/omega_star_point*(1.0+chi*chi))+'\n'+r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_analytic, abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
+#legend_data_fit = r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_point, abs(est_freq)/omega_star_point*(1.0+chi*chi))+'\n'+r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_analytic, abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
+legend_data_fit = r'$\omega/\omega^*$'+' = %g'%(abs(est_freq)/omega_star_analytic)+'\n'+r'$\omega/\omega^*_d$'+' = %g'%(abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
 
 init_plotting()
 plt.subplot(111)
@@ -1252,16 +1382,33 @@ plt.close('all')
 #plt.clf()
 
 
-
 starting_amplitude = est_amplitude
-
-optimize_func = lambda z: z[1] + starting_amplitude*np.exp(lin_fitted_logy2[0]/2.0*lin_dimensional_xt)*np.cos(z[2]*lin_dimensional_xt+z[0]) - lin_y
+est_growth = lin_fitted_logy2[0]/2.0
+optimize_func = lambda z: z[1] + starting_amplitude*np.exp(est_growth*lin_dimensional_xt)*np.cos(z[2]*lin_dimensional_xt+z[0]) - lin_y
 refine_est_phase, refine_est_mean, refine_est_freq = leastsq(optimize_func, [est_phase, est_mean, est_freq])[0]
-data_fit_with_growth_refine = refine_est_mean + starting_amplitude*np.exp(lin_fitted_logy2[0]/2.0*lin_dimensional_xt)*np.cos(refine_est_freq*lin_dimensional_xt+refine_est_phase) 
+data_fit_with_growth_refine = refine_est_mean + starting_amplitude*np.exp(est_growth*lin_dimensional_xt)*np.cos(refine_est_freq*lin_dimensional_xt+refine_est_phase) 
+refine_est_growth=est_growth #fix growth rate
 
+#starting_amplitude = est_amplitude
+#est_growth = lin_fitted_logy2[0]/2.0
+#optimize_func = lambda z: z[3] + starting_amplitude*np.exp(z[1]*lin_dimensional_xt)*np.cos(z[2]*lin_dimensional_xt+z[0]) - lin_y
+#refine_est_phase, refine_est_growth,  refine_est_freq, refine_est_mean = leastsq(optimize_func, [est_phase, est_growth, est_freq, est_mean])[0]
+#data_fit_with_growth_refine = refine_est_mean + starting_amplitude*np.exp(refine_est_growth*lin_dimensional_xt)*np.cos(refine_est_freq*lin_dimensional_xt+refine_est_phase) 
+#
+
+#est_growth = lin_fitted_logy2[0]/2.0
+#optimize_func = lambda z: est_mean + z[3]*np.exp(z[1]*lin_dimensional_xt)*np.cos(z[2]*lin_dimensional_xt+z[0]) - lin_y
+#refine_est_phase, refine_est_growth,  refine_est_freq, refine_est_amplitude = leastsq(optimize_func, [est_phase, est_growth, est_freq, est_amplitude])[0]
+#data_fit_with_growth_refine = est_mean + refine_est_amplitude*np.exp(refine_est_growth*lin_dimensional_xt)*np.cos(refine_est_freq*lin_dimensional_xt+refine_est_phase) 
+
+
+
+
+
+print 'est_freq. = ',est_freq
 print 'refine_est_freq. = ',refine_est_freq
 
-legend_data_fit_with_growth = r'$\gamma/\omega^*, \gamma/\omega^*_d$'+' = (%g, %g)'% ( lin_fitted_logy2[0]/2.0/omega_star_point, lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+chi*chi))+'\n'+r'$\gamma/\omega^*, \gamma/\omega^*_d$'+' = (%g, %g)'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic, lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
+legend_data_fit_with_growth = r'$\gamma/\omega^*$'+' = %g'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic)+'\n'+r'$\gamma/\omega^*_d$'+' = %g'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
 init_plotting()
 plt.subplot(111)
 plt.gca().margins(0.1, 0.1)
@@ -1319,25 +1466,25 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'omega_star_fit/omega*_spline_1_chi2  = %f\n'%( abs(est_freq)/omega_star_spline*(1.0+chi*chi) )
     fh.write(buf)
-    buf = 'gamma  = %f\n'%(lin_fitted_logy2[0]/2.0)
+    buf = 'gamma  = %f\n'%(refine_est_growth)
     fh.write(buf)
-    buf = 'gamma/omega*  = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star)
+    buf = 'gamma/omega*  = %f\n'%(refine_est_growth/omega_star)
     fh.write(buf)
-    buf = 'gamma/omega*_point = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_point)
+    buf = 'gamma/omega*_point = %f\n'%(refine_est_growth/omega_star_point)
     fh.write(buf)
-    buf = 'gamma/omega*_analytic = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_analytic)
+    buf = 'gamma/omega*_analytic = %f\n'%(refine_est_growth/omega_star_analytic)
     fh.write(buf)
-    buf = 'gamma/omega*_spline  = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_spline)
+    buf = 'gamma/omega*_spline  = %f\n'%(refine_est_growth/omega_star_spline)
     fh.write(buf)
-    buf = 'gamma/omega*_1_chi2  = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star*(1.0+chi*chi))
+    buf = 'gamma/omega*_1_chi2  = %f\n'%(refine_est_growth/omega_star*(1.0+chi*chi))
     fh.write(buf)
-    buf = 'gamma/omega*_point_1_chi2 = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+chi*chi))
+    buf = 'gamma/omega*_point_1_chi2 = %f\n'%(refine_est_growth/omega_star_point*(1.0+chi*chi))
     fh.write(buf)
-    buf = 'gamma/omega*_analytic_1_chi2 = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
+    buf = 'gamma/omega*_analytic_1_chi2 = %f\n'%(refine_est_growth/omega_star_analytic*(1.0+chi*chi))
     fh.write(buf)
-    buf = 'gamma/omega*_spline_1_chi2 = %f\n'%(lin_fitted_logy2[0]/2.0/omega_star_spline*(1.0+chi*chi))
+    buf = 'gamma/omega*_spline_1_chi2 = %f\n'%(refine_est_growth/omega_star_spline*(1.0+chi*chi))
     fh.write(buf)
-    buf = 'gamma/omega_fit = %f\n'%(lin_fitted_logy2[0]/2.0/abs(est_freq))
+    buf = 'gamma/omega_fit = %f\n'%(refine_est_growth/abs(est_freq))
     fh.write(buf)
 
 
@@ -1362,23 +1509,23 @@ print 'omega_star_fit/omega*_1_chi2        = ',( abs(est_freq)/omega_star*(1.0+c
 print 'omega_star_fit/omega*_point_1_chi2  = ',( abs(est_freq)/omega_star_point*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_analytic_1_chi2  = ',( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_spline_1_chi2 = ',( abs(est_freq)/omega_star_spline*(1.0+chi*chi) )
-print 'gamma  = ',(lin_fitted_logy2[0]/2.0)
-print 'gamma/omega*         = ',(lin_fitted_logy2[0]/2.0/omega_star)
-print 'gamma/omega*_point   = ',(lin_fitted_logy2[0]/2.0/omega_star_point)
-print 'gamma/omega*_analytic= ',(lin_fitted_logy2[0]/2.0/omega_star_analytic)
-print 'gamma/omega*_spline  = ',(lin_fitted_logy2[0]/2.0/omega_star_spline)
+print 'gamma  = ',(refine_est_growth)
+print 'gamma/omega*         = ',(refine_est_growth/omega_star)
+print 'gamma/omega*_point   = ',(refine_est_growth/omega_star_point)
+print 'gamma/omega*_analytic= ',(refine_est_growth/omega_star_analytic)
+print 'gamma/omega*_spline  = ',(refine_est_growth/omega_star_spline)
 
-print 'gamma/omega*_1_chi2        = ',(lin_fitted_logy2[0]/2.0/omega_star*(1.0+chi*chi))
-print 'gamma/omega*_point_1_chi2  = ',(lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+chi*chi))
-print 'gamma/omega*_analytic_1_chi2  = ',(lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
-print 'gamma/omega*_spline_1_chi2 = ',(lin_fitted_logy2[0]/2.0/omega_star_spline*(1.0+chi*chi))
-print 'gamma/omega_fit = ',(lin_fitted_logy2[0]/2.0/abs(est_freq))
+print 'gamma/omega*_1_chi2        = ',(refine_est_growth/omega_star*(1.0+chi*chi))
+print 'gamma/omega*_point_1_chi2  = ',(refine_est_growth/omega_star_point*(1.0+chi*chi))
+print 'gamma/omega*_analytic_1_chi2  = ',(refine_est_growth/omega_star_analytic*(1.0+chi*chi))
+print 'gamma/omega*_spline_1_chi2 = ',(refine_est_growth/omega_star_spline*(1.0+chi*chi))
+print 'gamma/omega_fit = ',(refine_est_growth/abs(est_freq))
 
 
 with open('finish_kparhat_chi_gamma_omega2.txt', 'wb') as fh:
     buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\n" 
     fh.write(buf)
-    buf = "%f\t%f\t%f\t%f\t%f\t%f\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(lin_fitted_logy2[0]/2.0/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ) )
+    buf = "%f\t%f\t%f\t%f\t%f\t%f\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ) )
     fh.write(buf)
 
 
