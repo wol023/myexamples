@@ -1486,6 +1486,8 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'gamma/omega_fit = %f\n'%(refine_est_growth/abs(est_freq))
     fh.write(buf)
+    buf = 'omega/kpar = %f\n'%((abs(est_freq))/k_par)
+    fh.write(buf)
 
 
 print "te = " , (units_temperature*electron_temperature)
@@ -1520,12 +1522,13 @@ print 'gamma/omega*_point_1_chi2  = ',(refine_est_growth/omega_star_point*(1.0+c
 print 'gamma/omega*_analytic_1_chi2  = ',(refine_est_growth/omega_star_analytic*(1.0+chi*chi))
 print 'gamma/omega*_spline_1_chi2 = ',(refine_est_growth/omega_star_spline*(1.0+chi*chi))
 print 'gamma/omega_fit = ',(refine_est_growth/abs(est_freq))
+print 'omega/kpar= ',((abs(est_freq))/k_par)
 
 
 with open('finish_kparhat_chi_gamma_omega2.txt', 'wb') as fh:
-    buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\n" 
+    buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\tomega/kpar\n" 
     fh.write(buf)
-    buf = "%f\t%f\t%f\t%f\t%f\t%f\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ) )
+    buf = "%f\t%f\t%f\t%f\t%f\t%f\t%g\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ),((abs(est_freq))/k_par))
     fh.write(buf)
 
 
