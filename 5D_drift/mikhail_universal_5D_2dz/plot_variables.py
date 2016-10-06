@@ -142,7 +142,8 @@ for num_can in range(canverse_num):
     print demo_sum, ' written.'
 pl.show()
 
-
+# bash command to make animated gif
+# convert -delay 50 -loop 0 *.png (name).gif
 
 
 

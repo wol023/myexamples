@@ -44,7 +44,10 @@ import os
 cnopts = pysftp.CnOpts()
 cnopts.hostkeys = None
 
+scale_pow = 2
 
+def my_formatter_fun(x, p):
+    return "%.2f" % (x * (10 ** scale_pow))
 
 
 
@@ -1037,7 +1040,9 @@ def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxi
     if xaxis==[]:
         xaxis=np.linspace(-1,1,len(var))
     ax1.plot(xaxis,var,linewidth=linewidth,linestyle=linestyle,color=color,label=label)
+    ax1.yaxis.set_major_formatter(ticker.ScalarFormatter(useMathText=True))
     ax1.ticklabel_format(axis='y', style='sci', scilimits=(-2,2))
+
     if title=='':
         pass 
     else:
@@ -1055,6 +1060,10 @@ def oplot_1d(var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxi
         ymin, ymax = ax1.get_ylim()
         if ymin<0 and ymax>0:
            ax1.set_ylim([-max(abs(ymin), abs(ymax)),max(abs(ymin),abs(ymax))])
+           #tick format
+           scale_pow =np.log10(ymax).astype(int) 
+           ax1.get_yaxis().set_major_formatter(ticker.FuncFormatter(lambda x,p :"%.2f"%(x/(10**scale_pow))))
+           plt.ylabel(ylabel+r'$(\times 10^{{{0:d}}})$'.format(scale_pow))
 
     if legend==[]:
         pass
@@ -1284,7 +1293,37 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
 
     dataNd_dfn_comps,cogent_time=import_multdim_comps(filename=pathfilename)
     title_var=r'$f_%s(\bar{v}_\parallel, \bar{\mu})$'%speciesname
-    title_var=title_var+r'$(t=%.2f)$'%cogent_time
+ ### read computational unit time
+    ref_time=-1.0
+    fname=find('slurm-*.out', './')
+    if len(fname)==0:
+    	fname=find('perunoutput.out', './')
+    with open(fname[0], 'r') as f:
+        for line in f:
+            if line.lstrip().startswith('*'): #skip comment
+                continue
+            line =line.rstrip() #skip blank line
+            if not line:
+                continue 
+            else: #noncomment line
+                strippedline=line
+                lhsrhs = strippedline.split(":")
+                l=0
+                while l<len(lhsrhs): #strip white spaces in lhs
+                    lhsrhs[l]=lhsrhs[l].rstrip()
+                    lhsrhs[l]=lhsrhs[l].lstrip()
+                    l=l+1
+                #print type( lhsrhs[0])
+                if 'TRANSIT TIME' in lhsrhs[0]:
+                    print lhsrhs[0],'=',lhsrhs[1]
+                    ref_time=float(lhsrhs[1])
+                    break
+    f.closed
+    if ref_time!=-1.0:
+        title_var=title_var+r'$(t=%.2f \mu s)$'%(cogent_time*ref_time*1.0E6)
+    else:
+        title_var=title_var+r'$(t/t_0=%.2f)$'%cogent_time
+
     num_cell_total_comps_tuple=dataNd_dfn_comps.shape
     from read_input_deck import *
     VPAR_SCALE, MU_SCALE = get_vpar_mu_scales(num_cell_total_comps_tuple,Vpar_max,Mu_max)
@@ -1455,7 +1494,37 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
     legend_maxwellian = 'Maxwell. '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(popt[0],popt[1],popt[2])
 
     title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
-    title_var=title_var+r' $t=%.2f)$'%cogent_time
+ ### read computational unit time
+    ref_time=-1.0
+    fname=find('slurm-*.out', './')
+    if len(fname)==0:
+    	fname=find('perunoutput.out', './')
+    with open(fname[0], 'r') as f:
+        for line in f:
+            if line.lstrip().startswith('*'): #skip comment
+                continue
+            line =line.rstrip() #skip blank line
+            if not line:
+                continue 
+            else: #noncomment line
+                strippedline=line
+                lhsrhs = strippedline.split(":")
+                l=0
+                while l<len(lhsrhs): #strip white spaces in lhs
+                    lhsrhs[l]=lhsrhs[l].rstrip()
+                    lhsrhs[l]=lhsrhs[l].lstrip()
+                    l=l+1
+                #print type( lhsrhs[0])
+                if 'TRANSIT TIME' in lhsrhs[0]:
+                    print lhsrhs[0],'=',lhsrhs[1]
+                    ref_time=float(lhsrhs[1])
+                    break
+    f.closed
+    if ref_time!=-1.0:
+        title_var=title_var+r'$t=%.2f \mu {s})$'%(cogent_time*ref_time*1.0E6)
+    else:
+        title_var=title_var+r'$t/t_0=%.2f)$'%cogent_time
+
     oplot_1d(data_fitted[:,mu_pt,0],fig,title=title_var,linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel=r'$f_%s$'%speciesname)
           
 
@@ -1480,7 +1549,37 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
         plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
 
     title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
-    title_var=title_var+r' $t=%.2f)$'%cogent_time
+ ### read computational unit time
+    ref_time=-1.0
+    fname=find('slurm-*.out', './')
+    if len(fname)==0:
+    	fname=find('perunoutput.out', './')
+    with open(fname[0], 'r') as f:
+        for line in f:
+            if line.lstrip().startswith('*'): #skip comment
+                continue
+            line =line.rstrip() #skip blank line
+            if not line:
+                continue 
+            else: #noncomment line
+                strippedline=line
+                lhsrhs = strippedline.split(":")
+                l=0
+                while l<len(lhsrhs): #strip white spaces in lhs
+                    lhsrhs[l]=lhsrhs[l].rstrip()
+                    lhsrhs[l]=lhsrhs[l].lstrip()
+                    l=l+1
+                #print type( lhsrhs[0])
+                if 'TRANSIT TIME' in lhsrhs[0]:
+                    print lhsrhs[0],'=',lhsrhs[1]
+                    ref_time=float(lhsrhs[1])
+                    break
+    f.closed
+    if ref_time!=-1.0:
+        title_var=title_var+r'$t=%.2f \mu {s})$'%(cogent_time*ref_time*1.0E6)
+    else:
+        title_var=title_var+r'$t/t_0=%.2f)$'%cogent_time
+
     fig=oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0],fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$f_%s-f_M$'%speciesname,legend=1,ylabel='$f_'+speciesname+'-f_M$',symmetric_ylim=1, title=title_var)
     if saveplots>0:
         if not os.path.exists(targetdir):
@@ -1497,7 +1596,37 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
 
 
     title_var='$f_%s-f_M$'%speciesname
-    title_var=title_var+r'$(t=%.2f)$'%cogent_time
+ ### read computational unit time
+    ref_time=-1.0
+    fname=find('slurm-*.out', './')
+    if len(fname)==0:
+    	fname=find('perunoutput.out', './')
+    with open(fname[0], 'r') as f:
+        for line in f:
+            if line.lstrip().startswith('*'): #skip comment
+                continue
+            line =line.rstrip() #skip blank line
+            if not line:
+                continue 
+            else: #noncomment line
+                strippedline=line
+                lhsrhs = strippedline.split(":")
+                l=0
+                while l<len(lhsrhs): #strip white spaces in lhs
+                    lhsrhs[l]=lhsrhs[l].rstrip()
+                    lhsrhs[l]=lhsrhs[l].lstrip()
+                    l=l+1
+                #print type( lhsrhs[0])
+                if 'TRANSIT TIME' in lhsrhs[0]:
+                    print lhsrhs[0],'=',lhsrhs[1]
+                    ref_time=float(lhsrhs[1])
+                    break
+    f.closed
+    if ref_time!=-1.0:
+        title_var=title_var+r'$(t=%.2f \mu {s})$'%(cogent_time*ref_time*1.0E6)
+    else:
+        title_var=title_var+r'$(t/t_0=%.2f)$'%cogent_time
+
     plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data_fitted,title=title_var,interpolation='spline36',symmetric_cbar=1)
     if saveplots>0:
         if not os.path.exists(targetdir):
@@ -1523,7 +1652,39 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
     
     #get density by summation over velocity
     f_vpar_mu_sum = get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max)
-    fig=plot_Nd(f_vpar_mu_sum,title='<f_%s>'%speciesname+',t=%.2f'%cogent_time)
+    title_var='<f_%s>'%speciesname
+     ### read computational unit time
+    ref_time=-1.0
+    fname=find('slurm-*.out', './')
+    if len(fname)==0:
+    	fname=find('perunoutput.out', './')
+    with open(fname[0], 'r') as f:
+        for line in f:
+            if line.lstrip().startswith('*'): #skip comment
+                continue
+            line =line.rstrip() #skip blank line
+            if not line:
+                continue 
+            else: #noncomment line
+                strippedline=line
+                lhsrhs = strippedline.split(":")
+                l=0
+                while l<len(lhsrhs): #strip white spaces in lhs
+                    lhsrhs[l]=lhsrhs[l].rstrip()
+                    lhsrhs[l]=lhsrhs[l].lstrip()
+                    l=l+1
+                #print type( lhsrhs[0])
+                if 'TRANSIT TIME' in lhsrhs[0]:
+                    print lhsrhs[0],'=',lhsrhs[1]
+                    ref_time=float(lhsrhs[1])
+                    break
+    f.closed
+    if ref_time!=-1.0:
+        title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*ref_time*1.0E6)
+    else:
+        title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
+
+    fig=plot_Nd(f_vpar_mu_sum,title=title_var)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1547,7 +1708,7 @@ def plot_dfn(pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z
         mlab.close(all=True)
 
     #sliced plot
-    fig=plot_Nd(f_vpar_mu_sum,title='<f_%s>'%speciesname+',t=%.2f'%cogent_time,x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
+    fig=plot_Nd(f_vpar_mu_sum,title=title_var,x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
     if saveplots>0:
         if not os.path.exists(targetdir):
             os.mkdir(targetdir)
@@ -1579,7 +1740,37 @@ def plot_potential(pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_sl
     if ghost>0:
         dataNd_potential_with_outer_ghost_comps,num_ghost_potential,cogent_time=import_multdim_comps(filename=pathfilename,withghost=1)
     title_var='potential'
-    title_var=title_var+'(t=%.2f)'%cogent_time
+ ### read computational unit time
+    ref_time=-1.0
+    fname=find('slurm-*.out', './')
+    if len(fname)==0:
+    	fname=find('perunoutput.out', './')
+    with open(fname[0], 'r') as f:
+        for line in f:
+            if line.lstrip().startswith('*'): #skip comment
+                continue
+            line =line.rstrip() #skip blank line
+            if not line:
+                continue 
+            else: #noncomment line
+                strippedline=line
+                lhsrhs = strippedline.split(":")
+                l=0
+                while l<len(lhsrhs): #strip white spaces in lhs
+                    lhsrhs[l]=lhsrhs[l].rstrip()
+                    lhsrhs[l]=lhsrhs[l].lstrip()
+                    l=l+1
+                #print type( lhsrhs[0])
+                if 'TRANSIT TIME' in lhsrhs[0]:
+                    print lhsrhs[0],'=',lhsrhs[1]
+                    ref_time=float(lhsrhs[1])
+                    break
+    f.closed
+    if ref_time!=-1.0:
+        title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*ref_time*1.0E6)
+    else:
+        title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
+
     
     fig=plot_Nd(dataNd_potential_comps,title=title_var)
     if saveplots>0:
@@ -1710,7 +1901,37 @@ def plot_evec(pathfilename,saveplots=1,showplots=0,ghost=0,targetdir=[]):
     if ghost>0:
         dataNd_evec_with_outer_ghost_comps,num_ghost_evec,cogent_time=import_multdim_comps(filename=pathfilename,withghost=1)
     title_var='E field'
-    title_var=title_var+'(t=%.2f)'%cogent_time
+ ### read computational unit time
+    ref_time=-1.0
+    fname=find('slurm-*.out', './')
+    if len(fname)==0:
+    	fname=find('perunoutput.out', './')
+    with open(fname[0], 'r') as f:
+        for line in f:
+            if line.lstrip().startswith('*'): #skip comment
+                continue
+            line =line.rstrip() #skip blank line
+            if not line:
+                continue 
+            else: #noncomment line
+                strippedline=line
+                lhsrhs = strippedline.split(":")
+                l=0
+                while l<len(lhsrhs): #strip white spaces in lhs
+                    lhsrhs[l]=lhsrhs[l].rstrip()
+                    lhsrhs[l]=lhsrhs[l].lstrip()
+                    l=l+1
+                #print type( lhsrhs[0])
+                if 'TRANSIT TIME' in lhsrhs[0]:
+                    print lhsrhs[0],'=',lhsrhs[1]
+                    ref_time=float(lhsrhs[1])
+                    break
+    f.closed
+    if ref_time!=-1.0:
+        title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*ref_time*1.0E6)
+    else:
+        title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
+
     
     fig=plot_Nd(dataNd_evec_comps,title=title_var)
     if saveplots>0:
@@ -1763,7 +1984,37 @@ def plot_density(pathfilename,saveplots=1,showplots=0,ghost=0,speciesname='',x_s
     if ghost>0:
         dataNd_density_with_outer_ghost_comps,num_ghost_density,cogent_time=import_multdim_comps(filename=pathfilename,withghost=1)
     title_var='density, '+speciesname
-    title_var=title_var+'(t=%.2f)'%cogent_time
+ ### read computational unit time
+    ref_time=-1.0
+    fname=find('slurm-*.out', './')
+    if len(fname)==0:
+    	fname=find('perunoutput.out', './')
+    with open(fname[0], 'r') as f:
+        for line in f:
+            if line.lstrip().startswith('*'): #skip comment
+                continue
+            line =line.rstrip() #skip blank line
+            if not line:
+                continue 
+            else: #noncomment line
+                strippedline=line
+                lhsrhs = strippedline.split(":")
+                l=0
+                while l<len(lhsrhs): #strip white spaces in lhs
+                    lhsrhs[l]=lhsrhs[l].rstrip()
+                    lhsrhs[l]=lhsrhs[l].lstrip()
+                    l=l+1
+                #print type( lhsrhs[0])
+                if 'TRANSIT TIME' in lhsrhs[0]:
+                    print lhsrhs[0],'=',lhsrhs[1]
+                    ref_time=float(lhsrhs[1])
+                    break
+    f.closed
+    if ref_time!=-1.0:
+        title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*ref_time*1.0E6)
+    else:
+        title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
+
     
     fig=plot_Nd(dataNd_density_comps,title=title_var)
     if saveplots>0:
