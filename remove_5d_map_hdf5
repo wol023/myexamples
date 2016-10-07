@@ -1,0 +1,1 @@
+find . -name 'plt.*.dfn*.5d.map.hdf5' ! -name 'plt.*.dfn0000.5d.map.hdf5' -print -exec rm -v {} \;
