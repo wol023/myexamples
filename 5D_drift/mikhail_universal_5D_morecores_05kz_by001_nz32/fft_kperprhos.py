@@ -534,109 +534,126 @@ mi_g= ion_mass*units_mass*mpn
 #### READ INPUT DECK
 #######################################################################
 
-#######################################################################
-#### READ OUTPUT FILE
-# Try reading slurm-*.out file from nersc CORI run
-# If the file is not found, try reading output file from from perun-cluster 
-# varialbe list
-#
-# ref_time
-# ref_speed
-# ref_gyrofrequency 
-# ref_gyroradius 
-# ref_debyelength
-# ref_larmornumber
-# ref_debyenumber
-#
 
-ref_time=0.0
-
+# calc ref_time from input deck parameters
+const_ELEMENTARY_CHARGE   = 1.60217653e-19 # C
+const_MASS_OF_PROTON      = 1.67262171e-27 # kg
+tempJoules = const_ELEMENTARY_CHARGE* units_temperature
+masskg = units_mass * const_MASS_OF_PROTON
+ref_speed = np.sqrt(tempJoules/masskg) 
+ref_time=units_length/ref_speed
 print '********** OUTPUT FILE ******************'
 with open('finish.txt', 'a+') as fh:
     buf = '********** OUTPUT FILE ******************\n'
     fh.write(buf)
+    buf = 'THERMAL SPEED       [m/s] = %g\n' % ref_speed
+    fh.write(buf)
+    buf = 'TRANSIT TIME          [s] = %g\n' % ref_time
+    fh.write(buf)
 
-fname=find('slurm-*.out', './')
-if len(fname)==0:
-	fname=find('perunoutput.out', './')
-
-with open(fname[0], 'r') as f:
-    for line in f:
-        if line.lstrip().startswith('*'): #skip comment
-            continue
-        line =line.rstrip() #skip blank line
-        if not line:
-            continue 
-        else: #noncomment line
-            strippedline=line
-            lhsrhs = strippedline.split(":")
-            l=0
-            while l<len(lhsrhs): #strip white spaces in lhs
-                lhsrhs[l]=lhsrhs[l].rstrip()
-                lhsrhs[l]=lhsrhs[l].lstrip()
-                l=l+1
-            #print type( lhsrhs[0])
-            if 'TRANSIT TIME' in lhsrhs[0]:
-                print lhsrhs[0],'=',lhsrhs[1]
-                with open('finish.txt', 'a+') as fh:
-                    buf = '%s = ' % lhsrhs[0]
-                    fh.write(buf)
-                    buf = '%s\n' % lhsrhs[1]
-                    fh.write(buf)
-                ref_time=float(lhsrhs[1])
-            if 'THERMAL SPEED' in lhsrhs[0]:
-                print lhsrhs[0],'=',lhsrhs[1]
-                with open('finish.txt', 'a+') as fh:
-                    buf = '%s = ' % lhsrhs[0]
-                    fh.write(buf)
-                    buf = '%s\n' % lhsrhs[1]
-                    fh.write(buf)
-                ref_speed=float(lhsrhs[1])
-            if 'GYROFREQUENCY' in lhsrhs[0]:
-                print lhsrhs[0],'=',lhsrhs[1]
-                with open('finish.txt', 'a+') as fh:
-                    buf = '%s = ' % lhsrhs[0]
-                    fh.write(buf)
-                    buf = '%s\n' % lhsrhs[1]
-                    fh.write(buf)
-                ref_gyrofrequency=float(lhsrhs[1])
-            if 'GYRORADIUS' in lhsrhs[0]:
-                print lhsrhs[0],'=',lhsrhs[1]
-                with open('finish.txt', 'a+') as fh:
-                    buf = '%s = ' % lhsrhs[0]
-                    fh.write(buf)
-                    buf = '%s\n' % lhsrhs[1]
-                    fh.write(buf)
-                ref_gyroradius=float(lhsrhs[1])
-            if 'DEBYE LENGTH' in lhsrhs[0]:
-                print lhsrhs[0],'=',lhsrhs[1]
-                with open('finish.txt', 'a+') as fh:
-                    buf = '%s = ' % lhsrhs[0]
-                    fh.write(buf)
-                    buf = '%s\n' % lhsrhs[1]
-                    fh.write(buf)
-                ref_debyelength=float(lhsrhs[1])
-            if 'LARMOR NUMBER' in lhsrhs[0]:
-                print lhsrhs[0],'=',lhsrhs[1]
-                with open('finish.txt', 'a+') as fh:
-                    buf = '%s = ' % lhsrhs[0]
-                    fh.write(buf)
-                    buf = '%s\n' % lhsrhs[1]
-                    fh.write(buf)
-                ref_larmornumber=float(lhsrhs[1])
-            if 'DEBYE NUMBER' in lhsrhs[0]:
-                print lhsrhs[0],'=',lhsrhs[1]
-                with open('finish.txt', 'a+') as fh:
-                    buf = '%s = ' % lhsrhs[0]
-                    fh.write(buf)
-                    buf = '%s\n' % lhsrhs[1]
-                    fh.write(buf)
-                ref_debyenumber=float(lhsrhs[1])
-                break
-
-f.closed
-#### READ OUTPUT FILE
-#######################################################################
+########################################################################
+##### READ OUTPUT FILE
+## Try reading slurm-*.out file from nersc CORI run
+## If the file is not found, try reading output file from from perun-cluster 
+## varialbe list
+##
+## ref_time
+## ref_speed
+## ref_gyrofrequency 
+## ref_gyroradius 
+## ref_debyelength
+## ref_larmornumber
+## ref_debyenumber
+##
+#
+#ref_time=0.0
+#
+#print '********** OUTPUT FILE ******************'
+#with open('finish.txt', 'a+') as fh:
+#    buf = '********** OUTPUT FILE ******************\n'
+#    fh.write(buf)
+#
+#fname=find('slurm-*.out', './')
+#if len(fname)==0:
+#	fname=find('perunoutput.out', './')
+#
+#with open(fname[0], 'r') as f:
+#    for line in f:
+#        if line.lstrip().startswith('*'): #skip comment
+#            continue
+#        line =line.rstrip() #skip blank line
+#        if not line:
+#            continue 
+#        else: #noncomment line
+#            strippedline=line
+#            lhsrhs = strippedline.split(":")
+#            l=0
+#            while l<len(lhsrhs): #strip white spaces in lhs
+#                lhsrhs[l]=lhsrhs[l].rstrip()
+#                lhsrhs[l]=lhsrhs[l].lstrip()
+#                l=l+1
+#            #print type( lhsrhs[0])
+#            if 'TRANSIT TIME' in lhsrhs[0]:
+#                print lhsrhs[0],'=',lhsrhs[1]
+#                with open('finish.txt', 'a+') as fh:
+#                    buf = '%s = ' % lhsrhs[0]
+#                    fh.write(buf)
+#                    buf = '%s\n' % lhsrhs[1]
+#                    fh.write(buf)
+#                ref_time=float(lhsrhs[1])
+#            if 'THERMAL SPEED' in lhsrhs[0]:
+#                print lhsrhs[0],'=',lhsrhs[1]
+#                with open('finish.txt', 'a+') as fh:
+#                    buf = '%s = ' % lhsrhs[0]
+#                    fh.write(buf)
+#                    buf = '%s\n' % lhsrhs[1]
+#                    fh.write(buf)
+#                ref_speed=float(lhsrhs[1])
+#            if 'GYROFREQUENCY' in lhsrhs[0]:
+#                print lhsrhs[0],'=',lhsrhs[1]
+#                with open('finish.txt', 'a+') as fh:
+#                    buf = '%s = ' % lhsrhs[0]
+#                    fh.write(buf)
+#                    buf = '%s\n' % lhsrhs[1]
+#                    fh.write(buf)
+#                ref_gyrofrequency=float(lhsrhs[1])
+#            if 'GYRORADIUS' in lhsrhs[0]:
+#                print lhsrhs[0],'=',lhsrhs[1]
+#                with open('finish.txt', 'a+') as fh:
+#                    buf = '%s = ' % lhsrhs[0]
+#                    fh.write(buf)
+#                    buf = '%s\n' % lhsrhs[1]
+#                    fh.write(buf)
+#                ref_gyroradius=float(lhsrhs[1])
+#            if 'DEBYE LENGTH' in lhsrhs[0]:
+#                print lhsrhs[0],'=',lhsrhs[1]
+#                with open('finish.txt', 'a+') as fh:
+#                    buf = '%s = ' % lhsrhs[0]
+#                    fh.write(buf)
+#                    buf = '%s\n' % lhsrhs[1]
+#                    fh.write(buf)
+#                ref_debyelength=float(lhsrhs[1])
+#            if 'LARMOR NUMBER' in lhsrhs[0]:
+#                print lhsrhs[0],'=',lhsrhs[1]
+#                with open('finish.txt', 'a+') as fh:
+#                    buf = '%s = ' % lhsrhs[0]
+#                    fh.write(buf)
+#                    buf = '%s\n' % lhsrhs[1]
+#                    fh.write(buf)
+#                ref_larmornumber=float(lhsrhs[1])
+#            if 'DEBYE NUMBER' in lhsrhs[0]:
+#                print lhsrhs[0],'=',lhsrhs[1]
+#                with open('finish.txt', 'a+') as fh:
+#                    buf = '%s = ' % lhsrhs[0]
+#                    fh.write(buf)
+#                    buf = '%s\n' % lhsrhs[1]
+#                    fh.write(buf)
+#                ref_debyenumber=float(lhsrhs[1])
+#                break
+#
+#f.closed
+##### READ OUTPUT FILE
+########################################################################
 
 #######################################################################
 #### RECONSTRUCT BACKGROUND DENSITY FROM INPUT DECK
@@ -878,11 +895,11 @@ spread_ind =  spread_ind_diff+ x_point_index_in_plot
 
 chi_x      = k_perp*rho_s
 chi        = k_perp_yz*rho_s
-#omega_star = c_s*rho_s*k_perp_y/deltaL_max
+#omega_star_max = c_s*rho_s*k_perp_y/deltaL_max
 #omega_star_point= c_s*rho_s*k_perp_y/deltaL_point
 #omega_star_spline = c_s*rho_s*k_perp_y/deltaL_spline
 #omega_star_spread= c_s*rho_s*k_perp_y/ deltaL_spread
-omega_star = c_s*rho_s*k_perp_yz/deltaL_max
+omega_star_max = c_s*rho_s*k_perp_yz/deltaL_max
 omega_star_analytic = c_s*rho_s*k_perp_yz/deltaL_analytic
 omega_star_point= c_s*rho_s*k_perp_yz/deltaL_point
 omega_star_spline = c_s*rho_s*k_perp_yz/deltaL_spline
@@ -995,9 +1012,9 @@ print 'k_perp*rho_i       [-] = ', k_perp*rho_i
 with open('finish.txt', 'a+') as fh:
     buf = 'k_perp*rho_i       [-] = %f\n' % (k_perp*rho_i)
     fh.write(buf)
-print 'omega*           [1/s] = ', omega_star
+print 'omega*_max       [1/s] = ', omega_star_max
 with open('finish.txt', 'a+') as fh:
-    buf = 'omega*           [1/s] = %f\n' % omega_star
+    buf = 'omega*_max       [1/s] = %f\n' % omega_star_max
     fh.write(buf)
 print 'omega*_point     [1/s] = ', omega_star_point
 with open('finish.txt', 'a+') as fh:
@@ -1060,7 +1077,8 @@ init_plotting()
 plt.subplot(111)
 plt.gca().margins(0.1, 0.1)
 plt.plot(xcm,-dlnyydx,linestyle='-',linewidth=1,color='b',label='inverse gradient length' )
-plt.plot(xcm,yypert*10000 ,marker='.',linestyle='-',linewidth=1,color='r',label='perturbationx10000' )
+magnify=10**(np.log10(max(abs(dlnyydx))*0.9/max(yypert)).astype(int))
+plt.plot(xcm,yypert*magnify ,marker='.',linestyle='-',linewidth=1,color='r',label='perturbationx%d'%magnify )
 plt.scatter(xcm[spread_ind],-dlnyydx[spread_ind],label='average points' )
 plt.xlabel(u'x (cm)')
 plt.ylabel(u'perturbation, -d(ln n)/dx [cm]')
@@ -1436,7 +1454,7 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = "ti = %f\n" % (units_temperature*t0_grid_func)
     fh.write(buf)
-    buf = "omega_star       = %f\n" % (omega_star)
+    buf = "omega_star_max   = %f\n" % (omega_star_max)
     fh.write(buf)
     buf = "omega_star_point = %f\n" % (omega_star_point)
     fh.write(buf)
@@ -1447,7 +1465,7 @@ with open('finish.txt', 'a+') as fh:
     if (ispread_width !=1):
         buf = "omega_star_spread = %f\n" % (omega_star_spread)
         fh.write(buf)
-    buf = 'omega_star_fit/omega*        = %f\n'%( abs(est_freq)/omega_star )
+    buf = 'omega_star_fit/omega*_max    = %f\n'%( abs(est_freq)/omega_star_max )
     fh.write(buf)
     buf = 'omega_star_fit/omega*_point  = %f\n'%( abs(est_freq)/omega_star_point )
     fh.write(buf)
@@ -1458,7 +1476,7 @@ with open('finish.txt', 'a+') as fh:
     if (ispread_width !=1):
         buf = 'omega_star_fit/omega*_spread = %f\n'%( abs(est_freq)/omega_star_spread )
         fh.write(buf)
-    buf = 'omega_star_fit/omega*_1_chi2        = %f\n'%( abs(est_freq)/omega_star*(1.0+chi*chi) )
+    buf = 'omega_star_fit/omega*_max_1_chi2    = %f\n'%( abs(est_freq)/omega_star_max*(1.0+chi*chi) )
     fh.write(buf)
     buf = 'omega_star_fit/omega*_point_1_chi2  = %f\n'%( abs(est_freq)/omega_star_point*(1.0+chi*chi) )
     fh.write(buf)
@@ -1468,7 +1486,7 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'gamma  = %f\n'%(refine_est_growth)
     fh.write(buf)
-    buf = 'gamma/omega*  = %f\n'%(refine_est_growth/omega_star)
+    buf = 'gamma/omega*_max   = %f\n'%(refine_est_growth/omega_star_max)
     fh.write(buf)
     buf = 'gamma/omega*_point = %f\n'%(refine_est_growth/omega_star_point)
     fh.write(buf)
@@ -1476,7 +1494,7 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'gamma/omega*_spline  = %f\n'%(refine_est_growth/omega_star_spline)
     fh.write(buf)
-    buf = 'gamma/omega*_1_chi2  = %f\n'%(refine_est_growth/omega_star*(1.0+chi*chi))
+    buf = 'gamma/omega*_max_1_chi2  = %f\n'%(refine_est_growth/omega_star_max*(1.0+chi*chi))
     fh.write(buf)
     buf = 'gamma/omega*_point_1_chi2 = %f\n'%(refine_est_growth/omega_star_point*(1.0+chi*chi))
     fh.write(buf)
@@ -1492,32 +1510,32 @@ with open('finish.txt', 'a+') as fh:
 
 print "te = " , (units_temperature*electron_temperature)
 print "ti = " , (units_temperature*t0_grid_func)
-print "omega_star        = " , (omega_star)
+print "omega_star_max    = " , (omega_star_max)
 print "omega_star_point  = " , (omega_star_point)
 print "omega_star_analytic = " , (omega_star_analytic)
 print "omega_star_spline = " , (omega_star_spline)
 if (ispread_width !=1):
     print "omega_star_spread = " , (omega_star_spread)
-#print 'omega_star_FFT/omega*        = ', abs(freqmax)/omega_star
+#print 'omega_star_FFT/omega*        = ', abs(freqmax)/omega_star_max
 #print 'omega_star_FFT/omega*_point  = ', abs(freqmax)/ omega_star_point
 #print 'omega_star_FFT/omega*_spline = ', abs(freqmax)/omega_star_spline
-print 'omega_star_fit/omega*        = ',( abs(est_freq)/omega_star )
+print 'omega_star_fit/omega*_max    = ',( abs(est_freq)/omega_star_max )
 print 'omega_star_fit/omega*_point  = ',( abs(est_freq)/omega_star_point )
 print 'omega_star_fit/omega*_analytic = ',( abs(est_freq)/omega_star_analytic)
 print 'omega_star_fit/omega*_spline = ',( abs(est_freq)/omega_star_spline )
 if (ispread_width !=1):
     print 'omega_star_fit/omega*_spread = ',( abs(est_freq)/omega_star_spread )
-print 'omega_star_fit/omega*_1_chi2        = ',( abs(est_freq)/omega_star*(1.0+chi*chi) )
+print 'omega_star_fit/omega*_max_1_chi2        = ',( abs(est_freq)/omega_star_max*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_point_1_chi2  = ',( abs(est_freq)/omega_star_point*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_analytic_1_chi2  = ',( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_spline_1_chi2 = ',( abs(est_freq)/omega_star_spline*(1.0+chi*chi) )
 print 'gamma  = ',(refine_est_growth)
-print 'gamma/omega*         = ',(refine_est_growth/omega_star)
+print 'gamma/omega*_max     = ',(refine_est_growth/omega_star_max)
 print 'gamma/omega*_point   = ',(refine_est_growth/omega_star_point)
 print 'gamma/omega*_analytic= ',(refine_est_growth/omega_star_analytic)
 print 'gamma/omega*_spline  = ',(refine_est_growth/omega_star_spline)
 
-print 'gamma/omega*_1_chi2        = ',(refine_est_growth/omega_star*(1.0+chi*chi))
+print 'gamma/omega*_max_1_chi2        = ',(refine_est_growth/omega_star_max*(1.0+chi*chi))
 print 'gamma/omega*_point_1_chi2  = ',(refine_est_growth/omega_star_point*(1.0+chi*chi))
 print 'gamma/omega*_analytic_1_chi2  = ',(refine_est_growth/omega_star_analytic*(1.0+chi*chi))
 print 'gamma/omega*_spline_1_chi2 = ',(refine_est_growth/omega_star_spline*(1.0+chi*chi))

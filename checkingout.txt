@@ -1,0 +1,8 @@
+ svn --non-interactive --trust-server-cert --username wonjae --password steak4906 co https://anag-repo.lbl.gov/svn/COGENT/branches/devel5D devel5Ddebug5D
+ svn --non-interactive --trust-server-cert --username wonjae --password steak4906 co https://anag-repo.lbl.gov/svn/COGENT/trunk trunk
+ svn --non-interactive --trust-server-cert --username wonjae --password steak4906 co https://anag-repo.lbl.gov/svn/Chombo/trunk Chombo
+# counting code
+find . -name '*.cpp' -o -name '*.ChF' -o -name '*.H' ! -name '*F_F.H'| xargs wc -l
+rsync --stats --dry-run -ax . ../xxx
+diff -bur src/ ../../branchinESL/devel5Dopt5D/src |diffstat
+
