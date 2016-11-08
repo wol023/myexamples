@@ -1165,13 +1165,13 @@ for ind in enumerate(extremum_dimensional_xt):
         error_array_a.append(perr[0])
         error_array_b.append(perr[1])
         if len(error_array_a)>3 :
-            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 3.0:
+            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 2.0:#3.0:
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
                 break
         if len(error_array_b)>3 :
-            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 3.0:
+            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 2.0:#3.0:
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
@@ -1533,7 +1533,7 @@ with open('finish_kparhat_chi_gamma_omega2.txt', 'wb') as fh:
 
 
 import pylab
-from PIL import Image
+import Image
 init_plotting('2x3')
 f = pylab.figure()
 for n, fname in enumerate(('foo1.png', 'foo2.png', 'foo3.png', 'foo4.png', 'foo5.png','foo6.png')):
