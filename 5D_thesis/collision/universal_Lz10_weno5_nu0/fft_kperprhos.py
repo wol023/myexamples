@@ -230,6 +230,7 @@ y_max=1.0;
 z_max=1.0;
 deltaL_analytic=1;
 nue_bool=0.0;
+nue = 0.0;
 
 with open(fname[0], 'r') as f:
     for line in f:
