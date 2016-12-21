@@ -17,7 +17,7 @@ gksystem.fixed_plot_indices = 8 32 4 4 4
 #####################################################
 # Time Stepping Definitions
 #####################################################
-simulation.max_step            = 80
+simulation.max_step            = 400
 simulation.max_time            = 100000.0
 #simulation.max_dt_grow         = 1.1
 simulation.initial_dt_fraction = 1.0
@@ -39,19 +39,19 @@ simulation.1.history_indices = 4 2 2
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 64 64  8 24 16
+gksystem.num_cells   = 64 128 16 24 16
 gksystem.is_periodic =  0  1  1  0  0
 
-gksystem.configuration_decomp = 8 4 1 
-gksystem.velocity_decomp      =       4 2
-gksystem.phase_decomp         = 8 4 1 4 2
+gksystem.configuration_decomp = 4 8 2 
+gksystem.velocity_decomp      =       2 2
+gksystem.phase_decomp         = 4 8 2 2 2
 
 
 #####################################################
 # Units Definitions
 #####################################################
-units.number_density = 1.0e20
-units.temperature    = 1.0e3
+units.number_density = 1.0e19
+units.temperature    = 1.0e2
 units.length         = 1.0
 units.mass           = 1.0
 units.magnetic_field = 1.0 
@@ -83,7 +83,7 @@ phase_space_mapping.velocity_type = "gyrokinetic"
 #phase_space_mapping.velocity_type = "annular_radial_velocity"
 #phase_space_mapping.velocity_type = "annular_radpol_velocity"
 phase_space_mapping.no_drifts = false
-phase_space_mapping.explicit_curvature_radius = 1.0
+phase_space_mapping.explicit_curvature_radius = 3.0
 phase_space_mapping.physical_velocity_components = true
 phase_space_mapping.second_order = true
 
@@ -237,11 +237,11 @@ grid_function_library.eT0_grid_func.value = 1.0
 
 grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
-grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+grid_function_library.N0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )"
 
 grid_function_library.eN0_grid_func.type = "arbitrary"
 #grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi)^2/(2*pi*0.002/0.02)-(y-pi)^2/(2*pi*0.002/0.02))*exp(-(z-pi)^2/(2*pi*0.0004/0.02))    )"
-grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.04))   )"
+grid_function_library.eN0_grid_func.function = "(1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )"
 
 grid_function_library.Ion_vpar_grid_func.type = "constant"
 grid_function_library.Ion_vpar_grid_func.value = 0.0

@@ -1,0 +1,951 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+19
+  TEMPERATURE           [eV]: 100
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 97871.5
+  TRANSIT TIME          [s]: 1.02175e-05
+  MAGNETIC MOMENT     [J/T]: 8.01088e-18
+  DIST. FUNCTION [s/(Am^6)]: 3395.32
+  POTENTIAL             [V]: 100
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00102175
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00102175
+  LARMOR NUMBER **2        : 1.04397e-06
+  DEBYE NUMBER             : 2.35082e-05
+  DEBYE NUMBER **2         : 5.52635e-10
+  DEBYE NUMBER/MULT_FAC    : 2.35082e-05
+  DEBYE NUMBER/MULT_FAC **2: 5.52635e-10
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 100
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.0981748 * 64 = 6.28319, dx(m)*nx= 0.000625 * 64 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.0490874 * 128 = 6.28319, dy(m)*ny= 0.0003125 * 128 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 6.25 * 16 = 100, ( 1 : 15.9155 )
+
+   Configuration space box ((0,0,0) (15,15,7) (0,0,0)) is assigned to process 0
+   Configuration space box ((16,0,0) (31,15,7) (0,0,0)) is assigned to process 1
+   Configuration space box ((32,0,0) (47,15,7) (0,0,0)) is assigned to process 2
+   Configuration space box ((48,0,0) (63,15,7) (0,0,0)) is assigned to process 3
+   Configuration space box ((0,16,0) (15,31,7) (0,0,0)) is assigned to process 4
+   Configuration space box ((16,16,0) (31,31,7) (0,0,0)) is assigned to process 5
+   Configuration space box ((32,16,0) (47,31,7) (0,0,0)) is assigned to process 6
+   Configuration space box ((48,16,0) (63,31,7) (0,0,0)) is assigned to process 7
+   Configuration space box ((0,32,0) (15,47,7) (0,0,0)) is assigned to process 8
+   Configuration space box ((16,32,0) (31,47,7) (0,0,0)) is assigned to process 9
+   Configuration space box ((32,32,0) (47,47,7) (0,0,0)) is assigned to process 10
+   Configuration space box ((48,32,0) (63,47,7) (0,0,0)) is assigned to process 11
+   Configuration space box ((0,48,0) (15,63,7) (0,0,0)) is assigned to process 12
+   Configuration space box ((16,48,0) (31,63,7) (0,0,0)) is assigned to process 13
+   Configuration space box ((32,48,0) (47,63,7) (0,0,0)) is assigned to process 14
+   Configuration space box ((48,48,0) (63,63,7) (0,0,0)) is assigned to process 15
+   Configuration space box ((0,64,0) (15,79,7) (0,0,0)) is assigned to process 16
+   Configuration space box ((16,64,0) (31,79,7) (0,0,0)) is assigned to process 17
+   Configuration space box ((32,64,0) (47,79,7) (0,0,0)) is assigned to process 18
+   Configuration space box ((48,64,0) (63,79,7) (0,0,0)) is assigned to process 19
+   Configuration space box ((0,80,0) (15,95,7) (0,0,0)) is assigned to process 20
+   Configuration space box ((16,80,0) (31,95,7) (0,0,0)) is assigned to process 21
+   Configuration space box ((32,80,0) (47,95,7) (0,0,0)) is assigned to process 22
+   Configuration space box ((48,80,0) (63,95,7) (0,0,0)) is assigned to process 23
+   Configuration space box ((0,96,0) (15,111,7) (0,0,0)) is assigned to process 24
+   Configuration space box ((16,96,0) (31,111,7) (0,0,0)) is assigned to process 25
+   Configuration space box ((32,96,0) (47,111,7) (0,0,0)) is assigned to process 26
+   Configuration space box ((48,96,0) (63,111,7) (0,0,0)) is assigned to process 27
+   Configuration space box ((0,112,0) (15,127,7) (0,0,0)) is assigned to process 28
+   Configuration space box ((16,112,0) (31,127,7) (0,0,0)) is assigned to process 29
+   Configuration space box ((32,112,0) (47,127,7) (0,0,0)) is assigned to process 30
+   Configuration space box ((48,112,0) (63,127,7) (0,0,0)) is assigned to process 31
+   Configuration space box ((0,0,8) (15,15,15) (0,0,0)) is assigned to process 32
+   Configuration space box ((16,0,8) (31,15,15) (0,0,0)) is assigned to process 33
+   Configuration space box ((32,0,8) (47,15,15) (0,0,0)) is assigned to process 34
+   Configuration space box ((48,0,8) (63,15,15) (0,0,0)) is assigned to process 35
+   Configuration space box ((0,16,8) (15,31,15) (0,0,0)) is assigned to process 36
+   Configuration space box ((16,16,8) (31,31,15) (0,0,0)) is assigned to process 37
+   Configuration space box ((32,16,8) (47,31,15) (0,0,0)) is assigned to process 38
+   Configuration space box ((48,16,8) (63,31,15) (0,0,0)) is assigned to process 39
+   Configuration space box ((0,32,8) (15,47,15) (0,0,0)) is assigned to process 40
+   Configuration space box ((16,32,8) (31,47,15) (0,0,0)) is assigned to process 41
+   Configuration space box ((32,32,8) (47,47,15) (0,0,0)) is assigned to process 42
+   Configuration space box ((48,32,8) (63,47,15) (0,0,0)) is assigned to process 43
+   Configuration space box ((0,48,8) (15,63,15) (0,0,0)) is assigned to process 44
+   Configuration space box ((16,48,8) (31,63,15) (0,0,0)) is assigned to process 45
+   Configuration space box ((32,48,8) (47,63,15) (0,0,0)) is assigned to process 46
+   Configuration space box ((48,48,8) (63,63,15) (0,0,0)) is assigned to process 47
+   Configuration space box ((0,64,8) (15,79,15) (0,0,0)) is assigned to process 48
+   Configuration space box ((16,64,8) (31,79,15) (0,0,0)) is assigned to process 49
+   Configuration space box ((32,64,8) (47,79,15) (0,0,0)) is assigned to process 50
+   Configuration space box ((48,64,8) (63,79,15) (0,0,0)) is assigned to process 51
+   Configuration space box ((0,80,8) (15,95,15) (0,0,0)) is assigned to process 52
+   Configuration space box ((16,80,8) (31,95,15) (0,0,0)) is assigned to process 53
+   Configuration space box ((32,80,8) (47,95,15) (0,0,0)) is assigned to process 54
+   Configuration space box ((48,80,8) (63,95,15) (0,0,0)) is assigned to process 55
+   Configuration space box ((0,96,8) (15,111,15) (0,0,0)) is assigned to process 56
+   Configuration space box ((16,96,8) (31,111,15) (0,0,0)) is assigned to process 57
+   Configuration space box ((32,96,8) (47,111,15) (0,0,0)) is assigned to process 58
+   Configuration space box ((48,96,8) (63,111,15) (0,0,0)) is assigned to process 59
+   Configuration space box ((0,112,8) (15,127,15) (0,0,0)) is assigned to process 60
+   Configuration space box ((16,112,8) (31,127,15) (0,0,0)) is assigned to process 61
+   Configuration space box ((32,112,8) (47,127,15) (0,0,0)) is assigned to process 62
+   Configuration space box ((48,112,8) (63,127,15) (0,0,0)) is assigned to process 63
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-12,0) (-1,7) (0,0)) is assigned to process 0
+   Velocity space box ((0,0) (11,7) (0,0)) is assigned to process 1
+   Velocity space box ((-12,8) (-1,15) (0,0)) is assigned to process 2
+   Velocity space box ((0,8) (11,15) (0,0)) is assigned to process 3
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.416667 * 12 = 5, dv_parallel(m/s)*nvpar= 40779.8 * 12 = 489358, ( 1 : 97871.5 )
+dmu*nmu= 0.25 * 16 = 4, dmu(J/T)*nmu= 2.00272e-18 * 16 = 3.20435e-17, ( 1 : 8.01088e-18 )
+
+   Phase space box ((16,96,0,0,0) (31,111,7,11,7) (0,0,0,0,0)) is assigned to process 101, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,96,8,0,0) (31,111,15,11,7) (0,0,0,0,0)) is assigned to process 229, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,80,8,-12,8) (15,95,15,-1,15) (0,0,0,0,0)) is assigned to process 210, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,48,0,0,0) (15,63,7,11,7) (0,0,0,0,0)) is assigned to process 49, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,80,0,0,0) (63,95,7,11,7) (0,0,0,0,0)) is assigned to process 93, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,32,8,-12,8) (15,47,15,-1,15) (0,0,0,0,0)) is assigned to process 162, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,96,0,0,8) (31,111,7,11,15) (0,0,0,0,0)) is assigned to process 103, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,16,8,-12,0) (63,31,15,-1,7) (0,0,0,0,0)) is assigned to process 156, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,80,8,-12,0) (63,95,15,-1,7) (0,0,0,0,0)) is assigned to process 220, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,48,0,0,0) (31,63,7,11,7) (0,0,0,0,0)) is assigned to process 53, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,112,8,0,0) (31,127,15,11,7) (0,0,0,0,0)) is assigned to process 245, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,64,0,0,0) (31,79,7,11,7) (0,0,0,0,0)) is assigned to process 69, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,32,8,-12,8) (31,47,15,-1,15) (0,0,0,0,0)) is assigned to process 166, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,48,0,0,0) (63,63,7,11,7) (0,0,0,0,0)) is assigned to process 61, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,96,0,0,0) (47,111,7,11,7) (0,0,0,0,0)) is assigned to process 105, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,96,8,-12,0) (15,111,15,-1,7) (0,0,0,0,0)) is assigned to process 224, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,32,8,-12,8) (47,47,15,-1,15) (0,0,0,0,0)) is assigned to process 170, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,16,8,0,0) (63,31,15,11,7) (0,0,0,0,0)) is assigned to process 157, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,32,0,-12,0) (15,47,7,-1,7) (0,0,0,0,0)) is assigned to process 32, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,96,0,-12,8) (47,111,7,-1,15) (0,0,0,0,0)) is assigned to process 106, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,96,8,-12,8) (15,111,15,-1,15) (0,0,0,0,0)) is assigned to process 226, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,80,8,0,0) (63,95,15,11,7) (0,0,0,0,0)) is assigned to process 221, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,80,8,0,8) (63,95,15,11,15) (0,0,0,0,0)) is assigned to process 223, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,64,0,-12,0) (47,79,7,-1,7) (0,0,0,0,0)) is assigned to process 72, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,32,8,-12,8) (63,47,15,-1,15) (0,0,0,0,0)) is assigned to process 174, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,0,8,0,8) (15,15,15,11,15) (0,0,0,0,0)) is assigned to process 131, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,32,0,0,0) (15,47,7,11,7) (0,0,0,0,0)) is assigned to process 33, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,96,0,0,8) (47,111,7,11,15) (0,0,0,0,0)) is assigned to process 107, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,96,8,0,8) (15,111,15,11,15) (0,0,0,0,0)) is assigned to process 227, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,64,8,-12,0) (15,79,15,-1,7) (0,0,0,0,0)) is assigned to process 192, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,64,0,0,0) (47,79,7,11,7) (0,0,0,0,0)) is assigned to process 73, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,32,8,0,8) (63,47,15,11,15) (0,0,0,0,0)) is assigned to process 175, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,0,8,-12,0) (47,15,15,-1,7) (0,0,0,0,0)) is assigned to process 136, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,32,0,0,8) (15,47,7,11,15) (0,0,0,0,0)) is assigned to process 35, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,96,0,-12,0) (63,111,7,-1,7) (0,0,0,0,0)) is assigned to process 108, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,96,8,-12,0) (31,111,15,-1,7) (0,0,0,0,0)) is assigned to process 228, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,96,0,0,8) (63,111,7,11,15) (0,0,0,0,0)) is assigned to process 111, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,96,8,-12,8) (31,111,15,-1,15) (0,0,0,0,0)) is assigned to process 230, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,64,8,-12,0) (31,79,15,-1,7) (0,0,0,0,0)) is assigned to process 196, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,64,0,-12,8) (47,79,7,-1,15) (0,0,0,0,0)) is assigned to process 74, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,48,8,0,0) (31,63,15,11,7) (0,0,0,0,0)) is assigned to process 181, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,0,8,0,0) (47,15,15,11,7) (0,0,0,0,0)) is assigned to process 137, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,32,0,0,0) (31,47,7,11,7) (0,0,0,0,0)) is assigned to process 37, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,112,0,0,0) (15,127,7,11,7) (0,0,0,0,0)) is assigned to process 113, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,96,8,0,8) (31,111,15,11,15) (0,0,0,0,0)) is assigned to process 231, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,64,8,0,0) (31,79,15,11,7) (0,0,0,0,0)) is assigned to process 197, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,64,0,0,8) (47,79,7,11,15) (0,0,0,0,0)) is assigned to process 75, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,48,8,-12,8) (31,63,15,-1,15) (0,0,0,0,0)) is assigned to process 182, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,0,8,0,0) (63,15,15,11,7) (0,0,0,0,0)) is assigned to process 141, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,112,0,0,0) (31,127,7,11,7) (0,0,0,0,0)) is assigned to process 117, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,96,8,-12,0) (47,111,15,-1,7) (0,0,0,0,0)) is assigned to process 232, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,64,8,-12,0) (47,79,15,-1,7) (0,0,0,0,0)) is assigned to process 200, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,64,0,0,0) (63,79,7,11,7) (0,0,0,0,0)) is assigned to process 77, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,48,8,-12,8) (47,63,15,-1,15) (0,0,0,0,0)) is assigned to process 186, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,0,8,-12,8) (63,15,15,-1,15) (0,0,0,0,0)) is assigned to process 142, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,32,0,0,8) (31,47,7,11,15) (0,0,0,0,0)) is assigned to process 39, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,112,0,0,8) (31,127,7,11,15) (0,0,0,0,0)) is assigned to process 119, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,96,8,-12,8) (47,111,15,-1,15) (0,0,0,0,0)) is assigned to process 234, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,64,8,-12,8) (47,79,15,-1,15) (0,0,0,0,0)) is assigned to process 202, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,64,0,0,8) (63,79,7,11,15) (0,0,0,0,0)) is assigned to process 79, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,48,8,-12,0) (63,63,15,-1,7) (0,0,0,0,0)) is assigned to process 188, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,16,8,-12,8) (15,31,15,-1,15) (0,0,0,0,0)) is assigned to process 146, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,32,0,0,0) (47,47,7,11,7) (0,0,0,0,0)) is assigned to process 41, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,112,0,0,8) (47,127,7,11,15) (0,0,0,0,0)) is assigned to process 123, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,96,8,0,8) (47,111,15,11,15) (0,0,0,0,0)) is assigned to process 235, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,64,8,0,0) (63,79,15,11,7) (0,0,0,0,0)) is assigned to process 205, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,80,0,0,0) (15,95,7,11,7) (0,0,0,0,0)) is assigned to process 81, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,32,8,0,8) (47,47,15,11,15) (0,0,0,0,0)) is assigned to process 171, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,16,8,-12,0) (31,31,15,-1,7) (0,0,0,0,0)) is assigned to process 148, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,32,0,0,8) (47,47,7,11,15) (0,0,0,0,0)) is assigned to process 43, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,32,0,0,0) (63,47,7,11,7) (0,0,0,0,0)) is assigned to process 45, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,112,0,0,0) (63,127,7,11,7) (0,0,0,0,0)) is assigned to process 125, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,96,8,-12,0) (63,111,15,-1,7) (0,0,0,0,0)) is assigned to process 236, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,80,8,-12,0) (15,95,15,-1,7) (0,0,0,0,0)) is assigned to process 208, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,80,0,-12,8) (15,95,7,-1,15) (0,0,0,0,0)) is assigned to process 82, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,32,8,-12,0) (63,47,15,-1,7) (0,0,0,0,0)) is assigned to process 172, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,16,8,0,0) (31,31,15,11,7) (0,0,0,0,0)) is assigned to process 149, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,80,8,-12,0) (31,95,15,-1,7) (0,0,0,0,0)) is assigned to process 212, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,80,0,0,8) (15,95,7,11,15) (0,0,0,0,0)) is assigned to process 83, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,32,8,0,0) (63,47,15,11,7) (0,0,0,0,0)) is assigned to process 173, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,16,8,0,8) (31,31,15,11,15) (0,0,0,0,0)) is assigned to process 151, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,32,0,-12,8) (63,47,7,-1,15) (0,0,0,0,0)) is assigned to process 46, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,112,0,-12,8) (63,127,7,-1,15) (0,0,0,0,0)) is assigned to process 126, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,96,8,0,0) (63,111,15,11,7) (0,0,0,0,0)) is assigned to process 237, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,96,8,-12,8) (63,111,15,-1,15) (0,0,0,0,0)) is assigned to process 238, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,80,8,0,0) (31,95,15,11,7) (0,0,0,0,0)) is assigned to process 213, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,80,0,-12,0) (31,95,7,-1,7) (0,0,0,0,0)) is assigned to process 84, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,48,8,-12,0) (15,63,15,-1,7) (0,0,0,0,0)) is assigned to process 176, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,0,8,0,0) (31,15,15,11,7) (0,0,0,0,0)) is assigned to process 133, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,32,0,0,8) (63,47,7,11,15) (0,0,0,0,0)) is assigned to process 47, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,96,0,0,0) (15,111,7,11,7) (0,0,0,0,0)) is assigned to process 97, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,48,8,0,0) (15,63,15,11,7) (0,0,0,0,0)) is assigned to process 177, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,0,8,-12,8) (31,15,15,-1,15) (0,0,0,0,0)) is assigned to process 134, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,48,0,0,8) (15,63,7,11,15) (0,0,0,0,0)) is assigned to process 51, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,96,0,-12,0) (15,111,7,-1,7) (0,0,0,0,0)) is assigned to process 96, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,112,8,0,0) (15,127,15,11,7) (0,0,0,0,0)) is assigned to process 241, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,80,8,-12,8) (31,95,15,-1,15) (0,0,0,0,0)) is assigned to process 214, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,80,0,0,0) (31,95,7,11,7) (0,0,0,0,0)) is assigned to process 85, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,48,8,-12,8) (15,63,15,-1,15) (0,0,0,0,0)) is assigned to process 178, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,0,8,0,8) (31,15,15,11,15) (0,0,0,0,0)) is assigned to process 135, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,48,0,0,8) (31,63,7,11,15) (0,0,0,0,0)) is assigned to process 55, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,96,0,0,8) (15,111,7,11,15) (0,0,0,0,0)) is assigned to process 99, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,112,8,-12,8) (15,127,15,-1,15) (0,0,0,0,0)) is assigned to process 242, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,80,8,-12,0) (47,95,15,-1,7) (0,0,0,0,0)) is assigned to process 216, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,80,0,-12,8) (31,95,7,-1,15) (0,0,0,0,0)) is assigned to process 86, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,96,0,-12,0) (31,111,7,-1,7) (0,0,0,0,0)) is assigned to process 100, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,112,8,0,8) (15,127,15,11,15) (0,0,0,0,0)) is assigned to process 243, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,80,8,0,8) (47,95,15,11,15) (0,0,0,0,0)) is assigned to process 219, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,80,0,-12,0) (47,95,7,-1,7) (0,0,0,0,0)) is assigned to process 88, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,48,8,-12,0) (31,63,15,-1,7) (0,0,0,0,0)) is assigned to process 180, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,0,8,-12,8) (47,15,15,-1,15) (0,0,0,0,0)) is assigned to process 138, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,48,0,0,0) (47,63,7,11,7) (0,0,0,0,0)) is assigned to process 57, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,96,0,-12,8) (31,111,7,-1,15) (0,0,0,0,0)) is assigned to process 102, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,112,8,-12,0) (31,127,15,-1,7) (0,0,0,0,0)) is assigned to process 244, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,80,8,0,0) (15,95,15,11,7) (0,0,0,0,0)) is assigned to process 209, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,80,0,0,0) (47,95,7,11,7) (0,0,0,0,0)) is assigned to process 89, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,48,8,0,8) (31,63,15,11,15) (0,0,0,0,0)) is assigned to process 183, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,0,8,0,8) (47,15,15,11,15) (0,0,0,0,0)) is assigned to process 139, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,48,0,-12,8) (47,63,7,-1,15) (0,0,0,0,0)) is assigned to process 58, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,96,0,-12,0) (47,111,7,-1,7) (0,0,0,0,0)) is assigned to process 104, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,112,8,-12,8) (31,127,15,-1,15) (0,0,0,0,0)) is assigned to process 246, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,80,8,0,8) (15,95,15,11,15) (0,0,0,0,0)) is assigned to process 211, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,80,0,0,8) (47,95,7,11,15) (0,0,0,0,0)) is assigned to process 91, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,48,8,-12,0) (47,63,15,-1,7) (0,0,0,0,0)) is assigned to process 184, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,0,8,-12,0) (63,15,15,-1,7) (0,0,0,0,0)) is assigned to process 140, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,48,0,0,8) (47,63,7,11,15) (0,0,0,0,0)) is assigned to process 59, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,48,8,0,0) (47,63,15,11,7) (0,0,0,0,0)) is assigned to process 185, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,0,8,0,8) (63,15,15,11,15) (0,0,0,0,0)) is assigned to process 143, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,48,0,0,8) (63,63,7,11,15) (0,0,0,0,0)) is assigned to process 63, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,96,0,0,0) (63,111,7,11,7) (0,0,0,0,0)) is assigned to process 109, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,112,8,0,8) (31,127,15,11,15) (0,0,0,0,0)) is assigned to process 247, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,80,8,0,8) (31,95,15,11,15) (0,0,0,0,0)) is assigned to process 215, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,80,0,-12,0) (63,95,7,-1,7) (0,0,0,0,0)) is assigned to process 92, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,80,8,0,0) (47,95,15,11,7) (0,0,0,0,0)) is assigned to process 217, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,80,0,-12,8) (63,95,7,-1,15) (0,0,0,0,0)) is assigned to process 94, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,48,8,0,8) (47,63,15,11,15) (0,0,0,0,0)) is assigned to process 187, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,16,8,-12,0) (15,31,15,-1,7) (0,0,0,0,0)) is assigned to process 144, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,32,0,-12,8) (15,47,7,-1,15) (0,0,0,0,0)) is assigned to process 34, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,96,0,-12,8) (63,111,7,-1,15) (0,0,0,0,0)) is assigned to process 110, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,112,8,-12,0) (47,127,15,-1,7) (0,0,0,0,0)) is assigned to process 248, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,32,0,-12,8) (31,47,7,-1,15) (0,0,0,0,0)) is assigned to process 38, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,112,0,-12,0) (15,127,7,-1,7) (0,0,0,0,0)) is assigned to process 112, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,112,8,0,0) (47,127,15,11,7) (0,0,0,0,0)) is assigned to process 249, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,80,8,-12,8) (63,95,15,-1,15) (0,0,0,0,0)) is assigned to process 222, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,80,0,0,8) (63,95,7,11,15) (0,0,0,0,0)) is assigned to process 95, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,48,8,0,0) (63,63,15,11,7) (0,0,0,0,0)) is assigned to process 189, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,16,8,0,0) (15,31,15,11,7) (0,0,0,0,0)) is assigned to process 145, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,112,0,-12,8) (15,127,7,-1,15) (0,0,0,0,0)) is assigned to process 114, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,112,8,-12,8) (47,127,15,-1,15) (0,0,0,0,0)) is assigned to process 250, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,64,8,0,0) (15,79,15,11,7) (0,0,0,0,0)) is assigned to process 193, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,64,0,0,0) (15,79,7,11,7) (0,0,0,0,0)) is assigned to process 65, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,48,8,-12,8) (63,63,15,-1,15) (0,0,0,0,0)) is assigned to process 190, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,16,8,0,8) (15,31,15,11,15) (0,0,0,0,0)) is assigned to process 147, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,32,0,-12,0) (47,47,7,-1,7) (0,0,0,0,0)) is assigned to process 40, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,48,8,0,8) (63,63,15,11,15) (0,0,0,0,0)) is assigned to process 191, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,16,8,-12,8) (31,31,15,-1,15) (0,0,0,0,0)) is assigned to process 150, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,32,0,-12,8) (47,47,7,-1,15) (0,0,0,0,0)) is assigned to process 42, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,112,8,-12,0) (63,127,15,-1,7) (0,0,0,0,0)) is assigned to process 252, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,64,8,-12,8) (15,79,15,-1,15) (0,0,0,0,0)) is assigned to process 194, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,64,0,0,8) (15,79,7,11,15) (0,0,0,0,0)) is assigned to process 67, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,16,8,0,0) (47,31,15,11,7) (0,0,0,0,0)) is assigned to process 153, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,32,0,-12,0) (63,47,7,-1,7) (0,0,0,0,0)) is assigned to process 44, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,112,0,0,8) (15,127,7,11,15) (0,0,0,0,0)) is assigned to process 115, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,112,8,0,0) (63,127,15,11,7) (0,0,0,0,0)) is assigned to process 253, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,64,8,0,8) (15,79,15,11,15) (0,0,0,0,0)) is assigned to process 195, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,64,0,-12,0) (15,79,7,-1,7) (0,0,0,0,0)) is assigned to process 64, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,32,8,-12,0) (15,47,15,-1,7) (0,0,0,0,0)) is assigned to process 160, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,112,0,-12,0) (31,127,7,-1,7) (0,0,0,0,0)) is assigned to process 116, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,112,8,-12,8) (63,127,15,-1,15) (0,0,0,0,0)) is assigned to process 254, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,64,8,-12,8) (31,79,15,-1,15) (0,0,0,0,0)) is assigned to process 198, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,64,0,-12,8) (15,79,7,-1,15) (0,0,0,0,0)) is assigned to process 66, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,32,8,0,0) (15,47,15,11,7) (0,0,0,0,0)) is assigned to process 161, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,16,8,-12,8) (47,31,15,-1,15) (0,0,0,0,0)) is assigned to process 154, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,48,0,-12,0) (15,63,7,-1,7) (0,0,0,0,0)) is assigned to process 48, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,112,0,-12,8) (31,127,7,-1,15) (0,0,0,0,0)) is assigned to process 118, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,112,8,0,8) (47,127,15,11,15) (0,0,0,0,0)) is assigned to process 251, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,64,8,0,8) (31,79,15,11,15) (0,0,0,0,0)) is assigned to process 199, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,64,0,-12,0) (31,79,7,-1,7) (0,0,0,0,0)) is assigned to process 68, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,32,8,0,8) (15,47,15,11,15) (0,0,0,0,0)) is assigned to process 163, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,16,8,0,8) (47,31,15,11,15) (0,0,0,0,0)) is assigned to process 155, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,48,0,-12,8) (15,63,7,-1,15) (0,0,0,0,0)) is assigned to process 50, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,112,0,-12,0) (47,127,7,-1,7) (0,0,0,0,0)) is assigned to process 120, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,112,8,0,8) (63,127,15,11,15) (0,0,0,0,0)) is assigned to process 255, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,64,8,0,0) (47,79,15,11,7) (0,0,0,0,0)) is assigned to process 201, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,64,0,-12,8) (31,79,7,-1,15) (0,0,0,0,0)) is assigned to process 70, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,32,8,0,0) (31,47,15,11,7) (0,0,0,0,0)) is assigned to process 165, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,16,8,-12,8) (63,31,15,-1,15) (0,0,0,0,0)) is assigned to process 158, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,48,0,-12,0) (31,63,7,-1,7) (0,0,0,0,0)) is assigned to process 52, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,112,0,0,0) (47,127,7,11,7) (0,0,0,0,0)) is assigned to process 121, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,64,8,0,8) (47,79,15,11,15) (0,0,0,0,0)) is assigned to process 203, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,64,0,0,8) (31,79,7,11,15) (0,0,0,0,0)) is assigned to process 71, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,32,8,0,8) (31,47,15,11,15) (0,0,0,0,0)) is assigned to process 167, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,16,8,0,8) (63,31,15,11,15) (0,0,0,0,0)) is assigned to process 159, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,48,0,-12,8) (31,63,7,-1,15) (0,0,0,0,0)) is assigned to process 54, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,112,0,-12,8) (47,127,7,-1,15) (0,0,0,0,0)) is assigned to process 122, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,96,8,0,0) (15,111,15,11,7) (0,0,0,0,0)) is assigned to process 225, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,64,8,-12,0) (63,79,15,-1,7) (0,0,0,0,0)) is assigned to process 204, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,64,0,-12,0) (63,79,7,-1,7) (0,0,0,0,0)) is assigned to process 76, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,0,8,-12,0) (15,15,15,-1,7) (0,0,0,0,0)) is assigned to process 128, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,48,0,-12,0) (47,63,7,-1,7) (0,0,0,0,0)) is assigned to process 56, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,96,8,0,0) (47,111,15,11,7) (0,0,0,0,0)) is assigned to process 233, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,64,0,-12,8) (63,79,7,-1,15) (0,0,0,0,0)) is assigned to process 78, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,32,8,-12,0) (47,47,15,-1,7) (0,0,0,0,0)) is assigned to process 168, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,0,8,0,0) (15,15,15,11,7) (0,0,0,0,0)) is assigned to process 129, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,112,0,-12,0) (63,127,7,-1,7) (0,0,0,0,0)) is assigned to process 124, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,96,8,0,8) (63,111,15,11,15) (0,0,0,0,0)) is assigned to process 239, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,64,8,-12,8) (63,79,15,-1,15) (0,0,0,0,0)) is assigned to process 206, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,80,0,0,8) (31,95,7,11,15) (0,0,0,0,0)) is assigned to process 87, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,32,8,0,0) (47,47,15,11,7) (0,0,0,0,0)) is assigned to process 169, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,0,8,-12,8) (15,15,15,-1,15) (0,0,0,0,0)) is assigned to process 130, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,48,0,-12,0) (63,63,7,-1,7) (0,0,0,0,0)) is assigned to process 60, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,112,0,0,8) (63,127,7,11,15) (0,0,0,0,0)) is assigned to process 127, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,48,0,-12,8) (63,63,7,-1,15) (0,0,0,0,0)) is assigned to process 62, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,96,0,-12,8) (15,111,7,-1,15) (0,0,0,0,0)) is assigned to process 98, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,112,8,-12,0) (15,127,15,-1,7) (0,0,0,0,0)) is assigned to process 240, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,64,8,0,8) (63,79,15,11,15) (0,0,0,0,0)) is assigned to process 207, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,80,0,-12,8) (47,95,7,-1,15) (0,0,0,0,0)) is assigned to process 90, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,48,8,0,8) (15,63,15,11,15) (0,0,0,0,0)) is assigned to process 179, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,0,8,-12,0) (31,15,15,-1,7) (0,0,0,0,0)) is assigned to process 132, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,32,8,-12,0) (31,47,15,-1,7) (0,0,0,0,0)) is assigned to process 164, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,16,8,-12,0) (47,31,15,-1,7) (0,0,0,0,0)) is assigned to process 152, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,32,0,-12,0) (31,47,7,-1,7) (0,0,0,0,0)) is assigned to process 36, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,80,8,-12,8) (47,95,15,-1,15) (0,0,0,0,0)) is assigned to process 218, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,80,0,-12,0) (15,95,7,-1,7) (0,0,0,0,0)) is assigned to process 80, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,16,0,-12,8) (63,31,7,-1,15) (0,0,0,0,0)) is assigned to process 30, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,0,0,0,8) (47,15,7,11,15) (0,0,0,0,0)) is assigned to process 11, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,0,0,0,0) (15,15,7,11,7) (0,0,0,0,0)) is assigned to process 1, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,0,0,0,8) (15,15,7,11,15) (0,0,0,0,0)) is assigned to process 3, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,0,0,-12,0) (31,15,7,-1,7) (0,0,0,0,0)) is assigned to process 4, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,0,0,0,0) (31,15,7,11,7) (0,0,0,0,0)) is assigned to process 5, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,0,0,-12,8) (31,15,7,-1,15) (0,0,0,0,0)) is assigned to process 6, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,0,0,0,8) (31,15,7,11,15) (0,0,0,0,0)) is assigned to process 7, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,0,0,-12,0) (47,15,7,-1,7) (0,0,0,0,0)) is assigned to process 8, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,0,0,0,0) (47,15,7,11,7) (0,0,0,0,0)) is assigned to process 9, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,0,0,-12,8) (47,15,7,-1,15) (0,0,0,0,0)) is assigned to process 10, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,0,0,-12,0) (63,15,7,-1,7) (0,0,0,0,0)) is assigned to process 12, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,0,0,0,0) (63,15,7,11,7) (0,0,0,0,0)) is assigned to process 13, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,0,0,-12,8) (63,15,7,-1,15) (0,0,0,0,0)) is assigned to process 14, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,0,0,0,8) (63,15,7,11,15) (0,0,0,0,0)) is assigned to process 15, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,16,0,-12,0) (15,31,7,-1,7) (0,0,0,0,0)) is assigned to process 16, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,16,0,0,0) (15,31,7,11,7) (0,0,0,0,0)) is assigned to process 17, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,16,0,-12,8) (15,31,7,-1,15) (0,0,0,0,0)) is assigned to process 18, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,16,0,0,8) (15,31,7,11,15) (0,0,0,0,0)) is assigned to process 19, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,16,0,-12,0) (31,31,7,-1,7) (0,0,0,0,0)) is assigned to process 20, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,16,0,0,0) (31,31,7,11,7) (0,0,0,0,0)) is assigned to process 21, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,16,0,-12,8) (31,31,7,-1,15) (0,0,0,0,0)) is assigned to process 22, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((16,16,0,0,8) (31,31,7,11,15) (0,0,0,0,0)) is assigned to process 23, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,16,0,-12,0) (47,31,7,-1,7) (0,0,0,0,0)) is assigned to process 24, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,16,0,0,0) (47,31,7,11,7) (0,0,0,0,0)) is assigned to process 25, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,16,0,-12,8) (47,31,7,-1,15) (0,0,0,0,0)) is assigned to process 26, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((32,16,0,0,8) (47,31,7,11,15) (0,0,0,0,0)) is assigned to process 27, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,16,0,-12,0) (63,31,7,-1,7) (0,0,0,0,0)) is assigned to process 28, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,16,0,0,0) (63,31,7,11,7) (0,0,0,0,0)) is assigned to process 29, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,0,0,-12,0) (15,15,7,-1,7) (0,0,0,0,0)) is assigned to process 0, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((48,16,0,0,8) (63,31,7,11,15) (0,0,0,0,0)) is assigned to process 31, has 196608 valid cells and 2752512 ghost cells
+   Phase space box ((0,0,0,-12,8) (15,15,7,-1,15) (0,0,0,0,0)) is assigned to process 2, has 196608 valid cells and 2752512 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.01, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+"T0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"potential_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00+exp(-(x-pi/2)^2/(2*pi*0.001/0.04)-(y-pi)^2/(2*pi*0.001/0.02))   )
+  translated form: (1.00+exp(-(x'-pi'/2)^2/(2*pi'*0.001/0.04)-(y'-pi')^2/(2*pi'*0.001/0.02)))
+  postfix form: {1.00}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.001}{*}{0.04}{/}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.001}{*}{0.02}{/}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  0
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	0.00175619 [max]	3.37345e-11 [min]
+    Species 1:	6.20905e-07 [max]	1.19269e-14 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+Vlasov operator time step (0.087195) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0396875,0.0379688,3.125,-4.79167,0.125) and mapped coordinate = (63,121,0,-12,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0483873) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0184375,0.0379688,28.125,-4.79167,0.125) and mapped coordinate = (29,121,4,-12,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+
+m_num_cells[i]=64
+m_num_cells[i]=128
+m_num_cells[i]=16
+m_num_cells[i]=24
+m_num_cells[i]=16
+dx*nx= 0.0981748 * 64 = 6.28319, dx(m)*nx= 0.000625 * 64 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.0490874 * 128 = 6.28319, dy(m)*ny= 0.0003125 * 128 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 6.25 * 16 = 100, ( 1 : 15.9155 )
+dvpar*nvpar= 0.416667 * 12 = 5, dv_parallel(m/s)*nvpar= 40779.8 * 12 = 489358, ( 1 : 2038.99 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 0.416667 * 12 = 5, dv_parallel(m/s)*nvpar= 28835.7 * 12 = 346028, ( 1 : 69205.6 )
+ [electron] mass = 0.01
+  dvpar*nvpar= 0.416667 * 12 = 5, dv_parallel(m/s)*nvpar= 407798 * 12 = 4.89358e+06, ( 1 : 978715 )
+dmu*nmu= 0.25 * 16 = 2, dmu(J/T)*nmu= 2.00272e-18 * 16 = 3.20435e-17, ( 1 : 5.0068e-19 )
+
+Estimated dt
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=97871.5
+unit_dimension_time   [hydrogen]=1.02175e-05
+[hydrogen] maxvel:phy_maxvel[0]=2.17305e-16:2.1268e-11(1:97871.5)
+[hydrogen] maxvel:phy_maxvel[1]=0.0026066:255.112(1:97871.5)
+[hydrogen] maxvel:phy_maxvel[2]=3.38822:331610(1:97871.5)
+[hydrogen] maxvel:phy_maxvel[3]=8.73479e-17:8.36691e-07(1:9.57883e+09)
+[hydrogen] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[hydrogen]=dz(m)/vparmax_z(m/s)[hydrogen]=6.25/346028=1.80621e-05
+dt_zpar(-)[hydrogen]=1.76777
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.0003125/0=inf
+dt_ypar(-)[hydrogen]=inf
+dt_z(s)[hydrogen]=dz(m)/vmax_z(m/s)[hydrogen]=6.25/331610=1.88474e-05
+dt_z(-)[hydrogen]=1.84463
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.0003125/255.112=1.22495e-06
+dt_y(-)[hydrogen]=0.119888
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.000625/2.1268e-11=2.93869e+07
+dt_x(-)[hydrogen]=2.87614e+12
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=40779.8/8.36691e-07=4.87394e+10
+dt_vpar(-)[hydrogen]=4.7702e+15
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=97871.5
+unit_dimension_time   [electron]=1.02175e-05
+[electron] maxvel:phy_maxvel[0]=2.17305e-16:2.1268e-11(1:97871.5)
+[electron] maxvel:phy_maxvel[1]=0.0026066:255.112(1:97871.5)
+[electron] maxvel:phy_maxvel[2]=47.9167:4.68968e+06(1:97871.5)
+[electron] maxvel:phy_maxvel[3]=1.23529e-15:1.18326e-05(1:9.57883e+09)
+[electron] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[electron]=dz(m)/vparmax_z(m/s)[electron]=6.25/4.89358e+06=1.27718e-06
+dt_zpar(-)[electron]=0.125
+dt_ypar(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.0003125/0=inf
+dt_ypar(-)[electron]=inf
+dt_z(s)[electron]=dz(m)/vmax_z(m/s)[electron]=6.25/4.68968e+06=1.33271e-06
+dt_z(-)[electron]=0.130435
+dt_y(s)[electron]=dy(m)/vmax_y(m/s)[electron]=0.0003125/255.112=1.22495e-06
+dt_y(-)[electron]=0.119888
+dt_x(s)[electron]=dx(m)/vmax_x(m/s)[electron]=0.000625/2.1268e-11=2.93869e+07
+dt_x(-)[electron]=2.87614e+12
+dt_vpar(s)[electron]=dvpar(m/s)/vmax_vpar(m/s/s)[electron]=40779.8/1.18326e-05=3.44639e+09
+dt_vpar(-)[electron]=3.37304e+14
+
+kz = 0.015708 ~ 0.251327
+ky = 39.2699 ~ 5026.55
+kx = 39.2699 ~ 2513.27
+kpar  = 0.015708 ~ 0.251327
+kperp = 55.536 ~ 5619.85
+rhos = 0.00481656
+rhos * ky    = 0.189146 ~ 24.2107
+rhos * kx    = 0.189146 ~ 12.1053
+rhos * kperp = 0.267493 ~ 27.0684
+omega_ea(1/s) = 5679.55 ~ 9.19568e+06
+omega_ea(-)   = 0.0580307 ~ 93.9567
+delta_t_omega_ea (s) = 6.83276e-07 ~ 0.00110628
+delta_t_omega_ea (-) = 0.0668732 ~ 108.274
+
+--------------------------------------------------------------------------
+mpirun noticed that process rank 39 with PID 8671 on node node01 exited on signal 9 (Killed).
+--------------------------------------------------------------------------
