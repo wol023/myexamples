@@ -39,7 +39,7 @@ simulation.1.history_indices = 4 2 2
 #####################################################
 # Computational Grid Definitions
 #####################################################
-gksystem.num_cells   = 16 16 16 8 8
+gksystem.num_cells   = 8 8 8 32 8
 gksystem.is_periodic =  1  1  1  0  0
 
 gksystem.configuration_decomp = 1 1 1 
@@ -131,7 +131,7 @@ gkpoissonboltzmann.nonlinear_maximum_iterations = 20
 # Species Definitions
 #####################################################
 kinetic_species.1.name   = "hydrogen"
-kinetic_species.1.mass   = 2.0
+kinetic_species.1.mass   = 1.0
 kinetic_species.1.charge = 1.0
 
 #boltzmann_electron.name = "electron"
@@ -142,7 +142,8 @@ kinetic_species.1.charge = 1.0
 
 
 kinetic_species.2.name   = "electron"
-kinetic_species.2.mass   = 1.0
+#kinetic_species.2.mass   = 1.0
+kinetic_species.2.mass   = 0.000544
 kinetic_species.2.charge = -1.0
 
 #####################################################
