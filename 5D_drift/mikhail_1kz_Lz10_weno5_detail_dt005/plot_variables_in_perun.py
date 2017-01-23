@@ -24,22 +24,22 @@ z_pt = 8
 from plot_cogent_pack import *
 
 
-with open('perun_cluster_target.txt','r') as fo:
+with open('perun_cluster_target_in_perun.txt','r') as fo:
     lines= fo.read().splitlines()
-host=lines[0]
-user=lines[1]
-pword=lines[2]
-basepath=lines[3]
-targetpath=lines[4]
-nextline=lines[5]
-rawpathfiles=lines[6:]
-print 'host=',host
-print 'user=',user
-print 'pword=',pword
-print 'basepath=',basepath
-print 'targetpath=',targetpath
-print nextline
-#print rawpathfiles
+    host=lines[0]
+    user=lines[1]
+    pword=lines[2]
+    basepath=lines[3]
+    targetpath=lines[4]
+    nextline=lines[5]
+    rawpathfiles=lines[6:]
+    print 'host=',host
+    print 'user=',user
+    print 'pword=',pword
+    print 'basepath=',basepath
+    print 'targetpath=',targetpath
+    print nextline
+    #print rawpathfiles
 
 pathfiles=[]
 for i in range(len(rawpathfiles)):
