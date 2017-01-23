@@ -1,0 +1,123 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 1000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 309497
+  TRANSIT TIME          [s]: 3.23105e-06
+  MAGNETIC MOMENT     [J/T]: 8.01088e-17
+  DIST. FUNCTION [s/(Am^6)]: 1073.7
+  POTENTIAL             [V]: 1000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00323105
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00323105
+  LARMOR NUMBER **2        : 1.04397e-05
+  DEBYE NUMBER             : 2.35082e-05
+  DEBYE NUMBER **2         : 5.52635e-10
+  DEBYE NUMBER/MULT_FAC    : 2.35082e-05
+  DEBYE NUMBER/MULT_FAC **2: 5.52635e-10
+
+***********************************************************************
+SlabBlock Arbitrary test
+Arbitrary grid function parameters:
+  function: -(x-pi)*sin(z)
+  coordinate type: mapped
+
+ Arbitrary::Arbitrary() m_pscore->getFormula():-(x-pi)*sin(z)
+ Arbitrary::Arbitrary() m_pscore->getManipStr():-(x'-pi')*sin(z')
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{x'[0.000000000000000e+00]}{PI'}{-}{-:}{z'[0.000000000000000e+00]}{sin}{*}
+=====
+Arbitrary grid function parameters:
+  function: -(y-pi)*sin(z)
+  coordinate type: mapped
+
+ Arbitrary::Arbitrary() m_pscore->getFormula():-(y-pi)*sin(z)
+ Arbitrary::Arbitrary() m_pscore->getManipStr():-(y'-pi')*sin(z')
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{y'[0.000000000000000e+00]}{PI'}{-}{-:}{z'[0.000000000000000e+00]}{sin}{*}
+=====
+Arbitrary grid function parameters:
+  function: 3.0+2.0*cos(z)
+  coordinate type: mapped
+
+ Arbitrary::Arbitrary() m_pscore->getFormula():3.0+2.0*cos(z)
+ Arbitrary::Arbitrary() m_pscore->getManipStr():3.0+2.0*cos(z')
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{3.0}{2.0}{z'[0.000000000000000e+00]}{cos}{*}{+}
+=====
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 100
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.785398 * 8 = 6.28319, dx(m)*nx= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.785398 * 8 = 6.28319, dy(m)*ny= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.785398 * 8 = 6.28319, dz(m)*nz= 12.5 * 8 = 100, ( 1 : 15.9155 )
+
+   Configuration space box ((0,0,0) (7,7,7) (0,0,0)) is assigned to process 0
+Constructing magnetic geometry
+ Arbitrary::setPointWise 1
+dir_FArray = 0
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 2
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 1
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 0
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 2
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 1
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 0
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 2
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 1
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 0
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 2
+ Arbitrary::setPointWise .
+ Arbitrary::setPointWise 1
+dir_FArray = 1
+ Arbitrary::setPointWise .
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.625 * 8 = 5, dv_parallel(m/s)*nvpar= 193436 * 8 = 1.54748e+06, ( 1 : 309497 )
+dmu*nmu= 0.5 * 8 = 4, dmu(J/T)*nmu= 4.00544e-17 * 8 = 3.20435e-16, ( 1 : 8.01088e-17 )
+
+   Phase space box ((0,0,0,-8,0) (7,7,7,7,7) (0,0,0,0,0)) is assigned to process 0, has 65536 valid cells and 1507328 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.01, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
