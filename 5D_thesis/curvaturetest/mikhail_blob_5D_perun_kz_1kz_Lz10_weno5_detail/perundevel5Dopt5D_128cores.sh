@@ -1,7 +1,7 @@
 #PBS -N cogent5d
 #PBS -V
 #PBS -l nodes=4:ppn=32
-#PBS -l walltime=02:00:00
+#PBS -l walltime=576:00:00
 
 cd $PBS_O_WORKDIR
 
