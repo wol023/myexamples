@@ -18,8 +18,8 @@ gksystem.ti_method = "4"
 #####################################################
 # Time Stepping Definitions
 #####################################################
-simulation.max_step            = 10000
-simulation.max_time            = 20.0
+simulation.max_step            = 3000
+simulation.max_time            = 30.0
 #simulation.max_dt_grow         = 1.1
 simulation.initial_dt_fraction = 1.0
 simulation.cfl_number          = 0.9
@@ -40,22 +40,22 @@ simulation.1.history_indices = 22 16 8
 # Computational Grid Definitions
 #####################################################
 #gksystem.num_cells   = 64 64 16 36 24
-gksystem.num_cells   = 32 32 16 36 24
+gksystem.num_cells   = 32 32 32 36 24
 gksystem.is_periodic = 0  0  1  0  0
 
 #gksystem.configuration_decomp = 4 4
 #gksystem.velocity_decomp      =     3 3
 #gksystem.phase_decomp         = 4 4 3 3
 
-gksystem.configuration_decomp = 4 4 2
+gksystem.configuration_decomp = 4 4 4
 gksystem.velocity_decomp      =       4 2
-gksystem.phase_decomp         = 4 4 2 4 2
+gksystem.phase_decomp         = 4 4 4 4 2
 
 #####################################################
 # Units Definitions
 #####################################################
-units.number_density = 1.0e20
-units.temperature    = 400.0
+units.number_density = 1.0e13
+units.temperature    = 100.0
 units.length         = 1.0
 units.mass           = 1.0
 units.magnetic_field = 1.0 
@@ -69,9 +69,9 @@ gksystem.magnetic_geometry_mapping.slab.verbose  = true
 gksystem.magnetic_geometry_mapping.slab.visit_plotfile  = "SlabViz"
 gksystem.magnetic_geometry_mapping.slab.num_quad_points = 5
 gksystem.magnetic_geometry_mapping.slab.axisymmetric = false
-gksystem.magnetic_geometry_mapping.slab.x_max = 0.016
-gksystem.magnetic_geometry_mapping.slab.y_max = 0.016
-gksystem.magnetic_geometry_mapping.slab.z_max = 10.0
+gksystem.magnetic_geometry_mapping.slab.x_max = 0.04
+gksystem.magnetic_geometry_mapping.slab.y_max = 0.04
+gksystem.magnetic_geometry_mapping.slab.z_max = 50.0
 gksystem.magnetic_geometry_mapping.slab.Bz_inner = 3.0
 gksystem.magnetic_geometry_mapping.slab.Bz_outer = 3.0
 gksystem.magnetic_geometry_mapping.slab.By_inner = 0.0
@@ -274,7 +274,7 @@ grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "exp(-x/(8.0*pi))+0.00000001*sin(y+1*z)*sin(x/2.0)"
 #grid_function_library.N0_grid_func.function = "( 1+0.03*exp(-((x-pi)/(2*pi*0.1))^2 - ((y-pi)/(2*pi*0.1))^2 ) )+0.000001*rand(1)"
 #grid_function_library.N0_grid_func.function = "( 1+0.012*exp(-((x-pi)/(2*pi*0.2))^2 -((y-pi)/(2*pi*0.2))^2 ) )+0.000001*sin( 2*arctan((y-pi)/(x-pi)) + 1.0*z )"
-grid_function_library.N0_grid_func.function = "(1+0.1*exp(-((x-pi)/(2*pi*0.2))^2-((y-pi)/(2*pi*0.2))^2))+0.00000001*sin(1*(y-pi)atwotan(x-pi)+1.0*z)*(exp(-((sqrt((x-pi)^2+(y-pi)^2)+1/4*pi)/(2*pi*0.05))^2)+exp(-((sqrt((x-pi)^2+(y-pi)^2)-1/4*pi)/(2*pi*0.05))^2))"
+grid_function_library.N0_grid_func.function = "(1+2.0*exp(-((x-pi)/(2*pi*0.2))^2-((y-pi)/(2*pi*0.2))^2))+0.00000001*sin(2*arctan((y-pi)/(x-pi))+1.0*z)*(exp(-((sqrt((x-pi)^2+(y-pi)^2)+1/4*pi)/(2*pi*0.05))^2)+exp(-((sqrt((x-pi)^2+(y-pi)^2)-1/4*pi)/(2*pi*0.05))^2))"
 #grid_function_library.N0_grid_func.function = "( 1+0.012*exp(-((x-pi)/(2*pi*0.2))^2 -((y-pi)/(2*pi*0.2))^2 ) )+0.000001*sin( 2*arctan((y-pi)/(x-pi)) + 1.0*z )*1.0/0.008*abs(0.0477465-0.0151982*sqrt( (x-pi)^2+(y-pi)^2 )/(0.012+exp(0.633257*(pi- sqrt( (x-pi)^2+(y-pi)^2 ) )^2 ) ) )"
 
 grid_function_library.eN0_grid_func.type = "arbitrary"
