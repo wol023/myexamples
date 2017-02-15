@@ -250,17 +250,46 @@ init_plotting()
 plt.subplot(111)
 plt.gca().margins(0.1, 0.1)
 
-plt.plot(pr_array_numTotalDecomp,pr_array_23WallTime,marker='.',linewidth=1,label='2-3 step')
+p0=plt.scatter(pr_array_numTotalDecomp,pr_array_23WallTime,marker='o',linewidth=1,label='COGENT')
 
 plt.gca().set_xscale('log',basex=10)
 plt.gca().set_yscale('log',basey=10)
 #plt.gca().xaxis.get_major_formatter().set_powerlimits((-1, 1))
 #plt.gca().yaxis.get_major_formatter().set_powerlimits((-1, 1))
-for l in range(len(pr_array_decomp)):
-    plt.gca().text(pr_array_numTotalDecomp[l],pr_array_23WallTime[l],pr_array_decomp[l])
-plt.xlabel(u'no. of processes')
-plt.ylabel(u'Wall Time (s)')
+
+#for l in range(len(pr_array_decomp)):
+    #plt.gca().text(pr_array_numTotalDecomp[l],pr_array_23WallTime[l],pr_array_decomp[l])
+    #plt.gca().annotate(pr_array_decomp[l],xy=(pr_array_numTotalDecomp[l],pr_array_23WallTime[l]),xytext=(pr_array_numTotalDecomp[l]*1.1,pr_array_23WallTime[l]*1.1),arrowprops=dict(facecolor='black',shrink=0.02,width=0.1,headwidth=0.2))
+
+
+alpha=-1.0
+C=pr_array_23WallTime[0]/pr_array_numTotalDecomp[0]**alpha
+N=np.linspace(pr_array_numTotalDecomp[0],pr_array_numTotalDecomp[-1], 10, endpoint=True)
+Tw=C*(N**(alpha))
+p1,=plt.plot(N,Tw,':',label=r'$T_w =C N^\alpha, \alpha=-1.0$')    
+plt.gca().text(N[2]*1.05,Tw[2]*1.05,r'$\alpha=-1.0$')
+#plt.gca().annotate(r'$\alpha=-1.0$',xy=(N[2],Tw[2]),xytext=(N[2]*1.05,Tw[2]*1.05),arrowprops=dict(facecolor='none',shrink=0.02,width=0.1,headwidth=0.2))
+
+alpha=-0.5
+C=pr_array_23WallTime[0]/pr_array_numTotalDecomp[0]**alpha
+Tw=C*(N**(alpha))
+p2,=plt.plot(N,Tw,'--',label=r'$T_w =C N^\alpha, \alpha=-0.5$')    
+plt.gca().text(N[2]*1.05,Tw[2]*1.05,r'$\alpha=-0.5$')
+#plt.gca().annotate(r'$T_w =C N^\alpha$',xy=(N[2],Tw[2]),xytext=(N[2]*1.15,Tw[2]*1.15),arrowprops=dict(facecolor='green',shrink=0.02,width=0.1,headwidth=0.2))
+
+alpha=-0.65
+C=pr_array_23WallTime[0]/pr_array_numTotalDecomp[0]**alpha
+Tw=C*(N**(alpha))
+p3,=plt.plot(N,Tw,'-',label=r'$T_w =C N^\alpha, \alpha = -0.65$')    
+plt.gca().text(N[2]*1.05,Tw[2]*1.05,r'$\alpha=-0.65$')
+#plt.gca().annotate(r'$\alpha=-0.65$',xy=(N[2],Tw[2]),xytext=(N[2]*1.05,Tw[2]*1.05),arrowprops=dict(facecolor='none',shrink=0.02,width=0.1,headwidth=0.2))
+
+
+plt.xlabel(r'$N$'+u' (no. of processes)')
+plt.ylabel(r'$T_w$'+u' (Wall Time) [s]')
 plt.gca().legend(loc='best')
+#plt.gca().legend([(p1,p2,p3),p0],[r'$T_w =C N^\alpha$','COGENT'],loc='best')
+
 plt.tight_layout()
 plt.savefig('scaling12.png')
 plt.savefig('scaling12.eps')
