@@ -954,6 +954,24 @@ k_y        = 2.0*np.pi*m_y/(y_max*100)
 k_x        = 2.0*np.pi*m_x/(x_max*100) 
 k_z        = 2.0*np.pi*m_z/(z_max*100) 
 
+rcm = abs(xcm[np.argmax(-(dlnyydx))]-(xcm[len(xcm)/2-1]+xcm[len(xcm)/2])/2.0)
+#k_theta    = m_theta/(x_max*100/4.0*0.9)
+print 'rcm = ', rcm
+k_theta    = m_theta/rcm
+
+k_par      = (k_y*B_y+k_z*B_z)/B_t
+k_par_z    = k_par*B_z/B_t
+k_par_y    = k_par*B_y/B_t
+
+k_perp_z   = (k_z*B_y-k_y*B_z)*B_y/B_t/B_t
+k_perp_y   = (k_y*B_z-k_z*B_y)*B_z/B_t/B_t
+k_perp_x   = abs(k_x)
+k_perp_yz  = np.sqrt(k_perp_z*k_perp_z+k_perp_y*k_perp_y)
+k_perp     = np.sqrt(k_perp_yz*k_perp_yz+k_x*k_x)
+
+if k_theta > 0.0:
+    k_perp=k_theta
+    k_perp_yz=k_theta
 
 deltaL_max = 1./max(abs(dlnyydx))
 deltaL_spline = 1./max(abs(dlninter_yydx))
@@ -979,38 +997,6 @@ deltaL_spread = 1.0/abs(deltaL_spread)
 spread_ind_diff=np.array(spread_ind_diff)
 spread_ind =  spread_ind_diff+ x_point_index_in_plot
 #print spread_ind
-
-
-
-
-gradall=0.0
-rcm_CM =0.0
-center_cm = (xcm[len(xcm)/2-1]+xcm[len(xcm)/2])/2.0
-for ind in spread_ind:
-    gradall += dlnyydx[ind]
-for ind in spread_ind:
-    rcm_CM += dlnyydx[ind]*(xcm[ind]-center_cm)
-rcm_CM=rcm_CM/gradall
-
-print 'rcm_CM = ', rcm_CM
-rcm = abs(xcm[np.argmax(-(dlnyydx))]-(xcm[len(xcm)/2-1]+xcm[len(xcm)/2])/2.0)
-#k_theta    = m_theta/(x_max*100/4.0*0.9)
-print 'rcm = ', rcm
-k_theta    = m_theta/rcm_CM
-
-k_par      = (k_y*B_y+k_z*B_z)/B_t
-k_par_z    = k_par*B_z/B_t
-k_par_y    = k_par*B_y/B_t
-
-k_perp_z   = (k_z*B_y-k_y*B_z)*B_y/B_t/B_t
-k_perp_y   = (k_y*B_z-k_z*B_y)*B_z/B_t/B_t
-k_perp_x   = abs(k_x)
-k_perp_yz  = np.sqrt(k_perp_z*k_perp_z+k_perp_y*k_perp_y)
-k_perp     = np.sqrt(k_perp_yz*k_perp_yz+k_x*k_x)
-
-if k_theta > 0.0:
-    k_perp=k_theta
-    k_perp_yz=k_theta
 
 chi_x      = k_perp*rho_s
 chi        = k_perp_yz*rho_s

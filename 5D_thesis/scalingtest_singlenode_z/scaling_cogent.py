@@ -298,7 +298,7 @@ plt.close('all')
 #plt.show()
 
 
-speedup_23=1.0/pr_array_23WallTime/(1.0/pr_array_23WallTime[0])*8
+speedup_23=1.0/pr_array_23WallTime/(1.0/pr_array_23WallTime[0])*pr_array_numTotalDecomp[0]
 print speedup_23 
 ############ speed up
 init_plotting()
