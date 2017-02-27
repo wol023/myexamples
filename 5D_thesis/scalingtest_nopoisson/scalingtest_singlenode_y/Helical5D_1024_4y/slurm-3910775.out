@@ -1,3 +1,4 @@
+ModuleCmd_Switch.c(179):ERROR:152: Module 'PrgEnv-intel' is currently not loaded
 ** GKUnits ***********************************************************
 
 ==== Fundamental Units ===============================================
@@ -352,9 +353,13 @@ Constant grid function parameters:
   logical_sheath  =  0
 -----------------------------------------------
 ===============================================
+Using electrons with fixed E field !!!
 No collision model specified for hydrogen.
 Collision model for 0	hydrogen:	None
 Time integration method: rk (4)
+Using electrons with fixed E field !!!
+Using electrons with fixed E field !!!
+Using electrons with fixed E field !!!
 GKPoissonAdiabaticElectron parameters:
    Debye number squared = 2.21054e-10
    Larmor number squared = 4.17587e-06
@@ -420,7 +425,7 @@ enforce_positivity_type = stage
   Distribution Function Extrema:
     Species 0:	9.2932e-06 [max]	4.95305e-13 [min]
 
-Step 1 completed, simulation time is 0.0350705, solver wall time is 48.8334 seconds
+Step 1 completed, simulation time is 0.0350705, solver wall time is 48.7536 seconds
 ----
 
 Step 2
@@ -441,7 +446,7 @@ enforce_positivity_type = stage
   Distribution Function Extrema:
     Species 0:	9.29321e-06 [max]	4.95305e-13 [min]
 
-Step 2 completed, simulation time is 0.0701411, solver wall time is 97.2599 seconds
+Step 2 completed, simulation time is 0.0701411, solver wall time is 96.8284 seconds
 ----
 
 Step 3
@@ -462,7 +467,7 @@ enforce_positivity_type = stage
   Distribution Function Extrema:
     Species 0:	9.29322e-06 [max]	4.95305e-13 [min]
 
-Step 3 completed, simulation time is 0.105212, solver wall time is 173.031 seconds
+Step 3 completed, simulation time is 0.105212, solver wall time is 145.491 seconds
 ----
 Writing checkpoint file
 Writing history file
@@ -478,5 +483,5 @@ Writing history file
   Time integrator counts:-
     Time steps: 3
 ----
-Solve wall time (in seconds): 173.048
-Total wall time (in seconds): 184.64
+Solve wall time (in seconds): 145.566
+Total wall time (in seconds): 156.183
