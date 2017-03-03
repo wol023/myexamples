@@ -46811,3 +46811,31 @@ The (poloidal) direction makes the largest contribution to the stable dt recipro
 Vlasov operator time step (0.00132325) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.004375,9.6875,-4.6875,0.125) and mapped coordinate = (11,17,15,-8,0)
 The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
       BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 12 32 16 16 12 
+is_periodic = 0 1 1 0 0 
+configuration_decomposition = 1 4 2 
+velocity_decomposition = 2 2 
+phase_decomposition = 1 4 2 2 2 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00119093
+    Vlasov    : 0.00170836 (time scale), 0.697117 (CFL)
+    Collisions: 0.0333333 (time scale), 0.0357278 (CFL)
+    ES_Alfven : 0.0668732 (time scale), 0.0178087 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	3.5354e-06 [max]	-2.31037e-09 [min]
+    Species 1:	1.21496e-09 [max]	2.76054e-16 [min]
+
+Step 1592 completed, simulation time is 4.62355, solver wall time is 60950.8 seconds
+----
+
+Step 1593
+      BiCGStab converged successfully
+Vlasov operator time step (0.0015013) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.006125,7.8125,-4.6875,0.125) and mapped coordinate = (11,24,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00132262) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.006125,7.8125,-4.6875,0.125) and mapped coordinate = (11,24,12,-8,0)
+The (poloidal) direction makes the largest contribution to the stable dt reciprocal at that point

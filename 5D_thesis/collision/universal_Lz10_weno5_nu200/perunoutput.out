@@ -46697,3 +46697,30 @@ The (toroidal) direction makes the largest contribution to the stable dt recipro
       BiCGStab converged successfully
       BiCGStab converged successfully
       BiCGStab converged successfully
+num_cells = 12 32 16 16 12 
+is_periodic = 0 1 1 0 0 
+configuration_decomposition = 1 4 2 
+velocity_decomposition = 2 2 
+phase_decomposition = 1 4 2 2 2 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.0045
+    Vlasov    : 0.0131778 (time scale), 0.341483 (CFL)
+    Collisions: 0.005 (time scale), 0.9 (CFL)
+    ES_Alfven : 0.0668732 (time scale), 0.0672915 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	3.41239e-06 [max]	7.80782e-13 [min]
+    Species 1:	1.20638e-09 [max]	2.7567e-16 [min]
+
+Step 1588 completed, simulation time is 7.146, solver wall time is 60950.2 seconds
+----
+
+Step 1589
+      BiCGStab converged successfully
+Vlasov operator time step (0.124917) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.003375,4.6875,-4.6875,0.125) and mapped coordinate = (11,13,7,-8,0)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0102055) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00766667,0.003125,4.6875,-4.6875,0.125) and mapped coordinate = (11,12,7,-8,0)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
