@@ -442,7 +442,7 @@ with open(fname[0], 'r') as f:
                     buf = 'IN:no_grid_func = %s\n' % n0_grid_func
                     fh.write(buf)
 
-                m_y=0.0;
+                m_y=1.0; #default was 0
                 m_x=0.0;
                 m_z=0.0;
                 m_theta=0.0;
@@ -764,8 +764,12 @@ from sympy.utilities.lambdify import implemented_function
 from sympy import Function
 
 transformations = (standard_transformations + (implicit_multiplication_application,))
-pe=parse_expr(n0_grid_func.replace('arctan','atan'),transformations=transformations)
-#print 'parsed expression = ',pe
+n0_grid_func_compatible=n0_grid_func.replace('arctan','atan')
+print 'n0_grid_func_compatible = ',n0_grid_func_compatible
+n0_grid_func_compatible=n0_grid_func_compatible.replace('rand','1.0*')
+print 'n0_grid_func_compatible = ',n0_grid_func_compatible
+pe=parse_expr(n0_grid_func_compatible,transformations=transformations)
+print 'parsed expression = ',pe
 
 f = lambdify((x,y,z),pe)
 #print f(pi,pi) #test
@@ -1283,11 +1287,12 @@ def func_lin(x, aa, bb):
 error_array_a=[]
 error_array_b=[]
 cutoff_index = len(extremum_dimensional_xt)-1
+ind_shift = len(extremum_dimensional_xt)-27 #manual shift from begining
 for ind in enumerate(extremum_dimensional_xt):
-    if ind[0]>2:
+    if ind[0]>2+ind_shift:
         #print ind[0]
-        xdata = extremum_dimensional_xt[0:ind[0]]
-        ydata = extremum_logy2[0:ind[0]]
+        xdata = extremum_dimensional_xt[0+ind_shift:ind[0]]
+        ydata = extremum_logy2[0+ind_shift:ind[0]]
         popt, pcov = curve_fit(func_lin, xdata, ydata)
         perr = np.sqrt(np.diag(pcov))
         error_array_a.append(perr[0])
@@ -1307,8 +1312,8 @@ for ind in enumerate(extremum_dimensional_xt):
 #print cutoff_index
         
 
-xdata = extremum_dimensional_xt[0:cutoff_index]
-ydata = extremum_logy2[0:cutoff_index]
+xdata = extremum_dimensional_xt[0+ind_shift:cutoff_index]
+ydata = extremum_logy2[0+ind_shift:cutoff_index]
 
 
 lin_fitted_logy2 = np.polyfit(xdata,ydata,1)
@@ -1647,6 +1652,12 @@ with open('finish_kparhat_chi_gamma_omega2.txt', 'wb') as fh:
     buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\tomega/kpar\n" 
     fh.write(buf)
     buf = "%f\t%f\t%f\t%f\t%f\t%f\t%g\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth/omega_star_spline), ( abs(est_freq)/omega_star_spline), ( abs(est_freq)/omega_star_spline*(1.0+chi*chi) ),((abs(est_freq))/k_par))
+    fh.write(buf)
+
+with open('finish_freq_growth.txt', 'wb') as fh:
+    buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma\tomega\tomega\tomega/kpar\n" 
+    fh.write(buf)
+    buf = "%f\t%f\t%f\t%f\t%f\t%f\t%g\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth), ( abs(est_freq)), ( abs(est_freq) ),((abs(est_freq))/k_par))
     fh.write(buf)
 
 

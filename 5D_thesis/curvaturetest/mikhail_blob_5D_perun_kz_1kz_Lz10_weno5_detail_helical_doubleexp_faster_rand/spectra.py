@@ -764,8 +764,12 @@ from sympy.utilities.lambdify import implemented_function
 from sympy import Function
 
 transformations = (standard_transformations + (implicit_multiplication_application,))
-pe=parse_expr(n0_grid_func.replace('arctan','atan'),transformations=transformations)
-#print 'parsed expression = ',pe
+n0_grid_func_compatible=n0_grid_func.replace('arctan','atan')
+print 'n0_grid_func_compatible = ',n0_grid_func_compatible
+n0_grid_func_compatible=n0_grid_func_compatible.replace('rand','1.0*')
+print 'n0_grid_func_compatible = ',n0_grid_func_compatible
+pe=parse_expr(n0_grid_func_compatible,transformations=transformations)
+print 'parsed expression = ',pe
 
 f = lambdify((x,y,z),pe)
 #print f(pi,pi) #test

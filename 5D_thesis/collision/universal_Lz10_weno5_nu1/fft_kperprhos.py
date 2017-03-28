@@ -1190,32 +1190,39 @@ def func_lin(x, aa, bb):
 error_array_a=[]
 error_array_b=[]
 cutoff_index = len(extremum_dimensional_xt)-1
+ind_shift=3
 for ind in enumerate(extremum_dimensional_xt):
-    if ind[0]>2:
+    if ind[0]>2+ind_shift:
         #print ind[0]
-        xdata = extremum_dimensional_xt[0:ind[0]]
-        ydata = extremum_logy2[0:ind[0]]
+        xdata = extremum_dimensional_xt[0+ind_shift:ind[0]]
+        ydata = extremum_logy2[0+ind_shift:ind[0]]
         popt, pcov = curve_fit(func_lin, xdata, ydata)
         perr = np.sqrt(np.diag(pcov))
         error_array_a.append(perr[0])
         error_array_b.append(perr[1])
+
+
         if len(error_array_a)>3 :
-            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 3.0:
+            print ind[0], abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]), abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1])
+            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 1.0:#3.0:
+                print 'here1'
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
                 break
         if len(error_array_b)>3 :
-            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 3.0:
+            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 1.0:#3.0:
+                print 'here2'
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
                 break
-#print cutoff_index
-        
 
-xdata = extremum_dimensional_xt[0:cutoff_index]
-ydata = extremum_logy2[0:cutoff_index]
+print 'cutoff_index=',cutoff_index
+xdata = extremum_dimensional_xt[0+ind_shift:cutoff_index]
+print 'xdata=',xdata
+ydata = extremum_logy2[0+ind_shift:cutoff_index]
+print 'ydata=',ydata
 
 
 lin_fitted_logy2 = np.polyfit(xdata,ydata,1)
@@ -1318,15 +1325,15 @@ nonlin_y=y[ind_source_start:ind_source_end]
 
 #guess_amplitude = (y.max()-y.min())/2
 guess_amplitude= lin_y[-1]/np.exp(lin_fitted_logy2[0]/2.0*(lin_dimensional_xt[-1]-lin_dimensional_xt[0]  )   )
-print guess_amplitude
+print 'guess_amplitude=',guess_amplitude
 guess_mean = 0
 guess_phase = 0
 #guess_freq = freqmax #estimate from fft
 guess_freq = omega_star_analytic/(1.0+chi*chi) #estimate from analytic freq
 guess_lin = 0
 
-print freqmax
-print guess_freq
+print 'freqmax=',freqmax
+print 'guess_freq=',guess_freq
 
 #data fit for linear region
 optimize_func = lambda z: z[3]*np.exp(lin_fitted_logy2[0]/2.0*lin_dimensional_xt)*np.cos(z[0]*lin_dimensional_xt+z[1]) + z[2] - lin_y

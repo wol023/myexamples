@@ -1,0 +1,5537 @@
+ main 1
+ main 2
+ main 3
+(N,1) simulation.verbosity ::  (=,10)
+(N,1) gksystem.verbosity ::  (=,10)
+(N,1) gksystem.hdf_density ::  (=,true)
+(N,1) gksystem.hdf_potential ::  (=,true)
+(N,1) gksystem.hdf_temperature ::  (=,true)
+(N,1) gksystem.hdf_pressure ::  (=,true)
+(N,1) gksystem.hdf_ParallelMomentum ::  (=,true)
+(N,1) gksystem.hdf_dfn ::  (=,true)
+(N,1) gksystem.hdf_efield ::  (=,true)
+(N,1) gksystem.hdf_vparmu ::  (=,true)
+(N,1) gksystem.hdf_vparmu_atxy ::  (=,true)
+(N,1) gksystem.hdf_vparmu_atyz ::  (=,true)
+(N,1) gksystem.hdf_vparmu_atzx ::  (=,true)
+(N,5) gksystem.fixed_plot_indices ::  (=,4) (=,4) (=,4) (=,4) (=,4)
+(N,1) gksystem.ti_class ::  (=,rk)
+(N,1) gksystem.ti_method ::  (=,4)
+(N,1) simulation.max_step ::  (=,70)
+(N,1) simulation.max_time ::  (=,100000.0)
+(N,1) simulation.fixed_dt ::  (=,0.50)
+(N,1) simulation.fixed_dt_subiteration ::  (=,true)
+(N,1) simulation.checkpoint_interval ::  (=,100)
+(N,1) simulation.checkpoint_prefix ::  (=,chk)
+(N,1) simulation.plot_interval ::  (=,1)
+(N,1) simulation.plot_prefix ::  (=,plt)
+(N,1) simulation.histories ::  (=,true)
+(N,1) simulation.1.history_field ::  (=,potential)
+(N,3) simulation.1.history_indices ::  (=,4) (=,2) (=,2)
+(N,5) gksystem.num_cells ::  (=,8) (=,8) (=,8) (=,32) (=,16)
+(N,5) gksystem.is_periodic ::  (=,1) (=,1) (=,1) (=,0) (=,0)
+(N,3) gksystem.configuration_decomp ::  (=,1) (=,1) (=,1)
+(N,2) gksystem.velocity_decomp ::  (=,2) (=,1)
+(N,5) gksystem.phase_decomp ::  (=,1) (=,1) (=,1) (=,2) (=,1)
+(N,1) units.number_density ::  (=,1.0e20)
+(N,1) units.temperature ::  (=,400.0)
+(N,1)    units.length ::  (=,1.0)
+(N,1)      units.mass ::  (=,1.0)
+(N,1) units.magnetic_field ::  (=,1.0)
+(N,1) gksystem.magnetic_geometry_mapping ::  (=,Slab)
+(N,1) gksystem.magnetic_geometry_mapping.slab.verbose ::  (=,true)
+(N,1) gksystem.magnetic_geometry_mapping.slab.visit_plotfile ::  (=,SlabViz)
+(N,1) gksystem.magnetic_geometry_mapping.slab.num_quad_points ::  (=,5)
+(N,1) gksystem.magnetic_geometry_mapping.slab.axisymmetric ::  (=,false)
+(N,1) gksystem.magnetic_geometry_mapping.slab.x_max ::  (=,0.04)
+(N,1) gksystem.magnetic_geometry_mapping.slab.y_max ::  (=,0.04)
+(N,1) gksystem.magnetic_geometry_mapping.slab.z_max ::  (=,100.0)
+(N,1) gksystem.magnetic_geometry_mapping.slab.Bz_inner ::  (=,3.0)
+(N,1) gksystem.magnetic_geometry_mapping.slab.Bz_outer ::  (=,3.0)
+(N,1) gksystem.magnetic_geometry_mapping.slab.By_inner ::  (=,0.0)
+(N,1) gksystem.magnetic_geometry_mapping.plot_magnetic_field ::  (=,true)
+(N,1) phase_space_mapping.v_parallel_max ::  (=,6.0)
+(N,1) phase_space_mapping.mu_max ::  (=,8.0)
+(N,1) phase_space_mapping.second_order ::  (=,true)
+(N,1) phase_space_mapping.velocity_type ::  (=,gyrokinetic)
+(N,1) gkvlasov.verbose ::  (=,true)
+(N,1) gkvlasov.time_step_diagnostics ::  (=,true)
+(N,1) gkvlasov.face_avg_type ::  (=,weno5)
+(N,1) gksystem.fixed_efield ::  (=,true)
+(N,1) gksystem.prescribed_efield ::  (=,false)
+(N,1) gksystem.prescribed_efield.ER ::  (=,0.0)
+(N,1) gksystem.prescribed_efield.EPhi ::  (=,0.0)
+(N,1) gksystem.prescribed_efield.EZ ::  (=,0.0)
+(N,1) gkpoisson.verbose ::  (=,true)
+(N,1) gkpoisson.second_order ::  (=,true)
+(N,1) gkpoissonboltzmann.second_order ::  (=,true)
+(N,1) kinetic_species.1.name ::  (=,hydrogen)
+(N,1) kinetic_species.1.mass ::  (=,1.0)
+(N,1) kinetic_species.1.charge ::  (=,1.0)
+(N,1) kinetic_species.2.name ::  (=,ion)
+(N,1) kinetic_species.2.mass ::  (=,4.0)
+(N,1) kinetic_species.2.charge ::  (=,1.0)
+(N,1) IC.potential.function ::  (=,potential_grid_func)
+(N,1) IC.hydrogen.function ::  (=,maxwellian_phase_func)
+(N,1) IC.ion.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.radial_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.radial_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.poloidal_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.poloidal_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.toroidal_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.toroidal_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.vpar_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.vpar_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.mu_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.hydrogen.mu_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.radial_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.radial_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.poloidal_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.poloidal_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.toroidal_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.toroidal_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.vpar_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.vpar_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.mu_lower.function ::  (=,maxwellian_phase_func)
+(N,1) BC.ion.mu_upper.function ::  (=,maxwellian_phase_func)
+(N,1) BC.potential.radial_lower.type ::  (=,neumann)
+(N,1) BC.potential.radial_upper.type ::  (=,neumann)
+(N,1) BC.potential.poloidal_lower.type ::  (=,neumann)
+(N,1) BC.potential.poloidal_upper.type ::  (=,neumann)
+(N,1) BC.potential.toroidal_lower.type ::  (=,neumann)
+(N,1) BC.potential.toroidal_upper.type ::  (=,neumann)
+(N,1) kinetic_function_library.number ::  (=,1)
+(N,1) kinetic_function_library.verbosity ::  (=,1)
+(N,1) kinetic_function_library.list ::  (=,maxwellian_phase_func)
+(N,1) kinetic_function_library.maxwellian_phase_func.type ::  (=,maxwellian)
+(N,1) kinetic_function_library.maxwellian_phase_func.vparallel.function ::  (=,Ion_vpar_grid_func)
+(N,1) kinetic_function_library.maxwellian_phase_func.density.function ::  (=,N0_grid_func)
+(N,1) kinetic_function_library.maxwellian_phase_func.temperature.function ::  (=,T0_grid_func)
+(N,1) grid_function_library.number ::  (=,4)
+(N,1) grid_function_library.verbosity ::  (=,10)
+(N,4) grid_function_library.list ::  (=,potential_grid_func) (=,T0_grid_func) (=,N0_grid_func) (=,Ion_vpar_grid_func)
+(N,1) grid_function_library.potential_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.potential_grid_func.function ::  (=,( 0.0))
+(N,1) grid_function_library.T0_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.T0_grid_func.function ::  (=,(3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1))))
+(N,1) grid_function_library.N0_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.N0_grid_func.function ::  (=,(1.00 ))
+(N,1) grid_function_library.Ion_vpar_grid_func.type ::  (=,arbitrary)
+(N,1) grid_function_library.Ion_vpar_grid_func.function ::  (=,0.0)
+ main 4
+ Simulation 1
+m_verbosity = 10
+m_max_step = 70
+m_max_time = 100000
+m_fixed_dt = 0.5
+m_max_dt_grow = 1.1
+m_initial_dt_fractiond = 0.1
+m_cfl = 1
+checkpoint interval = 100
+checkpoint prefix = chk
+plot interval = 1
+plot frefix = plt
+ Simulation 2
+ PositivityPostProcessor 1
+ GKSystem 1
+ GKSystem 2
+ GKUnits::GKUnits(ParmParse&) 1
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 400
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 195743
+  TRANSIT TIME          [s]: 5.10874e-06
+  MAGNETIC MOMENT     [J/T]: 3.20435e-17
+  DIST. FUNCTION [s/(Am^6)]: 4244.15
+  POTENTIAL             [V]: 400
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.0020435
+  DEBYE LENGTH          [m]: 1.48679e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.0020435
+  LARMOR NUMBER **2        : 4.17587e-06
+  DEBYE NUMBER             : 1.48679e-05
+  DEBYE NUMBER **2         : 2.21054e-10
+  DEBYE NUMBER/MULT_FAC    : 1.48679e-05
+  DEBYE NUMBER/MULT_FAC **2: 2.21054e-10
+
+***********************************************************************
+ GKSystem 3
+ GKSystem 4
+ MagBlockCoordSys::MagBlockCoordSys() 1
+ m_verbose = 1
+ m_axisymmetric = 0
+ m_inner_radial_boundary = 0
+ m_outer_radial_boundary = 1
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 100
+Bz_inner = 3, Bz_outer = 3
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.785398 * 8 = 6.28319, dx(m)*nx= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.785398 * 8 = 6.28319, dy(m)*ny= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.785398 * 8 = 6.28319, dz(m)*nz= 12.5 * 8 = 100, ( 1 : 15.9155 )
+
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 1
+ m_mag_geomcoords->numBlocks() = 1
+ decomp = 1, 1, 1
+ nproc = 1
+ nproc = 1
+ nproc = 1
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 2
+ nproc_cfg = 1
+ nproc_cfg = 1
+ nproc_cfg = 1
+ n_loc[0] = 8
+ n_loc[1] = 8
+ n_loc[2] = 8
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 3
+ domain_box.smallEnd() = (0,0,0)
+ domain_box.smallEnd() + box_size-1 = (7,7,7)
+ box_size = (8,8,8)
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 4
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 5
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 6
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 7
+ GKSystem:getConfigurationSpaceDisjointBoxLayout 8
+   Configuration space box ((0,0,0) (7,7,7) (0,0,0)) is assigned to process 0
+Constructing magnetic geometry
+ MagGeom::MagGeom() 1
+ MagGeom::computeFieldData (FluxBox) 1
+ MagGeom::computeFieldData (FluxBox) 2
+ MagGeom::computeFieldData (FluxBox) 4
+ MagGeom::MagGeom() 2
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::MagGeom() plotFaceData
+ MagGeom::computeFieldData (FArrayBox) 1
+ MagGeom::computeFieldData (FArrayBox) 2
+ MagGeom::MagGeom() 2.5
+ MagGeom::MagGeom() plotCellData
+ MagGeom::MagGeom() plotCellData
+ MagGeom::MagGeom() 3
+ MagGeom::MagGeom() 4: plotFieldAlignment()
+ MagGeom::MagGeom() 6: m_coord_sys->numBlocks()=<1
+ MagGeom::MagGeom() 7
+ MagGeom::MagGeom() 8.
+Done constructing magnetic geometry
+ MagGeom::writeGeometryData() 1:3D
+ MagGeom::getCellVolumes() 1
+ MagGeom::getCellVolumes() 2
+ coord_sys.getNumN() = 9
+ MagGeom::writeGeometryData() 2
+ GKSystem 5
+   Velocity space box ((-16,0) (-1,15) (0,0)) is assigned to process 0
+   Velocity space box ((0,0) (15,15) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.375 * 16 = 6, dv_parallel(m/s)*nvpar= 73403.6 * 16 = 1.17446e+06, ( 1 : 195743 )
+dmu*nmu= 0.5 * 16 = 8, dmu(J/T)*nmu= 1.60218e-17 * 16 = 2.56348e-16, ( 1 : 3.20435e-17 )
+
+ GKSystem 6
+ GKSystem:createPhaseSpace() 1
+ GKSystem:createPhaseSpace() 2
+ m_mag_geom_coords->numBlocks() = 1
+ GKSystem:createPhaseSpace() 3
+ GKSystem:createPhaseSpace() 4
+ PhaseBlockCoordSys::PhaseBlockCoordSys 1.
+ m_dx = (0.785398,0.785398,0.785398,0.375,0.5)
+ m_mapped_cell_volume = 0.0908387
+ m_mapped_face_area = (0.115659,0.115659,0.115659,0.242237,0.181677)
+ GKSystem:createPhaseSpace() 5
+ decomps = (1,1,1,2,1) 
+ m_phase_decomposition = 1, 1, 1, 2, 1
+ m_mag_geom_type = Slab
+ GKSystem:createPhaseSpace() 6
+ PhaseGrid 1
+ box_size = (8,8,8,16,16)
+ PhaseGrid 2
+ domain_box.smallEnd() = (0,0,0,-16,0)
+ domain_box.smallEnd()+box_size-IntVect::Unit = (7,7,7,-1,15)
+ m_local_velocity_slices.size() = 1 
+ procID() = 0 ((0,0,0) (7,7,7) (0,0,0)):  ((-16,0) (-1,15) (0,0)) ((0,0) (15,15) (0,0))
+ GKSystem:createPhaseSpace() 7
+   Phase space box ((0,0,0,-16,0) (7,7,7,-1,15) (0,0,0,0,0)) is assigned to process 0, has 131072 valid cells and 2228224 ghost cells
+   Phase space box ((0,0,0,0,0) (7,7,7,15,15) (0,0,0,0,0)) is assigned to process 0, has 131072 valid cells and 2228224 ghost cells
+ PhaseGeom 1
+ PhaseGeom 2
+ m_velocity_type = gyrokinetic
+ m_freestream_components = (0,0,0,0,0)
+ m_no_drifts = 0
+ m_no_parallel_streaming = 0
+ m_explicit_curvature_radius = 0
+ m_second_order = 1
+ PhaseGeom::define() 1
+ cfg_ghostVect() =(4,4,4)
+ vel_ghostVect() =(4,4)
+ PhaseGeom::define() 2
+ cfg_NumN = 9
+ PhaseGeom::define() 3
+ PhaseGeom::define() 4
+ MagGeom::getMetricTerms() 1
+ MagGeom::getMetricTerms() 2
+ dit(a_N.dataIterator()) 
+ MagGeom::getMetricTerms() 3
+ dit.ok() = 1
+ MagGeom::getMetricTerms() 4
+ a_gradPhi.nComp() = a_tanGradN[dit].nComp() = 18
+ a_phiFace.nComp() = a_N[dit].nComp() = 9
+ SpaceDim = 3
+ (SpaceDim-1)*a_N[dit].nComp() = 18
+ MagGeom::getMetricTerms() 5
+ MagGeom::getMetricTerms() 6
+ PhaseGeom::define() 5
+ PhaseGeom::define() 6
+ MagGeom::getCellVolumes() 1
+ PhaseGeom::define() 7
+ PhaseGeom::define() 8
+ PhaseGeom::define() 9
+ PhaseGeom::define() 10
+ PhaseGeom::define() 11
+ PhaseGeom::define() 12
+ PhaseGeom::define() 13
+ PhaseGeom::define() 14
+m_gridsFull 
+((0,0,0,-16,0) (7,7,7,-1,15) (0,0,0,0,0))[0] # ((0,0,0,0,0) (7,7,7,15,15) (0,0,0,0,0))[0] # 
+
+m_BMagCell->disjointBoxLayout
+((0,0,0,-16,0) (7,7,7,-16,0) (0,0,0,0,0))[0] # ((0,0,0,0,0) (7,7,7,0,0) (0,0,0,0,0))[0] # 
+
+m_temperatureCell->disjointBoxLayout
+((0,0,0,-16,0) (7,7,7,-1,15) (0,0,0,0,0))[0] # ((0,0,0,0,0) (7,7,7,15,15) (0,0,0,0,0))[0] # 
+
+ PhaseGeom::define() 15.
+ PhaseGeom 3.
+ GKSystem:createPhaseSpace() 8
+ GKSystem 7
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 1, charge = 1
+ PhaseGeom:PhaseGeom (species) 1
+ PhaseGeom::defineSpeciesState() 1
+ NEW ADDED:PhaseGeom::defineSpeciesState fourthOrderAverage 1
+ PhaseGeom::defineSpeciesState() 2.
+ PhaseGeom:PhaseGeom (species) 2.
+   ion: kinetic species with mass = 4, charge = 1
+ PhaseGeom:PhaseGeom (species) 1
+ PhaseGeom::defineSpeciesState() 1
+ NEW ADDED:PhaseGeom::defineSpeciesState fourthOrderAverage 1
+ PhaseGeom::defineSpeciesState() 2.
+ PhaseGeom:PhaseGeom (species) 2.
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+ GKSystem 10
+ GKOps 1
+ GKUnits::GKUnits(ParmParse&) 1
+ GKSystemBC::GKSystemBC() 1
+ GKSystemBC::GKSystemBC() 2
+ GKSystemBC::GKSystemBC() 3
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 1
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+ GKSystemBC::GKSystemBC() 4
+ Arbitrary::Arbitrary() m_pscore->getFormula():( 0.0)
+ Arbitrary::Arbitrary() m_pscore->getManipStr():(0.0)
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{0.0}
+ Arbitrary::Arbitrary() m_pscore->getFormula():(3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+ Arbitrary::Arbitrary() m_pscore->getManipStr():(3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+ Arbitrary::Arbitrary() m_pscore->getFormula():(1.00 )
+ Arbitrary::Arbitrary() m_pscore->getManipStr():(1.00)
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{1.00}
+ Arbitrary::Arbitrary() m_pscore->getFormula():0.0
+ Arbitrary::Arbitrary() m_pscore->getManipStr():0.0
+ Arbitrary::Arbitrary() m_pscore->getPostStr():{0.0}
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+"T0_grid_func":
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+"potential_grid_func":
+Arbitrary grid function parameters:
+  function: ( 0.0)
+  translated form: (0.0)
+  postfix form: {0.0}
+  coordinate type: mapped
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  logical_sheath  =  0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: ion-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: (1.00 )
+  translated form: (1.00)
+  postfix form: {1.00}
+  coordinate type: mapped
+
+-- Temperature --
+Arbitrary grid function parameters:
+  function: (3.0*exp(-x/(3*pi))*(1+0.000*sin(y)*rand(1)))
+  translated form: (3.0*exp(-x'/(3*pi'))*(1+0.000*sin(y')*rand(1)))
+  postfix form: {3.0}{x'[0.000000000000000e+00]}{-:}{3}{PI'}{*}{/}{exp}{*}{1}{0.000}{y'[0.000000000000000e+00]}{sin}{*}{1}{rand}{*}{+}{*}
+  coordinate type: mapped
+
+-- Vparallel --
+Arbitrary grid function parameters:
+  function: 0.0
+  translated form: 0.0
+  postfix form: {0.0}
+  coordinate type: mapped
+
+
+  logical_sheath  =  0
+-----------------------------------------------
+===============================================
+ GKSystemBC::GKSystemBC() 4.1
+ GKSystemBC::GKSystemBC() 4.2
+ GKSystemBC::GKSystemBC() 5
+ GKSystemBC::GKSystemBC() 6
+ GKSystemBC::GKSystemBC() 7.
+ GKSystemIC::GKSystemIC() 1
+ GKSystemIC::GKSystemIC() 2
+ GKSystemIC::GKSystemIC() 3
+ GKSystemIC::GKSystemIC() 4
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for ion.
+Collision model for 1	ion:	None
+Time integration method: rk (4)
+ GKSystem 11
+ GKSystem 12
+Done creating GKSystem
+GKSystem 13.
+ Simulation 3
+ Simulation 4
+ GKSystem::initialize 1
+ GKOps::initializeState() 1
+ GKSystemIC::initializeSystem() 1
+  GKSystemIC::initializePotentialField() 1
+  GKSystemIC::initializePotentialField() 2
+  GKSystemIC::initializePotentialField() 3
+ GKSystemIC::initializeSystem() 2
+ GKSystemIC::initializeKineticSpecies() 1
+ GKSystemIC::initializeKineticSpecies() 2
+ GKSystemIC::initializeKineticSpecies() 3
+ Maxwellian KineticFunction::assign() 1
+ Maxwellian KineticFunction::assign() 1.1
+ nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeField() 1
+ a_nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeField() 2.
+ Maxwellian KineticFunction::intializeField() 1
+ a_nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeField() 2.
+ Maxwellian KineticFunction::intializeFieldScale() 1
+ a_nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeFieldScale() 2.
+ Maxwellian KineticFunction::intializeField() 1
+ a_nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeField() 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ Maxwellian KineticFunction::assign() 2.
+ GKSystemIC::initializeKineticSpecies() 4
+ GKSystemIC::initializeKineticSpecies() 2
+ GKSystemIC::initializeKineticSpecies() 3
+ Maxwellian KineticFunction::assign() 1
+ Maxwellian KineticFunction::assign() 1.1
+ nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeField() 1
+ a_nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeField() 2.
+ Maxwellian KineticFunction::intializeField() 1
+ a_nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeField() 2.
+ Maxwellian KineticFunction::intializeFieldScale() 1
+ a_nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeFieldScale() 2.
+ Maxwellian KineticFunction::intializeField() 1
+ a_nghosts =(4,4,4)
+ Maxwellian KineticFunction::intializeField() 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ Maxwellian KineticFunction::assign() 2.
+ GKSystemIC::initializeKineticSpecies() 4
+ GKSystemIC::initializeKineticSpecies() 5.
+ GKSystemIC::initializeSystem() 3.
+ GKOps::initializeState() 2
+ GKOps::initializeState() 3
+  GKSystem::initialize 1.1
+ GKSystem::initialize 2
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::initializeElecricField 1
+ GKOps::initializeElecricField 2
+ GKOps::initializeElecricField 3
+ GKOps::initializeElecricField 4
+ GKOps::initializeElecricField 5
+ GKOps::computeIonChargeDensity 1
+ GKOps::computeIonChargeDensity 2
+ GKOps::computeIonChargeDensity 3
+ GKOps::computeIonChargeDensity 4
+ KineticSpecies::chargeDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ChargeDensityKernel::eval() 1.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::chargeDensity 2.
+ GKOps::computeIonChargeDensity 5
+ GKOps::computeIonChargeDensity 4
+ KineticSpecies::chargeDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ChargeDensityKernel::eval() 1.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::chargeDensity 2.
+ GKOps::computeIonChargeDensity 5
+ GKOps::computeIonChargeDensity 6.
+ GKOps::initializeElecricField 6
+ GKOps::createGKPoisson() 1
+ GKOps::createGKPoisson() 2
+ GKOps::createGKPoisson() 6
+ MagGeom::getCellVolumes() 1
+ GKPoisson 1
+ GKPoisson 2
+ GKPoisson 3
+ GKPoisson 4
+ GKPoisson 6
+ GKPoisson 7
+ GKOps::createGKPoisson() 7
+ GKOps::initializeElecricField 7
+ GKOps::initializeElecricField 8
+ GKOps::initializeElecricField 9
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ a_E_field_cell.nComp() = 3
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 21.5
+ GKOps::computeEField 22.4
+ FieldSolver::computeField FArray 1
+ FieldSolver::computeField FArray 2
+ FieldSolver::computeField FArray 3
+ FieldSolver::computeMappedField FArray 1
+ FieldSolver::computeMappedField FArray 2
+ FieldSolver::computeMappedField FArray 3 :3D
+ FieldSolver::computeMapped3DField FArray 1
+ FieldSolver::computeMapped3DField FArray 2
+ FieldSolver::computeMapped3DField FArray 3
+ FieldSolver::computeMapped3DField FArray 4
+ FieldSolver::computeMapped3DField FArray 5
+ FieldSolver::computeMapped3DField FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 3
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 4
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 5
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.1
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 6.2
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 7
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 8
+ FieldSolver::computeMapped3DFieldWithGhosts FArray 9
+ FieldSolver::computeMapped3DField FArray 7
+ FieldSolver::computeMappedField FArray 5.
+ FieldSolver::computeField FArray 4
+ MagGeom::unmapGradient FArray 1
+ MagGeom::unmapGradient FArray 2
+ MagGeom::unmapGradient FArray 3: 3D
+ MagGeom::unmap3DGradient FArray 1
+ a_mapped_gradient.nComp() = 3
+ a_gradient.nComp() = 3
+ SpaceDim = 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 1
+ MagBlockCoordSys::getPointwiseNJInvers FArray 2
+ MagBlockCoordSys::getPointwiseNJInvers FArray 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::getPointwiseNJInvers FArray 4
+ MagBlockCoordSys::getPointwiseNJInvers FArray 7
+ MagGeom::unmapGradient FArray 4: 3D
+ MagGeom::transformFromXYZToRPHIZ FArray 1
+ MagGeom::transformFromXYZToRPHIZ FArray 2
+ MagGeom::transformFromXYZToRPHIZ FArray 3.
+ FieldSolver::computeField FArray 5.
+ GKOps::computeEField 22.5
+ FieldSolver::computeField FluxBox 1
+ FieldSolver::computeField FluxBox 2
+ FieldSolver::computeField FluxBox 3
+ FieldSolver::computeField FluxBox 4
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ FieldSolver::computeField FluxBox 5.
+ GKOps::computeEField 22.6
+ GKOps::computeEField 23
+ GKOps::computeEField 26.
+ GKOps::initialize 11
+ GKSystem::initialize 7.1
+ GKSystem::initialize 8
+ Simulation 5
+  Distribution Function Extrema:
+    Species 0:	0.000148551 [max]	3.67529e-12 [min]
+    Species 1:	0.00118841 [max]	2.94024e-11 [min]
+
+ Simulation 6
+ Simulation 6.1: writePlotFile()
+m_verbosity = 10
+m_max_step = 70
+m_max_time = 100000
+m_fixed_dt = 0.5
+m_max_dt_grow = 1.1
+m_initial_dt_fractiond = 0.1
+m_cfl = 1
+checkpoint interval = 100
+checkpoint prefix = chk
+plot interval = 1
+plot frefix = plt
+ GKSystem::writePlotFile() 0
+ GKSystem::writePlotFile() 1: m_hdf_potential
+ GKSystem::writePlotFile() 2: m_hdf_efield
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 3: m_hdf_dfn
+ GKSystem::writePlotFile() 4: m_hdf_dfn, bstar_par
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9: m_hdf_vparmu
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.1: m_hdf_vparmu_atxy
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.2: m_hdf_vparmu_atyz
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.3: m_hdf_vparmu_atzx
+ KineticSpecies::chargeDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ChargeDensityKernel::eval() 1.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::chargeDensity 2.
+ GKSystem::writePlotFile() 10: m_hdf_density
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ GKSystem::writePlotFile() 11: m_hdf_ParallelMomentum
+ KineticSpecies::numberDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::numberDensity 2.
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ KineticSpecies::PressureMoment 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:PressureKernel::eval() 1
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::PressureMoment 2.
+ GKSystem::writePlotFile() 13: m_hdf_pressure
+ KineticSpecies::numberDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::numberDensity 2.
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ KineticSpecies::PressureMoment 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:PressureKernel::eval() 1
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::PressureMoment 2.
+ GKSystem::writePlotFile() 14: m_hdf_temperature
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 3: m_hdf_dfn
+ GKSystem::writePlotFile() 4: m_hdf_dfn, bstar_par
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9: m_hdf_vparmu
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.1: m_hdf_vparmu_atxy
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.2: m_hdf_vparmu_atyz
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.3: m_hdf_vparmu_atzx
+ KineticSpecies::chargeDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ChargeDensityKernel::eval() 1.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::chargeDensity 2.
+ GKSystem::writePlotFile() 10: m_hdf_density
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ GKSystem::writePlotFile() 11: m_hdf_ParallelMomentum
+ KineticSpecies::numberDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::numberDensity 2.
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ KineticSpecies::PressureMoment 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:PressureKernel::eval() 1
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::PressureMoment 2.
+ GKSystem::writePlotFile() 13: m_hdf_pressure
+ KineticSpecies::numberDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::numberDensity 2.
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ KineticSpecies::PressureMoment 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:PressureKernel::eval() 1
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::PressureMoment 2.
+ GKSystem::writePlotFile() 14: m_hdf_temperature
+ main 5
+ Simulation::advance() 1
+
+Step 1
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::setElectricField 1
+ GKOps::setElectricField 2:2
+ GKOps::computeElectricField 1
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ a_E_field_cell.nComp() = 3
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 26.
+ GKOps::computeElectricField 2.
+ GKOps::setElectricField 3.
+ GKVlasov::computeDt(LevelData<FluxBox>,KineticSpeceisPtrVect) 1
+ KineticSpecies::numberDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::numberDensity 2.
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ KineticSpecies::PressureMoment 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:PressureKernel::eval() 1
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::PressureMoment 2.
+ KineticSpecies::computeMappdVelocity(temperature) 1
+ PhaseGeom::updateMappedVelocities(temperature) 1
+ PhaseGeom::updateMappedVelocities(temperature) 2
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities(temperature) 3
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities(temperature) 4.
+ KineticSpecies::computeMappdVelocity(temperature) 2.
+ GKVlasov::ComputeMappedDtSpecies 1
+ face_area = (0.115659,0.115659,0.115659,0.242237,0.181677)
+ mappedcellvolume = 0.0908387
+ GKVlasov::ComputeMappedDtSpecies 1
+ face_area = (0.115659,0.115659,0.115659,0.242237,0.181677)
+ mappedcellvolume = 0.0908387
+ GKVlasov::ComputeMappedDtSpecies 2
+ GKVlasov::ComputeMappedDtSpecies 2.1
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+ GKVlasov::ComputeMappedDtSpecies 3
+ GKVlasov::ComputeMappedDtSpecies 4
+ GKVlasov::ComputeMappedDtSpecies 4.1
+  thisMax = 0.465
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+ GKVlasov::ComputeMappedDtSpecies 3
+ GKVlasov::ComputeMappedDtSpecies 4
+ GKVlasov::ComputeMappedDtSpecies 4.1
+  thisMax = 0.465
+Vlasov operator time step (1.66575) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0375,0.0375,81.25,-5.8125,0.25) and mapped coordinate = (7,7,6,-16,0)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+ GKVlasov::ComputeMappedDtSpecies 5.
+ GKVlasov::computeDt(LevelData<FluxBox>,KineticSpeceisPtrVect) 2
+ KineticSpecies::numberDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::numberDensity 2.
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ KineticSpecies::PressureMoment 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:PressureKernel::eval() 1
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::PressureMoment 2.
+ KineticSpecies::computeMappdVelocity(temperature) 1
+ PhaseGeom::updateMappedVelocities(temperature) 1
+ PhaseGeom::updateMappedVelocities(temperature) 2
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities(temperature) 3
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities(temperature) 4.
+ KineticSpecies::computeMappdVelocity(temperature) 2.
+ GKVlasov::ComputeMappedDtSpecies 1
+ face_area = (0.115659,0.115659,0.115659,0.242237,0.181677)
+ mappedcellvolume = 0.0908387
+ GKVlasov::ComputeMappedDtSpecies 1
+ face_area = (0.115659,0.115659,0.115659,0.242237,0.181677)
+ mappedcellvolume = 0.0908387
+ GKVlasov::ComputeMappedDtSpecies 2
+ GKVlasov::ComputeMappedDtSpecies 2.1
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+ GKVlasov::ComputeMappedDtSpecies 3
+ GKVlasov::ComputeMappedDtSpecies 4
+ GKVlasov::ComputeMappedDtSpecies 4.1
+  thisMax = 0.2325
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+    GKVlasov::ComputeMappedDtSpecies 2.2
+ GKVlasov::ComputeMappedDtSpecies 3
+ GKVlasov::ComputeMappedDtSpecies 4
+ GKVlasov::ComputeMappedDtSpecies 4.1
+  thisMax = 0.2325
+Vlasov operator time step (3.3315) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.0375,0.0375,81.25,-5.8125,0.25) and mapped coordinate = (7,7,6,-16,0)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+ GKVlasov::ComputeMappedDtSpecies 5.
+ GKVlasov::computeDt(LevelData<FluxBox>,KineticSpeceisPtrVect) 2
+ GKVlasov::computeDt(LevelData<FluxBox>,KineticSpeceisPtrVect) 3.
+ GKVlasov::computeTimeScale(LevelData<FluxBox>,KineticSpeciesPtrVect) 1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKVlasov::ComputeMappedTimeScaleSpecies 1
+ GKVlasov::ComputeMappedTimeScaleSpecies 2.
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKVlasov::ComputeMappedTimeScaleSpecies 1
+ GKVlasov::ComputeMappedTimeScaleSpecies 2.
+ GKVlasov::computeTimeScale(LevelData<FluxBox>,KineticSpeciesPtrVect) 2.
+ GKSystem::set_dt_es_alfven_wave() 1
+
+m_num_cells[i]=8
+m_num_cells[i]=8
+m_num_cells[i]=8
+m_num_cells[i]=32
+m_num_cells[i]=16
+dx*nx= 0.785398 * 8 = 6.28319, dx(m)*nx= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.785398 * 8 = 6.28319, dy(m)*ny= 0.005 * 8 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.785398 * 8 = 6.28319, dz(m)*nz= 12.5 * 8 = 100, ( 1 : 15.9155 )
+dvpar*nvpar= 0.375 * 16 = 6, dv_parallel(m/s)*nvpar= 73403.6 * 16 = 1.17446e+06, ( 1 : 3058.48 )
+ [hydrogen] mass = 1
+  dvpar*nvpar= 0.375 * 16 = 6, dv_parallel(m/s)*nvpar= 73403.6 * 16 = 1.17446e+06, ( 1 : 195743 )
+ [ion] mass = 4
+  dvpar*nvpar= 0.375 * 16 = 6, dv_parallel(m/s)*nvpar= 36701.8 * 16 = 587229, ( 1 : 97871.5 )
+dmu*nmu= 0.5 * 16 = 4, dmu(J/T)*nmu= 1.60218e-17 * 16 = 2.56348e-16, ( 1 : 2.00272e-18 )
+
+Estimated dt
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=195743
+unit_dimension_time   [hydrogen]=5.10874e-06
+[hydrogen] maxvel:phy_maxvel[0]=0:0(1:-nan)
+[hydrogen] maxvel:phy_maxvel[1]=0:0(1:-nan)
+[hydrogen] maxvel:phy_maxvel[2]=5.8125:1.13776e+06(1:195743)
+[hydrogen] maxvel:phy_maxvel[3]=0:0(1:-nan)
+[hydrogen] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[hydrogen]=dz(m)/vparmax_z(m/s)[hydrogen]=12.5/1.17446e+06=1.06432e-05
+dt_zpar(-)[hydrogen]=2.08333
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.005/0=inf
+dt_ypar(-)[hydrogen]=inf
+dt_z(s)[hydrogen]=dz(m)/vmax_z(m/s)[hydrogen]=12.5/1.13776e+06=1.09865e-05
+dt_z(-)[hydrogen]=2.15054
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.005/0=inf
+dt_y(-)[hydrogen]=inf
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.005/0=inf
+dt_x(-)[hydrogen]=inf
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=73403.6/0=inf
+dt_vpar(-)[hydrogen]=inf
+
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+unit_dimension_length [ion]=1
+unit_dimension_speed  [ion]=195743
+unit_dimension_time   [ion]=5.10874e-06
+[ion] maxvel:phy_maxvel[0]=0:0(1:-nan)
+[ion] maxvel:phy_maxvel[1]=0:0(1:-nan)
+[ion] maxvel:phy_maxvel[2]=2.90625:568878(1:195743)
+[ion] maxvel:phy_maxvel[3]=0:0(1:-nan)
+[ion] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[ion]=dz(m)/vparmax_z(m/s)[ion]=12.5/587229=2.12864e-05
+dt_zpar(-)[ion]=4.16667
+dt_ypar(s)[ion]=dy(m)/vparmax_y(m/s)[ion]=0.005/0=inf
+dt_ypar(-)[ion]=inf
+dt_z(s)[ion]=dz(m)/vmax_z(m/s)[ion]=12.5/568878=2.19731e-05
+dt_z(-)[ion]=4.30108
+dt_y(s)[ion]=dy(m)/vmax_y(m/s)[ion]=0.005/0=inf
+dt_y(-)[ion]=inf
+dt_x(s)[ion]=dx(m)/vmax_x(m/s)[ion]=0.005/0=inf
+dt_x(-)[ion]=inf
+dt_vpar(s)[ion]=dvpar(m/s)/vmax_vpar(m/s/s)[ion]=73403.6/0=inf
+dt_vpar(-)[ion]=inf
+
+ GKSystem::set_dt_es_alfven_wave() 2.
+ Simulation::advance() 2
+ Simulation::advance() 3
+  --
+  Subiteration:1 of 1
+ GKSystem::advance 1
+ GKSystem::advance 2
+ TiRK:advance() i=0, m_nstages=4
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::explicitOp 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=3, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=3, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=4, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=4, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5
+SlabPhaseBC::apply() 6.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=3, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=3, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=4, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=4, a_time=0
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5
+SlabPhaseBC::apply() 6.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 2.
+ GKOps::explicitOp 2
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ TiRK:advance() i=0
+ TiRK:advance() i=1, m_nstages=4
+ GKOps::setElectricField 1
+ GKOps::setElectricField 2:2
+ GKOps::computeElectricField 1
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ a_E_field_cell.nComp() = 3
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 26.
+ GKOps::computeElectricField 2.
+ GKOps::setElectricField 3.
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::explicitOp 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=3, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=3, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=4, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=4, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5
+SlabPhaseBC::apply() 6.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=3, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=3, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=4, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=4, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5
+SlabPhaseBC::apply() 6.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 2.
+ GKOps::explicitOp 2
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ TiRK:advance() i=1
+ TiRK:advance() i=2, m_nstages=4
+ GKOps::setElectricField 1
+ GKOps::setElectricField 2:2
+ GKOps::computeElectricField 1
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ a_E_field_cell.nComp() = 3
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 26.
+ GKOps::computeElectricField 2.
+ GKOps::setElectricField 3.
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::explicitOp 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=3, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=3, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=4, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=4, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5
+SlabPhaseBC::apply() 6.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=3, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=3, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=4, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=4, a_time=0.25
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5
+SlabPhaseBC::apply() 6.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 2.
+ GKOps::explicitOp 2
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ TiRK:advance() i=2
+ TiRK:advance() i=3, m_nstages=4
+ GKOps::setElectricField 1
+ GKOps::setElectricField 2:2
+ GKOps::computeElectricField 1
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::computeEField 1
+ GKOps::computeEField 2
+ a_E_field_cell.nComp() = 3
+ GKOps::computeEField 3
+ GKOps::computeEField 4
+ GKOps::computeEField 5
+ GKOps::computeEField 26.
+ GKOps::computeElectricField 2.
+ GKOps::setElectricField 3.
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKOps::explicitOp 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=3, a_time=0.5
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=3, a_time=0.5
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=4, a_time=0.5
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=4, a_time=0.5
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5
+SlabPhaseBC::apply() 6.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.1
+ KineticSpecies::computeMappdVelocity() 1
+ PhaseGeom::updateMappedVelocities 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 0
+ PhaseGeom::updateVelocities 3.
+ PhaseGeom::updateMappedVelocities 2
+ PhaseGeom::multNTransposePointwise 1
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ MagBlockCoordSys::compute_dXdXiCofac 1
+ icomp, ind1, ind2  = 0, 0, 0
+ icomp, ind1, ind2  = 1, 0, 1
+ icomp, ind1, ind2  = 2, 0, 2
+ icomp, ind1, ind2  = 3, 1, 0
+ icomp, ind1, ind2  = 4, 1, 1
+ icomp, ind1, ind2  = 5, 1, 2
+ icomp, ind1, ind2  = 6, 2, 0
+ icomp, ind1, ind2  = 7, 2, 1
+ icomp, ind1, ind2  = 8, 2, 2
+a_tmp(0) = 0.0063662
+a_tmp(1) = 0
+a_tmp(2) = 0
+a_tmp(3) = 0
+a_tmp(4) = 0.0063662
+a_tmp(5) = 0
+a_tmp(6) = 0
+a_tmp(7) = 0
+a_tmp(8) = 15.9155
+ MagBlockCoordSys::compute_dXdXiCofac 2
+ MagBlockCoordSys::compute_dXdXiCofac 3
+ PhaseGeom::multNTransposePointwise 2.
+ PhaseGeom::updateMappedVelocities 3.
+ KineticSpecies::computeMappdVelocity() 2.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.2
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.3
+SlabPhaseBC::apply() 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 0, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 1, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 2, 0
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 3, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineBoundaryBoxLayouts() 1
+ b, dir, isPhysicalBoundary=0, 4, 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 0
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 1
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 2
+ PhaseBCUtils.H::defineInflowDataStorage() 1
+ i= 3
+SlabPhaseBC::apply() 2
+ SlabPhaseBC::fillInflowData(): i=0, dir=3, a_time=0.5
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=1, dir=3, a_time=0.5
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=2, dir=4, a_time=0.5
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+ SlabPhaseBC::fillInflowData(): i=3, dir=4, a_time=0.5
+ SlabPhaseBC::fillInflowData():before KineticFunction.assign()
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ MaxwellianKineticFunction::setPointValues 1
+ MaxwellianKineticFunction::setPointValues 2.
+ SlabPhaseBC::fillInflowData():after KineticFunction.assign()
+SlabPhaseBC::apply() 3
+SlabPhaseBC::apply() 4
+SlabPhaseBC::apply() 5
+SlabPhaseBC::apply() 6.
+ GKSystemBC::fillKineticSpeciesGhostCells() 1.4.
+ GKSystemBC::fillKineticSpeciesGhostCells() 2.
+ GKOps::explicitOp 2
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ GKVlasov::evalRHS() 1
+ KineticSpecies::computeVelocity() 1
+ PhaseGeom::updateVelocities 1
+ PhaseGeom::computeGKVelociites(temperature) 1
+ include_drifts, gradb, par_streaming, field_align = 1,1,1,0
+ velocity ghost vects = (1,1,1,1,1)
+ velocity cfg_ghost vects = (1,1,1)
+ m_temperatureCell ghost vects= (4,4,4,0,0)
+ PhaseGeom::computeGKVelociites(temperature) 2.
+ PhaseGeom::updateVelocities 2
+ a_apply_axisymmetric_correction = 1
+ PhaseGeom::applyAxisymmetricCorrection 1
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 2
+ mag_block_coord_sys.isAxisymmetric =0
+ PhaseGeom::applyAxisymmetricCorrection 3.
+ PhaseGeom::updateVelocities 3.
+ KineticSpecies::computeVelocity() 2.
+ GKVlasov::evalRHS() 2
+ mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
+ a_u.nComp() = 1
+ a_v.nComp() = 5
+ SpaceDim    = 5
+ GKVlasov::evalRHS() 3
+ TiRK:advance() i=3
+ GKSystem::advance 3
+ GKSystem::advance 4
+ GKSystem::advance 5
+ GKSystem::advance 6
+ GKSystem::advance 7
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+ GKSystem::advance 8
+num_cells = 8 8 8 32 16 
+is_periodic = 1 1 1 0 0 
+configuration_decomposition = 1 1 1 
+velocity_decomposition = 2 1 
+phase_decomposition = 1 1 1 2 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+ GKSystem::advance 9.
+ PhaseGeom::divideJonValid 1
+ PhaseGeom::divideJonValid 1
+  ----
+  dt: 0.5
+    Vlasov    : 2.15054 (time scale), 0.2325 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.78134e-309 (CFL)
+  ----
+ Simulation::advance() 4
+  Distribution Function Extrema:
+    Species 0:	0.000148551 [max]	3.67529e-12 [min]
+    Species 1:	0.00118841 [max]	2.94024e-11 [min]
+
+Step 1 completed, simulation time is 0.5, solver wall time is 66.1549 seconds
+----
+m_verbosity = 10
+m_max_step = 70
+m_max_time = 100000
+m_fixed_dt = 0.5
+m_max_dt_grow = 1.1
+m_initial_dt_fractiond = 0.1
+m_cfl = 1
+checkpoint interval = 100
+checkpoint prefix = chk
+plot interval = 1
+plot frefix = plt
+ GKSystem::writePlotFile() 0
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 3: m_hdf_dfn
+ GKSystem::writePlotFile() 4: m_hdf_dfn, bstar_par
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9: m_hdf_vparmu
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.1: m_hdf_vparmu_atxy
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.2: m_hdf_vparmu_atyz
+ NEW ADDED:PhaseGeom::divideBStarParallel check the updated 1
+ GKSystem::writePlotFile() 9.3: m_hdf_vparmu_atzx
+ KineticSpecies::chargeDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ChargeDensityKernel::eval() 1.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::chargeDensity 2.
+ GKSystem::writePlotFile() 10: m_hdf_density
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ GKSystem::writePlotFile() 11: m_hdf_ParallelMomentum
+ KineticSpecies::numberDensity 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::numberDensity 2.
+ KineticSpecies::ParallelMomentum 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:ParallelMomKernel::eval() 1
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 2
+ Kernel:ParallelMomKernel::eval() 3.
+ MomentOp::compute (CFG::LevelData FArrayBox) 3
+ MomentOp::compute (CFG::LevelData FArrayBox) 4
+ MomentOp::compute (CFG::LevelData FArrayBox) 5
+ MomentOp::partialIntegralMu 1
+ degenerate_ghosts= (0,0,0,0,0)
+ MomentOp::partialIntegralMu 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 6
+ MomentOp::compute (CFG::LevelData FArrayBox) 7
+ MomentOp::partialIntegralVp 1
+ MomentOp::partialIntegralVp 2.
+ MomentOp::compute (CFG::LevelData FArrayBox) 8
+ MomentOp::velocitySpaceArea 1
+ detJ =1
+ dx(mu,vpar) =(0.375,0.5)
+ area=detJ*dvpar*dmu =0.1875
+ MomentOp::velocitySpaceArea 2.
+ scale = 1
+ area = 0.1875
+ mass = 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 9
+ MomentOp::scaleResult 1
+ MomentOp::scaleResult 1.1
+compatible boxes: src, dst = 0,1
+compatible  src : boxes, dst = 0,0
+compatible  dst : boxes, src = 1,0
+ MomentOp::scaleResult 2
+ MomentOp::scaleResult 7.
+ MomentOp::compute (CFG::LevelData FArrayBox) 10
+ MomentOp::compute (CFG::LevelData FArrayBox) 11.
+ KineticSpecies::ParallelMomentum 2.
+ KineticSpecies::PressureMoment 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 1
+ MomentOp::compute (CFG::LevelData FArrayBox) 2
+ NEW ADDED:KineticSpecies::getGhostDBL 1
+ NEW ADDED:KineticSpecies::getGhostDBL 2.
+ Kernel:PressureKernel::eval() 1
+ Kernel:PressureKernel::eval() 2
+ Kernel:PressureKernel::eval() 2
