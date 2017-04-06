@@ -82,8 +82,8 @@ gksystem.magnetic_geometry_mapping.plot_magnetic_field = true
 #####################################################
 # Phase Space Geometry Definitions
 #####################################################
-phase_space_mapping.v_parallel_max = 6.0
-phase_space_mapping.mu_max = 8.0
+phase_space_mapping.v_parallel_max = 4.0
+phase_space_mapping.mu_max = 5.0
 phase_space_mapping.second_order = true
 phase_space_mapping.velocity_type = "gyrokinetic"
 
@@ -145,9 +145,10 @@ kinetic_species.1.name   = "hydrogen"
 kinetic_species.1.mass   = 1.0
 kinetic_species.1.charge = 1.0
 
-kinetic_species.2.name   = "ion"
-kinetic_species.2.mass   = 4.0
-kinetic_species.2.charge = 1.0
+#kinetic_species.2.name   = "ion"
+#kinetic_species.2.mass   = 4.0
+#kinetic_species.2.charge = 1.0
+
 #boltzmann_electron.name = "electron"
 #boltzmann_electron.mass              = 0.000544
 #boltzmann_electron.charge            = -1.0
