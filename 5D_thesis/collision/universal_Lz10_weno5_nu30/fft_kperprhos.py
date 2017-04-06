@@ -1190,7 +1190,7 @@ def func_lin(x, aa, bb):
 error_array_a=[]
 error_array_b=[]
 cutoff_index = len(extremum_dimensional_xt)-1
-ind_shift=12
+ind_shift=6
 for ind in enumerate(extremum_dimensional_xt):
     if ind[0]>2+ind_shift:
         #print ind[0]
@@ -1204,14 +1204,14 @@ for ind in enumerate(extremum_dimensional_xt):
 
         if len(error_array_a)>3 :
             print ind[0], abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]), abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1])
-            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 1.0:#3.0:
+            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 0.3:#3.0:
                 print 'here1'
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
                 break
         if len(error_array_b)>3 :
-            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 1.0:#3.0:
+            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 0.3:#3.0:
                 print 'here2'
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
