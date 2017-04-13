@@ -1,0 +1,777 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 3000
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 536064
+  TRANSIT TIME          [s]: 1.86545e-06
+  MAGNETIC MOMENT     [J/T]: 2.40326e-16
+  DIST. FUNCTION [s/(Am^6)]: 206.633
+  POTENTIAL             [V]: 3000
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00559634
+  DEBYE LENGTH          [m]: 4.07174e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00559634
+  DEBYE NUMBER             : 4.07174e-05
+
+***********************************************************************
+Constructing Miller equilibrium geometry...
+   delta = 0
+   kappa = 1
+   drR0 = 0, s_kappa = 0, m_dpsidr = 1.71, s_delta = 0
+   origin = 1.7 0
+   inner_radial_bdry = 0.324981
+   outer_radial_bdry = 0.359019
+Done constructing Miller equilibrium geometry
+   Configuration space box ((0,0) (15,7) (0,0)) is assigned to process 0
+   Configuration space box ((0,8) (15,15) (0,0)) is assigned to process 1
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+   Phase space box ((0   Phase space box ((0,8,-8,0),0,-8,0) (15,7, (15,15,7,7) (0,07,7) (0,0,,0,0)) is assigned to process 1, has 0,0)) is assigned to process 016384 valid cells and 131072 ghost cells
+, has 16384 valid cells and 131072 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 4, charge = 1
+Done adding species and constructing coordinates
+
+Grid Function Library =========================
+
+"N0":
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0.001
+  mode: (1,0)
+  phase: (0,0)
+
+"T0":
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+"zero":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian":
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0.001
+  mode: (1,0)
+  phase: (0,0)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+
+==================================================
+
+AnnulusPotentialBC ================================
+- variable: potential-------------
+  radial_inner: 
+     bc_type  = 1
+     bc_value = 0
+  radial_outer: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+AnnulusPhaseBC ================================
+- variable: hydrogen-------------
+  radial_inner: 
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0.001
+  mode: (1,0)
+  phase: (0,0)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+
+  radial_outer: 
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0.001
+  mode: (1,0)
+  phase: (0,0)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0.001
+  mode: (1,0)
+  phase: (0,0)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0.001
+  mode: (1,0)
+  phase: (0,0)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0.001
+  mode: (1,0)
+  phase: (0,0)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0.001
+  mode: (1,0)
+  phase: (0,0)
+
+-- Temperature --
+Cosine grid function parameters:
+  constant: 1
+  amplitude: 0
+  mode: (1,0)
+  phase: (0,0)
+
+
+-----------------------------------------------
+===============================================
+Unrecognized collision model; setting model to NULL
+GKPoissonAdiabaticElectron parameters:
+   Debye number squared = 1.6579e-09
+   Larmor number squared = 3.13191e-05
+   prefactor_strategy = 3
+   nonlinear_relative_tolerance = 1e-05
+   nonlinear_maximum_iterations = 5
+   Newton iteration 0: relative residual = 0.00740552
+      AMG solver residual = 0.00050941 after 1 iterations
+      AMG solver residual = 0.000316284 after 1 iterations
+      AMG solver residual = 0.000161914 after 1 iterations
+      AMG solver residual = 0.00019754 after 1 iterations
+      AMG solver residual = 0.000123949 after 1 iterations
+      AMG solver residual = 0.00020008 after 1 iterations
+   Newton iteration 1: relative residual = 2.73117e-05
+                       relative solution change = 2
+      AMG solver residual = 0.000193506 after 1 iterations
+      AMG solver residual = 0.000307714 after 1 iterations
+      AMG solver residual = 0.000161891 after 1 iterations
+      AMG solver residual = 0.000191729 after 1 iterations
+      AMG solver residual = 0.0001533 after 1 iterations
+      AMG solver residual = 0.000195449 after 1 iterations
+   Newton iteration 2: relative residual = 9.01452e-10
+                       relative solution change = 0.00106385
+      AMG solver residual = 0.000378816 after 1 iterations
+   Newton iteration 3: relative residual = 4.18749e-10
+                       relative solution change = 3.2337e-07
+  Distribution Function Extrema:
+    Species 0:	51.5194 [max]	-0.00591027 [min]
+
+   Newton iteration 0: relative residual = 4.18749e-10
+      AMG solver residual = 0.000408269 after 1 iterations
+   Newton iteration 1: relative residual = 2.49457e-10
+                       relative solution change = 1.74102e-07
+dtStable = 0.153011
+   Newton iteration 0: relative residual = 8.55506e-05
+      AMG solver residual = 0.00037928 after 1 iterations
+      AMG solver residual = 0.000654994 after 1 iterations
+   Newton iteration 1: relative residual = 1.43314e-08
+                       relative solution change = 0.0022979
+      AMG solver residual = 0.00049403 after 1 iterations
+   Newton iteration 2: relative residual = 1.30993e-09
+                       relative solution change = 5.87872e-07
+   Newton iteration 0: relative residual = 5.95633e-07
+      AMG solver residual = 0.000423892 after 1 iterations
+   Newton iteration 1: relative residual = 5.73366e-07
+                       relative solution change = 0.000475805
+      AMG solver residual = 0.000220004 after 1 iterations
+   Newton iteration 2: relative residual = 2.56776e-07
+                       relative solution change = 0.000115164
+      AMG solver residual = 0.000144533 after 1 iterations
+   Newton iteration 3: relative residual = 1.39431e-07
+                       relative solution change = 9.54676e-05
+      AMG solver residual = 0.000207152 after 1 iterations
+   Newton iteration 4: relative residual = 8.75567e-08
+                       relative solution change = 4.44713e-05
+      AMG solver residual = 0.000149325 after 1 iterations
+   Newton iteration 5: relative residual = 3.34545e-08
+                       relative solution change = 1.88159e-05
+   Newton iteration 0: relative residual = 8.54501e-05
+      AMG solver residual = 0.000379356 after 1 iterations
+      AMG solver residual = 0.000346546 after 1 iterations
+      AMG solver residual = 0.000200557 after 1 iterations
+      AMG solver residual = 0.000232786 after 1 iterations
+      AMG solver residual = 0.000205114 after 1 iterations
+   Newton iteration 1: relative residual = 1.61749e-08
+                       relative solution change = 0.0023887
+      AMG solver residual = 0.00047178 after 1 iterations
+   Newton iteration 2: relative residual = 4.91923e-09
+                       relative solution change = 1.94894e-06
+  Distribution Function Extrema:
+    Species 0:	51.5196 [max]	-0.0059113 [min]
+
+Step 1 completed, simulation time is 0.0765053
+   Newton iteration 0: relative residual = 3.80944e-08
+      AMG solver residual = 0.000346999 after 1 iterations
+   Newton iteration 1: relative residual = 3.65903e-09
+                       relative solution change = 1.60749e-06
+   Newton iteration 0: relative residual = 9.39989e-05
+      AMG solver residual = 0.000379358 after 1 iterations
+      AMG solver residual = 0.000316332 after 1 iterations
+      AMG solver residual = 0.000172078 after 1 iterations
+      AMG solver residual = 0.000201244 after 1 iterations
+      AMG solver residual = 0.000204865 after 1 iterations
+      AMG solver residual = 0.000194161 after 1 iterations
+   Newton iteration 1: relative residual = 1.57514e-08
+                       relative solution change = 0.00288948
+      AMG solver residual = 0.000495803 after 1 iterations
+   Newton iteration 2: relative residual = 7.56554e-10
+                       relative solution change = 7.09e-07
+   Newton iteration 0: relative residual = 7.33532e-07
+      AMG solver residual = 0.000417777 after 1 iterations
+   Newton iteration 1: relative residual = 6.8807e-07
+                       relative solution change = 0.000570122
+      AMG solver residual = 0.000223954 after 1 iterations
+   Newton iteration 2: relative residual = 3.12173e-07
+                       relative solution change = 0.000138388
+      AMG solver residual = 0.000148626 after 1 iterations
+   Newton iteration 3: relative residual = 1.68305e-07
+                       relative solution change = 0.000115401
+      AMG solver residual = 0.00020798 after 1 iterations
+   Newton iteration 4: relative residual = 1.05906e-07
+                       relative solution change = 5.42397e-05
+      AMG solver residual = 0.000149621 after 1 iterations
+   Newton iteration 5: relative residual = 4.05385e-08
+                       relative solution change = 2.26751e-05
+   Newton iteration 0: relative residual = 9.37481e-05
+      AMG solver residual = 0.000379542 after 1 iterations
+      AMG solver residual = 0.000315059 after 1 iterations
+      AMG solver residual = 0.000168717 after 1 iterations
+      AMG solver residual = 0.000200676 after 1 iterations
+      AMG solver residual = 0.00020887 after 1 iterations
+      AMG solver residual = 0.00018507 after 1 iterations
+   Newton iteration 1: relative residual = 1.57532e-08
+                       relative solution change = 0.00334615
+      AMG solver residual = 0.000495409 after 1 iterations
+   Newton iteration 2: relative residual = 1.20089e-09
+                       relative solution change = 9.88377e-07
+  Distribution Function Extrema:
+    Species 0:	51.5198 [max]	-0.00591355 [min]
+
+Step 2 completed, simulation time is 0.160661
+   Newton iteration 0: relative residual = 4.7813e-08
+      AMG solver residual = 0.000335396 after 1 iterations
+   Newton iteration 1: relative residual = 1.1285e-09
+                       relative solution change = 1.39331e-06
+   Newton iteration 0: relative residual = 0.000102998
+      AMG solver residual = 0.000379638 after 1 iterations
+      AMG solver residual = 0.000310234 after 1 iterations
+      AMG solver residual = 0.000165182 after 1 iterations
+      AMG solver residual = 0.000195803 after 1 iterations
+      AMG solver residual = 0.000156786 after 1 iterations
+      AMG solver residual = 0.000188907 after 1 iterations
+   Newton iteration 1: relative residual = 1.74963e-08
+                       relative solution change = 0.00427154
+      AMG solver residual = 0.000494675 after 1 iterations
+   Newton iteration 2: relative residual = 1.71379e-09
+                       relative solution change = 1.39687e-06
+   Newton iteration 0: relative residual = 9.35275e-07
+      AMG solver residual = 0.000401054 after 1 iterations
+   Newton iteration 1: relative residual = 8.02025e-07
+                       relative solution change = 0.000661231
+      AMG solver residual = 0.000231729 after 1 iterations
+   Newton iteration 2: relative residual = 3.81569e-07
+                       relative solution change = 0.000166374
+      AMG solver residual = 0.000159592 after 1 iterations
+   Newton iteration 3: relative residual = 1.98317e-07
+                       relative solution change = 0.000136132
+      AMG solver residual = 0.00021401 after 1 iterations
+   Newton iteration 4: relative residual = 1.25744e-07
+                       relative solution change = 6.70745e-05
+      AMG solver residual = 0.00015318 after 1 iterations
+   Newton iteration 5: relative residual = 4.64813e-08
+                       relative solution change = 2.6114e-05
+   Newton iteration 0: relative residual = 0.000102524
+      AMG solver residual = 0.000379965 after 1 iterations
+      AMG solver residual = 0.000311016 after 1 iterations
+      AMG solver residual = 0.0001649 after 1 iterations
+      AMG solver residual = 0.000196062 after 1 iterations
+      AMG solver residual = 0.000261426 after 1 iterations
+   Newton iteration 1: relative residual = 1.87258e-08
+                       relative solution change = 0.00504437
+      AMG solver residual = 0.000480089 after 1 iterations
+   Newton iteration 2: relative residual = 5.34883e-09
+                       relative solution change = 2.43088e-06
+  Distribution Function Extrema:
+    Species 0:	51.5201 [max]	-0.00591629 [min]
+
+Step 3 completed, simulation time is 0.253233
+   Newton iteration 0: relative residual = 6.54781e-08
+      AMG solver residual = 0.000340163 after 1 iterations
+   Newton iteration 1: relative residual = 4.70918e-09
+                       relative solution change = 2.65375e-06
+   Newton iteration 0: relative residual = 0.000112455
+      AMG solver residual = 0.000380185 after 1 iterations
+      AMG solver residual = 0.000308568 after 1 iterations
+      AMG solver residual = 0.000163267 after 1 iterations
+      AMG solver residual = 0.000193364 after 1 iterations
+      AMG solver residual = 0.00017723 after 1 iterations
+      AMG solver residual = 0.00019203 after 1 iterations
+   Newton iteration 1: relative residual = 1.9555e-08
+                       relative solution change = 0.00642816
+      AMG solver residual = 0.000490579 after 1 iterations
+   Newton iteration 2: relative residual = 2.96802e-09
+                       relative solution change = 2.36067e-06
+   Newton iteration 0: relative residual = 1.23332e-06
+      AMG solver residual = 0.00038227 after 1 iterations
+   Newton iteration 1: relative residual = 9.18709e-07
+                       relative solution change = 0.000753901
+      AMG solver residual = 0.00024171 after 1 iterations
+   Newton iteration 2: relative residual = 4.67514e-07
+                       relative solution change = 0.000215457
+      AMG solver residual = 0.000173585 after 1 iterations
+   Newton iteration 3: relative residual = 2.24477e-07
+                       relative solution change = 0.00015374
+      AMG solver residual = 0.000223866 after 1 iterations
+   Newton iteration 4: relative residual = 1.44618e-07
+                       relative solution change = 8.33289e-05
+      AMG solver residual = 0.000158237 after 1 iterations
+   Newton iteration 5: relative residual = 5.06716e-08
+                       relative solution change = 2.80565e-05
+   Newton iteration 0: relative residual = 0.00011166
+      AMG solver residual = 0.000380701 after 1 iterations
+      AMG solver residual = 0.000309662 after 1 iterations
+      AMG solver residual = 0.000163822 after 1 iterations
+      AMG solver residual = 0.000195304 after 1 iterations
+      AMG solver residual = 0.000260451 after 1 iterations
+      AMG solver residual = 0.000177214 after 1 iterations
+   Newton iteration 1: relative residual = 1.94679e-08
+                       relative solution change = 0.00749054
+      AMG solver residual = 0.000494354 after 1 iterations
+   Newton iteration 2: relative residual = 3.65986e-09
+                       relative solution change = 2.87031e-06
+  Distribution Function Extrema:
+    Species 0:	51.5206 [max]	-0.00591705 [min]
+
+Step 4 completed, simulation time is 0.355061
+   Newton iteration 0: relative residual = 8.48438e-08
+      AMG solver residual = 0.000335375 after 1 iterations
+   Newton iteration 1: relative residual = 5.29263e-09
+                       relative solution change = 3.84286e-06
+   Newton iteration 0: relative residual = 0.000122214
+      AMG solver residual = 0.000381087 after 1 iterations
+      AMG solver residual = 0.000308056 after 1 iterations
+      AMG solver residual = 0.000162743 after 1 iterations
+      AMG solver residual = 0.000193373 after 1 iterations
+      AMG solver residual = 0.000158939 after 1 iterations
+      AMG solver residual = 0.000187043 after 1 iterations
+   Newton iteration 1: relative residual = 2.18559e-08
+                       relative solution change = 0.0094219
+      AMG solver residual = 0.000485681 after 1 iterations
+   Newton iteration 2: relative residual = 4.57724e-09
+                       relative solution change = 3.6722e-06
+   Newton iteration 0: relative residual = 1.66925e-06
+      AMG solver residual = 0.00036642 after 1 iterations
+   Newton iteration 1: relative residual = 1.0457e-06
+                       relative solution change = 0.000858267
+      AMG solver residual = 0.000251931 after 1 iterations
+   Newton iteration 2: relative residual = 5.69612e-07
+                       relative solution change = 0.000303517
+      AMG solver residual = 0.000185264 after 1 iterations
+   Newton iteration 3: relative residual = 2.41773e-07
+                       relative solution change = 0.000164448
+      AMG solver residual = 0.000238524 after 1 iterations
+   Newton iteration 4: relative residual = 1.58034e-07
+                       relative solution change = 0.000101884
+      AMG solver residual = 0.0001665 after 1 iterations
+   Newton iteration 5: relative residual = 4.90668e-08
+                       relative solution change = 2.74707e-05
+   Newton iteration 0: relative residual = 0.000120962
+      AMG solver residual = 0.000381855 after 1 iterations
+      AMG solver residual = 0.000308404 after 1 iterations
+      AMG solver residual = 0.000162679 after 1 iterations
+      AMG solver residual = 0.000193442 after 1 iterations
+      AMG solver residual = 0.000145527 after 1 iterations
+      AMG solver residual = 0.000185324 after 1 iterations
+   Newton iteration 1: relative residual = 2.17672e-08
+                       relative solution change = 0.0107991
+      AMG solver residual = 0.000486257 after 1 iterations
+   Newton iteration 2: relative residual = 5.34117e-09
+                       relative solution change = 4.30504e-06
+  Distribution Function Extrema:
+    Species 0:	51.5211 [max]	-0.0059212 [min]
+
+Step 5 completed, simulation time is 0.467073
+   Newton iteration 0: relative residual = 1.12779e-07
+      AMG solver residual = 0.000333225 after 1 iterations
+   Newton iteration 1: relative residual = 9.09602e-09
+                       relative solution change = 6.45632e-06
+   Newton iteration 0: relative residual = 0.000132031
+      AMG solver residual = 0.000382464 after 1 iterations
+      AMG solver residual = 0.000307539 after 1 iterations
+      AMG solver residual = 0.00016218 after 1 iterations
+      AMG solver residual = 0.000192943 after 1 iterations
+      AMG solver residual = 0.000160584 after 1 iterations
+      AMG solver residual = 0.000186517 after 1 iterations
+   Newton iteration 1: relative residual = 2.47193e-08
+                       relative solution change = 0.0134289
+      AMG solver residual = 0.000473771 after 1 iterations
+   Newton iteration 2: relative residual = 6.60101e-09
+                       relative solution change = 5.41069e-06
+   Newton iteration 0: relative residual = 2.29424e-06
+      AMG solver residual = 0.000355364 after 1 iterations
+   Newton iteration 1: relative residual = 1.18883e-06
+                       relative solution change = 0.000985997
+      AMG solver residual = 0.000261936 after 1 iterations
+   Newton iteration 2: relative residual = 6.84966e-07
+                       relative solution change = 0.000437237
+      AMG solver residual = 0.000192696 after 1 iterations
+   Newton iteration 3: relative residual = 2.48928e-07
+                       relative solution change = 0.000167521
+      AMG solver residual = 0.000249723 after 1 iterations
+   Newton iteration 4: relative residual = 1.65998e-07
+                       relative solution change = 0.00011998
+      AMG solver residual = 0.00016911 after 1 iterations
+   Newton iteration 5: relative residual = 5.25781e-08
+                       relative solution change = 2.62853e-05
+   Newton iteration 0: relative residual = 0.000130145
+      AMG solver residual = 0.000383572 after 1 iterations
+      AMG solver residual = 0.000308141 after 1 iterations
+      AMG solver residual = 0.000162644 after 1 iterations
+      AMG solver residual = 0.000194763 after 1 iterations
+      AMG solver residual = 0.000248889 after 1 iterations
+      AMG solver residual = 0.000172406 after 1 iterations
+   Newton iteration 1: relative residual = 2.42805e-08
+                       relative solution change = 0.0151924
+      AMG solver residual = 0.000490489 after 1 iterations
+   Newton iteration 2: relative residual = 7.71772e-09
+                       relative solution change = 6.3158e-06
+  Distribution Function Extrema:
+    Species 0:	51.5218 [max]	-0.00593485 [min]
+
+Step 6 completed, simulation time is 0.590285
+   Newton iteration 0: relative residual = 1.48264e-07
+      AMG solver residual = 0.0003342 after 1 iterations
+   Newton iteration 1: relative residual = 1.4801e-08
+                       relative solution change = 1.06787e-05
+      AMG solver residual = 0.000364212 after 1 iterations
+   Newton iteration 2: relative residual = 7.32093e-09
+                       relative solution change = 1.12198e-05
+      AMG solver residual = 0.000210646 after 1 iterations
+   Newton iteration 3: relative residual = 8.91558e-10
+                       relative solution change = 3.95075e-07
+   Newton iteration 0: relative residual = 0.000141551
+      AMG solver residual = 0.000384497 after 1 iterations
+      AMG solver residual = 0.000306942 after 1 iterations
+      AMG solver residual = 0.000161581 after 1 iterations
+      AMG solver residual = 0.000192437 after 1 iterations
+      AMG solver residual = 0.000169523 after 1 iterations
+      AMG solver residual = 0.000187605 after 1 iterations
+   Newton iteration 1: relative residual = 2.96083e-08
+                       relative solution change = 0.0187345
+      AMG solver residual = 0.000430221 after 1 iterations
+   Newton iteration 2: relative residual = 8.99188e-09
+                       relative solution change = 7.63862e-06
+   Newton iteration 0: relative residual = 3.1686e-06
+      AMG solver residual = 0.000348095 after 1 iterations
+   Newton iteration 1: relative residual = 1.34799e-06
+                       relative solution change = 0.00114498
+      AMG solver residual = 0.000271666 after 1 iterations
+   Newton iteration 2: relative residual = 8.08347e-07
+                       relative solution change = 0.000615209
+      AMG solver residual = 0.000196265 after 1 iterations
+   Newton iteration 3: relative residual = 2.47327e-07
+                       relative solution change = 0.000164486
+      AMG solver residual = 0.000262272 after 1 iterations
+   Newton iteration 4: relative residual = 1.66757e-07
+                       relative solution change = 0.000135393
+      AMG solver residual = 0.000172761 after 1 iterations
+   Newton iteration 5: relative residual = 5.38054e-08
+                       relative solution change = 2.49913e-05
+   Newton iteration 0: relative residual = 0.00013881
+      AMG solver residual = 0.00038607 after 1 iterations
+      AMG solver residual = 0.000307528 after 1 iterations
+      AMG solver residual = 0.000162023 after 1 iterations
+      AMG solver residual = 0.000194336 after 1 iterations
+      AMG solver residual = 0.000263721 after 1 iterations
+      AMG solver residual = 0.000170515 after 1 iterations
+   Newton iteration 1: relative residual = 2.70423e-08
+                       relative solution change = 0.0210153
+      AMG solver residual = 0.000486794 after 1 iterations
+   Newton iteration 2: relative residual = 1.05457e-08
+                       relative solution change = 9.01405e-06
+  Distribution Function Extrema:
+    Species 0:	51.5226 [max]	-0.00594475 [min]
+
+Step 7 completed, simulation time is 0.725819
+   Newton iteration 0: relative residual = 1.92804e-07
+      AMG solver residual = 0.000334917 after 1 iterations
+   Newton iteration 1: relative residual = 2.33942e-08
+                       relative solution change = 1.73827e-05
+      AMG solver residual = 0.000345235 after 1 iterations
+   Newton iteration 2: relative residual = 1.21089e-08
+                       relative solution change = 1.79952e-05
+      AMG solver residual = 0.000207262 after 1 iterations
+   Newton iteration 3: relative residual = 1.38704e-09
+                       relative solution change = 6.94129e-07
+   Newton iteration 0: relative residual = 0.000150291
+      AMG solver residual = 0.000387436 after 1 iterations
+      AMG solver residual = 0.000306513 after 1 iterations
+      AMG solver residual = 0.000160972 after 1 iterations
+      AMG solver residual = 0.000192053 after 1 iterations
+      AMG solver residual = 0.000175307 after 1 iterations
+      AMG solver residual = 0.000188248 after 1 iterations
+      AMG solver residual = 0.000105372 after 1 iterations
+   Newton iteration 1: relative residual = 3.01194e-08
+                       relative solution change = 0.0258023
+      AMG solver residual = 0.000483519 after 1 iterations
+   Newton iteration 2: relative residual = 1.27511e-08
+                       relative solution change = 1.12309e-05
+      AMG solver residual = 0.000360735 after 1 iterations
+   Newton iteration 3: relative residual = 7.71081e-09
+                       relative solution change = 6.70522e-06
+   Newton iteration 0: relative residual = 4.37052e-06
+      AMG solver residual = 0.000342874 after 1 iterations
+   Newton iteration 1: relative residual = 1.5115e-06
+                       relative solution change = 0.0013386
+      AMG solver residual = 0.000280108 after 1 iterations
+   Newton iteration 2: relative residual = 9.32224e-07
+                       relative solution change = 0.000835617
+      AMG solver residual = 0.000196235 after 1 iterations
+   Newton iteration 3: relative residual = 2.38007e-07
+                       relative solution change = 0.000155922
+      AMG solver residual = 0.0002705 after 1 iterations
+   Newton iteration 4: relative residual = 1.65779e-07
+                       relative solution change = 0.000145697
+      AMG solver residual = 0.000171626 after 1 iterations
+   Newton iteration 5: relative residual = 6.14461e-08
+                       relative solution change = 2.70749e-05
+   Newton iteration 0: relative residual = 0.000146422
+      AMG solver residual = 0.00038966 after 1 iterations
+      AMG solver residual = 0.000307053 after 1 iterations
+      AMG solver residual = 0.000161324 after 1 iterations
+      AMG solver residual = 0.000193966 after 1 iterations
+      AMG solver residual = 0.000244369 after 1 iterations
+      AMG solver residual = 0.000167108 after 1 iterations
+   Newton iteration 1: relative residual = 3.00269e-08
+                       relative solution change = 0.0287947
+      AMG solver residual = 0.000480866 after 1 iterations
+   Newton iteration 2: relative residual = 1.40644e-08
+                       relative solution change = 1.27698e-05
+      AMG solver residual = 0.000366593 after 1 iterations
+   Newton iteration 3: relative residual = 8.36423e-09
+                       relative solution change = 7.08209e-06
+  Distribution Function Extrema:
+    Species 0:	51.5237 [max]	-0.00596198 [min]
+
+Step 8 completed, simulation time is 0.874906
+   Newton iteration 0: relative residual = 2.50631e-07
+      AMG solver residual = 0.000337765 after 1 iterations
+   Newton iteration 1: relative residual = 3.01704e-08
+                       relative solution change = 2.74733e-05
+      AMG solver residual = 0.000298927 after 1 iterations
+   Newton iteration 2: relative residual = 1.89221e-08
+                       relative solution change = 2.30493e-05
+      AMG solver residual = 0.000181865 after 1 iterations
+   Newton iteration 3: relative residual = 2.56295e-09
+                       relative solution change = 1.25867e-06
+   Newton iteration 0: relative residual = 0.000147079
+      AMG solver residual = 0.000391653 after 1 iterations
+      AMG solver residual = 0.000306216 after 1 iterations
+      AMG solver residual = 0.000160232 after 1 iterations
+      AMG solver residual = 0.000191698 after 1 iterations
+      AMG solver residual = 0.000179913 after 1 iterations
+      AMG solver residual = 0.000188698 after 1 iterations
+      AMG solver residual = 9.4509e-05 after 1 iterations
+   Newton iteration 1: relative residual = 3.10128e-08
+                       relative solution change = 0.0329234
+      AMG solver residual = 0.000475984 after 1 iterations
+   Newton iteration 2: relative residual = 1.58028e-08
+                       relative solution change = 1.48665e-05
+      AMG solver residual = 0.000364915 after 1 iterations
+   Newton iteration 3: relative residual = 9.27337e-09
+                       relative solution change = 7.67048e-06
+   Newton iteration 0: relative residual = 5.22225e-06
+      AMG solver residual = 0.000339667 after 1 iterations
+   Newton iteration 1: relative residual = 1.46282e-06
+                       relative solution change = 0.00137242
+      AMG solver residual = 0.000287926 after 1 iterations
+   Newton iteration 2: relative residual = 9.16518e-07
+                       relative solution change = 0.000954664
+      AMG solver residual = 0.000195112 after 1 iterations
+   Newton iteration 3: relative residual = 1.98334e-07
+                       relative solution change = 0.000128342
+      AMG solver residual = 0.000266946 after 1 iterations
+   Newton iteration 4: relative residual = 1.56043e-07
+                       relative solution change = 0.000130042
+      AMG solver residual = 0.000161712 after 1 iterations
+   Newton iteration 5: relative residual = 6.15476e-08
+                       relative solution change = 3.08599e-05
+   Newton iteration 0: relative residual = 0.0001425
+      AMG solver residual = 0.000394567 after 1 iterations
+      AMG solver residual = 0.000306679 after 1 iterations
+      AMG solver residual = 0.00016027 after 1 iterations
+      AMG solver residual = 0.000192906 after 1 iterations
+      AMG solver residual = 0.000139104 after 1 iterations
+      AMG solver residual = 0.000172682 after 1 iterations
+      AMG solver residual = 0.000192734 after 1 iterations
+   Newton iteration 1: relative residual = 3.08566e-08
+                       relative solution change = 0.0364331
+      AMG solver residual = 0.000471426 after 1 iterations
+   Newton iteration 2: relative residual = 1.71475e-08
+                       relative solution change = 1.67797e-05
+      AMG solver residual = 0.00036606 after 1 iterations
+   Newton iteration 3: relative residual = 9.87416e-09
+                       relative solution change = 7.97227e-06
+  Distribution Function Extrema:
+    Species 0:	51.5249 [max]	-0.00597782 [min]
+
+Step 9 completed, simulation time is 1.02794
+   Newton iteration 0: relative residual = 2.57501e-07
+      AMG solver residual = 0.000340173 after 1 iterations
+   Newton iteration 1: relative residual = 3.92945e-08
+                       relative solution change = 3.82247e-05
+      AMG solver residual = 0.000302241 after 1 iterations
+   Newton iteration 2: relative residual = 2.47386e-08
+                       relative solution change = 3.12637e-05
+      AMG solver residual = 0.000190384 after 1 iterations
+   Newton iteration 3: relative residual = 3.57534e-09
+                       relative solution change = 1.98987e-06
+   Newton iteration 0: relative residual = 0.000138696
+      AMG solver residual = 0.000397292 after 1 iterations
+      AMG solver residual = 0.000306218 after 1 iterations
+      AMG solver residual = 0.000159295 after 1 iterations
+      AMG solver residual = 0.000191106 after 1 iterations
+      AMG solver residual = 0.000187722 after 1 iterations
+      AMG solver residual = 0.00019142 after 1 iterations
+      AMG solver residual = 9.6894e-05 after 1 iterations
+   Newton iteration 1: relative residual = 3.09797e-08
+                       relative solution change = 0.040355
+      AMG solver residual = 0.000466223 after 1 iterations
+   Newton iteration 2: relative residual = 1.85793e-08
+                       relative solution change = 1.89645e-05
+      AMG solver residual = 0.000365136 after 1 iterations
+   Newton iteration 3: relative residual = 1.05042e-08
+                       relative solution change = 8.31678e-06
+   Newton iteration 0: relative residual = 5.82493e-06
+      AMG solver residual = 0.000337845 after 1 iterations
+   Newton iteration 1: relative residual = 1.32258e-06
+                       relative solution change = 0.00133883
+      AMG solver residual = 0.000294271 after 1 iterations
+   Newton iteration 2: relative residual = 8.36052e-07
+                       relative solution change = 0.00100069
+      AMG solver residual = 0.00019337 after 1 iterations
+   Newton iteration 3: relative residual = 1.57961e-07
+                       relative solution change = 0.000101785
+      AMG solver residual = 0.000252514 after 1 iterations
+   Newton iteration 4: relative residual = 1.42845e-07
+                       relative solution change = 0.000105416
+      AMG solver residual = 0.000154638 after 1 iterations
+   Newton iteration 5: relative residual = 5.25438e-08
+                       relative solution change = 3.20106e-05
+   Newton iteration 0: relative residual = 0.000133734
+      AMG solver residual = 0.000400983 after 1 iterations
+      AMG solver residual = 0.00030684 after 1 iterations
+      AMG solver residual = 0.000159094 after 1 iterations
+      AMG solver residual = 0.000191739 after 1 iterations
+      AMG solver residual = 0.000176568 after 1 iterations
+      AMG solver residual = 0.000181385 after 1 iterations
+      AMG solver residual = 0.000102442 after 1 iterations
+   Newton iteration 1: relative residual = 3.08198e-08
+                       relative solution change = 0.0443631
+      AMG solver residual = 0.00046057 after 1 iterations
+   Newton iteration 2: relative residual = 1.98928e-08
+                       relative solution change = 2.12872e-05
+      AMG solver residual = 0.000364323 after 1 iterations
+   Newton iteration 3: relative residual = 1.1013e-08
+                       relative solution change = 8.58617e-06
+  Distribution Function Extrema:
+    Species 0:	51.5263 [max]	-0.00601984 [min]
+
+Step 10 completed, simulation time is 1.18099
+Writing checkpoint file
+Writing history file

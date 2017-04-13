@@ -1,0 +1,323 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 3e+19
+  TEMPERATURE           [eV]: 300
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 169518
+  TRANSIT TIME          [s]: 5.89906e-06
+  MAGNETIC MOMENT     [J/T]: 2.40326e-17
+  DIST. FUNCTION [s/(Am^6)]: 1960.29
+  POTENTIAL             [V]: 300
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00176972
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00176972
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+
+SingleNull grid and domain decomposition parameters:
+
+numcells.core_radial = 12
+numcells.lcore_poloidal = 16
+numcells.rcore_poloidal = 16
+numcells.pf_radial = 12
+numcells.lpf_poloidal = 8
+numcells.rpf_poloidal = 8
+numcells.sol_radial = 12
+decomp.lcore.configuration = 1 1 
+decomp.rcore.configuration = 1 1 
+decomp.lpf.configuration = 1 1 
+decomp.rpf.configuration = 1 1 
+decomp.lcsol.configuration = 1 1 
+decomp.rcsol.configuration = 1 1 
+decomp.lsol.configuration = 1 1 
+decomp.rsol.configuration = 1 1 
+
+Constructing single null left core block with global index space domain box = ((0,32) (11,47) (0,0))
+Left core mapped domain: 0 < xi_0 < 1, 1 < xi_1 < 1.5
+Reading geometry mapping file
+Done reading geometry mapping file
+Reading magnetic field data from mapping file
+Constructing single null right core block with global index space domain box = ((0,-48) (11,-33) (0,0))
+Right core mapped domain: 0 < xi_0 < 1, -1.5 < xi_1 < -1
+Reading geometry mapping file
+Done reading geometry mapping file
+Reading magnetic field data from mapping file
+Constructing single null left center scrape-off layer block with global index space domain box = ((36,32) (47,47) (0,0))
+Left center scrape-off layer mapped domain: 3 < xi_0 < 4, 1 < xi_1 < 1.5
+Reading geometry mapping file
+Done reading geometry mapping file
+Reading magnetic field data from mapping file
+Constructing single null right center scrape-off layer block with global index space domain box = ((36,-48) (47,-33) (0,0))
+Right center scrape-off layer mapped domain: 3 < xi_0 < 4, -1.5 < xi_1 < -1
+Reading geometry mapping file
+Done reading geometry mapping file
+Reading magnetic field data from mapping file
+Constructing single null left scrape_off layer block with global index space domain box = ((36,80) (47,87) (0,0))
+Left scrape_off layer mapped domain: 3 < xi_0 < 4, 2.5 < xi_1 < 2.75
+Reading geometry mapping file
+Done reading geometry mapping file
+Reading magnetic field data from mapping file
+Constructing single null right scrape-off layer block with global index space domain box = ((36,-88) (47,-81) (0,0))
+Right scrape-off layer mapped domain: 3 < xi_0 < 4, -2.75 < xi_1 < -2.5
+Reading geometry mapping file
+Done reading geometry mapping file
+Reading magnetic field data from mapping file
+Constructing single null left private flux block with global index space domain box = ((0,80) (11,87) (0,0))
+Left private flux mapped domain: 0 < xi_0 < 1, 2.5 < xi_1 < 2.75
+Reading geometry mapping file
+Done reading geometry mapping file
+Reading magnetic field data from mapping file
+Constructing single null right private flux block with global index space domain box = ((0,-88) (11,-81) (0,0))
+Right private flux mapped domain 0 < xi_0 < 1, -2.75 < xi_1 < -2.5
+Reading geometry mapping file
+Done reading geometry mapping file
+Reading magnetic field data from mapping file
+X point located at (1.47703,0.436585), neighborhood radius = 0.290186
+   Configuration space box ((0,32) (11,47) (0,0)) is assigned to process 0
+   Configuration space box ((0,-48) (11,-33) (0,0)) is assigned to process 0
+   Configuration space box ((36,32) (47,47) (0,0)) is assigned to process 0
+   Configuration space box ((36,-48) (47,-33) (0,0)) is assigned to process 1
+   Configuration space box ((36,80) (47,87) (0,0)) is assigned to process 1
+   Configuration space box ((36,-88) (47,-81) (0,0)) is assigned to process 1
+   Configuration space box ((0,80) (11,87) (0,0)) is assigned to process 1
+   Configuration space box ((0,-88) (11,-81) (0,0)) is assigned to process 1
+Constructing magnetic geometry
+Max difference at block interfaces: 1.33227e-15 (coordinates), 7.58282e-14 (pointwise metrics)
+Done constructing magnetic geometry
+   Velocity space box ((-12,0) (11,15) (0,0)) is assigned to process 0
+
+Single Null phase decomposition parameters
+
+decomp.mcore.phase = 0 0 0 0 
+decomp.lcore.phase = 1 1 1 1 
+decomp.rcore.phase = 1 1 1 1 
+decomp.lpf.phase = 1 1 1 1 
+decomp.rpf.phase = 1 1 1 1 
+decomp.mcsol.phase = 0 0 0 0 
+decomp.lcsol.phase = 1 1 1 1 
+decomp.rcsol.phase = 1 1 1 1 
+decomp.lsol.phase = 1 1 1 1 
+decomp.rsol.phase = 1 1 1 1 
+
+   Phase space box ((0   Phase space box ((0,-88,-12,0) (11,-81,11,,32,-12,0) (11,47,11,15)15) (0,0,0,0)) is assigned to process  (0,0,0,01, has 36864 valid cells and 208896 ghost cells)) is assigned to process 0, has 73728
+   Phase space box ((0,-48,-12, valid cells and 294912 ghost cells
+   Phase space box ((0,0) (11,-33,11,15) (0,80,-12,0) (11,0,0,0)) is assigned to process 1, has 73728 valid cells and 29491287,11,15) (0, ghost cells
+   Phase space box ((36,-88,-12,0)0,0,0)) is assigned to process  (47,-81,11,15) (0,0, has 36864 valid cells and 208896 ghost cells
+   Phase space box (0,0,0)) is assigned to process 1, has 36864 valid cells and 208896(36,32,-12,0) ghost cells
+   Phase space box ((36,-48,-12,0) (47,47,11,15 (47,-33,11,15) (0) (0,0,0,,0,0,0)) is assigned to process 1, has 73728 valid cells and 0)) is assigned to process 0, has 73728 valid cells and 294912294912 ghost cells
+ ghost cells
+   Phase space box ((36,80,-12,0) (47,87,11,15) (0,0,0,0)) is assigned to process 0, has 36864 valid cells and 208896 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 4, charge = 1
+Done adding species and constructing coordinates
+
+Grid Function Library =========================
+
+"Dshape":
+SingleNullDistr grid function parameters:
+  subtype: Localized
+
+"N0":
+SingleNullDistr grid function parameters:
+  subtype: Tanh
+  inner_radial_value: 1
+  outer_radial_value: 0.2
+  midpoint_fraction: 0.25
+  radial_width: 0.01
+
+"Neq":
+Constant grid function parameters:
+  value: 1.5
+
+"T0":
+Constant grid function parameters:
+  value: 1
+
+"Teq":
+Constant grid function parameters:
+  value: 1.5
+
+"inner_divertor_flux":
+DataArray parameters:
+"outer_divertor_flux":
+DataArray parameters:
+"phi0":
+SingleNullDistr grid function parameters:
+  subtype: Tanh
+  inner_radial_value: 1
+  outer_radial_value: 0.2
+  midpoint_fraction: 0.25
+  radial_width: 0.01
+
+"zero":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_const":
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+SingleNullDistr grid function parameters:
+  subtype: Tanh
+  inner_radial_value: 1
+  outer_radial_value: 0.2
+  midpoint_fraction: 0.25
+  radial_width: 0.01
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+
+"maxwellian_eq":
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+Constant grid function parameters:
+  value: 1.5
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1.5
+
+
+"zero":
+Constant kinetic function parameters:
+  value: 0
+
+==================================================
+
+SingleNullPotentialBC ================================
+- variable: potential-------------
+  radial_core: 
+     bc_type  = 0
+     bc_value = 0
+  radial_sol: 
+     bc_type  = 1
+     bc_value = 0
+  radial_pf: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_inner_div: 
+     bc_type  = 1
+     bc_value = 0
+  poloidal_outer_div: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+SingleNullPhaseBC =============================
+- variable: hydrogen-------------
+  radial_core: 
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+SingleNullDistr grid function parameters:
+  subtype: Tanh
+  inner_radial_value: 1
+  outer_radial_value: 0.2
+  midpoint_fraction: 0.25
+  radial_width: 0.01
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+
+  radial_sol: 
+Constant kinetic function parameters:
+  value: 0
+
+  radial_pf: 
+Constant kinetic function parameters:
+  value: 0
+
+  poloidal_inner_div: 
+Constant kinetic function parameters:
+  value: 0
+
+  poloidal_outer_div: 
+Constant kinetic function parameters:
+  value: 0
+
+  vpar_lower: 
+Constant kinetic function parameters:
+  value: 0
+
+  vpar_upper: 
+Constant kinetic function parameters:
+  value: 0
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+  vparshift: 0
+
+-- Density --
+SingleNullDistr grid function parameters:
+  subtype: Tanh
+  inner_radial_value: 1
+  outer_radial_value: 0.2
+  midpoint_fraction: 0.25
+  radial_width: 0.01
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+
+  mu_upper: 
+Constant kinetic function parameters:
+  value: 0
+
+-----------------------------------------------
+===============================================
+Unrecognized collision model; setting model to NULL
+  Distribution Function Extrema:
+    Species 0:	20.2936 [max]	-6.39634e-05 [min]
+
+dtStable = 0.095406
+  Distribution Function Extrema:
+    Species 0:	20.2925 [max]	0 [min]
+
+Step 1 completed, simulation time is 0.0763248
+  Distribution Function Extrema:
+    Species 0:	20.2928 [max]	0 [min]
+
+Step 2 completed, simulation time is 0.160282
+  Distribution Function Extrema:
+    Species 0:	20.2933 [max]	0 [min]
+
+Step 3 completed, simulation time is 0.252635
+  Distribution Function Extrema:
+    Species 0:	20.2939 [max]	0 [min]
+
+Step 4 completed, simulation time is 0.348041
+  Distribution Function Extrema:
+    Species 0:	20.2945 [max]	0 [min]
+
+Step 5 completed, simulation time is 0.443447
+Writing checkpoint file
+Writing history file

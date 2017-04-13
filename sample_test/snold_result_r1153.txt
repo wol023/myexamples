@@ -1,0 +1,19 @@
+####
+1, /home/wonjae/ws/trunkESL/trunk_r1153_unnorm/exec/cogent.Linux.64.mpicxx.gfortran.OPT.MPI.ex
+2, /home/wonjae/ws/trunkESL/trunk_r1153_renorm/exec/cogent.Linux.64.mpicxx.gfortran.OPT.MPI.ex
+####h5diff snold_trunk_unnorm vs snold_trunk_renorm chk file
+attribute: <cur_dt of </>> and <cur_dt of </>>
+1 differences found
+attribute: <cur_time of </>> and <cur_time of </>>
+1 differences found
+dataset: </dfn_1/data:datatype=0> and </dfn_1/data:datatype=0>
+442368 differences found
+####h5diff snold_trunk_unnorm vs snold_trunk_renorm plt file
+attribute: <time of </level_0>> and <time of </level_0>>
+1 differences found
+dataset: </level_0/data:datatype=0> and </level_0/data:datatype=0>
+1152 differences found
+####h5diff snold_trunk_unnorm vs snold_trunk_renorm plt map file
+attribute: <time of </level_0>> and <time of </level_0>>
+1 differences found
+####

@@ -1,0 +1,49 @@
+####
+1, /home/wonjae/ws/trunkESL/trunk_r960_unnorm/exec/cogent.Linux.64.mpicxx.gfortran.OPT.MPI.ex
+2, /home/wonjae/ws/trunkESL/trunk_r960_renorm/exec/cogent.Linux.64.mpicxx.gfortran.OPT.MPI.ex
+
+gam test
+####h5diff gam_trunk_unnorm vs gam_trunk_renorm chk file
+####h5diff gam_trunk_unnorm vs gam_trunk_renorm plt file
+####h5diff gam_trunk_unnorm vs gam_trunk_renorm plt map file
+####
+
+neoclassical test
+####h5diff neoclassical_trunk_unnorm vs neoclassical_trunk_renorm chk file
+####h5diff neoclassical_trunk_unnorm vs neoclassical_trunk_renorm plt file
+####h5diff neoclassical_trunk_unnorm vs neoclassical_trunk_renorm plt map file
+####
+
+sn test
+####h5diff sn_trunk_unnorm vs sn_trunk_renorm chk file
+dataset: </dfn_1/data:datatype=0> and </dfn_1/data:datatype=0>
+84636 differences found
+####h5diff sn_trunk_unnorm vs sn_trunk_renorm plt file
+dataset: </level_0/data:datatype=0> and </level_0/data:datatype=0>
+394 differences found
+####h5diff sn_trunk_unnorm vs sn_trunk_renorm plt map file
+####
+
+drift boltzman test
+####h5diff drift_bol_trunk_unnorm vs drift_bol_trunk_renorm chk file
+####h5diff drift_bol_trunk_unnorm vs drift_bol_trunk_renorm plt file
+####h5diff drift_bol_trunk_unnorm vs drift_bol_trunk_renorm plt map file
+####
+
+sn old test
+####h5diff snold_trunk_unnorm vs snold_trunk_renorm chk file
+attribute: <cur_dt of </>> and <cur_dt of </>>
+1 differences found
+attribute: <cur_time of </>> and <cur_time of </>>
+1 differences found
+dataset: </dfn_1/data:datatype=0> and </dfn_1/data:datatype=0>
+442368 differences found
+####h5diff snold_trunk_unnorm vs snold_trunk_renorm plt file
+attribute: <time of </level_0>> and <time of </level_0>>
+1 differences found
+dataset: </level_0/data:datatype=0> and </level_0/data:datatype=0>
+1152 differences found
+####h5diff snold_trunk_unnorm vs snold_trunk_renorm plt map file
+attribute: <time of </level_0>> and <time of </level_0>>
+1 differences found
+####

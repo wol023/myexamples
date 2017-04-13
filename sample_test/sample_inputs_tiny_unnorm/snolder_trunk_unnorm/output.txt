@@ -1,0 +1,60 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 3e+19
+  TEMPERATURE           [eV]: 300
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 169518
+  TRANSIT TIME          [s]: 5.89906e-06
+  MAGNETIC MOMENT     [J/T]: 2.40326e-17
+  DIST. FUNCTION [s/(Am^6)]: 1960.29
+  POTENTIAL             [V]: 300
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.00176972
+  DEBYE LENGTH          [m]: 2.35082e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.00176972
+  DEBYE NUMBER             : 2.35082e-05
+
+***********************************************************************
+
+SingleNull grid and domain decomposition parameters:
+
+numcells.core_radial = 12
+numcells.lcore_poloidal = 16
+numcells.rcore_poloidal = 16
+numcells.pf_radial = 12
+numcells.lpf_poloidal = 8
+numcells.rpf_poloidal = 8
+numcells.sol_radial = 12
+decomp.lcore.configuration = 1 1 
+decomp.rcore.configuration = 1 1 
+decomp.lpf.configuration = 1 1 
+decomp.rpf.configuration = 1 1 
+decomp.lcsol.configuration = 1 1 
+decomp.rcsol.configuration = 1 1 
+decomp.lsol.configuration = 1 1 
+decomp.rsol.configuration = 1 1 
+
+Constructing single null left core block with global index space domain box = ((0,32) (11,47) (0,0))
+Left core mapped domain: 0 < xi_0 < 1, 1 < xi_1 < 1.5
+Reading geometry mapping file
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 7211 RUNNING AT X220T
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================

@@ -1,0 +1,57 @@
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+20
+  TEMPERATURE           [eV]: 20
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 43769.5
+  TRANSIT TIME          [s]: 2.2847e-05
+  MAGNETIC MOMENT     [J/T]: 1.60218e-18
+  DIST. FUNCTION [s/(Am^6)]: 379609
+  POTENTIAL             [V]: 20
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.000456939
+  DEBYE LENGTH          [m]: 3.32456e-06
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.000456939
+  DEBYE NUMBER             : 3.32456e-06
+
+***********************************************************************
+Constructing slab geometry...
+   xmax = 0.02, ymax = 0.02
+ Bz_inner = 3Bz_outer = 3
+By_inner  = 0
+**** cellSp[0] = 0.392699,  cellSp[1] = 0.392699
+**** dimensions = 16, 16
+Done constructing slab geometry
+   Configuration space box ((0,0) (15,7) (0,0)) is assigned to process 0
+   Configuration space box ((0,8) (15,15) (0,0)) is assigned to process 1
+Constructing magnetic geometry
+**** cellSp[0] = Done constructing magnetic geometry
+0.392699,  cellSp[1] = 0.392699
+   Velocity space box (**** dimensions = 16, 16
+(-8,0) (7,7) (0,0)) is assigned to process 0
+   Phase space box ((0,0,-8,0) (15,7   Phase space box ((0,8,,7,7) (0,-8,0) (15,150,0,0)) is assigned to process ,7,7) (0,0, has 16384 valid cells and 131072 ghost cells0,0,0)) is assigned to process 
+1, has 16384 valid cells and 131072 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 4, charge = 1
+Done adding species and constructing coordinates
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 7118 RUNNING AT X220T
+=   EXIT CODE: 255
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================

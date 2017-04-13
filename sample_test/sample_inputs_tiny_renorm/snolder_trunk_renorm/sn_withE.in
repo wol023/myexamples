@@ -1,0 +1,292 @@
+#####################################################
+# Verbosity Definitions
+#####################################################
+simulation.verbosity = 1 
+gksystem.verbosity   = 1
+
+#gksystem.hdf_vlasov_divergence = true
+gksystem.hdf_density = true
+gksystem.hdf_potential = true
+#gksystem.hdf_efield = true
+#gksystem.hdf_vparmu = true
+#gksystem.hdf_dfn = true
+#gksystem.hdf_deltaF = true
+#gksystem.hdf_ParallelMomentum = true
+#gksystem.hdf_PoloidalMomentum = true
+#gksystem.hdf_ParticleFlux = true
+#gksystem.fixed_plot_indices = 9 -61 0 0 0
+
+#####################################################
+# Time Stepping Definitions
+#####################################################
+simulation.max_step            = 5
+simulation.max_time            = 20000
+simulation.max_dt_grow         = 1.1
+simulation.initial_dt_fraction = 0.8
+simulation.cfl_number          = 0.9
+simulation.checkpoint_interval = 200
+simulation.checkpoint_prefix   = "chk"
+simulation.plot_interval       = 1
+simulation.plot_prefix         = "plt"
+simulation.histories           = false
+#simulation.restart_file = "chk1600.4d.hdf5"
+
+
+#####################################################
+# Grid and Data Layout Definitions
+#####################################################
+singlenull.numcells.core         =  12 32
+singlenull.numcells.pf_radial    =  12
+singlenull.numcells.lpf_poloidal =  8
+singlenull.numcells.rpf_poloidal =  8
+singlenull.numcells.sol_radial   =  12
+
+singlenull.decomp.core.configuration =  1  2
+singlenull.decomp.core.phase         =  1  2  1  1   144
+
+singlenull.decomp.lpf.configuration  =  1  1
+singlenull.decomp.lpf.phase          =  1  1  1  1   36
+
+singlenull.decomp.rpf.configuration  =  1  1
+singlenull.decomp.rpf.phase          =  1  1  1  1   36
+
+singlenull.decomp.csol.configuration  =  1  2 
+singlenull.decomp.csol.phase          =  1  2  1  1  144
+
+singlenull.decomp.lsol.configuration  =  1  1
+singlenull.decomp.lsol.phase          =  1  1  1  1  36
+
+singlenull.decomp.rsol.configuration  =  1  1
+singlenull.decomp.rsol.phase          =  1  1  1  1  36
+
+gksystem.num_velocity_cells =  24 16
+gksystem.velocity_decomp    =  1  1
+
+
+#singlenull.geometry_file = "MyMapping_R=0.2_coeff_0.2_beta=0.8.txt"
+
+#####################################################
+# Magnetic Geometry Definitions
+#####################################################
+gksystem.magnetic_geometry_mapping = "SingleNull"
+gksystem.magnetic_geometry_mapping.singlenull.geometry_file = "MyMapping"
+#gksystem.magnetic_geometry_mapping.singlenull.geometry_file = "MyMapping_R=0.2_coeff_0.2_beta=0.8_sym_nr=20.txt"
+gksystem.magnetic_geometry_mapping.singlenull.verbose  = true
+gksystem.magnetic_geometry_mapping.singlenull.inner_radial_bdry = 0.1
+gksystem.magnetic_geometry_mapping.singlenull.outer_radial_bdry = 0.9
+gksystem.magnetic_geometry_mapping.singlenull.Btor_scale  = -3.565
+gksystem.magnetic_geometry_mapping.singlenull.axisymmetric = true
+gksystem.magnetic_geometry_mapping.correct_field = false
+
+gksystem.enforce_positivity = true
+gksystem.enforce_positivity_type = "step"
+gksystem.fixed_efield = true
+#gksystem.transport_model_on = true
+
+#####################################################
+# Phase Space Geometry Definitions
+#####################################################
+phase_space_mapping.velocity_type = gyrokinetic
+phase_space_mapping.v_parallel_max = 6.0
+phase_space_mapping.mu_max = 1.2
+#phase_space_mapping.mu_max = 7.56
+#phase_space_mapping.no_drifts = false
+phase_space_mapping.second_order = true
+
+#####################################################
+# Vlasov Operator Definitions
+#####################################################
+gkvlasov.verbose = false
+gkvlasov.time_step_diagnostics = false
+#gkvlasov.limiter = true
+gkvlasov.face_avg_type = "uw1"
+
+#####################################################
+# Poisson Operator Definitions
+#####################################################
+poisson.max_iter = 50
+poisson.tol = 1.e-13
+poisson.amg_max_iter = 2
+poisson.amg_tol = 0.
+poisson.verbose = true
+
+#gkpoissonboltzmann.prefactor = fs_neutrality_initial_fs_ni
+
+#gkpoissonboltzmann.verbose = true
+#gkpoissonboltzmann.preserve_initial_ni_average = true
+#gkpoissonboltzmann.nonlinear_relative_tolerance = 1.e-5
+#gkpoissonboltzmann.nonlinear_maximum_iterations = 20
+#gkpoissonboltzmann.nonlinear_change_tolerance = 1.e-5
+#gkpoissonboltzmann.jacobian_solve_tolerance = 1.e-4
+
+#gkpoissonboltzmann.radial_solve_only = true
+#####################################################
+# Species Definitions
+#####################################################
+kinetic_species.1.name   = "hydrogen"
+kinetic_species.1.mass   = 4.0
+kinetic_species.1.charge = 1.0
+#kinetic_species.1.cls    = "Krook"
+#kinetic_species.1.tpm    = "Anomalous"
+#kinetic_species.1.cls    = "FokkerPlanck"
+
+#boltzmann_electron.name = "electron"
+#boltzmann_electron.mass              = 1.0
+#boltzmann_electron.charge            = -1.0
+#boltzmann_electron.temperature       = 1.0
+#####################################################
+# Initial Condition Definitions
+#####################################################
+
+IC.potential.function = "zero"
+IC.hydrogen.function  = "maxwellian_const"
+
+#####################################################
+# Boundary Condition Definitions
+#####################################################
+BC.hydrogen.radial_core.function = "maxwellian_const"
+#BC.hydrogen.radial_core.function = "zero"
+BC.hydrogen.radial_sol.function = "zero"
+BC.hydrogen.radial_pf.function = "zero"
+BC.hydrogen.poloidal_inner_div.function = "zero"
+BC.hydrogen.poloidal_outer_div.function = "zero"
+BC.hydrogen.vpar_lower.function = "zero"
+BC.hydrogen.vpar_upper.function = "zero"
+BC.hydrogen.mu_lower.function = "maxwellian_const"
+BC.hydrogen.mu_upper.function = "zero"
+
+
+
+#BC.potential.radial_core.type = "neumann"
+#BC.potential.radial_core.value = 0.
+#BC.potential.radial_sol.type = "neumann"
+#BC.potential.radial_sol.value = 0.
+#BC.potential.radial_pf.type = "neumann"
+#BC.potential.radial_pf.value = 0.
+#BC.potential.poloidal_inner_div.type = "dirichlet"
+#BC.potential.poloidal_inner_div.function = "inner_divertor_flux"
+#BC.potential.poloidal_outer_div.type = "dirichlet"
+#BC.potential.poloidal_outer_div.function = "outer_divertor_flux"
+
+#BC.hydrogen.vpar_lower.function = "maxwellian_const"
+#BC.hydrogen.vpar_upper.function = "maxwellian_const"
+#BC.hydrogen.mu_lower.function = "maxwellian_const"
+#BC.hydrogen.mu_upper.function = "maxwellian_const"
+
+BC.potential.radial_core.type = "dirichlet"
+BC.potential.radial_core.value = 0.
+BC.potential.radial_sol.type = "neumann"
+BC.potential.radial_sol.value = 0.
+BC.potential.radial_pf.type = "neumann"
+BC.potential.radial_pf.value = 0.0
+BC.potential.poloidal_inner_div.type = "neumann"
+BC.potential.poloidal_inner_div.value = 0.
+BC.potential.poloidal_outer_div.type = "neumann"
+BC.potential.poloidal_outer_div.value = 0.
+
+
+#####################################################
+# Collisions Definitions
+#####################################################
+CLS.hydrogen.cls_freq = 0.005
+#CLS.hydrogen.cls_freq = 0.1
+CLS.hydrogen.conserve_particle  = false
+CLS.hydrogen.conserve_momentum = false
+CLS.hydrogen.max_interation_number = 100000
+CLS.hydrogen.convergence_tolerance = 1.e-6
+CLS.hydrogen.multipole_number = 3
+CLS.hydrogen.ref_function = "maxwellian_const"
+CLS.hydrogen.ref_temperature = "T0"
+CLS.hydrogen.ref_density = "N0"
+
+#####################################################
+# Trsndport Definitions
+#####################################################
+TPM.hydrogen.model_only = false
+TPM.hydrogen.const_coeff = false
+TPM.hydrogen.shape_function = "Dshape"
+TPM.hydrogen.D_fluid = 1.e-4 0.0 0.0 0.0
+
+#####################################################
+# Kinetic Function Definitions
+#####################################################
+kinetic_function_library.number = 3
+kinetic_function_library.verbosity = 1
+kinetic_function_library.list = "zero" "maxwellian_const" "maxwellian_eq"
+
+kinetic_function_library.zero.type = "zero"
+
+kinetic_function_library.maxwellian_const.type = "maxwellian"
+kinetic_function_library.maxwellian_const.v_parallel_shift = 0.0
+kinetic_function_library.maxwellian_const.density.function = "N0"
+kinetic_function_library.maxwellian_const.temperature.function = "T0"
+
+kinetic_function_library.maxwellian_eq.type = "maxwellian"
+kinetic_function_library.maxwellian_eq.v_parallel_shift = 0.0
+kinetic_function_library.maxwellian_eq.density.function = "Neq"
+kinetic_function_library.maxwellian_eq.temperature.function = "Teq"
+
+#####################################################
+# Grid Function Definitions
+#####################################################
+grid_function_library.number = 9
+grid_function_library.verbosity = 1
+grid_function_library.list = "zero" "N0" "T0" "Neq" "Teq" "phi0" "inner_divertor_flux" "outer_divertor_flux" "Dshape"
+
+grid_function_library.zero.type = "zero" 
+
+grid_function_library.N0.type = "SingleNullDistr"
+grid_function_library.N0.subtype = "Tanh"
+grid_function_library.N0.inner_radial_value = 1
+grid_function_library.N0.outer_radial_value = 0.2
+grid_function_library.N0.midpoint_fraction = 0.25
+grid_function_library.N0.radial_width = 0.01
+grid_function_library.N0.pf_value = 0.2
+
+grid_function_library.Dshape.type = "SingleNullDistr"
+grid_function_library.Dshape.subtype = "Localized"
+grid_function_library.Dshape.amplitude = 1.0
+grid_function_library.Dshape.floor = 0.0
+grid_function_library.Dshape.midpoint_fraction = 0.5
+grid_function_library.Dshape.radial_width = 0.01
+
+
+grid_function_library.phi0.type = "SingleNullDistr"
+grid_function_library.phi0.subtype = "Tanh"
+grid_function_library.phi0.inner_radial_value = 1
+grid_function_library.phi0.outer_radial_value = 0.2
+grid_function_library.phi0.midpoint_fraction = 0.25
+grid_function_library.phi0.radial_width = 0.01
+grid_function_library.phi0.pf_value = 0.2
+grid_function_library.phi0.boltzmann_equilibrium = true
+
+#grid_function_library.phi0.core_value = 1.0
+#grid_function_library.phi0.sep_value = 0.5
+
+
+#grid_function_library.N0.type = "constant"
+#grid_function_library.N0.value = 1.0
+
+
+grid_function_library.T0.type = "constant"
+grid_function_library.T0.value = 1.0
+
+
+grid_function_library.Neq.type = "constant"
+grid_function_library.Neq.value = 1.5
+
+grid_function_library.Teq.type = "constant"
+grid_function_library.Teq.value = 1.5
+
+grid_function_library.inner_divertor_flux.type = "data_array"
+grid_function_library.outer_divertor_flux.type = "data_array"
+
+#####################################################
+# Units Definitions
+#####################################################
+units.number_density = 3.0e19
+units.temperature    = 0.3e3
+units.length         = 1.0
+units.mass           = 1.0
+units.magnetic_field = 1.0 
+
