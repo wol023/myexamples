@@ -25,7 +25,11 @@
 ==== Dimensionless Parameters =========================================
 
   LARMOR NUMBER            : 0.00559634
+  LARMOR NUMBER **2        : 3.13191e-05
   DEBYE NUMBER             : 4.07174e-05
+  DEBYE NUMBER **2         : 1.6579e-09
+  DEBYE NUMBER/MULT_FAC    : 4.07174e-05
+  DEBYE NUMBER/MULT_FAC **2: 1.6579e-09
 
 ***********************************************************************
 Constructing Miller equilibrium geometry...
@@ -41,13 +45,18 @@ Done constructing Miller equilibrium geometry
 Constructing magnetic geometry
 Done constructing magnetic geometry
    Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.75 * 8 = 6, dv_parallel(m/s)*nvpar= 402048 * 8 = 3.21639e+06, ( 1 : 536064 )
+dmu*nmu= 0.15 * 8 = 1.2, dmu(J/T)*nmu= 3.6049e-17 * 8 = 2.88392e-16, ( 1 : 2.40326e-16 )
+
    Phase space box ((0,0,-8,0) (15,7,7,7) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
    Phase space box ((0,8,-8,0) (15,15,7,7) (0,0,0,0)) is assigned to process 1, has 16384 valid cells and 131072 ghost cells
 Adding species and constructing gyrocenter coordinates...
    hydrogen: kinetic species with mass = 4, charge = 1
 Done adding species and constructing coordinates
 Adding fluid species...
-Done adding congiration space variables
+Done adding confiration space variables
 Adding configuration space field variables...
 Done adding configuration space variables
 
@@ -291,6 +300,13 @@ Step 1
       BiCGStab converged successfully
    Newton iteration 2: relative residual = 3.72583e-10
                        relative solution change = 3.2458e-06
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.0764494
     Vlasov    : 0.175212 (time scale), 0.436325 (CFL)
@@ -299,7 +315,7 @@ Step 1
   Distribution Function Extrema:
     Species 0:	52.2909 [max]	-0.000428113 [min]
 
-Step 1 completed, simulation time is 0.0764494, solver wall time is 0.86329 seconds
+Step 1 completed, simulation time is 0.0764494, solver wall time is 0.897005 seconds
 ----
 
 Step 2
@@ -331,6 +347,13 @@ Step 2
       BiCGStab converged successfully
    Newton iteration 3: relative residual = 4.77246e-11
                        relative solution change = 7.93819e-08
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.0840943
     Vlasov    : 0.175212 (time scale), 0.479958 (CFL)
@@ -339,7 +362,7 @@ Step 2
   Distribution Function Extrema:
     Species 0:	52.2915 [max]	-0.000964253 [min]
 
-Step 2 completed, simulation time is 0.160544, solver wall time is 1.74655 seconds
+Step 2 completed, simulation time is 0.160544, solver wall time is 1.73842 seconds
 ----
 
 Step 3
@@ -374,6 +397,13 @@ Step 3
       BiCGStab converged successfully
    Newton iteration 3: relative residual = 5.27459e-11
                        relative solution change = 1.38387e-07
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.0925038
     Vlasov    : 0.175212 (time scale), 0.527954 (CFL)
@@ -382,7 +412,7 @@ Step 3
   Distribution Function Extrema:
     Species 0:	52.2921 [max]	-0.00152319 [min]
 
-Step 3 completed, simulation time is 0.253048, solver wall time is 2.63505 seconds
+Step 3 completed, simulation time is 0.253048, solver wall time is 2.62371 seconds
 ----
 
 Step 4
@@ -417,6 +447,13 @@ Step 4
       BiCGStab converged successfully
    Newton iteration 3: relative residual = 6.24821e-11
                        relative solution change = 2.20261e-07
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.101754
     Vlasov    : 0.175213 (time scale), 0.580746 (CFL)
@@ -425,7 +462,7 @@ Step 4
   Distribution Function Extrema:
     Species 0:	52.2929 [max]	-0.00200066 [min]
 
-Step 4 completed, simulation time is 0.354802, solver wall time is 3.49383 seconds
+Step 4 completed, simulation time is 0.354802, solver wall time is 3.47289 seconds
 ----
 
 Step 5
@@ -458,8 +495,15 @@ Step 5
    Newton iteration 2: relative residual = 6.14446e-10
                        relative solution change = 5.84172e-05
       BiCGStab converged successfully
-   Newton iteration 3: relative residual = 7.50677e-11
+   Newton iteration 3: relative residual = 7.50676e-11
                        relative solution change = 3.29801e-07
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.11193
     Vlasov    : 0.175215 (time scale), 0.638814 (CFL)
@@ -468,7 +512,7 @@ Step 5
   Distribution Function Extrema:
     Species 0:	52.2938 [max]	-0.00239496 [min]
 
-Step 5 completed, simulation time is 0.466731, solver wall time is 4.40633 seconds
+Step 5 completed, simulation time is 0.466731, solver wall time is 4.35675 seconds
 ----
 
 Step 6
@@ -478,7 +522,7 @@ Step 6
                        relative solution change = 1.07172e-05
       BiCGStab converged successfully
    Newton iteration 2: relative residual = 1.08358e-10
-                       relative solution change = 9.2501e-08
+                       relative solution change = 9.25009e-08
    Newton iteration 0: relative residual = 0.000130058
       BiCGStab converged successfully
    Newton iteration 1: relative residual = 5.07757e-08
@@ -506,6 +550,13 @@ Step 6
       BiCGStab converged successfully
    Newton iteration 3: relative residual = 1.21347e-10
                        relative solution change = 4.76766e-07
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.123123
     Vlasov    : 0.175217 (time scale), 0.702684 (CFL)
@@ -514,7 +565,7 @@ Step 6
   Distribution Function Extrema:
     Species 0:	52.2948 [max]	-0.00251954 [min]
 
-Step 6 completed, simulation time is 0.589854, solver wall time is 5.29713 seconds
+Step 6 completed, simulation time is 0.589854, solver wall time is 5.24456 seconds
 ----
 
 Step 7
@@ -543,7 +594,7 @@ Step 7
    Newton iteration 2: relative residual = 6.91956e-10
                        relative solution change = 1.16824e-05
       BiCGStab converged successfully
-   Newton iteration 3: relative residual = 9.84756e-11
+   Newton iteration 3: relative residual = 9.84755e-11
                        relative solution change = 8.42315e-08
    Newton iteration 0: relative residual = 0.000136693
       BiCGStab converged successfully
@@ -553,8 +604,15 @@ Step 7
    Newton iteration 2: relative residual = 7.07049e-10
                        relative solution change = 0.000119433
       BiCGStab converged successfully
-   Newton iteration 3: relative residual = 6.9407e-11
+   Newton iteration 3: relative residual = 6.94069e-11
                        relative solution change = 6.71529e-07
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.135435
     Vlasov    : 0.175222 (time scale), 0.772933 (CFL)
@@ -563,7 +621,7 @@ Step 7
   Distribution Function Extrema:
     Species 0:	52.296 [max]	-0.00303602 [min]
 
-Step 7 completed, simulation time is 0.725289, solver wall time is 6.18518 seconds
+Step 7 completed, simulation time is 0.725289, solver wall time is 6.13139 seconds
 ----
 
 Step 8
@@ -592,7 +650,7 @@ Step 8
    Newton iteration 2: relative residual = 6.66382e-10
                        relative solution change = 1.40055e-05
       BiCGStab converged successfully
-   Newton iteration 3: relative residual = 8.88054e-11
+   Newton iteration 3: relative residual = 8.88053e-11
                        relative solution change = 9.52468e-08
    Newton iteration 0: relative residual = 0.000144115
       BiCGStab converged successfully
@@ -604,6 +662,13 @@ Step 8
       BiCGStab converged successfully
    Newton iteration 3: relative residual = 1.4986e-10
                        relative solution change = 9.40121e-07
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.148978
     Vlasov    : 0.175228 (time scale), 0.850197 (CFL)
@@ -612,7 +677,7 @@ Step 8
   Distribution Function Extrema:
     Species 0:	52.2974 [max]	-0.00325098 [min]
 
-Step 8 completed, simulation time is 0.874267, solver wall time is 7.06969 seconds
+Step 8 completed, simulation time is 0.874267, solver wall time is 7.01662 seconds
 ----
 
 Step 9
@@ -641,8 +706,8 @@ Step 9
    Newton iteration 2: relative residual = 6.94464e-10
                        relative solution change = 1.46553e-05
       BiCGStab converged successfully
-   Newton iteration 3: relative residual = 9.95093e-11
-                       relative solution change = 9.78232e-08
+   Newton iteration 3: relative residual = 9.95092e-11
+                       relative solution change = 9.7823e-08
    Newton iteration 0: relative residual = 0.000140128
       BiCGStab converged successfully
    Newton iteration 1: relative residual = 1.18568e-07
@@ -653,6 +718,13 @@ Step 9
       BiCGStab converged successfully
    Newton iteration 3: relative residual = 1.81125e-10
                        relative solution change = 1.20576e-06
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.15292
     Vlasov    : 0.175236 (time scale), 0.87265 (CFL)
@@ -661,7 +733,7 @@ Step 9
   Distribution Function Extrema:
     Species 0:	52.2988 [max]	-0.00318536 [min]
 
-Step 9 completed, simulation time is 1.02719, solver wall time is 7.96515 seconds
+Step 9 completed, simulation time is 1.02719, solver wall time is 7.90994 seconds
 ----
 
 Step 10
@@ -702,6 +774,13 @@ Step 10
       BiCGStab converged successfully
    Newton iteration 3: relative residual = 1.16798e-10
                        relative solution change = 1.48412e-06
+num_cells = 16 16 16 8 
+is_periodic = 1 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.152929
     Vlasov    : 0.175247 (time scale), 0.87265 (CFL)
@@ -710,7 +789,7 @@ Step 10
   Distribution Function Extrema:
     Species 0:	52.3003 [max]	-0.00391789 [min]
 
-Step 10 completed, simulation time is 1.18012, solver wall time is 8.86262 seconds
+Step 10 completed, simulation time is 1.18012, solver wall time is 8.81601 seconds
 ----
 Writing checkpoint file
 Writing history file
@@ -726,5 +805,5 @@ Writing history file
   Time integrator counts:-
     Time steps: 10
 ----
-Solve wall time (in seconds): 8.87593
-Total wall time (in seconds): 9.06203
+Solve wall time (in seconds): 8.82612
+Total wall time (in seconds): 9.0525

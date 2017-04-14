@@ -25,7 +25,11 @@
 ==== Dimensionless Parameters =========================================
 
   LARMOR NUMBER            : 0.000323105
+  LARMOR NUMBER **2        : 1.04397e-07
   DEBYE NUMBER             : 2.35082e-06
+  DEBYE NUMBER **2         : 5.52635e-12
+  DEBYE NUMBER/MULT_FAC    : 2.35082e-06
+  DEBYE NUMBER/MULT_FAC **2: 5.52635e-12
 
 ***********************************************************************
 
@@ -127,6 +131,11 @@ Max difference at block interfaces: 1.77636e-15 (coordinates), 9.76996e-14 (poin
 Done constructing magnetic geometry
    Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
 
+Done creating velocity coordinate
+dvpar*nvpar= 0.75 * 8 = 6, dv_parallel(m/s)*nvpar= 23212.3 * 8 = 185698, ( 1 : 30949.7 )
+dmu*nmu= 0.3125 * 8 = 2.5, dmu(J/T)*nmu= 2.5034e-19 * 8 = 2.00272e-18, ( 1 : 8.01088e-19 )
+
+
 Single Null phase decomposition parameters
 
 decomp.mcore.phase = 1 4 1 1 
@@ -142,25 +151,25 @@ decomp.rsol.phase = 1 1 1 1
 
    Phase space box ((0,-24,-8,0) (11,-13,7,7) (0,0,0,0)) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
    Phase space box ((0,0,-8,0) (11,11,7,7) (0,0,0,0)) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
-   Phase space box ((0,108,-8,0) (11,119,7,7) (0,0,0,0)) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
-   Phase space box ((0,216,-8,0) (11,223,7,7) (0,0,0,0)) is assigned to process 0, has 12288 valid cells and 110592 ghost cells
-   Phase space box ((36,-24,-8,0) (51,-13,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
    Phase space box ((0,-224,-8,0) (11,-217,7,7) (0,0,0,0)) is assigned to process 1, has 12288 valid cells and 110592 ghost cells
    Phase space box ((0,-120,-8,0) (11,-109,7,7) (0,0,0,0)) is assigned to process 1, has 18432 valid cells and 135168 ghost cells
-   Phase space box ((36,0,-8,0) (51,11,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
-   Phase space box ((36,108,-8,0) (51,119,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((0,108,-8,0) (11,119,7,7) (0,0,0,0)) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
    Phase space box ((0,-12,-8,0) (11,-1,7,7) (0,0,0,0)) is assigned to process 1, has 18432 valid cells and 135168 ghost cells
    Phase space box ((0,12,-8,0) (11,23,7,7) (0,0,0,0)) is assigned to process 1, has 18432 valid cells and 135168 ghost cells
-   Phase space box ((36,216,-8,0) (51,223,7,7) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,216,-8,0) (11,223,7,7) (0,0,0,0)) is assigned to process 0, has 12288 valid cells and 110592 ghost cells
+   Phase space box ((36,-24,-8,0) (51,-13,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((36,0,-8,0) (51,11,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((36,108,-8,0) (51,119,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
    Phase space box ((36,-224,-8,0) (51,-217,7,7) (0,0,0,0)) is assigned to process 1, has 16384 valid cells and 131072 ghost cells
    Phase space box ((36,-120,-8,0) (51,-109,7,7) (0,0,0,0)) is assigned to process 1, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((36,216,-8,0) (51,223,7,7) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
    Phase space box ((36,-12,-8,0) (51,-1,7,7) (0,0,0,0)) is assigned to process 1, has 24576 valid cells and 159744 ghost cells
    Phase space box ((36,12,-8,0) (51,23,7,7) (0,0,0,0)) is assigned to process 1, has 24576 valid cells and 159744 ghost cells
 Adding species and constructing gyrocenter coordinates...
    hydrogen: kinetic species with mass = 4, charge = 1
 Done adding species and constructing coordinates
 Adding fluid species...
-Done adding congiration space variables
+Done adding confiration space variables
 Adding configuration space field variables...
 Done adding configuration space variables
 
@@ -317,6 +326,8 @@ Time integration method: rk (4)
 
 
 Step 1
+enforce_positivity = 1
+enforce_positivity_type = stage
   ----
   dt: 0.0252547
     Vlasov    : 0.0723506 (time scale), 0.34906 (CFL)
@@ -325,10 +336,12 @@ Step 1
   Distribution Function Extrema:
     Species 0:	24.8643 [max]	-1.61041e-05 [min]
 
-Step 1 completed, simulation time is 0.0252547, solver wall time is 7.35437 seconds
+Step 1 completed, simulation time is 0.0252547, solver wall time is 7.31128 seconds
 ----
 
 Step 2
+enforce_positivity = 1
+enforce_positivity_type = stage
   ----
   dt: 0.0277802
     Vlasov    : 0.0723506 (time scale), 0.383966 (CFL)
@@ -337,10 +350,12 @@ Step 2
   Distribution Function Extrema:
     Species 0:	24.8658 [max]	-3.82679e-05 [min]
 
-Step 2 completed, simulation time is 0.0530349, solver wall time is 14.7083 seconds
+Step 2 completed, simulation time is 0.0530349, solver wall time is 14.5841 seconds
 ----
 
 Step 3
+enforce_positivity = 1
+enforce_positivity_type = stage
   ----
   dt: 0.0305582
     Vlasov    : 0.0723506 (time scale), 0.422363 (CFL)
@@ -349,10 +364,12 @@ Step 3
   Distribution Function Extrema:
     Species 0:	24.8674 [max]	-6.40668e-05 [min]
 
-Step 3 completed, simulation time is 0.083593, solver wall time is 22.0457 seconds
+Step 3 completed, simulation time is 0.083593, solver wall time is 21.9357 seconds
 ----
 
 Step 4
+enforce_positivity = 1
+enforce_positivity_type = stage
   ----
   dt: 0.0315684
     Vlasov    : 0.0723506 (time scale), 0.436325 (CFL)
@@ -361,10 +378,12 @@ Step 4
   Distribution Function Extrema:
     Species 0:	24.8691 [max]	-9.12638e-05 [min]
 
-Step 4 completed, simulation time is 0.115161, solver wall time is 29.3981 seconds
+Step 4 completed, simulation time is 0.115161, solver wall time is 29.1679 seconds
 ----
 
 Step 5
+enforce_positivity = 1
+enforce_positivity_type = stage
   ----
   dt: 0.0315684
     Vlasov    : 0.0723506 (time scale), 0.436325 (CFL)
@@ -373,7 +392,7 @@ Step 5
   Distribution Function Extrema:
     Species 0:	24.8708 [max]	-0.000117908 [min]
 
-Step 5 completed, simulation time is 0.14673, solver wall time is 36.7964 seconds
+Step 5 completed, simulation time is 0.14673, solver wall time is 36.4352 seconds
 ----
 Writing checkpoint file
 Writing history file
@@ -389,5 +408,5 @@ Writing history file
   Time integrator counts:-
     Time steps: 5
 ----
-Solve wall time (in seconds): 36.7995
-Total wall time (in seconds): 46.1442
+Solve wall time (in seconds): 36.4397
+Total wall time (in seconds): 45.847

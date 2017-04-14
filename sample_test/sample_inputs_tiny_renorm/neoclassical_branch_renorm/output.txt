@@ -25,7 +25,11 @@
 ==== Dimensionless Parameters =========================================
 
   LARMOR NUMBER            : 0.000323105
+  LARMOR NUMBER **2        : 1.04397e-07
   DEBYE NUMBER             : 7.43394e-06
+  DEBYE NUMBER **2         : 5.52635e-11
+  DEBYE NUMBER/MULT_FAC    : 7.43394e-06
+  DEBYE NUMBER/MULT_FAC **2: 5.52635e-11
 
 ***********************************************************************
 Constructing Miller equilibrium geometry...
@@ -41,13 +45,18 @@ Done constructing Miller equilibrium geometry
 Constructing magnetic geometry
 Done constructing magnetic geometry
    Velocity space box ((-16,0) (15,31) (0,0)) is assigned to process 0
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.375 * 16 = 6, dv_parallel(m/s)*nvpar= 11606.1 * 16 = 185698, ( 1 : 30949.7 )
+dmu*nmu= 0.078125 * 32 = 2.5, dmu(J/T)*nmu= 6.2585e-20 * 32 = 2.00272e-18, ( 1 : 8.01088e-19 )
+
    Phase space box ((0,0,-16,0) (15,7,15,31) (0,0,0,0)) is assigned to process 0, has 131072 valid cells and 483328 ghost cells
    Phase space box ((0,8,-16,0) (15,15,15,31) (0,0,0,0)) is assigned to process 1, has 131072 valid cells and 483328 ghost cells
 Adding species and constructing gyrocenter coordinates...
    hydrogen: kinetic species with mass = 4, charge = 1
 Done adding species and constructing coordinates
 Adding fluid species...
-Done adding congiration space variables
+Done adding confiration space variables
 Adding configuration space field variables...
 Done adding configuration space variables
 
@@ -448,6 +457,13 @@ charge correction = 1.77272e-09
      iter = 9, change_norm = 2.14897e-11, relative res_norm = 3.04081e-14
   Number of subspace iterations = 3, final solution change norm = 7.67851e-09
   Er_lo = 0.008304, Er_hi = 0.0119173
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.780661
     Vlasov    : 1.11823 (time scale), 0.69812 (CFL)
@@ -456,7 +472,7 @@ charge correction = 1.77272e-09
   Distribution Function Extrema:
     Species 0:	317.042 [max]	1.48679e-08 [min]
 
-Step 1 completed, simulation time is 0.780661, solver wall time is 7.22115 seconds
+Step 1 completed, simulation time is 0.780661, solver wall time is 7.18071 seconds
 ----
 
 Step 2
@@ -589,6 +605,13 @@ charge correction = 1.68788e-09
      iter = 9, change_norm = 2.14675e-11, relative res_norm = 3.03252e-14
   Number of subspace iterations = 3, final solution change norm = 7.26145e-09
   Er_lo = 0.00630544, Er_hi = 0.018121
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.858727
     Vlasov    : 1.11823 (time scale), 0.767933 (CFL)
@@ -597,7 +620,7 @@ charge correction = 1.68788e-09
   Distribution Function Extrema:
     Species 0:	317.043 [max]	1.61496e-08 [min]
 
-Step 2 completed, simulation time is 1.63939, solver wall time is 14.4405 seconds
+Step 2 completed, simulation time is 1.63939, solver wall time is 14.3215 seconds
 ----
 
 Step 3
@@ -730,6 +753,13 @@ charge correction = -6.85729e-10
      iter = 9, change_norm = 2.14467e-11, relative res_norm = 3.01948e-14
   Number of subspace iterations = 3, final solution change norm = 5.85968e-09
   Er_lo = -0.0086043, Er_hi = 0.0175837
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.944599
     Vlasov    : 1.11823 (time scale), 0.844729 (CFL)
@@ -738,7 +768,7 @@ charge correction = -6.85729e-10
   Distribution Function Extrema:
     Species 0:	317.044 [max]	-1.11028e-06 [min]
 
-Step 3 completed, simulation time is 2.58399, solver wall time is 21.6796 seconds
+Step 3 completed, simulation time is 2.58399, solver wall time is 21.5157 seconds
 ----
 
 Step 4
@@ -871,6 +901,13 @@ charge correction = -5.83359e-09
      iter = 9, change_norm = 2.14197e-11, relative res_norm = 2.99998e-14
   Number of subspace iterations = 3, final solution change norm = 5.11903e-09
   Er_lo = -0.0362889, Er_hi = 0.0105204
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.975817
     Vlasov    : 1.11822 (time scale), 0.87265 (CFL)
@@ -879,7 +916,7 @@ charge correction = -5.83359e-09
   Distribution Function Extrema:
     Species 0:	317.045 [max]	-1.74409e-06 [min]
 
-Step 4 completed, simulation time is 3.5598, solver wall time is 28.8391 seconds
+Step 4 completed, simulation time is 3.5598, solver wall time is 28.6854 seconds
 ----
 
 Step 5
@@ -1012,6 +1049,13 @@ charge correction = -1.36853e-08
      iter = 9, change_norm = 2.13806e-11, relative res_norm = 2.97295e-14
   Number of subspace iterations = 3, final solution change norm = 4.73867e-09
   Er_lo = -0.0745339, Er_hi = -0.00148259
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.975812
     Vlasov    : 1.11822 (time scale), 0.87265 (CFL)
@@ -1020,7 +1064,7 @@ charge correction = -1.36853e-08
   Distribution Function Extrema:
     Species 0:	317.046 [max]	-2.1124e-06 [min]
 
-Step 5 completed, simulation time is 4.53562, solver wall time is 36.0569 seconds
+Step 5 completed, simulation time is 4.53562, solver wall time is 35.8262 seconds
 ----
 
 Step 6
@@ -1153,6 +1197,13 @@ charge correction = -2.40226e-08
      iter = 9, change_norm = 2.13332e-11, relative res_norm = 2.93841e-14
   Number of subspace iterations = 3, final solution change norm = 4.51838e-09
   Er_lo = -0.121254, Er_hi = -0.016699
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.975806
     Vlasov    : 1.11821 (time scale), 0.87265 (CFL)
@@ -1161,7 +1212,7 @@ charge correction = -2.40226e-08
   Distribution Function Extrema:
     Species 0:	317.047 [max]	-2.59323e-06 [min]
 
-Step 6 completed, simulation time is 5.51142, solver wall time is 43.2408 seconds
+Step 6 completed, simulation time is 5.51142, solver wall time is 42.9463 seconds
 ----
 
 Step 7
@@ -1294,6 +1345,13 @@ charge correction = -3.67226e-08
      iter = 9, change_norm = 2.13087e-11, relative res_norm = 2.90023e-14
   Number of subspace iterations = 3, final solution change norm = 4.37956e-09
   Er_lo = -0.174071, Er_hi = -0.0332926
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.9758
     Vlasov    : 1.1182 (time scale), 0.87265 (CFL)
@@ -1302,7 +1360,7 @@ charge correction = -3.67226e-08
   Distribution Function Extrema:
     Species 0:	317.048 [max]	-3.93011e-06 [min]
 
-Step 7 completed, simulation time is 6.48722, solver wall time is 50.4681 seconds
+Step 7 completed, simulation time is 6.48722, solver wall time is 50.0952 seconds
 ----
 
 Step 8
@@ -1435,6 +1493,13 @@ charge correction = -5.16411e-08
      iter = 9, change_norm = 2.1296e-11, relative res_norm = 2.85647e-14
   Number of subspace iterations = 3, final solution change norm = 4.28637e-09
   Er_lo = -0.230386, Er_hi = -0.0493665
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.975793
     Vlasov    : 1.1182 (time scale), 0.87265 (CFL)
@@ -1443,7 +1508,7 @@ charge correction = -5.16411e-08
   Distribution Function Extrema:
     Species 0:	317.049 [max]	-2.8961e-06 [min]
 
-Step 8 completed, simulation time is 7.46302, solver wall time is 57.6439 seconds
+Step 8 completed, simulation time is 7.46302, solver wall time is 57.2863 seconds
 ----
 
 Step 9
@@ -1576,6 +1641,13 @@ charge correction = -6.86129e-08
      iter = 9, change_norm = 2.12923e-11, relative res_norm = 2.80667e-14
   Number of subspace iterations = 3, final solution change norm = 4.22058e-09
   Er_lo = -0.287473, Er_hi = -0.0630142
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.975787
     Vlasov    : 1.11819 (time scale), 0.87265 (CFL)
@@ -1584,7 +1656,7 @@ charge correction = -6.86129e-08
   Distribution Function Extrema:
     Species 0:	317.05 [max]	-3.40436e-06 [min]
 
-Step 9 completed, simulation time is 8.4388, solver wall time is 64.8403 seconds
+Step 9 completed, simulation time is 8.4388, solver wall time is 64.4294 seconds
 ----
 
 Step 10
@@ -1717,6 +1789,13 @@ charge correction = -8.74491e-08
      iter = 9, change_norm = 2.13126e-11, relative res_norm = 2.75298e-14
   Number of subspace iterations = 3, final solution change norm = 4.17303e-09
   Er_lo = -0.342559, Er_hi = -0.0723723
+num_cells = 16 16 32 32 
+is_periodic = 0 1 0 0 
+configuration_decomposition = 1 2 
+velocity_decomposition = 1 1 
+phase_decomposition = 1 2 1 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
   ----
   dt: 0.97578
     Vlasov    : 1.11818 (time scale), 0.87265 (CFL)
@@ -1725,7 +1804,7 @@ charge correction = -8.74491e-08
   Distribution Function Extrema:
     Species 0:	317.051 [max]	-2.47152e-06 [min]
 
-Step 10 completed, simulation time is 9.41458, solver wall time is 72.0364 seconds
+Step 10 completed, simulation time is 9.41458, solver wall time is 71.5607 seconds
 ----
 Writing checkpoint file
 Writing history file
@@ -1741,5 +1820,5 @@ Writing history file
   Time integrator counts:-
     Time steps: 10
 ----
-Solve wall time (in seconds): 72.0659
-Total wall time (in seconds): 72.611
+Solve wall time (in seconds): 71.596
+Total wall time (in seconds): 72.1812
