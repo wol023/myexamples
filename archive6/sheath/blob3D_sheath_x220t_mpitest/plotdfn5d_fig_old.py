@@ -589,7 +589,7 @@ plt.close('all')
 
 
 #collect figures
-import Image
+from PIL import Image
 init_plotting('2x3')
 f = pl.figure()
 for n, fname in enumerate(('fig1_mlab_iso.png','fig1_mlab_slice.png','fig2_im.png','fig2.png','fig3.png','fig4_mu0_comp_fit.png')):

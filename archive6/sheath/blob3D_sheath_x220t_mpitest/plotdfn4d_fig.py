@@ -368,7 +368,7 @@ plt.close('all')
 
 
 #collect figures
-import Image
+from PIL import Image
 init_plotting('2x3')
 f = pl.figure()
 for n, fname in enumerate(('fig1.png','fig2.png','fig11.png','fig4.png','fig7.png','fig10.png')):

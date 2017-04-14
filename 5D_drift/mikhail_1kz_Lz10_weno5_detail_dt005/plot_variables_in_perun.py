@@ -124,7 +124,7 @@ canverse_num = len(demo_list)/6
 if len(demo_list)%6:
     canverse_num+=1
 
-import Image
+from PIL import Image
 
 for num_can in range(canverse_num):
     init_plotting('2x3')

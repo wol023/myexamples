@@ -586,7 +586,7 @@ with open('finish.txt', 'wb') as fh:
 
 
 import pylab
-import Image
+from PIL import Image
 f = pylab.figure()
 for n, fname in enumerate(('foo1.png', 'foo2.png', 'foo3.png', 'foo4.png')):
      image=Image.open(fname)#.convert("L")

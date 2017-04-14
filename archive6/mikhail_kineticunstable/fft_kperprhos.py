@@ -674,7 +674,7 @@ print 'gamma/omega*_1_chi2  = ',(lin_fitted_logy2[0]/2.0/omega_star_point*(1.0+c
 
 
 import pylab
-import Image
+from PIL import Image
 init_plotting('2x3')
 f = pylab.figure()
 for n, fname in enumerate(('foo1.png', 'foo2.png', 'foo3.png', 'foo4.png', 'foo5.png','foo6.png')):
