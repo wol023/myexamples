@@ -47,6 +47,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self.open_target_button.clicked.connect(self.print_target_file_lines)
+        self.open_load_button.clicked.connect(self.print_current_dir_lines)
         self.button_plot_selected.clicked.connect(self.plotFigure)
 
     def check_and_try_cluster(self,selected_file,status=0):
@@ -66,49 +67,52 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             self.print_ui(file_loc+' is found in local machine.')
             status = 1
         else:
-            self.print_ui(file_loc+' is NOT found in local machine.. start downloading.')
 
-            # sftp
-            import base64
-            import pysftp
-            cnopts = pysftp.CnOpts()
-            cnopts.hostkeys = None
-            # sftp
+            if (self.cb_remote.checkState()):
+                self.print_ui(file_loc+' is NOT found in local machine.. start downloading.')
+                # sftp
+                import base64
+                import pysftp
+                cnopts = pysftp.CnOpts()
+                cnopts.hostkeys = None
+                # sftp
 
-            if self.tbox_host.toPlainText()!=[] and self.tbox_user.toPlainText()!=[] and self.tbox_pword.toPlainText()!=[] and self.tbox_basepath.toPlainText()!=[] and self.tbox_targetpath.toPlainText()!=[]:
-                host=str(self.tbox_host.toPlainText())
-                username=str(self.tbox_user.toPlainText())
-                password=str(self.tbox_pword.toPlainText())
-                basepath=str(self.tbox_basepath.toPlainText())
-                targetpath=str(self.tbox_targetpath.toPlainText())
+                if self.tbox_host.toPlainText()!=[] and self.tbox_user.toPlainText()!=[] and self.tbox_pword.toPlainText()!=[] and self.tbox_basepath.toPlainText()!=[] and self.tbox_targetpath.toPlainText()!=[]:
+                    host=str(self.tbox_host.toPlainText())
+                    username=str(self.tbox_user.toPlainText())
+                    password=str(self.tbox_pword.toPlainText())
+                    basepath=str(self.tbox_basepath.toPlainText())
+                    targetpath=str(self.tbox_targetpath.toPlainText())
 
-                self.tbox_selected_download.setText(file_loc)
-                with pysftp.Connection(host=host, username=username, password=base64.b64decode(password),cnopts=cnopts) as sftp:
-                    if sftp.exists(basepath):
-                        with sftp.cd(basepath):
-                            if sftp.exists(targetpath):
-                                with sftp.cd(targetpath):
-                                        if sftp.exists(path_loc):
-                                            with sftp.cd(path_loc):
-                                                if sftp.exists(file_loc):
-                                                    os.chdir(path_loc)
-                                                    sftp.get(file_loc, preserve_mtime=True,callback=self.printProgress)
-                                                    self.print_ui(file_loc+' download completed.')
-                                                    os.chdir(homedir)
-                                                    status=2
-                                                else:
-                                                    self.print_ui(file_loc+' is not found in '+host)
-                                                    status=-1
-                                        else:
-                                            self.print_ui(path_loc+' is not found in '+host)
-                                            status=-2
+                    self.tbox_selected_download.setText(file_loc)
+                    with pysftp.Connection(host=host, username=username, password=base64.b64decode(password),cnopts=cnopts) as sftp:
+                        if sftp.exists(basepath):
+                            with sftp.cd(basepath):
+                                if sftp.exists(targetpath):
+                                    with sftp.cd(targetpath):
+                                            if sftp.exists(path_loc):
+                                                with sftp.cd(path_loc):
+                                                    if sftp.exists(file_loc):
+                                                        os.chdir(path_loc)
+                                                        sftp.get(file_loc, preserve_mtime=True,callback=self.printProgress)
+                                                        self.print_ui(file_loc+' download completed.')
+                                                        os.chdir(homedir)
+                                                        status=2
+                                                    else:
+                                                        self.print_ui(file_loc+' is not found in '+host)
+                                                        status=-1
+                                            else:
+                                                self.print_ui(path_loc+' is not found in '+host)
+                                                status=-2
 
-                            else:
-                                self.print_ui(targetpath+' is not found in '+host)
-                                status=-3
-                    else:
-                        self.print_ui(basepath+' is not found in '+host)
-                        status=-4
+                                else:
+                                    self.print_ui(targetpath+' is not found in '+host)
+                                    status=-3
+                        else:
+                            self.print_ui(basepath+' is not found in '+host)
+                            status=-4
+            else:
+                self.print_ui('The file was not found on machine, download from remote disabled.')
 
         self.print_ui('file check is completed with status = '+str(status))
         return status
@@ -543,6 +547,34 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.results_window.append(stream)
         QtGui.QApplication.processEvents()
 
+    def print_current_dir_lines(self):
+        current_dir = str(self.current_dir_box.toPlainText())
+        self.print_ui(current_dir)
+        hdf5files=[]
+        for root, subFolders, files in os.walk(current_dir):
+            for a_file in files:
+                if a_file.endswith('.hdf5') and not a_file.endswith('.map.hdf5') and a_file.startswith('plt.'):
+                    hdf5files.append(os.path.join(root,a_file))
+                    self.print_ui(a_file)
+        for item in hdf5files:
+            self.lw_target.addItem(item)
+
+        ## make output directory
+        plot_output='./python_auto_plots.0.dir'
+        notunique=1
+        while notunique:
+            if os.path.exists(plot_output):
+                notunique=1
+                int_oldnum=int(plot_output.split('./python_auto_plots.')[1].split('.dir')[0])
+                str_newnum=str(int_oldnum+1)
+                plot_output='./python_auto_plots.'+str_newnum+'.dir'
+            else:
+                notunique=0
+        self.tbox_localout.append(plot_output)
+        # find and read input deck
+        self.ref_time=self.read_input_deck()
+        self.tbox_transit_time.setText(str(self.ref_time))
+
     def print_target_file_lines(self):
         target_file = (self.target_list_box.toPlainText())
         with open(target_file,'r') as fo:
@@ -596,7 +628,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.ref_time=self.read_input_deck()
         self.tbox_transit_time.setText(str(self.ref_time))
 
-
     def plotFigure(self):
 
         selected_items=self.lw_target.selectedItems()
@@ -608,7 +639,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             self.print_ui(selected_files[i])
 
             status=0
-            #from plot_cogent_pack import check_and_try_cluster
             status=self.check_and_try_cluster(selected_files[i])
 
             if status>0:
@@ -640,7 +670,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         speciesname='s'
                     plot_density(selected_files[i],ghost=0,speciesname=speciesname,targetdir=plot_output)
             else:
-                self.print_ui('No '+ selected_files[i]+ ' is found.. skipping the file.')
+                self.print_ui(selected_files[i]+ ' was NOT found.. skipping the file.')
         self.print_ui('ready')
 
     def read_input_deck(self,inputfile=''):
@@ -1247,7 +1277,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             s3.xlabel('x',fontsize=18)
             s3.ylabel('y',fontsize=18)
             s3.zlabel('z',fontsize=18)
-            s3.show()
+            if self.cb_3d_interactive.checkState():
+                s3.show()
 
             #try 3D plot using mayavi
             #if var_components>1:
