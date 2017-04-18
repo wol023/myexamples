@@ -1489,8 +1489,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         else:
             plt.rcParams['figure.figsize'] = (4, 3)
             plt.rcParams['font.size'] = 10
-            plt.rcParams['axes.labelsize'] = 1.5*plt.rcParams['font.size']
-            plt.rcParams['axes.titlesize'] = 1.5*plt.rcParams['font.size']
+            plt.rcParams['axes.labelsize'] = 1.2*plt.rcParams['font.size']
+            plt.rcParams['axes.titlesize'] = 1.2*plt.rcParams['font.size']
             plt.rcParams['legend.fontsize'] = plt.rcParams['font.size']
             plt.rcParams['xtick.labelsize'] = plt.rcParams['font.size']
             plt.rcParams['ytick.labelsize'] = plt.rcParams['font.size']
