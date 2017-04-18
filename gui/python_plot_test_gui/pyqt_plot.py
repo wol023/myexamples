@@ -871,7 +871,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         if (self.cb_f_vpar_muat1.checkState()):
             #plot difference
             fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
-            legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
+            legend_maxwellian = 'MAXWE.'+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
             self.oplot_1d(data2d_maxwell[:,mu_pt,0],fig_overlap,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
             if saveplots>0:
                 if not os.path.exists(targetdir):
