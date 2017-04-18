@@ -994,7 +994,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
             data_fitted_max=max(data_fitted[:,mu_pt,0].flatten())
 
-            fig=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max,fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$(f_%s-f_M)/f_{M,max}$'%speciesname,legend=1,ylabel='$f_'+speciesname+'-f_M$',symmetric_ylim=1, title=title_var)
+            fig=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max,fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$(f_%s-f_M)/f_{M,max}$'%speciesname,legend=1,ylabel='$(f_'+speciesname+'-f_M)/f_{M,max}$',symmetric_ylim=1, title=title_var)
             if saveplots>0:
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
@@ -1169,6 +1169,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         self.print_ui('IN:n0_grid_func = '+n0_grid_func)
 
             n0_grid_func=n0_grid_func.replace('rand','1*')
+            n0_grid_func=n0_grid_func.replace('atwotan','*0*')
+            n0_grid_func=n0_grid_func.replace('arctan','atan')
             transformations = (standard_transformations + (implicit_multiplication_application,))
             pe=parse_expr(n0_grid_func,transformations=transformations)
             f_n0_grid_func= lambdify((x,y,z),pe)
