@@ -650,6 +650,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             status=self.check_and_try_cluster(selected_files[i])
 
             if status>0:
+                x_pt=int(self.te_x_pt.toPlainText())
+                y_pt=int(self.te_y_pt.toPlainText())
+                z_pt=int(self.te_z_pt.toPlainText())
+                plot_output=self.tbox_localout.toPlainText()
                 if 'dfn' in selected_files[i]:
                     if 'hydrogen' in selected_files[i]:
                         speciesname='i'
@@ -657,14 +661,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         speciesname='e'
                     else:
                         speciesname='s'
-                    x_pt=int(self.te_x_pt.toPlainText())
-                    y_pt=int(self.te_y_pt.toPlainText())
-                    z_pt=int(self.te_z_pt.toPlainText())
-                    plot_output=self.tbox_localout.toPlainText()
                     #from plot_cogent_pack import plot_dfn
                     self.plot_dfn(selected_files[i],speciesname=speciesname,x_pt=x_pt,y_pt=y_pt,z_pt=z_pt,targetdir=plot_output)
                 if 'potential' in selected_files[i]:
-                    plot_potential(selected_files[i],ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=plot_output)
+                    self.plot_potential(selected_files[i],ghost=0,x_slice=x_pt,y_slice=x_pt,z_slice=z_pt,targetdir=plot_output)
                 if 'BField' in selected_files[i]:
                     plot_bvec(selected_files[i],ghost=0,targetdir=plot_output)
                 if 'efield' in selected_files[i]:
@@ -761,6 +761,77 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         ref_speed = np.sqrt(tempJoules/masskg) 
         ref_time=units_length/ref_speed
         return ref_time
+
+    
+    def plot_potential(self,pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+        head=os.path.split(pathfilename)
+        path=head[0]
+        filename=head[1]
+        #print path
+        #print filename
+        basedir=os.getcwd()
+        if targetdir==[]:
+            targetdir='./python_auto_plots'
+        
+        dataNd_potential_comps, num_ghost_potential, cogent_time=self.import_multdim_comps(filename=pathfilename)
+        if ghost>0:
+            dataNd_potential_with_outer_ghost_comps,num_ghost_potential,cogent_time=self.import_multdim_comps(filename=pathfilename,withghost=1)
+        title_var='potential'
+     ### read computational unit time
+ 
+        if self.ref_time!=-1.0:
+            title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*self.ref_time*1.0E6)
+        else:
+            title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
+    
+        
+        #fig=plot_Nd(dataNd_potential_comps,title=title_var)
+        #if saveplots>0:
+        #    if not os.path.exists(targetdir):
+        #        os.mkdir(targetdir)
+        #        print targetdir+'/', 'is created.'
+        #    os.chdir(targetdir)
+        #    plt.savefig(filename.replace('.hdf5','.potential_iso.png'))
+        #    plt.savefig(filename.replace('.hdf5','.potential_iso.eps'))
+        #    os.chdir(basedir)
+        #if showplots==0:
+        #    plt.close('fig')
+
+        fig=self.plot_Nd(dataNd_potential_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+            os.chdir(targetdir)
+            plt.savefig(filename.replace('.hdf5','.potential_slice.png'))
+            plt.savefig(filename.replace('.hdf5','.potential_slice.eps'))
+            os.chdir(basedir)
+        if showplots==0:
+            plt.close('fig')
+    
+        if ghost>0:
+            #fig=plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var)
+            #if saveplots>0:
+            #    if not os.path.exists(targetdir):
+            #        os.mkdir(targetdir)
+            #    os.chdir(targetdir)
+            #    plt.savefig(filename.replace('.hdf5','.potential_ghost_iso.png'))
+            #    plt.savefig(filename.replace('.hdf5','.potential_ghost_iso.eps'))
+            #    os.chdir(basedir)
+            #if showplots==0:
+            #    plt.close('fig')
+
+            fig=self.plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.potential_mlab_ghost_slice.png'))
+                plt.savefig(filename.replace('.hdf5','.potential_mlab_ghost_slice.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig')
+    
+        return
 
     def plot_dfn(self,pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir=[]):
         self.print_ui('plot_dfn()')
@@ -871,7 +942,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         if (self.cb_f_vpar_muat1.checkState()):
             #plot difference
             fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
-            legend_maxwellian = 'MAXWE.'+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
+            legend_maxwellian = 'Maxw.'+r'$(n, T, V_s)$'+' = (%.2f, %.2f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
             self.oplot_1d(data2d_maxwell[:,mu_pt,0],fig_overlap,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
             if saveplots>0:
                 if not os.path.exists(targetdir):
@@ -962,7 +1033,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
                 plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
 
-            legend_maxwellian = 'Maxwell. '+r'$n, T, V_s$'+' = (%.2f, %.2f, %.2g)'%(popt[0],popt[1],popt[2])
+            legend_maxwellian = 'Maxw.'+r'$(n, T, V_s)$'+' = (%.2f, %.2f, %.1g)'%(popt[0],popt[1],popt[2])
 
             title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
      ###     read computational unit time
