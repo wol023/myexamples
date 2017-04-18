@@ -900,9 +900,11 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 
         #2dfitting
-        if (self.cb_vpar_mu_maxwell2D.checkState()):
+        if (self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState() ):
             data_fitted,popt=self.get_maxwellian_fitting_2D(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,0],VPAR_SCALE,MU_SCALE)
             self.print_ui("Popt="+str(popt))
+
+        if (self.cb_vpar_mu_maxwell2D.checkState()):
 
             if (self.cb_vpar_mu.checkState()):
                 fig_maxwellian=self.oplot_2d(data_fitted[:,:,0],fig=fig_dfn2d)
@@ -1010,7 +1012,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.close('fig')
 
 
-        if (self.cb_vpar_maxwell2D_diff_mu_1.checkState()):
+        if (self.cb_vpar_maxwell2D_diff.checkState()):
         ### read computational unit time
             data_fitted_max=max(data_fitted.flatten())
             title_var='$(f_%s-f_M)/f_{M,max}$'%speciesname
