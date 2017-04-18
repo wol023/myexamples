@@ -865,9 +865,11 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             if showplots==0:
                 plt.close('fig_deltaf')
 
+        if (self.cb_f_vpar_muat1.checkState() or  self.cb_deltaf_vpar_muat1.checkState() or  self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState()  ):
+            mu_pt=1
+
         if (self.cb_f_vpar_muat1.checkState()):
             #plot difference
-            mu_pt=1
             fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
             legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
             self.oplot_1d(data2d_maxwell[:,mu_pt,0],fig_overlap,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
@@ -923,7 +925,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.close('fig_maxwellian')
 
         #plot difference
-        mu_pt=1
         #hard coding
         self.print_ui('Trying reading post processing file: finish.txt')
         wave_phase_speed = -1.0
