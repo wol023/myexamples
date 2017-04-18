@@ -4,6 +4,7 @@ from PyQt4 import QtCore, QtGui, uic
 
 import h5py
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1 
 
@@ -304,11 +305,13 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             cells_shift=cells_shift.astype(int)
             cells_shift_with_ghost=np.zeros(dim*2)
             cells_shift_with_ghost=cells_shift_with_ghost.astype(int)
+
+            self.pb_download.setValue(0)
          
             for i in range(num_decomposition):
                 cells = File['level_0']['boxes'][i]
-                sys.stdout.write('.')
-                sys.stdout.flush()
+                #sys.stdout.write('.')
+                #sys.stdout.flush()
                 self.printProgress(i,num_decomposition-1)
                 #print 'cells=',cells
                 
@@ -542,6 +545,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         #print "Transferred: {:5.2f} %\r".format(float(transferred)/toBeTransferred*100)
         #self.print_ui("Transferred: {:5.2f} %".format(float(transferred)/toBeTransferred*100))
         self.pb_download.setValue(float(transferred)/toBeTransferred*100)
+        QtGui.QApplication.processEvents()
 
     def print_ui(self,stream):
         self.results_window.append(stream)
@@ -555,7 +559,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             for a_file in files:
                 if a_file.endswith('.hdf5') and not a_file.endswith('.map.hdf5') and a_file.startswith('plt.'):
                     hdf5files.append(os.path.join(root,a_file))
-                    self.print_ui(a_file)
+                    #self.print_ui(a_file)
         for item in hdf5files:
             self.lw_target.addItem(item)
 
@@ -703,6 +707,46 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                     if 'units.length' in lhsrhs[0]:
                         units_length = float(lhsrhs[1])
                         self.print_ui('IN:units_length= '+str(units_length))
+                    if '.history_indices' in lhsrhs[0]:
+                        history_indices=lhsrhs[1].split()
+                        if len(history_indices)==2:
+                            self.te_x_pt.setText(str(history_indices[0]))
+                            self.te_y_pt.setText(str(history_indices[1]))
+                        if len(history_indices)==3:
+                            self.te_x_pt.setText(str(history_indices[0]))
+                            self.te_y_pt.setText(str(history_indices[1]))
+                            self.te_z_pt.setText(str(history_indices[2]))
+                    if 'gksystem.num_cells' in lhsrhs[0]:
+                        num_cells=lhsrhs[1].split()
+                        if len(num_cells)==4:
+                            self.te_x_total.setText(str(num_cells[0]))
+                            self.te_y_total.setText(str(num_cells[1]))
+                            self.te_vpar_total.setText(str(num_cells[2]))
+                            self.te_mu.setText(str(num_cells[3]))
+                        if len(num_cells)==5:
+                            self.te_x_total.setText(str(num_cells[0]))
+                            self.te_y_total.setText(str(num_cells[1]))
+                            self.te_z_total.setText(str(num_cells[2]))
+                            self.te_vpar_total.setText(str(num_cells[3]))
+                            self.te_mu_total.setText(str(num_cells[4]))
+                    if 'gksystem.fixed_plot_indices' in lhsrhs[0]:
+                        num_cells=lhsrhs[1].split()
+                        if len(num_cells)==4:
+                            self.te_x_fixed_plot.setText(str(num_cells[0]))
+                            self.te_y_fixed_plot.setText(str(num_cells[1]))
+                            self.te_vpar_fixed_plot.setText(str(num_cells[2]))
+                            self.te_mu_fixed_plot.setText(str(num_cells[3]))
+                        if len(num_cells)==5:
+                            self.te_x_fixed_plot.setText(str(num_cells[0]))
+                            self.te_y_fixed_plot.setText(str(num_cells[1]))
+                            self.te_z_fixed_plot.setText(str(num_cells[2]))
+                            self.te_vpar_fixed_plot.setText(str(num_cells[3]))
+                            self.te_mu_fixed_plot.setText(str(num_cells[4]))
+                            
+
+       
+
+
 
 
         # calc ref_time from input deck parameters
@@ -727,7 +771,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
         self.load_ghosts=(self.cb_ghosts.checkState()+self.cb_ghosts_internal.checkState())/2
 
-        print self.load_ghosts, type(self.load_ghosts)
+        #print self.load_ghosts, type(self.load_ghosts)
 
         dataNd_dfn_comps,ghost,cogent_time=self.import_multdim_comps(filename=pathfilename,withghost=1 )
         title_var=r'$f_%s(\bar{v}_\parallel, \bar{\mu})$'%speciesname
@@ -745,38 +789,37 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         VPAR_N, MU_N = self.get_vpar_mu_scales(num_cell_total_comps_tuple) #default max
         
         #velocity space
-        fig_dfn2d=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var)
-    #uncomment below for dfn2d plot
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-                self.print_ui(targetdir+'/'+ 'is created.')
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_mu.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_mu.eps'))
-            os.chdir(basedir)
+        if (self.cb_vpar_mu.checkState()):
+            fig_dfn2d=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var)
+        #uncomment below for dfn2d plot
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                    self.print_ui(targetdir+'/'+ 'is created.')
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_mu.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_mu.eps'))
+                os.chdir(basedir)
+            if showplots==0 and not self.cb_vpar_mu_maxwell2D.checkState():
+                plt.close('fig_dfn2d')
 
-     #uncomment below for interpolation plot
-        if showplots==0:
-            plt.close('all')
         
-        fig_dfn2d_interp=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var,interpolation='spline36')
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-                self.print_ui(targetdir+'/'+ 'is created.')
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.eps'))
-            os.chdir(basedir)
-
-        if showplots==0:
-            plt.close('all')
-            #plt.close(fig_dfn2d)
+        if (self.cb_vpar_mu_smooth.checkState()):
+        #uncomment below for interpolation plot
+            fig_dfn2d_interp=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var,interpolation='spline36')
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                    self.print_ui(targetdir+'/'+ 'is created.')
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig_dfn2d_interp')
 
 
         # For all mu maxwellian fitting
-
         ion_mass = self.read_input_var(str_var='kinetic_species.1.mass')
         elec_mass = self.read_input_var(str_var='kinetic_species.2.mass')
         t0_grid_func = self.read_input_var(str_var='.T0_grid_func.constant')
@@ -787,8 +830,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             et0_grid_func = self.read_input_var(str_var='.eT0_grid_func.value')
         nhat= self.read_input_nhat()
         Bhat= self.read_input_bhat()
-
-
 
         coef_maxwell,mhat,That = self.get_maxwellian_coef(pathfilename,ion_mass,t0_grid_func,elec_mass,et0_grid_func,nhat)
         
@@ -804,74 +845,79 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = self.get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
             data2d_maxwell[:,i,0]=fitted_f
 
+        if (self.cb_deltaf_vpar_mu.checkState()):
+        #plot delta f
+            #data2dmax=max(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].flatten())
+            data2dmax=max(data2d_maxwell.flatten())
+            fig_deltaf=self.plot_Nd((dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data2d_maxwell)/data2dmax,title="$(f_{COGENT}-f_M)/f_{M,Max}$",interpolation='spline36')
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                    self.print_ui(targetdir+'/'+ 'is created.')
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_interp.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_interp.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig_deltaf')
 
-
-        self.plot_Nd(data2d_maxwell-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title="$f_M - f_{COGENT}$",interpolation='spline36')
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-                self.print_ui(targetdir+'/'+ 'is created.')
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_interp.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_interp.eps'))
-            os.chdir(basedir)
-        if showplots==0:
-            plt.close('all')
-
-        #plot difference
-        mu_pt=1
+        if (self.cb_f_vpar_muat1.checkState()):
+            #plot difference
+            mu_pt=1
+            fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+            legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
+            self.oplot_1d(data2d_maxwell[:,mu_pt,0],fig_overlap,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                    self.print_ui(targetdir+'/'+ 'is created.')
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_overlap_mu_1.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_overlap_mu_1.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig_overlap')
     
-        fig=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
-        legend_maxwellian = 'MAXWELLIAN '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
-        self.oplot_1d(data2d_maxwell[:,mu_pt,0],fig,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-                self.print_ui(targetdir+'/'+ 'is created.')
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_mu_1.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_mu_1.eps'))
-            os.chdir(basedir)
-        if showplots==0:
-            plt.close('all')
     
-    
-         #maxwell difference plot
-        fig=self.oplot_1d(data2d_maxwell[:,mu_pt,0]-dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0],xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='f_M - f_S' )
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-                self.print_ui(targetdir+'/'+ 'is created.')
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_at_1.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_at_1.eps'))
-            os.chdir(basedir)
-        if showplots==0:
-            plt.close('all')
-
-     
+        if (self.cb_deltaf_vpar_muat1.checkState()):
+            maxatmu1=max(data2d_maxwell[:,mu_pt,0].flatten())
+            #maxwell difference plot
+            fig_maxwell_diff=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data2d_maxwell[:,mu_pt,0])/maxatmu1  ,xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='(f_S - f_M)/f_{M,max}' )
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                    self.print_ui(targetdir+'/'+ 'is created.')
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_at_1.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_at_1.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig_maxwell_diff')
 
 
         #2dfitting
-        data_fitted,popt=self.get_maxwellian_fitting_2D(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,0],VPAR_SCALE,MU_SCALE)
-        self.print_ui("Popt="+str(popt))
+        if (self.cb_vpar_mu_maxwell2D.checkState()):
+            data_fitted,popt=self.get_maxwellian_fitting_2D(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,0],VPAR_SCALE,MU_SCALE)
+            self.print_ui("Popt="+str(popt))
 
-        self.oplot_2d(data_fitted[:,:,0],fig=fig_dfn2d)
-        #oplot_2d(data_fitted[:,:,0],fig=fit_2d)
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-                self.print_ui( targetdir+'/'+ 'is created.')
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_mu_interp_maxwellian.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_mu_interp_maxwellian.eps'))
-            os.chdir(basedir)
-        if showplots==0:
-            plt.close('all')
+            if (self.cb_vpar_mu.checkState()):
+                fig_maxwellian=self.oplot_2d(data_fitted[:,:,0],fig=fig_dfn2d)
+            else:
+                fig_maxwellain=self.oplot_2d(data_fitted[:,:,0])
+            #oplot_2d(data_fitted[:,:,0],fig=fit_2d)
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                    self.print_ui( targetdir+'/'+ 'is created.')
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwellian2Dfit.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwellian2Dfit.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig_maxwellian')
 
         #plot difference
         mu_pt=1
-
         #hard coding
         self.print_ui('Trying reading post processing file: finish.txt')
         wave_phase_speed = -1.0
@@ -902,135 +948,134 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             continue
      
 
-        fig=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+        if (self.cb_vpar_maxwell2D_mu_1.checkState()):
+            fig_vpar_maxwell_2d_mu_1=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
 
-        if wave_phase_speed != -1.0:
-            normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
-            plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
+            if wave_phase_speed != -1.0:
+                normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
+                plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
 
-        legend_maxwellian = 'Maxwell. '+r'$n, T, V_s$'+' = (%.1f, %.1f, %.1g)'%(popt[0],popt[1],popt[2])
+            legend_maxwellian = 'Maxwell. '+r'$n, T, V_s$'+' = (%.2f, %.2f, %.2g)'%(popt[0],popt[1],popt[2])
 
-        title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
-     ### read computational unit time
-        if self.ref_time!=-1.0:
-            title_var=title_var+r'$t=%.2f \mu {s})$'%(cogent_time*self.ref_time*1.0E6)
-        else:
-            title_var=title_var+r'$t/t_0=%.2f)$'%cogent_time
+            title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
+     ###     read computational unit time
+            if self.ref_time!=-1.0:
+                title_var=title_var+r'$t=%.2f \mu {s})$'%(cogent_time*self.ref_time*1.0E6)
+            else:
+                title_var=title_var+r'$t/t_0=%.2f)$'%cogent_time
 
-        self.oplot_1d(data_fitted[:,mu_pt,0],fig,title=title_var,linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel=r'$f_%s$'%speciesname)
-              
-
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-                self.print_ui( targetdir+'/'+ 'is created.')
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_mu_1.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_mu_1.eps'))
-            os.chdir(basedir)
-        if showplots==0:
-            plt.close('all')
-
-
-         #maxwell difference plot
-        if wave_phase_speed != -1.0:
-            fig=plt.figure()
-            normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
-            plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
-
-        title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
-     ### read computational unit time
-        if self.ref_time!=-1.0:
-            title_var=title_var+r'$t=%.2f \mu {s})$'%(cogent_time*self.ref_time*1.0E6)
-        else:
-            title_var=title_var+r'$t/t_0=%.2f)$'%cogent_time
-
-        fig=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0],fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$f_%s-f_M$'%speciesname,legend=1,ylabel='$f_'+speciesname+'-f_M$',symmetric_ylim=1, title=title_var)
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_at_1.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_maxwell_2d_diff_at_1.eps'))
-            os.chdir(basedir)
-        if showplots==0:
-            plt.close('all')
+            self.oplot_1d(data_fitted[:,mu_pt,0],fig_vpar_maxwell_2d_mu_1,title=title_var,linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel=r'$f_%s$'%speciesname)
+                  
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                    self.print_ui( targetdir+'/'+ 'is created.')
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell2d_mu_1.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell2d_mu_1.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig_vpar_maxwell_2d_mu_1')
 
 
-        title_var='$f_%s-f_M$'%speciesname
-     ### read computational unit time
-        if self.ref_time!=-1.0:
-            title_var=title_var+r'$(t=%.2f \mu {s})$'%(cogent_time*self.ref_time*1.0E6)
-        else:
-            title_var=title_var+r'$(t/t_0=%.2f)$'%cogent_time
+        if (self.cb_vpar_maxwell2D_diff_mu_1.checkState()):
+            #maxwell difference plot
+            if wave_phase_speed != -1.0:
+                fig=plt.figure()
+                normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
+                plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
 
-        self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data_fitted,title=title_var,interpolation='spline36',symmetric_cbar=1)
-        if saveplots>0:
-            if not os.path.exists(targetdir):
-                os.mkdir(targetdir)
-            os.chdir(targetdir)
-            plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwell_2d_diff_interp.png'))
-            plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwell_2d_diff_interp.eps'))
-            os.chdir(basedir)
-        if showplots==0:
-            plt.close('all')
+            title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
+            ###read computational unit time
+            if self.ref_time!=-1.0:
+                title_var=title_var+r'$t=%.2f \mu {s})$'%(cogent_time*self.ref_time*1.0E6)
+            else:
+                title_var=title_var+r'$t/t_0=%.2f)$'%cogent_time
+
+            data_fitted_max=max(data_fitted[:,mu_pt,0].flatten())
+
+            fig=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max,fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$(f_%s-f_M)/f_{M,max}$'%speciesname,legend=1,ylabel='$f_'+speciesname+'-f_M$',symmetric_ylim=1, title=title_var)
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell2d_diff_at_1.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_maxwell2d_diff_at_1.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig')
 
 
+        if (self.cb_vpar_maxwell2D_diff_mu_1.checkState()):
+        ### read computational unit time
+            data_fitted_max=max(data_fitted.flatten())
+            title_var='$(f_%s-f_M)/f_{M,max}$'%speciesname
+            if self.ref_time!=-1.0:
+                title_var=title_var+r'$(t=%.2f \mu {s})$'%(cogent_time*self.ref_time*1.0E6)
+            else:
+                title_var=title_var+r'$(t/t_0=%.2f)$'%cogent_time
 
-
-
-
-
-       
+            fig_maxwell2d_diff=self.plot_Nd( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data_fitted)/data_fitted_max,title=title_var,interpolation='spline36',symmetric_cbar=1)
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwell2d_diff_interp.png'))
+                plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwell2d_diff_interp.eps'))
+                os.chdir(basedir)
+            if showplots==0:
+                plt.close('fig_maxwell2d_diff')
 
         
-        #get density by summation over velocity
-        f_vpar_mu_sum = self.get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max)
-        title_var='<f_%s>'%speciesname
-         ### read computational unit time
-        if self.ref_time!=-1.0:
-            title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*self.ref_time*1.0E6)
-        else:
-            title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
 
-        fig=self.plot_Nd(f_vpar_mu_sum,title=title_var)
-        #if saveplots>0:
-            #if not os.path.exists(targetdir):
-            #    os.mkdir(targetdir)
-            #    print targetdir+'/', 'is created.'
-            #else:
-            #    print targetdir+'/', 'already exists.'
-            #os.chdir(targetdir)
-            #mlab.savefig(filename.replace('.hdf5','.f_sum_mlab_iso.png'))
-            #fig.scene.save_ps(filename.replace('.hdf5','.f_sum_mlab_iso.eps'))
-            #time.sleep(1)
-            #os.chdir(basedir)
-        #fig.scene.save_ps('fig1_mlab_iso.pdf')
-        #mlab.show()
-        #arr=mlab.screenshot()
-        #plt.imshow(arr)
-        #plt.axis('off')
-        #plt.savefig('fig1_mlab_iso.eps')
-        #plt.savefig('fig1_mlab_iso.pdf')
-        #fig.scene.close()
-        #if showplots==0:
-        #    mlab.close(all=True)
+        if (self.cb_summation.checkState()):
+            #get density by summation over velocity
+            f_vpar_mu_sum = self.get_summation_over_velocity(dataNd_dfn_comps,Vpar_max,Mu_max)
+            title_var='<f_%s>'%speciesname
+             ### read computational unit time
+            if self.ref_time!=-1.0:
+                title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*self.ref_time*1.0E6)
+            else:
+                title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
 
-        #sliced plot
-        #fig=self.plot_Nd(f_vpar_mu_sum,title=title_var,x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
-        #if saveplots>0:
-        #    if not os.path.exists(targetdir):
-        #        os.mkdir(targetdir)
-        #        print targetdir+'/', 'is created.'
-        #    else:
-        #        print targetdir+'/', 'already exists.'
-        #    os.chdir(targetdir)
-        #    mlab.savefig(filename.replace('.hdf5','.f_sum_mlab_slice.png'))
-        #    fig.scene.save_ps(filename.replace('.hdf5','.f_sum_mlab_slice.eps'))
-        #    time.sleep(1)
-        #    os.chdir(basedir)
-        #if showplots==0:
-        #    mlab.close(all=True)
+            fig=self.plot_Nd(f_vpar_mu_sum,title=title_var)
+            #if saveplots>0:
+                #if not os.path.exists(targetdir):
+                #    os.mkdir(targetdir)
+                #    print targetdir+'/', 'is created.'
+                #else:
+                #    print targetdir+'/', 'already exists.'
+                #os.chdir(targetdir)
+                #mlab.savefig(filename.replace('.hdf5','.f_sum_mlab_iso.png'))
+                #fig.scene.save_ps(filename.replace('.hdf5','.f_sum_mlab_iso.eps'))
+                #time.sleep(1)
+                #os.chdir(basedir)
+            #fig.scene.save_ps('fig1_mlab_iso.pdf')
+            #mlab.show()
+            #arr=mlab.screenshot()
+            #plt.imshow(arr)
+            #plt.axis('off')
+            #plt.savefig('fig1_mlab_iso.eps')
+            #plt.savefig('fig1_mlab_iso.pdf')
+            #fig.scene.close()
+            #if showplots==0:
+            #    mlab.close(all=True)
+
+            #sliced plot
+            #fig=self.plot_Nd(f_vpar_mu_sum,title=title_var,x_slice=x_pt,y_slice=y_pt,z_slice=z_pt)
+            #if saveplots>0:
+            #    if not os.path.exists(targetdir):
+            #        os.mkdir(targetdir)
+            #        print targetdir+'/', 'is created.'
+            #    else:
+            #        print targetdir+'/', 'already exists.'
+            #    os.chdir(targetdir)
+            #    mlab.savefig(filename.replace('.hdf5','.f_sum_mlab_slice.png'))
+            #    fig.scene.save_ps(filename.replace('.hdf5','.f_sum_mlab_slice.eps'))
+            #    time.sleep(1)
+            #    os.chdir(basedir)
+            #if showplots==0:
+            #    mlab.close(all=True)
 
         return
     
@@ -1273,7 +1318,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         #Start plotting   
         if var_dim==3:
             self.print_ui('var_dim = '+str(var_dim))
-            s3 = slice3(var[:,:,:,0])
+            s3 = slice3(var[:,:,:,0],self)
             s3.xlabel('x',fontsize=18)
             s3.ylabel('y',fontsize=18)
             s3.zlabel('z',fontsize=18)
@@ -1391,7 +1436,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             else:
                 plt.ylabel(ylabel)
             self.add_colorbar(im,field=var[:,:,0])
-            plt.tight_layout()
+            #plt.tight_layout()
+            fig.set_tight_layout(True)
             return fig
         elif var_dim==1:
             #simple line out plot
@@ -1418,7 +1464,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.ylabel(r'$f$')
             else:
                 plt.ylabel(ylabel)
-            plt.tight_layout()
+            #plt.tight_layout()
+            fig.set_tight_layout(True)
             return fig
 
 
@@ -1514,7 +1561,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         t_fit = 1.0/(est_temp*2.0)
         n_fit = fixed_max_den*np.sqrt(np.pi)/(0.5*mhat/t_fit)**(1.5)/np.exp(-MU_SCALE[mu_ind]*Bhat/2.0/t_fit)
         vshift_fit = est_shift
-        self.print_ui('(n_fit, t_fit, vshift_fit)='+str(n_fit)+str(t_fit)+str(vshift_fit))
+        #self.print_ui('(n_fit, t_fit, vshift_fit)='+str(n_fit)+str(t_fit)+str(vshift_fit))
         return fitted_f, n_fit, t_fit, vshift_fit
     
     def get_maxwellian_fitting_2D(self,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE):
@@ -1614,7 +1661,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             #lgd = ax1.legend(handles, labels, loc='upper right', bbox_to_anchor=(1.0,1.0))
             #plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3, ncol=2, mode="expand", borderaxespad=0.)
 
-        plt.tight_layout()
+        #plt.tight_layout()
+        fig.set_tight_layout(True)
         return fig
     
     def get_summation_over_velocity(self,dataNd_dfn_comps,Vpar_max,Mu_max):
@@ -1661,8 +1709,13 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             f_vpar_mu_sum = np.zeros((num_xcell,num_ycell,num_zcell,num_compcell))
             delta_Mu = 1.0*Mu_max/num_mucell
             delta_Vpar = 2.0*Vpar_max/num_vparcell
+            total_num = num_compcell*num_xcell
+            cnt=0
+            self.pb_download.setValue(0)
             for d in range(num_compcell):
                 for i in range(num_xcell):
+                    cnt=cnt+1
+                    self.printProgress(cnt,total_num)
                     for j in range(num_ycell):
                         for k in range(num_zcell):
                             sumovervparandmu=0.0
@@ -1679,7 +1732,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 
 class slice3(object):
-    def __init__(self,var):
+    def __init__(self,var,mother):
         nx = len(var[:,0,0])
         ny = len(var[0,:,0])
         nz = len(var[0,0,:])
@@ -1695,44 +1748,58 @@ class slice3(object):
         self.ax3 = self.fig.add_subplot(133,aspect='equal')
 
         self.xplot_zline = self.ax1.axvline(color='m',linestyle='--',lw=2)
-        self.xplot_zline.set_xdata(self.z[0]) 
+        #self.xplot_zline.set_xdata(self.z[0]) 
+        self.xplot_zline.set_xdata(int(mother.te_z_pt.toPlainText())) 
 
         self.xplot_yline = self.ax1.axhline(color='m',linestyle='--',lw=2)
-        self.xplot_yline.set_ydata(self.y[0])
+        #self.xplot_yline.set_ydata(self.y[0])
+        self.xplot_yline.set_ydata(int(mother.te_y_pt.toPlainText()))
 
         self.yplot_xline = self.ax2.axhline(color='m',linestyle='--',lw=2)
-        self.yplot_xline.set_ydata(self.x[0])
+        #self.yplot_xline.set_ydata(self.x[0])
+        self.yplot_xline.set_ydata(int(mother.te_x_pt.toPlainText()))
 
         self.yplot_zline = self.ax2.axvline(color='m',linestyle='--',lw=2)
-        self.yplot_zline.set_xdata(self.z[0])
+        #self.yplot_zline.set_xdata(self.z[0])
+        self.yplot_zline.set_xdata(int(mother.te_z_pt.toPlainText()))
 
         self.zplot_xline = self.ax3.axvline(color='m',linestyle='--',lw=2)
-        self.zplot_xline.set_xdata(self.x[0])
+        #self.zplot_xline.set_xdata(self.x[0])
+        self.zplot_xline.set_xdata(int(mother.te_x_pt.toPlainText()))
 
         self.zplot_yline = self.ax3.axhline(color='m',linestyle='--',lw=2)
-        self.zplot_yline.set_ydata(self.y[0])
+        #self.zplot_yline.set_ydata(self.y[0])
+        self.zplot_yline.set_ydata(int(mother.te_y_pt.toPlainText()))
 
-        self.xslice = self.ax1.imshow(var[0,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
-        self.yslice = self.ax2.imshow(var[:,0,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
-        self.zslice = self.ax3.imshow(var[:,:,0],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        #self.xslice = self.ax1.imshow(var[0,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
+        #self.yslice = self.ax2.imshow(var[:,0,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
+        #self.zslice = self.ax3.imshow(var[:,:,0],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        self.xslice = self.ax1.imshow(var[int(mother.te_x_pt.toPlainText()),:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
+        self.yslice = self.ax2.imshow(var[:,int(mother.te_y_pt.toPlainText()),:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
+        self.zslice = self.ax3.imshow(var[:,:,int(mother.te_z_pt.toPlainText())],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
 
         # Create and initialize x-slider
         self.sliderax1 = self.fig.add_axes([0.125,0.08,0.225,0.03])
-        self.sliderx = DiscreteSlider(self.sliderax1,'',0,len(self.x)-1,increment=1,valinit=0)
+        #self.sliderx = DiscreteSlider(self.sliderax1,'',0,len(self.x)-1,increment=1,valinit=0)
+        self.sliderx = PageSlider(self.sliderax1,'x',len(self.x),activecolor="orange")
         self.sliderx.on_changed(self.update_x)
-        self.sliderx.set_val(0)
+        self.sliderx.set_val(int(mother.te_x_pt.toPlainText()))
 
         # Create and initialize y-slider
         self.sliderax2 = self.fig.add_axes([0.4,0.08,0.225,0.03])
-        self.slidery = DiscreteSlider(self.sliderax2,'',0,len(self.y)-1,increment=1,valinit=0)
+        #self.slidery = DiscreteSlider(self.sliderax2,'',0,len(self.y)-1,increment=1,valinit=0)
+        self.slidery = PageSlider(self.sliderax2,'y',len(self.y),activecolor="orange")
         self.slidery.on_changed(self.update_y)
-        self.slidery.set_val(0)
+        #self.slidery.set_val(0)
+        self.slidery.set_val(int(mother.te_y_pt.toPlainText()))
 
         # Create and initialize z-slider
         self.sliderax3 = self.fig.add_axes([0.675,0.08,0.225,0.03])
-        self.sliderz = DiscreteSlider(self.sliderax3,'',0,len(self.z)-1,increment=1,valinit=0)
+        #self.sliderz = DiscreteSlider(self.sliderax3,'',0,len(self.z)-1,increment=1,valinit=0)
+        self.sliderz = PageSlider(self.sliderax3,'zage',len(self.z),activecolor="orange")
         self.sliderz.on_changed(self.update_z)
-        self.sliderz.set_val(0)
+        #self.sliderz.set_val(0)
+        self.sliderz.set_val(int(mother.te_z_pt.toPlainText()))
 
         # Make plots square
         z0,z1 = self.ax1.get_xlim()
@@ -1803,6 +1870,76 @@ class  DiscreteSlider(Slider):
             return
         for cid, func in self.observers.iteritems():
             func(val)
+
+class PageSlider(matplotlib.widgets.Slider):
+
+    def __init__(self, ax, label, numpages = 10, valinit=0, valfmt='%1d', 
+                 closedmin=True, closedmax=True,  
+                 dragging=True, **kwargs):
+
+        self.facecolor=kwargs.get('facecolor',"w")
+        self.activecolor = kwargs.pop('activecolor',"b")
+        self.fontsize = kwargs.pop('fontsize', 10)
+        self.numpages = numpages
+
+        super(PageSlider, self).__init__(ax, label, 0, numpages, 
+                            valinit=valinit, valfmt=valfmt, **kwargs)
+
+        self.poly.set_visible(False)
+        self.vline.set_visible(False)
+        self.pageRects = []
+        for i in range(numpages):
+            facecolor = self.activecolor if i==valinit else self.facecolor
+            r  = matplotlib.patches.Rectangle((float(i)/numpages, 0), 1./numpages, 1, 
+                                transform=ax.transAxes, facecolor=facecolor)
+            ax.add_artist(r)
+            self.pageRects.append(r)
+            ax.text(float(i)/numpages+0.5/numpages, 0.5, str(i+1),  
+                    ha="center", va="center", transform=ax.transAxes,
+                    fontsize=self.fontsize)
+        self.valtext.set_visible(False)
+
+        divider = axes_grid1.make_axes_locatable(ax)
+        bax = divider.append_axes("right", size="5%", pad=0.05)
+        fax = divider.append_axes("right", size="5%", pad=0.05)
+        self.button_back = matplotlib.widgets.Button(bax, label=ur'$\u25C0$', 
+                        color=self.facecolor, hovercolor=self.activecolor)
+        self.button_forward = matplotlib.widgets.Button(fax, label=ur'$\u25B6$', 
+                        color=self.facecolor, hovercolor=self.activecolor)
+        self.button_back.label.set_fontsize(self.fontsize)
+        self.button_forward.label.set_fontsize(self.fontsize)
+        self.button_back.on_clicked(self.backward)
+        self.button_forward.on_clicked(self.forward)
+
+    def _update(self, event):
+        super(PageSlider, self)._update(event)
+        i = int(self.val)
+        if i >=self.valmax:
+            return
+        self._colorize(i)
+
+    def _colorize(self, i):
+        for j in range(self.numpages):
+            self.pageRects[j].set_facecolor(self.facecolor)
+        self.pageRects[i].set_facecolor(self.activecolor)
+
+    def forward(self, event):
+        current_i = int(self.val)
+        i = current_i+1
+        if (i < self.valmin) or (i >= self.valmax):
+            return
+        self.set_val(i)
+        self._colorize(i)
+
+    def backward(self, event):
+        current_i = int(self.val)
+        i = current_i-1
+        if (i < self.valmin) or (i >= self.valmax):
+            return
+        self.set_val(i)
+        self._colorize(i)
+
+
 
 
 if __name__ == "__main__":
