@@ -563,6 +563,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         for item in hdf5files:
             self.lw_target.addItem(item)
 
+        #sort items
+        #self.lw_target.sortItems(QtCore.Qt.DescendingOrder)
+        self.lw_target.sortItems()
+
         ## make output directory
         plot_output='./python_auto_plots.0.dir'
         notunique=1
