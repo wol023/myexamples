@@ -30,25 +30,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:9pt;&quot;&gt;perun_cluster_target.txt&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>121</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>Load target file</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="open_target_button">
    <property name="geometry">
     <rect>
@@ -75,9 +56,9 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>250</x>
+     <x>30</x>
      <y>0</y>
-     <width>111</width>
+     <width>731</width>
      <height>20</height>
     </rect>
    </property>
@@ -87,7 +68,7 @@ p, li { white-space: pre-wrap; }
     </font>
    </property>
    <property name="text">
-    <string>Cogent Plot</string>
+    <string>COGENT Plot: 1 click 'Load current dir' or 'Load target file' button, 2 select files, 3 click plot selected </string>
    </property>
   </widget>
   <widget class="QTextEdit" name="tbox_host">
@@ -210,8 +191,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QPushButton" name="button_plot_selected">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>20</y>
+     <x>510</x>
+     <y>40</y>
      <width>141</width>
      <height>41</height>
     </rect>
@@ -259,9 +240,9 @@ p, li { white-space: pre-wrap; }
   <widget class="QTextEdit" name="tbox_selected_download">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>450</y>
-     <width>201</width>
+     <x>440</x>
+     <y>460</y>
+     <width>341</width>
      <height>31</height>
     </rect>
    </property>
@@ -752,7 +733,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_vpar_mu">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>520</y>
      <width>85</width>
      <height>21</height>
@@ -768,9 +749,9 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_vpar_mu_smooth">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>540</y>
-     <width>131</width>
+     <width>141</width>
      <height>21</height>
     </rect>
    </property>
@@ -834,7 +815,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>280</x>
      <y>500</y>
-     <width>151</width>
+     <width>211</width>
      <height>21</height>
     </rect>
    </property>
@@ -850,7 +831,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>280</x>
      <y>520</y>
-     <width>201</width>
+     <width>211</width>
      <height>21</height>
     </rect>
    </property>
@@ -866,7 +847,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>280</x>
      <y>540</y>
-     <width>201</width>
+     <width>211</width>
      <height>21</height>
     </rect>
    </property>
@@ -882,7 +863,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>280</x>
      <y>560</y>
-     <width>201</width>
+     <width>211</width>
      <height>21</height>
     </rect>
    </property>

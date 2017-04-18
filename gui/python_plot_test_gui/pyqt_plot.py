@@ -525,8 +525,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                     dataNd_bvec_with_outer_ghost_comps[:,:,:,:,:,:]=dataNd_bvec_with_ghost_comps[:,:,:,:,:,:]
     
             
-    
-    
+            self.tbox_selected_download.setText(filename)
             #print ' collected ', num_decomposition, 'decompositions'
             self.print_ui(' collected '+str(num_decomposition)+' decompositions')
             if (withghost==1):
