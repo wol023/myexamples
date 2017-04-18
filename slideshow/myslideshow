@@ -1,0 +1,160 @@
+#!/usr/bin/env python
+
+import sys
+import os
+
+from PyQt4 import QtGui,QtCore
+
+def isExtensionSupported(filename):
+    """ Supported extensions viewable in SlideShow
+    """
+    if filename.endswith('PNG') or filename.endswith('png') or\
+     filename.endswith('JPG') or filename.endswith('jpg'):
+        return True
+
+def imageFilePaths(paths):
+    imagesWithPath = []
+    for _path in paths:
+        try:
+            dirContent = os.listdir(_path)
+        except OSError:
+            raise OSError("Provided path '%s' doesn't exists." % _path)
+
+        for each in dirContent:
+            selFile = os.path.join(_path, each)
+            if os.path.isfile(selFile) and isExtensionSupported(selFile):
+                imagesWithPath.append(selFile)
+    return list(set(imagesWithPath))
+
+
+class SlideShowPics(QtGui.QMainWindow):
+
+    """ SlideShowPics class defines the methods for UI and
+        working logic
+    """
+    def __init__(self, imgLst, parent=None):
+        super(SlideShowPics, self).__init__(parent)
+        # self._path = path
+        self._imageCache = []
+        self._imagesInList = imgLst
+        self._pause = False
+        self._count = 0
+        self.animFlag = True
+        self.delay=1000
+        self.updateTimer = QtCore.QTimer()
+        self.connect(self.updateTimer, QtCore.SIGNAL("timeout()"), self.nextImage)
+        self.prepairWindow()
+        self.nextImage()
+
+
+    def prepairWindow(self):
+        # Centre UI
+        screen = QtGui.QDesktopWidget().screenGeometry(self)
+        size = self.geometry()
+        self.move((screen.width()-size.width())/2, (screen.height()-size.height())/2)
+        self.setStyleSheet("QWidget{background-color: #000000;}")
+        self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
+        self.buildUi()
+        #self.showFullScreen()
+        self.playPause()
+
+    def buildUi(self):
+        self.label = QtGui.QLabel()
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.setCentralWidget(self.label)
+
+    def nextImage(self):
+        """ switch to next image or previous image
+        """
+        if self._imagesInList:
+            if self._count == len(self._imagesInList):
+                self._count = 0
+            self.showImageByPath(
+                    self._imagesInList[self._count])
+            if self.animFlag:
+                self._count += 1
+            else:
+                self._count -= 1
+            
+            self.setWindowTitle("{0:s} {1:d}/{2:d} {3:.1f} fps".format('file',self._count,len(self._imagesInList),1000.0/self.delay))
+
+    def showImageByPath(self, path):
+        if path:
+            image = QtGui.QImage(path)
+            pp = QtGui.QPixmap.fromImage(image)
+            self.label.setPixmap(pp.scaled(
+                    self.label.size(),
+                    QtCore.Qt.KeepAspectRatio,
+                    QtCore.Qt.SmoothTransformation))
+
+    def playPause(self):
+        if not self._pause:
+            self._pause = True
+            self.updateTimer.start(self.delay)
+            return self._pause
+        else:
+            self._pause = False
+            self.updateTimer.stop()
+
+    def keyPressEvent(self, keyevent):
+        """ Capture key to exit, next image, previous image,
+            on Escape , Key Right and key left respectively.
+        """
+        event = keyevent.key()
+        if event == QtCore.Qt.Key_Escape:
+            self.close()
+        if event == QtCore.Qt.Key_Left:
+            self.animFlag = False
+            self.nextImage()
+        if event == QtCore.Qt.Key_Right:
+            self.animFlag = True
+            self.nextImage()
+        if event == QtCore.Qt.Key_Up:
+            self.delay = self.delay*0.9
+            self.updateTimer.start(self.delay)
+            self.animFlag = True
+            self.nextImage()
+        if event == QtCore.Qt.Key_Down:
+            self.delay = self.delay*1.1
+            self.updateTimer.start(self.delay)
+            self.animFlag = True
+            self.nextImage()
+        if event == QtCore.Qt.Key_Return:
+            self.delay = 1000
+            self.updateTimer.start(self.delay)
+            self.animFlag = True
+            self.nextImage()
+        if event == 32:
+            self._pause = self.playPause()
+
+def main(paths):
+    if isinstance(paths, list):
+        imgLst = imageFilePaths(paths)
+    elif isinstance(paths, str):
+        imgLst =  imageFilePaths([paths])
+    else:
+        print " You can either enter a list of paths or single path"
+
+    imgLst.sort()
+
+    app = QtGui.QApplication(sys.argv)
+    if imgLst:
+        window =  SlideShowPics(imgLst)
+        window.show()
+        window.raise_()
+        app.exec_()
+    else:
+        msgBox = QtGui.QMessageBox()
+        msgBox.setText("No Image found in any of the paths below\n\n%s" % paths)
+        msgBox.setStandardButtons(msgBox.Cancel | msgBox.Open);
+        if msgBox.exec_() == msgBox.Open:
+            main(str(QtGui.QFileDialog.getExistingDirectory(None, 
+                "Select Directory to SlideShow",
+                os.getcwd())))
+
+if __name__ == '__main__':
+    curntPaths = os.getcwd()
+    if len(sys.argv) > 1:
+        curntPaths = sys.argv[1:]
+    main(curntPaths)
+
