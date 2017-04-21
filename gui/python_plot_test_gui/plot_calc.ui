@@ -250,7 +250,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_ghosts_internal">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>130</x>
      <y>540</y>
      <width>121</width>
      <height>21</height>
@@ -266,8 +266,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_summation">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>500</y>
+     <x>20</x>
+     <y>510</y>
      <width>91</width>
      <height>21</height>
     </rect>
@@ -333,40 +333,40 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>310</x>
      <y>90</y>
      <width>31</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>x_pt</string>
+    <string>x</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>350</x>
      <y>90</y>
      <width>31</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>y_pt</string>
+    <string>y</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>380</x>
+     <x>390</x>
      <y>90</y>
      <width>31</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>z_pt</string>
+    <string>z</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_13">
@@ -419,7 +419,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_ghosts">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>130</x>
      <y>520</y>
      <width>121</width>
      <height>21</height>
@@ -478,8 +478,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_3d_interactive">
    <property name="geometry">
     <rect>
-     <x>690</x>
-     <y>520</y>
+     <x>20</x>
+     <y>530</y>
      <width>85</width>
      <height>21</height>
     </rect>
@@ -733,7 +733,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_vpar_mu">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>250</x>
      <y>520</y>
      <width>85</width>
      <height>21</height>
@@ -749,7 +749,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_vpar_mu_smooth">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>250</x>
      <y>540</y>
      <width>141</width>
      <height>21</height>
@@ -765,7 +765,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_deltaf_vpar_mu">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>630</x>
      <y>540</y>
      <width>121</width>
      <height>21</height>
@@ -775,13 +775,13 @@ p, li { white-space: pre-wrap; }
     <string>delta-f-vpar-mu</string>
    </property>
    <property name="checked">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QCheckBox" name="cb_deltaf_vpar_muat1">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>630</x>
      <y>560</y>
      <width>141</width>
      <height>21</height>
@@ -791,13 +791,13 @@ p, li { white-space: pre-wrap; }
     <string>delta-f-vpar(mu=1)</string>
    </property>
    <property name="checked">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QCheckBox" name="cb_f_vpar_muat1">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>630</x>
      <y>520</y>
      <width>161</width>
      <height>21</height>
@@ -807,13 +807,13 @@ p, li { white-space: pre-wrap; }
     <string>f-vpar (mu=1) overlap</string>
    </property>
    <property name="checked">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QCheckBox" name="cb_vpar_mu_maxwell2D">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>390</x>
      <y>500</y>
      <width>211</width>
      <height>21</height>
@@ -829,7 +829,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_vpar_maxwell2D_mu_1">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>390</x>
      <y>520</y>
      <width>211</width>
      <height>21</height>
@@ -845,7 +845,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_vpar_maxwell2D_diff_mu_1">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>390</x>
      <y>540</y>
      <width>211</width>
      <height>21</height>
@@ -861,7 +861,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QCheckBox" name="cb_vpar_maxwell2D_diff">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>390</x>
      <y>560</y>
      <width>211</width>
      <height>21</height>
@@ -872,6 +872,22 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="checked">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="cb_vpar_maxwell2D_diff_time">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>560</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Vpar-maxwell2D-diff-time</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>

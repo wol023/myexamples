@@ -47,6 +47,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         QtGui.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+        self.np_vpar_maxwell2D_diff_time=[]
         self.open_target_button.clicked.connect(self.print_target_file_lines)
         self.open_load_button.clicked.connect(self.print_current_dir_lines)
         self.button_plot_selected.clicked.connect(self.plotFigure)
@@ -551,6 +552,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         QtGui.QApplication.processEvents()
 
     def print_current_dir_lines(self):
+        self.lw_target.clear()
         current_dir = str(self.current_dir_box.toPlainText())
         self.print_ui(current_dir)
         hdf5files=[]
@@ -568,6 +570,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
         ## make output directory
         plot_output='./python_auto_plots.0.dir'
+        self.tbox_localout.clear()
         notunique=1
         while notunique:
             if os.path.exists(plot_output):
@@ -583,6 +586,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.tbox_transit_time.setText(str(self.ref_time))
 
     def print_target_file_lines(self):
+        self.lw_target.clear()
         target_file = (self.target_list_box.toPlainText())
         with open(target_file,'r') as fo:
             self.print_ui('target file opened.. ready.')
@@ -621,6 +625,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         #set first row
         ## make output directory
         plot_output='./python_auto_plots.0.dir'
+        self.tbox_localout.clear()
         notunique=1
         while notunique:
             if os.path.exists(plot_output):
@@ -662,6 +667,13 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         speciesname='s'
                     #from plot_cogent_pack import plot_dfn
                     self.plot_dfn(selected_files[i],speciesname=speciesname,x_pt=x_pt,y_pt=y_pt,z_pt=z_pt,targetdir=plot_output)
+                    if i==len(selected_files)-1:
+                        if self.cb_vpar_maxwell2D_diff_time.checkState():
+                            #print self.np_vpar_maxwell2D_diff_time
+                            #print self.np_vpar_maxwell2D_diff_time.shape
+                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='spline36',title='time vs. delta f',xlabel='vpar',ylabel='time',targetdir=plot_output)
+
+
                 if 'potential' in selected_files[i]:
                     self.plot_potential(selected_files[i],ghost=0,x_slice=x_pt,y_slice=x_pt,z_slice=z_pt,targetdir=plot_output)
                 if 'BField' in selected_files[i]:
@@ -722,11 +734,13 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                     if 'gksystem.num_cells' in lhsrhs[0]:
                         num_cells=lhsrhs[1].split()
                         if len(num_cells)==4:
+                            self.gksystem_dimension=4
                             self.te_x_total.setText(str(num_cells[0]))
                             self.te_y_total.setText(str(num_cells[1]))
                             self.te_vpar_total.setText(str(num_cells[2]))
-                            self.te_mu.setText(str(num_cells[3]))
+                            self.te_mu_total.setText(str(num_cells[3]))
                         if len(num_cells)==5:
+                            self.gksystem_dimension=5
                             self.te_x_total.setText(str(num_cells[0]))
                             self.te_y_total.setText(str(num_cells[1]))
                             self.te_z_total.setText(str(num_cells[2]))
@@ -761,6 +775,52 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         ref_time=units_length/ref_speed
         return ref_time
 
+    def plot_dfn_diff_time(self,pathfilename,var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1,label='',saveplots=1,showplots=0,ghost=0,targetdir=[],symmetric_cbar=0,interpolation='none'):
+        head=os.path.split(pathfilename)
+        path=head[0]
+        filename=head[1]
+        basedir=os.getcwd()
+        if targetdir==[]:
+            targetdir='./python_auto_plots'
+
+        self.init_plotting()
+        fig_dfn_diff_time=plt.figure()
+        plt.subplot(111)
+        #plt.gca().margins(0.1, 0.1)
+        if symmetric_cbar>0:
+            v_min = self.var[:,:,0].min()
+            v_max = var[:,:,0].max()
+            if v_min<0 and v_max>0:
+                v_min=-max(abs(v_min),abs(v_max))
+                v_max=max(abs(v_min),abs(v_max))
+                v_max=max(abs(v_min),abs(v_max))
+                im=plt.imshow(var[:,:],vmin=v_min,vmax=v_max,interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+            else:
+                im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+        else:
+            im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+        plt.title(title)
+        if xlabel=='xlabel':
+            plt.xlabel(r'$\bar{v}_\parallel$')
+        else:
+            plt.xlabel(xlabel)
+        if ylabel=='ylabel':
+            plt.ylabel(r'$\bar{\mu}$')
+        else:
+            plt.ylabel(ylabel)
+        self.add_colorbar(im,field=var[:,:])
+        fig_dfn_diff_time.set_tight_layout(True)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+            os.chdir(targetdir)
+            plt.savefig(filename.replace('.hdf5','.dfn_diff_time.png'))
+            plt.savefig(filename.replace('.hdf5','.dfn_diff_time.eps'))
+            os.chdir(basedir)
+        if showplots==0:
+            plt.close('fig_dfn_diff_time')
+    
+ 
     
     def plot_potential(self,pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
         head=os.path.split(pathfilename)
@@ -796,7 +856,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         #if showplots==0:
         #    plt.close('fig')
 
-        fig=self.plot_Nd(dataNd_potential_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+        fig_potential=self.plot_Nd(dataNd_potential_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
         if saveplots>0:
             if not os.path.exists(targetdir):
                 os.mkdir(targetdir)
@@ -805,7 +865,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             plt.savefig(filename.replace('.hdf5','.potential_slice.eps'))
             os.chdir(basedir)
         if showplots==0:
-            plt.close('fig')
+            plt.close('fig_potential')
     
         if ghost>0:
             #fig=plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var)
@@ -819,7 +879,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             #if showplots==0:
             #    plt.close('fig')
 
-            fig=self.plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+            fig_potential=self.plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
             if saveplots>0:
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
@@ -828,7 +888,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.potential_mlab_ghost_slice.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig')
+                plt.close('fig_potential')
     
         return
 
@@ -864,7 +924,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         
         #velocity space
         if (self.cb_vpar_mu.checkState()):
-            fig_dfn2d=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var)
+            if self.gksystem_dimension==5:
+                fig_dfn2d=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var)
+            elif self.gksystem_dimension==4:
+                fig_dfn2d=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,:,:,:],title=title_var)
         #uncomment below for dfn2d plot
             if saveplots>0:
                 if not os.path.exists(targetdir):
@@ -880,7 +943,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         
         if (self.cb_vpar_mu_smooth.checkState()):
         #uncomment below for interpolation plot
-            fig_dfn2d_interp=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var,interpolation='spline36')
+            if self.gksystem_dimension==5:
+                fig_dfn2d_interp=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],title=title_var,interpolation='spline36')
+            elif self.gksystem_dimension==4:
+                fig_dfn2d_interp=self.plot_Nd(dataNd_dfn_comps[x_pt,y_pt,:,:,:],title=title_var,interpolation='spline36')
             if saveplots>0:
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
@@ -907,7 +973,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
         coef_maxwell,mhat,That = self.get_maxwellian_coef(pathfilename,ion_mass,t0_grid_func,elec_mass,et0_grid_func,nhat)
         
-        data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].shape
+        if self.gksystem_dimension==5:
+            data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].shape
+        elif self.gksystem_dimension==4:
+            data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,:,:,:].shape
         data2d_maxwell=np.linspace(0.0,0.1,data_2d_shape[0]*data_2d_shape[1]*data_2d_shape[2]).reshape((data_2d_shape[0],data_2d_shape[1],data_2d_shape[2]))
         n_fit=np.linspace(0.0,0.1,data_2d_shape[1])
         t_fit=np.linspace(0.0,0.1,data_2d_shape[1])
@@ -916,14 +985,20 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             #sys.stdout.write('mu_ind='+str(i))
             #sys.stdout.flush()
             #fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
-            fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = self.get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
+            if self.gksystem_dimension==5:
+                fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = self.get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
+            elif self.gksystem_dimension==4:
+                fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = self.get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
             data2d_maxwell[:,i,0]=fitted_f
 
         if (self.cb_deltaf_vpar_mu.checkState()):
         #plot delta f
             #data2dmax=max(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].flatten())
             data2dmax=max(data2d_maxwell.flatten())
-            fig_deltaf=self.plot_Nd((dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data2d_maxwell)/data2dmax,title="$(f_{COGENT}-f_M)/f_{M,Max}$",interpolation='spline36')
+            if self.gksystem_dimension==5:
+                fig_deltaf=self.plot_Nd((dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data2d_maxwell)/data2dmax,title="$(f_{COGENT}-f_M)/f_{M,Max}$",interpolation='spline36')
+            elif self.gksystem_dimension==4:
+                fig_deltaf=self.plot_Nd((dataNd_dfn_comps[x_pt,y_pt,:,:,:]-data2d_maxwell)/data2dmax,title="$(f_{COGENT}-f_M)/f_{M,Max}$",interpolation='spline36')
             if saveplots>0:
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
@@ -935,12 +1010,15 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             if showplots==0:
                 plt.close('fig_deltaf')
 
-        if (self.cb_f_vpar_muat1.checkState() or  self.cb_deltaf_vpar_muat1.checkState() or  self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState()  ):
+        if (self.cb_f_vpar_muat1.checkState() or  self.cb_deltaf_vpar_muat1.checkState() or  self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState() or self.cb_vpar_maxwell2D_diff_time.checkState() ):
             mu_pt=1
 
         if (self.cb_f_vpar_muat1.checkState()):
             #plot difference
-            fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+            if self.gksystem_dimension==5:
+                fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+            elif self.gksystem_dimension==4:
+                fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
             legend_maxwellian = 'Maxw.'+r'$(n, T, V_s)$'+' = (%.2f, %.2f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
             self.oplot_1d(data2d_maxwell[:,mu_pt,0],fig_overlap,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
             if saveplots>0:
@@ -958,7 +1036,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         if (self.cb_deltaf_vpar_muat1.checkState()):
             maxatmu1=max(data2d_maxwell[:,mu_pt,0].flatten())
             #maxwell difference plot
-            fig_maxwell_diff=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data2d_maxwell[:,mu_pt,0])/maxatmu1  ,xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='(f_S - f_M)/f_{M,max}' )
+            if self.gksystem_dimension==5:
+                fig_maxwell_diff=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data2d_maxwell[:,mu_pt,0])/maxatmu1  ,xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='(f_S - f_M)/f_{M,max}' )
+            elif self.gksystem_dimension==4:
+                fig_maxwell_diff=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,0]-data2d_maxwell[:,mu_pt,0])/maxatmu1  ,xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='(f_S - f_M)/f_{M,max}' )
             if saveplots>0:
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
@@ -972,8 +1053,11 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 
         #2dfitting
-        if (self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState() ):
-            data_fitted,popt=self.get_maxwellian_fitting_2D(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,0],VPAR_SCALE,MU_SCALE)
+        if (self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState() or self.cb_vpar_maxwell2D_diff_time.checkState()):
+            if self.gksystem_dimension==5:
+                data_fitted,popt=self.get_maxwellian_fitting_2D(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,0],VPAR_SCALE,MU_SCALE)
+            elif self.gksystem_dimension==4:
+                data_fitted,popt=self.get_maxwellian_fitting_2D(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,:,:,0],VPAR_SCALE,MU_SCALE)
             self.print_ui("Popt="+str(popt))
 
         if (self.cb_vpar_mu_maxwell2D.checkState()):
@@ -1026,7 +1110,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
      
 
         if (self.cb_vpar_maxwell2D_mu_1.checkState()):
-            fig_vpar_maxwell_2d_mu_1=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+            if self.gksystem_dimension==5:
+                fig_vpar_maxwell_2d_mu_1=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+            elif self.gksystem_dimension==4:
+                fig_vpar_maxwell_2d_mu_1=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
 
             if wave_phase_speed != -1.0:
                 normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
@@ -1055,7 +1142,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.close('fig_vpar_maxwell_2d_mu_1')
 
 
-        if (self.cb_vpar_maxwell2D_diff_mu_1.checkState()):
+        if (self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff_time.checkState()):
             #maxwell difference plot
             if wave_phase_speed != -1.0:
                 fig=plt.figure()
@@ -1071,7 +1158,19 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
             data_fitted_max=max(data_fitted[:,mu_pt,0].flatten())
 
-            fig=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max,fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$(f_%s-f_M)/f_{M,max}$'%speciesname,legend=1,ylabel='$(f_'+speciesname+'-f_M)/f_{M,max}$',symmetric_ylim=1, title=title_var)
+            if self.gksystem_dimension==5:
+                fig=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max,fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$(f_%s-f_M)/f_{M,max}$'%speciesname,legend=1,ylabel='$(f_'+speciesname+'-f_M)/f_{M,max}$',symmetric_ylim=1, title=title_var)
+            elif self.gksystem_dimension==4:
+                fig=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max,fig=fig,xaxis=np.linspace(-1,1,len(data_fitted[:,mu_pt,0])),label='$(f_%s-f_M)/f_{M,max}$'%speciesname,legend=1,ylabel='$(f_'+speciesname+'-f_M)/f_{M,max}$',symmetric_ylim=1, title=title_var)
+
+            if self.cb_vpar_maxwell2D_diff_time.checkState():
+                if len(self.np_vpar_maxwell2D_diff_time)==0:
+                    self.np_vpar_maxwell2D_diff_time=(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max
+                else:
+                    self.np_vpar_maxwell2D_diff_time=np.vstack([self.np_vpar_maxwell2D_diff_time,(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max])
+
+
+
             if saveplots>0:
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
@@ -1092,7 +1191,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             else:
                 title_var=title_var+r'$(t/t_0=%.2f)$'%cogent_time
 
-            fig_maxwell2d_diff=self.plot_Nd( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data_fitted)/data_fitted_max,title=title_var,interpolation='spline36',symmetric_cbar=1)
+            if self.gksystem_dimension==5:
+                fig_maxwell2d_diff=self.plot_Nd( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data_fitted)/data_fitted_max,title=title_var,interpolation='spline36',symmetric_cbar=1)
+            elif self.gksystem_dimension==4:
+                fig_maxwell2d_diff=self.plot_Nd( (dataNd_dfn_comps[x_pt,y_pt,:,:,:]-data_fitted)/data_fitted_max,title=title_var,interpolation='spline36',symmetric_cbar=1)
             if saveplots>0:
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
@@ -1223,6 +1325,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             fname=self.find('*.in', './')
             inputfile=fname[0]
         with open(inputfile,'r') as f:
+            n0_grid_func='1.0'
             for line in f:
                 if line.lstrip().startswith('#'): #skip comment
                     continue
@@ -1266,6 +1369,9 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             fname=self.find('*.in', './')
             inputfile=fname[0]
         with open(inputfile,'r') as f:
+            bz_found=0
+            by_found=0
+            btor_scale_found=0
             for line in f:
                 if line.lstrip().startswith('#'): #skip comment
                     continue
@@ -1283,10 +1389,15 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
                     if 'gksystem.magnetic_geometry_mapping.slab.Bz_inner' in lhsrhs[0]:
                         bz_inner = float(lhsrhs[1])
+                        bz_found = 1
                         self.print_ui('IN:bz_inner = '+str(bz_inner))
                     if 'gksystem.magnetic_geometry_mapping.slab.By_inner' in lhsrhs[0]:
                         by_inner = float(lhsrhs[1])
+                        by_found = 1
                         self.print_ui('IN:by_inner = '+str(by_inner))
+                    if 'gksystem.magnetic_geometry_mapping.miller.Btor_scale' in lhsrhs[0]:
+                        btor_scale= float(lhsrhs[1])
+                        btor_scale= 1
 
  
             return np.sqrt(bz_inner**2+by_inner**2)
@@ -1918,7 +2029,7 @@ class slice3(object):
 
 
     def show(self):
-        plt.show()
+        self.fig.show()
 
 
 class  DiscreteSlider(Slider):

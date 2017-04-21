@@ -41,8 +41,8 @@ Done constructing Miller equilibrium geometry
 Constructing magnetic geometry
 Done constructing magnetic geometry
    Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
-   Phase space box ((0,0,-8,0) (15,7,7,7) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
    Phase space box ((0,8,-8,0) (15,15,7,7) (0,0,0,0)) is assigned to process 1, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((0,0,-8,0) (15,7,7,7) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
 Adding species and constructing gyrocenter coordinates...
    hydrogen: kinetic species with mass = 4, charge = 1
 Done adding species and constructing coordinates
@@ -299,7 +299,7 @@ Step 1
   Distribution Function Extrema:
     Species 0:	52.2909 [max]	-0.000428113 [min]
 
-Step 1 completed, simulation time is 0.0764494, solver wall time is 0.86329 seconds
+Step 1 completed, simulation time is 0.0764494, solver wall time is 0.854069 seconds
 ----
 
 Step 2
@@ -339,7 +339,7 @@ Step 2
   Distribution Function Extrema:
     Species 0:	52.2915 [max]	-0.000964253 [min]
 
-Step 2 completed, simulation time is 0.160544, solver wall time is 1.74655 seconds
+Step 2 completed, simulation time is 0.160544, solver wall time is 1.74524 seconds
 ----
 
 Step 3
@@ -382,7 +382,7 @@ Step 3
   Distribution Function Extrema:
     Species 0:	52.2921 [max]	-0.00152319 [min]
 
-Step 3 completed, simulation time is 0.253048, solver wall time is 2.63505 seconds
+Step 3 completed, simulation time is 0.253048, solver wall time is 2.64032 seconds
 ----
 
 Step 4
@@ -425,7 +425,7 @@ Step 4
   Distribution Function Extrema:
     Species 0:	52.2929 [max]	-0.00200066 [min]
 
-Step 4 completed, simulation time is 0.354802, solver wall time is 3.49383 seconds
+Step 4 completed, simulation time is 0.354802, solver wall time is 3.57428 seconds
 ----
 
 Step 5
@@ -468,7 +468,7 @@ Step 5
   Distribution Function Extrema:
     Species 0:	52.2938 [max]	-0.00239496 [min]
 
-Step 5 completed, simulation time is 0.466731, solver wall time is 4.40633 seconds
+Step 5 completed, simulation time is 0.466731, solver wall time is 4.46021 seconds
 ----
 
 Step 6
@@ -514,7 +514,7 @@ Step 6
   Distribution Function Extrema:
     Species 0:	52.2948 [max]	-0.00251954 [min]
 
-Step 6 completed, simulation time is 0.589854, solver wall time is 5.29713 seconds
+Step 6 completed, simulation time is 0.589854, solver wall time is 5.36994 seconds
 ----
 
 Step 7
@@ -563,7 +563,7 @@ Step 7
   Distribution Function Extrema:
     Species 0:	52.296 [max]	-0.00303602 [min]
 
-Step 7 completed, simulation time is 0.725289, solver wall time is 6.18518 seconds
+Step 7 completed, simulation time is 0.725289, solver wall time is 6.29675 seconds
 ----
 
 Step 8
@@ -612,7 +612,7 @@ Step 8
   Distribution Function Extrema:
     Species 0:	52.2974 [max]	-0.00325098 [min]
 
-Step 8 completed, simulation time is 0.874267, solver wall time is 7.06969 seconds
+Step 8 completed, simulation time is 0.874267, solver wall time is 7.19319 seconds
 ----
 
 Step 9
@@ -661,7 +661,7 @@ Step 9
   Distribution Function Extrema:
     Species 0:	52.2988 [max]	-0.00318536 [min]
 
-Step 9 completed, simulation time is 1.02719, solver wall time is 7.96515 seconds
+Step 9 completed, simulation time is 1.02719, solver wall time is 8.08877 seconds
 ----
 
 Step 10
@@ -710,7 +710,7 @@ Step 10
   Distribution Function Extrema:
     Species 0:	52.3003 [max]	-0.00391789 [min]
 
-Step 10 completed, simulation time is 1.18012, solver wall time is 8.86262 seconds
+Step 10 completed, simulation time is 1.18012, solver wall time is 8.98423 seconds
 ----
 Writing checkpoint file
 Writing history file
@@ -726,5 +726,5 @@ Writing history file
   Time integrator counts:-
     Time steps: 10
 ----
-Solve wall time (in seconds): 8.87593
-Total wall time (in seconds): 9.06203
+Solve wall time (in seconds): 9.02773
+Total wall time (in seconds): 9.24565
