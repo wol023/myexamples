@@ -7,6 +7,8 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1 
+from numpy.ma import masked_array
+import matplotlib.colors as mcolors
 
 #To parse n0_grid_func
 from sympy.parsing.sympy_parser import parse_expr
@@ -671,7 +673,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         if self.cb_vpar_maxwell2D_diff_time.checkState():
                             #print self.np_vpar_maxwell2D_diff_time
                             #print self.np_vpar_maxwell2D_diff_time.shape
-                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='spline36',title='time vs. delta f',xlabel='vpar',ylabel='time',targetdir=plot_output)
+                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='spline36',title='time vs. delta f',xlabel='vpar',ylabel='time',targetdir=plot_output,symmetric_cbar=-1)
 
 
                 if 'potential' in selected_files[i]:
@@ -786,6 +788,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.init_plotting()
         fig_dfn_diff_time=plt.figure()
         plt.subplot(111)
+
         #plt.gca().margins(0.1, 0.1)
         if symmetric_cbar>0:
             v_min = self.var[:,:,0].min()
@@ -797,8 +800,30 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 im=plt.imshow(var[:,:],vmin=v_min,vmax=v_max,interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
             else:
                 im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+            self.add_colorbar(im,field=var[:,:])
+        elif symmetric_cbar<0:
+            #varp=var.copy()
+            #varn=var.copy()
+            #varp[np.where(var<=0)]=np.nan
+            #varn[np.where(var>0)]=np.nan
+            #varp = masked_array(var,var<0)
+            #varn = masked_array(var,var>=0)
+
+            colors1 = plt.cm.Blues_r(np.linspace(0., 1, 128))
+            colors2 = plt.cm.Reds(np.linspace(0, 1, 128))
+            colors = np.vstack((colors1, colors2))
+            mymap = mcolors.LinearSegmentedColormap.from_list('my_colormap', colors)
+            im = plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=mymap)
+            plt.colorbar()
+
+
+            #imp=plt.imshow(varp[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Reds'))#float(num_ycell)/float(num_xcell))
+            #cbp = plt.colorbar(imp,shrink=0.25)
+            #imn=plt.imshow(varn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Blues_r'))#float(num_ycell)/float(num_xcell))
+            #cbn = plt.colorbar(imn,shrink=0.25)
         else:
             im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
+            self.add_colorbar(im,field=var[:,:])
         plt.title(title)
         if xlabel=='xlabel':
             plt.xlabel(r'$\bar{v}_\parallel$')
@@ -808,7 +833,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             plt.ylabel(r'$\bar{\mu}$')
         else:
             plt.ylabel(ylabel)
-        self.add_colorbar(im,field=var[:,:])
         fig_dfn_diff_time.set_tight_layout(True)
         if saveplots>0:
             if not os.path.exists(targetdir):
@@ -1687,6 +1711,30 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             plt.rcParams['legend.frameon'] = False
             plt.rcParams['legend.loc'] = 'center left'
             plt.rcParams['axes.linewidth'] = 1
+
+    def add_colorbar_dual_u(self, im, aspect=20, pad_fraction=0.5, field=[], **kwargs):
+        """Add a vertical color bar to an image plot."""
+        divider = axes_grid1.make_axes_locatable(im.axes)
+        width = axes_grid1.axes_size.AxesY(im.axes, aspect=1.0/aspect)
+        print width
+        print type(width)
+        pad = axes_grid1.axes_size.Fraction(pad_fraction, width)
+        current_ax = plt.gca()
+        cax = divider.append_axes("right", size=width, pad=pad)
+        plt.sca(current_ax)
+        cb = im.axes.figure.colorbar(im, cax=cax, **kwargs)
+        #change number of ticks
+        m0=np.nanmin(field)            # colorbar min value
+        m4=np.nanmax(field)            # colorbar max value
+        num_ticks=5
+        ticks = np.linspace(m0, m4, num_ticks)
+        labels = np.linspace(m0, m4, num_ticks)
+        labels_math=[self.latex_float(i) for i in labels]
+        cb.set_ticks(ticks)
+        cb.set_ticklabels(labels_math)
+        
+        cb.update_ticks()
+        return cb
 
     def add_colorbar(self, im, aspect=20, pad_fraction=0.5, field=[], **kwargs):
         """Add a vertical color bar to an image plot."""
