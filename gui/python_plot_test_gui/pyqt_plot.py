@@ -814,6 +814,9 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             varlogp = np.log10(varlogp)
             varlogn = np.log10(-varlogn)
 
+            varlogp = masked_aray(varlogp,varlogp<-10)
+            varlogn = masked_aray(varlogn,varlogn<-10)
+
             #colors1 = plt.cm.Blues_r(np.linspace(0., 1, 128))
             #colors2 = plt.cm.Reds(np.linspace(0, 1, 128))
             #colors = np.vstack((colors1, colors2))
