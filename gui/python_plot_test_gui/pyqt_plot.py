@@ -806,21 +806,29 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             #varn=var.copy()
             #varp[np.where(var<=0)]=np.nan
             #varn[np.where(var>0)]=np.nan
-            #varp = masked_array(var,var<0)
-            #varn = masked_array(var,var>=0)
 
-            colors1 = plt.cm.Blues_r(np.linspace(0., 1, 128))
-            colors2 = plt.cm.Reds(np.linspace(0, 1, 128))
-            colors = np.vstack((colors1, colors2))
-            mymap = mcolors.LinearSegmentedColormap.from_list('my_colormap', colors)
-            im = plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=mymap)
-            plt.colorbar()
+            varp = masked_array(var,var<=0)
+            varn = masked_array(var,var>=0)
+            varlogp = varp.copy()
+            varlogn = varn.copy()
+            varlogp = np.log10(varlogp)
+            varlogn = np.log10(-varlogn)
+
+            #colors1 = plt.cm.Blues_r(np.linspace(0., 1, 128))
+            #colors2 = plt.cm.Reds(np.linspace(0, 1, 128))
+            #colors = np.vstack((colors1, colors2))
+            #mymap = mcolors.LinearSegmentedColormap.from_list('my_colormap', colors)
+
+            #im = plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=mymap)
+            #plt.colorbar()
 
 
             #imp=plt.imshow(varp[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Reds'))#float(num_ycell)/float(num_xcell))
-            #cbp = plt.colorbar(imp,shrink=0.25)
+            imp=plt.imshow(varlogp[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Reds'))#float(num_ycell)/float(num_xcell))
+            cbp = plt.colorbar(imp,shrink=0.25)
             #imn=plt.imshow(varn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Blues_r'))#float(num_ycell)/float(num_xcell))
-            #cbn = plt.colorbar(imn,shrink=0.25)
+            imn=plt.imshow(varlogn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Blues'))#float(num_ycell)/float(num_xcell))
+            cbn = plt.colorbar(imn,shrink=0.25)
         else:
             im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
             self.add_colorbar(im,field=var[:,:])
