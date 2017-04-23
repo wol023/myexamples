@@ -675,7 +675,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         if self.cb_vpar_maxwell2D_diff_time.checkState():
                             #print self.np_vpar_maxwell2D_diff_time
                             #print self.np_vpar_maxwell2D_diff_time.shape
-                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='none',title='delta f',xlabel=r'$\bar{v}_\parallel$',ylabel='time ('+r'$\mu$'+'s)',targetdir=plot_output,symmetric_cbar=-1,cogent_time_start=self.start_time,cogent_time_end=self.end_time)
+                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='none',title=r'$\log_{10} (\delta f)$',xlabel=r'$\bar{v}_\parallel$',ylabel='time ('+r'$\mu$'+'s)',targetdir=plot_output,symmetric_cbar=-1,cogent_time_start=self.start_time,cogent_time_end=self.end_time)
 
 
                 if 'potential' in selected_files[i]:
@@ -838,6 +838,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             tick_locator = ticker.MaxNLocator(nbins=6)
             cbp.locator = tick_locator
             cbp.update_ticks()
+            cbp.ax.set_title(r'     $\delta f>0$')
             #imn=plt.imshow(varn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Blues_r'))#float(num_ycell)/float(num_xcell))
             if self.ref_time!=-1.0:
                 imn=plt.imshow(varlogn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,cogent_time_start*self.ref_time*1.0E6,cogent_time_end*self.ref_time*1.0E6],aspect=2.0/((cogent_time_end-cogent_time_start)*self.ref_time*1.0E6) ,cmap=plt.get_cmap('Blues'))#float(num_ycell)/float(num_xcell))
@@ -847,6 +848,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             tick_locator = ticker.MaxNLocator(nbins=6)
             cbn.locator = tick_locator
             cbn.update_ticks()
+            cbn.ax.set_title(r'     $\delta f<0$')
         else:
             im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
             self.add_colorbar(im,field=var[:,:])
