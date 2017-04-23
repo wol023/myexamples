@@ -50,6 +50,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self.np_vpar_maxwell2D_diff_time=[]
+        self.start_time=0.0
+        self.end_time=1.0
         self.open_target_button.clicked.connect(self.print_target_file_lines)
         self.open_load_button.clicked.connect(self.print_current_dir_lines)
         self.button_plot_selected.clicked.connect(self.plotFigure)
@@ -673,7 +675,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         if self.cb_vpar_maxwell2D_diff_time.checkState():
                             #print self.np_vpar_maxwell2D_diff_time
                             #print self.np_vpar_maxwell2D_diff_time.shape
-                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='spline36',title='time vs. delta f',xlabel='vpar',ylabel='time',targetdir=plot_output,symmetric_cbar=-1)
+                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='none',title='delta f',xlabel=r'$\bar{v}_\parallel$',ylabel='time ('+r'$\mu$'+'s)',targetdir=plot_output,symmetric_cbar=-1,cogent_time_start=self.start_time,cogent_time_end=self.end_time)
 
 
                 if 'potential' in selected_files[i]:
@@ -777,7 +779,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         ref_time=units_length/ref_speed
         return ref_time
 
-    def plot_dfn_diff_time(self,pathfilename,var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1,label='',saveplots=1,showplots=0,ghost=0,targetdir=[],symmetric_cbar=0,interpolation='none'):
+    def plot_dfn_diff_time(self,pathfilename,var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1,label='',saveplots=1,showplots=0,ghost=0,targetdir=[],symmetric_cbar=0,interpolation='none',cogent_time_start=0.0, cogent_time_end=1.0):
         head=os.path.split(pathfilename)
         path=head[0]
         filename=head[1]
@@ -827,11 +829,24 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 
             #imp=plt.imshow(varp[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Reds'))#float(num_ycell)/float(num_xcell))
-            imp=plt.imshow(varlogp[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Reds'))#float(num_ycell)/float(num_xcell))
-            cbp = plt.colorbar(imp,shrink=0.25)
+
+            if self.ref_time!=-1.0:
+                imp=plt.imshow(varlogp[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,cogent_time_start*self.ref_time*1.0E6,cogent_time_end*self.ref_time*1.0E6],aspect=2.0/((cogent_time_end-cogent_time_start)*self.ref_time*1.0E6) ,cmap=plt.get_cmap('Reds'))#float(num_ycell)/float(num_xcell))
+            else:
+                imp=plt.imshow(varlogp[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,cogent_time_start,cogent_time_end],aspect=2.0/((cogent_time_end-cogent_time_start)) ,cmap=plt.get_cmap('Reds'))#float(num_ycell)/float(num_xcell))
+            cbp = plt.colorbar(imp,shrink=0.5)
+            tick_locator = ticker.MaxNLocator(nbins=6)
+            cbp.locator = tick_locator
+            cbp.update_ticks()
             #imn=plt.imshow(varn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Blues_r'))#float(num_ycell)/float(num_xcell))
-            imn=plt.imshow(varlogn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0,cmap=plt.get_cmap('Blues'))#float(num_ycell)/float(num_xcell))
-            cbn = plt.colorbar(imn,shrink=0.25)
+            if self.ref_time!=-1.0:
+                imn=plt.imshow(varlogn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,cogent_time_start*self.ref_time*1.0E6,cogent_time_end*self.ref_time*1.0E6],aspect=2.0/((cogent_time_end-cogent_time_start)*self.ref_time*1.0E6) ,cmap=plt.get_cmap('Blues'))#float(num_ycell)/float(num_xcell))
+            else:
+                imn=plt.imshow(varlogn[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,cogent_time_start,cogent_time_end],aspect=2.0/((cogent_time_end-cogent_time_start)) ,cmap=plt.get_cmap('Blues'))#float(num_ycell)/float(num_xcell))
+            cbn = plt.colorbar(imn,shrink=0.5)
+            tick_locator = ticker.MaxNLocator(nbins=6)
+            cbn.locator = tick_locator
+            cbn.update_ticks()
         else:
             im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
             self.add_colorbar(im,field=var[:,:])
@@ -1201,9 +1216,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             if self.cb_vpar_maxwell2D_diff_time.checkState():
                 if len(self.np_vpar_maxwell2D_diff_time)==0:
                     self.np_vpar_maxwell2D_diff_time=(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max
+                    self.start_time = cogent_time
                 else:
                     self.np_vpar_maxwell2D_diff_time=np.vstack([self.np_vpar_maxwell2D_diff_time,(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data_fitted[:,mu_pt,0])/data_fitted_max])
-
+                    self.end_time = cogent_time
 
 
             if saveplots>0:
