@@ -675,7 +675,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         if self.cb_vpar_maxwell2D_diff_time.checkState():
                             #print self.np_vpar_maxwell2D_diff_time
                             #print self.np_vpar_maxwell2D_diff_time.shape
-                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='none',title=r'$\log_{10} (\delta f)$',xlabel=r'$\bar{v}_\parallel$',ylabel='time ('+r'$\mu$'+'s)',targetdir=plot_output,symmetric_cbar=-1,cogent_time_start=self.start_time,cogent_time_end=self.end_time)
+                            self.plot_dfn_diff_time(selected_files[i],self.np_vpar_maxwell2D_diff_time,interpolation='none',title=r'$\log_{10} (|\delta f|)$',xlabel=r'$\bar{v}_\parallel$',ylabel='time ('+r'$\mu$'+'s)',targetdir=plot_output,symmetric_cbar=-1,cogent_time_start=self.start_time,cogent_time_end=self.end_time)
 
 
                 if 'potential' in selected_files[i]:
@@ -870,7 +870,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             plt.savefig(filename.replace('.hdf5','.dfn_diff_time.eps'))
             os.chdir(basedir)
         if showplots==0:
-            plt.close('fig_dfn_diff_time')
+            plt.close(fig_dfn_diff_time)
     
  
     
@@ -906,7 +906,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         #    plt.savefig(filename.replace('.hdf5','.potential_iso.eps'))
         #    os.chdir(basedir)
         #if showplots==0:
-        #    plt.close('fig')
+        #    plt.close(fig)
 
         fig_potential=self.plot_Nd(dataNd_potential_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
         if saveplots>0:
@@ -917,7 +917,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             plt.savefig(filename.replace('.hdf5','.potential_slice.eps'))
             os.chdir(basedir)
         if showplots==0:
-            plt.close('fig_potential')
+            plt.close(fig_potential)
     
         if ghost>0:
             #fig=plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var)
@@ -929,7 +929,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             #    plt.savefig(filename.replace('.hdf5','.potential_ghost_iso.eps'))
             #    os.chdir(basedir)
             #if showplots==0:
-            #    plt.close('fig')
+            #    plt.close(fig)
 
             fig_potential=self.plot_Nd(dataNd_potential_with_outer_ghost_comps,num_ghost_potential,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
             if saveplots>0:
@@ -940,7 +940,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.potential_mlab_ghost_slice.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig_potential')
+                plt.close(fig_potential)
     
         return
 
@@ -990,7 +990,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_mu.eps'))
                 os.chdir(basedir)
             if showplots==0 and not self.cb_vpar_mu_maxwell2D.checkState():
-                plt.close('fig_dfn2d')
+                plt.close(fig_dfn2d)
 
         
         if (self.cb_vpar_mu_smooth.checkState()):
@@ -1008,7 +1008,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_mu_interp.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig_dfn2d_interp')
+                plt.close(fig_dfn2d_interp)
 
 
         # For all mu maxwellian fitting
@@ -1060,7 +1060,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_interp.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig_deltaf')
+                plt.close(fig_deltaf)
 
         if (self.cb_f_vpar_muat1.checkState() or  self.cb_deltaf_vpar_muat1.checkState() or  self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState() or self.cb_vpar_maxwell2D_diff_time.checkState() ):
             mu_pt=1
@@ -1082,7 +1082,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_maxwell_overlap_mu_1.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig_overlap')
+                plt.close(fig_overlap)
     
     
         if (self.cb_deltaf_vpar_muat1.checkState()):
@@ -1101,7 +1101,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_at_1.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig_maxwell_diff')
+                plt.close(fig_maxwell_diff)
 
 
         #2dfitting
@@ -1128,7 +1128,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwellian2Dfit.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig_maxwellian')
+                plt.close(fig_maxwellian)
 
         #plot difference
         #hard coding
@@ -1191,7 +1191,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_maxwell2d_mu_1.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig_vpar_maxwell_2d_mu_1')
+                plt.close(fig_vpar_maxwell_2d_mu_1)
 
 
         if (self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff_time.checkState()):
@@ -1232,7 +1232,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_maxwell2d_diff_at_1.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig')
+                plt.close(fig)
 
 
         if (self.cb_vpar_maxwell2D_diff.checkState()):
@@ -1256,7 +1256,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.vpar_mu_maxwell2d_diff_interp.eps'))
                 os.chdir(basedir)
             if showplots==0:
-                plt.close('fig_maxwell2d_diff')
+                plt.close(fig_maxwell2d_diff)
 
         
 
