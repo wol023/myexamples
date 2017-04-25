@@ -1,1 +1,1 @@
-/Users/wonjae/ws/myexamples/spectra/spectra.py
+../../../../../../../../homes/w/wol023/linkToCoriScratch1.ln/eslexamples/myexamples/spectra/spectra.py
