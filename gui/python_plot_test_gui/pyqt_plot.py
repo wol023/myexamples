@@ -1200,6 +1200,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 fig=plt.figure()
                 normalized_wave_phase_speed = wave_phase_speed/(thermal_speed*100*Vpar_max/np.sqrt(mhat))
                 plt.axvline(normalized_wave_phase_speed,color='k', linestyle=':', linewidth=1.5,label=r'$\bar{v}_\parallel=\bar{v}_{ph}=%.2f$'%(normalized_wave_phase_speed))
+            else:
+                fig=plt.figure()
 
             title_var=r'$(\bar{\mu}=%.g,$'%MU_N[mu_pt]
             ###read computational unit time
