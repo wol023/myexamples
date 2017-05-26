@@ -1,0 +1,80 @@
+************ INPUT FILE *****************
+IN:x_max = 0.026500
+IN:y_max = 0.026500
+IN:z_max = 1.600000
+bz_inner = 1.500000
+by_inner = 0.000000
+ion_mass = 2.000000
+elec_mass = 0.010000
+IN:t0_grid_func = 1.000000
+IN:et0_grid_func = 1.000000
+IN:no_grid_func = (1+2.0*exp(-((x-pi)/(2*pi*0.1325))**2-((y-pi)/(2*pi*0.1325))**2))+0.00000001*rand(1)*sin(2*arctan((y-pi)/(x-pi))+1.0*z)*(exp(-((sqrt((x-pi)**2+(y-pi)**2)+1/4*pi)/(2*pi*0.033125))**2)+exp(-((sqrt((x-pi)**2+(y-pi)**2)-1/4*pi)/(2*pi*0.033125))**2))
+sin(): ['(2*arctan((y-np.pi)/(x-np.pi))+1.0*z)']
+IN:m_y= 1.000000
+IN:m_x= 0.000000
+IN:m_z= 1.000000
+IN:m_theta= 2.000000
+Te(kin) = 1.000000
+B_z          [gauss] = 15000.000000
+B_y          [gauss] = 0.000000
+B_t          [gauss] = 15000.000000
+********** OUTPUT FILE ******************
+THERMAL SPEED       [m/s] = 195743
+TRANSIT TIME          [s] = 5.10874e-06
+********** DERIVED VARS *****************
+k_x             [1/cm] = 0.000000 check m_x = (0.000000) with kinetic.in
+k_y             [1/cm] = 2.371013 check m_y = (1.000000) with kinetic.in
+k_z             [1/cm] = 0.039270 check m_z = (1.000000) with kinetic.in
+k_theta         [1/cm] = 5.341454
+k_perp          [1/cm] = 5.341454
+k_perp_z        [1/cm] = -0.000000
+k_perp_y        [1/cm] = 2.371013
+k_perp_x        [1/cm] = 0.000000
+k_perp_yz        [1/cm] = 5.341454
+k_par           [1/cm] = 0.039270
+k_par_y         [1/cm] = 0.000000
+k_par_z         [1/cm] = 0.039270
+k_par*(vte*delta/cs)[] = 0.325487
+deltaL_max        [cm] = 0.410663
+deltaL_point     [cm] = 0.471296
+deltaL_spline      [cm] = 0.414423
+deltaL_spread      [cm] = 0.590160
+c_s             [cm/s] = 13841313.817454
+rho_s             [cm] = 0.192661
+k_perp_yz*rho_s    [-] = 1.029092
+k_perp_yz*rho_i    [-] = 1.455356
+k_perp*rho_i       [-] = 1.455356
+omega*_max       [1/s] = 34685354.018862
+omega*_point     [1/s] = 30222982.690965
+omega*_spline     [1/s] = 34370629.803668
+omega*_spline_1_chi2[1/s] = 16692633.005843
+omega*_spline_1_chi_x2[1/s] = 16692633.005843
+omega*_spread    [1/s] = 24135793.268897
+*****************************************
+y = (7.45584e+06) x + (-47.4694)
+|maximum  freq. fft| = 4902732.820762
+|optimized  freq. fitting| = 4245898.181977
+te = 400.000000
+ti = 400.000000
+omega_star_max   = 34685354.018862
+omega_star_point = 30222982.690965
+omega_star_spline = 34370629.803668
+omega_star_spread = 24135793.268897
+omega_star_fit/omega*_max    = 0.122412
+omega_star_fit/omega*_point  = 0.140486
+omega_star_fit/omega*_spline = 0.123533
+omega_star_fit/omega*_spread = 0.175917
+omega_star_fit/omega*_max_1_chi2    = 0.252050
+omega_star_fit/omega*_point_1_chi2  = 0.289264
+omega_star_fit/omega*_spline_1_chi2  = 0.254358
+omega_star_fit/omega*_spread_1_chi2  = 0.362219
+gamma  = 3727919.853994
+gamma/omega*_max   = 0.107478
+gamma/omega*_point = 0.123347
+gamma/omega*_spline  = 0.108462
+gamma/omega*_max_1_chi2  = 0.221301
+gamma/omega*_point_1_chi2 = 0.253976
+gamma/omega*_spline_1_chi2 = 0.223327
+gamma/omega*_spread_1_chi2 = 0.318030
+gamma/omega_fit = 0.878005
+omega/kpar = 108120909.364250

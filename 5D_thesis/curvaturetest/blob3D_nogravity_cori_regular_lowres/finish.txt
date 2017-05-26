@@ -1,0 +1,27 @@
+************ INPUT FILE *****************
+IN:x_max = 0.030000
+IN:y_max = 0.030000
+IN:z_max = 10.000000
+bz_inner = 3.000000
+by_inner = 0.000000
+ion_mass = 2.000000
+elec_mass = 0.010000
+IN:t0_grid_func = 1.000000
+IN:et0_grid_func = 1.000000
+IN:no_grid_func = (1.00+2.0*exp(-(x-pi)**2/(2*pi*0.001/0.03)-(y-pi)**2/(2*pi*0.001/0.03))*(1.0+0.00001*rand(1.0)) )
+exp(): ['(-(x-np.pi)**2/(2*np.pi*0.001/0.03)-(y-np.pi)**2/(2*np.pi*0.001/0.03))']
+sin(): []
+IN:m_y= 0.000000
+IN:m_x= 0.000000
+IN:m_z= 0.000000
+cos(): []
+IN:m_y= 0.000000
+IN:m_x= 0.000000
+IN:m_z= 0.000000
+Te(kin) = 1.000000
+B_z          [gauss] = 30000.000000
+B_y          [gauss] = 0.000000
+B_t          [gauss] = 30000.000000
+********** OUTPUT FILE ******************
+THERMAL SPEED       [m/s] = 97871.5
+TRANSIT TIME          [s] = 1.02175e-05

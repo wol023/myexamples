@@ -1,4 +1,5 @@
 #!/bin/bash -x
-rsync -aP $1/* $1_ --exclude 'plt_*' --exclude '*.hdf5' --exclude 'pout*' --exclude 'slurm*' --exclude 'potential_hist_*'
+rsync -aP $1/* $1_ --exclude 'plt_*' --exclude '*.hdf5' --exclude 'pout*' --exclude 'slurm*' --exclude 'potential_hist_*' --exclude 'python_auto_plots*'
+
 
 

@@ -16,112 +16,6 @@ def find(pattern, path):
                result.append(os.path.join(root, name))
     return result
 
-def matchparen(inputstring,start):
-    flag=0
-    if start ==-1:
-        start= len(inputstring)-1
-
-    if start not in range(len(inputstring)):
-        start=0
-    else:
-        if inputstring[start]=='(':
-            flag =1
-            start +=1
-            while (start<len(inputstring)-1):
-                if inputstring[start]=='(':
-                    flag+=1
-                    start+=1
-                    continue
-                elif inputstring[start]==')':
-                    if flag==1:
-                        return start
-                    else:
-                        flag-=1
-                        start+=1
-                        continue
-                else:
-                    start+=1
-                    continue
-                    
-        elif inputstring[start]==')':
-            flag =1
-            start-=1
-            while (start>0):
-                if inputstring[start]==')':
-                    flag+=1
-                    start-=1
-                    continue
-                elif inputstring[start]=='(':
-                    if flag==1:
-                        return start
-                    else:
-                        flag-=1
-                        start-=1
-                        continue
-                else:
-                    start-=1
-                    continue
-    if not flag== 1:
-        return -1
-    else:
-        return start
-
-
-def findargument(token,start):
-    end = start
-    flag=0
-    while(start>0):
-        print token[start]
-        if token[start]=='*':
-            end=start
-            start-=1
-        elif token[start].isdigit():
-            flag=1
-            start-=1
-        elif token[start]=='+':
-            break
-        elif token[start]=='(':
-            if flag==0:
-                start-=1
-            else:
-                break
-        else:
-            start-=1
-    if flag==0:
-        return '1.0'
-    else:
-        return token[start+1:end]
-        
-
-    
-
-                
-            
-
-
-
-
-def findpertbation(inputstr,tofind):
-    result = []
-    ind_first=inputstr.find(tofind)
-    ind_next=ind_first
-    while ind_next >= 0:
-        ind_check=inputstr[ind_next:].find(tofind)
-        if ind_check>=0:
-            ind_first=ind_next
-            return token[start+1:end]
-        else:
-            start-=1
-        
-
-    
-
-                
-            
-
-
-
-
 def findpertbation(inputstr,tofind):
     result = []
     ind_first=inputstr.find(tofind)
@@ -334,7 +228,7 @@ et0_grid_func= -1
 x_max=1.0;
 y_max=1.0;
 z_max=1.0;
-#deltaL_analytic=1;
+deltaL_analytic=1;
 
 with open(fname[0], 'r') as f:
     for line in f:
@@ -442,10 +336,36 @@ with open(fname[0], 'r') as f:
                     buf = 'IN:no_grid_func = %s\n' % n0_grid_func
                     fh.write(buf)
 
-                m_y=1.0; #default was 0
+                m_y=0.0;
                 m_x=0.0;
                 m_z=0.0;
-                m_theta=0.0;
+
+                #parse background 
+                tokens=findpertbation(n0_grid_func,'exp(')
+                print 'exp():',tokens
+
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'exp(): %s\n' % tokens
+                    fh.write(buf)
+
+                for token in tokens:
+                    print "For ",token
+                    #temp_y=findmodenumber(token,'y')
+                    temp_x=findmodenumber(token,'x')
+                    #temp_z=findmodenumber(token,'z')
+                    #if abs(temp_y)>abs(m_y):
+                    #        m_y=temp_y
+                    if abs(temp_x)>abs(m_x):
+                            m_x=temp_x
+                    #if abs(temp_z)>abs(m_z):
+                    #        m_z=temp_z
+                deltaL_analytic = -1.0/m_x/2.0/np.pi*x_max*100 #in cm
+                print 'IN:deltaL_analytic=',deltaL_analytic
+
+                #parse perturbations
+                m_y=0.0;
+                m_x=0.0;
+                m_z=0.0;
 
                 tokens=findpertbation(n0_grid_func,'sin(')
                 print 'sin():',tokens
@@ -454,56 +374,19 @@ with open(fname[0], 'r') as f:
                     fh.write(buf)
                 for token in tokens:
                     print "For ",token
-                    if 'arctan' in token:
-                        splited_token=token.split('arctan')
-                        temp_theta = splited_token[0][1:-1]
-                        m_theta = float(temp_theta)
-                        if 'z' in splited_token[1]:
-                            z_token = splited_token[1].split('z')
-                            ind_z=-1
-                            while(-ind_z<=len(z_token[0])):
-                                if z_token[0][ind_z]=='+' or z_token[0][ind_z]=='-':
-                                    break
-                                ind_z-=1
-                            m_z = float(z_token[0][ind_z+1:-1])
-                    elif 'atwotan' in token:
-                        m_theta = float(findargument(token,matchparen(token,token.find('atwotan')-1)))
-                        
-
-                        arg1=n0_grid_func[matchparen(n0_grid_func,n0_grid_func.find('atwotan')-1):n0_grid_func.find('atwotan')] 
-                        arg2=n0_grid_func[n0_grid_func.find('atwotan')+7:matchparen(n0_grid_func,n0_grid_func.find('atwotan')+7)+1]
-
-                        raw=n0_grid_func[matchparen(n0_grid_func,n0_grid_func.find('atwotan')-1):matchparen(n0_grid_func,n0_grid_func.find('atwotan')+7)+1]
-
-                        n0_grid_func=n0_grid_func.replace(raw,'atan2('+arg1+','+arg2+')')
-
-
-
-                        splited_token=token.split('atwotan')
-                        if 'z' in splited_token[1]:
-                            z_token = splited_token[1].split('z')
-                            ind_z=-1
-                            while(-ind_z<=len(z_token[0])):
-                                if z_token[0][ind_z]=='+' or z_token[0][ind_z]=='-':
-                                    break
-                                ind_z-=1
-                            m_z = float(z_token[0][ind_z+1:-1])
-
-                    else:
-                        temp_y=findmodenumber(token,'y')
-                        temp_x=findmodenumber(token,'x')
-                        temp_z=findmodenumber(token,'z')
-                        if abs(temp_y)>abs(m_y):
-                                m_y=temp_y
-                        if abs(temp_x)>abs(m_x):
-                                m_x=temp_x
-                        if abs(temp_z)>abs(m_z):
-                                m_z=temp_z
+                    temp_y=findmodenumber(token,'y')
+                    temp_x=findmodenumber(token,'x')
+                    temp_z=findmodenumber(token,'z')
+                    if abs(temp_y)>abs(m_y):
+                            m_y=temp_y
+                    if abs(temp_x)>abs(m_x):
+                            m_x=temp_x
+                    if abs(temp_z)>abs(m_z):
+                            m_z=temp_z
 
                 print 'IN:m_y=',m_y
                 print 'IN:m_x=',m_x
                 print 'IN:m_z=',m_z
-                print 'IN:m_theta=',m_theta
                 with open('finish.txt', 'a+') as fh:
                     buf = 'IN:m_y= %f\n' % m_y
                     fh.write(buf)
@@ -511,9 +394,34 @@ with open(fname[0], 'r') as f:
                     fh.write(buf)
                     buf = 'IN:m_z= %f\n' % m_z
                     fh.write(buf)
-                    buf = 'IN:m_theta= %f\n' % m_theta
-                    fh.write(buf)
 
+                tokens=findpertbation(n0_grid_func,'cos(')
+                print 'cos():',tokens
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'cos(): %s\n' % tokens
+                    fh.write(buf)
+                for token in tokens:
+                    print "For ",token
+                    temp_y=findmodenumber(token,'y')
+                    temp_x=findmodenumber(token,'x')
+                    temp_z=findmodenumber(token,'z')
+                    if abs(temp_y)>abs(m_y):
+                            m_y=temp_y
+                    if abs(temp_x)>abs(m_x):
+                            m_x=temp_x
+                    if abs(temp_z)>abs(m_z):
+                            m_z=temp_z
+
+                print 'IN:m_y=',m_y
+                print 'IN:m_x=',m_x
+                print 'IN:m_z=',m_z
+                with open('finish.txt', 'a+') as fh:
+                    buf = 'IN:m_y= %f\n' % m_y
+                    fh.write(buf)
+                    buf = 'IN:m_x= %f\n' % m_x
+                    fh.write(buf)
+                    buf = 'IN:m_z= %f\n' % m_z
+                    fh.write(buf)
                 
             if '.T0_grid_func.constant' in lhsrhs[0]:
                 #print lhsrhs[0],'=',lhsrhs[1]
@@ -764,12 +672,8 @@ from sympy.utilities.lambdify import implemented_function
 from sympy import Function
 
 transformations = (standard_transformations + (implicit_multiplication_application,))
-n0_grid_func_compatible=n0_grid_func.replace('arctan','atan')
-print 'n0_grid_func_compatible = ',n0_grid_func_compatible
-n0_grid_func_compatible=n0_grid_func_compatible.replace('rand','0.0*')
-print 'n0_grid_func_compatible = ',n0_grid_func_compatible
-pe=parse_expr(n0_grid_func_compatible,transformations=transformations)
-print 'parsed expression = ',pe
+pe=parse_expr(n0_grid_func,transformations=transformations)
+#print 'parsed expression = ',pe
 
 f = lambdify((x,y,z),pe)
 #print f(pi,pi) #test
@@ -779,11 +683,8 @@ xcm  = np.linspace(0.0, x_max*100, (x_cells))
 yy = np.linspace(0.0, np.pi*2, (x_cells))
 yypert = np.linspace(0.0, np.pi*2, (x_cells))
 
-#y_point_rad= float(y_index)/float(y_cells)*np.pi*2
-y_point_rad= np.pi
 for i in range(len(xx)):
-    yy[i] = f(xx[i],y_point_rad,0)
-
+    yy[i] = f(xx[i],0,0)
 
 #calc yypert
 dphasepert = np.pi/10
@@ -813,8 +714,6 @@ dlnyydx = dyydx/yy
 dlnyydx[0] = dlnyydx[1] #fix discontinuity
 dlnyydx[len(dlnyydx)-1] = dlnyydx[len(dlnyydx)-2] #fix discontinuity
 
-
-
 #print 'average density = ',np.average(yy)
 
 #calculate spread indices
@@ -841,7 +740,7 @@ elif contains_tanh:
     ispread_width=sum(dlnyydx_abs>dlnyydx_amplitude*0.33)
 elif contains_pert:
     yypert_amplitude = max(yypert)
-    ispread_width=sum(yypert>yypert_amplitude*0.45)
+    ispread_width=sum(yypert>yypert_amplitude*0.10)
 else:
     ispread_width=1
     #print "does not contain spreading"
@@ -959,6 +858,15 @@ k_y        = 2.0*np.pi*m_y/(y_max*100)
 k_x        = 2.0*np.pi*m_x/(x_max*100) 
 k_z        = 2.0*np.pi*m_z/(z_max*100) 
 
+k_par      = (k_y*B_y+k_z*B_z)/B_t
+k_par_z    = k_par*B_z/B_t
+k_par_y    = k_par*B_y/B_t
+
+k_perp_z   = (k_z*B_y-k_y*B_z)*B_y/B_t/B_t
+k_perp_y   = (k_y*B_z-k_z*B_y)*B_z/B_t/B_t
+k_perp_x   = abs(k_x)
+k_perp_yz  = np.sqrt(k_perp_z*k_perp_z+k_perp_y*k_perp_y)
+k_perp     = np.sqrt(k_perp_yz*k_perp_yz+k_x*k_x)
 
 deltaL_max = 1./max(abs(dlnyydx))
 deltaL_spline = 1./max(abs(dlninter_yydx))
@@ -985,38 +893,6 @@ spread_ind_diff=np.array(spread_ind_diff)
 spread_ind =  spread_ind_diff+ x_point_index_in_plot
 #print spread_ind
 
-
-
-
-gradall=0.0
-rcm_CM =0.0
-center_cm = (xcm[len(xcm)/2-1]+xcm[len(xcm)/2])/2.0
-for ind in spread_ind:
-    gradall += abs(dlnyydx[ind])
-for ind in spread_ind:
-    rcm_CM += abs(dlnyydx[ind]*(xcm[ind]-center_cm))
-rcm_CM=rcm_CM/gradall
-
-print 'rcm_CM = ', rcm_CM
-rcm = abs(xcm[np.argmax(-(dlnyydx))]-(xcm[len(xcm)/2-1]+xcm[len(xcm)/2])/2.0)
-#k_theta    = m_theta/(x_max*100/4.0*0.9)
-print 'rcm = ', rcm
-k_theta    = m_theta/rcm_CM
-
-k_par      = (k_y*B_y+k_z*B_z)/B_t
-k_par_z    = k_par*B_z/B_t
-k_par_y    = k_par*B_y/B_t
-
-k_perp_z   = (k_z*B_y-k_y*B_z)*B_y/B_t/B_t
-k_perp_y   = (k_y*B_z-k_z*B_y)*B_z/B_t/B_t
-k_perp_x   = abs(k_x)
-k_perp_yz  = np.sqrt(k_perp_z*k_perp_z+k_perp_y*k_perp_y)
-k_perp     = np.sqrt(k_perp_yz*k_perp_yz+k_x*k_x)
-
-if k_theta > 0.0:
-    k_perp=k_theta
-    k_perp_yz=k_theta
-
 chi_x      = k_perp*rho_s
 chi        = k_perp_yz*rho_s
 #omega_star_max = c_s*rho_s*k_perp_y/deltaL_max
@@ -1024,11 +900,12 @@ chi        = k_perp_yz*rho_s
 #omega_star_spline = c_s*rho_s*k_perp_y/deltaL_spline
 #omega_star_spread= c_s*rho_s*k_perp_y/ deltaL_spread
 omega_star_max = c_s*rho_s*k_perp_yz/deltaL_max
+omega_star_analytic = c_s*rho_s*k_perp_yz/deltaL_analytic
 omega_star_point= c_s*rho_s*k_perp_yz/deltaL_point
 omega_star_spline = c_s*rho_s*k_perp_yz/deltaL_spline
 omega_star_spread= c_s*rho_s*k_perp_yz/deltaL_spread
 
-k_par_hat  = k_par*deltaL_spline*v_te/c_s
+k_par_hat  = k_par*deltaL_analytic*v_te/c_s
 
 print 'k_x             [1/cm] = ', k_x , 'check m_x = (',m_x,') with kinetic.in'
 with open('finish.txt', 'a+') as fh:
@@ -1053,10 +930,6 @@ with open('finish.txt', 'a+') as fh:
     buf = ' check m_z = (%f' % m_z
     fh.write(buf)
     buf = ') with kinetic.in\n'
-    fh.write(buf)
-print 'k_theta         [1/cm] = ', k_theta
-with open('finish.txt', 'a+') as fh:
-    buf = 'k_theta         [1/cm] = %f\n' % k_theta
     fh.write(buf)
 print 'k_perp          [1/cm] = ', k_perp
 with open('finish.txt', 'a+') as fh:
@@ -1102,6 +975,10 @@ print 'deltaL_point      [cm] = ', deltaL_point
 with open('finish.txt', 'a+') as fh:
     buf = 'deltaL_point     [cm] = %f\n' % deltaL_point
     fh.write(buf)
+print 'deltaL_analytic   [cm] = ', deltaL_analytic
+with open('finish.txt', 'a+') as fh:
+    buf = 'deltaL_analytic   [cm] = %f\n' % deltaL_analytic
+    fh.write(buf)
 print 'deltaL_spline     [cm] = ', deltaL_spline
 with open('finish.txt', 'a+') as fh:
     buf = 'deltaL_spline      [cm] = %f\n' % deltaL_spline
@@ -1142,6 +1019,10 @@ with open('finish.txt', 'a+') as fh:
 print 'omega*_point     [1/s] = ', omega_star_point
 with open('finish.txt', 'a+') as fh:
     buf = 'omega*_point     [1/s] = %f\n' % omega_star_point
+    fh.write(buf)
+print 'omega*_analytic  [1/s] = ', omega_star_analytic
+with open('finish.txt', 'a+') as fh:
+    buf = 'omega*)_analytic [1/s] = %f\n' % omega_star_analytic
     fh.write(buf)
 print 'omega*_spline    [1/s] = ', omega_star_spline
 with open('finish.txt', 'a+') as fh:
@@ -1292,24 +1173,23 @@ def func_lin(x, aa, bb):
 error_array_a=[]
 error_array_b=[]
 cutoff_index = len(extremum_dimensional_xt)-1
-ind_shift = len(extremum_dimensional_xt)-20 #manual shift from begining
 for ind in enumerate(extremum_dimensional_xt):
-    if ind[0]>2+ind_shift:
+    if ind[0]>2:
         #print ind[0]
-        xdata = extremum_dimensional_xt[0+ind_shift:ind[0]]
-        ydata = extremum_logy2[0+ind_shift:ind[0]]
+        xdata = extremum_dimensional_xt[0:ind[0]]
+        ydata = extremum_logy2[0:ind[0]]
         popt, pcov = curve_fit(func_lin, xdata, ydata)
         perr = np.sqrt(np.diag(pcov))
         error_array_a.append(perr[0])
         error_array_b.append(perr[1])
         if len(error_array_a)>3 :
-            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 1.0:
+            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 3.0:
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
                 break
         if len(error_array_b)>3 :
-            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 1.0:
+            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 3.0:
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
@@ -1317,8 +1197,8 @@ for ind in enumerate(extremum_dimensional_xt):
 #print cutoff_index
         
 
-xdata = extremum_dimensional_xt[0+ind_shift:cutoff_index]
-ydata = extremum_logy2[0+ind_shift:cutoff_index]
+xdata = extremum_dimensional_xt[0:cutoff_index]
+ydata = extremum_logy2[0:cutoff_index]
 
 
 lin_fitted_logy2 = np.polyfit(xdata,ydata,1)
@@ -1425,7 +1305,7 @@ print guess_amplitude
 guess_mean = 0
 guess_phase = 0
 #guess_freq = freqmax #estimate from fft
-guess_freq = omega_star_spline/(1.0+chi*chi) #estimate from analytic freq
+guess_freq = omega_star_analytic/(1.0+chi*chi) #estimate from analytic freq
 guess_lin = 0
 
 print freqmax
@@ -1471,7 +1351,8 @@ nonlin_yplotv_fit = scipy.fftpack.fftshift(nonlin_yfv_fit)
 
 ###########################################
 
-legend_data_fit = r'$\omega/\omega^*$'+' = %g'%(abs(est_freq)/omega_star_spline)+'\n'+r'$\omega/\omega^*_d$'+' = %g'%(abs(est_freq)/omega_star_spline*(1.0+chi*chi))
+#legend_data_fit = r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_point, abs(est_freq)/omega_star_point*(1.0+chi*chi))+'\n'+r'$\omega/\omega^*, \omega/\omega^*_d$'+' = (%g, %g)'% ( abs(est_freq)/omega_star_analytic, abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
+legend_data_fit = r'$\omega/\omega^*$'+' = %g'%(abs(est_freq)/omega_star_analytic)+'\n'+r'$\omega/\omega^*_d$'+' = %g'%(abs(est_freq)/omega_star_analytic*(1.0+chi*chi))
 
 init_plotting()
 plt.subplot(111)
@@ -1545,7 +1426,7 @@ refine_est_growth=est_growth #fix growth rate
 print 'est_freq. = ',est_freq
 print 'refine_est_freq. = ',refine_est_freq
 
-legend_data_fit_with_growth = r'$\gamma/\omega^*$'+' = %g'% ( lin_fitted_logy2[0]/2.0/omega_star_spline)+'\n'+r'$\gamma/\omega^*_d$'+' = %g'% ( lin_fitted_logy2[0]/2.0/omega_star_spline*(1.0+chi*chi))
+legend_data_fit_with_growth = r'$\gamma/\omega^*$'+' = %g'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic)+'\n'+r'$\gamma/\omega^*_d$'+' = %g'% ( lin_fitted_logy2[0]/2.0/omega_star_analytic*(1.0+chi*chi))
 init_plotting()
 plt.subplot(111)
 plt.gca().margins(0.1, 0.1)
@@ -1577,6 +1458,8 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = "omega_star_point = %f\n" % (omega_star_point)
     fh.write(buf)
+    buf = "omega_star_analytic= %f\n" % (omega_star_analytic)
+    fh.write(buf)
     buf = "omega_star_spline = %f\n" % (omega_star_spline)
     fh.write(buf)
     if (ispread_width !=1):
@@ -1585,6 +1468,8 @@ with open('finish.txt', 'a+') as fh:
     buf = 'omega_star_fit/omega*_max    = %f\n'%( abs(est_freq)/omega_star_max )
     fh.write(buf)
     buf = 'omega_star_fit/omega*_point  = %f\n'%( abs(est_freq)/omega_star_point )
+    fh.write(buf)
+    buf = 'omega_star_fit/omega*_analytic= %f\n'%( abs(est_freq)/omega_star_analytic)
     fh.write(buf)
     buf = 'omega_star_fit/omega*_spline = %f\n'%( abs(est_freq)/omega_star_spline )
     fh.write(buf)
@@ -1595,9 +1480,9 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'omega_star_fit/omega*_point_1_chi2  = %f\n'%( abs(est_freq)/omega_star_point*(1.0+chi*chi) )
     fh.write(buf)
-    buf = 'omega_star_fit/omega*_spline_1_chi2  = %f\n'%( abs(est_freq)/omega_star_spline*(1.0+chi*chi) )
+    buf = 'omega_star_fit/omega*_analytic_1_chi2  = %f\n'%( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) )
     fh.write(buf)
-    buf = 'omega_star_fit/omega*_spread_1_chi2  = %f\n'%( abs(est_freq)/omega_star_spread*(1.0+chi*chi) )
+    buf = 'omega_star_fit/omega*_spline_1_chi2  = %f\n'%( abs(est_freq)/omega_star_spline*(1.0+chi*chi) )
     fh.write(buf)
     buf = 'gamma  = %f\n'%(refine_est_growth)
     fh.write(buf)
@@ -1605,15 +1490,17 @@ with open('finish.txt', 'a+') as fh:
     fh.write(buf)
     buf = 'gamma/omega*_point = %f\n'%(refine_est_growth/omega_star_point)
     fh.write(buf)
+    buf = 'gamma/omega*_analytic = %f\n'%(refine_est_growth/omega_star_analytic)
+    fh.write(buf)
     buf = 'gamma/omega*_spline  = %f\n'%(refine_est_growth/omega_star_spline)
     fh.write(buf)
     buf = 'gamma/omega*_max_1_chi2  = %f\n'%(refine_est_growth/omega_star_max*(1.0+chi*chi))
     fh.write(buf)
     buf = 'gamma/omega*_point_1_chi2 = %f\n'%(refine_est_growth/omega_star_point*(1.0+chi*chi))
     fh.write(buf)
-    buf = 'gamma/omega*_spline_1_chi2 = %f\n'%(refine_est_growth/omega_star_spline*(1.0+chi*chi))
+    buf = 'gamma/omega*_analytic_1_chi2 = %f\n'%(refine_est_growth/omega_star_analytic*(1.0+chi*chi))
     fh.write(buf)
-    buf = 'gamma/omega*_spread_1_chi2 = %f\n'%(refine_est_growth/omega_star_spread*(1.0+chi*chi))
+    buf = 'gamma/omega*_spline_1_chi2 = %f\n'%(refine_est_growth/omega_star_spline*(1.0+chi*chi))
     fh.write(buf)
     buf = 'gamma/omega_fit = %f\n'%(refine_est_growth/abs(est_freq))
     fh.write(buf)
@@ -1625,6 +1512,7 @@ print "te = " , (units_temperature*electron_temperature)
 print "ti = " , (units_temperature*t0_grid_func)
 print "omega_star_max    = " , (omega_star_max)
 print "omega_star_point  = " , (omega_star_point)
+print "omega_star_analytic = " , (omega_star_analytic)
 print "omega_star_spline = " , (omega_star_spline)
 if (ispread_width !=1):
     print "omega_star_spread = " , (omega_star_spread)
@@ -1633,22 +1521,24 @@ if (ispread_width !=1):
 #print 'omega_star_FFT/omega*_spline = ', abs(freqmax)/omega_star_spline
 print 'omega_star_fit/omega*_max    = ',( abs(est_freq)/omega_star_max )
 print 'omega_star_fit/omega*_point  = ',( abs(est_freq)/omega_star_point )
+print 'omega_star_fit/omega*_analytic = ',( abs(est_freq)/omega_star_analytic)
 print 'omega_star_fit/omega*_spline = ',( abs(est_freq)/omega_star_spline )
 if (ispread_width !=1):
     print 'omega_star_fit/omega*_spread = ',( abs(est_freq)/omega_star_spread )
 print 'omega_star_fit/omega*_max_1_chi2        = ',( abs(est_freq)/omega_star_max*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_point_1_chi2  = ',( abs(est_freq)/omega_star_point*(1.0+chi*chi) )
+print 'omega_star_fit/omega*_analytic_1_chi2  = ',( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) )
 print 'omega_star_fit/omega*_spline_1_chi2 = ',( abs(est_freq)/omega_star_spline*(1.0+chi*chi) )
-print 'omega_star_fit/omega*_spread_1_chi2 = ',( abs(est_freq)/omega_star_spread*(1.0+chi*chi) )
 print 'gamma  = ',(refine_est_growth)
 print 'gamma/omega*_max     = ',(refine_est_growth/omega_star_max)
 print 'gamma/omega*_point   = ',(refine_est_growth/omega_star_point)
+print 'gamma/omega*_analytic= ',(refine_est_growth/omega_star_analytic)
 print 'gamma/omega*_spline  = ',(refine_est_growth/omega_star_spline)
 
 print 'gamma/omega*_max_1_chi2        = ',(refine_est_growth/omega_star_max*(1.0+chi*chi))
 print 'gamma/omega*_point_1_chi2  = ',(refine_est_growth/omega_star_point*(1.0+chi*chi))
+print 'gamma/omega*_analytic_1_chi2  = ',(refine_est_growth/omega_star_analytic*(1.0+chi*chi))
 print 'gamma/omega*_spline_1_chi2 = ',(refine_est_growth/omega_star_spline*(1.0+chi*chi))
-print 'gamma/omega*_spread_1_chi2 = ',(refine_est_growth/omega_star_spread*(1.0+chi*chi))
 print 'gamma/omega_fit = ',(refine_est_growth/abs(est_freq))
 print 'omega/kpar= ',((abs(est_freq))/k_par)
 
@@ -1656,13 +1546,7 @@ print 'omega/kpar= ',((abs(est_freq))/k_par)
 with open('finish_kparhat_chi_gamma_omega2.txt', 'wb') as fh:
     buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma/omega*\tomega/omega*\tomega/omega*chi2\tomega/kpar\n" 
     fh.write(buf)
-    buf = "%f\t%f\t%f\t%f\t%f\t%f\t%g\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth/omega_star_spline), ( abs(est_freq)/omega_star_spline), ( abs(est_freq)/omega_star_spline*(1.0+chi*chi) ),((abs(est_freq))/k_par))
-    fh.write(buf)
-
-with open('finish_freq_growth.txt', 'wb') as fh:
-    buf = "k_par_hat\tk_perp_yz*rho_s\tk_perp*rho_s\tgamma\tomega\tomega\tomega/kpar\n" 
-    fh.write(buf)
-    buf = "%f\t%f\t%f\t%f\t%f\t%f\t%g\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth), ( abs(est_freq)), ( abs(est_freq) ),((abs(est_freq))/k_par))
+    buf = "%f\t%f\t%f\t%f\t%f\t%f\t%g\n" % (k_par_hat, k_perp_yz*rho_s, k_perp*rho_s ,(refine_est_growth/omega_star_analytic), ( abs(est_freq)/omega_star_analytic), ( abs(est_freq)/omega_star_analytic*(1.0+chi*chi) ),((abs(est_freq))/k_par))
     fh.write(buf)
 
 
