@@ -83,15 +83,19 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 cnopts.hostkeys = None
                 # sftp
 
-                if self.tbox_host.toPlainText()!=[] and self.tbox_user.toPlainText()!=[] and self.tbox_pword.toPlainText()!=[] and self.tbox_basepath.toPlainText()!=[] and self.tbox_targetpath.toPlainText()!=[]:
+                #if self.tbox_host.toPlainText()!=[] and self.tbox_user.toPlainText()!=[] and self.tbox_pword.toPlainText()!=[] and self.tbox_basepath.toPlainText()!=[] and self.tbox_targetpath.toPlainText()!=[]:
+
+                if self.tbox_host.toPlainText()!=[] and self.tbox_user.toPlainText()!=[] and self.le_password.text()!=[] and self.tbox_basepath.toPlainText()!=[] and self.tbox_targetpath.toPlainText()!=[]:
                     host=str(self.tbox_host.toPlainText())
                     username=str(self.tbox_user.toPlainText())
-                    password=str(self.tbox_pword.toPlainText())
+                    #password=str(self.tbox_pword.toPlainText())
+                    password=str(self.le_password.text())
                     basepath=str(self.tbox_basepath.toPlainText())
                     targetpath=str(self.tbox_targetpath.toPlainText())
 
                     self.tbox_selected_download.setText(file_loc)
-                    with pysftp.Connection(host=host, username=username, password=base64.b64decode(password),cnopts=cnopts) as sftp:
+                    #with pysftp.Connection(host=host, username=username, password=base64.b64decode(password),cnopts=cnopts) as sftp:
+                    with pysftp.Connection(host=host, username=username, password=password,cnopts=cnopts) as sftp:
                         if sftp.exists(basepath):
                             with sftp.cd(basepath):
                                 if sftp.exists(targetpath):
@@ -604,7 +608,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             rawpathfiles=lines[6:]
         self.tbox_host.setText(host)
         self.tbox_user.setText(user)
-        self.tbox_pword.setText(pword)
+        #self.tbox_pword.setText(pword)
+        self.le_password.setText(pword)
         self.tbox_basepath.setText(basepath)
         self.tbox_targetpath.setText(targetpath)
         pathfiles=[]
@@ -661,6 +666,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 x_pt=int(self.te_x_pt.toPlainText())
                 y_pt=int(self.te_y_pt.toPlainText())
                 z_pt=int(self.te_z_pt.toPlainText())
+                vpar_pt=int(self.te_vpar_pt.toPlainText())
+                mu_pt=int(self.te_mu_pt.toPlainText())
                 plot_output=self.tbox_localout.toPlainText()
                 if 'dfn' in selected_files[i]:
                     if 'hydrogen' in selected_files[i]:
@@ -670,7 +677,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                     else:
                         speciesname='s'
                     #from plot_cogent_pack import plot_dfn
-                    self.plot_dfn(selected_files[i],speciesname=speciesname,x_pt=x_pt,y_pt=y_pt,z_pt=z_pt,targetdir=plot_output)
+                    self.plot_dfn(selected_files[i],speciesname=speciesname,x_pt=x_pt,y_pt=y_pt,z_pt=z_pt,vpar_pt=vpar_pt,mu_pt=mu_pt,targetdir=plot_output)
                     if i==len(selected_files)-1:
                         if self.cb_vpar_maxwell2D_diff_time.checkState():
                             #print self.np_vpar_maxwell2D_diff_time
@@ -680,6 +687,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
                 if 'potential' in selected_files[i]:
                     self.plot_potential(selected_files[i],ghost=0,x_slice=x_pt,y_slice=x_pt,z_slice=z_pt,targetdir=plot_output)
+
                 if 'BField' in selected_files[i]:
                     plot_bvec(selected_files[i],ghost=0,targetdir=plot_output)
                 if 'efield' in selected_files[i]:
@@ -703,6 +711,11 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             self.tbox_inputfile.setText(inputfile)
         with open(inputfile,'r') as f:
             for line in f:
+                #local vars
+                units_temperature = 1
+                units_mass = 1
+                units_length = 1
+
                 if line.lstrip().startswith('#'): #skip comment
                     continue
                 line =line.rstrip() #skip blank line
@@ -726,6 +739,16 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                     if 'units.length' in lhsrhs[0]:
                         units_length = float(lhsrhs[1])
                         self.print_ui('IN:units_length= '+str(units_length))
+
+                    
+                    if '.x_max' in lhsrhs[0]:
+                        self.te_x_length.setText(str(float(lhsrhs[1])))
+                    if '.y_max' in lhsrhs[0]:
+                        self.te_y_length.setText(str(float(lhsrhs[1])))
+                    if '.z_max' in lhsrhs[0]:
+                        self.te_z_length.setText(str(float(lhsrhs[1])))
+
+                        
                     if '.history_indices' in lhsrhs[0]:
                         history_indices=lhsrhs[1].split()
                         if len(history_indices)==2:
@@ -764,9 +787,12 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             self.te_vpar_fixed_plot.setText(str(num_cells[3]))
                             self.te_mu_fixed_plot.setText(str(num_cells[4]))
                             
+            #end for
+            self.te_x_length.setText(str( float(self.te_x_length.toPlainText())*units_length))
+            self.te_y_length.setText(str( float(self.te_y_length.toPlainText())*units_length))
+            self.te_z_length.setText(str( float(self.te_z_length.toPlainText())*units_length))
 
-       
-
+            self.print_ui('IN:x,y,z [m]= '+str(self.te_x_length.toPlainText())+str(self.te_y_length.toPlainText())+str(self.te_y_length.toPlainText()) )
 
 
 
@@ -871,10 +897,9 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             os.chdir(basedir)
         if showplots==0:
             plt.close(fig_dfn_diff_time)
+
     
- 
-    
-    def plot_potential(self,pathfilename,saveplots=1,showplots=0,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+    def plot_potential(self,pathfilename,saveplots=1,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
         head=os.path.split(pathfilename)
         path=head[0]
         filename=head[1]
@@ -894,6 +919,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*self.ref_time*1.0E6)
         else:
             title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
+
     
         
         #fig=plot_Nd(dataNd_potential_comps,title=title_var)
@@ -916,7 +942,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             plt.savefig(filename.replace('.hdf5','.potential_slice.png'))
             plt.savefig(filename.replace('.hdf5','.potential_slice.eps'))
             os.chdir(basedir)
-        if showplots==0:
+        if self.cb_3d_interactive.checkState()==0:
             plt.close(fig_potential)
     
         if ghost>0:
@@ -936,15 +962,34 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
                 os.chdir(targetdir)
-                plt.savefig(filename.replace('.hdf5','.potential_mlab_ghost_slice.png'))
-                plt.savefig(filename.replace('.hdf5','.potential_mlab_ghost_slice.eps'))
+                plt.savefig(filename.replace('.hdf5','.potential_ghost_slice.png'))
+                plt.savefig(filename.replace('.hdf5','.potential_ghost_slice.eps'))
                 os.chdir(basedir)
             if showplots==0:
                 plt.close(fig_potential)
+
+        
+        if self.cb_potential_fft_along_z.checkState():
+            print 'hi'
+            nx = int(self.te_z_total.toPlainText())
+            dx = 2.0*np.pi/nx;
+            Lz = float(self.te_z_length.toPlainText())
+            x = np.linspace( (0.0+dx/2.0)*Lz, (2.0*np.pi-dx/2.0)*Lz, nx)
+            y = dataNd_potential_comps[x_slice,y_slice,:].flatten()
+            print x
+            print y
+
+            xf = scipy.fftpack.fftfreq(nx,dx)
+            yf = scipy.fftpack.fft(y)
+            xf = scipy.fftpack.fftshift(xf)
+            yf = scipy.fftpack.fftshift(yf)
+            
+                
+
     
         return
 
-    def plot_dfn(self,pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,targetdir=[]):
+    def plot_dfn(self,pathfilename,speciesname='',saveplots=1,showplots=0,x_pt=1,y_pt=1,z_pt=1,vpar_pt=1,mu_pt=1,targetdir=[]):
         self.print_ui('plot_dfn()')
         head=os.path.split(pathfilename)
         path=head[0]
@@ -1025,83 +1070,83 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
         coef_maxwell,mhat,That = self.get_maxwellian_coef(pathfilename,ion_mass,t0_grid_func,elec_mass,et0_grid_func,nhat)
         
-        if self.gksystem_dimension==5:
-            data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].shape
-        elif self.gksystem_dimension==4:
-            data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,:,:,:].shape
-        data2d_maxwell=np.linspace(0.0,0.1,data_2d_shape[0]*data_2d_shape[1]*data_2d_shape[2]).reshape((data_2d_shape[0],data_2d_shape[1],data_2d_shape[2]))
-        n_fit=np.linspace(0.0,0.1,data_2d_shape[1])
-        t_fit=np.linspace(0.0,0.1,data_2d_shape[1])
-        vshift_fit=np.linspace(0.0,0.1,data_2d_shape[1])
-        for i in range(data_2d_shape[1]):
-            #sys.stdout.write('mu_ind='+str(i))
-            #sys.stdout.flush()
-            #fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
-            if self.gksystem_dimension==5:
-                fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = self.get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
-            elif self.gksystem_dimension==4:
-                fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = self.get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
-            data2d_maxwell[:,i,0]=fitted_f
-
-        if (self.cb_deltaf_vpar_mu.checkState()):
-        #plot delta f
-            #data2dmax=max(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].flatten())
-            data2dmax=max(data2d_maxwell.flatten())
-            if self.gksystem_dimension==5:
-                fig_deltaf=self.plot_Nd((dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data2d_maxwell)/data2dmax,title="$(f_{COGENT}-f_M)/f_{M,Max}$",interpolation='spline36')
-            elif self.gksystem_dimension==4:
-                fig_deltaf=self.plot_Nd((dataNd_dfn_comps[x_pt,y_pt,:,:,:]-data2d_maxwell)/data2dmax,title="$(f_{COGENT}-f_M)/f_{M,Max}$",interpolation='spline36')
-            if saveplots>0:
-                if not os.path.exists(targetdir):
-                    os.mkdir(targetdir)
-                    self.print_ui(targetdir+'/'+ 'is created.')
-                os.chdir(targetdir)
-                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_interp.png'))
-                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_interp.eps'))
-                os.chdir(basedir)
-            if showplots==0:
-                plt.close(fig_deltaf)
-
-        if (self.cb_f_vpar_muat1.checkState() or  self.cb_deltaf_vpar_muat1.checkState() or  self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState() or self.cb_vpar_maxwell2D_diff_time.checkState() ):
-            mu_pt=1
-
-        if (self.cb_f_vpar_muat1.checkState()):
-            #plot difference
-            if self.gksystem_dimension==5:
-                fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
-            elif self.gksystem_dimension==4:
-                fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
-            legend_maxwellian = 'Maxw.'+r'$(n, T, V_s)$'+' = (%.2f, %.2f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
-            self.oplot_1d(data2d_maxwell[:,mu_pt,0],fig_overlap,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
-            if saveplots>0:
-                if not os.path.exists(targetdir):
-                    os.mkdir(targetdir)
-                    self.print_ui(targetdir+'/'+ 'is created.')
-                os.chdir(targetdir)
-                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_overlap_mu_1.png'))
-                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_overlap_mu_1.eps'))
-                os.chdir(basedir)
-            if showplots==0:
-                plt.close(fig_overlap)
-    
-    
-        if (self.cb_deltaf_vpar_muat1.checkState()):
-            maxatmu1=max(data2d_maxwell[:,mu_pt,0].flatten())
-            #maxwell difference plot
-            if self.gksystem_dimension==5:
-                fig_maxwell_diff=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data2d_maxwell[:,mu_pt,0])/maxatmu1  ,xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='(f_S - f_M)/f_{M,max}' )
-            elif self.gksystem_dimension==4:
-                fig_maxwell_diff=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,0]-data2d_maxwell[:,mu_pt,0])/maxatmu1  ,xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='(f_S - f_M)/f_{M,max}' )
-            if saveplots>0:
-                if not os.path.exists(targetdir):
-                    os.mkdir(targetdir)
-                    self.print_ui(targetdir+'/'+ 'is created.')
-                os.chdir(targetdir)
-                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_at_1.png'))
-                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_at_1.eps'))
-                os.chdir(basedir)
-            if showplots==0:
-                plt.close(fig_maxwell_diff)
+#        if self.gksystem_dimension==5:
+#            data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].shape
+#        elif self.gksystem_dimension==4:
+#            data_2d_shape=dataNd_dfn_comps[x_pt,y_pt,:,:,:].shape
+#        data2d_maxwell=np.linspace(0.0,0.1,data_2d_shape[0]*data_2d_shape[1]*data_2d_shape[2]).reshape((data_2d_shape[0],data_2d_shape[1],data_2d_shape[2]))
+#        n_fit=np.linspace(0.0,0.1,data_2d_shape[1])
+#        t_fit=np.linspace(0.0,0.1,data_2d_shape[1])
+#        vshift_fit=np.linspace(0.0,0.1,data_2d_shape[1])
+#        for i in range(data_2d_shape[1]):
+#            #sys.stdout.write('mu_ind='+str(i))
+#            #sys.stdout.flush()
+#            #fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = get_maxwellian_fitting(coef_maxwell,mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
+#            if self.gksystem_dimension==5:
+#                fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = self.get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
+#            elif self.gksystem_dimension==4:
+#                fitted_f, n_fit[i], t_fit[i], vshift_fit[i] = self.get_maxwellian_fitting_with_fixed_max(mhat,That,Bhat,dataNd_dfn_comps[x_pt,y_pt,:,:,:],VPAR_SCALE,MU_SCALE,mu_ind=i)
+#            data2d_maxwell[:,i,0]=fitted_f
+#
+#        if (self.cb_deltaf_vpar_mu.checkState()):
+#        #plot delta f
+#            #data2dmax=max(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:].flatten())
+#            data2dmax=max(data2d_maxwell.flatten())
+#            if self.gksystem_dimension==5:
+#                fig_deltaf=self.plot_Nd((dataNd_dfn_comps[x_pt,y_pt,z_pt,:,:,:]-data2d_maxwell)/data2dmax,title="$(f_{COGENT}-f_M)/f_{M,Max}$",interpolation='spline36')
+#            elif self.gksystem_dimension==4:
+#                fig_deltaf=self.plot_Nd((dataNd_dfn_comps[x_pt,y_pt,:,:,:]-data2d_maxwell)/data2dmax,title="$(f_{COGENT}-f_M)/f_{M,Max}$",interpolation='spline36')
+#            if saveplots>0:
+#                if not os.path.exists(targetdir):
+#                    os.mkdir(targetdir)
+#                    self.print_ui(targetdir+'/'+ 'is created.')
+#                os.chdir(targetdir)
+#                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_interp.png'))
+#                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_interp.eps'))
+#                os.chdir(basedir)
+#            if showplots==0:
+#                plt.close(fig_deltaf)
+#
+#        if (self.cb_f_vpar_muat1.checkState() or  self.cb_deltaf_vpar_muat1.checkState() or  self.cb_vpar_mu_maxwell2D.checkState() or  self.cb_vpar_maxwell2D_mu_1.checkState() or  self.cb_vpar_maxwell2D_diff_mu_1.checkState() or self.cb_vpar_maxwell2D_diff.checkState() or self.cb_vpar_maxwell2D_diff_time.checkState() ):
+#            mu_pt=1
+#
+#        if (self.cb_f_vpar_muat1.checkState()):
+#            #plot difference
+#            if self.gksystem_dimension==5:
+#                fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+#            elif self.gksystem_dimension==4:
+#                fig_overlap=self.oplot_1d(dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,:],xaxis=np.linspace(-1,1,len(dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,:])),label='COGENT'%MU_N[mu_pt],legend=1 )
+#            legend_maxwellian = 'Maxw.'+r'$(n, T, V_s)$'+' = (%.2f, %.2f, %.1g)'%(n_fit[mu_pt],t_fit[mu_pt],vshift_fit[mu_pt])
+#            self.oplot_1d(data2d_maxwell[:,mu_pt,0],fig_overlap,title='',linewidth=1.5, linestyle='--',color='k',label=legend_maxwellian,legend=1,ylabel='f_M, f_S')
+#            if saveplots>0:
+#                if not os.path.exists(targetdir):
+#                    os.mkdir(targetdir)
+#                    self.print_ui(targetdir+'/'+ 'is created.')
+#                os.chdir(targetdir)
+#                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_overlap_mu_1.png'))
+#                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_overlap_mu_1.eps'))
+#                os.chdir(basedir)
+#            if showplots==0:
+#                plt.close(fig_overlap)
+#    
+#    
+#        if (self.cb_deltaf_vpar_muat1.checkState()):
+#            maxatmu1=max(data2d_maxwell[:,mu_pt,0].flatten())
+#            #maxwell difference plot
+#            if self.gksystem_dimension==5:
+#                fig_maxwell_diff=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,z_pt,:,mu_pt,0]-data2d_maxwell[:,mu_pt,0])/maxatmu1  ,xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='(f_S - f_M)/f_{M,max}' )
+#            elif self.gksystem_dimension==4:
+#                fig_maxwell_diff=self.oplot_1d( (dataNd_dfn_comps[x_pt,y_pt,:,mu_pt,0]-data2d_maxwell[:,mu_pt,0])/maxatmu1  ,xaxis=np.linspace(-1,1,len(data2d_maxwell[:,mu_pt,0])),label='(mu=%g)'%MU_N[mu_pt],legend=1,ylabel='(f_S - f_M)/f_{M,max}' )
+#            if saveplots>0:
+#                if not os.path.exists(targetdir):
+#                    os.mkdir(targetdir)
+#                    self.print_ui(targetdir+'/'+ 'is created.')
+#                os.chdir(targetdir)
+#                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_at_1.png'))
+#                plt.savefig(filename.replace('.hdf5','.vpar_maxwell_diff_at_1.eps'))
+#                os.chdir(basedir)
+#            if showplots==0:
+#                plt.close(fig_maxwell_diff)
 
 
         #2dfitting
@@ -1570,6 +1615,9 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             if self.cb_3d_interactive.checkState():
                 s3.show()
 
+            return s3.fig
+
+
             #try 3D plot using mayavi
             #if var_components>1:
                 #try vector field plot (x,y,z) = 0 2 -1
@@ -1818,20 +1866,20 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             self.print_ui( 'default (coef, mhat, That) = '+ str(coef_maxwell)+ str(mhat)+ str(That))
             return coef_maxwell,mhat,That
      
-    def get_maxwellian_fitting_with_fixed_max(self,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE,mu_ind=0):
-        #least square fitting on a slice of MU index=0
-        guess_temp =1.0/(2.0*That)
-        guess_shift =0.0
-        fixed_max_den=max(data_dfn[:,mu_ind,0])
-        optimize_func = lambda z: fixed_max_den*np.exp(-z[0]*(VPAR_SCALE-z[1])**2)-data_dfn[:,mu_ind,0] 
-        
-        est_temp, est_shift = leastsq(optimize_func, [guess_temp, guess_shift])[0]
-        fitted_f = fixed_max_den*np.exp(-est_temp*(VPAR_SCALE-est_shift)**2)
-        t_fit = 1.0/(est_temp*2.0)
-        n_fit = fixed_max_den*np.sqrt(np.pi)/(0.5*mhat/t_fit)**(1.5)/np.exp(-MU_SCALE[mu_ind]*Bhat/2.0/t_fit)
-        vshift_fit = est_shift
-        #self.print_ui('(n_fit, t_fit, vshift_fit)='+str(n_fit)+str(t_fit)+str(vshift_fit))
-        return fitted_f, n_fit, t_fit, vshift_fit
+#    def get_maxwellian_fitting_with_fixed_max(self,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE,mu_ind=0):
+#        #least square fitting on a slice of MU index=0
+#        guess_temp =1.0/(2.0*That)
+#        guess_shift =0.0
+#        fixed_max_den=max(data_dfn[:,mu_ind,0])
+#        optimize_func = lambda z: fixed_max_den*np.exp(-z[0]*(VPAR_SCALE-z[1])**2)-data_dfn[:,mu_ind,0] 
+#        
+#        est_temp, est_shift = leastsq(optimize_func, [guess_temp, guess_shift])[0]
+#        fitted_f = fixed_max_den*np.exp(-est_temp*(VPAR_SCALE-est_shift)**2)
+#        t_fit = 1.0/(est_temp*2.0)
+#        n_fit = fixed_max_den*np.sqrt(np.pi)/(0.5*mhat/t_fit)**(1.5)/np.exp(-MU_SCALE[mu_ind]*Bhat/2.0/t_fit)
+#        vshift_fit = est_shift
+#        #self.print_ui('(n_fit, t_fit, vshift_fit)='+str(n_fit)+str(t_fit)+str(vshift_fit))
+#        return fitted_f, n_fit, t_fit, vshift_fit
     
     def get_maxwellian_fitting_2D(self,mhat,That,Bhat,data_dfn,VPAR_SCALE,MU_SCALE):
 
@@ -2048,24 +2096,28 @@ class slice3(object):
         self.zslice = self.ax3.imshow(var[:,:,int(mother.te_z_pt.toPlainText())],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
 
         # Create and initialize x-slider
-        self.sliderax1 = self.fig.add_axes([0.125,0.08,0.225,0.03])
+        self.sliderax1 = self.fig.add_axes([0.125,0.06,0.225,0.04])
+        #self.sliderax1 = self.fig.add_axes([0.125,0.08,0.225,0.03])
         #self.sliderx = DiscreteSlider(self.sliderax1,'',0,len(self.x)-1,increment=1,valinit=0)
-        self.sliderx = PageSlider(self.sliderax1,'x',len(self.x),activecolor="orange")
+        self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),activecolor="orange")
+        #self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),valinit=int(mother.te_x_pt.toPlainText()),activecolor="orange")
         self.sliderx.on_changed(self.update_x)
         self.sliderx.set_val(int(mother.te_x_pt.toPlainText()))
 
         # Create and initialize y-slider
-        self.sliderax2 = self.fig.add_axes([0.4,0.08,0.225,0.03])
+        self.sliderax2 = self.fig.add_axes([0.4,0.06,0.225,0.04])
+        #self.sliderax2 = self.fig.add_axes([0.4,0.08,0.225,0.03])
         #self.slidery = DiscreteSlider(self.sliderax2,'',0,len(self.y)-1,increment=1,valinit=0)
-        self.slidery = PageSlider(self.sliderax2,'y',len(self.y),activecolor="orange")
+        self.slidery = PageSlider(self.sliderax2,'y',numpages=len(self.y),activecolor="orange")
         self.slidery.on_changed(self.update_y)
         #self.slidery.set_val(0)
         self.slidery.set_val(int(mother.te_y_pt.toPlainText()))
 
         # Create and initialize z-slider
-        self.sliderax3 = self.fig.add_axes([0.675,0.08,0.225,0.03])
+        self.sliderax3 = self.fig.add_axes([0.675,0.06,0.225,0.04])
+        #self.sliderax3 = self.fig.add_axes([0.675,0.08,0.225,0.03])
         #self.sliderz = DiscreteSlider(self.sliderax3,'',0,len(self.z)-1,increment=1,valinit=0)
-        self.sliderz = PageSlider(self.sliderax3,'zage',len(self.z),activecolor="orange")
+        self.sliderz = PageSlider(self.sliderax3,'z',numpages=len(self.z),activecolor="orange")
         self.sliderz.on_changed(self.update_z)
         #self.sliderz.set_val(0)
         self.sliderz.set_val(int(mother.te_z_pt.toPlainText()))
