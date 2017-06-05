@@ -697,13 +697,17 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 if 'potential' in selected_files[i]:
                     self.plot_potential(selected_files[i],ghost=0,x_slice=x_pt,y_slice=x_pt,z_slice=z_pt,targetdir=plot_output)
                     if i==len(selected_files)-1:
+                        head=os.path.split(selected_files[i])
+                        path=head[0]
+                        filename=head[1]
+                        basedir=os.getcwd()
                         if self.cb_potential_fft_along_z.checkState():
                             print self.np_hf_time
                             print self.np_hf_amp_time
                             print self.np_lf_time
                             print self.np_lf_amp_time
-                            plot_fft_amp=self.oplot_1d(var=self.np_hf_amp_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='hf',xlabel='time',ylabel='amplitude')
-                            plot_fft_amp=self.oplot_1d(var=self.np_lf_amp_time,fig=plot_fft_amp,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='lf',xlabel='time',ylabel='amplitude')
+                            plot_fft_amp=self.oplot_1d(var=np.log10(self.np_hf_amp_time),xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='hf',xlabel='time',ylabel='log10(amplitude)')
+                            plot_fft_amp=self.oplot_1d(var=np.log10(self.np_lf_amp_time),fig=plot_fft_amp,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='lf',xlabel='time',ylabel='amplitude')
                             if not os.path.exists(plot_output):
                                 os.mkdir(plot_output)
                             os.chdir(plot_output)
@@ -712,8 +716,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             os.chdir(basedir)
                             plt.close(plot_fft_amp)
 
-                            plot_fft=self.oplot_1d(var=self.np_hf_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='hf',xlabel='time',ylabel='frequency')
-                            plot_fft=self.oplot_1d(var=self.np_lf_time,fig=plot_fft,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='lf',xlabel='time',ylabel='frequency')
+                            plot_fft=self.oplot_1d(var=self.np_hf_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='hf',xlabel='time',ylabel='frequency')
+                            plot_fft=self.oplot_1d(var=self.np_lf_time,fig=plot_fft,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='lf',xlabel='time',ylabel='frequency')
 
                             if not os.path.exists(plot_output):
                                 os.mkdir(plot_output)
@@ -1068,7 +1072,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 	    xhf_abs=abs(xhf)
 	    refined_dimensional_x = np.linspace(dimensional_x[0], dimensional_x[-1],nx*10)
 	    
-	    plt.plot(dimensional_x,y)
+	    #plt.plot(dimensional_x,y)
 
 	    yhf_fit_plot=-1.0/nx*yhf*np.sin(xhf_abs*refined_dimensional_x)
  
@@ -1089,8 +1093,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             if self.cb_3d_interactive.checkState()==0:
                 plt.close(fig_potential_fft)
 
-            fig_potential_along_z=self.oplot_1d(var=yhf_fit_plot,xaxis=refined_dimensional_x,xlabel='z',ylabel='potential',color='g')
-            fig_potential_along_z=self.oplot_1d(var=ylf_fit_plot,fig=fig_potential_along_z,xaxis=refined_dimensional_x,xlabel='z',ylabel='potential',color='r')
+            fig_potential_along_z=self.oplot_1d(var=yhf_fit_plot,xaxis=refined_dimensional_x,xlabel='z',ylabel='potential',color='r')
+            fig_potential_along_z=self.oplot_1d(var=ylf_fit_plot,fig=fig_potential_along_z,xaxis=refined_dimensional_x,xlabel='z',ylabel='potential',color='g')
             fig_potential_along_z=self.oplot_1d(var=y,fig=fig_potential_along_z,xaxis=dimensional_x,xlabel='z',ylabel='potential')
 
             if saveplots>0:
