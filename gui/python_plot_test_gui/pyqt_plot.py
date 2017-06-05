@@ -702,8 +702,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             print self.np_hf_amp_time
                             print self.np_lf_time
                             print self.np_lf_amp_time
-                            plot_fft_amp=self.oplot_1d(var=np_hf_amp_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='hf',xlabel='time',ylabel='amplitude')
-                            plot_fft_amp=self.oplot_1d(var=np_lf_amp_time,fig=plot_fft_amp,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='lf',xlabel='time',ylabel='amplitude')
+                            plot_fft_amp=self.oplot_1d(var=self.np_hf_amp_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='hf',xlabel='time',ylabel='amplitude')
+                            plot_fft_amp=self.oplot_1d(var=self.np_lf_amp_time,fig=plot_fft_amp,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='lf',xlabel='time',ylabel='amplitude')
                             if not os.path.exists(plot_output):
                                 os.mkdir(plot_output)
                             os.chdir(plot_output)
@@ -712,8 +712,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             os.chdir(basedir)
                             plt.close(plot_fft_amp)
 
-                            plot_fft=self.oplot_1d(var=np_hf_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='hf',xlabel='time',ylabel='frequency')
-                            plot_fft=self.oplot_1d(var=np_lf_time,fig=plot_fft,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='lf',xlabel='time',ylabel='frequency')
+                            plot_fft=self.oplot_1d(var=self.np_hf_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='hf',xlabel='time',ylabel='frequency')
+                            plot_fft=self.oplot_1d(var=self.np_lf_time,fig=plot_fft,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='lf',xlabel='time',ylabel='frequency')
 
                             if not os.path.exists(plot_output):
                                 os.mkdir(plot_output)
