@@ -10,6 +10,10 @@ from mpl_toolkits import axes_grid1
 from numpy.ma import masked_array
 import matplotlib.colors as mcolors
 
+#for fft
+import scipy
+import scipy.fftpack
+
 #To parse n0_grid_func
 from sympy.parsing.sympy_parser import parse_expr
 from sympy.parsing.sympy_parser import standard_transformations
@@ -50,6 +54,11 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self.np_vpar_maxwell2D_diff_time=[]
+        self.np_time=[]
+        self.np_hf_time=[]
+        self.np_hf_amp_time=[]
+        self.np_lf_time=[]
+        self.np_lf_amp_time=[]
         self.start_time=0.0
         self.end_time=1.0
         self.open_target_button.clicked.connect(self.print_target_file_lines)
@@ -687,6 +696,34 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
                 if 'potential' in selected_files[i]:
                     self.plot_potential(selected_files[i],ghost=0,x_slice=x_pt,y_slice=x_pt,z_slice=z_pt,targetdir=plot_output)
+                    if i==len(selected_files)-1:
+                        if self.cb_potential_fft_along_z.checkState():
+                            print self.np_hf_time
+                            print self.np_hf_amp_time
+                            print self.np_lf_time
+                            print self.np_lf_amp_time
+                            plot_fft_amp=self.oplot_1d(var=np_hf_amp_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='hf',xlabel='time',ylabel='amplitude')
+                            plot_fft_amp=self.oplot_1d(var=np_lf_amp_time,fig=plot_fft_amp,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='lf',xlabel='time',ylabel='amplitude')
+                            if not os.path.exists(plot_output):
+                                    os.mkdir(plot_output)
+                                os.chdir(plot_output)
+                                plt.savefig(filename.replace('.hdf5','.potential_fft_amplitude_time.png'))
+                                plt.savefig(filename.replace('.hdf5','.potential_fft_amplitude_time.eps'))
+                                os.chdir(basedir)
+                            plt.close(plot_fft_amp)
+
+                            plot_fft=self.oplot_1d(var=np_hf_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='hf',xlabel='time',ylabel='frequency')
+                            plot_fft=self.oplot_1d(var=np_lf_time,fig=plot_fft,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='lf',xlabel='time',ylabel='frequency')
+
+                            if not os.path.exists(plot_output):
+                                    os.mkdir(plot_output)
+                                os.chdir(plot_output)
+                                plt.savefig(filename.replace('.hdf5','.potential_fft_frequency.png'))
+                                plt.savefig(filename.replace('.hdf5','.potential_fft_frequency.eps'))
+                                os.chdir(basedir)
+                            plt.close(plot_fft)
+
+
 
                 if 'BField' in selected_files[i]:
                     plot_bvec(selected_files[i],ghost=0,targetdir=plot_output)
@@ -965,27 +1002,121 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 plt.savefig(filename.replace('.hdf5','.potential_ghost_slice.png'))
                 plt.savefig(filename.replace('.hdf5','.potential_ghost_slice.eps'))
                 os.chdir(basedir)
-            if showplots==0:
+            if self.cb_3d_interactive.checkState()==0:
                 plt.close(fig_potential)
 
         
         if self.cb_potential_fft_along_z.checkState():
-            print 'hi'
+            print 'low'
             nx = int(self.te_z_total.toPlainText())
             dx = 2.0*np.pi/nx;
             Lz = float(self.te_z_length.toPlainText())
-            x = np.linspace( (0.0+dx/2.0)*Lz, (2.0*np.pi-dx/2.0)*Lz, nx)
+
             y = dataNd_potential_comps[x_slice,y_slice,:].flatten()
-            print x
-            print y
+            left_x_cell= (0.0+dx/2.0)*Lz/(2.0*np.pi)
+	    right_x_cell = (2.0*np.pi - dx/2.0)*Lz/(2.0*np.pi)
+	    dimensional_x = np.linspace( left_x_cell, right_x_cell , nx)
+	    x=dimensional_x/2/np.pi
+	    
+	    #T = (x[-1]-x[0])/nx
+	    T = (x[-1]-x[0])/(nx-1)
+	    xf = scipy.fftpack.fftfreq(nx,T)
+	    yf = scipy.fftpack.fft(y)
+	    xf = scipy.fftpack.fftshift(xf)
+	    yf = scipy.fftpack.fftshift(yf)
 
-            xf = scipy.fftpack.fftfreq(nx,dx)
-            yf = scipy.fftpack.fft(y)
-            xf = scipy.fftpack.fftshift(xf)
-            yf = scipy.fftpack.fftshift(yf)
-            
-                
+	  
+            xf_cp=xf.copy()
+	    yf_cp=yf.copy()
+	    # flip copy
+	    for idx, val in enumerate(xf_cp):
+	        if val==0:
+	            mid=idx
+	    
+	    if abs(xf_cp[0])>abs(xf_cp[-1]):
+	        #print 'copy to left'
+	        #print mid+1,idx,'->',0,mid-1
+	        #print idx-(mid+1), mid-1-0
+	        s1=mid+1
+	        s2=idx
+	        flag=-1 #to left
+	    else:
+	        #print 'copy to right'
+	        #print 0,mid-1,'->',mid+1,idx
+	        #print mid-1-0, idx-(mid+1)
+	        s1=0
+	        s2=mid-1
+	        flag=1 #to right
+	    
+	    
+	    for i in range(1,s2-s1+1):
+	        yf_cp[mid+i*flag]+=yf_cp[mid-i*flag]
+	        yf_cp[mid-i*flag]=0
 
+
+	    yf_abs=abs(np.real(yf_cp))
+	    if yf_abs[0]>yf_abs[-1]:
+	    	yhf=yf_abs[0]
+	    	xhf=xf_cp[0]
+		poped_yf_abs=np.delete(yf_abs,0,0)
+		poped_xf=np.delete(xf_cp,0,0)
+	    else:
+	    	yhf=yf_abs[-1]
+	    	xhf=xf_cp[-1]
+		poped_yf_abs=np.delete(yf_abs,-1,-1)
+		poped_xf=np.delete(xf_cp,-1,-1)
+	    xhf_abs=abs(xhf)
+	    refined_dimensional_x = np.linspace(dimensional_x[0], dimensional_x[-1],nx*10)
+	    
+	    plt.plot(dimensional_x,y)
+
+	    yhf_fit_plot=-1.0/nx*yhf*np.sin(xhf_abs*refined_dimensional_x)
+ 
+
+	    ylf = poped_yf_abs.max()
+	    xlf_abs=abs(poped_xf[poped_yf_abs.argmax()])
+
+	    ylf_fit_plot=-1.0/nx*ylf*np.sin(xlf_abs*refined_dimensional_x)
+
+            fig_potential_fft=self.oplot_1d(var=1.0/nx*np.abs(yf_cp),xaxis=xf_cp,xlabel='freq',ylabel='amplitude')
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.potential_fft_along_z.png'))
+                plt.savefig(filename.replace('.hdf5','.potential_fft_along_z.eps'))
+                os.chdir(basedir)
+            if self.cb_3d_interactive.checkState()==0:
+                plt.close(fig_potential_fft)
+
+            fig_potential_along_z=self.oplot_1d(var=yhf_fit_plot,xaxis=refined_dimensional_x,xlabel='z',ylabel='potential',color='g')
+            fig_potential_along_z=self.oplot_1d(var=ylf_fit_plot,fig=fig_potential_along_z,xaxis=refined_dimensional_x,xlabel='z',ylabel='potential',color='r')
+            fig_potential_along_z=self.oplot_1d(var=y,fig=fig_potential_along_z,xaxis=dimensional_x,xlabel='z',ylabel='potential')
+
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.potential_along_z.png'))
+                plt.savefig(filename.replace('.hdf5','.potential_along_z.eps'))
+                os.chdir(basedir)
+            if self.cb_3d_interactive.checkState()==0:
+                plt.close(fig_potential_along_z)
+
+
+	    # copy to time series
+            if len(self.np_hf_time)==0:
+                self.np_time=cogent_time
+                self.np_hf_time=xhf_abs
+                self.np_hf_amp_time=yhf
+                self.np_lf_time=xlf_abs
+                self.np_lf_amp_time=ylf
+            else:
+                self.np_time=np.append(self,np_time,cogent_time)
+                self.np_hf_time=np.append(self.np_hf_time,xhf_abs)
+                self.np_hf_amp_time=np.append(self.np_hf_amp_time,yhf)
+                self.np_lf_time=np.append(self.np_lf_time,xlf_abs)
+                self.np_lf_amp_time=np.append(self.np_lf_amp_time,ylf)
     
         return
 
