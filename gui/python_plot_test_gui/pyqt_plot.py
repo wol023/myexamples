@@ -1105,18 +1105,18 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 
 	    # copy to time series
-            if len(self.np_hf_time)==0:
-                self.np_time=cogent_time
-                self.np_hf_time=xhf_abs
-                self.np_hf_amp_time=yhf
-                self.np_lf_time=xlf_abs
-                self.np_lf_amp_time=ylf
-            else:
-                self.np_time=np.append(self,np_time,cogent_time)
-                self.np_hf_time=np.append(self.np_hf_time,xhf_abs)
-                self.np_hf_amp_time=np.append(self.np_hf_amp_time,yhf)
-                self.np_lf_time=np.append(self.np_lf_time,xlf_abs)
-                self.np_lf_amp_time=np.append(self.np_lf_amp_time,ylf)
+            #if len(self.np_hf_time)==0:
+            #    self.np_time=cogent_time
+            #    self.np_hf_time=xhf_abs
+            #    self.np_hf_amp_time=yhf
+            #    self.np_lf_time=xlf_abs
+            #    self.np_lf_amp_time=ylf
+            #else:
+            self.np_time=np.append(self,np_time,cogent_time)
+            self.np_hf_time=np.append(self.np_hf_time,xhf_abs)
+            self.np_hf_amp_time=np.append(self.np_hf_amp_time,yhf)
+            self.np_lf_time=np.append(self.np_lf_time,xlf_abs)
+            self.np_lf_amp_time=np.append(self.np_lf_amp_time,ylf)
     
         return
 
