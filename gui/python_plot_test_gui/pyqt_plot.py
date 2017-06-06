@@ -59,8 +59,15 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.np_hf_amp_time=[]
         self.np_lf_time=[]
         self.np_lf_amp_time=[]
+        self.np_all_amp_time=[]
+        self.np_all_time=[]
         self.start_time=0.0
         self.end_time=1.0
+
+        self.colors=('k','y','m','c','b','g','r','#aaaaaa')
+        self.linestyles=('-','--','-.',':')
+        self.styles=[(color,linestyle) for linestyle in self.linestyles for color in self.colors]
+
         self.open_target_button.clicked.connect(self.print_target_file_lines)
         self.open_load_button.clicked.connect(self.print_current_dir_lines)
         self.button_plot_selected.clicked.connect(self.plotFigure)
@@ -660,10 +667,25 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
     def plotFigure(self):
 
+        #initialize
+        self.np_time=[]
+        self.np_hf_time=[]
+        self.np_hf_amp_time=[]
+        self.np_lf_time=[]
+        self.np_lf_amp_time=[]
+        self.np_all_amp_time=[]
+        self.np_all_time=[]
+
         selected_items=self.lw_target.selectedItems()
         selected_files=[]
         for i in range(len(selected_items)):
             selected_files.append(str(selected_items[i].text()))
+
+
+        # initialize time dependent variables
+        row_size=len(selected_files)
+        col_size=int(self.te_z_total.toPlainText())/2
+
 
         for i in range(len(selected_files)):
             self.print_ui(selected_files[i])
@@ -672,11 +694,11 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             status=self.check_and_try_cluster(selected_files[i])
 
             if status>0:
-                x_pt=int(self.te_x_pt.toPlainText())
-                y_pt=int(self.te_y_pt.toPlainText())
-                z_pt=int(self.te_z_pt.toPlainText())
-                vpar_pt=int(self.te_vpar_pt.toPlainText())
-                mu_pt=int(self.te_mu_pt.toPlainText())
+                x_pt=int(self.te_x_pt.toPlainText())-1
+                y_pt=int(self.te_y_pt.toPlainText())-1
+                z_pt=int(self.te_z_pt.toPlainText())-1
+                vpar_pt=int(self.te_vpar_pt.toPlainText())-1
+                mu_pt=int(self.te_mu_pt.toPlainText())-1
                 plot_output=self.tbox_localout.toPlainText()
                 if 'dfn' in selected_files[i]:
                     if 'hydrogen' in selected_files[i]:
@@ -702,12 +724,18 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         filename=head[1]
                         basedir=os.getcwd()
                         if self.cb_potential_fft_along_z.checkState():
-                            print self.np_hf_time
-                            print self.np_hf_amp_time
-                            print self.np_lf_time
-                            print self.np_lf_amp_time
+                            #print 'hf:', self.np_hf_time
+                            #print 'ha:', self.np_hf_amp_time
+                            #print 'lf:',self.np_lf_time
+                            #print 'la:', self.np_lf_amp_time
+
+                            print 'time',self.np_time
+                            print 'allf',self.np_all_time
+                            print 'allA',self.np_all_amp_time
+                            print self.np_all_amp_time.shape
+
                             plot_fft_amp=self.oplot_1d(var=np.log10(self.np_hf_amp_time),xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='hf',xlabel='time',ylabel='log10(amplitude)')
-                            plot_fft_amp=self.oplot_1d(var=np.log10(self.np_lf_amp_time),fig=plot_fft_amp,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='lf',xlabel='time',ylabel='amplitude')
+                            plot_fft_amp=self.oplot_1d(var=np.log10(self.np_lf_amp_time),fig=plot_fft_amp,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='lf',xlabel='time',ylabel='log10(amplitude)')
                             if not os.path.exists(plot_output):
                                 os.mkdir(plot_output)
                             os.chdir(plot_output)
@@ -716,16 +744,35 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             os.chdir(basedir)
                             plt.close(plot_fft_amp)
 
-                            plot_fft=self.oplot_1d(var=self.np_hf_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='hf',xlabel='time',ylabel='frequency')
-                            plot_fft=self.oplot_1d(var=self.np_lf_time,fig=plot_fft,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='lf',xlabel='time',ylabel='frequency')
+                            plot_fft=self.oplot_1d(var=self.np_hf_time,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='hf',xlabel='time',ylabel='wave number')
+                            plot_fft=self.oplot_1d(var=self.np_lf_time,fig=plot_fft,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='lf',xlabel='time',ylabel='wave number')
 
                             if not os.path.exists(plot_output):
                                 os.mkdir(plot_output)
                             os.chdir(plot_output)
-                            plt.savefig(filename.replace('.hdf5','.potential_fft_frequency.png'))
-                            plt.savefig(filename.replace('.hdf5','.potential_fft_frequency.eps'))
+                            plt.savefig(filename.replace('.hdf5','.potential_fft_frequency_time.png'))
+                            plt.savefig(filename.replace('.hdf5','.potential_fft_frequency_time.eps'))
                             os.chdir(basedir)
                             plt.close(plot_fft)
+
+                            #try plot all modes
+                            ind =0
+                            plot_fft_all=self.oplot_1d(var=np.log10(self.np_all_amp_time[:,0]),xaxis=self.np_time,title='fft',linewidth=1.5, linestyle=self.styles[ind][1],color=self.styles[ind][0],label=str(self.np_all_time[0,ind]/self.np_all_time[0,1])  ,xlabel='time',ylabel='log10(amplitude)')
+
+                            ind=1
+                            while (ind<9):
+                                plot_fft_all=self.oplot_1d(var=np.log10(self.np_all_amp_time[:,ind]),fig=plot_fft_all,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle=self.styles[ind][1],color=self.styles[ind][0],label=str(self.np_all_time[0,ind]/self.np_all_time[0,1]),xlabel='time',ylabel='log10(amplitude)')
+                                ind=ind+1
+
+                            plt.legend(loc='best')
+
+                            if not os.path.exists(plot_output):
+                                os.mkdir(plot_output)
+                            os.chdir(plot_output)
+                            plt.savefig(filename.replace('.hdf5','.potential_fft_all_time.png'))
+                            plt.savefig(filename.replace('.hdf5','.potential_fft_all_time.eps'))
+                            os.chdir(basedir)
+                            plt.close(plot_fft_all)
 
 
 
@@ -980,6 +1027,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             if not os.path.exists(targetdir):
                 os.mkdir(targetdir)
             os.chdir(targetdir)
+
+            if not os.path.exists('potential_slice'):
+                os.mkdir('potential_slice')
+            os.chdir('potential_slice')
             plt.savefig(filename.replace('.hdf5','.potential_slice.png'))
             plt.savefig(filename.replace('.hdf5','.potential_slice.eps'))
             os.chdir(basedir)
@@ -1032,6 +1083,9 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 	  
             xf_cp=xf.copy()
 	    yf_cp=yf.copy()
+
+            yf_cp = np.abs(yf_cp)
+
 	    # flip copy
 	    for idx, val in enumerate(xf_cp):
 	        if val==0:
@@ -1053,13 +1107,31 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 	        flag=1 #to right
 	    
 	    
-	    for i in range(1,s2-s1+1):
+	    for i in range(1,s2-s1+2):
+                #print i, mid+i*flag, mid-i*flag
 	        yf_cp[mid+i*flag]+=yf_cp[mid-i*flag]
 	        yf_cp[mid-i*flag]=0
 
 
-	    #yf_abs=abs(np.real(yf_cp))
-	    yf_abs=abs((yf_cp))
+            if flag<0:
+                if len(self.np_all_time)==0:
+                    self.np_all_time=abs(xf_cp[0:mid+1][::-1])
+                    self.np_all_amp_time=abs(yf_cp[0:mid+1][::-1])
+                else:
+                    self.np_all_time=np.vstack([self.np_all_time,abs(xf_cp[0:mid+1][::-1])])
+                    self.np_all_amp_time=np.vstack([self.np_all_amp_time,abs(yf_cp[0:mid+1][::-1])])
+            else:
+                if len(self.np_all_time)==0:
+                    self.np_all_time=abs(xf_cp[mid:-1])
+                    self.np_all_amp_time=abs(yf_cp[mid:-1])
+                else:
+                    self.np_all_time=np.vstack([self.np_all_time,abs(xf_cp[mid:-1]) ])
+                    self.np_all_amp_time=np.vstack([self.np_all_amp_time,abs(yf_cp[mid:-1])])
+
+
+
+	    yf_abs=abs((yf_cp)) #redundant, change of name
+
 	    if yf_abs[0]>yf_abs[-1]:
 	    	yhf=yf_abs[0]
 	    	xhf=xf_cp[0]
@@ -1083,11 +1155,15 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 	    ylf_fit_plot=-1.0/nx*ylf*np.sin(xlf_abs*refined_dimensional_x)
 
-            fig_potential_fft=self.oplot_1d(var=1.0/nx*np.abs(yf_cp),xaxis=xf_cp,xlabel='freq',ylabel='amplitude')
+            fig_potential_fft=self.oplot_1d(var=1.0/nx*np.abs(yf_cp),xaxis=xf_cp,xlabel='freq',ylabel='amplitude',stemplot=1)
             if saveplots>0:
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
                 os.chdir(targetdir)
+
+                if not os.path.exists('potential_fft_along_z'):
+                    os.mkdir('potential_fft_along_z')
+                os.chdir('potential_fft_along_z')
                 plt.savefig(filename.replace('.hdf5','.potential_fft_along_z.png'))
                 plt.savefig(filename.replace('.hdf5','.potential_fft_along_z.eps'))
                 os.chdir(basedir)
@@ -1102,6 +1178,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                 if not os.path.exists(targetdir):
                     os.mkdir(targetdir)
                 os.chdir(targetdir)
+
+                if not os.path.exists('potential_along_z'):
+                    os.mkdir('potential_along_z')
+                os.chdir('potential_along_z')
                 plt.savefig(filename.replace('.hdf5','.potential_along_z.png'))
                 plt.savefig(filename.replace('.hdf5','.potential_along_z.eps'))
                 os.chdir(basedir)
@@ -1110,18 +1190,16 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 
 	    # copy to time series
-            #if len(self.np_hf_time)==0:
-            #    self.np_time=cogent_time
-            #    self.np_hf_time=xhf_abs
-            #    self.np_hf_amp_time=yhf
-            #    self.np_lf_time=xlf_abs
-            #    self.np_lf_amp_time=ylf
-            #else:
             self.np_time=np.append(self.np_time,cogent_time)
             self.np_hf_time=np.append(self.np_hf_time,xhf_abs)
             self.np_hf_amp_time=np.append(self.np_hf_amp_time,yhf)
             self.np_lf_time=np.append(self.np_lf_time,xlf_abs)
             self.np_lf_amp_time=np.append(self.np_lf_amp_time,ylf)
+
+            #print 'self.np_all_time'
+            #print self.np_all_time
+
+
     
         return
 
@@ -1744,7 +1822,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         #Start plotting   
         if var_dim==3:
             self.print_ui('var_dim = '+str(var_dim))
-            s3 = slice3(var[:,:,:,0],self)
+            s3 = slice3(var[:,:,:,0],self,interactive=self.cb_3d_interactive.checkState())
             s3.xlabel('x',fontsize=18)
             s3.ylabel('y',fontsize=18)
             s3.zlabel('z',fontsize=18)
@@ -2068,7 +2146,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         ax1.contour(x,y,var.T, 8 , label=label)
         return fig
     
-    def oplot_1d(self,var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,linewidth=1.5,linestyle='-',color='b',label='',legend=[],symmetric_ylim=0):
+    def oplot_1d(self,var,fig=[],ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,linewidth=1.5,linestyle='-',color='b',label='',legend=[],symmetric_ylim=0,stemplot=0):
         #consider vpar-f simple plot 
         if fig==[]:
             fig=plt.figure()
@@ -2077,7 +2155,11 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         ax1=plt.gca()
         if xaxis==[]:
             xaxis=np.linspace(-1,1,len(var))
-        ax1.plot(xaxis,var,linewidth=linewidth,linestyle=linestyle,color=color,label=label)
+
+        if stemplot==1:
+            ax1.stem(xaxis,var,linewidth=linewidth,linestyle=linestyle,color=color,label=label)
+        else:
+            ax1.plot(xaxis,var,linewidth=linewidth,linestyle=linestyle,color=color,label=label)
         ax1.yaxis.set_major_formatter(ticker.ScalarFormatter(useMathText=True))
         ax1.ticklabel_format(axis='y', style='sci', scilimits=(-2,2))
 
@@ -2185,7 +2267,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 
 class slice3(object):
-    def __init__(self,var,mother):
+    def __init__(self,var,mother,interactive=0):
         nx = len(var[:,0,0])
         ny = len(var[0,:,0])
         nz = len(var[0,0,:])
@@ -2200,63 +2282,76 @@ class slice3(object):
         self.ax2 = self.fig.add_subplot(132,aspect='equal')
         self.ax3 = self.fig.add_subplot(133,aspect='equal')
 
-        self.xplot_zline = self.ax1.axvline(color='m',linestyle='--',lw=2)
-        #self.xplot_zline.set_xdata(self.z[0]) 
-        self.xplot_zline.set_xdata(int(mother.te_z_pt.toPlainText())) 
-
-        self.xplot_yline = self.ax1.axhline(color='m',linestyle='--',lw=2)
-        #self.xplot_yline.set_ydata(self.y[0])
-        self.xplot_yline.set_ydata(int(mother.te_y_pt.toPlainText()))
-
-        self.yplot_xline = self.ax2.axhline(color='m',linestyle='--',lw=2)
-        #self.yplot_xline.set_ydata(self.x[0])
-        self.yplot_xline.set_ydata(int(mother.te_x_pt.toPlainText()))
-
-        self.yplot_zline = self.ax2.axvline(color='m',linestyle='--',lw=2)
-        #self.yplot_zline.set_xdata(self.z[0])
-        self.yplot_zline.set_xdata(int(mother.te_z_pt.toPlainText()))
-
-        self.zplot_xline = self.ax3.axvline(color='m',linestyle='--',lw=2)
-        #self.zplot_xline.set_xdata(self.x[0])
-        self.zplot_xline.set_xdata(int(mother.te_x_pt.toPlainText()))
-
-        self.zplot_yline = self.ax3.axhline(color='m',linestyle='--',lw=2)
-        #self.zplot_yline.set_ydata(self.y[0])
-        self.zplot_yline.set_ydata(int(mother.te_y_pt.toPlainText()))
-
         #self.xslice = self.ax1.imshow(var[0,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
         #self.yslice = self.ax2.imshow(var[:,0,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
         #self.zslice = self.ax3.imshow(var[:,:,0],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
-        self.xslice = self.ax1.imshow(var[int(mother.te_x_pt.toPlainText()),:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
-        self.yslice = self.ax2.imshow(var[:,int(mother.te_y_pt.toPlainText()),:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
-        self.zslice = self.ax3.imshow(var[:,:,int(mother.te_z_pt.toPlainText())],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        self.xslice = self.ax1.imshow(var[int(mother.te_x_pt.toPlainText())-1,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
+        self.yslice = self.ax2.imshow(var[:,int(mother.te_y_pt.toPlainText())-1,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
+        self.zslice = self.ax3.imshow(var[:,:,int(mother.te_z_pt.toPlainText())-1],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
 
-        # Create and initialize x-slider
-        self.sliderax1 = self.fig.add_axes([0.125,0.06,0.225,0.04])
-        #self.sliderax1 = self.fig.add_axes([0.125,0.08,0.225,0.03])
-        #self.sliderx = DiscreteSlider(self.sliderax1,'',0,len(self.x)-1,increment=1,valinit=0)
-        self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),activecolor="orange")
-        #self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),valinit=int(mother.te_x_pt.toPlainText()),activecolor="orange")
-        self.sliderx.on_changed(self.update_x)
-        self.sliderx.set_val(int(mother.te_x_pt.toPlainText()))
 
-        # Create and initialize y-slider
-        self.sliderax2 = self.fig.add_axes([0.4,0.06,0.225,0.04])
-        #self.sliderax2 = self.fig.add_axes([0.4,0.08,0.225,0.03])
-        #self.slidery = DiscreteSlider(self.sliderax2,'',0,len(self.y)-1,increment=1,valinit=0)
-        self.slidery = PageSlider(self.sliderax2,'y',numpages=len(self.y),activecolor="orange")
-        self.slidery.on_changed(self.update_y)
-        #self.slidery.set_val(0)
-        self.slidery.set_val(int(mother.te_y_pt.toPlainText()))
 
-        # Create and initialize z-slider
-        self.sliderax3 = self.fig.add_axes([0.675,0.06,0.225,0.04])
-        #self.sliderax3 = self.fig.add_axes([0.675,0.08,0.225,0.03])
-        #self.sliderz = DiscreteSlider(self.sliderax3,'',0,len(self.z)-1,increment=1,valinit=0)
-        self.sliderz = PageSlider(self.sliderax3,'z',numpages=len(self.z),activecolor="orange")
-        self.sliderz.on_changed(self.update_z)
-        #self.sliderz.set_val(0)
-        self.sliderz.set_val(int(mother.te_z_pt.toPlainText()))
+        self.xplot_zline = self.ax1.axvline(color='m',linestyle='--',lw=2)
+        #self.xplot_zline.set_xdata(self.z[0]) 
+        self.xplot_zline.set_xdata(int(mother.te_z_pt.toPlainText())-1) 
+
+        self.xplot_yline = self.ax1.axhline(color='m',linestyle='--',lw=2)
+        #self.xplot_yline.set_ydata(self.y[0])
+        self.xplot_yline.set_ydata(int(mother.te_y_pt.toPlainText())-1)
+
+        self.yplot_xline = self.ax2.axhline(color='m',linestyle='--',lw=2)
+        #self.yplot_xline.set_ydata(self.x[0])
+        self.yplot_xline.set_ydata(int(mother.te_x_pt.toPlainText())-1)
+
+        self.yplot_zline = self.ax2.axvline(color='m',linestyle='--',lw=2)
+        #self.yplot_zline.set_xdata(self.z[0])
+        self.yplot_zline.set_xdata(int(mother.te_z_pt.toPlainText())-1)
+
+        self.zplot_xline = self.ax3.axvline(color='m',linestyle='--',lw=2)
+        #self.zplot_xline.set_xdata(self.x[0])
+        self.zplot_xline.set_xdata(int(mother.te_x_pt.toPlainText())-1)
+
+        self.zplot_yline = self.ax3.axhline(color='m',linestyle='--',lw=2)
+        #self.zplot_yline.set_ydata(self.y[0])
+        self.zplot_yline.set_ydata(int(mother.te_y_pt.toPlainText())-1)
+
+
+        # draw
+        self.update_x(int(mother.te_x_pt.toPlainText())-1)
+        self.update_y(int(mother.te_y_pt.toPlainText())-1)
+        self.update_z(int(mother.te_z_pt.toPlainText())-1)
+
+      
+        if interactive!=0:
+            # Create and initialize x-slider
+            self.sliderax1 = self.fig.add_axes([0.125,0.06,0.225,0.04])
+            #self.sliderax1 = self.fig.add_axes([0.125,0.08,0.225,0.03])
+            #self.sliderx = DiscreteSlider(self.sliderax1,'',0,len(self.x)-1,increment=1,valinit=0)
+            #self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),activecolor="orange")
+            self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),val_cb=int(mother.te_x_pt.toPlainText())-1,activecolor="orange")
+            #self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),valinit=int(mother.te_x_pt.toPlainText()),activecolor="orange")
+            self.sliderx.on_changed(self.update_x)
+            self.sliderx.set_val(int(mother.te_x_pt.toPlainText())-1)
+            # Create and initialize y-slider
+            self.sliderax2 = self.fig.add_axes([0.4,0.06,0.225,0.04])
+            #self.sliderax2 = self.fig.add_axes([0.4,0.08,0.225,0.03])
+            #self.slidery = DiscreteSlider(self.sliderax2,'',0,len(self.y)-1,increment=1,valinit=0)
+            #self.slidery = PageSlider(self.sliderax2,'y',numpages=len(self.y),activecolor="orange")
+            self.slidery = PageSlider(self.sliderax2,'y',numpages=len(self.y),val_cb=int(mother.te_y_pt.toPlainText())-1,activecolor="orange")
+            self.slidery.on_changed(self.update_y)
+            #self.slidery.set_val(0)
+            self.slidery.set_val(int(mother.te_y_pt.toPlainText())-1)
+            # Create and initialize z-slider
+            self.sliderax3 = self.fig.add_axes([0.675,0.06,0.225,0.04])
+            #self.sliderax3 = self.fig.add_axes([0.675,0.08,0.225,0.03])
+            #self.sliderz = DiscreteSlider(self.sliderax3,'',0,len(self.z)-1,increment=1,valinit=0)
+            #self.sliderz = PageSlider(self.sliderax3,'z',numpages=len(self.z),activecolor="orange")
+            self.sliderz = PageSlider(self.sliderax3,'z',numpages=len(self.z),val_cb=int(mother.te_z_pt.toPlainText())-1,activecolor="orange")
+            self.sliderz.on_changed(self.update_z)
+            #self.sliderz.set_val(0)
+            self.sliderz.set_val(int(mother.te_z_pt.toPlainText())-1)
+
+
 
         # Make plots square
         z0,z1 = self.ax1.get_xlim()
@@ -2332,12 +2427,13 @@ class PageSlider(matplotlib.widgets.Slider):
 
     def __init__(self, ax, label, numpages = 10, valinit=0, valfmt='%1d', 
                  closedmin=True, closedmax=True,  
-                 dragging=True, **kwargs):
+                 dragging=True, val_cb=1, **kwargs):
 
         self.facecolor=kwargs.get('facecolor',"w")
         self.activecolor = kwargs.pop('activecolor',"b")
         self.fontsize = kwargs.pop('fontsize', 10)
         self.numpages = numpages
+        self.val_cb = val_cb
 
         super(PageSlider, self).__init__(ax, label, 0, numpages, 
                             valinit=valinit, valfmt=valfmt, **kwargs)
@@ -2367,6 +2463,14 @@ class PageSlider(matplotlib.widgets.Slider):
         self.button_forward.label.set_fontsize(self.fontsize)
         self.button_back.on_clicked(self.backward)
         self.button_forward.on_clicked(self.forward)
+
+        self.update()
+
+    def update(self):
+        i = int(self.val_cb)
+        if i >=self.valmax:
+            return
+        self._colorize(i)
 
     def _update(self, event):
         super(PageSlider, self)._update(event)

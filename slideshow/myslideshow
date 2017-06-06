@@ -2,6 +2,7 @@
 
 import sys
 import os
+import numpy as np
 
 from PyQt4 import QtGui,QtCore
 
@@ -38,9 +39,10 @@ class SlideShowPics(QtGui.QMainWindow):
         self._imageCache = []
         self._imagesInList = imgLst
         self._pause = False
-        self._count = 0
+        self._count = 1
         self.animFlag = True
         self.delay=1000
+        self.fps=1.0
         self.updateTimer = QtCore.QTimer()
         self.connect(self.updateTimer, QtCore.SIGNAL("timeout()"), self.nextImage)
         self.prepairWindow()
@@ -66,17 +68,22 @@ class SlideShowPics(QtGui.QMainWindow):
     def nextImage(self):
         """ switch to next image or previous image
         """
+
         if self._imagesInList:
-            if self._count == len(self._imagesInList):
-                self._count = 0
+            if self._count == len(self._imagesInList)+1:
+                self._count = 1
             self.showImageByPath(
-                    self._imagesInList[self._count])
-            if self.animFlag:
+                    self._imagesInList[self._count-1])
+            if self.animFlag: #forward
                 self._count += 1
-            else:
-                self._count -= 1
+                self.setWindowTitle("{0:s} {1:d}/{2:d} {3:.1f} fps".format('file',self._count-1,len(self._imagesInList),1000.0/self.delay))
+            else: #backward
+                if self._count == 0:
+                    self._count = len(self._imagesInList)-1
+                else:
+                    self._count -= 1
+                self.setWindowTitle("{0:s} {1:d}/{2:d} {3:.1f} fps".format('file',self._count+1,len(self._imagesInList),1000.0/self.delay))
             
-            self.setWindowTitle("{0:s} {1:d}/{2:d} {3:.1f} fps".format('file',self._count,len(self._imagesInList),1000.0/self.delay))
 
     def showImageByPath(self, path):
         if path:
@@ -110,16 +117,29 @@ class SlideShowPics(QtGui.QMainWindow):
             self.animFlag = True
             self.nextImage()
         if event == QtCore.Qt.Key_Up:
-            self.delay = self.delay*0.9
+            if self.fps >=1.0:
+                self.fps = np.floor(self.fps+1)
+            elif self.fps >0.8 and self.fps<=0.9:
+                self.fps = 1.0
+            else:
+                self.fps = self.fps+0.1
+            self.delay = 1000.0/self.fps
             self.updateTimer.start(self.delay)
             self.animFlag = True
             self.nextImage()
         if event == QtCore.Qt.Key_Down:
-            self.delay = self.delay*1.1
+            if self.fps >1.0:
+                self.fps = self.fps-1
+            elif self.fps<=0.2:
+                self.fps = 0.1
+            else:
+                self.fps = self.fps-0.1
+            self.delay = 1000.0/self.fps
             self.updateTimer.start(self.delay)
             self.animFlag = True
             self.nextImage()
         if event == QtCore.Qt.Key_Return:
+            self.fps = 1.0
             self.delay = 1000
             self.updateTimer.start(self.delay)
             self.animFlag = True
