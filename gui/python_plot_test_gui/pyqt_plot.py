@@ -1058,7 +1058,8 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 	        yf_cp[mid-i*flag]=0
 
 
-	    yf_abs=abs(np.real(yf_cp))
+	    #yf_abs=abs(np.real(yf_cp))
+	    yf_abs=abs((yf_cp))
 	    if yf_abs[0]>yf_abs[-1]:
 	    	yhf=yf_abs[0]
 	    	xhf=xf_cp[0]
