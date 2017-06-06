@@ -42,8 +42,10 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 
-
-qtCreatorFile = "plot_calc.ui" # Enter file here.
+if os.path.isfile("plot_calc.ui"):
+    qtCreatorFile = "plot_calc.ui" # Enter file here.
+else:
+    qtCreatorFile = "plot_calc_perun.ui" # Enter file here.
  
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
