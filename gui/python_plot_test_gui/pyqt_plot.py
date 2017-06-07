@@ -762,7 +762,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             plot_fft_all=self.oplot_1d(var=np.log10(self.np_all_amp_time[:,0]),xaxis=self.np_time,title='fft',linewidth=1.5, linestyle=self.styles[ind][1],color=self.styles[ind][0],label=str(self.np_all_time[0,ind]/self.np_all_time[0,1])  ,xlabel='time',ylabel='log10(amplitude)')
 
                             ind=1
-                            while (ind<9):
+                            while (ind<int(self.te_z_total.toPlainText())/2+1):
                                 plot_fft_all=self.oplot_1d(var=np.log10(self.np_all_amp_time[:,ind]),fig=plot_fft_all,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle=self.styles[ind][1],color=self.styles[ind][0],label=str(self.np_all_time[0,ind]/self.np_all_time[0,1]),xlabel='time',ylabel='log10(amplitude)')
                                 ind=ind+1
 
