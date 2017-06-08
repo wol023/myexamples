@@ -2289,7 +2289,8 @@ class slice3(object):
         #self.zslice = self.ax3.imshow(var[:,:,0],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
         self.xslice = self.ax1.imshow(var[int(mother.te_x_pt.toPlainText())-1,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
         self.yslice = self.ax2.imshow(var[:,int(mother.te_y_pt.toPlainText())-1,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
-        self.zslice = self.ax3.imshow(var[:,:,int(mother.te_z_pt.toPlainText())-1],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        #self.zslice = self.ax3.imshow(var[:,:,int(mother.te_z_pt.toPlainText())-1],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        self.zslice = self.ax3.imshow(np.transpose(var[:,:,int(mother.te_z_pt.toPlainText())-1]),extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
 
 
 
