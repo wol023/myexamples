@@ -2277,7 +2277,7 @@ class slice3(object):
         self.x = np.linspace(0,1,nx)
         self.y = np.linspace(0,1,ny)
         self.z = np.linspace(0,1,nz)
-        self.data = var
+        self.data =var
 
         self.fig = plt.figure(1,(20,7))
         self.ax1 = self.fig.add_subplot(131,aspect='equal')
@@ -2287,10 +2287,9 @@ class slice3(object):
         #self.xslice = self.ax1.imshow(var[0,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
         #self.yslice = self.ax2.imshow(var[:,0,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
         #self.zslice = self.ax3.imshow(var[:,:,0],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
-        self.xslice = self.ax1.imshow(var[int(mother.te_x_pt.toPlainText())-1,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
-        self.yslice = self.ax2.imshow(var[:,int(mother.te_y_pt.toPlainText())-1,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
-        #self.zslice = self.ax3.imshow(var[:,:,int(mother.te_z_pt.toPlainText())-1],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
-        self.zslice = self.ax3.imshow(np.transpose(var[:,:,int(mother.te_z_pt.toPlainText())-1]),extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        self.xslice = self.ax1.imshow(np.flipud(var[int(mother.te_x_pt.toPlainText())-1,:,:]),extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
+        self.yslice = self.ax2.imshow(np.flipud(var[:,int(mother.te_y_pt.toPlainText())-1,:]),extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
+        self.zslice = self.ax3.imshow(np.flipud((var[:,:,int(mother.te_z_pt.toPlainText())-1]).transpose()),extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
 
 
 
@@ -2378,17 +2377,17 @@ class slice3(object):
         self.ax2.set_xlabel(*args,**kwargs) 
 
     def update_x(self,value): 
-        self.xslice.set_data(self.data[int(value),:,:])  
+        self.xslice.set_data(np.flipud(self.data[int(value),:,:]))  
         self.yplot_xline.set_ydata(self.x[int(value)])
         self.zplot_xline.set_xdata(self.x[int(value)])
 
     def update_y(self,value): 
-        self.yslice.set_data(self.data[:,int(value),:])  
+        self.yslice.set_data(np.flipud(self.data[:,int(value),:]))  
         self.xplot_yline.set_ydata(self.y[int(value)])
         self.zplot_yline.set_ydata(self.y[int(value)])
 
     def update_z(self,value): 
-        self.zslice.set_data(self.data[:,:,int(value)])  
+        self.zslice.set_data(np.flipud((self.data[:,:,int(value)]).transpose()))
         self.xplot_zline.set_xdata(self.z[int(value)])
         self.yplot_zline.set_xdata(self.z[int(value)])
 

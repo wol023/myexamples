@@ -1,0 +1,1205 @@
+ModuleCmd_Switch.c(179):ERROR:152: Module 'PrgEnv-intel' is currently not loaded
+/global/homes/w/wol023/.bash_profile.ext: line 27: bind: warning: line editing not enabled
+/global/homes/w/wol023/.bash_profile.ext: line 28: bind: warning: line editing not enabled
+/global/homes/w/wol023/.bash_profile.ext: line 29: bind: warning: line editing not enabled
+/global/homes/w/wol023/.bash_profile.ext: line 30: bind: warning: line editing not enabled
+** GKUnits ***********************************************************
+
+==== Fundamental Units ===============================================
+  NUMBER DENSITY    [1/m^3]: 1e+19
+  TEMPERATURE           [eV]: 400
+  LENGTH                [m]: 1
+  MASS                 [AMU]: 1
+  MAGNETIC FIELD        [T]: 1
+  CHARGE                [C]: 1.60218e-19
+  BOLTZMANN CONSTANT  [J/K]: 1.38065e-23
+  ELECTRIC CONSTANT   [F/m]: 8.85419e-12
+  MAGNETIC CONSTANT   [H/m]: 1.25664e-06
+
+==== Derived Units ===================================================
+
+  THERMAL SPEED       [m/s]: 195743
+  TRANSIT TIME          [s]: 5.10874e-06
+  MAGNETIC MOMENT     [J/T]: 3.20435e-17
+  DIST. FUNCTION [s/(Am^6)]: 424.415
+  POTENTIAL             [V]: 400
+  GYROFREQUENCY       [1/s]: 9.57883e+07
+  GYRORADIUS            [m]: 0.0020435
+  DEBYE LENGTH          [m]: 4.70164e-05
+
+==== Dimensionless Parameters =========================================
+
+  LARMOR NUMBER            : 0.0020435
+  LARMOR NUMBER **2        : 4.17587e-06
+  DEBYE NUMBER             : 4.70164e-05
+  DEBYE NUMBER **2         : 2.21054e-09
+  DEBYE NUMBER/MULT_FAC    : 4.70164e-05
+  DEBYE NUMBER/MULT_FAC **2: 2.21054e-09
+
+***********************************************************************
+Constructing slab geometry...
+xmax = 0.04, ymax = 0.04, zmax = 1.6
+Bz_inner = 1.5, Bz_outer = 1.5
+By_inner  = 0
+Done constructing slab geometry
+
+dx*nx= 0.392699 * 16 = 6.28319, dx(m)*nx= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 0.1 * 16 = 1.6, ( 1 : 0.254648 )
+
+   Configuration space box ((0,0,0) (7,7,7) (0,0,0)) is assigned to process 0
+   Configuration space box ((8,0,0) (15,7,7) (0,0,0)) is assigned to process 1
+   Configuration space box ((0,8,0) (7,15,7) (0,0,0)) is assigned to process 2
+   Configuration space box ((8,8,0) (15,15,7) (0,0,0)) is assigned to process 3
+   Configuration space box ((0,0,8) (7,7,15) (0,0,0)) is assigned to process 4
+   Configuration space box ((8,0,8) (15,7,15) (0,0,0)) is assigned to process 5
+   Configuration space box ((0,8,8) (7,15,15) (0,0,0)) is assigned to process 6
+   Configuration space box ((8,8,8) (15,15,15) (0,0,0)) is assigned to process 7
+Constructing magnetic geometry
+Done constructing magnetic geometry
+   Velocity space box ((-12,0) (-7,11) (0,0)) is assigned to process 0
+   Velocity space box ((-6,0) (-1,11) (0,0)) is assigned to process 1
+   Velocity space box ((0,0) (5,11) (0,0)) is assigned to process 2
+   Velocity space box ((6,0) (11,11) (0,0)) is assigned to process 3
+
+Done creating velocity coordinate
+dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 65247.7 * 12 = 782972, ( 1 : 195743 )
+dmu*nmu= 0.333333 * 12 = 4, dmu(J/T)*nmu= 1.06812e-17 * 12 = 1.28174e-16, ( 1 : 3.20435e-17 )
+
+   Phase space box ((0,0,0,6,0) (7,7,7,11,11) (0,0,0,0,0)) is assigned to process 3, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,0,0,-6,0) (15,7,7,-1,11) (0,0,0,0,0)) is assigned to process 5, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,8,0,-12,0) (15,15,7,-7,11) (0,0,0,0,0)) is assigned to process 12, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,0,8,-12,0) (7,7,15,-7,11) (0,0,0,0,0)) is assigned to process 16, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,0,8,-6,0) (7,7,15,-1,11) (0,0,0,0,0)) is assigned to process 17, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,0,8,0,0) (7,7,15,5,11) (0,0,0,0,0)) is assigned to process 18, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,0,8,6,0) (15,7,15,11,11) (0,0,0,0,0)) is assigned to process 23, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,8,8,0,0) (7,15,15,5,11) (0,0,0,0,0)) is assigned to process 26, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,0,0,-12,0) (7,7,7,-7,11) (0,0,0,0,0)) is assigned to process 0, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,0,0,-6,0) (7,7,7,-1,11) (0,0,0,0,0)) is assigned to process 1, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,0,0,0,0) (7,7,7,5,11) (0,0,0,0,0)) is assigned to process 2, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,0,0,-12,0) (15,7,7,-7,11) (0,0,0,0,0)) is assigned to process 4, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,0,0,0,0) (15,7,7,5,11) (0,0,0,0,0)) is assigned to process 6, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,0,0,6,0) (15,7,7,11,11) (0,0,0,0,0)) is assigned to process 7, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,8,0,-12,0) (7,15,7,-7,11) (0,0,0,0,0)) is assigned to process 8, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,8,0,-6,0) (7,15,7,-1,11) (0,0,0,0,0)) is assigned to process 9, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,8,0,0,0) (7,15,7,5,11) (0,0,0,0,0)) is assigned to process 10, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,8,0,6,0) (7,15,7,11,11) (0,0,0,0,0)) is assigned to process 11, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,8,0,-6,0) (15,15,7,-1,11) (0,0,0,0,0)) is assigned to process 13, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,8,0,0,0) (15,15,7,5,11) (0,0,0,0,0)) is assigned to process 14, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,8,0,6,0) (15,15,7,11,11) (0,0,0,0,0)) is assigned to process 15, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,0,8,6,0) (7,7,15,11,11) (0,0,0,0,0)) is assigned to process 19, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,0,8,-12,0) (15,7,15,-7,11) (0,0,0,0,0)) is assigned to process 20, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,0,8,-6,0) (15,7,15,-1,11) (0,0,0,0,0)) is assigned to process 21, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,0,8,0,0) (15,7,15,5,11) (0,0,0,0,0)) is assigned to process 22, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,8,8,-12,0) (7,15,15,-7,11) (0,0,0,0,0)) is assigned to process 24, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,8,8,-6,0) (7,15,15,-1,11) (0,0,0,0,0)) is assigned to process 25, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((0,8,8,6,0) (7,15,15,11,11) (0,0,0,0,0)) is assigned to process 27, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,8,8,-12,0) (15,15,15,-7,11) (0,0,0,0,0)) is assigned to process 28, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,8,8,-6,0) (15,15,15,-1,11) (0,0,0,0,0)) is assigned to process 29, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,8,8,0,0) (15,15,15,5,11) (0,0,0,0,0)) is assigned to process 30, has 36864 valid cells and 1110016 ghost cells
+   Phase space box ((8,8,8,6,0) (15,15,15,11,11) (0,0,0,0,0)) is assigned to process 31, has 36864 valid cells and 1110016 ghost cells
+Adding species and constructing gyrocenter coordinates...
+   hydrogen: kinetic species with mass = 2, charge = 1
+   electron: kinetic species with mass = 0.01, charge = -1
+Done adding species and constructing coordinates
+Adding fluid species...
+Done adding confiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
+
+SlabPotentialBC ================================
+- variable: potential-------------
+  radial_lower: 
+     bc_type  = 0
+     bc_value = 0
+  radial_upper: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_lower: 
+     bc_type  = 0
+     bc_value = 0
+  poloidal_upper: 
+     bc_type  = 0
+     bc_value = 0
+  toroidal_lower: 
+     bc_type  = 1
+     bc_value = 0
+  toroidal_upper: 
+     bc_type  = 1
+     bc_value = 0
+-----------------------------------------------
+===============================================
+
+Grid Function Library =========================
+
+"Ion_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"N0_grid_func":
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+"T0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"eN0_grid_func":
+Arbitrary grid function parameters:
+  function: (1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))
+  translated form: (1.0+sin(x'/2.0)*sin(x'/2.0))*(1+0.001*cos(2*y'))
+  postfix form: {1.0}{x'[0.000000000000000e+00]}{2.0}{/}{sin}{x'[0.000000000000000e+00]}{2.0}{/}{sin}{*}{+}{1}{0.001}{2}{y'[0.000000000000000e+00]}{*}{cos}{*}{+}{*}
+  coordinate type: mapped
+
+"eT0_grid_func":
+Constant grid function parameters:
+  value: 1
+
+"ele_vpar_grid_func":
+Constant grid function parameters:
+  value: 0
+
+"zero_grid_func":
+Constant grid function parameters:
+  value: 0
+
+===============================================
+
+Kinetic Function Library =========================
+
+"maxwellian_electron_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_phase_func":
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+==================================================
+
+SlabPhaseBC ================================
+- variable: hydrogen-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  0
+-----------------------------------------------
+===============================================
+
+SlabPhaseBC ================================
+- variable: electron-------------
+  radial_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  radial_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  poloidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  toroidal_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  vpar_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_lower: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  mu_upper: 
+Maxwellian kinetic function parameters:
+-- Density --
+Arbitrary grid function parameters:
+  function: 1+exp(-(x-pi/2)^2/(2*pi*0.05)^2 -(y-pi)^2/(2*pi*0.05)^2 -(z-pi/2)^2/(2*pi*0.05)^2) +exp(-(x-pi)^2/(2*pi*0.04)^2 -(y-3*pi/2)^2/(2*pi*0.04)^2 -(z-pi/2)^2/(2*pi*0.04)^2) +exp(-(x-pi)^2/(2*pi*0.03)^2 -(y-pi)^2/(2*pi*0.03)^2 -(z-pi)^2/(2*pi*0.03)^2) 
+  translated form: 1+exp(-(x'-pi'/2)^2/(2*pi'*0.05)^2-(y'-pi')^2/(2*pi'*0.05)^2-(z'-pi'/2)^2/(2*pi'*0.05)^2)+exp(-(x'-pi')^2/(2*pi'*0.04)^2-(y'-3*pi'/2)^2/(2*pi'*0.04)^2-(z'-pi'/2)^2/(2*pi'*0.04)^2)+exp(-(x'-pi')^2/(2*pi'*0.03)^2-(y'-pi')^2/(2*pi'*0.03)^2-(z'-pi')^2/(2*pi'*0.03)^2)
+  postfix form: {1}{x'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{-:}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.05}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{3}{PI'}{*}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{2}{/}{-}{2}{^}{2}{PI'}{*}{0.04}{*}{2}{^}{/}{-}{exp}{+}{x'[0.000000000000000e+00]}{PI'}{-}{2}{^}{-:}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{y'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{z'[0.000000000000000e+00]}{PI'}{-}{2}{^}{2}{PI'}{*}{0.03}{*}{2}{^}{/}{-}{exp}{+}
+  coordinate type: mapped
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+  logical_sheath  =  0
+-----------------------------------------------
+===============================================
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+No collision model specified for electron.
+Collision model for 1	electron:	None
+Time integration method: rk (4)
+      BiCGStab converged successfully
+  Distribution Function Extrema:
+    Species 0:	9.95631e-06 [max]	3.17513e-10 [min]
+    Species 1:	3.52009e-09 [max]	1.12258e-13 [min]
+
+
+Step 1
+      BiCGStab converged successfully
+Vlasov operator time step (0.028576) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.03125,0.03625,0.45,-3.83333,2.16667) and mapped coordinate = (12,14,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00202063) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.03625,0.03625,0.25,-3.83333,2.16667) and mapped coordinate = (14,14,2,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+
+m_num_cells[i]=16
+m_num_cells[i]=16
+m_num_cells[i]=16
+m_num_cells[i]=24
+m_num_cells[i]=12
+dx*nx= 0.392699 * 16 = 6.28319, dx(m)*nx= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dy*ny= 0.392699 * 16 = 6.28319, dy(m)*ny= 0.0025 * 16 = 0.04, ( 1 : 0.0063662 )
+dz*nz= 0.392699 * 16 = 6.28319, dz(m)*nz= 0.1 * 16 = 1.6, ( 1 : 0.254648 )
+dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 65247.7 * 12 = 782972, ( 1 : 4077.98 )
+ [hydrogen] mass = 2
+  dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 46137.1 * 12 = 553645, ( 1 : 138411 )
+ [electron] mass = 0.01
+  dvpar*nvpar= 0.333333 * 12 = 4, dv_parallel(m/s)*nvpar= 652477 * 12 = 7.82972e+06, ( 1 : 1.95743e+06 )
+dmu*nmu= 0.333333 * 12 = 2, dmu(J/T)*nmu= 1.06812e-17 * 12 = 1.28174e-16, ( 1 : 2.67029e-18 )
+
+Estimated dt
+unit_dimension_length [hydrogen]=1
+unit_dimension_speed  [hydrogen]=195743
+unit_dimension_time   [hydrogen]=5.10874e-06
+[hydrogen] maxvel:phy_maxvel[0]=1.28253e-16:2.51045e-11(1:195743)
+[hydrogen] maxvel:phy_maxvel[1]=2.56766e-16:5.02601e-11(1:195743)
+[hydrogen] maxvel:phy_maxvel[2]=2.71058:530576(1:195743)
+[hydrogen] maxvel:phy_maxvel[3]=3.18468e-15:0.000122022(1:3.83153e+10)
+[hydrogen] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[hydrogen]=dz(m)/vparmax_z(m/s)[hydrogen]=0.1/553645=1.80621e-07
+dt_zpar(-)[hydrogen]=0.0353553
+dt_ypar(s)[hydrogen]=dy(m)/vparmax_y(m/s)[hydrogen]=0.0025/0=inf
+dt_ypar(-)[hydrogen]=inf
+dt_z(s)[hydrogen]=dz(m)/vmax_z(m/s)[hydrogen]=0.1/530576=1.88474e-07
+dt_z(-)[hydrogen]=0.0368925
+dt_y(s)[hydrogen]=dy(m)/vmax_y(m/s)[hydrogen]=0.0025/5.02601e-11=4.97412e+07
+dt_y(-)[hydrogen]=9.73649e+12
+dt_x(s)[hydrogen]=dx(m)/vmax_x(m/s)[hydrogen]=0.0025/2.51045e-11=9.95836e+07
+dt_x(-)[hydrogen]=1.94928e+13
+dt_vpar(s)[hydrogen]=dvpar(m/s)/vmax_vpar(m/s/s)[hydrogen]=65247.7/0.000122022=5.3472e+08
+dt_vpar(-)[hydrogen]=1.04668e+14
+
+unit_dimension_length [electron]=1
+unit_dimension_speed  [electron]=195743
+unit_dimension_time   [electron]=5.10874e-06
+[electron] maxvel:phy_maxvel[0]=1.28253e-16:2.51045e-11(1:195743)
+[electron] maxvel:phy_maxvel[1]=2.56766e-16:5.02601e-11(1:195743)
+[electron] maxvel:phy_maxvel[2]=38.3333:7.50348e+06(1:195743)
+[electron] maxvel:phy_maxvel[3]=4.50382e-14:0.00172565(1:3.83153e+10)
+[electron] maxvel:phy_maxvel[4]=0:0(1:-nan)
+
+dt_zpar(s)[electron]=dz(m)/vparmax_z(m/s)[electron]=0.1/7.82972e+06=1.27718e-08
+dt_zpar(-)[electron]=0.0025
+dt_ypar(s)[electron]=dy(m)/vparmax_y(m/s)[electron]=0.0025/0=inf
+dt_ypar(-)[electron]=inf
+dt_z(s)[electron]=dz(m)/vmax_z(m/s)[electron]=0.1/7.50348e+06=1.33271e-08
+dt_z(-)[electron]=0.0026087
+dt_y(s)[electron]=dy(m)/vmax_y(m/s)[electron]=0.0025/5.02601e-11=4.97412e+07
+dt_y(-)[electron]=9.73649e+12
+dt_x(s)[electron]=dx(m)/vmax_x(m/s)[electron]=0.0025/2.51045e-11=9.95836e+07
+dt_x(-)[electron]=1.94928e+13
+dt_vpar(s)[electron]=dvpar(m/s)/vmax_vpar(m/s/s)[electron]=65247.7/0.00172565=3.78104e+07
+dt_vpar(-)[electron]=7.40112e+12
+
+vte = 1.95743e+06
+omegaci = 7.18413e+07
+rhos = 0.00192663
+kz = 0.981748 ~ 15.708
+ky = 39.2699 ~ 628.319
+kx = 39.2699 ~ 628.319
+kpar  = 0.981748 ~ 15.708
+kperp = 55.536 ~ 888.577
+rhos = 0.00192663
+rhos * ky    = 0.0756584 ~ 1.21053
+rhos * kx    = 0.0756584 ~ 1.21053
+rhos * kperp = 0.106997 ~ 1.71195
+omega_ea(1/s) = 1.12252e+06 ~ 2.87365e+08
+omega_ea(-)   = 5.73466 ~ 1468.07
+delta_t_omega_ea (s) = 2.18648e-08 ~ 5.59739e-06
+delta_t_omega_ea (-) = 0.00427989 ~ 1.09565
+
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00181856
+    Vlasov    : 0.0026087 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.42491 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.95906e-06 [max]	3.16677e-10 [min]
+    Species 1:	3.5348e-09 [max]	1.07654e-13 [min]
+
+Step 1 completed, simulation time is 0.00181856, solver wall time is 28.5363 seconds
+----
+
+Step 2
+      BiCGStab converged successfully
+Vlasov operator time step (0.0267872) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00625,0.01875,0.25,-3.83333,2.16667) and mapped coordinate = (2,7,2,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00198619) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (3,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00178757
+    Vlasov    : 0.00256424 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.417669 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.96189e-06 [max]	3.1564e-10 [min]
+    Species 1:	3.5467e-09 [max]	1.09386e-13 [min]
+
+Step 2 completed, simulation time is 0.00360614, solver wall time is 56.4827 seconds
+----
+
+Step 3
+      BiCGStab converged successfully
+Vlasov operator time step (0.0246696) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00625,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (2,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0019389) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (3,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00174501
+    Vlasov    : 0.00250319 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.407724 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.96382e-06 [max]	3.14474e-10 [min]
+    Species 1:	3.55615e-09 [max]	1.0901e-13 [min]
+
+Step 3 completed, simulation time is 0.00535115, solver wall time is 84.5448 seconds
+----
+
+Step 4
+      BiCGStab converged successfully
+Vlasov operator time step (0.0227407) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00625,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (2,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00190017) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (3,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00171015
+    Vlasov    : 0.00245318 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.399579 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.96366e-06 [max]	3.12953e-10 [min]
+    Species 1:	3.56378e-09 [max]	1.08732e-13 [min]
+
+Step 4 completed, simulation time is 0.0070613, solver wall time is 112.625 seconds
+----
+
+Step 5
+      BiCGStab converged successfully
+Vlasov operator time step (0.0214263) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00625,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (2,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00187651) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (3,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00168886
+    Vlasov    : 0.00242263 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.394603 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.96086e-06 [max]	3.10843e-10 [min]
+    Species 1:	3.56999e-09 [max]	1.07868e-13 [min]
+
+Step 5 completed, simulation time is 0.00875016, solver wall time is 140.602 seconds
+----
+
+Step 6
+      BiCGStab converged successfully
+Vlasov operator time step (0.0205052) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (5,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00186353) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (3,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00167718
+    Vlasov    : 0.00240588 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.391874 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.95571e-06 [max]	3.08876e-10 [min]
+    Species 1:	3.57497e-09 [max]	1.07344e-13 [min]
+
+Step 6 completed, simulation time is 0.0104273, solver wall time is 175.554 seconds
+----
+
+Step 7
+      BiCGStab converged successfully
+Vlasov operator time step (0.0197918) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01375,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (5,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00185475) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (3,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00166927
+    Vlasov    : 0.00239454 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.390027 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.94907e-06 [max]	3.07052e-10 [min]
+    Species 1:	3.5788e-09 [max]	1.08067e-13 [min]
+
+Step 7 completed, simulation time is 0.0120966, solver wall time is 203.559 seconds
+----
+
+Step 8
+      BiCGStab converged successfully
+Vlasov operator time step (0.019324) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (4,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.0018471) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (4,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00166239
+    Vlasov    : 0.00238467 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.388419 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.94195e-06 [max]	3.0538e-10 [min]
+    Species 1:	3.58151e-09 [max]	1.08261e-13 [min]
+
+Step 8 completed, simulation time is 0.013759, solver wall time is 231.643 seconds
+----
+
+Step 9
+      BiCGStab converged successfully
+Vlasov operator time step (0.018973) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.02125,0.35,-3.83333,2.16667) and mapped coordinate = (3,8,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00184186) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (4,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00165767
+    Vlasov    : 0.0023779 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.387317 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.93457e-06 [max]	3.0387e-10 [min]
+    Species 1:	3.5832e-09 [max]	1.08182e-13 [min]
+
+Step 9 completed, simulation time is 0.0154167, solver wall time is 259.691 seconds
+----
+
+Step 10
+      BiCGStab converged successfully
+Vlasov operator time step (0.0186835) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.02125,0.35,-3.83333,2.16667) and mapped coordinate = (3,8,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00184049) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (4,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00165644
+    Vlasov    : 0.00237613 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.38703 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.92665e-06 [max]	3.02535e-10 [min]
+    Species 1:	3.58395e-09 [max]	1.07809e-13 [min]
+
+Step 10 completed, simulation time is 0.0170731, solver wall time is 287.706 seconds
+----
+
+Step 11
+      BiCGStab converged successfully
+Vlasov operator time step (0.0185447) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.02125,0.35,-3.83333,2.16667) and mapped coordinate = (3,8,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00184243) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (4,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00165819
+    Vlasov    : 0.00237864 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.387437 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.91853e-06 [max]	3.01386e-10 [min]
+    Species 1:	3.58383e-09 [max]	1.0761e-13 [min]
+
+Step 11 completed, simulation time is 0.0187313, solver wall time is 319.504 seconds
+----
+
+Step 12
+      BiCGStab converged successfully
+Vlasov operator time step (0.0184981) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.02125,0.35,-3.83333,2.16667) and mapped coordinate = (3,8,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00184529) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (3,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00166076
+    Vlasov    : 0.00238233 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.388039 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.91036e-06 [max]	3.00423e-10 [min]
+    Species 1:	3.58279e-09 [max]	1.07595e-13 [min]
+
+Step 12 completed, simulation time is 0.0203921, solver wall time is 347.646 seconds
+----
+
+Step 13
+      BiCGStab converged successfully
+Vlasov operator time step (0.0184697) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (4,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00184747) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (4,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00166272
+    Vlasov    : 0.00238514 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.388497 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.90213e-06 [max]	2.99634e-10 [min]
+    Species 1:	3.58077e-09 [max]	1.07243e-13 [min]
+
+Step 13 completed, simulation time is 0.0220548, solver wall time is 375.688 seconds
+----
+
+Step 14
+      BiCGStab converged successfully
+Vlasov operator time step (0.0184378) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (3,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00184805) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (4,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00166325
+    Vlasov    : 0.00238589 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.388619 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.89377e-06 [max]	2.99004e-10 [min]
+    Species 1:	3.57772e-09 [max]	1.07623e-13 [min]
+
+Step 14 completed, simulation time is 0.023718, solver wall time is 403.723 seconds
+----
+
+Step 15
+      BiCGStab converged successfully
+Vlasov operator time step (0.0184206) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (3,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00184863) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (4,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00166377
+    Vlasov    : 0.00238664 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.388741 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.8853e-06 [max]	2.9852e-10 [min]
+    Species 1:	3.57356e-09 [max]	1.07287e-13 [min]
+
+Step 15 completed, simulation time is 0.0253818, solver wall time is 431.755 seconds
+----
+
+Step 16
+      BiCGStab converged successfully
+Vlasov operator time step (0.0184435) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (3,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00185058) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.35,-3.83333,2.16667) and mapped coordinate = (4,7,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00166553
+    Vlasov    : 0.00238916 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.389152 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.87677e-06 [max]	2.98181e-10 [min]
+    Species 1:	3.56835e-09 [max]	1.07308e-13 [min]
+
+Step 16 completed, simulation time is 0.0270473, solver wall time is 464.996 seconds
+----
+
+Step 17
+      BiCGStab converged successfully
+Vlasov operator time step (0.0184984) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00875,0.02125,0.35,-3.83333,2.16667) and mapped coordinate = (3,8,3,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00185342) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (4,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00166808
+    Vlasov    : 0.00239283 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.389749 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.86831e-06 [max]	2.97989e-10 [min]
+    Species 1:	3.56216e-09 [max]	1.07205e-13 [min]
+
+Step 17 completed, simulation time is 0.0287154, solver wall time is 493.097 seconds
+----
+
+Step 18
+      BiCGStab converged successfully
+Vlasov operator time step (0.0185429) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (4,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00185628) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (4,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+num_cells = 16 16 16 24 12 
+is_periodic = 0 0 1 0 0 
+configuration_decomposition = 2 2 2 
+velocity_decomposition = 4 1 
+phase_decomposition = 2 2 2 4 1 
+enforce_positivity = 0
+enforce_positivity_type = stage
+  ----
+  dt: 0.00167065
+    Vlasov    : 0.00239652 (time scale), 0.697117 (CFL)
+    Collisions: 1.79769e+308 (time scale), 0 (CFL)
+    ES_Alfven : 0.00427989 (time scale), 0.39035 (CFL)
+  ----
+  Distribution Function Extrema:
+    Species 0:	9.86e-06 [max]	2.97946e-10 [min]
+    Species 1:	3.55505e-09 [max]	1.06919e-13 [min]
+
+Step 18 completed, simulation time is 0.0303861, solver wall time is 521.157 seconds
+----
+
+Step 19
+      BiCGStab converged successfully
+Vlasov operator time step (0.0185586) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (4,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+Vlasov operator time step (0.00185881) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.01125,0.01875,0.45,-3.83333,2.16667) and mapped coordinate = (4,7,4,-12,6)
+The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
+      BiCGStab converged successfully
+      BiCGStab converged successfully
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+srun: got SIGCONT
+slurmstepd: error: *** STEP 5288677.0 ON nid00602 CANCELLED AT 2017-06-08T12:32:48 ***
+slurmstepd: error: *** JOB 5288677 ON nid00602 CANCELLED AT 2017-06-08T12:32:48 ***
+srun: forcing job termination
