@@ -686,7 +686,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
         # initialize time dependent variables
         row_size=len(selected_files)
-        col_size=int(self.te_z_total.toPlainText())/2
+        col_size=int(self.te_z_total.toPlainText())/2+1
 
 
         for i in range(len(selected_files)):
@@ -734,7 +734,33 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             print 'time',self.np_time
                             print 'allf',self.np_all_time
                             print 'allA',self.np_all_amp_time
-                            print self.np_all_amp_time.shape
+                            
+                            # print file
+                            if not os.path.exists(plot_output):
+                                os.mkdir(plot_output)
+                            os.chdir(plot_output)
+                            with open(filename.replace('.hdf5','.potential_fft_all_time.dat'), 'w+') as fh:
+                                #head line
+                                buf = 'time' 
+                                ind_c = 0 
+                                while ind_c<col_size:
+                                    buf=buf+'\tm=%d' % int(self.np_all_time[0,ind_c]/self.np_all_time[0,1])
+                                    ind_c=ind_c+1
+                                buf=buf+'\r\n'
+                                fh.write(buf)
+                                #data
+                                ind_r = 0 
+                                while ind_r<len(self.np_time):
+                                    buf = '%g' % self.np_time[ind_r]
+                                    ind_c=0
+                                    while ind_c<col_size:
+                                        buf = buf+'\t%g' % self.np_all_amp_time[ind_r,ind_c]
+                                        ind_c=ind_c+1
+                                    buf = buf+'\r\n'
+                                    ind_r=ind_r+1
+                                    fh.write(buf)
+                            os.chdir(basedir)
+
 
                             plot_fft_amp=self.oplot_1d(var=np.log10(self.np_hf_amp_time),xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='r',label='hf',xlabel='time',ylabel='log10(amplitude)')
                             plot_fft_amp=self.oplot_1d(var=np.log10(self.np_lf_amp_time),fig=plot_fft_amp,xaxis=self.np_time,title='fft',linewidth=1.5, linestyle='--',color='g',label='lf',xlabel='time',ylabel='log10(amplitude)')
@@ -1064,7 +1090,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
         
         if self.cb_potential_fft_along_z.checkState():
-            print 'low'
             nx = int(self.te_z_total.toPlainText())
             dx = 2.0*np.pi/nx;
             Lz = float(self.te_z_length.toPlainText())
