@@ -56,8 +56,8 @@ def init_plotting(form=''):
 
 #        plt.gca().spines['right'].set_color('none')
 #        plt.gca().spines['top'].set_color('none')
-        plt.gca().xaxis.set_ticks_position('bottom')
-        plt.gca().yaxis.set_ticks_position('left')
+#        plt.gca().xaxis.set_ticks_position('bottom')
+#        plt.gca().yaxis.set_ticks_position('left')
  
 
     ## excample
