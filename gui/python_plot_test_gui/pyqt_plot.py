@@ -5,6 +5,7 @@ from PyQt4 import QtCore, QtGui, uic
 import h5py
 import numpy as np
 import matplotlib
+matplotlib.use('qt4agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1 
 from numpy.ma import masked_array
