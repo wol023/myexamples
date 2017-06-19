@@ -127,11 +127,11 @@ plt.connect('button_press_event', af)
 plt.connect('key_press_event', af.on_key_press)
 plt.connect('key_release_event', af.on_key_release)
 
-plt.xscale('log')
+#plt.xscale('log')
 plt.yscale('log')
 plt.legend(loc='best')
-plt.xlabel(r'$k$')
-plt.ylabel(r'$\hat{\pi}_{\pi}$')
+plt.xlabel(r'$x$')
+plt.ylabel(r'$y$')
 
 plt.savefig(filename.replace('.dat','.eps'))
 
