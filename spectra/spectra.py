@@ -1294,7 +1294,9 @@ def func_lin(x, aa, bb):
 error_array_a=[]
 error_array_b=[]
 cutoff_index = len(extremum_dimensional_xt)-1
-ind_shift = len(extremum_dimensional_xt)-20 #manual shift from begining
+ind_shift = len(extremum_dimensional_xt)-5 #manual shift from begining
+print 'cutoff_index =', cutoff_index
+print 'ind_shift =', ind_shift
 for ind in enumerate(extremum_dimensional_xt):
     if ind[0]>2+ind_shift:
         #print ind[0]
