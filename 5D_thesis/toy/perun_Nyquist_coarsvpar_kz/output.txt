@@ -49,7 +49,7 @@
 (N,1) phase_space_mapping.velocity_type ::  (=,gyrokinetic)
 (N,1) gkvlasov.verbose ::  (=,true)
 (N,1) gkvlasov.time_step_diagnostics ::  (=,true)
-(N,1) gkvlasov.face_avg_type ::  (=,weno5)
+(N,1) gkvlasov.face_avg_type ::  (=,uw1)
 (N,1) gksystem.fixed_efield ::  (=,false)
 (N,1) gkpoisson.verbose ::  (=,true)
 (N,1) gkpoissonboltzmann.verbose ::  (=,true)
@@ -13677,7 +13677,7 @@ a_tmp(8) = 0.254648
  GKVlasov::ComputeMappedDtSpecies 4
  GKVlasov::ComputeMappedDtSpecies 4.1
   thisMax = 27.1058
-Vlasov operator time step (0.028576) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00125,0.01125,1.35,-3.83333,2.16667) and mapped coordinate = (0,4,13,-12,6)
+Vlasov operator time step (0.0459526) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.00125,0.01125,1.35,-3.83333,2.16667) and mapped coordinate = (0,4,13,-12,6)
 The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
  GKVlasov::ComputeMappedDtSpecies 5.
  GKVlasov::computeDt() 2
@@ -16769,7 +16769,7 @@ a_tmp(8) = 0.254648
  GKVlasov::ComputeMappedDtSpecies 4
  GKVlasov::ComputeMappedDtSpecies 4.1
   thisMax = 383.333
-Vlasov operator time step (0.00202063) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.03625,0.03625,1.35,-3.83333,2.16667) and mapped coordinate = (14,14,13,-12,6)
+Vlasov operator time step (0.00324934) was limited by the velocity at (X,Y,Z,vparallel,mu) = (0.03625,0.03625,1.35,-3.83333,2.16667) and mapped coordinate = (14,14,13,-12,6)
 The (toroidal) direction makes the largest contribution to the stable dt reciprocal at that point
  GKVlasov::ComputeMappedDtSpecies 5.
  GKVlasov::computeDt() 2
@@ -28039,200 +28039,200 @@ SlabPhaseBC::apply() 6.
  PhaseGeom::updateVelocities 3.
  KineticSpecies::computeVelocity() 2.
  GKVlasov::evalRHS() 2
- NEW ADDED:altFaceAverages:weno5FaceAverages 1-1
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages .
+ NEW ADDED:altFaceAverages:uw1FaceAverages 1-1
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 5
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 6
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 7
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 8
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 9
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 10
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 11
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 12
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 13
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 14
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 15
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 16
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 17
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 18
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 19
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 20
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 21
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 22
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 23
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 24
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 25
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 26
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 27
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 28
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 29
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 30
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 31
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 32
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages .
  mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
  a_u.nComp() = 1
  a_v.nComp() = 5
@@ -28315,200 +28315,200 @@ SlabPhaseBC::apply() 6.
  PhaseGeom::updateVelocities 3.
  KineticSpecies::computeVelocity() 2.
  GKVlasov::evalRHS() 2
- NEW ADDED:altFaceAverages:weno5FaceAverages 1-1
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages 2
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
-  NEW ADDED:altFaceAverages:weno5FaceAverages 3
- NEW ADDED:altFaceAverages:weno5FaceAverages .
+ NEW ADDED:altFaceAverages:uw1FaceAverages 1-1
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 5
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 6
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 7
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 8
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 9
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 10
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 11
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 12
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 13
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 14
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 15
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 16
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 17
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 18
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 19
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 20
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 21
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 22
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 23
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 24
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 25
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 26
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 27
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 28
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 29
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 30
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 31
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages 2: 32
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 1
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 2
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 3
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 4
+  NEW ADDED:altFaceAverages:uw1FaceAverages 3: 5
+ NEW ADDED:altFaceAverages:uw1FaceAverages .
  mappedAdvectionFlux.cpp:ComputeCompFaceFluxes 1
  a_u.nComp() = 1
  a_v.nComp() = 5
@@ -35546,28 +35546,28 @@ SlabPhaseBC::apply() 1
  PhaseBCUtils.H::defineInflowDataStorage() 1
  i= 7
 SlabPhaseBC::apply() 2
- SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
  SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=1, dir=0, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=1, dir=0, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
  SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=2, dir=1, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=2, dir=1, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
  SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=3, dir=1, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=3, dir=1, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
  SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=4, dir=3, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=4, dir=3, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
  SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=5, dir=3, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=5, dir=3, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
  SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=6, dir=4, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=6, dir=4, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
  SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=7, dir=4, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=7, dir=4, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
  SlabPhaseBC::fillInflowData():after KineticFunction.assign()
 SlabPhaseBC::apply() 3
@@ -38318,26 +38318,5 @@ SlabPhaseBC::apply() 1
  PhaseBCUtils.H::defineInflowDataStorage() 1
  i= 7
 SlabPhaseBC::apply() 2
- SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0.000909282
- SlabPhaseBC::fillInflowData():before KineticFunction.assign()
- SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=1, dir=0, a_time=0.000909282
- SlabPhaseBC::fillInflowData():before KineticFunction.assign()
- SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=2, dir=1, a_time=0.000909282
- SlabPhaseBC::fillInflowData():before KineticFunction.assign()
- SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=3, dir=1, a_time=0.000909282
- SlabPhaseBC::fillInflowData():before KineticFunction.assign()
- SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=4, dir=3, a_time=0.000909282
- SlabPhaseBC::fillInflowData():before KineticFunction.assign()
- SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=5, dir=3, a_time=0.000909282
- SlabPhaseBC::fillInflowData():before KineticFunction.assign()
- SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=6, dir=4, a_time=0.000909282
- SlabPhaseBC::fillInflowData():before KineticFunction.assign()
- SlabPhaseBC::fillInflowData():after KineticFunction.assign()
- SlabPhaseBC::fillInflowData(): i=7, dir=4, a_time=0.000909282
+ SlabPhaseBC::fillInflowData(): i=0, dir=0, a_time=0.0014622
  SlabPhaseBC::fillInflowData():before KineticFunction.assign()
