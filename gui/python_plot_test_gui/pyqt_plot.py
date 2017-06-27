@@ -43,10 +43,10 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 
-if os.path.isfile("plot_calc.ui"):
-    qtCreatorFile = "plot_calc.ui" # Enter file here.
+if os.path.isfile("pyqt_plot.ui"):
+    qtCreatorFile = "pyqt_plot.ui" # Enter file here.
 else:
-    qtCreatorFile = "plot_calc_perun.ui" # Enter file here.
+    qtCreatorFile = "pyqt_plot_perun.ui" # Enter file here.
  
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
@@ -816,7 +816,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         speciesname='e'
                     else:
                         speciesname='s'
-                    plot_density(selected_files[i],ghost=0,speciesname=speciesname,targetdir=plot_output)
+                    self.plot_density(selected_files[i],ghost=0,speciesname=speciesname,targetdir=plot_output)
             else:
                 self.print_ui(selected_files[i]+ ' was NOT found.. skipping the file.')
         self.print_ui('ready')
@@ -1014,6 +1014,56 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             os.chdir(basedir)
         if showplots==0:
             plt.close(fig_dfn_diff_time)
+
+    def plot_density(self,pathfilename,saveplots=1,ghost=0, speciesname='', x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+        head=os.path.split(pathfilename)
+        path=head[0]
+        filename=head[1]
+        #print path
+        #print filename
+        basedir=os.getcwd()
+        if targetdir==[]:
+            targetdir='./python_auto_plots'
+        
+        dataNd_density_comps, num_ghost_density, cogent_time=self.import_multdim_comps(filename=pathfilename)
+        if ghost>0:
+            dataNd_density_with_outer_ghost_comps,num_ghost_density,cogent_time=self.import_multdim_comps(filename=pathfilename,withghost=1)
+        title_var='density, '+speciesname
+     ### read computational unit time
+ 
+        if self.ref_time!=-1.0:
+            title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*self.ref_time*1.0E6)
+        else:
+            title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
+
+        fig_density=self.plot_Nd(dataNd_density_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+            os.chdir(targetdir)
+
+            if not os.path.exists('density_slice'):
+                os.mkdir('density_slice')
+            os.chdir('density_slice')
+            plt.savefig(filename.replace('.hdf5','.density_slice.png'))
+            plt.savefig(filename.replace('.hdf5','.density_slice.eps'))
+            os.chdir(basedir)
+        if self.cb_3d_interactive.checkState()==0:
+            plt.close(fig_density)
+    
+        if ghost>0:
+            fig_density=self.plot_Nd(dataNd_density_with_outer_ghost_comps,num_ghost_density,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.density_ghost_slice.png'))
+                plt.savefig(filename.replace('.hdf5','.density_ghost_slice.eps'))
+                os.chdir(basedir)
+            if self.cb_3d_interactive.checkState()==0:
+                plt.close(fig_density)
+
+
 
     
     def plot_potential(self,pathfilename,saveplots=1,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
