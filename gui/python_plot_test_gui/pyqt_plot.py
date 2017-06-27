@@ -996,6 +996,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
             self.add_colorbar(im,field=var[:,:])
         plt.title(title)
+
         if xlabel=='xlabel':
             plt.xlabel(r'$\bar{v}_\parallel$')
         else:
@@ -2360,22 +2361,29 @@ class slice3(object):
         self.ax2 = self.fig.add_subplot(132,aspect='equal')
         self.ax3 = self.fig.add_subplot(133,aspect='equal')
 
+
         #self.xslice = self.ax1.imshow(var[0,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
         #self.yslice = self.ax2.imshow(var[:,0,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
         #self.zslice = self.ax3.imshow(var[:,:,0],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        
         self.xslice = self.ax1.imshow(np.flipud(var[int(mother.te_x_pt.toPlainText())-1,:,:]),extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
+        self.add_colorbar_slice(self.xslice,field=np.flipud(var[int(mother.te_x_pt.toPlainText())-1,:,:]),pos='top' )
+
         self.yslice = self.ax2.imshow(np.flipud(var[:,int(mother.te_y_pt.toPlainText())-1,:]),extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
+        self.add_colorbar_slice(self.yslice,field=np.flipud(var[:,int(mother.te_y_pt.toPlainText())-1,:]) ,pos='top' )
+
         self.zslice = self.ax3.imshow(np.flipud((var[:,:,int(mother.te_z_pt.toPlainText())-1]).transpose()),extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        self.add_colorbar_slice(self.zslice,field=np.flipud((var[:,:,int(mother.te_z_pt.toPlainText())-1]).transpose()) ,pos='top' )
 
 
 
         self.xplot_zline = self.ax1.axvline(color='m',linestyle='--',lw=2)
         #self.xplot_zline.set_xdata(self.z[0]) 
         self.xplot_zline.set_xdata(int(mother.te_z_pt.toPlainText())-1) 
-
         self.xplot_yline = self.ax1.axhline(color='m',linestyle='--',lw=2)
         #self.xplot_yline.set_ydata(self.y[0])
         self.xplot_yline.set_ydata(int(mother.te_y_pt.toPlainText())-1)
+
 
         self.yplot_xline = self.ax2.axhline(color='m',linestyle='--',lw=2)
         #self.yplot_xline.set_ydata(self.x[0])
@@ -2407,9 +2415,9 @@ class slice3(object):
             #self.sliderx = DiscreteSlider(self.sliderax1,'',0,len(self.x)-1,increment=1,valinit=0)
             #self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),activecolor="orange")
             self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),val_cb=int(mother.te_x_pt.toPlainText())-1,activecolor="orange")
-            #self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),valinit=int(mother.te_x_pt.toPlainText()),activecolor="orange")
             self.sliderx.on_changed(self.update_x)
             self.sliderx.set_val(int(mother.te_x_pt.toPlainText())-1)
+
             # Create and initialize y-slider
             self.sliderax2 = self.fig.add_axes([0.4,0.06,0.225,0.04])
             #self.sliderax2 = self.fig.add_axes([0.4,0.08,0.225,0.03])
@@ -2419,6 +2427,7 @@ class slice3(object):
             self.slidery.on_changed(self.update_y)
             #self.slidery.set_val(0)
             self.slidery.set_val(int(mother.te_y_pt.toPlainText())-1)
+
             # Create and initialize z-slider
             self.sliderax3 = self.fig.add_axes([0.675,0.06,0.225,0.04])
             #self.sliderax3 = self.fig.add_axes([0.675,0.08,0.225,0.03])
@@ -2438,6 +2447,41 @@ class slice3(object):
         self.ax1.set_aspect((z1-z0)/(y1-y0))
         self.ax2.set_aspect((z1-z0)/(x1-x0))
         self.ax3.set_aspect((x1-x0)/(y1-y0))    
+
+    def add_colorbar_slice(self, im, aspect=20, pad_fraction=0.5, field=[],pos='top',orient='horizontal', **kwargs):
+        """Add a vertical color bar to an image plot."""
+        divider = axes_grid1.make_axes_locatable(im.axes)
+        width = axes_grid1.axes_size.AxesY(im.axes, aspect=1.0/aspect)
+        pad = axes_grid1.axes_size.Fraction(pad_fraction, width)
+        current_ax = plt.gca()
+        cax = divider.append_axes(pos, size=width, pad=pad)
+        plt.sca(current_ax)
+        cb = im.axes.figure.colorbar(im, cax=cax,orientation=orient, **kwargs)
+        #
+        if (pos=='top' and orient=='horizontal'):
+            cb.ax.xaxis.set_ticks_position('top')
+        #change number of ticks
+        m0=field.min()            # colorbar min value
+        m4=field.max()             # colorbar max value
+        num_ticks=5
+        ticks = np.linspace(m0, m4, num_ticks)
+        labels = np.linspace(m0, m4, num_ticks)
+        labels_math=[self.latex_float(i) for i in labels]
+        cb.set_ticks(ticks)
+        cb.set_ticklabels(labels_math)
+        
+        cb.update_ticks()
+        return cb
+
+    def latex_float(self,f):
+        float_str = "{0:.2g}".format(f)
+        #float_str = "{0:.6g}".format(f)
+        if "e" in float_str:
+            base, exponent = float_str.split("e")
+            return r"${0} \times 10^{{{1}}}$".format(base, int(exponent))
+        else:
+            return r"$%.2g$"%f
+ 
 
 
     def xlabel(self,*args,**kwargs):
