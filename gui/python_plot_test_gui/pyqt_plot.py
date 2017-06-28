@@ -2058,7 +2058,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         return 
 
     def init_plotting(self,form=''):
-        graphDPI =200
+        graphDPI =300
         if (form == '2x3'):
             plt.rcParams['figure.figsize'] = (16, 9)
         elif (form == '2x2'):

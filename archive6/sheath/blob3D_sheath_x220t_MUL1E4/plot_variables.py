@@ -60,7 +60,7 @@ bvecfilename='./BField_cc3d.hdf5'
 
 
 #setup plot
-graphDPI =200
+graphDPI =300
 # set global settings
 def init_plotting(form=''):
     if (form == '2x3'):
