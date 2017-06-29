@@ -43,10 +43,10 @@ from mpl_toolkits.mplot3d import Axes3D
 
 
 
-if os.path.isfile("plot_calc.ui"):
-    qtCreatorFile = "plot_calc.ui" # Enter file here.
+if os.path.isfile("pyqt_plot.ui"):
+    qtCreatorFile = "pyqt_plot.ui" # Enter file here.
 else:
-    qtCreatorFile = "plot_calc_perun.ui" # Enter file here.
+    qtCreatorFile = "pyqt_plot_perun.ui" # Enter file here.
  
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
@@ -816,7 +816,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         speciesname='e'
                     else:
                         speciesname='s'
-                    plot_density(selected_files[i],ghost=0,speciesname=speciesname,targetdir=plot_output)
+                    self.plot_density(selected_files[i],ghost=0,speciesname=speciesname,targetdir=plot_output)
             else:
                 self.print_ui(selected_files[i]+ ' was NOT found.. skipping the file.')
         self.print_ui('ready')
@@ -996,6 +996,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             im=plt.imshow(var[:,:],interpolation=interpolation,origin="lower",extent=[-1,1,0,1],aspect=1.0)#float(num_ycell)/float(num_xcell))
             self.add_colorbar(im,field=var[:,:])
         plt.title(title)
+
         if xlabel=='xlabel':
             plt.xlabel(r'$\bar{v}_\parallel$')
         else:
@@ -1014,6 +1015,56 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             os.chdir(basedir)
         if showplots==0:
             plt.close(fig_dfn_diff_time)
+
+    def plot_density(self,pathfilename,saveplots=1,ghost=0, speciesname='', x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
+        head=os.path.split(pathfilename)
+        path=head[0]
+        filename=head[1]
+        #print path
+        #print filename
+        basedir=os.getcwd()
+        if targetdir==[]:
+            targetdir='./python_auto_plots'
+        
+        dataNd_density_comps, num_ghost_density, cogent_time=self.import_multdim_comps(filename=pathfilename)
+        if ghost>0:
+            dataNd_density_with_outer_ghost_comps,num_ghost_density,cogent_time=self.import_multdim_comps(filename=pathfilename,withghost=1)
+        title_var='density, '+speciesname
+     ### read computational unit time
+ 
+        if self.ref_time!=-1.0:
+            title_var=title_var+'\n(t=%.2fE-6 s)'%(cogent_time*self.ref_time*1.0E6)
+        else:
+            title_var=title_var+'\n(t/t0=%.2f)'%cogent_time
+
+        fig_density=self.plot_Nd(dataNd_density_comps,title=title_var,sliced=1,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+        if saveplots>0:
+            if not os.path.exists(targetdir):
+                os.mkdir(targetdir)
+            os.chdir(targetdir)
+
+            if not os.path.exists('density_slice'):
+                os.mkdir('density_slice')
+            os.chdir('density_slice')
+            plt.savefig(filename.replace('.hdf5','.density_slice.png'))
+            plt.savefig(filename.replace('.hdf5','.density_slice.eps'))
+            os.chdir(basedir)
+        if self.cb_3d_interactive.checkState()==0:
+            plt.close(fig_density)
+    
+        if ghost>0:
+            fig_density=self.plot_Nd(dataNd_density_with_outer_ghost_comps,num_ghost_density,title=title_var,x_slice=x_slice,y_slice=y_slice,z_slice=z_slice)
+            if saveplots>0:
+                if not os.path.exists(targetdir):
+                    os.mkdir(targetdir)
+                os.chdir(targetdir)
+                plt.savefig(filename.replace('.hdf5','.density_ghost_slice.png'))
+                plt.savefig(filename.replace('.hdf5','.density_ghost_slice.eps'))
+                os.chdir(basedir)
+            if self.cb_3d_interactive.checkState()==0:
+                plt.close(fig_density)
+
+
 
     
     def plot_potential(self,pathfilename,saveplots=1,ghost=0,x_slice=0.5,y_slice=0.5,z_slice=0.5,targetdir=[]):
@@ -2007,7 +2058,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         return 
 
     def init_plotting(self,form=''):
-        graphDPI =200
+        graphDPI =300
         if (form == '2x3'):
             plt.rcParams['figure.figsize'] = (16, 9)
         elif (form == '2x2'):
@@ -2310,22 +2361,29 @@ class slice3(object):
         self.ax2 = self.fig.add_subplot(132,aspect='equal')
         self.ax3 = self.fig.add_subplot(133,aspect='equal')
 
+
         #self.xslice = self.ax1.imshow(var[0,:,:],extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
         #self.yslice = self.ax2.imshow(var[:,0,:],extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
         #self.zslice = self.ax3.imshow(var[:,:,0],extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        
         self.xslice = self.ax1.imshow(np.flipud(var[int(mother.te_x_pt.toPlainText())-1,:,:]),extent=(self.z[0],self.z[-1],self.y[0],self.y[-1]))
+        self.add_colorbar_slice(self.xslice,field=np.flipud(var[int(mother.te_x_pt.toPlainText())-1,:,:]),pos='top' )
+
         self.yslice = self.ax2.imshow(np.flipud(var[:,int(mother.te_y_pt.toPlainText())-1,:]),extent=(self.z[0],self.z[-1],self.x[0],self.x[-1]))
+        self.add_colorbar_slice(self.yslice,field=np.flipud(var[:,int(mother.te_y_pt.toPlainText())-1,:]) ,pos='top' )
+
         self.zslice = self.ax3.imshow(np.flipud((var[:,:,int(mother.te_z_pt.toPlainText())-1]).transpose()),extent=(self.x[0],self.x[-1],self.y[0],self.y[-1]))
+        self.add_colorbar_slice(self.zslice,field=np.flipud((var[:,:,int(mother.te_z_pt.toPlainText())-1]).transpose()) ,pos='top' )
 
 
 
         self.xplot_zline = self.ax1.axvline(color='m',linestyle='--',lw=2)
         #self.xplot_zline.set_xdata(self.z[0]) 
         self.xplot_zline.set_xdata(int(mother.te_z_pt.toPlainText())-1) 
-
         self.xplot_yline = self.ax1.axhline(color='m',linestyle='--',lw=2)
         #self.xplot_yline.set_ydata(self.y[0])
         self.xplot_yline.set_ydata(int(mother.te_y_pt.toPlainText())-1)
+
 
         self.yplot_xline = self.ax2.axhline(color='m',linestyle='--',lw=2)
         #self.yplot_xline.set_ydata(self.x[0])
@@ -2357,9 +2415,9 @@ class slice3(object):
             #self.sliderx = DiscreteSlider(self.sliderax1,'',0,len(self.x)-1,increment=1,valinit=0)
             #self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),activecolor="orange")
             self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),val_cb=int(mother.te_x_pt.toPlainText())-1,activecolor="orange")
-            #self.sliderx = PageSlider(self.sliderax1,'x',numpages=len(self.x),valinit=int(mother.te_x_pt.toPlainText()),activecolor="orange")
             self.sliderx.on_changed(self.update_x)
             self.sliderx.set_val(int(mother.te_x_pt.toPlainText())-1)
+
             # Create and initialize y-slider
             self.sliderax2 = self.fig.add_axes([0.4,0.06,0.225,0.04])
             #self.sliderax2 = self.fig.add_axes([0.4,0.08,0.225,0.03])
@@ -2369,6 +2427,7 @@ class slice3(object):
             self.slidery.on_changed(self.update_y)
             #self.slidery.set_val(0)
             self.slidery.set_val(int(mother.te_y_pt.toPlainText())-1)
+
             # Create and initialize z-slider
             self.sliderax3 = self.fig.add_axes([0.675,0.06,0.225,0.04])
             #self.sliderax3 = self.fig.add_axes([0.675,0.08,0.225,0.03])
@@ -2388,6 +2447,41 @@ class slice3(object):
         self.ax1.set_aspect((z1-z0)/(y1-y0))
         self.ax2.set_aspect((z1-z0)/(x1-x0))
         self.ax3.set_aspect((x1-x0)/(y1-y0))    
+
+    def add_colorbar_slice(self, im, aspect=20, pad_fraction=0.5, field=[],pos='top',orient='horizontal', **kwargs):
+        """Add a vertical color bar to an image plot."""
+        divider = axes_grid1.make_axes_locatable(im.axes)
+        width = axes_grid1.axes_size.AxesY(im.axes, aspect=1.0/aspect)
+        pad = axes_grid1.axes_size.Fraction(pad_fraction, width)
+        current_ax = plt.gca()
+        cax = divider.append_axes(pos, size=width, pad=pad)
+        plt.sca(current_ax)
+        cb = im.axes.figure.colorbar(im, cax=cax,orientation=orient, **kwargs)
+        #
+        if (pos=='top' and orient=='horizontal'):
+            cb.ax.xaxis.set_ticks_position('top')
+        #change number of ticks
+        m0=field.min()            # colorbar min value
+        m4=field.max()             # colorbar max value
+        num_ticks=5
+        ticks = np.linspace(m0, m4, num_ticks)
+        labels = np.linspace(m0, m4, num_ticks)
+        labels_math=[self.latex_float(i) for i in labels]
+        cb.set_ticks(ticks)
+        cb.set_ticklabels(labels_math)
+        
+        cb.update_ticks()
+        return cb
+
+    def latex_float(self,f):
+        float_str = "{0:.2g}".format(f)
+        #float_str = "{0:.6g}".format(f)
+        if "e" in float_str:
+            base, exponent = float_str.split("e")
+            return r"${0} \times 10^{{{1}}}$".format(base, int(exponent))
+        else:
+            return r"$%.2g$"%f
+ 
 
 
     def xlabel(self,*args,**kwargs):

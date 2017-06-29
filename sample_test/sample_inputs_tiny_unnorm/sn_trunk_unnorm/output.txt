@@ -121,8 +121,9 @@ Constructing magnetic geometry
 
 Performing a Poisson solve to correct the magnetic field
 
+      BiCGStab converged successfully
 
-Max difference at block interfaces: 1.77636e-15 (coordinates), 1.36113e-13 (pointwise metrics)
+Max difference at block interfaces: 1.77636e-15 (coordinates), 9.76996e-14 (pointwise metrics)
 Done constructing magnetic geometry
    Velocity space box ((-8,0) (7,7) (0,0)) is assigned to process 0
 
@@ -139,25 +140,29 @@ decomp.rcsol.phase = 1 1 1 1
 decomp.lsol.phase = 1 1 1 1 
 decomp.rsol.phase = 1 1 1 1 
 
-   Phase space box ((0,-24,-8,0) (11,-13,7,7) (0,0,0,   Phase space box ((0,-224,-8,0) (11,-217,7,7) (0,0,0,0)) is assigned to process 10)) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
-   Phase space box , has 12288 valid cells and 110592 ghost cells
-   Phase space box ((0,0,-8,0) ((0,-120,-8,0)(11,11,7,7)  (11,-109,7,7)(0,0,0,0)) (0,0,0,0) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
-   Phase space box () is assigned to process 1, has 18432 valid cells and 135168 ghost cells
-   Phase space box ((0,108,-8,0)(0,-12,-8,0) (11,119,7,7) (11,-1,7,7) (0,0,0,0) (0,0,0,0))) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
-   Phase space box  is assigned to process 1, has 18432 valid cells and 135168 ghost cells
-   Phase space box (((0,216,-8,0)(0,12,-8,0)  (11,223,7,7)(11,23,7,7) (0,0,0,0 (0,0,0,0)))) is assigned to process 0, has 12288 valid cells and 110592 ghost cells
- is assigned to process 1, has 18432 valid cells and 135168 ghost cells
-   Phase space box ((   Phase space box ((36,-24,-8,0)36,-224,-8,0) ( (51,-13,7,7)51,-217,7,7)  (0,0,0,0(0,0,0,0)))) is assigned to process 0, has 24576 valid cells and 159744 ghost cells is assigned to process 1, has 16384 valid cells and 131072 ghost cells
-   Phase space box 
-   Phase space box ((36,0,-8,((36,-120,-8,0)0) (51,11,7 (51,-109,7,7,7) (0,0,0) (0,0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744)) is assigned to process 1, has 24576 valid cells and 159744 ghost cells
- ghost cells
-   Phase space box ((36,108,   Phase space box ((36,-12,-8,0-8,0) (51,119,) (51,-1,7,7,7) (0,0,07) (0,0,0,0),0)) is assigned to process 0, has 24576 valid cells and 159744) is assigned to process 1, has 24576 valid cells and 159744 ghost cells
-   Phase space box (( ghost cells
-   Phase space box ((36,216,-8,036,12,-8,0) () (51,223,7,51,23,7,7) 7) (0,0,0(0,0,0,0)),0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
- is assigned to process 1, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((0,-24,-8,0) (11,-13,7,7) (0,0,0,0)) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
+   Phase space box ((0,0,-8,0) (11,11,7,7) (0,0,0,0)) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
+   Phase space box ((0,108,-8,0) (11,119,7,7) (0,0,0,0)) is assigned to process 0, has 18432 valid cells and 135168 ghost cells
+   Phase space box ((0,-224,-8,0) (11,-217,7,7) (0,0,0,0)) is assigned to process 1, has 12288 valid cells and 110592 ghost cells
+   Phase space box ((0,-120,-8,0) (11,-109,7,7) (0,0,0,0)) is assigned to process 1, has 18432 valid cells and 135168 ghost cells
+   Phase space box ((0,216,-8,0) (11,223,7,7) (0,0,0,0)) is assigned to process 0, has 12288 valid cells and 110592 ghost cells
+   Phase space box ((36,-24,-8,0) (51,-13,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((36,0,-8,0) (51,11,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((0,-12,-8,0) (11,-1,7,7) (0,0,0,0)) is assigned to process 1, has 18432 valid cells and 135168 ghost cells
+   Phase space box ((0,12,-8,0) (11,23,7,7) (0,0,0,0)) is assigned to process 1, has 18432 valid cells and 135168 ghost cells
+   Phase space box ((36,-224,-8,0) (51,-217,7,7) (0,0,0,0)) is assigned to process 1, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((36,108,-8,0) (51,119,7,7) (0,0,0,0)) is assigned to process 0, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((36,216,-8,0) (51,223,7,7) (0,0,0,0)) is assigned to process 0, has 16384 valid cells and 131072 ghost cells
+   Phase space box ((36,-120,-8,0) (51,-109,7,7) (0,0,0,0)) is assigned to process 1, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((36,-12,-8,0) (51,-1,7,7) (0,0,0,0)) is assigned to process 1, has 24576 valid cells and 159744 ghost cells
+   Phase space box ((36,12,-8,0) (51,23,7,7) (0,0,0,0)) is assigned to process 1, has 24576 valid cells and 159744 ghost cells
 Adding species and constructing gyrocenter coordinates...
    hydrogen: kinetic species with mass = 4, charge = 1
 Done adding species and constructing coordinates
+Adding fluid species...
+Done adding congiration space variables
+Adding configuration space field variables...
+Done adding configuration space variables
 
 Grid Function Library =========================
 
@@ -183,40 +188,6 @@ Constant grid function parameters:
 
 ===============================================
 
-Kinetic Function Library =========================
-
-"maxwellian_const":
-Maxwellian kinetic function parameters:
-  vparshift: 0
-
--- Density --
-Constant grid function parameters:
-  value: 1
-
--- Temperature --
-Constant grid function parameters:
-  value: 1
-
-
-"maxwellian_eq":
-Maxwellian kinetic function parameters:
-  vparshift: 0
-
--- Density --
-Constant grid function parameters:
-  value: 1.5
-
--- Temperature --
-Constant grid function parameters:
-  value: 1.5
-
-
-"zero":
-Constant kinetic function parameters:
-  value: 0
-
-==================================================
-
 SingleNullPotentialBC ================================
 - variable: potential-------------
   radial_core: 
@@ -237,12 +208,10 @@ SingleNullPotentialBC ================================
 -----------------------------------------------
 ===============================================
 
-SingleNullPhaseBC =============================
-- variable: hydrogen-------------
-  radial_core: 
-Maxwellian kinetic function parameters:
-  vparshift: 0
+Kinetic Function Library =========================
 
+"maxwellian_const":
+Maxwellian kinetic function parameters:
 -- Density --
 Constant grid function parameters:
   value: 1
@@ -250,6 +219,48 @@ Constant grid function parameters:
 -- Temperature --
 Constant grid function parameters:
   value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"maxwellian_eq":
+Maxwellian kinetic function parameters:
+-- Density --
+Constant grid function parameters:
+  value: 1.5
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1.5
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
+
+"zero":
+Constant kinetic function parameters:
+  value: 0
+
+==================================================
+
+SingleNullPhaseBC =============================
+- variable: hydrogen-------------
+  radial_core: 
+Maxwellian kinetic function parameters:
+-- Density --
+Constant grid function parameters:
+  value: 1
+
+-- Temperature --
+Constant grid function parameters:
+  value: 1
+
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
 
 
   radial_sol: 
@@ -278,8 +289,6 @@ Constant kinetic function parameters:
 
   mu_lower: 
 Maxwellian kinetic function parameters:
-  vparshift: 0
-
 -- Density --
 Constant grid function parameters:
   value: 1
@@ -288,37 +297,97 @@ Constant grid function parameters:
 Constant grid function parameters:
   value: 1
 
+-- Vparallel --
+Constant grid function parameters:
+  value: 0
+
 
   mu_upper: 
 Constant kinetic function parameters:
   value: 0
 
+  logical_sheath  =  0
 -----------------------------------------------
 ===============================================
-Unrecognized collision model; setting model to NULL
+No collision model specified for hydrogen.
+Collision model for 0	hydrogen:	None
+Time integration method: rk (4)
   Distribution Function Extrema:
-    Species 0:	26.0644 [max]	5.75723e-05 [min]
+    Species 0:	26.0813 [max]	0.000154435 [min]
 
-dtStable = 0.0474813
+
+Step 1
+  ----
+  dt: 0.038129
+    Vlasov    : 0.109233 (time scale), 0.34906 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.121e-310 (CFL)
+  ----
   Distribution Function Extrema:
-    Species 0:	26.0654 [max]	5.7043e-05 [min]
+    Species 0:	26.0825 [max]	0.000153847 [min]
 
-Step 1 completed, simulation time is 0.037985
+Step 1 completed, simulation time is 0.038129, solver wall time is 7.19598 seconds
+----
+
+Step 2
+  ----
+  dt: 0.0419419
+    Vlasov    : 0.109233 (time scale), 0.383966 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.3331e-310 (CFL)
+  ----
   Distribution Function Extrema:
-    Species 0:	26.0668 [max]	5.64096e-05 [min]
+    Species 0:	26.084 [max]	0.000153092 [min]
 
-Step 2 completed, simulation time is 0.0797685
+Step 2 completed, simulation time is 0.0800709, solver wall time is 14.3862 seconds
+----
+
+Step 3
+  ----
+  dt: 0.0461361
+    Vlasov    : 0.109233 (time scale), 0.422363 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.56641e-310 (CFL)
+  ----
   Distribution Function Extrema:
-    Species 0:	26.0682 [max]	5.52067e-05 [min]
+    Species 0:	26.0856 [max]	0.000142587 [min]
 
-Step 3 completed, simulation time is 0.12573
+Step 3 completed, simulation time is 0.126207, solver wall time is 21.4566 seconds
+----
+
+Step 4
+  ----
+  dt: 0.0476613
+    Vlasov    : 0.109233 (time scale), 0.436325 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.65125e-310 (CFL)
+  ----
   Distribution Function Extrema:
-    Species 0:	26.0698 [max]	3.65347e-05 [min]
+    Species 0:	26.0873 [max]	0.000119251 [min]
 
-Step 4 completed, simulation time is 0.173212
+Step 4 completed, simulation time is 0.173868, solver wall time is 28.5303 seconds
+----
+
+Step 5
+  ----
+  dt: 0.0476613
+    Vlasov    : 0.109233 (time scale), 0.436325 (CFL)
+    Collisions: 1.79769e+308 (time scale), 2.65125e-310 (CFL)
+  ----
   Distribution Function Extrema:
-    Species 0:	26.0714 [max]	1.87313e-05 [min]
+    Species 0:	26.0891 [max]	7.67483e-05 [min]
 
-Step 5 completed, simulation time is 0.220693
+Step 5 completed, simulation time is 0.22153, solver wall time is 35.6151 seconds
+----
 Writing checkpoint file
 Writing history file
+----
+  Function counts:-
+    Vlasov     : 20
+    Collision  : 20
+    Transport  : 0
+    Fields     : 20
+    Fluids     : 20
+    Neutrals   : 0
+----
+  Time integrator counts:-
+    Time steps: 5
+----
+Solve wall time (in seconds): 35.6162
+Total wall time (in seconds): 45.0167

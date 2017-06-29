@@ -19,7 +19,7 @@ gksystem.ti_method = "4"
 # Time Stepping Definitions
 #####################################################
 simulation.max_step            = 10000
-simulation.max_time            = 30.0
+simulation.max_time            = 100000.0
 #simulation.max_dt_grow         = 1.1
 simulation.initial_dt_fraction = 1.0
 simulation.cfl_number          = 0.9
@@ -29,32 +29,32 @@ simulation.cfl_number          = 0.9
 simulation.checkpoint_interval = 400
 simulation.checkpoint_prefix   = "chk"
 #simulation.restart_file = "chk2000.4d.hdf5"
-simulation.plot_interval       = 5
+simulation.plot_interval       = 20
 simulation.plot_prefix         = "plt"
 simulation.histories = true
 simulation.1.history_field = "potential"
-simulation.1.history_indices = 22 16 8
+simulation.1.history_indices = 6 16 8
 
 
 #####################################################
 # Computational Grid Definitions
 #####################################################
 #gksystem.num_cells   = 64 64 16 36 24
-gksystem.num_cells   = 64 64 16 36 12
-gksystem.is_periodic = 0  0  1  0  0
+gksystem.num_cells   = 12 32 16 64 48
+gksystem.is_periodic = 0  1  1  0  0
 
 #gksystem.configuration_decomp = 4 4
 #gksystem.velocity_decomp      =     3 3
 #gksystem.phase_decomp         = 4 4 3 3
 
-gksystem.configuration_decomp = 8 4 2
-gksystem.velocity_decomp      =       4 1
-gksystem.phase_decomp         = 8 4 2 4 1
+gksystem.configuration_decomp = 1 4 2
+gksystem.velocity_decomp      =       8 4
+gksystem.phase_decomp         = 1 4 2 8 4
 
 #####################################################
 # Units Definitions
 #####################################################
-units.number_density = 1.0e19
+units.number_density = 1.0e20
 units.temperature    = 400.0
 units.length         = 1.0
 units.mass           = 1.0
@@ -69,11 +69,11 @@ gksystem.magnetic_geometry_mapping.slab.verbose  = true
 gksystem.magnetic_geometry_mapping.slab.visit_plotfile  = "SlabViz"
 gksystem.magnetic_geometry_mapping.slab.num_quad_points = 5
 gksystem.magnetic_geometry_mapping.slab.axisymmetric = false
-gksystem.magnetic_geometry_mapping.slab.x_max = 0.04
-gksystem.magnetic_geometry_mapping.slab.y_max = 0.04
-gksystem.magnetic_geometry_mapping.slab.z_max = 1.6
-gksystem.magnetic_geometry_mapping.slab.Bz_inner = 1.5
-gksystem.magnetic_geometry_mapping.slab.Bz_outer = 1.5
+gksystem.magnetic_geometry_mapping.slab.x_max = 0.008
+gksystem.magnetic_geometry_mapping.slab.y_max = 0.008
+gksystem.magnetic_geometry_mapping.slab.z_max = 10.0
+gksystem.magnetic_geometry_mapping.slab.Bz_inner = 3.0
+gksystem.magnetic_geometry_mapping.slab.Bz_outer = 3.0
 gksystem.magnetic_geometry_mapping.slab.By_inner = 0.0
 
 
@@ -103,10 +103,9 @@ gksystem.magnetic_geometry_mapping.slab.By_inner = 0.0
 # Phase Space Geometry Definitions
 #####################################################
 phase_space_mapping.v_parallel_max = 5.0
-phase_space_mapping.mu_max = 4.0
+phase_space_mapping.mu_max = 5.0
 phase_space_mapping.second_order = true
 phase_space_mapping.velocity_type = "gyrokinetic"
-#phase_space_mapping.explicit_curvature_radius = 3.0
 
 #phase_space_mapping.velocity_type = "ExB"
 #phase_space_mapping.velocity_type = "annular_poloidal_velocity"
@@ -215,10 +214,8 @@ BC.potential.radial_lower.type = "dirichlet"
 BC.potential.radial_upper.type = "dirichlet"
 #BC.potential.radial_lower.type = "neumann"
 #BC.potential.radial_upper.type = "neumann"
-#BC.potential.poloidal_lower.type = "neumann"
-#BC.potential.poloidal_upper.type = "neumann"
-BC.potential.poloidal_lower.type = "dirichlet"
-BC.potential.poloidal_upper.type = "dirichlet"
+BC.potential.poloidal_lower.type = "neumann"
+BC.potential.poloidal_upper.type = "neumann"
 BC.potential.toroidal_lower.type = "neumann"
 BC.potential.toroidal_upper.type = "neumann"
 
@@ -258,9 +255,13 @@ grid_function_library.list = "zero_grid_func" "T0_grid_func" "eT0_grid_func" "N0
 
 grid_function_library.zero_grid_func.type = "zero" 
 
+#grid_function_library.T0_grid_func.type = "arbitrary"
+#grid_function_library.T0_grid_func.function = "1.0"
 grid_function_library.T0_grid_func.type = "constant"
 grid_function_library.T0_grid_func.value = 1.0
 
+#grid_function_library.eT0_grid_func.type = "arbitrary"
+#grid_function_library.eT0_grid_func.function = "1.0"
 grid_function_library.eT0_grid_func.type = "constant"
 grid_function_library.eT0_grid_func.value = 1.0
 
@@ -272,14 +273,13 @@ grid_function_library.N0_grid_func.type = "arbitrary"
 #grid_function_library.N0_grid_func.function = "(1.0+sin(x/2.0)*sin(x/2.0))*(1+0.001*cos(2*y))"
 #grid_function_library.N0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*0.2)) )*(1+0.0001*cos(y)*exp(-(x-pi)^2/(2*pi*0.02 ) )  )"
 #grid_function_library.N0_grid_func.function = "(  1.0-0.05*tanh((x-pi)/(2*pi*10.0*0.02)))*(1+0.001*cos(y))"
-#grid_function_library.N0_grid_func.function = "exp(-x/(8.0*pi))+0.00000001*sin(y+1*z)*sin(x/2.0)"
-#grid_function_library.N0_grid_func.function = "( 1+0.03*exp(-((x-pi)/(2*pi*0.1))^2 - ((y-pi)/(2*pi*0.1))^2 ) )+0.000001*rand(1)"
-#grid_function_library.N0_grid_func.function = "( 1+0.012*exp(-((x-pi)/(2*pi*0.2))^2 -((y-pi)/(2*pi*0.2))^2 ) )+0.000001*sin( 2*arctan((y-pi)/(x-pi)) + 1.0*z )"
-#grid_function_library.N0_grid_func.function = "(1+2.0*exp(-((x-pi)/(2*pi*0.2))^2-((y-pi)/(2*pi*0.2))^2))+0.00000001*rand(1)*sin(2*arctan((y-pi)/(x-pi))+1.0*z)*(exp(-((sqrt((x-pi)^2+(y-pi)^2)+1/4*pi)/(2*pi*0.05))^2)+exp(-((sqrt((x-pi)^2+(y-pi)^2)-1/4*pi)/(2*pi*0.05))^2))"
-#grid_function_library.N0_grid_func.function = "(1+2.0*exp(-((x-pi)/(2*pi*0.2))^2-((y-pi)/(2*pi*0.2))^2))+0.00000001*rand(1)*sin(2*arctan((y-pi)/(x-pi))+1.0*z)*(exp(-((sqrt((x-pi)^2+(y-pi)^2)+1/4*pi)/(2*pi*0.05))^2)+exp(-((sqrt((x-pi)^2+(y-pi)^2)-1/4*pi)/(2*pi*0.05))^2))"
+grid_function_library.N0_grid_func.function = "exp(-x/(8.0*pi))+0.00000001*sin(y+1*z)*sin(x/2.0)"
 
+#grid_function_library.N0_grid_func.function = "(1+0.001*cos(2*y)*0.0)"
+#grid_function_library.N0_grid_func.function = "(1.0+0.1*exp(-(x-pi)^2/(2*pi*0.001/0.02)))*(1+0.00001*cos(2*y))"
+#grid_function_library.N0_grid_func.function = "(1.5-0.5*cos(x))*(1+0.001*cos(2*y))"
+#grid_function_library.N0_grid_func.function = "1.0+0.5*exp(-(x-pi)/(2*pi*0.01/0.02))+0.02*exp(-(x-pi)^2/(2*pi*0.001/0.02))*cos(2*y)"
 
-grid_function_library.N0_grid_func.function = "(1+2.0*exp(-((x-pi)/(2*pi*0.2))^2-((y-pi)/(2*pi*0.2))^2))+0.00000001*(sin(3*(y-pi)atwotan(x-pi)+1.0*z))*(exp(-((sqrt((x-pi)^2+(y-pi)^2)+1/4*pi)/(2*pi*0.05))^2)+exp(-((sqrt((x-pi)^2+(y-pi)^2)-1/4*pi)/(2*pi*0.05))^2))"
 
 
 grid_function_library.eN0_grid_func.type = "arbitrary"
