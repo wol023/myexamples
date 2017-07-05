@@ -546,6 +546,18 @@ print '********** OUTPUT FILE ******************'
 with open('finish.txt', 'a+') as fh:
     buf = '********** OUTPUT FILE ******************\n'
     fh.write(buf)
+
+    buf = 'units_temperature= %g\n' % units_temperature
+    fh.write(buf)
+    buf = 'units_mass= %g\n' % units_mass
+    fh.write(buf)
+    buf = 'tempJoules = %g\n' % tempJoules
+    fh.write(buf)
+    buf = 'masskg= %g\n' % masskg
+    fh.write(buf)
+    buf = 'THERMAL SPEED       [m/s] = %g\n' % ref_speed
+    fh.write(buf)
+
     buf = 'THERMAL SPEED       [m/s] = %g\n' % ref_speed
     fh.write(buf)
     buf = 'TRANSIT TIME          [s] = %g\n' % ref_time
