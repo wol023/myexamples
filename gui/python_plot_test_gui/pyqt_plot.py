@@ -67,6 +67,10 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.start_time=0.0
         self.end_time=1.0
 
+        self.units_temperature = 1
+        self.units_mass = 1
+        self.units_length = 1
+
         self.colors=('k','y','m','c','b','g','r','#aaaaaa')
         self.linestyles=('-','--','-.',':')
         self.styles=[(color,linestyle) for linestyle in self.linestyles for color in self.colors]
@@ -828,10 +832,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
             self.tbox_inputfile.setText(inputfile)
         with open(inputfile,'r') as f:
             for line in f:
-                #local vars
-                units_temperature = 1
-                units_mass = 1
-                units_length = 1
 
                 if line.lstrip().startswith('#'): #skip comment
                     continue
@@ -848,14 +848,14 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                         l=l+1
 
                     if 'units.temperature' in lhsrhs[0]:
-                        units_temperature = float(lhsrhs[1])
-                        self.print_ui('IN:units_temperature = '+str(units_temperature))
+                        self.units_temperature = float(lhsrhs[1])
+                        self.print_ui('IN:units_temperature = '+str(self.units_temperature))
                     if 'units.mass' in lhsrhs[0]:
-                        units_mass = float(lhsrhs[1])
-                        self.print_ui('IN:units_mass = '+str(units_mass))
+                        self.units_mass = float(lhsrhs[1])
+                        self.print_ui('IN:units_mass = '+str(self.units_mass))
                     if 'units.length' in lhsrhs[0]:
-                        units_length = float(lhsrhs[1])
-                        self.print_ui('IN:units_length= '+str(units_length))
+                        self.units_length = float(lhsrhs[1])
+                        self.print_ui('IN:units_length= '+str(self.units_length))
 
                     
                     if '.x_max' in lhsrhs[0]:
@@ -905,21 +905,28 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
                             self.te_mu_fixed_plot.setText(str(num_cells[4]))
                             
             #end for
-            self.te_x_length.setText(str( float(self.te_x_length.toPlainText())*units_length))
-            self.te_y_length.setText(str( float(self.te_y_length.toPlainText())*units_length))
-            self.te_z_length.setText(str( float(self.te_z_length.toPlainText())*units_length))
+            self.te_x_length.setText(str( float(self.te_x_length.toPlainText())*self.units_length))
+            self.te_y_length.setText(str( float(self.te_y_length.toPlainText())*self.units_length))
+            self.te_z_length.setText(str( float(self.te_z_length.toPlainText())*self.units_length))
 
-            self.print_ui('IN:x,y,z [m]= '+str(self.te_x_length.toPlainText())+str(self.te_y_length.toPlainText())+str(self.te_y_length.toPlainText()) )
+            self.print_ui('IN:x,y,z [m]= '+str(self.te_x_length.toPlainText())+','+str(self.te_y_length.toPlainText())+','+str(self.te_z_length.toPlainText()) )
 
 
 
         # calc ref_time from input deck parameters
         const_ELEMENTARY_CHARGE   = 1.60217653e-19 # C
         const_MASS_OF_PROTON      = 1.67262171e-27 # kg
-        tempJoules = const_ELEMENTARY_CHARGE* units_temperature
-        masskg = units_mass * const_MASS_OF_PROTON
+        tempJoules = const_ELEMENTARY_CHARGE* self.units_temperature
+        masskg = self.units_mass * const_MASS_OF_PROTON
         ref_speed = np.sqrt(tempJoules/masskg) 
-        ref_time=units_length/ref_speed
+        ref_time=self.units_length/ref_speed
+	print 'units_temperature=',self.units_temperature
+	print 'units_mass=', self.units_mass
+	print 'units_length=', self.units_length
+	print 'tempJoules=', tempJoules
+	print 'masskg=',masskg
+	print 'ref_speed=',ref_speed
+	print 'ref_time=',ref_time
         return ref_time
 
     def plot_dfn_diff_time(self,pathfilename,var,ghostIn=[],title='',xlabel='xlabel',ylabel='ylabel',xaxis=[],wh=1,fig_size_x=800,fig_size_y=600,sliced=0,x_slice=-1,y_slice=-1,z_slice=-1,label='',saveplots=1,showplots=0,ghost=0,targetdir=[],symmetric_cbar=0,interpolation='none',cogent_time_start=0.0, cogent_time_end=1.0):

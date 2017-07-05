@@ -1,1 +1,0 @@
-../../../../../../../../homes/w/wol023/linkToCoriScratch1.ln/eslexamples/myexamples/spectra/spectra.py

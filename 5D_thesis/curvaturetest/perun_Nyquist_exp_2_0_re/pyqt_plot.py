@@ -1,1 +1,0 @@
-../../../../../../../../homes/w/wol023/linkToCoriScratch1.ln/eslexamples/myexamples/gui/python_plot_test_gui/pyqt_plot.py
