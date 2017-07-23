@@ -1178,14 +1178,10 @@ for ind in enumerate(extremum_dimensional_xt):
                 break
 #print cutoff_index
         
-
-xdata = extremum_dimensional_xt[0:cutoff_index]
-ydata = extremum_logy2[0:cutoff_index]
-####HARD CODE
-xdata = extremum_dimensional_xt[cutoff_index+4:-1]
-ydata = extremum_logy2[cutoff_index+4:-1]
-
-
+shift_index=2
+cutoff_index=8
+xdata = extremum_dimensional_xt[shift_index:cutoff_index]
+ydata = extremum_logy2[shift_index:cutoff_index]
 
 
 

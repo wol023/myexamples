@@ -1165,22 +1165,24 @@ for ind in enumerate(extremum_dimensional_xt):
         error_array_a.append(perr[0])
         error_array_b.append(perr[1])
         if len(error_array_a)>3 :
-            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 2.0:#3.0:
+            if abs(error_array_a[-1]-error_array_a[-2])/np.average(error_array_a[0:-1]) > 2.5:#3.0:
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
                 break
         if len(error_array_b)>3 :
-            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 2.0:#3.0:
+            if abs(error_array_b[-1]-error_array_b[-2])/np.average(error_array_b[0:-1]) > 2.5:#3.0:
                 cutoff_index = ind[0]-1
                 del error_array_a[-1]
                 del error_array_b[-1]
                 break
 #print cutoff_index
-        
+       
+shift_index = 0
+cutoff_index= 6
 
-xdata = extremum_dimensional_xt[0:cutoff_index]
-ydata = extremum_logy2[0:cutoff_index]
+xdata = extremum_dimensional_xt[shift_index:cutoff_index]
+ydata = extremum_logy2[shift_index:cutoff_index]
 
 
 lin_fitted_logy2 = np.polyfit(xdata,ydata,1)
